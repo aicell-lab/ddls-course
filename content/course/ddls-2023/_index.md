@@ -67,9 +67,9 @@ The final grade on the course is determined as follows:
 
 ## Communication and groups
 
-You can find all announcements posted via [Announcements](post/).
+You can find all announcements at [here](/post/).
 
-For questions, please email the course responsible [Wei](mailto:weio@kth.se).
+For questions, please email the course responsible, see contact [here](/contact/).
 
 ## Meet your instructor
 

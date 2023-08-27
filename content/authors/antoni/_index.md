@@ -2,6 +2,8 @@
 # Display name
 title: Antoni Marciniak
 
+weight: 2
+
 # Username (this should match the folder name)
 authors:
   - antoni

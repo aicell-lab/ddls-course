@@ -159,19 +159,19 @@ The computer labs are normally provided in person (exception may apply, check em
 The seminars are normally provided in person (exception may apply, check email announcement and the updated schedule). If you are not able to attend, please contact the course responsible.
 {{< /spoiler >}}
 
+{{< spoiler text="What if I cannot attend the computer labs or seminars?" >}}
+It is mandatory to attend all the computer labs or seminars, if you anticipate that you will miss a computer lab or seminar, please notify the course responsible as soon as possible, exceptions will be made on a case-by-case basis.
+
+If the exception is granted, you will still need to submit the notebook for the computer lab, or write a report to answer the seminar question sheet.
+
+{{< /spoiler >}}
+
 {{< spoiler text="Will the lecture be recorded?" >}}
 The lecture will not be recorded, but the slides will be made available after the lecture.
 {{< /spoiler >}}
 
 {{< spoiler text="Can I use ChatGPT / Claude or other generative AI tools in the computer labs, seminar, assignments or the final project?" >}}
 Yes, you are encouraged to use these AI tools to facilitate your learning, and perform tasks. However, you need to make sure that you are using them in a responsible way. Importantly, if you used it for submitting any graded activities, please make sure to also attach the exported conversation history with the AI tool.
-{{< /spoiler >}}
-
-{{< spoiler text="What if I cannot attend the computer labs or seminars?" >}}
-It is mandatory to attend all the computer labs or seminars, if you anticipate that you will miss a computer lab or seminar, please notify the course responsible as soon as possible, exceptions will be made on a case-by-case basis.
-
-If the exception is granted, you will still need to submit the notebook for the computer lab, or write a report to answer the seminar question sheet.
-
 {{< /spoiler >}}
 
 {{< cta cta_text="Begin the course" cta_link="module-1" >}}

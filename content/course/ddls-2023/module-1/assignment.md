@@ -4,7 +4,7 @@ linktitle: Assignment 1
 date: '2023-08-26'
 type: book
 ---
-This week you work in your project groups to map out data-driven life science research. Your aim is to find and describe two peer-reviewed papers that fall under the umbrella of data-driven life sciences (review [module material](../module-1) for a description) and a database that openly shares data that can be recycled in future research. In addition to the pdf you are asked to upload here, you will be asked to give a very short presentation (max 4 minutes) of the outcome of your research to the rest of the class. 
+This week you work in your project groups to map out data-driven life science research. Your aim is to find and describe two peer-reviewed papers that fall under the umbrella of data-driven life sciences (review [module material](../) for a description) and a database that openly shares data that can be recycled in future research. In addition to the pdf you are asked to upload here, you will be asked to give a very short presentation (max 4 minutes) of the outcome of your research to the rest of the class. 
 
 Here is what this pdf should contain, in the form of bullet points (no need to write a long text!)
 

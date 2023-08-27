@@ -15,7 +15,7 @@ feature:
     description:
   - icon: comments
     icon_pack: fas
-    name: Joural Club
+    name: Seminar
     description:
 
 ---

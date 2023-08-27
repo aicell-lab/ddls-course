@@ -2,8 +2,8 @@
 widget: hero
 headless: true
 weight: 10
-title: Online Course Template
-hero_media: teacher.png
+title: Data-Driven Life Sciences
+hero_media: ddls-bg.png
 design:
   background:
     gradient_angle: 0
@@ -20,14 +20,11 @@ cta_alt:
   label:
 cta_note:
   label:
-advanced:
-  css_class: fullscreen
 ---
 
+
+Unlocking the Code of Life: Where Data-Driven Science Meets Future Biology
 <br>
 
-Published with the [Wowchemy Website Builder](https://wowchemy.com/) for Hugo.
-
-Introduce your courses here.
-
-<a class="github-button" href="https://github.com/wowchemy/wowchemy-hugo-themes" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star Wowchemy Website Builder for Hugo">Star Wowchemy Website Builder for Hugo</a><br><a class="github-button" href="https://github.com/wowchemy/starter-hugo-online-course" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star the Online Course template">Star the Online Course template</a><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/aicell-lab/ddls-course" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star Wowchemy Website Builder for Hugo">Star DDLS Course</a>
+<script async defer src="https://buttons.github.io/buttons.js"></script>

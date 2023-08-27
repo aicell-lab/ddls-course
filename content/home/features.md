@@ -3,18 +3,19 @@ widget: featurette
 headless: true
 weight: 20
 title: Features
-subtitle: ✨ Teach _anything_ with
+subtitle: ✨ Learning _data-driven life sciences_ with
 feature:
   - icon: chalkboard-teacher
     icon_pack: fas
-    name: Slides
-    description:
-  - icon: video
-    icon_pack: fas
-    name: Video
+    name: Lecture
     description:
   - icon: code
     icon_pack: fas
-    name: Math & Code
+    name: Computer Lab
     description:
+  - icon: comments
+    icon_pack: fas
+    name: Joural Club
+    description:
+
 ---

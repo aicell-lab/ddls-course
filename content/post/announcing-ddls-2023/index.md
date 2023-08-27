@@ -1,6 +1,6 @@
 ---
 title: Announcing the 2023 Data-Driven Life Sciences Course
-date: 2020-12-02
+date: 2022-08-20
 ---
 
 We are thrilled to announce the start of a new PhD course at KTH: **"Data-Driven Life Sciences"**. The course kicks off next week on August 28th and promises an enriching journey into data-driven approaches in life sciences, designed for both Master's and PhD-level students.

@@ -36,11 +36,18 @@ imjoy:
 
 
 ---
+## Be prepared
 
 As prerequisites for the course, we recommend that you have a look at the following resources:
 
  - Please have a look at the [SciLifeLab Data-Driven Life Science](https://www.scilifelab.se/data-driven) (DDLS) initiative website to understand what data-driven life sciences are, and how Sweden is investing in this area. Focus in particular on the concept of the [data life cycle](https://data-guidelines.scilifelab.se/data-life-cycle/), which is central in this class.
  - We will use Python as the main programming language in the computer lab, so please make sure you know the basics of Python. See the Python introduction material below for more information.
+
+For the computer lab, you will need a computer with internet access:
+   - Install the latest browser, e.g. [Chrome](https://www.google.com/chrome/)
+   - register a Google account for the [Google Colab](https://colab.google/) access and use the Google Drive
+   - register a [ChatGPT account](https://chat.openai.com/) and [Claude account](https://claude.ai/) (Note: No need to subscribe to the paid version of ChatGPT and Claude, using the free version is sufficient for this course)
+   - register a [Github account](https://github.com/) for versioning of the code
 
 ## Build a foundation in Python
 

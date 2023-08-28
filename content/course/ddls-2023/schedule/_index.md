@@ -9,8 +9,7 @@ weight: 8
 
 ## Important dates
  - Course start: 29 August 2023
- - Course registration deadline: 4th September 2023
- - Mid-course evaluation: 19 September 2023
+ - Course registration deadline: 4 September 2023
  - Course end: 6 October 2023
  - Exam: 11 October 2023 & 25 October 2023
 

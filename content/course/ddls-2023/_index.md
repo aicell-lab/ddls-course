@@ -12,7 +12,10 @@ tags:
 
 {{< toc hide_on="xl" >}}
 
-Course Code: [`SK2538` (master's)](https://www.kth.se/student/kurser/kurs/SK2538) / [`FSK3538` (PhD)](https://www.kth.se/student/kurser/kurs/FSK3538)
+Course code:
+ - [`FSK3538` (PhD)](https://www.kth.se/student/kurser/kurs/FSK3538): PhD student sign up [here](https://forms.gle/T8gtrsJL3nf1Dqwf6).
+
+ - [`SK2538` (master's)](https://www.kth.se/student/kurser/kurs/SK2538)
 
 Welcome to data driven life sciences!
 -------------------------------------

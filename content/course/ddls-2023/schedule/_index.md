@@ -1,21 +1,20 @@
 ---
-title: Schedule
+title: Course Schedule
+linkTitle: Schedule
 date: '2022-08-29'
 type: book
 weight: 8
 
 ---
-## Course Schedule
-
 ## Important dates
  - Course start: 29 August 2023
  - Course registration deadline: 4 September 2023
  - Course end: 6 October 2023
  - Exam: 11 October 2023 & 25 October 2023
 
-**NOTE: Please note that the schedule is subject to change, please keep an eye on the email announcement and the updated schedule here (instead of using the one published at [KTH course web](https://www.kth.se/social/course/SK2538/calendar/)).**
+**NOTE: The schedule is subject to change, please keep an eye on the email announcement and the updated schedule HERE (which may differ from the schedule at [KTH course web](https://www.kth.se/social/course/SK2538/calendar/)).**
 
-Here is an updated schedule for the course:
+Here is the updated schedule for the course:
 
 | Module  | Date & Time        | Type                | Teachers                        | Location              | Note  |
 |---------|--------------------|---------------------|---------------------------------|-----------------------|-------|
@@ -41,3 +40,5 @@ Here is an updated schedule for the course:
 | Exam    | Wed 25 Oct 08:00-13:00 | Examination        | Wei, Antoni, Darko              |       SciLifeLab (TBD)           | In person  |
 
 For all the online sessions, use the same zoom link to join: https://kth-se.zoom.us/j/69812177998
+
+If you anticipate that you won't be able to attend any of the session, please [contact](/contact) us as soon as possible.

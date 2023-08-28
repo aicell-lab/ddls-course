@@ -22,5 +22,3 @@ design:
   columns: '1'
 ---
 Please feel free to contact us if you have any questions or suggestions for the course.
-
-[Sign up for the course](https://forms.gle/T8gtrsJL3nf1Dqwf6)

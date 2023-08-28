@@ -99,7 +99,7 @@ See the [course schedule](./schedule/) for the detailed schedule.
 ## FAQs
 
 {{< spoiler text="Are there prerequisites?" >}}
-The students are expected to have basic knowledge of biology and programming in Python. If you are not familiar with Python, it will be helpful if you can go through the {{% cta cta_link="prerequisites" cta_text="Prerequisites" %}}.
+The students are expected to have basic knowledge of biology and programming in Python. If you are not familiar with Python, it will be helpful if you can go through the [prerequisites](./prerequisites).
 {{< /spoiler >}}
 
 {{< spoiler text="How often do the courses run?" >}}

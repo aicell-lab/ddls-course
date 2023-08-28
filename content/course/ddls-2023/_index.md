@@ -1,6 +1,6 @@
 ---
 title: "📊 HT2023: Data-driven Life Sciences"
-linkTitle: Data-Driven Life Sciences Course 2023
+linkTitle: Overview
 summary: Course content of the Data-driven Life Sciences course offered in 2023.
 date: '2023-08-01'
 type: book

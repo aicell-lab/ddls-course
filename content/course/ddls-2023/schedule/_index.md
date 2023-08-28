@@ -1,5 +1,5 @@
 ---
-title: Course Schedule
+title: Schedule
 date: '2022-08-29'
 type: book
 weight: 8

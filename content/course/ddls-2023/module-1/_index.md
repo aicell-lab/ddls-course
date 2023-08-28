@@ -1,5 +1,6 @@
 ---
 title: "Module 1: Introduction to DDLS and machine learning"
+linkTitle: "Module 1"
 date: '2023-08-26'
 type: book
 weight: 20

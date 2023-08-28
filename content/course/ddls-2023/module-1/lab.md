@@ -1,11 +1,9 @@
 ---
-title: "Lab 1"
+title: "Computer Lab 1"
 linkTitle: "Lab 1"
 weight: 1000
 type: book
 ---
-
-## Computer Lab
 
 In particular we will use chapters 2-6 of [this interactive online book](https://dmol.pub/ml/introduction.html). For most of you, this should be a repetition of the data analysis methods and concepts that you have been exposed to in previous classes. If the topics don't feel familiar, you probably need to spend extra time studying those outside of scheduled hours this week as these will come back again and again when we explore biological topics in more details.
 

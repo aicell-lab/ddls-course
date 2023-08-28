@@ -4,15 +4,13 @@ linkTitle: "Lab 1"
 weight: 1000
 type: book
 ---
-
-In particular we will use chapters 2-6 of [this interactive online book](https://dmol.pub/ml/introduction.html). For most of you, this should be a repetition of the data analysis methods and concepts that you have been exposed to in previous classes. If the topics don't feel familiar, you probably need to spend extra time studying those outside of scheduled hours this week as these will come back again and again when we explore biological topics in more details.
-
 This week's lab is meant to catch you up with concepts and coding skills that you will need for the rest of the class.
 
-This online book introduces almost all the necessary concepts in machine learning and data analysis, and our aim is to cover chapter 2-6 this week. The corresponding code can be run in Jupyter notebooks on your own computers.
+With [this interactive online book](https://dmol.pub/ml/introduction.html) you read in the [assignment 1](./assignment-1), you should have a good idea of what machine learning is and how it works. In this lab, we will go through the code in the book (chapter 2-6) together to make sure that you understand the concepts and the code.
 
-This lab will not be graded, but you have to answer a quiz to verify that the notions covered this week are familiar enough to successfully get through the other modules.
+This online book introduces almost all the necessary concepts in machine learning and data analysis, and our aim is to cover the code in chapter 2-6 this week. The corresponding code can be run in Google Colab in your web browser (see the instructions below).
 
+This lab will be graded based on your assignment 1 submission.
 ### Preparation
 
 For the computer labs, you will only need to look through the rudimentary instructions (section 1) on how to start a Colab session. For the later labs, we will need to know about how the file system works, so looking through section 2 is good to do until then (at least module 5-6).

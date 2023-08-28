@@ -15,10 +15,15 @@ This first week is an introduction week where we give you access to the backgrou
 
 ## Lecture (Tuesday)
 
-In the lecture, we will introduce the course and the different modules. We will also introduce the concept of data-driven life sciences and the data life cycle, and basics of machine learning.
+In the lecture, we will introduce the course and the different modules. We will also introduce the concept of data-driven life sciences and the data life cycle.
+
+We will also show you the basic skills on how to use ChatGPT to facilitate your learning. Here is the cheatsheet for ChatGPT: [ChatGPT cheatsheet](/uploads/ChatGPT-Cheat-Sheet.pdf).
 
 The slides will be posted after the lecture.
 
+There are two assignments this week:
+ 1. [Assignment 1](../assignment-1): Finish before the computer lab.
+ 2. [Assignment 2](../assignment-2): Finish before the seminar.
 ## Computer lab (Wednesday)
 
 In the computer lab, you will get familiar with Google Colab and use an interactive online book to learn the basics of machine learning. More details can be found on the [computer lab page](./lab).

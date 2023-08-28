@@ -42,7 +42,7 @@ Both the computer lab and the seminars are mandatory and graded activities!
 
 - For the seminar, you will have a list of questions (the same every week) which we will answer during the seminar. Your participation and answer to these questions will be graded during the seminar.
 
-In addition, there is a project to be conducted in pairs (Ms students) or alone (PhD students).
+In addition, in the examination week, there is a project to be conducted in pairs (Ms students) or alone (PhD students), the project will be graded by peers and the examiner.
 
 Here are the published modules for the course:
 
@@ -63,6 +63,8 @@ The final grade on the course is determined as follows:
 
 -   For master students, the grade on the oral exam determines the final grade on the course provided the other three activities have received a passing grade.
 -   For PhD students, the oral exam is not mandatory, but you are welcome to join the oral exam if you want to practice your presentation skills.
+
+The submission of the computer lab, the project report and the oral exam will be first reviewed and graded by your peers, and then the final grade and feedbacks will be given by the teachers and examiner.
 
 ## Communication and groups
 

@@ -7,7 +7,7 @@ weight: 20
 
 This first week is an introduction week where we give you access to the background material needed understand all of the other 6 topical modules.
 
-Please have a look at the [SciLife Lab data driven life science](https://www.scilifelab.se/data-driven) initiative website to understand what data-driven life sciences are, and how Sweden is investing in this area. Focus in particular on the concept of the [data life cycle](https://data-guidelines.scilifelab.se/data-life-cycle/), which is central in this class.
+Before this module, we recommend you take a look at the [prerequisites](../prerequisites/).
 
 ## Lecture
 
@@ -25,7 +25,7 @@ This lab will not be graded, but you have to answer a quiz to verify that the no
 
 ### Preparation
 
-You can find an introduction on how to use google colab [here](./colab-intro.md).
+You can find an introduction on how to use google colab [here](./colab-intro).
 
 ### Run the code
 Now, go to [this interactive online book](https://dmol.pub/ml/introduction.html) and run the code in the chapters 2-6.

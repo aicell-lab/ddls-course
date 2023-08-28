@@ -37,10 +37,14 @@ imjoy:
 
 ---
 
-As prerequisites for the course, we recommend that you have a basic understanding of Python.
+As prerequisites for the course, we recommend that you have a look at the following resources:
+
+ - Please have a look at the [SciLifeLab Data-Driven Life Science](https://www.scilifelab.se/data-driven) (DDLS) initiative website to understand what data-driven life sciences are, and how Sweden is investing in this area. Focus in particular on the concept of the [data life cycle](https://data-guidelines.scilifelab.se/data-life-cycle/), which is central in this class.
+ - We will use Python as the main programming language in the computer lab, so please make sure you know the basics of Python. See the Python introduction material below for more information.
 
 ## Build a foundation in Python
 
+As a warn up, please make sure you are comfortable with coding in Python. If not, this section will show you the basics of Python.
 ### Learn
 
 Here you can find the basics of Python: [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb)

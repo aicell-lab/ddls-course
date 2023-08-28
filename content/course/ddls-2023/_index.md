@@ -23,7 +23,7 @@ The course aims to introduce you to the field of computer-driven life sciences b
 
 This course introduces data sets of different types, such as proteomics, transcriptomics, biomolecular structure, molecular dynamics simulations and different types of imaging, and presents, analyzes and discusses models of biological phenomena and related scientific breakthroughs based on the analysis of such data sets.
 
-Course goals (Intended Learning Outcomes)
+## Course goals (Intended Learning Outcomes)
 
 We hope that you, by the end of this course, will be able to:
 
@@ -32,8 +32,7 @@ We hope that you, by the end of this course, will be able to:
 -   present and review scientific literature in the field of computer-driven life sciences
 -   reflect on ethical consequences of data-driven life sciences and describe good practice around the computer life cycle (collection, handling, sharing and analysis)
 
-Course design
--------------
+## Course design
 
 The course is divided into 6 modules, each module running for a week. Each week contains 3 main activities: a lecture on Tuesday, giving background information about the topic(s) of the week; a computer lab, usually on Wednesday, where you will practically explore data exploration using Python in Jupyter notebooks; and a seminar on Friday where you will collectively explain and discuss an assigned research paper.
 
@@ -53,7 +52,7 @@ Here are the published modules for the course:
 
 Each module will contain quiz or assignment, please pay attention to the deadline.
 
-### Grades
+## Grades
 
 The final grade on the course is determined as follows:
 

@@ -12,7 +12,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Teaching Assistant
+role: Teaching Assistant / Teacher
 
 # Organizations/Affiliations
 organizations:

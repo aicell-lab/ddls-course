@@ -5,4 +5,4 @@ type: book
 weight: 30
 ---
 
-TODO: Add content here.
+TODO: Will be updated soon.

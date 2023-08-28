@@ -1,9 +1,21 @@
 ---
-title: "Colab Introduction"
-linkTitle: Colab Introduction
+title: "Lab 1"
+linkTitle: "Lab 1"
 weight: 1000
 type: book
 ---
+
+## Computer Lab
+
+In particular we will use chapters 2-6 of [this interactive online book](https://dmol.pub/ml/introduction.html). For most of you, this should be a repetition of the data analysis methods and concepts that you have been exposed to in previous classes. If the topics don't feel familiar, you probably need to spend extra time studying those outside of scheduled hours this week as these will come back again and again when we explore biological topics in more details.
+
+This week's lab is meant to catch you up with concepts and coding skills that you will need for the rest of the class.
+
+This online book introduces almost all the necessary concepts in machine learning and data analysis, and our aim is to cover chapter 2-6 this week. The corresponding code can be run in Jupyter notebooks on your own computers.
+
+This lab will not be graded, but you have to answer a quiz to verify that the notions covered this week are familiar enough to successfully get through the other modules.
+
+### Preparation
 
 For the computer labs, you will only need to look through the rudimentary instructions (section 1) on how to start a Colab session. For the later labs, we will need to know about how the file system works, so looking through section 2 is good to do until then (at least module 5-6).
 
@@ -39,3 +51,16 @@ If this information was not enough or not practical enough, please have a look a
 https://colab.research.google.com/?utm_source=scs-index
 will be updated with new information for the coming labs soon.
 
+
+
+### Run the code
+Now, go to [this interactive online book](https://dmol.pub/ml/introduction.html) and run the code in the chapters 2-6.
+
+Make sure to use your access to teaching assistants to get this material under control. The machine learning topics covered this week are probably going to be important for your projects (see [Project Plan](../project)) too, i.e. finding ways to expand on published research using a different type of analysis, or model validation, etc.
+
+By the end of the week, you are assigned to pass a quiz to check your familiarity with this week's the material.
+
+In addition, here are other resources that could be useful to clarify useful concepts in data analysis, machine learning and deep learning:
+- [Neural Networks](https://www.3blue1brown.com/topics/neural-networks)
+- [Deep learning](https://www.nature.com/articles/nature14539)
+- [Bias–variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)

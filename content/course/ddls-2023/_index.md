@@ -1,6 +1,6 @@
 ---
 title: "📊 HT2023: Data-driven Life Sciences"
-linkTitle: Data-Driver Life Sciences Course 2023
+linkTitle: Data-Driven Life Sciences Course 2023
 summary: Course content of the Data-driven Life Sciences course offered in 2023.
 date: '2023-08-01'
 type: book
@@ -81,47 +81,16 @@ In various modules, we will also have guest lectures and labs by
 
 -   Juliette Griffié: Stockholm University, SciLifeLab DDLS fellow(<juliette.griffie@dbb.su.se>)
 -   Wen Zhong:  Linköpings universitet, SciLifeLab DDLS fellow (<wen.zhong@scilifelab.se>)
--   Daniel Fürth: Uppsala university, SciLifeLab Fellow (<furth@scilifelab.uu.se)>
+-   Daniel Fürth: Uppsala university, SciLifeLab Fellow (<furth@scilifelab.uu.se>)
 -   Tobias Andermann: Uppsala university, SciLifeLab DDLS fellow (<tobias.andermann@ebc.uu.se>)
 -   Estibaliz Gómez de Mariscal: the Instituto Gulbenkian de Ciência, Portugal (<egomez@igc.gulbenkian.pt>)
 
 -   To be confirmed: Lea Rems, the University of Ljubljana (<lea.rems@fe.uni-lj.si>)
 
-## Course Schedule
+## Course schedule
 
-Here is an updated schedule for the course:
+See the [course schedule](./schedule/) for the detailed schedule.
 
-**NOTE: Please note that the schedule is subject to change, please keep an eye on the email announcement and the updated schedule here (instead of using the one published at [KTH course web](https://www.kth.se/social/course/SK2538/calendar/)).**
-
-| Module  | Date & Time        | Type                | Teachers                        | Location              | Note  |
-|---------|--------------------|---------------------|---------------------------------|-----------------------|-------|
-| 1       | Tue 29 Aug 08:00-10:00 | Lecture            | Wei                      | FB51, Roslagstullsbacken |  In person    |
-| 1       | Wed 30 Aug 13:00-17:00 | Computer Lab       | Antoni & Wei      | RB33, Roslagstullsbacken |  In person    |
-| 1       | Fri 1 Sep 10:00-12:00  | Seminar            | Wei                      | FA31, Roslagstullsbacken |  In person      |
-| 2       | Tue 5 Sep 08:00-10:00  | Lecture            | Wei                      | ~~FB51, Roslagstullsbacken~~ | [Over Zoom](https://kth-se.zoom.us/j/69812177998)      |
-| 2       | Wed 6 Sep 13:00-17:00  | Computer Lab       | Antoni & Wei     | RB33, Roslagstullsbacken | In person       |
-| 2       | Fri 8 Sep 10:00-12:00  | Seminar            | Wei                     | FD41, Roslagstullsbacken |  In person      |
-| 3       | Tue 12 Sep 08:00-10:00 | Lecture            | Juliette & Wei                    | ~~FB51, Roslagstullsbacken~~ | [Over Zoom](https://kth-se.zoom.us/j/69812177998)      |
-| 3       | Wed 13 Sep 08:00-12:00 | Computer Lab       | Antoni, Wei     | RB33, Roslagstullsbacken | In person       |
-| 3       | Fri 15 Sep 10:00-12:00 | Seminar            | Wei                 | FA31, Roslagstullsbacken |  In person      |
-| 4       | Tue 19 Sep 08:00-10:00 | Lecture            | Wen & Daniel?                     | ~~FB41, Roslagstullsbacken~~ | [Over Zoom](https://kth-se.zoom.us/j/69812177998); Mid-course evaluation    |
-| 4       | Thu 21 Sep 13:00-17:00 | Computer Lab       | Antoni & Wei     | Prosit                 |  In person      |
-| 4       | Fri 22 Sep 10:00-12:00 | Seminar            | Wei                     | FA31, Roslagstullsbacken |  In person      |
-| 5       | Tue 26 Sep 08:00-10:00 | Lecture            | Esti & Wei                     | ~~FB51, Roslagstullsbacken~~ | [Over Zoom](https://kth-se.zoom.us/j/69812177998)      |
-| 5       | Wed 27 Sep 13:00-17:00 | Computer Lab       | Antoni, Wei     | Butter                 |  In person      |
-| 5       | Fri 29 Sep 10:00-12:00 | Seminar            | Wei                     | K53, Teknikringen       | In person       |
-| 6       | Tue 3 Oct 08:00-10:00  | Lecture            | Darko & Tobias                  | ~~FB51, Roslagstullsbacken~~ |  [Over Zoom](https://kth-se.zoom.us/j/69812177998)     |
-| 6       | Wed 4 Oct 13:00-17:00  | Computer Lab       | Darko & Wei     | RB33, Roslagstullsbacken | In person       |
-| 6       | Fri 6 Oct 10:00-12:00  | Seminar            | Wei              | FB55, Roslagstullsbacken |  In person      |
-| Exam    | Wed 11 Oct 13:00-17:00 | Examination        | Wei, Antoni, Darko                  |     SciLifeLab (TBD)                 | In person  |
-| Exam    | Wed 25 Oct 08:00-13:00 | Examination        | Wei, Antoni, Darko              |       SciLifeLab (TBD)           | In person  |
-
-## Important dates
- - Course start: 29 August 2023
- - Course registration deadline: 4th September 2023
- - Mid-course evaluation: 19 September 2023
- - Course end: 6 October 2023
- - Exam: 11 October 2023 & 25 October 2023
 ## FAQs
 
 {{< spoiler text="Are there prerequisites?" >}}

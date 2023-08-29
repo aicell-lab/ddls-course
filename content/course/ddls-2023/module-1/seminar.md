@@ -1,7 +1,7 @@
 ---
 title: "Seminar 1"
 date: '2023-08-26'
-weight: 999
+weight: 20
 type: book
 ---
 This week's seminar is divided into two parts:

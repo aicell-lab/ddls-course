@@ -1,19 +1,38 @@
 ---
-title: Assignment 1
+title: "Assignment 1: Using ChatGPT to Understand Machine Learning"
 linktitle: Assignment 1
 date: '2023-08-26'
 type: book
+weight: 1
 ---
+### Assignment Overview
 
-In [assignment 1](./assignment-1), you were asked to use ChatGPT to facilitate your learning of the chapters 2-6 of [this interactive online book](https://dmol.pub/ml/introduction.html). For most of you, this should be a repetition of the data analysis methods and concepts that you have been exposed to in previous classes. If the topics don't feel familiar, you probably need to spend extra time studying those outside of scheduled hours this week as these will come back again and again when we explore biological topics in more details.
+In this assignment, you will leverage the capabilities of ChatGPT to deepen your understanding of Chapters 2-6 from [this interactive online textbook on machine learning](https://dmol.pub/ml/introduction.html). For many of you, the methods and concepts discussed in these chapters will be a review of what you've learned in prior courses. If you find any topics unfamiliar, we strongly recommend allocating additional time for study this week, as these concepts will frequently reappear when we delve into biological topics in greater depth.
 
-When reading the book, try to use ChatGPT to help your understanding. Please explore different prompts to see how the answers change.
+### Objectives
+- Understand core data analysis methods and principles presented in Chapters 2-6.
+- Utilize ChatGPT as an assistive tool for grasping complex topics and clarifying any questions you may have.
+  
+### Instructions
 
-Here is the cheatsheet for ChatGPT: [ChatGPT cheatsheet](/uploads/ChatGPT-Cheat-Sheet.pdf).
+1. **Reading and Engagement**: Begin by reading Chapters 2-6 of the online book. Make a note of any areas where you feel less confident.
 
-While reading the online book (chapter 2-6) with the help of ChatGPT, your chat history should reflect what you did during the process.
+2. **Utilizing ChatGPT**: To facilitate your comprehension, engage with ChatGPT. Experiment with various prompts related to the material to gauge how the AI responds, and to understand the topics more thoroughly.
+   
+   - **ChatGPT Cheatsheet**: You may find [this cheatsheet for ChatGPT](/uploads/ChatGPT-Cheat-Sheet.pdf) useful for optimizing your queries.
 
-Once you are done, please submit the chat history link(s) [here](https://forms.gle/arapqVSDJFyKMqZb6):
-. The chat history links can be created by following the instructions [here](https://help.openai.com/en/articles/7943611-create-a-shared-link). In case you started multiple chat sessions, please submit all of them (one link per line).
+3. **Documentation**: Ensure that your ChatGPT conversation history adequately reflects your engagement with the material. This will serve as a record of your learning process.
 
-**NOTE: The submission of this assignment will be graded and used as the grade for the computer lab.**
+4. **Submission**: Once you have finished, create shared links of your chat history by following [these instructions](https://help.openai.com/en/articles/7943611-create-a-shared-link).
+
+   - **Multiple Sessions**: If you initiated more than one chat session with ChatGPT, please submit links for all of them. Enter each link on a new line in the submission form.
+
+5. **Final Submission**: Submit your chat history link(s) via [this Google form](https://forms.gle/arapqVSDJFyKMqZb6).
+
+### Grading
+
+This assignment will be evaluated and the grades will be applied to the computer lab of this module.
+
+### Note
+
+If you have any questions or encounter any issues while completing this assignment, please reach out to the teaching team for assistance.

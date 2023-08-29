@@ -1,7 +1,7 @@
 ---
 title: "Computer Lab 1"
 linkTitle: "Lab 1"
-weight: 1000
+weight: 10
 type: book
 ---
 This week's lab is meant to catch you up with concepts and coding skills that you will need for the rest of the class.

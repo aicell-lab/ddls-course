@@ -22,8 +22,8 @@ We will also show you the basic skills on how to use ChatGPT to facilitate your 
 The slides will be posted after the lecture.
 
 There are two assignments this week:
- 1. [Assignment 1](../assignment-1): Finish before the computer lab.
- 2. [Assignment 2](../assignment-2): Finish before the seminar.
+ 1. [Assignment 1](./assignment-1): Finish before the computer lab.
+ 2. [Assignment 2](./assignment-2): Finish before the seminar.
 ## Computer lab (Wednesday)
 
 In the computer lab, you will get familiar with Google Colab and use an interactive online book to learn the basics of machine learning. More details can be found on the [computer lab page](./lab).

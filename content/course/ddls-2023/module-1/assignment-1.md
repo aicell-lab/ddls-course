@@ -26,7 +26,7 @@ In this assignment, you will leverage the capabilities of ChatGPT to deepen your
 
 4. **Submission**: Once you have finished, create shared links of your chat history by following [these instructions](https://help.openai.com/en/articles/7943611-create-a-shared-link).
 
-   - **Multiple Sessions**: If you initiated more than one chat session with ChatGPT, please submit links for all of them. Enter each link on a new line in the submission form.
+   - **Multiple Sessions**: You will likely need to create more than one chat session with ChatGPT (e.g. one chat session per chapter), please submit links for all of them. Enter each link on a new line in the submission form.
 
 5. **Final Submission**: Submit your chat history link(s) via [this Google form](https://forms.gle/arapqVSDJFyKMqZb6).
 

@@ -19,7 +19,7 @@ In the lecture, we will introduce the course and the different modules. We will 
 
 We will also show you the basic skills on how to use ChatGPT to facilitate your learning. Here is the cheatsheet for ChatGPT: [ChatGPT cheatsheet](/uploads/ChatGPT-Cheat-Sheet.pdf).
 
-The slides will be posted after the lecture.
+The slides for the lecture can be found [here](/uploads/Lecture-DDLS-Course-Module-1.pptx.pdf).
 
 There are two assignments this week:
  1. [Assignment 1](./assignment-1): Finish before the computer lab.

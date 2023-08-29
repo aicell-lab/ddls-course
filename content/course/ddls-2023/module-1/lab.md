@@ -60,3 +60,9 @@ In addition, here are other resources that could be useful to clarify useful con
 - [Neural Networks](https://www.3blue1brown.com/topics/neural-networks)
 - [Deep learning](https://www.nature.com/articles/nature14539)
 - [Bias–variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
+
+
+### Going further (optional)
+If you want to go further, you can also try the following notebooks and video:
+ - [Basic machine learning using sklearn and pandas](https://colab.research.google.com/drive/1ySRFbWp70zKibCauvBV9hbbgMGhBbCLx?usp=sharing)
+ - Deep Learning Basics: Introduction and Overview by Lex Fridman: [lecture](https://www.youtube.com/watch?v=O5xeyoRL95U) and [notebook](https://colab.research.google.com/github/lexfridman/mit-deep-learning/blob/master/tutorial_deep_learning_basics/deep_learning_basics.ipynb)

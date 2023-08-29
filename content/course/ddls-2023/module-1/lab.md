@@ -52,7 +52,7 @@ will be updated with new information for the coming labs soon.
 ### Run the code
 Now, go to [this interactive online book](https://dmol.pub/ml/introduction.html) and run the code in the chapters 2-6.
 
-Make sure to use your access to teaching assistants to get this material under control. The machine learning topics covered this week are probably going to be important for your projects (see [Project Plan](../project)) too, i.e. finding ways to expand on published research using a different type of analysis, or model validation, etc.
+Make sure to use your access to teaching assistants to get this material under control. The machine learning topics covered this week are probably going to be important for your projects (see [Project Plan](../../project)) too, i.e. finding ways to expand on published research using a different type of analysis, or model validation, etc.
 
 By the end of the week, you are assigned to pass a quiz to check your familiarity with this week's the material.
 

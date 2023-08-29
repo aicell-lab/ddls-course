@@ -30,6 +30,12 @@ In this assignment, you will leverage the capabilities of ChatGPT to deepen your
 
 5. **Final Submission**: Submit your chat history link(s) via [this Google form](https://forms.gle/arapqVSDJFyKMqZb6).
 
+### Example conversation history
+
+You can find an example conversation [here](https://chat.openai.com/share/47994f03-c459-46da-9e24-7f9e4c07090d).
+In this conversation, we ask ChatGPT to help us read the book, and provide content by copy and paste content from the book (typically a few subsections) interactively.
+You will find out how to use ChatGPT to create individualized content adapted to the learner's background.
+Try to be more creative and you will find out more interesting way of learning.
 ### Grading
 
 This assignment will be evaluated and the grades will be applied to the computer lab of this module.

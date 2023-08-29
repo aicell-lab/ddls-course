@@ -15,11 +15,12 @@ In this assignment, you will leverage the capabilities of ChatGPT to deepen your
   
 ### Instructions
 
-1. **Reading and Engagement**: Begin by reading Chapters 2-6 of the online book. Make a note of any areas where you feel less confident.
+1. **Reading and Engagement**: Begin by reading Chapters 2-6 of the online book. Make a note of any areas where you feel less confident. The online book contains python code, at this point you don't need to run the code, gaining a rough understand should be enough.
 
-2. **Utilizing ChatGPT**: To facilitate your comprehension, engage with ChatGPT. Experiment with various prompts related to the material to gauge how the AI responds, and to understand the topics more thoroughly.
+2. **Utilizing ChatGPT**: To facilitate your comprehension, engage with ChatGPT. Experiment with various prompts related to the material to gauge how the AI responds, and to understand the topics more thoroughly. For the code, use ChatGPT to explain it.
    
    - **ChatGPT Cheatsheet**: You may find [this cheatsheet for ChatGPT](/uploads/ChatGPT-Cheat-Sheet.pdf) useful for optimizing your queries.
+   - **Take notes**: Take notes on what you learn, be ready to share with others in the computer lab tomorrow.
 
 3. **Documentation**: Ensure that your ChatGPT conversation history adequately reflects your engagement with the material. This will serve as a record of your learning process.
 

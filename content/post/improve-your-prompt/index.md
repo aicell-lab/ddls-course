@@ -21,7 +21,7 @@ Please keep in mind that you should always provide enough context in your initia
 
 I would suggest that you put more effort on constructing an efficient prompt which you will be using through the course. This means you can paste that content as the first message when you start a new conversation in ChatGPT.
 
-Besides [the example](https://chat.openai.com/share/47994f03-c459-46da-9e24-7f9e4c07090d) I showed you previously in assignment 1. I would like to show you another way to create your prompt -- using ChatGPT to create a prompt for ChatGPT.
+Besides the example I showed you previously in [assignment 1](/course/ddls-2023/module-1/assignment-1/). I would like to show you another way to create your prompt -- using ChatGPT to create a prompt for ChatGPT.
 
 ## Using ChatGPT to create a prompt for ChatGPT
 Since the prompt is basically a text contains the necessary information to guide ChatGPT to generate the content you want, you can use ChatGPT to help you create a prompt for ChatGPT.

@@ -51,6 +51,8 @@ The assignment will be evaluated and the grades will contribute to your final co
 - Content: Summarize the key points from your PDF.
 - Aim: Engage the class and foster a discussion on the current state of data-driven life sciences.
 
-#### Note
+#### Tips
+
+Feel free to use ChatGPT to get advice on where to find the paper and database, you can also use ChatGPT to help you understand the paper and database, write the pdf summary, and prepare the presentation! In the prompt, please provide the context and enough information for the AI to understand what you are looking for.
 
 If you encounter any issues or have questions regarding this assignment, please reach out to the instructional team for assistance.

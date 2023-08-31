@@ -7,11 +7,9 @@ type: book
 weight: 50
 ---
 
-This week, we will have a lecture by [Wen Zhong (DDLS Fellow)](https://www.scilifelab.se/researchers/wen-zhong/) on multi-omics data analysis.
+This week, we will have a lecture by [Wen Zhong (DDLS Fellow)](https://www.scilifelab.se/researchers/wen-zhong/) on multi-omics data analysis (September 19, 08:00 – 9:00), then we will join the [workshop on Computational Methods in Evolution and Biodiversity](https://www.scilifelab.se/event/computational-methods-in-evolution-and-biodiversity/)(September 21, 09:00 – 17:00).
 
-Then we will join the [workshop on Computational Methods in Evolution and Biodiversity](https://www.scilifelab.se/event/computational-methods-in-evolution-and-biodiversity/) on September 21, 09:00 – 17:00.
-
-## Lecture
+## Lecture (Tuesday and Thursday)
 
 The lectures are divided into two parts: the lecture on our usual time Tuesday 8am and the workshop lectures on Wednesday 9am (the whole morning).
 
@@ -26,7 +24,7 @@ Feel free to attend all or part of the workshop lectures in the morning:
  - 11:50	Inference of ancestral recombination graphs for population genomics, Per Unneberg
 
 All these lectures are recommended, but not mandatory.
-## Computer lab
+## Computer lab (Thursday)
 
 The computer lab will be on September 21st, starting from 13:30, the place is [Vivi Täckholmsalen (Q-salen), NPQ-huset, Stockholm University](https://www.google.com/maps?ll=59.366002,18.060119&z=10&t=m&hl=en&gl=US&mapclient=embed&q=Svante+Arrhenius+v%C3%A4g+20+104+05+Stockholm).
 

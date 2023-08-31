@@ -11,3 +11,5 @@ This week's seminar is divided into two parts:
 2. The [second assignment](../assignment-2) this week is for individuals to map out data-driven life science research. The idea is that each person gives a very short presentation of a peer-reviewed paper that fall under the umbrella of data-driven life sciences, along with a database that openly shares data for future research. The hope is that we get a good overview of research topics and start understanding the policies that researchers take around data-driven life sciences. This will also give us an opportunity to discuss the pros and cons, as well as the ethical aspects of data sharing. Each presentation should not exceed 4 minutes.
 
 Note that this week's seminar will also serve as foundation for your projects! Indeed, a large part of the project is to choose a paper of interest, read and dissect it. The rest of the project consists in reanalyzing the data in a different manner, for which this week's lab is probably very important.
+
+{{< cta cta_text="Slides for Seminar 1" cta_link="/slides/seminar-1/" >}}

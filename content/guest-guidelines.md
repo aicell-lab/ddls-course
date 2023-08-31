@@ -70,7 +70,7 @@ For all the invited guests, we would like to ask you to provide one of two repre
 
  * After you agreed on the time and topic, please fill this form as soon as possible (at least 1 week before the lecture time) so we can post it and advertise it properly to the students and at SciLifeLab.
 
-{{< cta cta_text="Submit Your lecture" cta_link="https://forms.gle/dGre3KmYqroSmkCM7" >}}
+{{< cta cta_text="Submit Your Lecture Abstract" cta_link="https://forms.gle/dGre3KmYqroSmkCM7" >}}
 
 
  * All the guest lecture will be presented over Zoom, using the same [zoom link](https://kth-se.zoom.us/j/69812177998). Please join the zoom call at least 5 minutes before the agreed lecture time so we can test the screen share and audio etc.

@@ -14,7 +14,7 @@ Welcome to the Data-Driven Life Sciences Course at KTH! Thank you for agreeing t
 - **Aim**: Introduce students to computer-driven life sciences, covering a variety of application areas.
 - **Data Types**: Genomics, proteomics, transcriptomics, biomolecular structure, molecular dynamics simulations, imaging etc.
 - **Intended Learning Outcomes**: By the end of this course, students should be able to describe the field, apply statistical and machine learning analysis, review scientific literature, and reflect on ethical considerations in data-driven life sciences.
-- **Course modules**: The course will have 6 modules in total covers different topics in data-driven life sciences, you can see an example [here](/course/ddls-2023/module-1/). 
+- **Course modules**: The course will have 6 modules in total covers different topics in data-driven life sciences, you can see the schedule [here](/course/ddls-2023/schedule/) and an example module [here](/course/ddls-2023/module-1/). 
 
 ---
 
@@ -26,7 +26,7 @@ Welcome to the Data-Driven Life Sciences Course at KTH! Thank you for agreeing t
   - Discuss models of biological phenomena based on data analysis.
 - **Duration**: typically 1-2 hours (stick to the time slot we agreed on in the invitation).
 - **Format**: Lecture with Slides, Videos, Breakout room discussion and Q&A session. The lecture will be held over Zoom ([link](https://kth-se.zoom.us/j/69812177998)), please join the zoom call 5 minutes before the lecture starts so we can test the connection.
-- **Audience Background**: Master's students in Biomedical Physics and Medical Engineering; Ph.D. students in Molecular Science, enzyme engineering, biomedical sciences, etc.
+- **Audience Background**: Master's students in Biomedical Physics and Medical Engineering; Ph.D. students in Molecular Science, enzyme engineering, biomedical sciences, etc. We will also make the lecture zoom link public to everyone, so there maybe also external participants for SciLifeLab or others in the life science community.
 - **Course Schedule**: You can also find all the scheduled modules in the course [here](/course/ddls-2023/).
 
 ---
@@ -66,4 +66,13 @@ For all the invited guests, we would like to ask you to provide one of two repre
 
 ---
 
-Anything unclear, feel free to contact me at [weio@kth.se](mailto:weio@kth.se)!
+## Logistics
+
+ * After you agreed on the time and topic, please fill this form as soon as possible (at least 1 week before the lecture time) so we can post it and advertise it properly to the students and at SciLifeLab.
+
+{{< cta cta_text="Submit Your lecture" cta_link="https://forms.gle/dGre3KmYqroSmkCM7" >}}
+
+
+ * All the guest lecture will be presented over Zoom, using the same [zoom link](https://kth-se.zoom.us/j/69812177998). Please join the zoom call at least 5 minutes before the agreed lecture time so we can test the screen share and audio etc.
+
+ * Anything unclear, feel free to contact me at [weio@kth.se](mailto:weio@kth.se)!

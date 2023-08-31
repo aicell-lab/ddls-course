@@ -37,7 +37,7 @@ This week, your task is to explore the realm of data-driven life science researc
      - Intended use of the database
      - Assessment of adherence to [FAIR principles](https://www.go-fair.org/fair-principles/) (You can also consult this [link](https://www.nature.com/articles/sdata201618) for more on FAIR principles.)
 
-4. **Presentation**: Prepare a concise presentation (maximum 4 minutes) to summarize your findings for the class.
+4. **Presentation**: Prepare a concise presentation (maximum 4 minutes, no need to prepare slides, I will show your report during the presentation, so you can also include slides in the report if you want) to summarize your findings for the class.
 
 5. **Submission**: Upload the PDF [here](https://forms.gle/HysGc7Aav2X8eLRt5) before the seminar on Friday.
 

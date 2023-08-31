@@ -1,11 +1,12 @@
 ---
 title: "Module 1: Introduction to DDLS and machine learning"
+summary: "We will introduce the concept of data-driven life sciences and the data life cycle, the course and the different modules, and some basics about using ChatGPT. 
+Lecture by Wei Ouyang on 29th August."
 linkTitle: "Module 1"
 date: '2023-08-26'
 type: book
 weight: 20
 ---
-
 > **_NOTE:_**  For the updated schedule, including date, time and place of lectures, computer labs and seminars, please see the [schedule page](../schedule).
 
 > **_NOTE:_** Before this module, we recommend you take a look at the [prerequisites](../prerequisites/).

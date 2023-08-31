@@ -14,6 +14,7 @@ Welcome to the Data-Driven Life Sciences Course at KTH! Thank you for agreeing t
 - **Aim**: Introduce students to computer-driven life sciences, covering a variety of application areas.
 - **Data Types**: Genomics, proteomics, transcriptomics, biomolecular structure, molecular dynamics simulations, imaging etc.
 - **Intended Learning Outcomes**: By the end of this course, students should be able to describe the field, apply statistical and machine learning analysis, review scientific literature, and reflect on ethical considerations in data-driven life sciences.
+- **Course modules**: The course will have 6 modules in total covers different topics in data-driven life sciences, you can see an example [here](/course/ddls-2023/module-1/). 
 
 ---
 
@@ -23,15 +24,18 @@ Welcome to the Data-Driven Life Sciences Course at KTH! Thank you for agreeing t
 - **Learning Goals**:
   - Describe your field's applications and associated analysis methods.
   - Discuss models of biological phenomena based on data analysis.
-- **Duration**: 1-2 hours
-- **Format**: Slides, Videos, and Q&A session. The lecture will be held over Zoom ([link](https://kth-se.zoom.us/j/69812177998)), please join the zoom call 5 minutes before the lecture starts so we can test the connection.
+- **Duration**: typically 1-2 hours (stick to the time slot we agreed on in the invitation).
+- **Format**: Lecture with Slides, Videos, Breakout room discussion and Q&A session. The lecture will be held over Zoom ([link](https://kth-se.zoom.us/j/69812177998)), please join the zoom call 5 minutes before the lecture starts so we can test the connection.
 - **Audience Background**: Master's students in Biomedical Physics and Medical Engineering; Ph.D. students in Molecular Science, enzyme engineering, biomedical sciences, etc.
+- **Course Schedule**: You can also find all the scheduled modules in the course [here](/course/ddls-2023/).
 
 ---
 
 ## Preparing Computer Lab
 
-For some lecture, it will be helpful to provide a Jupyter notebook to help students understand the concepts better. In the computer lab session, the student will work on the Jupyter notebook with tutorials and coding exercises. The notebook will be executed in [Google Colab](https://colab.research.google.com/?utm_source=scs-index). In the end of the computer lab, the finished exercise notebook will be submitted and graded first by the peers and then by the lab teachers.
+If you are agreed on helping us preparing a notebook for the computer lab, this section will provide some information to help your preparation (typically a Jupyter notebook is enough).
+
+In the computer lab session, the student will work on the Jupyter notebook with tutorials and coding exercises. The notebook will be executed in [Google Colab](https://colab.research.google.com/?utm_source=scs-index). In the end of the computer lab, the finished exercise notebook will be submitted and graded first by the peers and then by the lab teachers.
 
 Here are more details to help you prepare the notebook:
 
@@ -43,11 +47,14 @@ Here are more details to help you prepare the notebook:
 - **Duration**: Usually held on Wednesdays, approx 2 hours.
 - **Platform**: Google Colab.
 - **Grading**: Students will submit their finished notebooks to be graded, first by their peer and then by the teacher.
-- **Format**: The lab will be held in person, with the lab teachers present to help students.
-  
+- **Format**: It is recommended to have two parts in the notebooks: a basic part to introduce to the data and method for the topic, and a elevated part to help student going beyond, e.g. use the method to analyze other dataset, or try another related approach to solve the same type of problem. At the end of each part, you should include some questions or coding exercises. The lab will be held in person, with the lab teachers present to help students to go through the notebook.
+- **ChatGPT**: Please note that the students are encouraged to use ChatGPT to help them go through the notebook and writing code, so when designing the exercises, it should not be too trivial so ChatGPT will give immediate answer.
+
 ---
 
 ## Providing a Paper for the Seminar
+
+For all the invited guests, we would like to ask you to provide one of two representative papers on top of your lecture, the idea is that the students will read a paper for the week in a journal club and we will discuss the method used in the paper, and potential ways go beyond the paper.
 
 - **Objective**: Enable collective discussion and critical review of scientific literature.
 - **Paper Selection**:

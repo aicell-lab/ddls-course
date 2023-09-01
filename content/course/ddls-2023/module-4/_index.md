@@ -1,6 +1,6 @@
 ---
 title: "Module 4: Computational Methods in Evolution and Biodiversity (TBD)"
-summary: "Lecture by Tobias Andermann (DDLS Fellow) et al. on 19th and 21st Sept, will join the Computational Methods in Evolution and Biodiversity workshop in Stockholm University."
+summary: "Lecture by Tobias Andermann (DDLS Fellow) et al. on 21st Sept, will join the Computational Methods in Evolution and Biodiversity workshop in Stockholm University."
 linkTitle: "Module 4"
 date: '2023-08-29'
 type: book
@@ -9,9 +9,9 @@ weight: 50
 
 This week, we will join the [workshop on Computational Methods in Evolution and Biodiversity](https://www.scilifelab.se/event/computational-methods-in-evolution-and-biodiversity/)(September 21, 09:00 – 17:00).
 
-## Lecture (Tuesday and Thursday)
+## Lecture (Thursday morning)
 
-The lectures are divided into two parts: the lecture on our usual time Tuesday 8am and the workshop lectures on Wednesday 9am (the whole morning).
+The lectures are divided into two parts: the workshop lectures on Thursday 9am (the whole morning).
 
 Feel free to attend all or part of the workshop lectures in the morning:
  - 09:00	Welcome and introduction
@@ -24,7 +24,7 @@ Feel free to attend all or part of the workshop lectures in the morning:
  - 11:50	Inference of ancestral recombination graphs for population genomics, Per Unneberg
 
 All these lectures are recommended, but not mandatory.
-## Computer lab (Thursday)
+## Computer lab (Thursday afternoon)
 
 The computer lab will be on September 21st, starting from 13:30, the place is [Vivi Täckholmsalen (Q-salen), NPQ-huset, Stockholm University](https://www.google.com/maps?ll=59.366002,18.060119&z=10&t=m&hl=en&gl=US&mapclient=embed&q=Svante+Arrhenius+v%C3%A4g+20+104+05+Stockholm).
 

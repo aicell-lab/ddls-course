@@ -1,6 +1,6 @@
 ---
 title: "Module 4: Computational Methods in Evolution and Biodiversity (TBD)"
-summary: "Lecture by Tobias Andermann (DDLS Fellow) et al. on 21st Sept, will join the Computational Methods in Evolution and Biodiversity workshop in Stockholm University."
+summary: "We will join the Computational Methods in Evolution and Biodiversity workshop in Stockholm University, participate in lectures by Serge Belongie, Katie E. Lotterhos, Tobias Andermann (DDLS Fellow) et al. on 21st Sept. The computer lab will happen on the same day in the afternoon."
 linkTitle: "Module 4"
 date: '2023-08-29'
 type: book
@@ -9,9 +9,13 @@ weight: 50
 
 This week, we will join the [workshop on Computational Methods in Evolution and Biodiversity](https://www.scilifelab.se/event/computational-methods-in-evolution-and-biodiversity/)(September 21, 09:00 – 17:00).
 
+**Important Note: You must register the workshop using the link [here](https://www.scilifelab.se/event/computational-methods-in-evolution-and-biodiversity/)**
+
 ## Lecture (Thursday morning)
 
 The lectures are divided into two parts: the workshop lectures on Thursday 9am (the whole morning).
+
+All the lectures are optionl, but highly recommended, especially the keynote speakers. The second part is useful too, since it will introduce the computer lab in the afternoon.
 
 Feel free to attend all or part of the workshop lectures in the morning:
  - 09:00	Welcome and introduction
@@ -33,8 +37,8 @@ There are 3 parallel workshops (Room P232, P224, P216) in the afternoon, so plea
  - Building your own customized neural network model (bring your own data if you want), Tobias Andermann
  - Introduction to whole genome tree sequence inference with tsinfer, Per Unneberg
 
-Special notes to pass the course, you will have to submit the notebooks [here](https://forms.gle/GFHtcP1jpomVYdvp8) to be graded for the lab.
+**Special notes to pass the course, you will have to submit the notebooks [here](https://forms.gle/GFHtcP1jpomVYdvp8) to be graded for the lab.**
 
-## Seminar
+## Seminar (Friday)
 
 TODO: Papers to be decided.

@@ -1,13 +1,13 @@
 ---
-title: "Module 4: Multi-omics Data Analysis & AI in BioDiversity (TBD)"
-summary: "Lecture by Wen Zhong (DDLS Fellow), Tobias Andermann (DDLS Fellow) et al. on 19th and 21st Sept, will join the Computational Methods in Evolution and Biodiversity workshop in Stockholm University."
+title: "Module 4: Computational Methods in Evolution and Biodiversity (TBD)"
+summary: "Lecture by Tobias Andermann (DDLS Fellow) et al. on 19th and 21st Sept, will join the Computational Methods in Evolution and Biodiversity workshop in Stockholm University."
 linkTitle: "Module 4"
 date: '2023-08-29'
 type: book
 weight: 50
 ---
 
-This week, we will have a lecture by [Wen Zhong (DDLS Fellow)](https://www.scilifelab.se/researchers/wen-zhong/) on multi-omics data analysis (September 19, 08:00 – 9:00), then we will join the [workshop on Computational Methods in Evolution and Biodiversity](https://www.scilifelab.se/event/computational-methods-in-evolution-and-biodiversity/)(September 21, 09:00 – 17:00).
+This week, we will join the [workshop on Computational Methods in Evolution and Biodiversity](https://www.scilifelab.se/event/computational-methods-in-evolution-and-biodiversity/)(September 21, 09:00 – 17:00).
 
 ## Lecture (Tuesday and Thursday)
 

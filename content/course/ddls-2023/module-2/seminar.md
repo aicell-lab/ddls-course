@@ -1,5 +1,6 @@
 ---
 title: "Seminar 2: Large language models generate functional protein sequences across diverse families"
+linkTitle: "Seminar 2"
 date: '2023-08-26'
 weight: 20
 type: book

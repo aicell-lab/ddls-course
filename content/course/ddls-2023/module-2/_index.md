@@ -7,6 +7,10 @@ type: book
 weight: 30
 ---
 
-We will introduce the basics of generative AI and its potential in life science. We will also cover recent trend of using generative large-language models and practical skills on how to use ChatGPT for reading, writing, planning and code generation.
+We will introduce the basics of generative AI and its potential in life science.
+
+One of the focus is on how generative AI can be used for generating protein sequences.
+
+We will also cover recent trend of using generative large-language models and practical skills on how to use ChatGPT for reading, writing, planning and code generation.
 
 Lecture by Wei Ouyang on 5th Sept.

@@ -14,3 +14,5 @@ Lecture by Wei Ouyang on 5th Sept.
 In the lecture, we will cover from Generative Adversarial Networks, Diffusion Models and Large Language Models.
 
 In the lab and seminar, our focus is on how generative AI can be used in protein design.
+
+**🔥 New: The lecture slides are available [here](/uploads/Lecture-Generative AI and whole-cell modeling.pdf).**

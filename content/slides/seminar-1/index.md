@@ -20,7 +20,7 @@ Learning how to:
 * Prepare to discuss the answers to questions from the question sheet.
 
 -----
-## [Question Sheet](https://ddls.aicell.io/uploads/JournalClub.pdf): Your Tool
+## [Question Sheet](https://ddls.aicell.io/slides/question-sheet/): Your Tool
 A set of questions designed to guide your reading and understanding.
 * Hypothesis
 * Methodology

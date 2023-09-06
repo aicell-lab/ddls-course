@@ -14,6 +14,12 @@ Deep-learning language models have shown promise in various biotechnological app
 
 ## Assignment
 
- - Read the paper and using the [Question Sheet](https://ddls.aicell.io/uploads/JournalClub.pdf) which contains a set of questions designed to guide your reading and understanding.
+ - Read the paper and using the [Question Sheet](/question-sheet/) which contains a set of questions designed to guide your reading and understanding.
  - Fill out your question sheet and [submit here](https://forms.gle/D9k6T2StgPttzbrr8) before the seminar.
  - Be ready to discuss in the seminar.
+
+## Join the Seminar
+
+During the seminar, we will walk through the question sheet together. Everyone will be selected at random to answer one or more questions from the question sheet, and/or describe selected figures.
+
+ {{< cta cta_text="Show the Seminar Question Sheet" cta_link="/slides/question-sheet/" >}}

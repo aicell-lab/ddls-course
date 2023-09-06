@@ -61,7 +61,7 @@ For all the invited guests, we would like to ask you to provide one of two repre
   - Should be a peer-reviewed paper related to your field, ideally your published paper.
   - Should introduce models or applications of biological phenomena based on data.
 - **Duration**: Usually held on Fridays, approx 2 hours.
-- **Format**: Students will read the paper before the session, discuss and answer the [question sheet](/uploads/JournalClub.pdf) during the seminar.
+- **Format**: Students will read the paper before the session, discuss and answer the [question sheet](/question-sheet/) during the seminar.
 - **Grading**: Participation and answers to the questions will be graded.
 
 ---

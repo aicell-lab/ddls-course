@@ -19,7 +19,7 @@ Please follow the instructions and finish the exercises in this notebook: [<img 
 
 After you have completed the exercises in the notebook: 
  - During the lab session, tell the lab teacher so he/she can go through what you have done together and maybe ask you a few questions. 
- - Submit the notebook to the [submission form](https://forms.gle/gK3b1z2Sca2VYmcW7).
+ - Export the notebook in Google Colab by using `File -> Download -> Download .ipynb`, then submit the notebook file to the [submission form](https://forms.gle/gK3b1z2Sca2VYmcW7).
 
 **Submission Deadline: Before Friday at 12:00 (noon) CET**
 

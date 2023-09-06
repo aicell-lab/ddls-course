@@ -13,21 +13,17 @@ Here are the references:
  - [De novo design of protein structure and function with RFdiffusion](https://www.nature.com/articles/s41586-023-06415-8)
  - [Robust deep learning–based protein sequence design using ProteinMPNN](https://www.science.org/doi/10.1126/science.add2187)
 
-### Preparation
+## Colab Notebook Exercises
 
-Before we start the computer lab, please use Google Search or consult ChatGPT to find answers to the following questions:
+Please follow the instructions and finish the exercises in this notebook: [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/uploads/ddls_2023_RFdiffusion.ipynb)
 
-1. What is a protein's primary, secondary, and tertiary structure?
-2. Explain the term 'monomer design' in the context of protein structures.
-3. What is conditional and unconditional design of a protein?
-4. What is a `contig` in the context of protein design?
-5. What is `contigmap.contigs`, and how does it specify the protein being built?
-6. What is `scaffold motifs` in protein design?
-7. Optionally, do a recap on what is a diffusion model and skimming through this paper [here](https://www.science.org/doi/10.1126/science.abj8754) to get an idea on what is the RoseTTAFold structure prediction network.
+After you have completed the exercises in the notebook: 
+ - During the lab session, tell the lab teacher so he/she can go through what you have done together and maybe ask you a few questions. 
+ - Submit the notebook to the [submission form](https://forms.gle/gK3b1z2Sca2VYmcW7).
 
-## Running the Colab Notebook
+**Submission Deadline: Before Friday at 12:00 (noon) CET**
 
-Please use this notebook to run the code: [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/uploads/ddls_2023_RFdiffusion.ipynb)
+**NOTE: If you cannot join the lab session, please submit the notebook before the deadline, and find the lab teacher in a next lab session to go through what you have done together.**
 
 ## Tips for using the Colab Notebook
 

@@ -28,18 +28,3 @@ After you have completed the exercises in the notebook:
 **NOTE: If you cannot join the lab session, please submit the notebook before the deadline, and find the lab teacher in a next lab session to go through what you have done together.**
 
 **NOTE: For the seminar on Friday, please read the paper and submit the anwsers to the question sheet before the seminar, see [here](../seminar) for more details.**
-## Tips for using the Colab Notebook
-
-  - you can use the "!" to run shell commands in the notebook, e.g. `!git clone ...` or `!pip install ...`
-  - you can use the "%%bash" to run a block of shell commands in the notebook, e.g.:
-    ```
-    %%bash
-    ./scripts/run_inference.py 'contigmap.contigs=[150-150]' inference.output_prefix=test_outputs/test inference.num_designs=10
-    ```
-  - you can use the "%%writefile" to write a block of text to a file, e.g.:
-    ```
-    %%writefile test_inputs/test.fasta
-    >test
-    MAAVG
-    ```
-

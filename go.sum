@@ -1,6 +1,6 @@
 github.com/aicell-lab/aicell.io v0.0.0-20230814082632-04031e119237 h1:by2gRNP8/K7uZoBHG5Cj+tqViz7v1vpizFw6AbxPbcc=
-github.com/aicell-lab/aicell.io/modules/wowchemy-plugin-imjoy-slides v0.0.0-20230814082632-04031e119237 h1:/C2ZkRCe4oGpm3h859WdDpPbD4EcE+yAwBGKfbo7oz0=
-github.com/aicell-lab/aicell.io/modules/wowchemy-plugin-imjoy-slides v0.0.0-20230814082632-04031e119237/go.mod h1:iZUoQZpjE5+Jpws2t8IuLNFnV4OizlSgzxkB0KeAk4Q=
+github.com/aicell-lab/aicell.io/modules/wowchemy-plugin-imjoy-slides v0.0.0-20230827222547-512ed81679f7 h1:ZOtD3+47+KDGjbOpyUkyDKgFN8sflzRqNWT6auv8Bpc=
+github.com/aicell-lab/aicell.io/modules/wowchemy-plugin-imjoy-slides v0.0.0-20230827222547-512ed81679f7/go.mod h1:iZUoQZpjE5+Jpws2t8IuLNFnV4OizlSgzxkB0KeAk4Q=
 github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-core v0.1.0/go.mod h1:kJwI9H8dicHQCnP8G9EvUDI+oNg/yXcGsjGjwjXuM8I=
 github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-core v0.2.0/go.mod h1:kJwI9H8dicHQCnP8G9EvUDI+oNg/yXcGsjGjwjXuM8I=
 github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify v1.0.0 h1:blRMoXNtlxnqXlVi4eCdPtTfVpJkH9J1f6tEKDXimCY=

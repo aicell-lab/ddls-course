@@ -1,5 +1,5 @@
 ---
-title: "Computer Lab 2"
+title: "Computer Lab 2: Protein Design with RFdiffusion"
 linkTitle: "Lab 2"
 weight: 10
 type: book

@@ -7,7 +7,7 @@ type: book
 
 For the computer lab, you will be given a Jupyter notebook about spatial point pattern analysis.
 
-We will cover Ripley’s K curve testing, [DBSCAN](https://dl.acm.org/doi/10.5555/3001460.3001507) and [SR-Tesseler](https://www.nature.com/articles/nmeth.3579), a notebook will be made available on the day of the lab.
+In this notebook, we will cover Ripley’s K curve testing, DBSCAN and Voronoi Tessellation, a notebook will be made available on the day of the lab.
 
 Here are the references:
  - [Ripley K demo notebook](https://github.com/GeostatsGuy/PythonNumericalDemos/blob/master/Ripley_K_demo.ipynb)
@@ -16,7 +16,7 @@ Here are the references:
 
 ## Colab Notebook Exercises
 
-The notebook will be made available when we start the computer lab.
+Please follow the instructions and finish the exercises in this notebook: [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/uploads/ddls_2023_spatial_pattern_analysis.ipynb)
 
 After you have completed the exercises in the notebook: 
  - During the lab session, tell the lab teacher so he/she can go through what you have done together and maybe ask you a few questions. 

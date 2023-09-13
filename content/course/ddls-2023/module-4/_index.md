@@ -17,7 +17,7 @@ The lectures are divided into two parts: the workshop lectures on Thursday 9am (
 
 All the lectures are highly recommended, especially the keynote speakers. The second part is useful too, since it will introduce the computer lab in the afternoon.
 
-**For the paper discussion in the seminar on Friday, please try to attend the lecture: "11:25	Neural Networks for biodiversity research: challenges and opportunities by Tobias Andermann"**
+**For the seminar on Friday, please try to attend the lecture at 11:25,	titled as "Neural Networks for biodiversity research: challenges and opportunities by Tobias Andermann"**
 
 Feel free to attend all or part of the workshop lectures in the morning:
  - 09:00	Welcome and introduction

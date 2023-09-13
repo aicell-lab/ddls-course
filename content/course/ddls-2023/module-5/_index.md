@@ -20,4 +20,10 @@ The integration of multi-omics data in health and diseases is revolutionizing ou
 [Estibaliz Gómez de Mariscal (PhD)](https://esgomezm.github.io/), Instituto Gulbenkian de Ciência, Portugal
 
 In recent years, advances in the fields of artificial intelligence and machine learning have demonstrated the growing power of these technologies in analyzing even the most complex image content. Deep learning has been successfully applied in analysing microscopy images of cells. In this module, we will walk through commonly used deep neural networks, training techniques, as well as pre- and post-processing methods for building deep learning based cell image analysis workflows.
-.
+
+
+## Computer lab
+
+The computer lab will be made based on Lecutre 2 about bioimage analysis.
+
+

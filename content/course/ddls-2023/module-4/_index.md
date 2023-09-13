@@ -15,7 +15,9 @@ This week, we will join the [workshop on Computational Methods in Evolution and 
 
 The lectures are divided into two parts: the workshop lectures on Thursday 9am (the whole morning).
 
-All the lectures are optionl, but highly recommended, especially the keynote speakers. The second part is useful too, since it will introduce the computer lab in the afternoon.
+All the lectures are highly recommended, especially the keynote speakers. The second part is useful too, since it will introduce the computer lab in the afternoon.
+
+**For the paper discussion in the seminar on Friday, please try to attend the lecture: "11:25	Neural Networks for biodiversity research: challenges and opportunities by Tobias Andermann"**
 
 Feel free to attend all or part of the workshop lectures in the morning:
  - 09:00	Welcome and introduction
@@ -24,7 +26,7 @@ Feel free to attend all or part of the workshop lectures in the morning:
  - 10:30	Coffee
  - Introduction to Workshop x 3
  - 11:00	Looking at population structure from a machine learning perspective, Marcin Kierczak
- - 11:25	Neural Networks for biodiversity research: challenges and opportunities, Tobias Andermann
+ - **11:25	Neural Networks for biodiversity research: challenges and opportunities, Tobias Andermann** (Useful for the seminar on Friday)
  - 11:50	Inference of ancestral recombination graphs for population genomics, Per Unneberg
 
 All these lectures are recommended, but not mandatory.
@@ -41,4 +43,4 @@ There are 3 parallel workshops (Room P232, P224, P216) in the afternoon, so plea
 
 ## Seminar (Friday)
 
-TODO: Papers to be decided.
+On Friday, we will have a seminar in the morning at 10, see [seminar](./seminar).

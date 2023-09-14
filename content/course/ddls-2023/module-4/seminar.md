@@ -12,7 +12,7 @@ This week, please read the paper [The origin and evolution of open habitats in N
 ## Assignment
 
  - Read the paper and using the [Question Sheet](/question-sheet/) which contains a set of questions designed to guide your reading and understanding.
- - Fill out your question sheet, submission the answers in pdf file [here](https://forms.gle/F3K2syw88qc1jofRA)
+ - Fill out your question sheet, submit the answers in pdf file [here](https://forms.gle/F3K2syw88qc1jofRA) **before Friday 10:00**.
  - Be ready to discuss in the seminar.
 
 ## Join the Seminar

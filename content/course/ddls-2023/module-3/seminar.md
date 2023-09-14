@@ -12,7 +12,7 @@ This week, please read the paper [Dynamic Bayesian Cluster Analysis of Live-Cell
 ## Assignment
 
  - Read the paper and using the [Question Sheet](/question-sheet/) which contains a set of questions designed to guide your reading and understanding.
- - Fill out your question sheet, submission the answers in pdf file [here](https://forms.gle/cRyB9MQ4cDjFeNGE8)
+ - Fill out your question sheet, submit the answers in pdf file [here](https://forms.gle/cRyB9MQ4cDjFeNGE8) **before Friday 10:00**.
  - Be ready to discuss in the seminar.
 
 ## Join the Seminar

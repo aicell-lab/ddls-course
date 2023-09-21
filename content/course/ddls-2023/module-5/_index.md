@@ -13,6 +13,8 @@ This week, we will have two lectures on Tuesday, September 26th at 8:00-10:00.
 
 **8:00-9:00, Tuesday, September 26th**
 
+**Join over zoom: https://kth-se.zoom.us/j/69812177998**
+
 [Wen Zhong (DDLS Fellow)](https://www.scilifelab.se/researchers/wen-zhong/), Linköpings Universitet, Sweden
 
 The integration of multi-omics data in health and diseases is revolutionizing our understanding of complex biological systems and accelerating the advancement of precision medicine. By combining genomics, transcriptomics, proteomics, and other omics layers, researchers can identify intricate relationships and pathways that inform personalized treatment strategies. These data-driven approaches are facilitated by advanced computational algorithms and AI technologies, promising more accurate diagnoses and effective interventions for improved patient care.
@@ -20,6 +22,8 @@ The integration of multi-omics data in health and diseases is revolutionizing ou
 ## Lecture 2: BioImage Analysis and Deep Learning
 
 **9:00-10:00, Tuesday, September 26th**
+
+**Join over zoom: https://kth-se.zoom.us/j/69812177998**
 
 [Estibaliz Gómez de Mariscal (PhD)](https://esgomezm.github.io/), Instituto Gulbenkian de Ciência, Portugal
 

@@ -1,5 +1,5 @@
 ---
-title: "Module 4: Computational Methods in Evolution and Biodiversity (TBD)"
+title: "Module 4: Computational Methods in Evolution and Biodiversity"
 summary: "We will join the Computational Methods in Evolution and Biodiversity workshop in Stockholm University, participate in lectures by Serge Belongie, Katie E. Lotterhos, Tobias Andermann (DDLS Fellow) et al. on 21st Sept. The computer lab will happen on the same day in the afternoon."
 linkTitle: "Module 4"
 date: '2023-08-29'

@@ -11,7 +11,7 @@ This week, we will have two lectures on Tuesday, September 26th at 8:00-10:00.
 
 ## Lecture 1: Multi-omics Data Analysis
 
-**Time: 8:00-9:00**
+**8:00-9:00, Tuesday, September 26th**
 
 [Wen Zhong (DDLS Fellow)](https://www.scilifelab.se/researchers/wen-zhong/), Linköpings Universitet, Sweden
 
@@ -19,7 +19,7 @@ The integration of multi-omics data in health and diseases is revolutionizing ou
 
 ## Lecture 2: BioImage Analysis and Deep Learning
 
-**Time: 9:00-10:00**
+**9:00-10:00, Tuesday, September 26th**
 
 [Estibaliz Gómez de Mariscal (PhD)](https://esgomezm.github.io/), Instituto Gulbenkian de Ciência, Portugal
 

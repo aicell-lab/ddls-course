@@ -1,6 +1,6 @@
 ---
 title: "Seminar 5: The Multi-modality Cell Segmentation Challenge: Towards Universal Solutions"
-linkTitle: "Seminar 4"
+linkTitle: "Seminar 5"
 date: '2023-08-26'
 weight: 20
 type: book

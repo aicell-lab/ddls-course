@@ -12,7 +12,7 @@ A notebook will be made available on the day of the lab.
 
 After you have completed the exercises in the notebook: 
  - During the lab session, tell the lab teacher so he/she can go through what you have done together and maybe ask you a few questions. 
- - Export the notebook in Google Colab by using `File -> Download -> Download .ipynb`, then submit the notebook file to the [submission form](https://forms.gle/MpYYxyZqPeRF7f9r6).
+ - Export the notebook in Google Colab by using `File -> Download -> Download .ipynb`, then submit the notebook file to the [submission form](https://forms.gle/FEyrTsMiaZQnWXLF7).
 
 
 **Computer Lab Submission Deadline: Before Wednesday at 18:00 CET**

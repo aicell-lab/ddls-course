@@ -8,7 +8,7 @@ For the computer lab, you will be given a Jupyter notebook about bioimage analys
 
 ## Colab Notebook Exercises
 
-A notebook will be made available on the day of the lab.
+Please follow the instructions and finish the exercises in this notebook: [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/uploads/ddls_2023_U_Net_PhC_C2DL_PSC_segmentation.ipynb)
 
 After you have completed the exercises in the notebook: 
  - During the lab session, tell the lab teacher so he/she can go through what you have done together and maybe ask you a few questions. 

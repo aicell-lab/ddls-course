@@ -31,6 +31,9 @@ In recent years, advances in the fields of artificial intelligence and machine l
 
 **🔥 New: The slides for lecture 2 is available [here](/uploads/Lecture-deep-learning-bioimage-analyis-kth-Sep2023.pdf), thank Esti for kindly sharing them.**
 
+
+**Extended reading: C Bouchard et al., Task-Assisted GAN for super resolution with STED microscopy, Nature Machine Intelligence, 2023: https://www.nature.com/articles/s42256-023-00689-3**
+
 ## Computer lab
 
 The computer lab will be made based on Lecutre 2 about bioimage analysis.

@@ -8,7 +8,9 @@ For the computer lab, you will be given a Jupyter notebook about AlphaFold.
 
 ## Colab Notebook Exercises
 
-Please follow the instructions and finish the exercises in this notebook: [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://drive.google.com/drive/folders/1jdJqQF0Sg8ZyFX9VXkBC0IZqyWNSac3i?usp=sharing)
+Please follow the instructions and finish the exercises in this notebook: 
+
+[<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/uploads/ddls_2023_AlphaFold2.ipynb)
 
 After you have completed the exercises in the notebook: 
  - During the lab session, tell the lab teacher so he/she can go through what you have done together and maybe ask you a few questions.

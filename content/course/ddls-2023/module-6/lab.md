@@ -1,5 +1,5 @@
 ---
-title: "Computer Lab 6: TBD"
+title: "Computer Lab 6: "
 linkTitle: "Lab 6"
 weight: 10
 type: book
@@ -8,11 +8,11 @@ For the computer lab, you will be given a Jupyter notebook about AlphaFold.
 
 ## Colab Notebook Exercises
 
-A notebook will be made available here before the lab session.
+Please follow the instructions and finish the exercises in this notebook: [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://drive.google.com/drive/folders/1jdJqQF0Sg8ZyFX9VXkBC0IZqyWNSac3i?usp=sharing)
 
 After you have completed the exercises in the notebook: 
- - During the lab session, tell the lab teacher so he/she can go through what you have done together and maybe ask you a few questions. 
- - Export the notebook in Google Colab by using `File -> Download -> Download .ipynb`, then submit the notebook file to the [submission form](https://forms.gle/E39oxT8AuUB5AxE77).
+ - During the lab session, tell the lab teacher so he/she can go through what you have done together and maybe ask you a few questions.
+ - Be sure to make hypotheses and evaluate them rationally instead of randomly trying different combinations of parameters
 
 
 **Computer Lab Submission Deadline: Before Wednesday at 18:00 CET**

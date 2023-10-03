@@ -1,12 +1,12 @@
 ---
-title: "Seminar 6: TBD"
+title: "Seminar 6: Sampling alternative conformational states of transporters and receptors with AlphaFold2"
 linkTitle: "Seminar 6"
 date: '2023-08-26'
 weight: 20
 type: book
 ---
 
-This week, please read the paper: TBD.
+This week, please read the paper [Sampling alternative conformational states of transporters and receptors with AlphaFold2](https://elifesciences.org/articles/75751).
 
 ## Assignment
 

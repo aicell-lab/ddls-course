@@ -5,21 +5,59 @@ summary: Project plan for the course project.
 type: book
 date: '2021-10-25'
 ---
-For your projects, select a paper falling under the topic of data-driven life science, which you want to read in details. Identify an interesting knowledge gap that you can address in your project. Note that while it is not crucial that the code is available, you need to be able to retrieve at least the paper's dataset to work with in your project.
 
-This project plan should be maximum 2 pages, and should contain
+**Project Plan Instructions: Data-Driven Life Sciences Course**
 
--   a brief intro to the topic
--   a description of the goals of the paper
--   a description of the main results
--   a description of the data been used
--   a description of the gap you identified (phrased as a question)
--   a plan to address the knowledge gap
+In this module, you will select a dataset from Kaggle under the Biology tag ([Kaggle Biology Datasets](https://www.kaggle.com/datasets?tags=7100-Biology)) and propose an analysis plan to introduce an advanced AI method to analyze the data. This can be a method discussed during the course or from a recent AI paper. The analysis tasks may include extracting statistics, segmenting images, classification, or generating new data.
 
-For example, if you pick an interesting biological paper that did not do a thorough job at optimizing the analysis protocol, your knowledge gap might be "Would the conclusions of the paper be different if a different analysis method was used?" or "What is the optimal analysis method for this dataset?"
+1. **Dataset Selection**:
+   - Work in pairs or individually to select a dataset.
+   - Ensure the dataset is of good quality, manageable scale, and has well-structured labels.
+   - Review the 'Code' tab under the dataset on Kaggle to understand what others have done with the data in notebooks.
 
-The plan might then go along the lines: We will thoroughly test hyperparameter tuning under different types of cross validation for three classes of methods (linear regression, decision trees and convolutional neural network) to identify the best analysis conditions and report how the results vary with the method and hyperparameter set.
+2. **AI Method Selection**:
+   - Choose an advanced AI method; aim for more recent methods if possible.
+   - Look for available code to ease the implementation.
+   - Utilize ChatGPT for brainstorming ideas and conduct some preliminary tests on the dataset to ensure feasibility.
 
-This is of course a nonsensical example, as linear regression and CNNs are not expected to be used for the same dataset: try to make a realistic plan and suggest methods that apparently make sense for the data you want to work with. 
+3. **Analysis Plan**:
+   - Detail how you intend to apply the chosen AI method to your dataset.
+   - Discuss the expected outcomes and any potential challenges.
 
-If you pick a paper with a complex neural network pipeline and the code is available, the knowledge gap may be "What is the role of module X, Y and Z in this network?" and your project plan will involve modifying the behavior of these modules and seeing how the results depend on them. If you pick a paper that contains an imbalanced datatset that performs badly at predicting the outcomes for a minority class, your knoweldge gap could be "How can we modify the pipeline to reach better prediction power for this class?" or "How much data would we need to collect in order to reach a prediction accuracy of X% for this class?".
+4. **Implementation Plan**:
+   - Break down the steps necessary to carry out the analysis.
+   - Highlight any resources or tools you plan to use.
+
+5. **Evaluation Plan**:
+   - Define metrics for evaluating your analysis.
+   - Discuss how you will compare your results with other methods, if applicable.
+
+6. **Project Timeline**:
+   - Breakdown of tasks with deadlines leading up to the submission and presentation dates.
+
+**Important Dates**:
+- **11th October, 13:00-17:00**: Analysis Plan Discussion.
+- **25th October, 08:00-13:00**: Project Presentation.
+
+**Final Report Structure**:
+- **Project Plan**:
+  - Include the project plan that you submitted earlier.
+- **Dataset Summary**:
+  - Provide a summary of the selected dataset.
+  - Discuss the data quality and any preprocessing steps taken.
+- **Method Description**:
+  - Describe the AI method you implemented.
+- **Implementation Details**:
+  - Explain how you carried out the analysis.
+- **Results**:
+  - Present the results of your implementation.
+- **Interpretation**:
+  - Interpret the results and discuss any insights gained.
+- **Conclusion**:
+  - Conclude what your findings suggest.
+  - Propose further improvements or future directions.
+- **Discussion**:
+  - Discuss the limitations and drawbacks of your work.
+  - Adhere to the 10-rule for paper writing discussed during the seminars.
+
+Ensure to submit your analysis plan for approval before starting, and feel free to reach out for guidance or suggestions throughout the project duration.

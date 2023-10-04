@@ -15,6 +15,7 @@ Please follow the instructions and finish the exercises in this notebook:
 After you have completed the exercises in the notebook: 
  - During the lab session, tell the lab teacher so he/she can go through what you have done together and maybe ask you a few questions.
  - Be sure to make hypotheses and evaluate them rationally instead of randomly trying different combinations of parameters
+ - Export the notebook in Google Colab by using `File -> Download -> Download .ipynb`, then submit the notebook file to the [submission form](https://forms.gle/9DYuL39Vie8JsUj57).
 
 
 **Computer Lab Submission Deadline: Before Wednesday at 18:00 CET**

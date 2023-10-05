@@ -36,8 +36,21 @@ In this module, you will select a dataset from Kaggle under the Biology tag ([Ka
    - Breakdown of tasks with deadlines leading up to the submission and presentation dates.
 
 **Important Dates**:
-- **11th October, 13:00-17:00**: Analysis Plan Discussion.
-- **25th October, 08:00-13:00**: Project Presentation.
+- Finalize Project Plan: **11th October, 13:00-17:00, location: SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
+- ~~Project Presentation: 25th October, 08:00-13:00~~
+- Project Presentation (Option 1): **Thursday 26th, 15:00-17:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
+- Project Presentation (Option 2): **Wednesday 1st, 9:00-12:00 at SciLifelab, Solna (Room Gamma-3-Tesla-G3551)**
+
+**Accessing SciLifeLab**
+Please note the following meeting locations will be at SciLifeLab, Sonla (Address: SciLifeLab, Tomtebodavägen 23, 171 65 Solna)
+
+To access the building, you will need an access card. Please follow the instructions below to obtain an access card:
+
+> The students will be able to pick up their access cards at the Service Desk located at the reception, opening hours are Mon-Fri 09:30-12:00. The student needs to show ID for pick up.
+
+During the 3-4 weeks time until Nov. 1st, you can use the access card to come to SciLifeLab if you want to work on the project, and get advice from the course teacher.
+
+Contact person: Wei Ouyang
 
 **Final Report Structure**:
 - **Project Plan**:

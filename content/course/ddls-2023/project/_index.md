@@ -99,7 +99,7 @@ Given that you have passed all the previous course modules, the final project re
 
 ## Accessing SciLifeLab
 
-Please note the following meeting locations will be at SciLifeLab, Sonla (Address: SciLifeLab, Tomtebodavägen 23, 171 65 Solna)
+Please note that some of the meeting locations will be at SciLifeLab, Sonla (Address: SciLifeLab, Tomtebodavägen 23, 171 65 Solna)
 
 To access the building, you will need an access card. Please follow the instructions below to obtain an access card:
 

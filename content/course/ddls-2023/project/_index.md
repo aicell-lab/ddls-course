@@ -105,6 +105,6 @@ To access the building, you will need an access card. Please follow the instruct
 
 > The students will be able to pick up their access cards at the Service Desk located at the reception, opening hours are Mon-Fri 09:30-12:00. The student needs to show ID for pick up.
 
-During the 3-4 weeks time until Nov. 1st, you can use the access card to come to SciLifeLab if you want to work on the project and discuss with others (any time in Gamma 2 lunch room), and get advice from the course teacher (during the two progress udpate meeting, at Gamma 3 Tesla room).
+During the 3-4 weeks time until Nov. 1st, you can use the access card to come to SciLifeLab if you want to work on the project and discuss with others (any time in Gamma 2 lunch room), and get advice from the course teacher (during the two progress update meeting, at Gamma 3 Tesla room).
 
 If asked for the contact person, tell the reception that you are attending a course organized by Wei Ouyang.

@@ -95,8 +95,8 @@ Given that you have passed all the previous course modules, the final project re
 - Meeting for progress update and feedbacks: **Wednesday 18th October, 15:00-16:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
 - Meeting for progress update and feedbacks: **Wednesday 25th October, 13:00-14:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
 - ~~Project Presentation: 25th October, 08:00-13:00~~
-- Project Presentation (Option 1): **Thursday 26th, 15:00-17:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
-- Project Presentation (Option 2): **Wednesday 1st, 9:00-12:00 at SciLifelab, Solna (Room Gamma-3-Tesla-G3551)**
+- Project Presentation (Option 1): **Thursday 26th October, 15:00-17:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
+- Project Presentation (Option 2): **Wednesday 1st November, 9:00-12:00 at SciLifelab, Solna (Room Gamma-3-Tesla-G3551)**
 - Submit the final report: **Before 18:00, 1st November, [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16)(Use the edit link to update your previous submission)**
 
 ## Accessing SciLifeLab

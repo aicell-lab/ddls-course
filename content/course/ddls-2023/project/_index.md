@@ -11,13 +11,11 @@ To work on the project, you can either work alone or find a partner. If you choo
 
 ## Project Plan
 
-Before starting the project, you will need to submit a preliminary project plan with a few dataset and AI method options, for approval (**Wednesday 11th October, 13:00**).
+Before starting the project, you will need to submit the preliminary plan via this [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16) as soon as possible, before **Wednesday 11th October, 13:00**. The course teacher will monitor the submission and provide feedbacks via email. The sooner we finally the plan, the sooner you can start to work on the project.
 
-Sumbit the preliminary plan via this [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16) as soon as possible, before **Wednesday 11th October, 13:00**. The course teacher will monitor the submission and provide feedbacks via email.
+During the meeting on 11th Oct. (at 13:00, [over zoom]( https://kth-se.zoom.us/j/69812177998)), we will discuss the plan individually or in pairs, the aim is to finalize the project plan so you can start to work on it.
 
-During the meeting on 11th Oct. (at 13:00, [over zoom]( https://kth-se.zoom.us/j/69812177998)), we will discuss the plan individually or in pairs. And we will finalize the project plan together.
-
-The final project plan (**submitted before Wednesday 11th, before 18:00**) should include the following:
+The project plan (**submitted before Wednesday 11th, before 18:00**) should include the following:
 
 1. **Dataset Selection**:
    - Work in pairs or individually to select a dataset.

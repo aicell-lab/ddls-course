@@ -33,9 +33,9 @@ Here is the updated schedule for the course:
 | 5       | Tue 26 Sep 08:00-10:00 | 🧑🏻‍🏫Lecture            | Wen & Esti                     | ~~FB51, Roslagstullsbacken~~ [Over Zoom](https://kth-se.zoom.us/j/69812177998)  |  Online  |
 | 5       | Wed 27 Sep 13:00-17:00 | 💻Computer Lab       | Antoni, Wei     | Butter                 |  In person      |
 | 5       | Fri 29 Sep 10:00-12:00 | 💬Seminar            | Wei                     | K53, Teknikringen       | In person       |
-| 6       | Tue 3 Oct 08:00-10:00  | 🧑🏻‍🏫Lecture            | Darko &  Daniel?                  | ~~FB51, Roslagstullsbacken~~ [Over Zoom](https://kth-se.zoom.us/j/69812177998)  |  Online  |
+| 6       | Tue 3 Oct 08:00-10:00  | 🧑🏻‍🏫Lecture            | Darko                  | ~~FB51, Roslagstullsbacken~~ [Over Zoom](https://kth-se.zoom.us/j/69812177998)  |  Online  |
 | 6       | Wed 4 Oct 13:00-17:00  | 💻Computer Lab       | Darko & Wei     | RB33, Roslagstullsbacken | In person       |
-| 6       | Fri 6 Oct 10:00-12:00  | 💬Seminar            | Wei              | FB55, Roslagstullsbacken |  In person      |
+| 6       | Fri 6 Oct 10:00-12:00  | 💬Seminar            | Darko              | FB55, Roslagstullsbacken |  In person      |
 | Exam    | ~~Wed 11 Oct 13:00-17:00~~ see [project](../../project) | 🎯Examination        | Wei, Antoni, Darko                  |    see [project](../../project)      |   |
 | Exam    | ~~Wed 25 Oct 08:00-13:00~~ see [project](../../project) | 🎯Examination        | Wei, Antoni, Darko              |       see [project](../../project)          |   |
 

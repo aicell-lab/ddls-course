@@ -86,11 +86,8 @@ In various modules, we will also have guest lectures and labs by
 
 -   Juliette Griffié: Stockholm University, SciLifeLab DDLS fellow(<juliette.griffie@dbb.su.se>)
 -   Wen Zhong:  Linköpings universitet, SciLifeLab DDLS fellow (<wen.zhong@scilifelab.se>)
--   Daniel Fürth: Uppsala university, SciLifeLab Fellow (<furth@scilifelab.uu.se>)
 -   Tobias Andermann: Uppsala university, SciLifeLab DDLS fellow (<tobias.andermann@ebc.uu.se>)
 -   Estibaliz Gómez de Mariscal: the Instituto Gulbenkian de Ciência, Portugal (<egomez@igc.gulbenkian.pt>)
-
--   To be confirmed: Lea Rems, the University of Ljubljana (<lea.rems@fe.uni-lj.si>)
 
 ## Course schedule
 

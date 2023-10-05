@@ -87,14 +87,14 @@ Given that you have passed all the previous course modules, the final project re
 
 ## Important Dates
 
-- Submit the Preliminary Project Plan: **Before 13:00, 11th October, [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16)**
-- Meeting to Discuss the Preliminary Project Plan: **11th October, 13:00-15:00, [over zoom](https://kth-se.zoom.us/j/69812177998)**
-- Submit the Finalize Project Plan: **Before 18:00, 11th October, [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16)(Use the edit link to update your previous submission)**
-- Meeting for progress update and feedbacks: **Wednesday 18th October, 15:00-16:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
-- Meeting for progress update and feedbacks: **Wednesday 25th October, 13:00-14:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
+- Submit the preliminary Project Plan: **Before 13:00, 11th October, [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16)**
+- Meeting to finalize the Project Plan: **11th October, 13:00-15:00, [over zoom](https://kth-se.zoom.us/j/69812177998)** (mandatory for everyone)
+- Submit the finalized Project Plan: **Before 18:00, 11th October, [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16)(Use the edit link to update your previous submission)**
+- Meeting for progress update and feedbacks: **Wednesday 18th October, 15:00-16:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)** (mandatory for those who choose to present on 26th Oct.)
+- Meeting for progress update and feedbacks: **Wednesday 25th October, 13:00-14:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)** (mandatory for those who choose to present on 1st Nov.)
 - ~~Project Presentation: 25th October, 08:00-13:00~~
-- Project Presentation (Option 1): **Thursday 26th October, 15:00-17:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
-- Project Presentation (Option 2): **Wednesday 1st November, 9:00-12:00 at SciLifelab, Solna (Room Gamma-3-Tesla-G3551)**
+- Project Presentation (Option 1): **Thursday 26th October, 15:00-17:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)** (recommended for everyone, mandatory for those who cannot attend option 2)
+- Project Presentation (Option 2): **Wednesday 1st November, 9:00-12:00 at SciLifelab, Solna (Room Gamma-3-Tesla-G3551)** (recommended for everyone, mandatory for those who cannot attend option 1)
 - Submit the final report: **Before 18:00, 1st November, [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16)(Use the edit link to update your previous submission)**
 
 ## Accessing SciLifeLab

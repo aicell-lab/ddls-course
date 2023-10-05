@@ -1,6 +1,6 @@
 ---
 title: Final DDLS Project
-linkTitle: Final DDLS Project
+linkTitle: Final Project
 summary: Final project plan and report for the DDLS course.
 type: book
 date: '2021-10-25'
@@ -47,7 +47,19 @@ During the project, you are welcome to work at SciLifeLab, Solna (in the Lunch r
 
 There will be two meetings for progress update and feedbacks on **Wednesday 18th October, 15:00-16:00** and **Wednesday 25th October, 13:00-14:00** at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551). Please come to SciLifeLab to meet each other and discuss the project progress, you can also use the opportunity to ask questions and get feedbacks.
 
-## Final Report Structure
+While working on the project, please take notes and update your project report, save figures and results to slides which you will use for the final presentation.
+
+## Final Report and Presentation
+
+For complete the project, you need to submit a project report and present your project together.
+
+There are two options for you to present your project:
+ - option 1: **Thursday 26th, 15:00-17:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
+ - option 2: **Wednesday 1st, 9:00-12:00 at SciLifelab, Solna (Room Gamma-3-Tesla-G3551)**
+
+Please choose one option according to your course schedule. If you work in pairs, be sure to present together.
+
+For the project report, it should cover the following content, maximum 5 pages:
 
 - **Project Plan**:
   - Include the project plan that you submitted earlier.
@@ -69,7 +81,11 @@ There will be two meetings for progress update and feedbacks on **Wednesday 18th
   - Discuss the limitations and drawbacks of your work.
   - Adhere to the 10-rule for paper writing discussed during the seminars.
 
-Ensure to submit your analysis plan for approval before starting, and feel free to reach out for guidance or suggestions throughout the project duration.
+Disregard which option you choose for the presentation, please submit the final report via this [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16) before **Wednesday 1st November, 18:00**.
+
+## Grading
+
+Given that you have passed all the previous course modules, the final project report and presentation will be graded as A-F for master students, and P/F for PhD students. The grade of the project will be used as the final grade for the course.
 
 ## Important Dates
 
@@ -81,6 +97,7 @@ Ensure to submit your analysis plan for approval before starting, and feel free 
 - ~~Project Presentation: 25th October, 08:00-13:00~~
 - Project Presentation (Option 1): **Thursday 26th, 15:00-17:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)**
 - Project Presentation (Option 2): **Wednesday 1st, 9:00-12:00 at SciLifelab, Solna (Room Gamma-3-Tesla-G3551)**
+- Submit the final report: **Before 18:00, 1st November, [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16)(Use the edit link to update your previous submission)**
 
 ## Accessing SciLifeLab
 

@@ -90,7 +90,7 @@ Given that you have passed all the previous course modules, the final project re
 - Submit the preliminary Project Plan: **Before 13:00, 11th October, [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16)**
 - Meeting to finalize the Project Plan: **11th October, 13:00-15:00, [over zoom](https://kth-se.zoom.us/j/69812177998)** (mandatory for everyone)
 - Submit the finalized Project Plan: **Before 18:00, 11th October, [submission form](https://forms.gle/VfdP8Yf7mkFHhdv16)(Use the edit link to update your previous submission)**
-- ~~Meeting for progress update and feedbacks: **Wednesday 18th October, 15:00-16:00**
+- Meeting for progress update and feedbacks: **Wednesday 18th October, 15:00-16:00**
 ~~at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)~~ **[over zoom](https://kth-se.zoom.us/j/69812177998)** (mandatory for those who choose to present on 26th Oct.)
 - Meeting for progress update and feedbacks: **Wednesday 25th October, 13:00-14:00 at SciLifeLab, Solna (Room Gamma-3-Tesla-G3551)** (mandatory for those who choose to present on 1st Nov.)
 - ~~Project Presentation: 25th October, 08:00-13:00~~

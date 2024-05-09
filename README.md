@@ -6,6 +6,12 @@ See the website at [https://ddls.aicell.io](https://ddls.aicell.io).
 
 ## Development
 
+Make sure you have hugo and go installed. On MacOS you can install them using brew:
+```bash
+brew install hugo
+brew install go
+```
+
 Run the following command to start a local development server:
 
 ```bash

@@ -206,8 +206,8 @@ For questions, please email the course responsible, see contact [here](/contact/
 
 In this course, you will meet:
 -   {{< mention "wei" >}}, assistant professor in biophysics who will be holding the lectures, seminars and grading them (<weio@kth.se>). Wei is also the course responsible.
--   {{< mention "antoni" >}}, PhD student in biophysics, who will be holding and grading the computer labs ([awma@kth.se)](mailto:awma@kth.se)
--   {{< mention "darko" >}}, PhD student in biophysics, who will join us in module 6, for giving lecture, holding and grading the computer labs (<darmi@kth.se>)
+-   {{< mention "songtao" >}}, PhD student in biophysics, who will be teaching assistant for the course, chairing lectures, holding the computer labs and journal clubs [songtao.cheng@scilifelab.se)](mailto:songtao.cheng@scilifelab.se)
+-   {{< mention "nils" >}}, PhD student in biophysics, who will be teaching assistant for the course, chairing lectures, holding the computer labs and journal clubs(<nils.mechtel@scilifelab.se>)
 
 In various modules, we will also have guest lectures and labs by
 

@@ -45,7 +45,7 @@ email: ''
 
 # Organizational groups that you belong to (for People widget)
 user_groups:
-  - Teachers
+  - Alumni-Teachers
 ---
 
 I am a researcher interested in membrane proteins. I have extensive experience using different mathematical approaches to describe the mechanism of action of GPCRs and ATP Synthase.

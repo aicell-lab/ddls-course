@@ -48,6 +48,18 @@ For KTH students, you can register for the course at the KTH course selection sy
 The course consists of 6 modules: a basic module and 5 elective modules. Each module is a stand-alone short-form course with 3 sessions per module. Completing all 6 modules earns a total of 7.5 ECTS.
 
 ## Modules and Certification
+Each course module contains 3 main activities: a lecture on Tuesday, giving background information about the topic(s) of the week; a computer lab, usually on Wednesday, where you will practically explore data exploration using Python in Jupyter notebooks; and a journal club on Friday where you will collectively explain and discuss an assigned research paper.
+
+Both the computer lab and the journal club are mandatory and graded activities!
+
+- For the labs, you be given a Jupyter notebook with tutorials and coding exercises. You will be running and practicing coding by running the Jupyter notebook in [Google Colab](https://colab.research.google.com/?utm_source=scs-index). During the lab session, you can discuss your answers with the lab teachers. You will submit your final notebook with answers to the questions to be graded.
+
+- For the journal club, you will have a list of questions (the same every week) which we will answer during the journal club. Your participation and answer to these questions will be graded during the journal club.
+
+In addition, in the final project week / hackathon, course participants will decide on a project to be conducted in pairs (Ms students) or alone (PhD students) and followed by an oral presentation. The project and presentation will be graded by peers and the examiner.
+
+
+You can sign up partially or for the whole course. Each module is worth a certain number of ECTS credits, and you can choose to participate in the modules that interest you most. However, to obtain a certification for participation, you must complete all modules.
 
 Module 1 (basic module) is a prerequisite for obtaining certification for attendance in any of the subsequent elective modules. To receive a certificate, you must:
 
@@ -65,28 +77,18 @@ The first module covers course basics and prerequisites. The subsequent modules 
 
 -   A seminar on Friday for collective explanation and discussion of an assigned research paper
 
+
+ {{< cta cta_text="Register Now" cta_link="https://forms.gle/9gmxpEE6X6HZ1wLa7" >}}
+
+
 ## Self-directed Learning
 
 One of the principal objectives of this course is to instill in you a data-driven mindset essential for life science research. More importantly, we aim to teach you the art of "learning how to learn." This involves honing your ability to independently acquire new knowledge and skills. ChatGPT serves as an excellent tool to facilitate this self-directed learning process. Instead of focusing solely on the course content, we encourage you to embrace this broader, skill-centric approach to education. We will use this self-directed learning approach extensively in the computer lab and journal club sessions.
 
 
-## Course Modules (Tentative)
+## Course Modules
 
-Each course module contains 3 main activities: a lecture on Tuesday, giving background information about the topic(s) of the week; a computer lab, usually on Wednesday, where you will practically explore data exploration using Python in Jupyter notebooks; and a journal club on Friday where you will collectively explain and discuss an assigned research paper.
-
-Both the computer lab and the journal club are mandatory and graded activities!
-
-- For the labs, you be given a Jupyter notebook with tutorials and coding exercises. You will be running and practicing coding by running the Jupyter notebook in [Google Colab](https://colab.research.google.com/?utm_source=scs-index). During the lab session, you can discuss your answers with the lab teachers. You will submit your final notebook with answers to the questions to be graded.
-
-- For the journal club, you will have a list of questions (the same every week) which we will answer during the journal club. Your participation and answer to these questions will be graded during the journal club.
-
-In addition, in the final project week / hackathon, course participants will decide on a project to be conducted in pairs (Ms students) or alone (PhD students) and followed by an oral presentation. The project and presentation will be graded by peers and the examiner.
-
-
-You can sign up partially or for the whole course. Each module is worth a certain number of ECTS credits, and you can choose to participate in the modules that interest you most. However, to obtain a certification for participation, you must complete all modules.
-
- {{< cta cta_text="Register Now" cta_link="https://forms.gle/9gmxpEE6X6HZ1wLa7" >}}
-
+**Note: The exact content for each module may be subject to change. Please refer to the updated schedule for the most current information.**
 
 ### Module 1 [0.5 ECTS] - Introduction to DDLS, AI and ChatGPT
 

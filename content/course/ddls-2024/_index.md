@@ -209,9 +209,6 @@ In this course, you will meet:
 -   {{< mention "songtao" >}}, PhD student in biophysics, who will be teaching assistant for the course, chairing lectures, holding the computer labs and journal clubs [songtao.cheng@scilifelab.se)](mailto:songtao.cheng@scilifelab.se)
 -   {{< mention "nils" >}}, PhD student in biophysics, who will be teaching assistant for the course, chairing lectures, holding the computer labs and journal clubs(<nils.mechtel@scilifelab.se>)
 
-In various modules, we will also have guest lectures and labs by
-
--  TBD
 
 ## Course schedule
 

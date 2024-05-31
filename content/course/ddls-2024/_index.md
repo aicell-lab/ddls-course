@@ -15,6 +15,7 @@ tags:
 
 
 Welcome to the Data-driven Life Sciences 2024 course, where you will explore the intersection of data science, artificial intelligence, and life sciences to drive innovation and discovery. This fully online course culminates in an in-person hackathon, fostering a vibrant community that gathers the DDLS and SciLifeLab members.
+
 The 6 modules aim to introduce learners to computer-driven life sciences, covering application areas in data-driven life sciences. Guest lecturers (DDLS Fellows, SciLifeLab fellows, and SciLifeLab facility training providers) will teach topics including technologies and analysis of data sets from proteomics, transcriptomics, biomolecular structure, molecular dynamics simulations, and various imaging techniques. These modules present, analyze, and discuss models of biological phenomena and related scientific breakthroughs based on such data analysis.
 
  {{< cta cta_text="Register Now" cta_link="https://forms.gle/9gmxpEE6X6HZ1wLa7" >}}

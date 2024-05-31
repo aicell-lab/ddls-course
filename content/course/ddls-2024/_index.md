@@ -173,7 +173,7 @@ This session will cover the integration of computer science, math, and software 
 
 **Computer Lab**: The lab will feature examples of cell modeling and using GPT models to enable automation. Participants will gain hands-on experience with computational modeling techniques and explore how large language models can be utilized to streamline and automate laboratory processes. This session will provide practical insights into the integration of AI tools for enhancing research efficiency and innovation.
 
-### Hackathon at SciLifeLab - for course participants and DDLS fellows
+### Final Project: Hackathon at SciLifeLab - for course participants and DDLS fellows
 
 **Start date**: Week 41 (October 9th, 2024)
 

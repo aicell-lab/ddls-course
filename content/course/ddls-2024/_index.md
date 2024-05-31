@@ -20,7 +20,7 @@ The 6 modules aim to introduce learners to computer-driven life sciences, coveri
  {{< cta cta_text="Register Now" cta_link="https://forms.gle/9gmxpEE6X6HZ1wLa7" >}}
 
 For KTH students, you can register for the course at the KTH course selection system:
- - [`FSK3538` (PhD)](https://www.kth.se/student/kurser/kurs/FSK3538): PhD student sign up [here](https://forms.gle/T8gtrsJL3nf1Dqwf6).
+ - [`FSK3538` (PhD)](https://www.kth.se/student/kurser/kurs/FSK3538): PhD student sign up [here](https://forms.gle/9gmxpEE6X6HZ1wLa7).
 
  - [`SK2538` (master's)](https://www.kth.se/student/kurser/kurs/SK2538)
 

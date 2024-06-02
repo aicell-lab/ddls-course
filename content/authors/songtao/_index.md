@@ -68,7 +68,3 @@ My expertise in machine learning and lab automation makes me a good fit for the 
 ## What I Would Like to Work On at the AICell Lab
 
 I would like to learn about developing lab automation and artificial intelligence systems. This includes the application of robotics, automation control theory, and more knowledge about artificial intelligence. I also want to exercise my ability to develop related projects.
-
----
-
-Read a welcome post with an interview with Songtao here: [A Landmark Welcome to Songtao Cheng, AICell Lab's First PhD Student](/post/welcome-songtao/).

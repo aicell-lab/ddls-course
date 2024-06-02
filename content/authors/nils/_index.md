@@ -62,7 +62,3 @@ I'm passionate about the intersection of AI and cell biology. At AICell Lab, I a
 - Outdoor Sports
 - Nature Exploration
 - Plant Enthusiasm
-
----
-
-Read a welcome post with an interview with Gabe here: [A Warm Welcome to Nils Mechtel, AICell Lab's Second PhD Student](/post/welcome-nils/).

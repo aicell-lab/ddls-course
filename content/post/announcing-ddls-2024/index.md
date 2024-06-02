@@ -3,6 +3,8 @@ title: Announcing the 2024 Data-Driven Life Sciences Course
 date: 2024-06-02
 ---
 
+![ddls course poster](./ddls-course-2024-poster.png)
+
 We are thrilled to announce the start of the new Data-Driven Life Sciences course for 2024, designed to explore the intersection of data science, artificial intelligence, and life sciences to drive innovation and discovery. This fully online course culminates in an in-person hackathon, fostering a vibrant community that gathers the DDLS and SciLifeLab members.
 
 ---

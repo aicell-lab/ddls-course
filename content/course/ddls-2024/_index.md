@@ -2,7 +2,7 @@
 title: "📊 HT2024: Data-driven Life Sciences"
 linkTitle: Overview
 summary: Course content of the Data-driven Life Sciences course offered in 2024.
-date: '2023-08-01'
+date: '2024-05-01'
 type: book
 tags:
   - current

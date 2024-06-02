@@ -7,6 +7,9 @@ date: 2024-06-02
 
 We are thrilled to announce the start of the new Data-Driven Life Sciences course for 2024, designed to explore the intersection of data science, artificial intelligence, and life sciences to drive innovation and discovery. This fully online course culminates in an in-person hackathon, fostering a vibrant community that gathers the DDLS and SciLifeLab members.
 
+
+ {{< cta cta_text="Register Now" cta_link="https://forms.gle/9gmxpEE6X6HZ1wLa7" >}}
+
 ---
 
 ## What's New This Year?
@@ -108,3 +111,7 @@ The applicants should be equipped with basic knowledge in life science and basic
 - **Confirmation to applicants:** Approximately a week after the deadline
 
 For further questions, please contact the course leader Dr. Wei Ouyang <weio@kth.se> and <traininghub@scilifelab.se>.
+
+
+ {{< cta cta_text="Register Now" cta_link="https://forms.gle/9gmxpEE6X6HZ1wLa7" >}}
+ 

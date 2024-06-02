@@ -9,9 +9,9 @@ weight: 8
 ## Important dates
 
 - Course start: Tuesday 27 August 2024
-- Course registration deadline: 19 August 2024
-- Course end: 6 October 2024
-- Exam: 11 October 2024 & 25 October 2024
+- Course registration deadline: 19th August 2024
+- Course end: 11th October 2024
+- Exam: 11th October 2024 & 25 October 2024
 
 ## Schedule
 

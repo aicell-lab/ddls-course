@@ -15,7 +15,7 @@ feature:
     description:
   - icon: comments
     icon_pack: fas
-    name: Seminar
+    name: Journal Club
     description:
 
 ---

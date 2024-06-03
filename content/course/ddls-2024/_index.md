@@ -159,7 +159,7 @@ The session will also discuss transforming images of tissue sections onto a know
 
 **Computer Lab**: The lab session will involve hands-on exercises using Jupyter notebooks to apply the discussed computational tools for analyzing fluorescent microscopy data. Participants will practice segmenting and tracking single molecules, as well as performing tissue atlas registration.
 
-### Module 6 [1 ECTS] - Computational Modeling and Lab Automation with Large Language Models
+### Module 6 [1 ECTS] - Computational Modeling and Automated Scientific Discovery
 
 **Start date**: Week 40 (October 1st, 2024)
 

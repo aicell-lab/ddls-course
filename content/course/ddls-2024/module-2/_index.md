@@ -2,7 +2,7 @@
 title: "Module 2 [1 ECTS] - Advanced AI Techniques in Biological Systems"
 summary: ""
 linkTitle: "Module 2"
-date: '2024-09-03'
+date: '2024-06-13'
 type: book
 weight: 30
 ---

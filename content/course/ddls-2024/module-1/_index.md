@@ -2,7 +2,7 @@
 title: "Module 1 [0.5 ECTS] - Introduction to DDLS, AI and ChatGPT"
 summary: ""
 linkTitle: "Module 1"
-date: '2024-08-27'
+date: '2024-06-13'
 type: book
 weight: 20
 ---

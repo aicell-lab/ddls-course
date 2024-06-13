@@ -2,7 +2,7 @@
 title: "Module 3 [1 ECTS] - Bioinformatics and Metagenomics"
 summary: ""
 linkTitle: "Module 3"
-date: '2024-09-10'
+date: '2024-06-13'
 type: book
 weight: 40
 ---

@@ -2,7 +2,7 @@
 title: "Module 5 [1 ECTS] - Single Molecule Analysis and Tissue Atlases"
 summary: ""
 linkTitle: "Module 5"
-date: '2024-09-24'
+date: '2024-06-13'
 type: book
 weight: 60
 ---

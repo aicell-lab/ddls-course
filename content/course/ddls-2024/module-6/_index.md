@@ -2,7 +2,7 @@
 title: "Module 6 [1 ECTS] - Computational Modeling and Automated Scientific Discovery"
 summary: ""
 linkTitle: "Module 6"
-date: '2024-10-01'
+date: '2024-06-13'
 type: book
 weight: 70
 ---

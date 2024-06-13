@@ -22,6 +22,8 @@ The course is open to **all the master's, PhD students and anyone who interested
 
  {{< cta cta_text="Register Now" cta_link="https://forms.gle/9gmxpEE6X6HZ1wLa7" >}}
 
+You can either register for all the modules or individual modules.
+
 Specifically students at KTH, you should register for the course at the KTH course selection system:
  - [`SK2538` (master's)](https://www.kth.se/student/kurser/kurs/SK2538)
  - [`FSK3538` (PhD)](https://www.kth.se/student/kurser/kurs/FSK3538): PhD student sign up [here](https://forms.gle/9gmxpEE6X6HZ1wLa7).
@@ -82,6 +84,8 @@ The first module covers course basics and prerequisites. The subsequent modules 
 
  {{< cta cta_text="Register Now" cta_link="https://forms.gle/9gmxpEE6X6HZ1wLa7" >}}
 
+
+You can either register for the full course or selected modules.
 
 ## Self-directed Learning
 
@@ -227,10 +231,9 @@ We run the course once a year, in Period 1 from August to October.
 {{< /spoiler >}}
 
 {{< spoiler text="How do I register the course?" >}}
-
--   For master students, please register at the KTH course selection system.
--   For PhD students, please sign up at [here](https://forms.gle/T8gtrsJL3nf1Dqwf6).
-
+-   For KTH master students, please register at the KTH course selection system.
+-   For PhD students or anyone from other universities, please sign up at [here](https://forms.gle/9gmxpEE6X6HZ1wLa7).
+-   You can also sign up for individual module(s) [here](https://forms.gle/9gmxpEE6X6HZ1wLa7). 
 {{< /spoiler >}}
 
 {{< spoiler text="How do I get access to the course material?" >}}

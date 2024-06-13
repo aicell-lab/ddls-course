@@ -33,8 +33,7 @@ imjoy:
                 console.error(`Div with id ${divId} not found.`);
             }
         }
-
-
+exclude_from_list: "true"
 ---
 ## Be prepared
 

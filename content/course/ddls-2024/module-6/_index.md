@@ -1,6 +1,6 @@
 ---
 title: "Module 6 [1 ECTS] - Computational Modeling and Automated Scientific Discovery"
-summary: ""
+summary: " "
 linkTitle: "Module 6"
 date: '2024-06-13'
 type: book

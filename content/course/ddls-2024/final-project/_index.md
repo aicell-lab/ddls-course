@@ -1,6 +1,6 @@
 ---
 title: "Final Project: Hackathon at SciLifeLab - for course participants and DDLS fellows"
-summary: ""
+summary: " "
 linkTitle: "Final Project"
 date: '2024-06-13'
 type: book

@@ -1,6 +1,6 @@
 ---
 title: "Module 3 [1 ECTS] - Bioinformatics and Metagenomics"
-summary: ""
+summary: " "
 linkTitle: "Module 3"
 date: '2024-06-13'
 type: book

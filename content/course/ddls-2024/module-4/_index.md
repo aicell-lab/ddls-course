@@ -1,6 +1,6 @@
 ---
 title: "Module 4 [1 ECTS] - AI in Bioimage Analysis"
-summary: ""
+summary: " "
 linkTitle: "Module 4"
 date: '2024-06-13'
 type: book

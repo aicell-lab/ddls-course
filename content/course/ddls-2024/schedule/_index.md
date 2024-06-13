@@ -5,6 +5,7 @@ date: '2023-08-29'
 type: book
 weight: 8
 exclude_from_list: "true"
+summary: " "
 ---
 ## Important dates
 

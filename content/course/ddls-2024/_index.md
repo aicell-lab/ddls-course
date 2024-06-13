@@ -18,12 +18,13 @@ Welcome to the Data-driven Life Sciences 2024 course, where you will explore the
 
 The 6 modules aim to introduce learners to computer-driven life sciences, covering application areas in data-driven life sciences. Guest lecturers (DDLS Fellows, SciLifeLab fellows, and SciLifeLab facility training providers) will teach topics including technologies and analysis of data sets from proteomics, transcriptomics, biomolecular structure, molecular dynamics simulations, and various imaging techniques. These modules present, analyze, and discuss models of biological phenomena and related scientific breakthroughs based on such data analysis.
 
+The course is open to **all the master's, PhD students and anyone who interested in Sweden**, please use the following link to register:
+
  {{< cta cta_text="Register Now" cta_link="https://forms.gle/9gmxpEE6X6HZ1wLa7" >}}
 
-For KTH students, you can register for the course at the KTH course selection system:
- - [`FSK3538` (PhD)](https://www.kth.se/student/kurser/kurs/FSK3538): PhD student sign up [here](https://forms.gle/9gmxpEE6X6HZ1wLa7).
-
+Specifically students at KTH, you should register for the course at the KTH course selection system:
  - [`SK2538` (master's)](https://www.kth.se/student/kurser/kurs/SK2538)
+ - [`FSK3538` (PhD)](https://www.kth.se/student/kurser/kurs/FSK3538): PhD student sign up [here](https://forms.gle/9gmxpEE6X6HZ1wLa7).
 
 
 ## Intended Learning Outcomes

@@ -11,6 +11,9 @@ weight: 60
   .profile-photo {
     width: 150px; /* Adjust the width as needed */
     height: auto; /* This keeps the aspect ratio of the image */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 </style>
 

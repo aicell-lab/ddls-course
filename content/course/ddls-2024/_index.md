@@ -96,19 +96,19 @@ One of the principal objectives of this course is to instill in you a data-drive
 
 **Note: The exact content for each module may be subject to change. Please refer to the updated schedule for the most current information.**
 
-[**Module 1**](./module-1/)
+[Module 1](./module-1/)
 
-[**Module 2**](./module-2/)
+[Module 2](./module-2/)
 
-[**Module 3**](./module-3/)
+[Module 3](./module-3/)
 
-[**Module 4**](./module-4/)
+[Module 4](./module-4/)
 
-[**Module 5**](./module-5/)
+[Module 5](./module-5/)
 
-[**Module 6**](./module-6/)
+[Module 6](./module-6/)
 
-[**Final Project**](./final-project/)
+[Final Project](./final-project/)
 
 
 ## Grades

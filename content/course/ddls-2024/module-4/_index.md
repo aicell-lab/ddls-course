@@ -5,6 +5,7 @@ linkTitle: "Module 4"
 date: '2024-06-13'
 type: book
 weight: 50
+course_module: "true"
 ---
 <style>
   .profile-photo {

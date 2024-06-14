@@ -96,7 +96,18 @@ One of the principal objectives of this course is to instill in you a data-drive
 
 **Note: The exact content for each module may be subject to change. Please refer to the updated schedule for the most current information.**
 
-{{< list_children >}}
+{{< 
+$children := .Pages
+}}
+{{ range $children }}
+    {{ if (eq .Params.course_module "true") }}
+        <div class="child-page">
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p>{{ .Summary }}</p>
+        </div>
+    {{ end }}
+{{ end }}
+{{< / >}}
 
 ## Grades
 

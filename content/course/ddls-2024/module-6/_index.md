@@ -5,6 +5,7 @@ linkTitle: "Module 6"
 date: '2024-06-13'
 type: book
 weight: 70
+course_module: "true"
 ---
 
 <style>

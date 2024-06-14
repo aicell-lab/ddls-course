@@ -5,6 +5,7 @@ linkTitle: "Final Project"
 date: '2024-06-13'
 type: book
 weight: 80
+course_module: "true"
 ---
 
 **Start date**: Week 41 (October 9th, 2024)

@@ -102,8 +102,8 @@ $children := .Pages
 {{ range $children }}
     {{ if (eq .Params.course_module "true") }}
         <div class="child-page">
-            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-            <p>{{ .Summary }}</p>
+            <h2><a href="{{ .Permalink }}">{{ .Params.title }}</a></h2>
+            <p>{{ .Params.summary }}</p>
         </div>
     {{ end }}
 {{ end }}

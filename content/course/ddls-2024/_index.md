@@ -96,7 +96,7 @@ One of the principal objectives of this course is to instill in you a data-drive
 
 **Note: The exact content for each module may be subject to change. Please refer to the updated schedule for the most current information.**
 
-
+{{< list_course_modules >}}
 
 ## Grades
 

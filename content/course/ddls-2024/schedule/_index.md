@@ -4,7 +4,6 @@ linkTitle: Schedule
 date: '2023-08-29'
 type: book
 weight: 8
-course_module: "false"
 ---
 ## Important dates
 

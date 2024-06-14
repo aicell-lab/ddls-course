@@ -1,0 +1,11 @@
+{{ $children := .Page.Pages }}
+<ul>
+{{ range $children }}
+    {{ if (eq .Params.course_module "true") }}
+        <li>
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p>{{ .Params.summary }}</p>
+        </li>
+    {{ end }}
+{{ end }}
+</ul>

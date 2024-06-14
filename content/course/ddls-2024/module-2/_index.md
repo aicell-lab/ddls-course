@@ -1,6 +1,6 @@
 ---
 title: "Module 2 [1 ECTS] - Advanced AI Techniques in Biological Systems"
-summary: " "
+summary: "test"
 linkTitle: "Module 2"
 date: '2024-06-13'
 type: book

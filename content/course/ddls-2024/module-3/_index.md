@@ -6,13 +6,19 @@ date: '2024-06-13'
 type: book
 weight: 40
 ---
+<style>
+  .profile-photo {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* This keeps the aspect ratio of the image */
+  }
+</style>
 
 **Start date**: Week 37 (September 10th, 2024)
 
 <!-- has been updated -->
 #### Speaker 1: Nima Rafati (Data Scientist at NBIS, SciLifeLab, Uppsala University 9:00-10:00 CEST)
 
-{{< figure src="Nima_Rafati.jpg" >}}
+{{< figure src="Nima_Rafati.jpg" class="profile-photo">}}
 
 A passionate bioinformatician focused on uncovering patterns in biological data through the analysis of sequencing data across various living systems.
 

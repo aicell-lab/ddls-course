@@ -6,7 +6,12 @@ date: '2024-06-13'
 type: book
 weight: 50
 ---
-
+<style>
+  .profile-photo {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* This keeps the aspect ratio of the image */
+  }
+</style>
 
 **Start date**: Week 38 (September 17th, 2024)
 
@@ -18,7 +23,7 @@ This module will introduce the basic concepts in recent advances in generative A
 <!-- has been updated -->
 #### Speaker 2: Estibaliz Gómez de Mariscal (Postdoc at Instituto Gulbenkian de Ciência, Portugal, 9:00-10:00 CEST)
 
-{{< figure src="Estibaliz_Gomez.jpg" >}}
+{{< figure src="Estibaliz_Gomez.jpg" class="profile-photo" >}}
 
 Estibaliz completed her PhD in Mathematical Engineering in 2021 and since then, she is an EMBO Postdoctoral Fellowship in the Optical Cell Biology Group of Instituto Gulbenkian de Ciência in Portugal. Her research focuses on contributing to biological discoveries by exploiting image processing techniques, Artificial Intelligence and live-cell microscopy imaging. She actively contributes to the dissemination and accessibility of these technologies within the deepImageJ, ZeroCostDL4Mic, the Cell Tracking Challenge, DL4MicEverywhere and the BioImage Model Zoo projects. Now more about her [here]{https://henriqueslab.org/pages/egdmariscal}.
 

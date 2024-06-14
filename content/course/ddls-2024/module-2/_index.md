@@ -6,7 +6,12 @@ date: '2024-06-13'
 type: book
 weight: 30
 ---
-
+<style>
+  .profile-photo {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* This keeps the aspect ratio of the image */
+  }
+</style>
 
 **Start date**: Week 36 (September 3rd, 2024)
 
@@ -22,7 +27,7 @@ The foundation of protein design is accurate structure prediction which depends 
 <!-- has been updated -->
 #### Speaker 2: Johan Bengtsson-Palme (DDLS Fellow at Chalmers University of Technology, 9:00-10:00 CEST)
 
-{{< figure src="Johan_Bengtsson-Palme.jpg" >}}
+{{< figure src="Johan_Bengtsson-Palme.jpg" class="profile-photo"  >}}
 
 I have a PhD in Medicine from the University of Gothenburg focused on the role of the environment in antibiotic resistance development and did a postdoc on interactions in microbial communities with Prof. Jo Handelsman at the University of Wisconsin-Madison (USA). In May 2022, where I lead a research group working on data-driven microbiology. Read more on the group website at [https://microbiology.se]{https://microbiology.se}
 

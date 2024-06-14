@@ -7,6 +7,13 @@ type: book
 weight: 60
 ---
 
+<style>
+  .profile-photo {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* This keeps the aspect ratio of the image */
+  }
+</style>
+
 **Start date**: Week 39 (September 24th, 2024)
 
 <!-- needs to be updated -->

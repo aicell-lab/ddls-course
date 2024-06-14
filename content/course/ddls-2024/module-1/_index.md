@@ -7,6 +7,13 @@ type: book
 weight: 20
 ---
 
+<style>
+  .profile-photo {
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* This keeps the aspect ratio of the image */
+  }
+</style>
+
 **NOTE: Module 1 is a prerequisite for any subsequent Module if you like to obtain a certification for participation.**
 
 **Start date**: Week 35 (August 27th, 2024)

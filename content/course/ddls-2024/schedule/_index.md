@@ -18,6 +18,10 @@ weight: 8
 
 Lectures, Computer Labs and Journal Clubs will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998).
 
+
+<!-- Google Calendar Embed -->
+<iframe src="https://calendar.google.com/calendar/embed?src=c_f389b7ce1dfc18013a861342e7468bac776de48731457d2c09079895223f4d20%40group.calendar.google.com&ctz=Europe%2FBerlin" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
 | Module | Date & Time             | Type          | Teachers                           | Topic                                                                                                                                           |
 |--------|-------------------------|---------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1      | Tue 27 Aug 08:00-10:00  | 🧑🏻‍🏫Lecture    | Wei Ouyang                         | Introduction to Data-Driven Life Science and AI                                                                                                 |

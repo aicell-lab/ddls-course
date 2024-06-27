@@ -1,16 +1,17 @@
 ---
+title: Course Schedule
+linkTitle: Schedule
+date: '2023-08-29'
+type: book
+weight: 8
+---
 ## Important dates
 
 - Course start: Tuesday 27 August 2024
-- Course registration deadline: 19th August 2024
-- Course end: 11th October 2024
-- Exam: 11th October 2024 & 25 October 2024
-
-## Schedule
-
-**NOTE: The schedule is subject to change, please keep an eye on the email announcement and the updated schedule HERE (which may differ from the schedule at [KTH course web](https://www.kth.se/social/course/SK2538/calendar/)).**
+	@@ -18,34 +12,9 @@ weight: 8
 
 Lectures, Computer Labs and Journal Clubs will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998).
+
 
 You can add the Google Calendar via this link: [Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19mMzg5YjdjZTFkZmMxODAxM2E4NjEzNDJlNzQ2OGJhYzc3NmRlNDg3MzE0NTdkMmMwOTA3OTg5NTIyM2Y0ZDIwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 

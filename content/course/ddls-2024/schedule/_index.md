@@ -1,14 +1,13 @@
 ---
 title: Course Schedule
 linkTitle: Schedule
-date: '2023-08-29'
+date: '2024-08-27'
 type: book
 weight: 8
 ---
 ## Important dates
 
-- Course start: Tuesday 27 August 2024
-	@@ -18,34 +12,9 @@ weight: 8
+- Course start: Tuesday 27 August 2024	- Course start: Tuesday 27 August 2024
 
 Lectures, Computer Labs and Journal Clubs will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998).
 

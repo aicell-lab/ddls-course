@@ -97,16 +97,27 @@ One of the principal objectives of this course is to instill in you a data-drive
 **Note: The exact content for each module may be subject to change. Please refer to the updated schedule for the most current information.**
 
 [Module 1](./module-1/)
+- Introduction to Data-Driven Life Science and AI
 
 [Module 2](./module-2/)
+- AlphaFold, AI-powered Drug Design, etc.
+- Metagenomics and Microbiome Analysis
 
 [Module 3](./module-3/)
+- Bioinformatics and Omics Technologies
+- Metagenomics and Microbiome Analysis
 
 [Module 4](./module-4/)
+- Generative AI & Diffusion Model
+- Deep Learning for Bioimage Analysis
 
 [Module 5](./module-5/)
+- From Single Molecules to Tissue Atlases
+- Single Molecule Tracking & Tissue Atlas Point Cloud Registration
 
 [Module 6](./module-6/)
+- System Biology and computational modeling
+- Large Language Models for Automated Scientific Discovery
 
 [Final Project](./final-project/)
 

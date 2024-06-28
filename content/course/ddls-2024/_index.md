@@ -97,26 +97,26 @@ One of the principal objectives of this course is to instill in you a data-drive
 **Note: The exact content for each module may be subject to change. Please refer to the updated [schedule](./schedule/) for the most current information.**
 
 [Module 1](./module-1/)
-- Introduction to Data-Driven Life Science and AI
+- Wei Ouyang: Introduction to Data-Driven Life Science and AI
 
 [Module 2](./module-2/)
-- Protein structure prediction and design
-- Large-scale predictions of antibiotic resistance in microbial communities
+- Patrick Bryant: Protein structure prediction and design
+- Johan Bengtsson-Palme: Large-scale predictions of antibiotic resistance in microbial communities
 
 [Module 3](./module-3/)
-- Decoding Cell-Level Biology with scRNA-Seq Data
-- Metagenomics and Microbiome Analysis  <!-- TODO: needs to be updated -->
+- Nima Rafati: Decoding Cell-Level Biology with scRNA-Seq Data
+- Laura Carroll: Metagenomics and Microbiome Analysis  <!-- TODO: needs to be updated -->
 
 [Module 4](./module-4/)
-- Advances in Generative AI for Conditional Microscopy Cell Images
-- Deep learning enabled image-driven scientific discovery
+- Wei Ouyang: Advances in Generative AI for Conditional Microscopy Cell Images
+- Estibaliz Gómez de Mariscal: Deep learning enabled image-driven scientific discovery
 
 [Module 5](./module-5/)
-- From Single Molecules to Tissue Atlases  <!-- TODO: needs to be updated -->
+- Daniel Fürth: From Single Molecules to Tissue Atlases  <!-- TODO: needs to be updated -->
 
 [Module 6](./module-6/)
-- System Biology and computational modeling  <!-- TODO: needs to be updated -->
-- Accelerating Scientific Discovery with Large Language Models
+- Cemal Erdem: System Biology and computational modeling  <!-- TODO: needs to be updated -->
+- Gabriel Reder: Accelerating Scientific Discovery with Large Language Models
 
 [Final Project](./final-project/)
 

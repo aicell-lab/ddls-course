@@ -110,7 +110,6 @@ One of the principal objectives of this course is to instill in you a data-drive
 
 [Final Project](./final-project/)
 
-<!-- {{ partial "list_course_modules.html" . }} -->
 
 
 ## Grades

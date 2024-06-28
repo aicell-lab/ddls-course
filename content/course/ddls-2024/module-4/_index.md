@@ -22,6 +22,12 @@ course_module: "true"
 <!-- TODO: needs to be updated -->
 #### Speaker 1: Wei Ouyang (DDLS Fellow, 8:00-9:00 CEST)
 
+{{< figure src="Wei_Ouyang.png" class="profile-photo" >}}
+
+Wei Ouyang is an assistant professor in the Applied Physics Department at KTH Royal Institute of Technology in Stockholm, Sweden, and a Data-Driven Life Science fellow. He leads a team focused on building AI systems for next-generation life science. Wei earned his PhD at Institut Pasteur in Paris, where he developed ANNA-PALM, a deep learning method that significantly enhances super-resolution microscopy speed. He later worked as a postdoc with Emma Lundberg’s group, focusing on image analysis and whole-cell modeling. Wei is the founder of ImJoy, an open-source platform for deep learning tools, and co-founder of the BioImage Model Zoo and the AI4Life consortium. Learn more about his work [here](https://aicell.io/authors/wei/).
+
+**Title: TBD**
+
 This module will introduce the basic concepts in recent advances in generative AI, large language models, and diffusion models, focusing on creating conditional microscopy cell images for whole-cell modeling. It will also cover challenges in generative AI and potential paths forward in data-driven life sciences.
 
 <!-- updated: 28.06.2024 -->

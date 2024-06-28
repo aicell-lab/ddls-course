@@ -1,8 +1,8 @@
 ---
 title: "Module 3 [1 ECTS] - Bioinformatics and Metagenomics"
-summary: " "
+summary: ""
 linkTitle: "Module 3"
-date: '2024-06-13'
+date: "2024-06-13"
 type: book
 weight: 40
 course_module: "true"
@@ -19,12 +19,12 @@ course_module: "true"
 
 **Start date**: Week 37 (September 10th, 2024)
 
-<!-- has been updated -->
+<!-- updated: 28.06.2024 -->
 #### Speaker 1: Nima Rafati (Data Scientist at NBIS, SciLifeLab, Uppsala University 9:00-10:00 CEST)
 
 {{< figure src="Nima_Rafati.jpg" class="profile-photo">}}
 
-A passionate bioinformatician focused on uncovering patterns in biological data through the analysis of sequencing data across various living systems.
+Nima Rafati is a passionate bioinformatician focused on uncovering patterns in biological data through the analysis of sequencing data across various living systems.
 
 **Title: Decoding Cell-Level Biology with scRNA-Seq Data**
 
@@ -34,10 +34,12 @@ The lecture will cover the scRNA-Seq workflow, including sample preparation, seq
 
 By the end of this lecture, attendees will have a solid understanding of scRNA-Seq techniques and their application in genomics research.
 
-<!-- needs to be updated -->
+<!-- TODO: needs to be updated -->
 #### Speaker 2: Laura Carroll (DDLS Felow, September 11th, 2024; 10:00-11:00 CEST)
+
+<!-- **Title: ** -->
 
 This session will discuss the impact of (meta)genomic sequencing in microbiology. It will cover bioinformatic approaches for pathogen surveillance and outbreak detection, and the development of phylodynamic models and machine learning techniques for microbial analysis.
 
-<!-- needs to be updated -->
+<!-- TODO: needs to be updated -->
 **Computer Lab**: The lab will cover tools in bioinformatics and metagenomics data analysis with practical exercises, providing hands-on experience in applying these techniques to real-world datasets.

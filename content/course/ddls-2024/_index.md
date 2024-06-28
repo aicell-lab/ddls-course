@@ -94,7 +94,7 @@ One of the principal objectives of this course is to instill in you a data-drive
 
 ## Course Modules
 
-**Note: The exact content for each module may be subject to change. Please refer to the updated schedule for the most current information.**
+**Note: The exact content for each module may be subject to change. Please refer to the updated [schedule](./schedule/) for the most current information.**
 
 [Module 1](./module-1/)
 - Introduction to Data-Driven Life Science and AI

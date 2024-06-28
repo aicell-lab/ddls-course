@@ -19,16 +19,18 @@ course_module: "true"
 
 **Start date**: Week 38 (September 17th, 2024)
 
-<!-- TODO: needs to be updated -->
+<!-- updated: 28.06.2024 -->
 #### Speaker 1: Wei Ouyang (DDLS Fellow, 8:00-9:00 CEST)
 
 {{< figure src="Wei_Ouyang.png" class="profile-photo" >}}
 
 Wei Ouyang is an assistant professor in the Applied Physics Department at KTH Royal Institute of Technology in Stockholm, Sweden, and a Data-Driven Life Science fellow. He leads a team focused on building AI systems for next-generation life science. Wei earned his PhD at Institut Pasteur in Paris, where he developed ANNA-PALM, a deep learning method that significantly enhances super-resolution microscopy speed. He later worked as a postdoc with Emma Lundberg’s group, focusing on image analysis and whole-cell modeling. Wei is the founder of ImJoy, an open-source platform for deep learning tools, and co-founder of the BioImage Model Zoo and the AI4Life consortium. Learn more about his work [here](https://aicell.io/authors/wei/).
 
-**Title: TBD**
+**Title: Advances in Generative AI for Conditional Microscopy Cell Images**
 
-This module will introduce the basic concepts in recent advances in generative AI, large language models, and diffusion models, focusing on creating conditional microscopy cell images for whole-cell modeling. It will also cover challenges in generative AI and potential paths forward in data-driven life sciences.
+In this lecture, you will be introduced to the basic concepts of recent advances in generative AI, large language models, and diffusion models, with a focus on creating conditional microscopy cell images for whole-cell modeling. We will delve into the challenges faced in generative AI and explore potential paths forward in data-driven life sciences.
+
+By the end of this lecture, attendees will have a comprehensive understanding of how generative AI can be applied to generate and manipulate microscopy cell images for whole-cell modeling, along with the current challenges and future directions in this exciting field.
 
 <!-- updated: 28.06.2024 -->
 #### Speaker 2: Estibaliz Gómez de Mariscal (Postdoc at Instituto Gulbenkian de Ciência, Portugal, 9:00-10:00 CEST)

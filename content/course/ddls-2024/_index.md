@@ -97,26 +97,32 @@ One of the principal objectives of this course is to instill in you a data-drive
 **Note: The exact content for each module may be subject to change. Please refer to the updated [schedule](./schedule/) for the most current information.**
 
 [Module 1](./module-1/)
-- Wei Ouyang: Introduction to Data-Driven Life Science and AI
+- **Lecture** by Wei Ouyang: Introduction to Data-Driven Life Science and AI
+- **Computer Lab** and **Journal Club** will be announced one week before the module starts
 
 [Module 2](./module-2/)
-- Patrick Bryant: Protein structure prediction and design
-- Johan Bengtsson-Palme: Large-scale predictions of antibiotic resistance in microbial communities
+- **Lecture** by Patrick Bryant: Protein structure prediction and design
+- **Lecture** by Johan Bengtsson-Palme: Large-scale predictions of antibiotic resistance in microbial communities
+- **Computer Lab** and **Journal Club** will be announced one week before the module starts
 
 [Module 3](./module-3/)
-- Nima Rafati: Decoding Cell-Level Biology with scRNA-Seq Data
-- Laura Carroll: Metagenomics and Microbiome Analysis  <!-- TODO: needs to be updated -->
+- **Lecture** by Nima Rafati: Decoding Cell-Level Biology with scRNA-Seq Data
+- **Lecture** by Laura Carroll: Metagenomics and Microbiome Analysis  <!-- TODO: needs to be updated -->
+- **Computer Lab** and **Journal Club** will be announced one week before the module starts
 
 [Module 4](./module-4/)
-- Wei Ouyang: Advances in Generative AI for Conditional Microscopy Cell Images
-- Estibaliz Gómez de Mariscal: Deep learning enabled image-driven scientific discovery
+- **Lecture** by Wei Ouyang: Advances in Generative AI for Conditional Microscopy Cell Images
+- **Lecture** by Estibaliz Gómez de Mariscal: Deep learning enabled image-driven scientific discovery
+- **Computer Lab** and **Journal Club** will be announced one week before the module starts
 
 [Module 5](./module-5/)
-- Daniel Fürth: From Single Molecules to Tissue Atlases  <!-- TODO: needs to be updated -->
+- **Lecture** by Daniel Fürth: From Single Molecules to Tissue Atlases  <!-- TODO: needs to be updated -->
+- **Computer Lab** and **Journal Club** will be announced one week before the module starts
 
 [Module 6](./module-6/)
-- Cemal Erdem: System Biology and computational modeling  <!-- TODO: needs to be updated -->
-- Gabriel Reder: Accelerating Scientific Discovery with Large Language Models
+- **Lecture** by Cemal Erdem: System Biology and computational modeling  <!-- TODO: needs to be updated -->
+- **Lecture** by Gabriel Reder: Accelerating Scientific Discovery with Large Language Models
+- **Computer Lab** and **Journal Club** will be announced one week before the module starts
 
 [Final Project](./final-project/)
 

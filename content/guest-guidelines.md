@@ -27,7 +27,7 @@ Welcome to the Data-Driven Life Sciences Course at KTH! Thank you for agreeing t
 - **Duration**: typically 1-2 hours (stick to the time slot we agreed on in the invitation).
 - **Format**: Lecture with Slides, Videos, Breakout room discussion and Q&A session. The lecture will be held over Zoom ([link](https://kth-se.zoom.us/j/69812177998)), please join the zoom call 5 minutes before the lecture starts so we can test the connection.
 - **Audience Background**: Master's students in Biomedical Physics and Medical Engineering; Ph.D. students in Molecular Science, enzyme engineering, biomedical sciences, etc. We will also make the lecture zoom link public to everyone, so there maybe also external participants for SciLifeLab or others in the life science community.
-- **Course Schedule**: You can also find all the scheduled modules in the course [here](/course/ddls-2023/).
+- **Course Schedule**: You can also find all the scheduled modules in the course [here](/course/ddls-2024/) for year 2024.
 
 ---
 

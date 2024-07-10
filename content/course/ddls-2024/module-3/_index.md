@@ -19,8 +19,10 @@ course_module: "true"
 
 **Start date**: Week 37 (September 10th, 2024)
 
+**Note**: This module contains two lectures held on two different dates: September 10th Tuesday at 9:00-10:00 CEST and September 11th Wednesday at 10:00-11:00 CEST.
+
 <!-- updated: 28.06.2024 -->
-#### Speaker 1: Nima Rafati (Data Scientist at NBIS, SciLifeLab, Uppsala University 9:00-10:00 CEST)
+#### Speaker 1: Nima Rafati (Data Scientist at NBIS, SciLifeLab, Uppsala University September 10th, 2024; Tuesday; 9:00-10:00 CEST)
 
 {{< figure src="Nima_Rafati.jpg" class="profile-photo">}}
 
@@ -35,7 +37,7 @@ The lecture will cover the scRNA-Seq workflow, including sample preparation, seq
 By the end of this lecture, attendees will have a solid understanding of scRNA-Seq techniques and their application in genomics research.
 
 <!-- TODO: needs to be updated -->
-#### Speaker 2: Laura Carroll (DDLS Felow, September 11th, 2024; 10:00-11:00 CEST)
+#### Speaker 2: Laura Carroll (DDLS Felow, September 11th, 2024; Wednesday; 10:00-11:00 CEST)
 
 <!-- **Title: ** -->
 

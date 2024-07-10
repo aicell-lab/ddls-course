@@ -50,6 +50,18 @@ Here are more details to help you prepare the notebook:
 - **Format**: It is recommended to have two parts in the notebooks: a basic part to introduce to the data and method for the topic, and a elevated part to help student going beyond, e.g. use the method to analyze other dataset, or try another related approach to solve the same type of problem. At the end of each part, you should include some questions or coding exercises. The lab will be held in person, with the lab teachers present to help students to go through the notebook.
 - **ChatGPT**: Please note that the students are encouraged to use ChatGPT to help them go through the notebook and writing code, so when designing the exercises, it should not be too trivial so ChatGPT will give immediate answer.
 
+### Example notebooks
+
+To help your prepartion of the notebook, you can find some example notebooks from previous years, for example:
+ - [Computer Lab 5: Deep learning for BioImage Analysis](https://ddls.aicell.io/course/ddls-2023/module-5/lab/)
+ - [Computer Lab 2: Protein Design with RFdiffusion](https://ddls.aicell.io/course/ddls-2023/module-2/lab/)
+ - [Computer Lab 3: Spatial Point Pattern Analysis](https://ddls.aicell.io/course/ddls-2023/module-3/lab/)
+
+Please provide a draft notebook, and we will preparing the final version for the students.
+
+During the computer lab, it's not mandatory for you to be present, but you are welcome to join the lab session to help the students with the exercises.
+
+
 ---
 
 ## Providing a Paper for the Seminar

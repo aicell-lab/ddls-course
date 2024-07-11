@@ -17,10 +17,10 @@ course_module: "true"
   }
 </style>
 
-**Start date**: Week 38 (September 17th, 2024)
+**Start date**: Week 38 (17th September 2024)
 
 <!-- updated: 28.06.2024 -->
-#### Speaker 1: Wei Ouyang (DDLS Fellow, 8:00-9:00 CEST)
+#### Speaker 1: Wei Ouyang (DDLS Fellow; Tuesday 17th September 8:00-9:00 CEST)
 
 {{< figure src="Wei_Ouyang.png" class="profile-photo" >}}
 
@@ -33,7 +33,7 @@ In this lecture, you will be introduced to the basic concepts of recent advances
 By the end of this lecture, attendees will have a comprehensive understanding of how generative AI can be applied to generate and manipulate microscopy cell images for whole-cell modeling, along with the current challenges and future directions in this exciting field.
 
 <!-- updated: 28.06.2024 -->
-#### Speaker 2: Estibaliz Gómez de Mariscal (Postdoc at Instituto Gulbenkian de Ciência, Portugal, 9:00-10:00 CEST)
+#### Speaker 2: Estibaliz Gómez de Mariscal (Postdoc at Instituto Gulbenkian de Ciência, Portugal; Tuesday 17th September 9:00-10:00 CEST)
 
 {{< figure src="Estibaliz_Gomez.jpg" class="profile-photo" >}}
 

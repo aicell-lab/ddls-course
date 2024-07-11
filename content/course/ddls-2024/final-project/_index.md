@@ -8,7 +8,7 @@ weight: 80
 course_module: "true"
 ---
 
-**Start date**: Week 41 (October 9th, 2024)
+**Start date**: Week 41 (9th October 2024)
 
 Join us at the DDLS Hackathon at SciLifeLab in Solna, where course participants will choose and collaborate on a range of projects provided by us. With the support of teaching assistants in a hands-on environment, groups will innovate and develop solutions in the dynamic field of data-driven life science.
 

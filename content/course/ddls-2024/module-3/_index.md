@@ -39,7 +39,7 @@ By the end of this lecture, attendees will have a solid understanding of scRNA-S
 <!-- updated: 28.06.2024 -->
 #### Speaker 2: Laura Carroll (DDLS Fellow; Wednesday 11th September 10:00-11:00 CEST)
 
-<!-- TODO: {{< figure src="Laura_Carroll.jpg" class="profile-photo">}} -->
+{{< figure src="Laura_Carroll.jpeg" class="profile-photo">}}
 
 Dr. Laura Carroll is an Assistant Professor and DDLS Fellow in the Department of Clinical Microbiology at Umeå University. As a microbial bioinformatician, her research focuses on developing bioinformatic approaches to leverage whole-genome sequencing (WGS) data for improving pathogen surveillance, source tracking, outbreak detection, and risk evaluation. Learn more about her work on her [institutional page](https://www.umu.se/en/staff/laura-carroll/) or visit her [research group website](https://www.microbe.dev/). Find her publications on [Google Scholar](https://scholar.google.com/citations?user=eJHtnUAAAAAJ&hl=en).
 

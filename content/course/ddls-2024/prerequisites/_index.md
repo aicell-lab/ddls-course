@@ -41,6 +41,10 @@ As prerequisites for the course, we recommend that you have a look at the follow
  - Please have a look at the [SciLifeLab Data-Driven Life Science](https://www.scilifelab.se/data-driven) (DDLS) initiative website to understand what data-driven life sciences are, and how Sweden is investing in this area. Focus in particular on the concept of the [data life cycle](https://data-guidelines.scilifelab.se/data-life-cycle/), which is central in this class.
  - We will use Python as the main programming language in the computer lab, so please make sure you know the basics of Python. See the Python introduction material below for more information.
 
+ To help you get a head start, we’ve prepared some useful ChatGPT prompts designed to assist you in learning basic Python operations, which will be crucial throughout the course. After this practice, you can upload your chathistory in this form before the course start: [Google Form](https://forms.gle/Zgo5b5TkhMEJKchS8)
+
+All the students are required to take the chatgpt tutorial, or a test depending on the level of expertise
+
 For the computer lab, you will need a computer with internet access, and make sure you have the following set up:
    - Install the latest browser, e.g. [Chrome](https://www.google.com/chrome/)
    - Register a Google account for the [Google Colab](https://colab.google/) access and use the Google Drive

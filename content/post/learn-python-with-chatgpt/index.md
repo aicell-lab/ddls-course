@@ -4,7 +4,7 @@ date: 2024-08-14
 ---
 ![python course poster](./python-poster.webp)
 
-As the start of our course is quickly approaching, we want to ensure that you are well-prepared. For people who are not familar with Python. To help you get a head start, we’ve prepared some useful ChatGPT prompts designed to assist you in learning basic Python operations, which will be crucial throughout the course. After this practice, you can upload your chathistory in this form before the course start: [Google Form](https://forms.gle/Zgo5b5TkhMEJKchS8)
+As the start of our course is quickly approaching, we want to ensure that you are well-prepared. To help you get a head start, we’ve prepared some useful ChatGPT prompts designed to assist you in learning basic Python operations. After this practice, you can upload your chathistory in this form before the course start: [Google Form](https://forms.gle/Zgo5b5TkhMEJKchS8)
 
 This interactive learning experience will guide you through Python fundamentals, object-oriented programming, error handling, and even a practical project. You’ll have a solid foundation in Python, and you can continue exploring on your own.
 
@@ -186,6 +186,9 @@ To start your personalized Python learning journey with ChatGPT, follow these st
 3. **Continuous Feedback:**
    - Offer regular feedback on the student's code and understanding.
    - Address any questions or difficulties the student encounters.
+
+4. **Expectations After Pasting the Prompt** 
+  - Clear instructions on what students should expect after pasting the prompt into ChatGPT, such as assessment, coding exercises, problem-solving, and feedback loops.
 
 Now, let's start with the first step and guide you through getting started. Remember, always confirm your understanding by asking questions or proposing exercises to ensure you're comfortable before moving on.
 ```

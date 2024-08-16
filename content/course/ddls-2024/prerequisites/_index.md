@@ -65,6 +65,9 @@ You can also run the notebook in Jupyter Lite: <button id="jupyter-fullscreen" s
 If you are new to programming, we recommend that you complete the following course video:
 {{< youtube rfscVS0vtbw >}}
 
+
+
+----
 ## Pre-assignment
 
 To help you get a head start, we've prepared a set of useful ChatGPT prompts designed to assist you in learning basic Python operations. Mastering these operations will be crucial throughout the course.
@@ -83,7 +86,7 @@ To help you get a head start, we've prepared a set of useful ChatGPT prompts des
 
 - **What to Submit**: Your completed ChatGPT chat history file.
 
-- **Deadline**: The deadline for submission is the start date of the course, August 27th.
+- **Deadline**: The deadline for submission is August 27th, as students need to upload the form before the first computer lab on August 28th.
 
 - **Mandatory Participation**: This assignment is required for all students.
 

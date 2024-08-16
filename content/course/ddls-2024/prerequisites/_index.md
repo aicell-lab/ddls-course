@@ -41,10 +41,6 @@ As prerequisites for the course, we recommend that you have a look at the follow
  - Please have a look at the [SciLifeLab Data-Driven Life Science](https://www.scilifelab.se/data-driven) (DDLS) initiative website to understand what data-driven life sciences are, and how Sweden is investing in this area. Focus in particular on the concept of the [data life cycle](https://data-guidelines.scilifelab.se/data-life-cycle/), which is central in this class.
  - We will use Python as the main programming language in the computer lab, so please make sure you know the basics of Python. See the Python introduction material below for more information.
 
- To help you get a head start, we’ve prepared some useful ChatGPT prompts designed to assist you in learning basic Python operations, which will be crucial throughout the course. After this practice, you can upload your chathistory in this form before the course start: [Google Form](https://forms.gle/Zgo5b5TkhMEJKchS8)
-
-All the students are required to take the chatgpt tutorial, or a test depending on the level of expertise
-
 For the computer lab, you will need a computer with internet access, and make sure you have the following set up:
    - Install the latest browser, e.g. [Chrome](https://www.google.com/chrome/)
    - Register a Google account for the [Google Colab](https://colab.google/) access and use the Google Drive
@@ -68,6 +64,34 @@ You can also run the notebook in Jupyter Lite: <button id="jupyter-fullscreen" s
 
 If you are new to programming, we recommend that you complete the following course video:
 {{< youtube rfscVS0vtbw >}}
+
+## Pre-assignment
+
+To help you get a head start, we've prepared a set of useful ChatGPT prompts designed to assist you in learning basic Python operations. Mastering these operations will be crucial throughout the course.
+
+### What You Need to Do
+
+1\. **Review the ChatGPT Prompts**: Access the prompts and see how they can be used to learn Python basics by visiting [Learn Python with ChatGPT](https://ddls.aicell.io/post/learn-python-with-chatgpt/).
+
+2\. **Complete the Practice**: Use the prompts to complete the practice exercises. This will help you become familiar with essential Python operations.
+
+3\. **Upload Your Chat History**: Once you have completed the practice, save your chat history.
+
+4\. **Submit Your Work**: Upload the saved chat history using this [Google Form](https://forms.gle/Zgo5b5TkhMEJKchS8).
+
+### Submission Requirements
+
+- **What to Submit**: Your completed ChatGPT chat history file.
+
+- **Deadline**: The deadline for submission is the start date of the course, August 27th.
+
+- **Mandatory Participation**: This assignment is required for all students.
+
+### Additional Information
+
+- **Alternative for Advanced Students**: If you already have expertise in Python, you may opt to take a proficiency test instead of completing the tutorial. But you still need to upload your chat history.
+
+By following these steps, you'll ensure you're well-prepared for the course. If you have any questions or need further assistance, feel free to reach out.
 
 
 ### Quiz

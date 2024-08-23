@@ -18,10 +18,10 @@ course_module: "true"
   }
 </style>
 
-**Start date**: Week 39 (September 24th, 2024)
+**Start date**: Week 39 (24th September 2024)
 
 <!-- TODO: needs to be updated -->
-#### Speaker: Daniel Fürth (SciLifeLab Fellow, 8:00-10:00 CEST)
+#### Speaker: Daniel Fürth (SciLifeLab Fellow; Tuesday 24th September 8:00-10:00 CEST)
 
 <!-- **Title: ** -->
 

@@ -17,10 +17,10 @@ course_module: "true"
   }
 </style>
 
-**Start date**: Week 36 (September 3rd, 2024)
+**Start date**: Week 36 (3rd September 2024)
 
 <!-- updated: 28.06.2024 -->
-#### Speaker 1: Patrick Bryant (Ass. Prof. at SU & DDLS Fellow, 8:00-9:00 CEST)
+#### Speaker 1: Patrick Bryant (Ass. Prof. at SU & DDLS Fellow; Tuesday 3rd September 8:00-9:00 CEST)
 
 Patrick Bryant's research seeks to answer questions about the evolution of proteins and how this information can be used to create a new range of AI tools. [Google Scholar](https://scholar.google.com/citations?user=KPlaFQQAAAAJ&hl=sv&oi=ao)
 
@@ -29,7 +29,7 @@ Patrick Bryant's research seeks to answer questions about the evolution of prote
 The foundation of protein design is accurate structure prediction which depends on coevolutionary patterns found in multiple sequence alignments (MSAs). Coevolution constrains the protein structure just enough for it to become predictable given a suitable MSA. However, designing new proteins poses a challenge in the absence of coevolutionary data. Therefore, protein design methodologies must incorporate learned associations between amino acid sequences and protein structures, encapsulating the rules governing the known protein space. In this lecture, you will learn more about how to design new proteins and in the practical session you will design your own peptide binder using the latest structure prediction technology.
 
 <!-- updated: 28.06.2024 -->
-#### Speaker 2: Johan Bengtsson-Palme (DDLS Fellow at Chalmers University of Technology, 9:00-10:00 CEST)
+#### Speaker 2: Johan Bengtsson-Palme (DDLS Fellow at Chalmers University of Technology; Tuesday 3rd September 9:00-10:00 CEST)
 
 {{< figure src="Johan_Bengtsson-Palme.jpg" class="profile-photo"  >}}
 

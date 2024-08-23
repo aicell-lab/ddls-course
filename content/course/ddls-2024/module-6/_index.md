@@ -18,10 +18,10 @@ course_module: "true"
   }
 </style>
 
-**Start date**: Week 40 (October 1st, 2024)
+**Start date**: Week 40 (1st October 2024)
 
 <!-- TODO: needs to be updated -->
-#### Speaker 1: Cemal Erdem (DDLS Fellow, 8:00-9:00 CEST)
+#### Speaker 1: Cemal Erdem (DDLS Fellow; Tuesday 1st October 9:00-10:00 CEST)
 
 <!-- **Title: ** -->
 
@@ -29,7 +29,7 @@ This module will focus on combining machine learning, mechanistic models, and pa
 
 
 <!-- updated: 28.06.2024 -->
-#### Speaker 2: Gabriel Reder (Research associate at Cambridge University & KTH, 9:00-10:00 CEST)
+#### Speaker 2: Gabriel Reder (Research associate at Cambridge University & KTH; Tuesday 1st October 10:00-11:00 CEST)
 
 Gabriel Reder is a research associate in automated laboratory discovery and informatics. He has focused especially on applications to mass spectrometry metabolomics and self-driving robotic laboratories.
 

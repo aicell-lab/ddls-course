@@ -20,9 +20,9 @@ course_module: "true"
 
 **NOTE: Module 1 is a prerequisite for any subsequent Module if you like to obtain a certification for participation.**
 
-**Start date**: Week 35 (August 27th, 2024)
+**Start date**: Week 35 (27th August 2024)
 
-#### Speaker: Wei Ouyang (DDLS Fellow, 8:00-10:00 CEST)
+#### Speaker: Wei Ouyang (DDLS Fellow; Tuesday 27th August 8:00-10:00 CEST)
 
 Module 1 serves as the foundational introduction to the Data-Driven Life Sciences (DDLS) course. This basic module is designed to familiarize participants with the overarching principles and goals of DDLS, getting prepared for machine learning topics and providing a comprehensive overview of the course structure, content, and logistics. Participants will be introduced to the various topics that will be covered in the subsequent modules, as well as the format of the course, which includes lectures, computer labs, and seminars. The module will also outline the examination and certification requirements.
 

@@ -173,33 +173,24 @@ We run the course once a year, in Period 1 from August to October.
 {{< /spoiler >}}
 
 {{< spoiler text="How do I get access to the course material?" >}}
-The course material are available at [here](https://ddls.aicell.io). We won't be using KTH Canvas.
+The course material will be made available on each module's page. You can find the module pages under the [course modules section](#course-modules). We won't be using KTH Canvas.
 {{< /spoiler >}}
 
 {{< spoiler text="Can I attend the course remotely?" >}}
+Yes, the entire course is conducted online. All lectures and sessions will be held via Zoom. You can join the lectures, computer labs and journal clubs using this [Zoom link](https://kth-se.zoom.us/j/69812177998).
 
-It is possible only for the lectures. Except the first lecture (in person), all other lectures will be given over Zoom (zoom link: https://kth-se.zoom.us/j/69812177998).
-
-The computer labs and seminars are provided in person. Exceptions will be announced in the email and the updated schedule above.
+The hackathon will take place in person at SciLifeLab, Tomtebodavägen 23, 171 65 Solna. While physical attendance at the hackathon is optional and not required for participating in the final project, you will need to arrange your own accommodation if you choose to attend in person. Please note that accommodation costs are not covered by the course. Further details about the hackathon and its schedule will be communicated via email and updated on the course page.
 {{< /spoiler >}}
 
-{{< spoiler text="How do I get access to the computer labs?" >}}
-The computer labs are normally provided in person (exception may apply, check email announcement and the updated schedule). If you are not able to attend, please contact the course responsible.
-{{< /spoiler >}}
-
-{{< spoiler text="How do I get access to the seminars?" >}}
-The seminars are normally provided in person (exception may apply, check email announcement and the updated schedule). If you are not able to attend, please contact the course responsible.
-{{< /spoiler >}}
 
 {{< spoiler text="What if I cannot attend the computer labs or seminars?" >}}
-It is mandatory to attend all the computer labs or seminars, if you anticipate that you will miss a computer lab or seminar, please notify the course responsible as soon as possible, exceptions will be made on a case-by-case basis.
+For all selected modules, it is mandatory to attend all the associated computer labs and seminars in order to receive credit. If you anticipate missing a computer lab or seminar, please notify the course responsible as soon as possible. Exceptions will be considered on a case-by-case basis.
 
-If the exception is granted, you will still need to submit the notebook for the computer lab, or write a report to answer the seminar question sheet.
-
+If an exception is granted, you will still be required to submit the notebook for the computer lab or write a report to address the seminar question sheet to ensure you meet the module requirements.
 {{< /spoiler >}}
 
 {{< spoiler text="Will the lecture be recorded?" >}}
-The lecture will not be recorded, but the slides will be made available after the lecture.
+The recording of lectures may vary depending on the lecturer, and it cannot be guaranteed. However, the slides will be made available after each lecture.
 {{< /spoiler >}}
 
 {{< spoiler text="Can I use ChatGPT / Claude or other generative AI tools in the computer labs, seminar, assignments or the final project?" >}}

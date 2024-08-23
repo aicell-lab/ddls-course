@@ -7,7 +7,15 @@ weight: 8
 ---
 ## Important dates
 
-- Course start: Tuesday 27 August 2024	- Course start: Tuesday 27 August 2024
+- **Application open:** June 5th, 2024
+- **Application closes:** Aug 19, 2024
+- **First lecture:** Aug 27, 2024, 08:00 CEST
+- **Hackathon:** Oct 9-11, 2024
+- **Final Project:**: Oct 7-27, 2024
+- **Final Project consultation:**: Oct 17, 08:00-11:00 CEST
+- **Final Project Report submission deadline:** Sunday Oct 27, 2024, 23:59 CEST
+- **Oral Presentation (batch 1):** Tuesday Oct 29, 2024, 8:00-10:00 CEST
+- **Oral Presentation (batch 2):** Wednesday Oct 30, 2024, 8:00-10:00 CEST
 
 
 Lectures, Computer Labs and Journal Clubs will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998).

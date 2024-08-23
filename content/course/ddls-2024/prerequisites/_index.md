@@ -50,25 +50,6 @@ For the computer lab, you will need a computer with internet access, and make su
 ## Build a foundation in Python
 
 As a warn up, please make sure you are comfortable with coding in Python. If not, this section will show you the basics of Python.
-### Learn
-
-Here you can find the basics of Python: [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb)
-
-You can also run the notebook in Jupyter Lite: <button id="jupyter-fullscreen" style="display: none;" onclick="imjoy.make_full_screen('jupyter-container')"> + Show Notebook in Fullscreen Mode</button>
-
-<div id="jupyter-container"><button onclick='imjoy.show_jupyter_notebook("python-colab.ipynb", "/notebooks/python-colab.ipynb")'>Click to Load the Notebook</button></div>
-
-<br>
-
-
-
-If you are new to programming, we recommend that you complete the following course video:
-{{< youtube rfscVS0vtbw >}}
-
-
-
-----
-## Pre-assignment
 
 To help you get a head start, we've prepared a set of useful ChatGPT prompts designed to assist you in learning basic Python operations. Mastering these operations will be crucial throughout the course.
 
@@ -96,6 +77,22 @@ To help you get a head start, we've prepared a set of useful ChatGPT prompts des
 
 By following these steps, you'll ensure you're well-prepared for the course. If you have any questions or need further assistance, feel free to reach out.
 
+
+
+### If you prefer to learn Python in a more traditional way
+
+Here you can find the basics of Python: [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb)
+
+You can also run the notebook in Jupyter Lite: <button id="jupyter-fullscreen" style="display: none;" onclick="imjoy.make_full_screen('jupyter-container')"> + Show Notebook in Fullscreen Mode</button>
+
+<div id="jupyter-container"><button onclick='imjoy.show_jupyter_notebook("python-colab.ipynb", "/notebooks/python-colab.ipynb")'>Click to Load the Notebook</button></div>
+
+<br>
+
+
+
+If you are new to programming, we recommend that you complete the following course video:
+{{< youtube rfscVS0vtbw >}}
 
 ### Quiz
 

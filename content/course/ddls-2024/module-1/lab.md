@@ -13,15 +13,16 @@ After completing the lab, please submit your work using the Google Form linked b
 
 {{< cta cta_text="Click Here to Upload" cta_link="https://docs.google.com/forms/d/e/1FAIpQLSfLh0-XiyKhAxCSUBgtdXI_hVFkg5FhbXYgmHc3oYC8ndu_oA/viewform?usp=sf_link" >}}
 
+#### Grading
 This lab will be graded based on your assignment 1 submission.
 
 ### Preparation
 
-For the computer labs, you will only need to look through the rudimentary instructions (section 1) on how to start a Colab session. For the later labs, we will need to know about how the file system works, so looking through section 2 is good to do until then (at least module 5-6).
+For this computer labs, you will only need to look through the rudimentary instructions on how to start a Colab session for machine learning. We use the following Google Colab notebook on machine learning as an example: [Click this link](https://dmol.pub/ml/introduction.html)
 
 #### Starting a google Colab session
 
-In later computer labs, a Google Colab document will be provided for you. To access the linked colab document in the book, simply click the rocket icon in the top right as in the figure below which will take you to the colab document.
+In this Google Colab document provided. To access the linked colab document in the book, simply click the rocket icon in the top right as in the figure below which will take you to the colab document.
 
 ![Run this notebook](../run-this-notebook.png)
 
@@ -46,24 +47,9 @@ framework to access many different nodes. Because you are using shared resources
 adding and installing new packages temporarily is no problem, and linux system commands
 can be accessed by entering `!` in front of the command, e.g. `!pip install package`.
 
-
 If this information was not enough or not practical enough, please have a look at:
 https://colab.research.google.com/?utm_source=scs-index
 will be updated with new information for the coming labs soon.
-
-
-
-### Run the code
-Now, go to [this interactive online book](https://dmol.pub/ml/introduction.html) and run the code in the chapters 2-6.
-
-Make sure to use your access to teaching assistants to get this material under control. The machine learning topics covered this week are probably going to be important for your projects (see [Project Plan](../../project)) too, i.e. finding ways to expand on published research using a different type of analysis, or model validation, etc.
-
-By the end of the week, you are assigned to pass a quiz to check your familiarity with this week's the material.
-
-In addition, here are other resources that could be useful to clarify useful concepts in data analysis, machine learning and deep learning:
-- [Neural Networks](https://www.3blue1brown.com/topics/neural-networks)
-- [Deep learning](https://www.nature.com/articles/nature14539)
-- [Bias–variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)
 
 ### Download your work:
 
@@ -77,3 +63,8 @@ Using Google Colab as an example: click 'File' > 'Download' > 'Download .ipynb'.
 If you want to go further, you can also try the following notebooks and video:
  - [Basic machine learning using sklearn and pandas](https://colab.research.google.com/drive/1ySRFbWp70zKibCauvBV9hbbgMGhBbCLx?usp=sharing)
  - Deep Learning Basics: Introduction and Overview by Lex Fridman: [lecture](https://www.youtube.com/watch?v=O5xeyoRL95U) and [notebook](https://colab.research.google.com/github/lexfridman/mit-deep-learning/blob/master/tutorial_deep_learning_basics/deep_learning_basics.ipynb)
+
+In addition, here are other resources that could be useful to clarify useful concepts in data analysis, machine learning and deep learning:
+- [Neural Networks](https://www.3blue1brown.com/topics/neural-networks)
+- [Deep learning](https://www.nature.com/articles/nature14539)
+- [Bias–variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)

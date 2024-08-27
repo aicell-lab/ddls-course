@@ -11,4 +11,4 @@ You don't need any preparation for this lab, a chatgpt prompt will be distribute
 
 After completing the lab, please export your Python notebook from Google Colab or Jupyter Notebook as a `.ipynb` file and upload it using the link below:
 
-{{< cta cta_text="Upload your Computer Lab Notebook" cta_link="https://docs.google.com/forms/d/e/1FAIpQLSfLh0-XiyKhAxCSUBgtdXI_hVFkg5FhbXYgmHc3oYC8ndu_oA/viewform?usp=sf_link" >}}
+{{< cta cta_text="Click Here to Upload" cta_link="https://docs.google.com/forms/d/e/1FAIpQLSfLh0-XiyKhAxCSUBgtdXI_hVFkg5FhbXYgmHc3oYC8ndu_oA/viewform?usp=sf_link" >}}

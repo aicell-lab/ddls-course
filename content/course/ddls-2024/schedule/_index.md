@@ -5,21 +5,18 @@ date: '2024-06-15'
 type: book
 weight: 8
 ---
-## Important dates
-
+### Important Dates:
 - **Application open:** June 5th, 2024
 - **Application closes:** Aug 19, 2024
 - **First lecture:** Aug 27, 2024, 08:00 CEST
 - **Hackathon:** Oct 9-11, 2024
-- **Final Project:**: Oct 7-27, 2024
-- **Final Project consultation:**: Oct 17, 08:00-11:00 CEST
-- **Final Project Report submission deadline:** Sunday Oct 27, 2024, 23:59 CEST
-- **Oral Presentation (batch 1):** Tuesday Oct 29, 2024, 8:00-10:00 CEST
-- **Oral Presentation (batch 2):** Wednesday Oct 30, 2024, 8:00-10:00 CEST
+- **Final Project:** Oct 7-27, 2024
+- **Final Project consultation:** Oct 17, 08:00-11:00 CEST
+- **Final Project Report submission deadline:** Sunday, Oct 27, 2024, 23:59 CEST
+- **Oral Presentation (batch 1):** Tuesday, Oct 29, 2024, 8:00-10:00 CEST (only for Master’s students)
+- **Oral Presentation (batch 2):** Wednesday, Oct 30, 2024, 8:00-10:00 CEST (only for Master’s students)
 
-
-Lectures, Computer Labs and Journal Clubs will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998).
-
+Lectures, Computer Labs, and Journal Clubs will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998). The Hackathon and Oral Presentations will take place at SciLifeLab, Solna. The format of the oral presentation (in-person or online) will be decided on an individual basis.
 
 You can add the Google Calendar via this link: [Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19mMzg5YjdjZTFkZmMxODAxM2E4NjEzNDJlNzQ2OGJhYzc3NmRlNDg3MzE0NTdkMmMwOTA3OTg5NTIyM2Y0ZDIwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 
@@ -51,5 +48,7 @@ You can add the Google Calendar via this link: [Google Calendar](https://calenda
 | 6      | Wed 02 Oct 13:00-17:00  | 💻Computer Lab | Nils Mechtel & Songtao Cheng      | Large Language Model-powered Agents for DDLS                                                                                                    |
 | 6      | Fri 04 Oct 10:00-12:00  | 💬Journal Club | Songtao Cheng & Nils Mechtel      |                                                                                                                                                 |
 |        | Wed 09 Oct - Fri 11 Oct | 💻Hackathon   | Course Participants & DDLS Fellows | DDLS Hackathon at SciLifeLab, Solna                                                                                                             |
+|        | Tuesday Oct 29, 2024, 8:00-10:00 | 💬Oral Presentation   | Master level Course Participants | SciLifeLab, Solna |
+|        | Wednesday Oct 30, 2024, 8:00-10:00 | 💬Oral Presentation   | Master level Course Participants | SciLifeLab, Solna |
 
 If you anticipate that you won't be able to attend any of the sessions, please [contact](/contact) us as soon as possible.

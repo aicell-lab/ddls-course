@@ -57,7 +57,7 @@ Both the computer lab and the journal club are mandatory and graded activities!
 
 - For the journal club, you will have a list of questions (the same every week) which we will answer during the journal club. Your participation and answer to these questions will be graded during the journal club.
 
-In addition, in the final project week / hackathon, course participants will decide on a project to be conducted in pairs (Ms students) or alone (PhD students) and followed by an oral presentation. The project and presentation will be graded by peers and the examiner.
+In the final project week/hackathon, course participants will choose a project to be conducted in pairs (Master’s students) or individually (PhD students), followed by an oral presentation. The project and presentation will be graded by peers and the examiner. Please note that the oral presentation is only required for Master’s students; PhD students are exempt from this requirement.
 
 
 You can sign up partially or for the whole course. Each module is worth a certain number of ECTS credits, and you can choose to participate in the modules that interest you most. However, to obtain a certification for participation, you must complete all modules.

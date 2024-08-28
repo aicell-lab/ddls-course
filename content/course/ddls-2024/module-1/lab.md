@@ -1,6 +1,6 @@
 ---
 title: "Computer Lab 1: Introduction to Machine Learning"
-linkTitle: "Lab 1"
+linkTitle: "Computer Lab 1"
 weight: 10
 type: book
 ---

@@ -3,7 +3,7 @@ title: "Assignment 1: Mapping Data-Driven Life Science Research"
 linktitle: Assignment 1
 date: '2024-08-26'
 type: book
-weight: 11
+weight: 21
 ---
 #### Overview
 

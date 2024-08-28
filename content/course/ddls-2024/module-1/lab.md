@@ -259,7 +259,7 @@ After completing the lab, please submit your work using the Google Form linked b
 
 This lab will be graded based on your participation and the completion of the tasks outlined in the lab session. We will check your notebooks and chat history to evaluate your understanding and engagement during the lab session.
 
-## Tips for Google Colab and Submission
+## Tips for Google Colab
 
 #### Starting a google Colab session
 

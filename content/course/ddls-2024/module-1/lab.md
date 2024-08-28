@@ -13,6 +13,9 @@ After completing the lab, please submit your work using the Google Form linked b
 
 {{< cta cta_text="Click Here to Upload" cta_link="https://docs.google.com/forms/d/e/1FAIpQLSfLh0-XiyKhAxCSUBgtdXI_hVFkg5FhbXYgmHc3oYC8ndu_oA/viewform?usp=sf_link" >}}
 
+#### Deadline: 
+Please ensure that you submit your work by 11:59 PM on August 29th.
+
 ### Materials available for reading
 
 We use the following Google Colab notebook on machine learning as an example: [Click this link](https://dmol.pub/ml/introduction.html)

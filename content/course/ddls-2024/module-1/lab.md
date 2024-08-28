@@ -13,9 +13,6 @@ After completing the lab, please submit your work using the Google Form linked b
 
 {{< cta cta_text="Click Here to Upload" cta_link="https://docs.google.com/forms/d/e/1FAIpQLSfLh0-XiyKhAxCSUBgtdXI_hVFkg5FhbXYgmHc3oYC8ndu_oA/viewform?usp=sf_link" >}}
 
-#### Grading
-This lab will be graded based on your assignment 1 submission.
-
 ### Tutorial
 
 For this computer labs, you will only need to look through the rudimentary instructions on how to start a Colab session for machine learning. We use the following Google Colab notebook on machine learning as an example: [Click this link](https://dmol.pub/ml/introduction.html)

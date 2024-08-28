@@ -10,6 +10,7 @@ With [this interactive online book](https://dmol.pub/ml/introduction.html) you r
 
 This online book introduces almost all the necessary concepts in machine learning and data analysis, and our aim is to cover the code in chapter 2-6 this week. The corresponding code can be run in Google Colab in your web browser (see the instructions below).
 
+This lab will be graded based on your assignment 1 submission.
 ### Preparation
 
 For the computer labs, you will only need to look through the rudimentary instructions (section 1) on how to start a Colab session. For the later labs, we will need to know about how the file system works, so looking through section 2 is good to do until then (at least module 5-6).

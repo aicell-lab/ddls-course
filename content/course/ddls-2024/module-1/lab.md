@@ -13,9 +13,9 @@ After completing the lab, please submit your work using the Google Form linked b
 
 {{< cta cta_text="Click Here to Upload" cta_link="https://docs.google.com/forms/d/e/1FAIpQLSfLh0-XiyKhAxCSUBgtdXI_hVFkg5FhbXYgmHc3oYC8ndu_oA/viewform?usp=sf_link" >}}
 
-### Tutorial
+### Materials available for reading
 
-For this computer labs, you will only need to look through the rudimentary instructions on how to start a Colab session for machine learning. We use the following Google Colab notebook on machine learning as an example: [Click this link](https://dmol.pub/ml/introduction.html)
+We use the following Google Colab notebook on machine learning as an example: [Click this link](https://dmol.pub/ml/introduction.html)
 
 #### Starting a google Colab session
 
@@ -56,7 +56,7 @@ Using Google Colab as an example: click 'File' > 'Download' > 'Download .ipynb'.
 
 ![save ipynb file](../save-ipynb-file.png)
 
-### Going further (optional)
+### Going further
 If you want to go further, you can also try the following notebooks and video:
  - [Basic machine learning using sklearn and pandas](https://colab.research.google.com/drive/1ySRFbWp70zKibCauvBV9hbbgMGhBbCLx?usp=sharing)
  - Deep Learning Basics: Introduction and Overview by Lex Fridman: [lecture](https://www.youtube.com/watch?v=O5xeyoRL95U) and [notebook](https://colab.research.google.com/github/lexfridman/mit-deep-learning/blob/master/tutorial_deep_learning_basics/deep_learning_basics.ipynb)

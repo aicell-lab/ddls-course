@@ -303,6 +303,7 @@ Using Google Colab as an example: click 'File' > 'Download' > 'Download .ipynb'.
 
 Besides the notebook, you will also need to provide a shareable link to your ChatGPT chat history. To do this, click the 'Share' button in the chat window, then 'Copy link'. Make sure the link is accessible without requiring any login or permissions.
 
+If you're unable to generate a shareable link with ChatGPT, please export your conversation history as a document and upload it. The preferred format is PDF. You can copy the entire history, paste it into Google Docs, and save it as a PDF file. Alternatively, an HTML file is also acceptable.
 
 Now, click the button below to upload your notebook and submit chat history link:
 

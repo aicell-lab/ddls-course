@@ -27,12 +27,6 @@ During the first module, approximately 60 participants submitted their computer 
 
 - *"This was a very interesting way to be taught, interactively with ChatGPT. I feel like I learned a lot in a small amount of time, like compressed/distilled learning. It was, in general, easy to follow and slowly build up understanding with follow-up questions that were adapted to my level."*
 
-- *"I love the course design in general! I had to redo the whole lab as ChatGPT does not support sharing of conversations with images, but thankfully it was a good learning experience."*
-
-- *"It was a really good lab session. I felt that I definitely learned something during my time with ChatGPT, makes it easy to follow and ask any questions I wanted to know."*
-
-- *"Overall, I would say the lab was a good experience, and the instructors, as well as the assistants, were very responsive and helpful. I would surely recommend this course to others since they can benefit no matter what level they are at."*
-
 #### Addressing Feedback and Moving Forward
 
 While the feedback has been largely positive, we also received some valuable suggestions and identified areas for improvement:

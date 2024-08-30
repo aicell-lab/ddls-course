@@ -29,42 +29,44 @@ Welcome to the Q&A page for module 1 (computer lab and assignments). Here, we ad
 - **A:** Technical issues like library/package mismatches can sometimes occur in Google Colab. If you encounter such problems, try following the error messages to troubleshoot, or ask ChatGPT for help with specific error codes. If the issue persists, don’t hesitate to reach out to the course assistants for support.
 
 **Q: I had to redo a lot of work because ChatGPT forgot where we were during a session. How can I prevent this from happening?**
-- **A:** ChatGPT occasionally loses context during long or complex interactions. If this happens, you can prompt it to recall the previous steps or explicitly remind it of the context. If you notice that ChatGPT is losing track, consider summarizing the progress so far and asking it to continue from there.
+- **A:** ChatGPT occasionally loses context during long or complex interactions. If this happens, you can prompt it to recall the previous steps or explicitly remind it which topic you were discussing. More importantly, you should consider using the branching feature in ChatGPT to maintain a cleaner conversation history and avoid confusion.
 
 **Q: Is there a way to make the AI tutor more beginner-friendly?**
 - **A:** The AI tutor is designed to adapt to different levels of experience. If you’re finding it difficult, try asking ChatGPT to slow down, simplify explanations, or provide additional examples. You can also break down your learning into smaller, more manageable steps.
 
 **Q: Will we cover advanced topics in AI, such as GANs and transformers, in the course?**
-- **A:** Advanced topics like GANs and transformers may be covered in later modules or in supplementary materials. The course is designed to build a strong foundation before moving on to more complex subjects. Stay tuned for updates on upcoming modules.
+- **A:** While this course does not meant to cover specific AI methods, the prompting skills you learn can be applied to any topic. If you’re interested in learning about GANs, transformers, or other advanced topics, you can use ChatGPT to easily generate prompts and guide your learning in those areas. In the meantime, you may also touch on these topics in later modules.
 
 **Q: The ChatGPT prompt sometimes produces a lot of information at once, making it hard to follow. What can I do?**
-- **A:** If you find the information overwhelming, ask ChatGPT to break it down into smaller parts or to summarize key points. You can also ask follow-up questions to clarify any concepts that are unclear.
+- **A:** If you find the information overwhelming, you can explicitly ask ChatGPT to make the response more concise, or break down the content into smaller, more digestible pieces. Keep in mind that you will be the one steering the conversation, so feel free to guide ChatGPT in a way that suits your learning style.
 
 **Q: The AI tutor sometimes loses track of what to cover in each topic. How can I guide it better?**
-- **A:** If ChatGPT starts to lose track, you can use the branching feature by editing the previous message rather than starting a new one. This helps maintain context. Additionally, keeping the conversation focused on the learning goal by avoiding unrelated chat history will help ensure that ChatGPT stays on track.
+- **A:** If ChatGPT starts to lose track, you can use the branching feature by editing the previous message rather than starting a new one. This helps maintain context. Additionally, keeping the conversation focused on the learning goal by avoiding unrelated chat history will help ensure that ChatGPT stays on track. Or more explicitly, you can ask ChatGPT to cover a specific topic or concept by pasting the outline in the message.
 
 **Q: I found that the teaching assistant (TA) started slowly and then moved too quickly. How should I approach this?**
-- **A:** If you find the pace challenging, you can use the branching feature in ChatGPT by editing the previous message instead of starting a new one. This allows you to ask follow-up questions and dive deeper into specific concepts at your own pace. Practicing your steering skills with ChatGPT will help you manage the learning process more effectively.
+- **A:** You can guide the TA to adjust the pace by asking it to slow down or speed up. If you feel that the TA is moving too quickly, don’t hesitate to ask for clarification or additional examples. Practicing your steering skills with ChatGPT will help you manage the learning process more effectively.
 
 #### **General Course Questions**
 
 **Q: I would like to receive course materials for upcoming modules in advance. Is that possible?**
-- **A:** The course is structured to build knowledge progressively, so we prefer students to follow along with the scheduled modules. This helps ensure that you’re fully engaged with the material as it is introduced. However, if you have specific reasons for needing materials early, please contact the course instructors.
+- **A:** The course is structured to build knowledge progressively, so we prefer students to follow along with the scheduled modules. It was shown ([Cepeda et al, 2006](https://pubmed.ncbi.nlm.nih.gov/16719566/)) that spaced repetition and interleaved practice are more effective for learning. 
+
+Also, instead of teaching only the knowledge, we would like to practice your ability to learn new concepts and skills in a short time, so reading the materials in advance might not be as beneficial as you think to train your learning skills.
+
+However, if you have specific needs or concerns, please feel free to reach out to the course team.
 
 **Q: The format of Assignment 1 was unclear to me. How detailed should my responses be?**
-- **A:** The main focus of the assignment is on understanding and articulating the key concepts. While the format can be flexible, we encourage you to provide clear, well-thought-out responses that demonstrate your grasp of the material. Presentation slides are optional unless specified otherwise.
+- **A:** The main focus of the assignment 1 is on understanding and articulating the key concepts. While the format can be flexible, we encourage you to provide clear, well-thought-out responses that demonstrate your grasp of the material.
 
 **Q: Is there any way to have more time for lab sessions or to revise the material?**
-- **A:** We understand that some students may need more time to fully grasp the material. While the course schedule is fixed, you are encouraged to spend additional time outside of scheduled labs revising the content. If you feel that extra sessions would be beneficial, please let us know, and we will consider offering supplementary sessions.
+- **A:** We understand that some students may need more time to fully grasp the material, that's why we offered additional 24h for the submission. While the course schedule is fixed, you are encouraged to spend additional time to learn and practice yourself.
 
 **Q: I’m worried that my coding skills might affect my ability to implement the concepts. How can I improve?**
-- **A:** Coding can be challenging, especially if you’re new to it. We recommend practicing the coding exercises multiple times and using ChatGPT as a tutor to help debug and refine your code. Don’t hesitate to ask questions or seek additional resources if needed.
+- **A:** Coding can be challenging, especially if you’re new to it. We recommend practicing the coding exercises multiple times and using ChatGPT as a tutor to help debug and refine your code.
 
-**Q: I had difficulty with Assignment 1’s format. How should I approach it?**
-- **A:** Focus on demonstrating your understanding of the material rather than worrying too much about the format. Whether you choose to write a report, create slides, or use another format, the key is to clearly convey the main points and your insights.
+**Q: Can I get more help with working on GitLab and writing test scripts?**
+- **A:** It is out of scope for the course, but you can easily use what you’ve learned in this course to construct a prompt in ChatGPT and explore how to work with GitLab and writing tests.
 
-**Q: Can I get more help with working on GitLab and updating scripts?**
-- **A:** You can use what you’ve learned in this course to construct a prompt in ChatGPT and explore how to work with GitLab and update scripts. The AI tutor is a great tool for learning new skills, so feel free to experiment and ask questions within the platform.
 
 ---
 

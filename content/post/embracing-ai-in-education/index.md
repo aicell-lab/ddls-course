@@ -17,10 +17,21 @@ You can explore the lab activities here: [Module 1 Lab](https://ddls.aicell.io/c
 
 During the first module, approximately 60 students submitted their computer lab notebooks along with chat histories that documented their interactions with ChatGPT. We received overwhelmingly positive feedback, with students expressing excitement and appreciation for this innovative learning approach. Here are a few examples of the feedback we received:
 
+During the first module, approximately 60 participants submitted their computer lab notebooks along with chat histories that documented their interactions with ChatGPT. We received overwhelmingly positive feedback, with participants expressing excitement and appreciation for this innovative learning approach. Here are a few examples of the feedback we received:
+
 - *"It was awesome. Learning from ChatGPT is actually fun. I will redo the same process again and see how many new things I can learn."*
-- *"The course is very interesting, however, ChatGPT restricted me from continuing with Topic 9 and 10. It showed that I have used it many times from yesterday until today, unless I create a new topic."*
-- *"The computer lab was a bit difficult for me towards the end topics as it got a bit complex for a beginner in Python. However, it was nice to learn something new, which is what I continue to look forward to in this course."*
-- *"Great prompt design to create the virtual tutor. It was easy to follow and well-structured."*
+
+- *"The assignment was very good, and I found it helpful. I did not know ChatGPT could be this useful."*
+
+- *"The computer lab is very informative, although sometimes ChatGPT seems to lose track of what to cover in each topic. However, it is quite easy to guide 'him,' and it's an excellent tutor!"*
+
+- *"This was a very interesting way to be taught, interactively with ChatGPT. I feel like I learned a lot in a small amount of time, like compressed/distilled learning. It was, in general, easy to follow and slowly build up understanding with follow-up questions that were adapted to my level."*
+
+- *"I love the course design in general! I had to redo the whole lab as ChatGPT does not support sharing of conversations with images, but thankfully it was a good learning experience."*
+
+- *"It was a really good lab session. I felt that I definitely learned something during my time with ChatGPT, makes it easy to follow and ask any questions I wanted to know."*
+
+- *"Overall, I would say the lab was a good experience, and the instructors, as well as the assistants, were very responsive and helpful. I would surely recommend this course to others since they can benefit no matter what level they are at."*
 
 #### Addressing Feedback and Moving Forward
 
@@ -30,6 +41,8 @@ While the feedback has been largely positive, we also received some valuable sug
 - **Pacing and Complexity:** A few students felt that the course started slowly and then accelerated too quickly. We encourage students to actively engage with ChatGPT to adjust the pace according to their comfort level.
 - **Technical Challenges:** There were some challenges related to library/package mismatches in Google Colab, leading to troubleshooting efforts. These issues are part of the learning process, and students are encouraged to reach out for assistance when needed.
 - **Request for Advance Materials:** Some students expressed a desire to receive course materials for upcoming modules in advance. While we understand this request, we believe that following the structured progression of the course helps ensure a deeper understanding of the content.
+
+To address these questions, we have created a dedicated [Q&A page](https://ddls.aicell.io/course/ddls-2024/module-1/qa/) where you can find answers to common queries and concerns. We are committed to providing a seamless learning experience and welcome all feedback and suggestions.
 
 Overall, the feedback has been incredibly encouraging, and we are committed to refining the course to make it even more impactful. We are excited about the journey ahead and look forward to continuing this transformative experience together.
 

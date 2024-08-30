@@ -138,7 +138,7 @@ The submission of the computer lab, the project report and the oral exam will be
 
 ## Communication and groups
 
-You can find all announcements at [here](/post/).
+You can find all announcements and posts at [here](/post/).
 
 For questions, please email the course responsible, see contact [here](/contact/).
 

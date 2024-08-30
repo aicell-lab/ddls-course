@@ -22,7 +22,7 @@ main:
     PageRef: course/ddls-2022/_index.md
     weight: 20
     parent: courses
-  - name: Announcements
+  - name: Posts
     PageRef: post/_index.md
     weight: 30
   - name: Contact

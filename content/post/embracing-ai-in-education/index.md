@@ -1,8 +1,7 @@
 ---
-title: Embracing AI in Life Sciences Education
+title: "Embracing AI in Life Sciences Education: A Transformative Journey with the DDLS Course"
 date: 2024-08-29
 ---
-### Embracing AI in Life Sciences Education: A Transformative Journey with the DDLS Course
 
 We are thrilled to announce that this year's Data-Driven Life Sciences (DDLS) course has seen an overwhelming response, with over 90 participants signing up for at least one module. In Module 1, we introduced the foundational concepts of data-driven life sciences, covering topics such as the data scale in life sciences, AI's role in data processing, the data cycle, FAIR data principles, and the exciting realm of generative AI. A significant focus was placed on prompt engineering in ChatGPT, highlighting its power and potential in advancing research and learning.
 
@@ -33,6 +32,12 @@ While the feedback has been largely positive, we also received some valuable sug
 - **Request for Advance Materials:** Some students expressed a desire to receive course materials for upcoming modules in advance. While we understand this request, we believe that following the structured progression of the course helps ensure a deeper understanding of the content.
 
 Overall, the feedback has been incredibly encouraging, and we are committed to refining the course to make it even more impactful. We are excited about the journey ahead and look forward to continuing this transformative experience together.
+
+#### The Importance of Responsible AI Use
+
+As we integrate AI into our educational practices, it is essential to use these tools responsibly. Generative AI like ChatGPT is a powerful asset, but it also comes with challenges such as potential misinformation, biases, and the risk of over-reliance on AI-generated content. To ensure that AI enhances rather than detracts from your learning experience, we encourage all students to be vigilant, critically evaluate AI-generated outputs, and always verify information against trusted sources.
+
+For a more detailed guideline on the responsible use of AI and the course rules, please visit our dedicated page: [Responsible AI Use and Course Rules](https://ddls.aicell.io/post/responsible-ai/).
 
 #### Join Us on This Exciting Journey
 

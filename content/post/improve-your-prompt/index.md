@@ -75,3 +75,5 @@ ChatGPT will then provide actionable advice, enabling you to further fine-tune y
 By incorporating these strategies, you'll be well on your way to mastering the art of self-directed learning and making the most of the tools at your disposal.
 
 Try this in your assignment 2, and let me know how it goes!
+
+*This blog post was created with the help of ChatGPT.*

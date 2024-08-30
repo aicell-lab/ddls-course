@@ -205,3 +205,5 @@ To help you get started, we've attached example chat histories where these promp
 ## Additional Resources
 
 If you have any questions or need further guidance, feel free to reach out. We are excited to see your progress and can't wait to start this Python learning journey with you!
+
+*This blog post was created with the help of ChatGPT.*

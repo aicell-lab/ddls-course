@@ -112,3 +112,5 @@ The applicants should be equipped with basic knowledge in life science and basic
 
 For further questions, please contact the course leader Dr. Wei Ouyang <weio@kth.se> and <traininghub@scilifelab.se>.
  
+
+*The figure is generated using DALL.E, and this blog post was created with the help of ChatGPT.*

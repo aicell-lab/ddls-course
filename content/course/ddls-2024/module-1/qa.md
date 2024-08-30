@@ -10,7 +10,7 @@ Welcome to the Q&A page for module 1 (computer lab and assignments). Here, we ad
 
 #### **AI Tutor & ChatGPT**
 
-**Q: Can I use ChatGPT to complete the computer lab, assignments, or journal club activities?
+**Q: Can I use ChatGPT to complete the computer lab, assignments, or journal club activities?**
 - **A:** Yes, you are encouraged to use ChatGPT as a tool for learning and completing course activities. However, it is important to use it responsibly and be mindful of academic integrity. Please review the [course rules on responsible AI usage](https://ddls.aicell.io/post/responsible-ai/) to ensure that you are adhering to the guidelines.
 
 **Q: I encountered an error saying, "You've reached our limits of messages. Please try again later." What should I do?**

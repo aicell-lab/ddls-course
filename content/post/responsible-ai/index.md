@@ -65,7 +65,7 @@ Transparency in AI use is essential. If AI tools like ChatGPT are used to prepar
 
 **🚷 These rules are in place to ensure the responsible use of AI in all coursework and research activities.**
 
-Failure to adhere to these guidelines may result in your assignment failing or, in severe cases, failing the entire course. The use of AI in this course is intended to enhance your learning, not replace your critical thinking. Irresponsible use of AI will be taken seriously, and consequences will be applied based on the nature and severity of the violation.
+Failure to adhere to these guidelines may result in your assignment failing or, in severe cases, failing the entire course. The use of AI in this course is intended to enhance your learning, not replace your critical thinking. Always remember that you are ultimately responsible for the content you produce.
 
 ### 📢 Summary
 

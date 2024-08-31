@@ -33,7 +33,7 @@ Nima Rafati is a passionate bioinformatician focused on uncovering patterns in b
 The lecture will cover the scRNA-Seq workflow, including sample preparation, sequencing, data preprocessing, and result interpretation. Key topics such as quality control and clustering will be discussed. An example of scRNA-Seq data analysis will be demonstrated to illustrate these concepts.
 
 <!-- updated: 28.06.2024 -->
-#### Speaker 2: Laura Carroll (DDLS Fellow; Wednesday 11th September 10:00-11:00 CEST)
+#### Speaker 2: Laura Carroll (DDLS Fellow; Pre-recorded)
 
 {{< figure src="Laura_Carroll.jpeg" class="profile-photo">}}
 

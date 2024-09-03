@@ -5,7 +5,7 @@ weight: 20
 type: book
 ---
 
-This week, please read the paper titled as "[De novo design of protein structure and function with RFdiffusion](https://www.nature.com/articles/s41586-023-06415-8)"
+This week, please read the paper titled as "[De novo design of protein structure and function with RFdiffusion](https://www.nature.com/articles/s41586-023-06415-8)".
 
 ## Abstract
 

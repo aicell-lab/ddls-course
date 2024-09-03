@@ -15,15 +15,16 @@ After opening the notebook in Google Colab, save a personal copy to your Google 
 
 In this lab, you will:
 
-- Learn how to use **EvoBind**, which leverages **AlphaFold2** for protein structure prediction.
+- Learn how to use **EvoBind**, which leverages **AlphaFold2** for designing novel peptide binders.
 
-- Apply EvoBind to design a peptide binder.
+- Apply EvoBind to design your peptide binder.
 
 ### Important Notes
 
+- **Set Runtime to GPU:** Ensure your runtime is set to GPU: **Runtime** > **Change runtime type** > **Hardware accelerator** (set to GPU).
+
 - **Hands-On Learning:** This lab emphasizes active participation. You'll need to carefully study and complete the code snippets provided in the notebook. Full solutions are not provided, so this is your chance to deepen your understanding.
 
-- **Set Runtime to GPU:** Ensure your runtime is set to GPU: **Runtime** > **Change runtime type** > **Hardware accelerator** (set to GPU).
 
 ## Submission Instructions
 

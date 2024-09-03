@@ -15,8 +15,6 @@ You can explore the lab activities here: [Module 1 Lab](https://ddls.aicell.io/c
 
 #### Exceptional Feedback from Students
 
-During the first module, approximately 60 students submitted their computer lab notebooks along with chat histories that documented their interactions with ChatGPT. We received overwhelmingly positive feedback, with students expressing excitement and appreciation for this innovative learning approach. Here are a few examples of the feedback we received:
-
 During the first module, approximately 60 participants submitted their computer lab notebooks along with chat histories that documented their interactions with ChatGPT. We received overwhelmingly positive feedback, with participants expressing excitement and appreciation for this innovative learning approach. Here are a few examples of the feedback we received:
 
 - *"It was awesome. Learning from ChatGPT is actually fun. I will redo the same process again and see how many new things I can learn."*

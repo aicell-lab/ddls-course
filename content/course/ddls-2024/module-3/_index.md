@@ -21,7 +21,7 @@ course_module: "true"
 
 **Note**: This module contains two lectures held on two different dates: September 10th Tuesday at 9:00-10:00 CEST and September 11th Wednesday at 10:00-11:00 CEST.
 
-<!-- updated: 28.06.2024 -->
+<!-- updated: 31.08.2024 -->
 #### Speaker 1: Nima Rafati (Data Scientist at NBIS, SciLifeLab, Uppsala University; Tuesday 10th September 9:00-10:00 CEST)
 
 {{< figure src="Nima_Rafati.jpg" class="profile-photo">}}
@@ -30,14 +30,10 @@ Nima Rafati is a passionate bioinformatician focused on uncovering patterns in b
 
 **Title: Decoding Cell-Level Biology with scRNA-Seq Data**
 
-In this lecture, you will gain insights into RNA sequencing (RNA-Seq) methods, with a particular focus on single-cell RNA sequencing (scRNA-Seq). We will briefly introduce sequencing techniques and highlight the differences between bulk and single-cell RNA-Seq.
-
-The lecture will cover the scRNA-Seq workflow, including sample preparation, sequencing, data preprocessing, and result interpretation. Key topics such as cell clustering and trajectory inference will be discussed. An example of scRNA-Seq data analysis will be demonstrated to illustrate these concepts.
-
-By the end of this lecture, attendees will have a solid understanding of scRNA-Seq techniques and their application in genomics research.
+The lecture will cover the scRNA-Seq workflow, including sample preparation, sequencing, data preprocessing, and result interpretation. Key topics such as quality control and clustering will be discussed. An example of scRNA-Seq data analysis will be demonstrated to illustrate these concepts.
 
 <!-- updated: 28.06.2024 -->
-#### Speaker 2: Laura Carroll (DDLS Fellow; Wednesday 11th September 10:00-11:00 CEST)
+#### Speaker 2: Laura Carroll (DDLS Fellow; Pre-recorded)
 
 {{< figure src="Laura_Carroll.jpeg" class="profile-photo">}}
 

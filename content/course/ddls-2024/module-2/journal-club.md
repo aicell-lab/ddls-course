@@ -14,12 +14,12 @@ There has been considerable recent progress in designing new proteins using deep
 ## Assignment
 
  - Read the paper and using the [Question Sheet](/question-sheet/) which contains a set of questions designed to guide your reading and understanding.
- - Fill out your question sheet and submit before the seminar.
- - Be ready to discuss in the seminar.
+ - Fill out your question sheet and submit before the journal club.
+ - Be ready to discuss in the journal club.
 
  {{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/nnj1PPQgDA9sUYVu8" >}}
 
- ## Join the Seminar
+ ## Join the Journal Club
 
-During the seminar, we will walk through the question sheet together. Everyone will be selected at random to answer one or more questions from the question sheet, and/or describe selected figures.
+During the journal club, we will walk through the question sheet together. Everyone will be selected at random to answer one or more questions from the question sheet, and/or describe selected figures.
 

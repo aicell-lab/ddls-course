@@ -22,6 +22,7 @@ Your tool for understanding papers in a systematic way.
 - What data is the paper working with?
   - What type of data is it?
   - How was it acquired (by which technique)?
+  - How well does it adhere to the FAIR principles (Findability, Accessibility, Interoperability, and Reuse) for data management?
 - Which analysis technique is used?
   - Is it well suited? Why?
   - Would other analysis techniques have been useful?
@@ -48,8 +49,4 @@ Your tool for understanding papers in a systematic way.
 
 ---
 
-## FAIR Principles
-
-- How well does the paper adhere to the FAIR principles (Findability, Accessibility, Interoperability, and Reuse) for data management?
-  - Are the datasets/findings easily accessible and reusable by others?
-  - Does the paper ensure that the data can be found and understood by computational systems? 
+## Thank you!

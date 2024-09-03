@@ -7,7 +7,7 @@ type: book
 
 Welcome to the practical session of Module 2, created by lecturer Patrick Bryant. In this lab, you'll design a peptide binder using advanced AI techniques.
 
-[Click Here to Access the Google Colab Notebook](https://colab.research.google.com/drive/1KHma8rS4j-JuiXkn2YtCrqPskR0X9RR-?usp=sharing)(The access will open when computer lab starts.)
+[Click here to access the Google Colab notebook](https://colab.research.google.com/drive/1KHma8rS4j-JuiXkn2YtCrqPskR0X9RR-?usp=sharing). Access will be granted once the computer lab session begins.
 
 After opening the notebook in Google Colab, save a personal copy to your Google Drive: **File** > **Save a copy in Drive**. You'll run and complete your tasks in this copy.
 

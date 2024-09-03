@@ -13,7 +13,7 @@ There has been considerable recent progress in designing new proteins using deep
 
 ## Assignment
 
- - Read the paper and using the [Question Sheet](/question-sheet/) which contains a set of questions designed to guide your reading and understanding.
+ - Read the paper and use the [Question Sheet](/question-sheet/) which contains a set of questions designed to guide your reading and understanding.
  - Fill out your question sheet and submit before the journal club.
  - Be ready to discuss in the journal club.
 

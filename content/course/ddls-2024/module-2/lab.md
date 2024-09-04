@@ -25,7 +25,7 @@ In this lab, you will:
 
 - **Hands-On Learning:** This lab emphasizes active participation. You'll need to carefully study and complete the code snippets provided in the notebook. Full solutions are not provided, so this is your chance to deepen your understanding.
 
-- **Time Management:** It’s OK to upload your work if you are unable to finish all tasks during the session. Focus on learning from the exercises you complete, as the primary goal is to understand the key concepts as you work through the notebook.
+- **Time Management:** It’s OK to upload your work without finishing all tasks during the computer lab. Focus on learning from the exercises you complete, as the primary goal is to understand the key concepts as you work through the notebook.
 
 ## Submission Instructions
 
@@ -41,6 +41,6 @@ After completing the notebook exercises:
 
 ## Submission Deadline
 
-You should submit your work by the end of the computer lab session. If you cannot finish it, you can submit it within 24 hours after the lab session ends.
+You should submit your work by the end of the computer lab session. But if you want to spend more time, you can submit it within 24 hours after the lab session ends.
 
 If you cannot attend the lab session, you will need to get an approval and also submit your work within 24 hours after the lab session ends.

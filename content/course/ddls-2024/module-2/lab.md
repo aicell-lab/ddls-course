@@ -1,5 +1,5 @@
 ---
-title: "Computer Lab 2:  Advanced AI Techniques in Biological Systems"
+title: "Computer Lab 2:  AI-powered Protein Design"
 linkTitle: "Computer Lab 2"
 weight: 10
 type: book

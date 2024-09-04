@@ -19,6 +19,10 @@ There has been considerable recent progress in designing new proteins using deep
 
  {{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/nnj1PPQgDA9sUYVu8" >}}
 
+ 6. **Deadline**: Submit your PDF before the journal club session.
+
+If you cannot attend the journal club session, please let the instructor know in advance. And you still need to submit your PDF before the session even if you cannot attend.
+ 
  ## Join the Journal Club
 
 During the journal club, we will walk through the question sheet together. Everyone will be selected at random to answer one or more questions from the question sheet, and/or describe selected figures.

@@ -38,6 +38,8 @@ After completing the notebook exercises:
 
 {{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/pZ9vRgfbetBWkTTN9" >}}
 
-### Submission Deadline
+## Submission Deadline
 
-Submit your notebook within **24 hours after the computer lab session ends**.
+You should submit your work by the end of the computer lab session. If you cannot finish it, you can submit it within 24 hours after the lab session ends.
+
+If you cannot attend the lab session, you will need to get an approval and also submit your work within 24 hours after the lab session ends.

@@ -25,6 +25,7 @@ In this lab, you will:
 
 - **Hands-On Learning:** This lab emphasizes active participation. You'll need to carefully study and complete the code snippets provided in the notebook. Full solutions are not provided, so this is your chance to deepen your understanding.
 
+- **Time Management:** It’s OK to upload your work if you are unable to finish all tasks during the session. Focus on learning from the exercises you complete, as the primary goal is to understand the key concepts as you work through the notebook.
 
 ## Submission Instructions
 

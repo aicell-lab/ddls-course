@@ -41,6 +41,6 @@ After completing the notebook exercises:
 
 ## Submission Deadline
 
-You should submit your work by the end of the computer lab session. But if you want to spend more time, you can submit it within 24 hours after the lab session ends.
+You should submit your work by the end of the computer lab session. Given the difficulties encountered today, we will extend the deadline for this notebook submission by 24 hours. The new deadline is Friday, 06.08.2024, at 17:00 CEST.
 
-If you cannot attend the lab session, you will need to get an approval and also submit your work within 24 hours after the lab session ends.
+If you cannot attend the lab session, you will need to get an approval and also submit your work within 48 hours after the lab session ends.

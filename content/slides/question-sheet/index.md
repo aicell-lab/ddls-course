@@ -19,8 +19,8 @@ Your tool for discussing papers in a systematic way.
 <button class="button" onclick="window.setNames()">Set Presenters</button>
 
 (Enter names separated by commas)
-<input id="names-field" type="text" style="width: 100%;height:30px;font-size:20px"></textarea>
-
+<input id="names-field" type="text" style="width: 100%;height:30px;font-size:20px"></input>
+(Enter names separated by commas)
 
 -----
 

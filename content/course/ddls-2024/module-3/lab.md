@@ -5,13 +5,13 @@ weight: 10
 type: book
 ---
 
-Welcome to the practical session of Module 2, created by lecturer Patrick Bryant. In this lab, you'll design a peptide binder using advanced AI techniques.
+Welcome to the practical session of Module 3, created by lecturer Nima Rafati and Laura Carroll. In this lab, you'll learn some useful skills from the following Google Colab notebooks.
 
-[Click here to access the Google Colab notebook 1](https://). 
+[Notebook 1: scRNASeq data analysis workflow](https://). 
 
-[Click here to access the Google Colab notebook 2](https://). 
+[Notebook 2: Training a Conditional Random Field (CRF) for ribosomally synthesized and post-translationally modified peptides(RiPPs) Detection](https://). 
 
-Access will be granted once the computer lab session begins.
+**Access will only be granted after the computer lab session begins.**
 
 After opening the notebook in Google Colab, save a personal copy to your Google Drive: **File** > **Save a copy in Drive**. You'll run and complete your tasks in this copy.
 
@@ -19,13 +19,13 @@ After opening the notebook in Google Colab, save a personal copy to your Google 
 
 In this lab, you will:
 
-- Learn how to use **EvoBind**, which leverages **AlphaFold2** for designing novel peptide binders.
+1\. **Train a Conditional Random Field (CRF) Model for RiPP Detection:** You will use the GECCO tool to train a CRF model specifically for detecting ribosomally synthesized and post-translationally modified peptides (RiPPs) in bacterial genomes. This will involve processing input files, training the model, and evaluating its performance on test data.
 
-- Apply EvoBind to design your peptide binder.
+2\. **Conduct Standard scRNASeq Data Analysis Workflow:** You will analyze scRNASeq data from patients with significant lung inflammation versus healthy individuals. This workflow includes loading data, quality control, filtering, doublet detection, cell cycle regression, feature selection, data integration, dimensionality reduction, and differential expression analysis.
 
 ### Important Notes
 
-- **Set Runtime to GPU:** Ensure your runtime is set to GPU: **Runtime** > **Change runtime type** > **Hardware accelerator** (set to GPU).
+- **Set Runtime to CPU:** We don't need GPU this time. The Google Colab's default runtime is CPU, so you can just click the 'Run' button to run the code. If you want to ensure your runtime is set to CPU, you can select: **Runtime** > **Change runtime type** > **Hardware accelerator** (set to CPU).
 
 - **Hands-On Learning:** This lab emphasizes active participation. You'll need to carefully study and complete the code snippets provided in the notebook. Full solutions are not provided, so this is your chance to deepen your understanding.
 

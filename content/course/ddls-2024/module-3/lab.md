@@ -5,11 +5,13 @@ weight: 10
 type: book
 ---
 
-Welcome to the practical session of Module 3, created by lecturer Nima Rafati and Laura Carroll. In this lab, you'll learn some useful skills from the following Google Colab notebooks.
+Welcome to the practical session of Module 3, created by lecturer Laura Carroll and Nima Rafati. In this lab, you'll learn some useful skills from the following Google Colab notebooks.
 
-[Notebook 1: scRNASeq data analysis workflow](https://). 
+[Notebook 1: Training a Conditional Random Field (CRF) for ribosomally synthesized and post-translationally modified peptides(RiPPs) Detection](https://). 
 
-[Notebook 2: Training a Conditional Random Field (CRF) for ribosomally synthesized and post-translationally modified peptides(RiPPs) Detection](https://). 
+[Notebook 2: scRNASeq data analysis workflow](https://). 
+
+
 
 **Access will only be granted after the computer lab session begins.**
 

@@ -13,13 +13,13 @@ Mapping gene networks requires large amounts of transcriptomic data to learn the
 
 ## Assignment
 
- - Read the paper and use the [Question Sheet](/question-sheet/) which contains a set of questions designed to guide your reading and understanding.
- - Fill out your question sheet and submit before the journal club.
- - Be ready to discuss in the journal club.
+- Read the paper and use the [Question Sheet](/question-sheet/) which contains a set of questions designed to guide your reading and understanding.
+- Fill out your question sheet and submit before the journal club.
+- Be ready to discuss in the journal club.
 
- {{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/dHeDhjFnzmt15CGD9" >}}
+{{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/dHeDhjFnzmt15CGD9" >}}
 
- 6. **Deadline**: Submit your PDF before the journal club session.
+**Deadline**: Submit your PDF before the journal club session.
 
 If you cannot attend the journal club session, please let the instructor know in advance. And you still need to submit your PDF before the session even if you cannot attend.
  

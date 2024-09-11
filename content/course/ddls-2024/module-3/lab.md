@@ -15,7 +15,7 @@ Welcome to the practical session of Module 3, created by lecturer Laura Carroll 
 
 **Access will only be granted after the computer lab session begins.**
 
-After opening the notebook in Google Colab, save a personal copy to your Google Drive: **File** > **Save a copy in Drive**. You'll run and complete your tasks in this copy.
+After opening the notebooks in Google Colab, save a personal copy to your Google Drive: **File** > **Save a copy in Drive**. You'll run and complete your tasks in this copy.
 
 ### Objective
 
@@ -29,19 +29,19 @@ In this lab, you will:
 
 - **Set Runtime to CPU:** We don't need GPU this time. The Google Colab's default runtime is CPU, so you can just click the 'Run' button to run the code. If you want to ensure your runtime is set to CPU, you can select: **Runtime** > **Change runtime type** > **Hardware accelerator** (set to CPU).
 
-- **Hands-On Learning:** This lab emphasizes active participation. You'll need to carefully study and complete the code snippets provided in the notebook. Full solutions are not provided, so this is your chance to deepen your understanding.
+- **Hands-On Learning:** This lab emphasizes active participation. You'll need to carefully study and complete the code snippets provided in the notebooks. Full solutions are not provided, so this is your chance to deepen your understanding.
 
-- **Time Management:** It’s OK to upload your work without finishing all tasks during the computer lab. Focus on learning from the exercises you complete, as the primary goal is to understand the key concepts as you work through the notebook.
+- **Time Management:** It’s OK to upload your work without finishing all tasks during the computer lab. Focus on learning from the exercises you complete, as the primary goal is to understand the key concepts as you work through the notebooks.
 
 ## Submission Instructions
 
-After completing the notebook exercises:
+After completing the notebooks exercises:
 
-1\. Export your notebook from Google Colab:
+1\. Export your notebooks from Google Colab:
 
    - **File** > **Download** > **Download .ipynb**
 
-2\. Submit the downloaded file using the provided submission form.
+2\. Submit the downloaded files using the provided submission form.
 
 {{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/84cUmTrGdufLCM8t5" >}}
 

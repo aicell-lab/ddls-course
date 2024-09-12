@@ -20,14 +20,16 @@ course_module: "true"
 
 **Start date**: Week 39 (24th September 2024)
 
-<!-- TODO: needs to be updated -->
-#### Speaker: Daniel Fürth (SciLifeLab Fellow; Tuesday 24th September 8:00-10:00 CEST)
+<!-- updated: 12.09.2024 -->
+#### Speaker: Daniel Fürth (Assistant Professor, SciLifeLab Fellow; Tuesday 24th September 8:00-10:00 CEST)
 
-<!-- **Title: ** -->
+{{< figure src="Daniel_Furth.png" class="profile-photo" >}}
 
-This module will explore advanced tools for single-molecule imaging and programmable bioconjugation to study cell communication. It will cover essential computational methods for image analysis of single molecules in both fixed and living cells. Participants will learn about the segmentation of individual molecules in 2D and 3D using U-Net and ResNet deep learning architectures, and how to track these molecules over time using DeepSORT, an enhanced version of the SORT algorithm.
+Dr. Daniel Fürth completed his PhD at the Department of Neuroscience, Karolinska Institute, Sweden, where he developed computational methods for 3D tissue reconstruction and connectomics. During his postdoc at Cold Spring Harbor Laboratory (CSHL) in New York, USA, he developed single-molecule RNA imaging techniques. Now, as a group leader, SciLifeLab fellow, and assistant professor at the Department of Immunology, Genetics & Pathology, Uppsala University, Dr. Fürth and his team develop novel sequencing chemistries and imaging approaches to detect molecules directly in living cells.
 
-The session will also discuss transforming images of tissue sections onto a known anatomical reference atlas using rigid and non-rigid transformations. Participants will explore point-cloud registration algorithms like Thin-Plate Splint (TPS) registration and Coherent-Point Drift (CPD), comparing their relative merits. Additionally, the lecture will introduce valuable resources, database structures, and ontologies relevant to creating anatomical atlases.
+**Title: Single-Molecule Analysis and Tissue Atlases**
+
+This lecture will explore advanced techniques in image segmentation and registration, focusing on their application in creating comprehensive tissue atlases. We will begin by discussing standard segmentation methods, including the use of deep learning architectures such as ResNet and U-Net, which are widely employed in medical imaging for precise delineation of anatomical structures. We will then move to registration techniques, with a particular focus on point-set registration, which aligns multi-dimensional datasets to build accurate reference atlases. Best practices for constructing reference atlases will be covered, including the integration of ontologies for labeling anatomical regions, enabling the conversion of 2D histological data into 3D tissue maps. Lastly, we will examine tracking methodologies for single-molecule and cell dynamics over time, highlighting techniques that allow for detailed spatial and temporal analysis of biological processes. This comprehensive overview will provide attendees with key insights into the development of tissue atlases and the tools needed for tracking and analyzing molecular behavior across time and space.
 
 <!-- TODO: needs to be updated -->
 **Computer Lab**: The lab session will involve hands-on exercises using Jupyter notebooks to apply the discussed computational tools for analyzing fluorescent microscopy data. Participants will practice segmenting and tracking single molecules, as well as performing tissue atlas registration.

@@ -40,7 +40,7 @@ gantt
     axisFormat  %d-%b
 
     section Final Project
-    Final Project                : active, proj, 2024-10-07, 21d
+    Final Project                : active, proj, 2024-10-07, 20d
     Report Submission Deadline   : milestone, m1, 2024-10-27, 23:59
 
     section Hackathon

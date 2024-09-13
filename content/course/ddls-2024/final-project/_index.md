@@ -18,3 +18,13 @@ Join us at the **DDLS Hackathon** at **SciLifeLab in Solna**, where course parti
 The hackathon will take place from the **9th to the 11th of October 2024**. During this period, participants will select a dataset and apply the skills and knowledge gained during the course to create AI models, analyze the data, and produce meaningful insights. To enhance interactivity, all participants are invited to come to SciLifeLab in Solna for this three-day event. At the end of the hackathon, teams will present their achievements.
 
 Everyone involved in the DDLS program, including PIs, affiliated PhD students, postdocs, and facility trainers, is welcome to join the code fair. Participants will form pairs or small groups of 2-3 people on-site to work on projects, exchange ideas and experiences, and engage in pair programming. This collaborative environment will foster innovation and provide a unique opportunity to apply the concepts learned throughout the course to real-world problems in data-driven life sciences.
+
+### Join In Person
+
+For those who plan to join **in person**, please register using the form linked below to help us manage room arrangements, catering, and other logistics. Lunch boxes and fika will be provided on-site to keep you energized throughout the event.
+
+- **Where:** SciLifeLab Solna, Gamma7 lunchroom
+
+- **Application link:** [Register Here](https://forms.gle/XNe9J5W6wTVUY6127)
+
+- **Application deadline:** Monday, 30th September 2024

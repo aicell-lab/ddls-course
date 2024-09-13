@@ -23,7 +23,7 @@ Everyone involved in the DDLS program, including PIs, affiliated PhD students, p
 
 For those who plan to join **in person**, please register using the form linked below to help us manage room arrangements, catering, and other logistics. Lunch boxes and fika will be provided on-site to keep you energized throughout the event.
 
-- **Where:** SciLifeLab Solna, Gamma7 lunchroom
+- **Where:** SciLifeLab Solna, Building Gamma, Floor 7, Lunchroom
 
 - **Application link:** [Register Here](https://forms.gle/XNe9J5W6wTVUY6127)
 

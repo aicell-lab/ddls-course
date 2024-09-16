@@ -10,7 +10,7 @@ course_module: "true"
 
 <!-- updated: 14.09.2024 -->
 
-**Start date**: Week 41 (9th October 2024)
+**Start date**: Week 41 (7th October 2024)
 
 ### Final Project
 

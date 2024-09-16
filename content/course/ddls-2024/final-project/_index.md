@@ -61,13 +61,11 @@ gantt
     Final Project                : active, proj, 2024-10-07, 20d
     Final Project Proposal       : milestone, m0, 2024-09-30, 23:59
     Feedbacks and Approval       : milestone, m1, 2024-10-02, 13:00
+    Final Project Consultation   : milestone, consult, 2024-10-17, 08:00-11:00
     Report Submission Deadline   : milestone, m2, 2024-10-27, 23:59
 
     section Hackathon
     Hackathon                    : active, hackathon, 2024-10-09, 3d
-
-    section Consultation
-    Final Project Consultation   : milestone, consult, 2024-10-17, 08:00-11:00
 
     section Oral Presentations
     Oral Presentation Batch 1    : milestone, presentation1, 2024-10-29, 08:00-10:00

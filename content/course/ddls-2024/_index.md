@@ -105,8 +105,8 @@ One of the principal objectives of this course is to instill in you a data-drive
 - **Computer Lab** and **Journal Club** will be announced one week before the module starts
 
 [Module 4](./module-4/)
-- **Lecture** by Wei Ouyang: Advances in Generative AI for Conditional Microscopy Cell Images
 - **Lecture** by Estibaliz Gómez de Mariscal: Deep learning enabled image-driven scientific discovery
+- **Lecture** by Wei Ouyang: Advances in Generative AI for Conditional Microscopy Cell Images
 - **Computer Lab** and **Journal Club** will be announced one week before the module starts
 
 [Module 5](./module-5/)

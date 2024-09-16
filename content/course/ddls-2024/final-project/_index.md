@@ -14,7 +14,7 @@ course_module: "true"
 
 ### Final Project
 
-The final project allows students to showcase their learning by proposing their own dataset and project idea. This open-ended assignment encourages participants to explore topics of interest within data-driven life science and apply the skills gained throughout the course in groups of up to 3 students.
+The final project allows students to showcase their learning by proposing their own dataset and project idea. This open-ended assignment encourages participants to explore topics of interest within data-driven life science and apply the skills gained throughout the course in groups of 2 - 3 students.
 
 **Project Requirements**:
 - Students are required to submit a proposal for approval before beginning their project.
@@ -28,6 +28,8 @@ The final project allows students to showcase their learning by proposing their 
 - Maximum of one page
 
 **Submit Your Proposal (opens in week 38)**:
+
+- **Deadline:** Proposals should be submitted before the final project starts, it will be **6th October 2024**.
 
 {{< cta cta_text="Click Here to Submit" cta_link="https://" >}}
 
@@ -61,29 +63,14 @@ gantt
 - Oral Presentation (Batch 1): Tuesday, 29th October 2024, 08:00-10:00 CEST (Master's students)
 - Oral Presentation (Batch 2): Wednesday, 30th October 2024, 08:00-10:00 CEST (Master's students)
 
-### Hackathon
+### Hackathon (Optional)
 
-Join us at the **DDLS Hackathon in person or online**, where participants will collaborate on their projects. With the support of teaching assistants in a hands-on environment, groups will develop solutions in the dynamic field of data-driven life science.
+We invite you to participate in the **DDLS Hackathon**, an event designed to foster collaboration and innovation in data-driven life science. Participation is **not mandatory** and can be either **online or in person**.
 
-This hackathon is part of the [2024 DDLS course](https://ddls.aicell.io/course/ddls-2024/) and will bring together data-driven life science researchers, including MSc students, PhD students, postdocs, staff-scientists, experts, and group leaders.
+**Purpose of the Hackathon**:
 
-Course participants will use the skills and knowledge gained during the course to create AI models, analyze data, and generate meaningful insights. Everyone affiliated with the DDLS program or interested in data-driven life science is also welcome to join, including PIs, PhD students, postdocs, and facility experts/trainers. 
+-   Collaborate with peers and experts in a hands-on environment
+-   Enhance your final project through teamwork and support from teaching assistants
+-   Explore new ideas and apply course concepts to real-world problems
 
-Participants will form small groups of 2-3 people on-site to work on projects, exchange ideas and experiences, and engage in pair programming. This collaborative environment will foster innovation and provide a unique opportunity to apply the concepts learned throughout the course to real-world problems.
-
-**What will you gain by attending the hackathon?**
-- Hands-on experience with a data-driven life science project
-- Networking opportunities with experts, researchers, and infrastructure specialists in the field
-
-### Join In Person
-
-For those who plan to join **in person**, please register using the form linked below to help us manage room arrangements, catering, and other logistics. Lunch boxes and fika will be provided on-site to keep you energized throughout the event.
-
-- **Where:** SciLifeLab Solna, Building Gamma, Floor 7, Lunchroom
-- **Application Link:**
-
-{{< cta cta_text="Click Here to Register" cta_link="https://forms.gle/XNe9J5W6wTVUY6127" >}}
-
-- **Application Deadline:** Monday, 30th September 2024
-
-For questions, contact Wei Ouyang at <weio@kth.se> or <traininghub@scilifelab.se>.
+For more details and to sign up, please visit the **[Hackathon page](../hackathon/)**.

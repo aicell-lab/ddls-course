@@ -37,7 +37,7 @@ DDLS course participants will have the opportunity to work on their [final proje
 
 You can either join in-person or online. Please register using the form linked below to help us manage room arrangements, catering, and other logistics. Lunch boxes and fika will be provided on-site to keep you energized throughout the event.
 
-- **Where:** SciLifeLab Solna, Building Gamma, Floor 7, Lunchroom
+- **Where:** SciLifeLab Solna, Building Gamma, Floor 7, Lunchroom or [Online over Zoom](https://kth-se.zoom.us/j/69812177998)
 - **Application Link:**
 
 {{< cta cta_text="Click Here to Register" cta_link="https://forms.gle/XNe9J5W6wTVUY6127" >}}
@@ -45,7 +45,7 @@ You can either join in-person or online. Please register using the form linked b
 - **Application Deadline:** Monday, 30th September 2024
 
 
-We are aiming to host around 35 on-site participants, depending the application number we received, we may do a selection on the participants. And in case you are not selected, you are still welcome to join online via **[DDLS Course Zoom Link!](https://kth-se.zoom.us/j/69812177998)**
+We are aiming to host around 35 on-site participants, depending the application number we received, we may do a selection on the participants. And in case you are not selected, you are still welcome to join online.
 
 
 For questions, please reach out to us!

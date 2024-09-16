@@ -13,7 +13,7 @@ weight: 80
 
 ### Final Project
 
-The final project allows students to showcase their learning by proposing their own dataset and project idea. This open-ended assignment encourages participants to explore topics of interest within data-driven life science and apply the skills gained throughout the course in groups of 2 - 3 students.
+The final project allows students to showcase their learning by proposing their own dataset and project idea. This open-ended assignment encourages participants to explore topics of interest within data-driven life science and apply the skills gained throughout the course by yourself or in a pair of two student (at the same level, e.g. both are master students).
 
 **Project Requirements**:
 - Students are required to submit a proposal for approval before beginning their project.
@@ -29,17 +29,25 @@ The final project allows students to showcase their learning by proposing their 
 
 **Structure:**
 
-- Include the names of all group members (one proposal per group)
+- Include your name or the two group member names (in case of a pair)
 - Title of the project
 - Dataset to be used and its source
+    - make sure you have tested the data availability
+    - make sure the data is suitable for the project idea
+    - make sure the data is not too small or too big to be handled in the given time frame
 - Abstract of the project, including motivation and course concepts to be applied
-
+    - Include the motivation for the project
+    - Describe the idea and the problem you want to solve
+    - Explain how you plan to solve the problem (including the course concepts you will apply)
+    - Describe the expected outcome
 
 **Submit Your Proposal (opens in week 38)**:
 
 - **Submission Deadline:** **30th September 2024**.
 
 {{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/H818K3SUW8LUcU7K8" >}}
+
+After the deadline, the teaching team will review the proposals and provide feedback on 2024-10-02 during the computer lab. Once approved, students can begin working on their projects.
 
 **[Timeline](../schedule/)**:
 
@@ -51,7 +59,9 @@ gantt
 
     section Final Project
     Final Project                : active, proj, 2024-10-07, 20d
-    Report Submission Deadline   : milestone, m1, 2024-10-27, 23:59
+    Final Project Proposal       : milestone, m0, 2024-09-30, 23:59
+    Feedbacks and Approval       : milestone, m1, 2024-10-02, 13:00
+    Report Submission Deadline   : milestone, m2, 2024-10-27, 23:59
 
     section Hackathon
     Hackathon                    : active, hackathon, 2024-10-09, 3d
@@ -73,12 +83,6 @@ gantt
 
 ### Hackathon (Optional)
 
-We invite you to participate in the **DDLS Hackathon**, an event designed to foster collaboration and innovation in data-driven life science. Participation is **not mandatory** and can be either **online or in person**.
-
-**Purpose of the Hackathon**:
-
--   Collaborate with peers and experts in a hands-on environment
--   Enhance your final project through teamwork and support from teaching assistants
--   Explore new ideas and apply course concepts to real-world problems
+To promote in-person team work and knowledge exchange, we invite you to participate in the **DDLS Hackathon**, an event designed to foster collaboration and innovation in data-driven life science. Participation is **not mandatory** and can be either **online or in person** (registration is required in advance!).
 
 For more details and to sign up, please visit the **[Hackathon page](../hackathon/)**.

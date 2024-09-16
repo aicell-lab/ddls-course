@@ -15,30 +15,27 @@ Join us at the **[DDLS Hackathon](https://training.scilifelab.se/events/data-dri
 
 **Who Can Participate?**
 
-Not only DDLS Course Participants, the hackathon is open to **everyone** in the DDLS community, including PIs, PhD students, postdocs, facility experts/trainers, and anyone interested in data-driven life science. Participants can work on **any topic** of their choice.
+The hackathon is open to **everyone** in the DDLS community, including PIs, PhD students, postdocs, facility experts/trainers, and anyone interested in data-driven life science. Participants can work on **any topic** of their choice.
 
-A note for DDLS course participants: Participation **is not mandatory.**
+We will also welcome the participation of the DDLS course participants, who will work on their final projects with their groups.
 
 **Event Details**:
 
-DDLS course participants will have the opportunity to work on their [final projects](../final-project/) with their groups.
+Hackathon participants will form small groups of 2-3 people on-site or online (determined during the hackathon) to work on projects, exchange ideas, and engage in pair programming. This collaborative environment fosters innovation and provides a unique opportunity to apply concepts to real-world problems.
 
-Other participants will also form small groups of 2-3 people on-site to work on projects, exchange ideas, and engage in pair programming. This collaborative environment fosters innovation and provides a unique opportunity to apply concepts to real-world problems.
-
+DDLS course participants will have the opportunity to work on their [final projects](../final-project/) and interact with other participants.
 
 **Benefits of Attending:**
 
 - Hands-on experience with a data-driven life science project
-- Networking opportunities with experts, researchers, and infrastructure specialists in the field
-
-### Join Online
-
-Everyone is welcome to join online. Online participation **does not require registration**. Because online participation eliminates concerns about logistics like room arrangements and catering. Feel free to join via **[DDLS Course Zoom Link!](https://www.google.com/url?q=https://kth-se.zoom.us/j/69812177998&sa=D&source=calendar&ust=1726925483509968&usg=AOvVaw0yr9mtkh1oqW3dJQ4Aakzy)**
+- Networking opportunities with experts, researchers, and infrastructure specialists in the field, we will have a mix of participants from different backgrounds
+- Social coding, pair programming, and group work
+- A chance to showcase your work and receive feedback from the community
 
 
-### Join In Person
+### Join In-person or Online
 
-For those who plan to join **in person**, please register using the form linked below to help us manage room arrangements, catering, and other logistics. Lunch boxes and fika will be provided on-site to keep you energized throughout the event.
+You can either join in-person or online. Please register using the form linked below to help us manage room arrangements, catering, and other logistics. Lunch boxes and fika will be provided on-site to keep you energized throughout the event.
 
 - **Where:** SciLifeLab Solna, Building Gamma, Floor 7, Lunchroom
 - **Application Link:**
@@ -47,4 +44,8 @@ For those who plan to join **in person**, please register using the form linked 
 
 - **Application Deadline:** Monday, 30th September 2024
 
-For questions, contact Wei Ouyang at <weio@kth.se> or <traininghub@scilifelab.se>.
+
+We are aiming to host around 35 on-site participants, depending the application number we received, we may do a selection on the participants. And in case you are not selected, you are still welcome to join online via **[DDLS Course Zoom Link!](https://kth-se.zoom.us/j/69812177998)**
+
+
+For questions, please reach out to us!

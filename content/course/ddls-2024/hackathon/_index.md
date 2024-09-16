@@ -17,7 +17,7 @@ Join us at the **[DDLS Hackathon](https://training.scilifelab.se/events/data-dri
 
 Not only DDLS Course Participants, the hackathon is open to **everyone** in the DDLS community, including PIs, PhD students, postdocs, facility experts/trainers, and anyone interested in data-driven life science. Participants can work on **any topic** of their choice.
 
-A note for DDLS couse participants: Participation **is not mandatory.**
+A note for DDLS course participants: Participation **is not mandatory.**
 
 **Event Details**:
 

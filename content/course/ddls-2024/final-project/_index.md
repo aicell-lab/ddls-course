@@ -29,7 +29,7 @@ The final project allows students to showcase their learning by proposing their 
 
 **Submit Your Proposal (opens in week 38)**:
 
-- **Deadline:** Proposals should be submitted before the final project starts, it will be **6th October 2024**.
+- **Submission Deadline:** **30th September 2024**.
 
 {{< cta cta_text="Click Here to Submit" cta_link="https://" >}}
 

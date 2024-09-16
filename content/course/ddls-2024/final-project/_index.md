@@ -39,7 +39,7 @@ The final project allows students to showcase their learning by proposing their 
 
 - **Submission Deadline:** **30th September 2024**.
 
-{{< cta cta_text="Click Here to Submit" cta_link="https://" >}}
+{{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/H818K3SUW8LUcU7K8" >}}
 
 **[Timeline](../schedule/)**:
 

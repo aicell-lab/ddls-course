@@ -5,7 +5,6 @@ linkTitle: "Final Project"
 date: "2024-06-13"
 type: book
 weight: 80
-course_module: "true"
 ---
 
 <!-- updated: 14.09.2024 -->
@@ -21,12 +20,20 @@ The final project allows students to showcase their learning by proposing their 
 - **Each group should submit only one proposal.**
 - Proposals should reflect challenging and engaging work that integrates course content.
 
-**Project Proposal Structure**:
+### Project Proposal Submission:
+
+**Format:**
+
+- Maximum of one page
+- File format: PDF
+
+**Structure:**
+
 - Include the names of all group members (one proposal per group)
 - Title of the project
 - Dataset to be used and its source
 - Abstract of the project, including motivation and course concepts to be applied
-- Maximum of one page
+
 
 **Submit Your Proposal (opens in week 38)**:
 

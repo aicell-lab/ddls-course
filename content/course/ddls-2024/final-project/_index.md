@@ -18,6 +18,7 @@ The final project allows students to showcase their learning by proposing their 
 
 **Project Requirements**:
 - Students are required to submit a proposal for approval before beginning their project.
+- **Each group should submit only one proposal.**
 - Proposals should reflect challenging and engaging work that integrates course content.
 
 **Project Proposal Structure**:

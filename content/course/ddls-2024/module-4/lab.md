@@ -5,7 +5,7 @@ weight: 10
 type: book
 ---
 
-Welcome to the practical session of Module 4, created by lecturer Estibaliz Gómez de Mariscal. In this lab, you'll learn some useful skills from the following Google Colab notebooks.
+Welcome to the practical session of Module 4, created by lecturer [Estibaliz Gómez de Mariscal](https://esgomezm.github.io/) and has been further modified by Professor Wei Ouyang, along with teaching assistants Songtao Cheng and Nils Mechtel. In this lab, you'll learn some useful skills from the following Google Colab notebooks.
 
 [Notebook: U-Net for Cell Segmentation](https://colab.research.google.com/drive/19HdkUnC3zAJRL1qacBZsjGO0lfBoePZx?usp=sharing). 
 

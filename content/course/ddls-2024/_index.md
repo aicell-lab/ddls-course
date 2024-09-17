@@ -127,7 +127,7 @@ One of the principal objectives of this course is to instill in you a data-drive
 The final grade on the course is determined as follows:
 
 -   The computer labs are graded P/F. To pass, you need to attend all the labs and answer the questions to a satisfactory degree.
--   Participation in the seminars is graded as P/F. To pass, you need to read the assigned papers, attend all the seminars and participate in discussions.
+-   Participation in the journal club is graded as P/F. To pass, you need to read the assigned papers, attend all the journal club and participate in discussions.
 -   The project is graded P/F. To pass, you need to carry out the project, and get a passing grade on the project report.
 -   The oral exam (project presentation) at the end of course will be graded A-F scale.
 
@@ -145,7 +145,7 @@ For questions, please email the course responsible, see contact [here](/contact/
 ## Meet your instructor
 
 In this course, you will meet:
--   {{< mention "wei" >}}, assistant professor in biophysics who will be holding the lectures, seminars and grading them (<weio@kth.se>). Wei is also the course responsible.
+-   {{< mention "wei" >}}, assistant professor in biophysics who will be holding the lectures, journal club and grading them (<weio@kth.se>). Wei is also the course responsible.
 -   {{< mention "songtao" >}}, PhD student in biophysics, who will be teaching assistant for the course, chairing lectures, holding the computer labs and journal clubs [songtao.cheng@scilifelab.se)](mailto:songtao.cheng@scilifelab.se)
 -   {{< mention "nils" >}}, PhD student in biophysics, who will be teaching assistant for the course, chairing lectures, holding the computer labs and journal clubs(<nils.mechtel@scilifelab.se>)
 
@@ -183,8 +183,8 @@ The hackathon will take place in person at SciLifeLab, Tomtebodavägen 23, 171 6
 {{< /spoiler >}}
 
 
-{{< spoiler text="What if I cannot attend the computer labs or seminars?" >}}
-For all selected modules, it is mandatory to attend all the associated computer labs and seminars in order to receive credit. If you anticipate missing a computer lab or seminar, please notify the course responsible as soon as possible. Exceptions will be considered on a case-by-case basis.
+{{< spoiler text="What if I cannot attend the computer labs or journal club?" >}}
+For all selected modules, it is mandatory to attend all the associated computer labs and journal club in order to receive credit. If you anticipate missing a computer lab or seminar, please notify the course responsible as soon as possible. Exceptions will be considered on a case-by-case basis.
 
 If an exception is granted, you will still be required to submit the notebook for the computer lab or write a report to address the seminar question sheet to ensure you meet the module requirements.
 {{< /spoiler >}}

@@ -76,7 +76,7 @@ The first module covers course basics and prerequisites. The subsequent modules 
 
 -   A computer lab on Wednesday for practical data exploration using Python in Jupyter notebooks (Google Colab)
 
--   A seminar on Friday for collective explanation and discussion of an assigned research paper
+-   A journal club on Friday for collective explanation and discussion of an assigned research paper
 
 
 You can either register for the full course or selected modules.
@@ -184,16 +184,16 @@ The hackathon will take place in person at SciLifeLab, Tomtebodavägen 23, 171 6
 
 
 {{< spoiler text="What if I cannot attend the computer labs or journal club?" >}}
-For all selected modules, it is mandatory to attend all the associated computer labs and journal club in order to receive credit. If you anticipate missing a computer lab or seminar, please notify the course responsible as soon as possible. Exceptions will be considered on a case-by-case basis.
+For all selected modules, it is mandatory to attend all the associated computer labs and journal club in order to receive credit. If you anticipate missing a computer lab or journal club, please notify the course responsible as soon as possible. Exceptions will be considered on a case-by-case basis.
 
-If an exception is granted, you will still be required to submit the notebook for the computer lab or write a report to address the seminar question sheet to ensure you meet the module requirements.
+If an exception is granted, you will still be required to submit the notebook for the computer lab or write a report to address the journal club question sheet to ensure you meet the module requirements.
 {{< /spoiler >}}
 
 {{< spoiler text="Will the lecture be recorded?" >}}
 The recording of lectures may vary depending on the lecturer, and it cannot be guaranteed. However, the slides will be made available after each lecture.
 {{< /spoiler >}}
 
-{{< spoiler text="Can I use ChatGPT / Claude or other generative AI tools in the computer labs, seminar, assignments or the final project?" >}}
+{{< spoiler text="Can I use ChatGPT / Claude or other generative AI tools in the computer labs, journal club, assignments or the final project?" >}}
 Yes, you are encouraged to use these AI tools to facilitate your learning, and perform tasks. However, you need to make sure that you are using them in a responsible way. Importantly, if you used it for submitting any graded activities, please make sure to also attach the exported conversation history with the AI tool.
 {{< /spoiler >}}
 

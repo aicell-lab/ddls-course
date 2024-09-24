@@ -13,6 +13,9 @@ weight: 81
 
 Join us at the **[DDLS Hackathon](https://training.scilifelab.se/events/data-driven-life-science-hackathon)**, a vibrant code festival for the SciLifeLab/DDLS community! This hackathon is part of the [2024 DDLS course](https://ddls.aicell.io/course/ddls-2024/) and participants will collaborate on their projects in the dynamic field of data-driven life science, supported by teaching assistants in a hands-on environment.
 
+**Date and Time:**  
+October 9-11, 2024, from 9:00 AM to 5:00 PM each day.
+
 **Who Can Participate?**
 
 The hackathon is open to **everyone** in the DDLS community, including PIs, PhD students, postdocs, facility experts/trainers, and anyone interested in data-driven life science. Participants can work on **any topic** of their choice.

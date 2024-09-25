@@ -19,6 +19,7 @@ In this lab, you will:
 
 -   Implement DeepSORT tracking on a video of paramecium swimming using Python and Jupyter Notebook.
 -   Identify and fix intentional bugs in the provided notebook to ensure successful execution of the tracking task.
+-   Review the output video and make the tracking results better.
 -   Enhance your problem-solving skills and gain practical experience in deploying real-world computational tasks.
 
 

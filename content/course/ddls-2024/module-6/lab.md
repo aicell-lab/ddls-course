@@ -5,7 +5,7 @@ weight: 10
 type: book
 ---
 
-Welcome to the practical session of Module 6, created by lecturer Gabriel Reder, and has been further modified by Professor Wei Ouyang, along with teaching assistants Songtao Cheng and Nils Mechtel. In this lab, you'll learn some useful skills from the following Google Colab notebooks.
+Welcome to the practical session of Module 6, created by lecturer Gabriel Reder, and has been further modified by Dr. Wei Ouyang, along with teaching assistants Songtao Cheng and Nils Mechtel. In this lab, you'll learn some useful skills from the following Google Colab notebooks.
 
 [Notebook: Automating Scientific Discovery](https://colab.research.google.com/drive/1V2gesu_Z9LixWm_hw27XsjEAYn5Wvj7I?usp=sharing). 
 

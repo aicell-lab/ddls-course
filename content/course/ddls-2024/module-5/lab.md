@@ -5,7 +5,7 @@ weight: 10
 type: book
 ---
 
-Welcome to the practical session of Module 5, created by lecturer Daniel Fürth, and has been further modified by Professor Wei Ouyang, along with teaching assistants Songtao Cheng and Nils Mechtel. In this lab, you'll learn some useful skills from the following Google Colab notebooks.
+Welcome to the practical session of Module 5, created by lecturer Daniel Fürth, and has been further modified by Dr. Wei Ouyang, along with teaching assistants Songtao Cheng and Nils Mechtel. In this lab, you'll learn some useful skills from the following Google Colab notebooks.
 
 [Notebook: DeepSORT Tracking on Paramecium Swimming](https://colab.research.google.com/drive/1IKUC-wsmP_7HhdtA28AMCy3JHoFzM03l?usp=sharing). 
 

@@ -13,10 +13,10 @@ weight: 80
 
 ### Final Project
 
-The final project allows students to showcase their learning by proposing their own dataset and project idea. This open-ended assignment encourages participants to explore topics of interest within data-driven life science and apply the skills gained throughout the course by yourself or in a pair of two student (at the same level, e.g. both are master students).
+The final project allows students to showcase their learning by proposing their own dataset and project idea. This open-ended assignment encourages participants to explore topics of interest within data-driven life science and apply the skills gained throughout the course individually or in a pair (both members should be at the same level, e.g., both Master’s students).
 
 **Project Requirements**:
-- Students are required to submit a proposal for approval before beginning their project.
+- Submit a proposal for approval before beginning your project.
 - **Each group should submit only one proposal.**
 - Proposals should reflect challenging and engaging work that integrates course content.
 
@@ -29,25 +29,42 @@ The final project allows students to showcase their learning by proposing their 
 
 **Structure:**
 
-- Include your name or the two group member names (in case of a pair)
+- Include your name (or both names if working as a pair)
 - Title of the project
 - Dataset to be used and its source
-    - make sure you have tested the data availability
-    - make sure the data is suitable for the project idea
-    - make sure the data is not too small or too big to be handled in the given time frame
-- Abstract of the project, including motivation and course concepts to be applied
-    - Include the motivation for the project
-    - Describe the idea and the problem you want to solve
-    - Explain how you plan to solve the problem (including the course concepts you will apply)
+    - Ensure that the dataset availability has been tested
+    - Verify that the dataset is suitable for the project idea
+    - Ensure that the dataset is neither too small nor too large to be handled in the given timeframe
+    - If using a private dataset, include its size and details on how it will be accessed
+- Abstract of the project, including motivation and course concepts to be applied:
+    - Motivation for the project
+    - Describe the idea and the problem you aim to solve
+    - Explain how you plan to solve the problem (including which course concepts will be applied)
     - Describe the expected outcome
+
+**FAIR Data and Open Science Recommendations:**
+
+To promote the **FAIR** (Findable, Accessible, Interoperable, Reusable) principles, we encourage the use of public datasets. If you are working with a private dataset, consider how you might make it publicly available in the future.
+
+We also encourage you to support open science by making your project code publicly available on GitHub or GitLab. If you have a valid reason not to share your code publicly, please indicate this in your submission. We recommend that:
+1. **Create a GitHub/GitLab repository**.
+    - On GitHub, add the topic `ddls-course-2024` to make your project findable ([GitHub Topics Guide](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)).
+2. **Include a README file** with an overview of the project and instructions on how to use the code.
+3. **Document your code** properly.
+4. **Include a permissive license** (e.g., MIT license) to allow others to reuse your code.
+5. **If a public dataset was used**, provide a script or instructions for downloading the dataset properly.
+6. **Make your code reproducible**, and if there are trained model weights, try to upload them to GitHub Releases or Zenodo.
+7. **If possible, make your final report public**, for example, by uploading it to Zenodo.
 
 **Submit Your Proposal (opens in week 38)**:
 
-- **Submission Deadline:** **30th September 2024**.
+- **Submission Deadline**: **30th September 2024**.
 
 {{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/H818K3SUW8LUcU7K8" >}}
 
-After the deadline, the teaching team will review the proposals and provide feedback on 2024-10-02 during the computer lab. Once approved, students can begin working on their projects.
+The teaching team will review the proposals and provide feedback on 2nd October 2024, during the computer lab. Once your proposal is approved, you can begin working on your project.
+
+---
 
 **[Timeline](../schedule/)**:
 
@@ -79,8 +96,49 @@ gantt
 - Oral Presentation (Batch 1): Tuesday, 29th October 2024, 08:00-10:00 CEST (Master's students)
 - Oral Presentation (Batch 2): Wednesday, 30th October 2024, 08:00-10:00 CEST (Master's students)
 
-### Hackathon (Optional)
+---
 
-To promote in-person team work and knowledge exchange, we invite you to participate in the **DDLS Hackathon**, an event designed to foster collaboration and innovation in data-driven life science. Participation is **not mandatory** and can be either **online or in person** (registration is required in advance!).
+### Project Evaluation Criteria:
 
-For more details and to sign up, please visit the **[Hackathon page](../hackathon/)**.
+During the evaluation of your final project, several factors will be considered:
+- **Completion of the project**: While completing the project is important, it is not the only criterion.
+- **Learning and use of new tools**: We will also evaluate your ability to gain new knowledge and apply new techniques or tools learned during the course.
+- **Sound methodology**: Even if your model does not perform well, demonstrating a technically sound approach is critical.
+- **Proper use of tools (e.g., ChatGPT)**: If you used AI tools, we expect to see that you have understood how to use them effectively, as reflected in your work (including, for example, your ChatGPT history).
+
+You are responsible for ensuring the success of your project. If you encounter challenges, please reach out for advice or feedback.
+
+---
+
+### Hackathon (Optional):
+
+We invite you to participate in the **DDLS Hackathon**, which fosters teamwork and innovation in data-driven life science. The hackathon will take place from 9th to 11th October 2024 and is optional. You can participate **online or in person**, but prior registration is required.
+
+For more details and to sign up, visit the **[Hackathon page](../hackathon/)**.
+
+---
+
+### FAQ:
+
+#### **What should I do if I need to revise my proposal?**
+If your proposal requires revisions based on the feedback, please submit a revised version as soon as possible. You don’t need further approval to start working on the project, but feel free to reach out if you need more guidance.
+
+#### **What happens if my model performs poorly?**
+Project evaluation is not solely based on the outcome of the model. If your model performs poorly but you demonstrate sound methods, clear learning outcomes, and proper use of tools, you can still pass the project. The process and learning matter as much as the results.
+
+#### **What should I do if I run into problems with large datasets?**
+If your dataset is too large for your computing resources (e.g., Google Colab’s free GPU quota), consider scaling down the project or using a smaller subset of the data. Reach out to the teaching team if you need guidance on handling data efficiently.
+
+#### **Can I work in pairs?**
+Yes, you can work in pairs, but each student must submit an individual final report detailing their distinct contribution to the project. The project cannot rely on one person’s work to support the other, so make sure each member focuses on different methods or aspects of the project.
+
+#### **How can I make my project FAIR and Open?**
+We encourage you to make your project publicly available, following the FAIR principles. You can do this by:
+- Creating a GitHub/GitLab repository and adding the topic `ddls-course-2024`.
+- Including a README file and proper documentation.
+- Adding a permissive license (e.g., MIT).
+- Providing scripts for data access, ensuring your code is reproducible, and uploading trained models (if applicable) to platforms like Zenodo.
+- If possible, make your report publicly available by uploading it to a platform like Zenodo.
+
+If you have further questions, feel free to reach out to the teaching team.
+

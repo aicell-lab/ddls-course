@@ -42,6 +42,23 @@ The final project allows students to showcase their learning by proposing their 
     - Explain how you plan to solve the problem (including which course concepts will be applied)
     - Describe the expected outcome
 
+**Submit Your Proposal (opens in week 38)**:
+
+- **Submission Deadline**: **30th September 2024**.
+
+{{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/H818K3SUW8LUcU7K8" >}}
+
+The teaching team will review the proposals and provide feedback on 2nd October 2024, during the computer lab. Once your proposal is approved, you can begin working on your project.
+
+### Working on your project
+
+Once you revised your proposal based on the feedback, you can start working on your project. The final project should be completed by **27th October 2024**. You will have the opportunity to consult with the teaching team during the hackathon (9th-11th October 2024) or on **17th October 2024**.
+
+
+For complete the project, you need to submit a project report and present your project together.
+
+While working on the project, please take notes and update your project report. For master students, save figures and results to slides which you will use for the final presentation.
+
 **FAIR Data and Open Science Recommendations:**
 
 To promote the **FAIR** (Findable, Accessible, Interoperable, Reusable) principles, we encourage the use of public datasets. If you are working with a private dataset, consider how you might make it publicly available in the future.
@@ -56,13 +73,34 @@ We also encourage you to support open science by making your project code public
 6. **Make your code reproducible**, and if there are trained model weights, try to upload them to GitHub Releases or Zenodo.
 7. **If possible, make your final report public**, for example, by uploading it to Zenodo.
 
-**Submit Your Proposal (opens in week 38)**:
 
-- **Submission Deadline**: **30th September 2024**.
+### Final Project Report Submission
 
-{{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/H818K3SUW8LUcU7K8" >}}
+After completing your project, you will need to submit a final report by **27th October 2024**. The report should be a maximum of **5 pages** for the main text and unlimited supplementary pages, consider include the following sections in the report:
+- **Abstract**: Summarize the project, including the problem, method, and results. Maximum 100 words.
+- **Background and Motivation**: Describe the problem you aimed to solve and the motivation behind your project.
+- **Dataset Summary**: Provide a brief overview of the dataset used, including how it was generated, any preprocessing steps taken, split of training and test data, distribution of classes, etc.
+- **Method Description**: Explain the method you implemented, e.g. the model architecture, training procedure, evaluation metrics, etc.
+- **Results**: Present your results with figures and tables, show the performance of your model, e.g., accuracy, F1 score, etc. compared to the baseline or other methods.
+- **Conclusion and Discussions**: Summarize your findings and reflect on the project's outcomes, potential application. Discuss the limitations and drawbacks of your work. Suggest potential improvements or future directions.
+- **Data and Code Availability**: Include links to your dataset and code repository (if applicable), see the FAIR Data and Open Science Recommendations above.
+- **Acknowledgments**: Acknowledge any contributions or support received during the project. Here you can also state whether you used ChatGPT or other AI tools. If you used ChatGPT, please include the conversation history link.
+- **References**: Include any references used in your report.
+- **Appendices**: Include any supplementary information, such as additional figures, tables, or implementation details.
 
-The teaching team will review the proposals and provide feedback on 2nd October 2024, during the computer lab. Once your proposal is approved, you can begin working on your project.
+**Note on ChatGPT**:
+
+You are encouraged to use ChatGPT for help your coding and report writing. However, please make sure you use it responsibly and stick to the course rules regarding its use, see [AI in Life Sciences: Power with Responsibility](https://ddls.aicell.io/post/responsible-ai/).
+
+**Submit Your Final Report**:
+
+ - **Submission Deadline**: **27th October 2024, 23:59 CEST**.
+
+ - **Submission form will be available soon.**
+
+### Oral Presentation
+
+The oral presentation is mandatory for Master's students and optional for PhD students. The presentation will take place on **29th and 30th October 2024**. You will have 10 minutes to present your project, followed by a 5-minute Q&A session.
 
 ---
 

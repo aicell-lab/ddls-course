@@ -16,8 +16,9 @@ weight: 80
 The final project allows students to showcase their learning by proposing their own dataset and project idea. This open-ended assignment encourages participants to explore topics of interest within data-driven life science and apply the skills gained throughout the course individually or in a pair (both members should be at the same level, e.g., both Master’s students).
 
 **Project Requirements**:
+
 - Submit a proposal for approval before beginning your project.
-- **Each group should submit only one proposal.**
+- Every student must submit an individual proposal. If you are working in a pair, each member must submit a proposal with their distinct contribution.
 - Proposals should reflect challenging and engaging work that integrates course content.
 
 ### Project Proposal Submission:
@@ -76,7 +77,9 @@ We also encourage you to support open science by making your project code public
 
 ### Final Project Report Submission
 
-After completing your project, you will need to submit a final report by **27th October 2024**. The report should be a maximum of **5 pages** for the main text and unlimited supplementary pages, consider include the following sections in the report:
+After completing your project, you will need to submit a final report by **27th October 2024**. 
+
+The report should be a maximum of **5 pages** for the main text and unlimited supplementary pages, consider include the following sections in the report:
 - **Abstract**: Summarize the project, including the problem, method, and results. Maximum 100 words.
 - **Background and Motivation**: Describe the problem you aimed to solve and the motivation behind your project.
 - **Dataset Summary**: Provide a brief overview of the dataset used, including how it was generated, any preprocessing steps taken, split of training and test data, distribution of classes, etc.
@@ -87,6 +90,8 @@ After completing your project, you will need to submit a final report by **27th 
 - **Acknowledgments**: Acknowledge any contributions or support received during the project. Here you can also state whether you used ChatGPT or other AI tools. If you used ChatGPT, please include the conversation history link.
 - **References**: Include any references used in your report.
 - **Appendices**: Include any supplementary information, such as additional figures, tables, or implementation details.
+
+**If you are in a group**: Each member should submit an individual report detailing their distinct contribution to the project.
 
 **Note on ChatGPT**:
 

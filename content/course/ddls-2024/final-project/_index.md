@@ -79,6 +79,8 @@ We also encourage you to support open science by making your project code public
 
 After completing your project, you will need to submit a final report by **27th October 2024**. 
 
+{{< cta cta_text="Click Here to Submit" cta_link="https://forms.gle/DNnsXfeH2YE6iuB89" >}}
+
 The report should be a maximum of **5 pages** for the main text and unlimited supplementary pages, consider include the following sections in the report:
 - **Abstract**: Summarize the project, including the problem, method, and results. Maximum 100 words.
 - **Background and Motivation**: Describe the problem you aimed to solve and the motivation behind your project.

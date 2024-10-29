@@ -45,7 +45,7 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} AICell Lab. This work is licensed under {license}'
+    notice: '© {year} AICell Lab. All the course material is licensed under {license}'
     license:
       enable: true
       allow_derivatives: true

@@ -10,6 +10,10 @@ main:
   - name: Courses
     weight: 20
     identifier: courses
+  - name: DDLS 2025
+    PageRef: course/ddls-2025/_index.md
+    weight: 5
+    parent: courses
   - name: DDLS 2024
     PageRef: course/ddls-2024/_index.md
     weight: 5

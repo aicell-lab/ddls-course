@@ -16,12 +16,12 @@ Welcome to the Data-driven Life Sciences 2025 course, where you will explore the
 
 The 6 modules aim to introduce learners to computer-driven life sciences, covering application areas in data-driven life sciences. Guest lecturers (DDLS Fellows, SciLifeLab fellows, and SciLifeLab facility training providers) will teach topics including technologies and analysis of data sets from proteomics, transcriptomics, biomolecular structure, molecular dynamics simulations, and various imaging techniques. These modules present, analyze, and discuss models of biological phenomena and related scientific breakthroughs based on such data analysis.
 
-The course is open to **all the master's, and PhD students in KTH**.
+The course is open to  **all the master's, PhD students and anyone who is interested**.
 
 
 ## Registration
 
-**Registration is not open yet**
+**Registration is now open for DDLS 2025!**
 
 {{< cta cta_text="Click Here to Register" cta_link="https://forms.gle/qaAdz2evTXeDH6949" >}}
 

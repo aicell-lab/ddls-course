@@ -8,6 +8,8 @@ tags:
   - current
 ---
 
+{{< figure src="featured.jpg" >}}
+
 {{< toc hide_on="xl" >}}
 
 Welcome to the Data-driven Life Sciences 2025 course, where you will explore the intersection of data science, artificial intelligence, and life sciences to drive innovation and discovery. This fully online course culminates in an in-person hackathon, fostering a vibrant community that gathers the DDLS and SciLifeLab members.

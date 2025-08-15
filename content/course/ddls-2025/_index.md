@@ -21,7 +21,7 @@ The course is open to **all the master's, and PhD students in KTH**.
 
 ## Registration
 
-**Registration is now open for DDLS 2025!**
+**Registration is not open yet**
 
 {{< cta cta_text="Click Here to Register" cta_link="https://forms.gle/qaAdz2evTXeDH6949" >}}
 

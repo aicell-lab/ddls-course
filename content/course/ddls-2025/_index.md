@@ -38,11 +38,19 @@ The course is open to  **all the master's, PhD students and anyone who is intere
 
 -   Formulate models of biological phenomena
 
+-   Employ AI agents as tools to support scientific reasoning, problem-solving, and exploration of biological datasets
+
+-   Critically evaluate the outputs of AI agents and integrate them responsibly into data analysis workflows
+
+-   Collaborate effectively with AI-assisted tools to enhance productivity in research and discovery
+
 -   Present and review scientific literature in computer-driven life sciences
 
--   Reflect on the ethical consequences of data-driven life sciences
-
 -   Practice good data management, including collection, handling, sharing, and analysis
+
+-   Reflect on the limitations, biases, and potential risks of relying on AI agents in scientific inquiry
+
+-   Reflect on the ethical consequences of data-driven life sciences
 
 ## Course Format and Credits
 

@@ -25,7 +25,6 @@ The course is open to  **all the master's, PhD students and anyone who is intere
 
 {{< cta cta_text="Click Here to Register" cta_link="https://forms.gle/qaAdz2evTXeDH6949" >}}
 
-You can either register for all the modules or individual modules.
 
 ## Intended Learning Outcomes
 
@@ -47,7 +46,7 @@ You can either register for all the modules or individual modules.
 
 ## Course Format and Credits
 
-The course consists of 6 modules: a basic module and 5 elective modules. Each module is a stand-alone short-form course with 3 sessions per module. Completing all 6 modules earns a total of 7.5 ECTS.
+The course consists of 6 required modules. Each module is a stand-alone short-form course with 3 sessions per module. Completing all 6 modules earns a total of 7.5 ECTS.
 
 ## Modules and Certification
 Each course module contains 3 main activities: a lecture on Tuesday, giving background information about the topic(s) of the week; a computer lab, usually on Wednesday, where you will practically explore data exploration using Python in Jupyter notebooks; and a journal club on Friday where you will collectively explain and discuss an assigned research paper.
@@ -60,15 +59,12 @@ Both the computer lab and the journal club are mandatory and graded activities!
 
 In the final project week/hackathon, course participants will choose a project to be conducted in pairs (Master's students) or individually (PhD students), followed by an oral presentation. The project and presentation will be graded by peers and the examiner. Please note that the oral presentation is only required for Master's students; PhD students are exempt from this requirement.
 
-You can sign up partially or for the whole course. Each module is worth a certain number of ECTS credits, and you can choose to participate in the modules that interest you most. However, to obtain a certification for participation, you must complete all modules.
+To obtain ECTS credits or a certification for participation, you must complete all modules.
 
 Module 1 (basic module) is a prerequisite for obtaining certification for attendance in any of the subsequent elective modules. To receive a certificate, you must:
 
--   Apply for and participate in Module 1.
-
 -   Actively participate in all registered modules by attending and engaging in all sessions.
 
-You will receive 0.5 ECTS for the basic module and 1 ECTS for each elective module. Completing a final project earns an additional 2 ECTS. For example, if you are a PhD student interested in Module 2, you must complete both Module 1 and Module 2 to receive 0.5 + 1 ECTS. Master's students from KTH or other universities must complete the entire course, including the basic and elective modules, plus the final project.
 
 The first module covers course basics and prerequisites. The subsequent modules each run for a week and cover various topics in data-driven life sciences (DDLS). Each week includes three main activities:
 
@@ -77,8 +73,6 @@ The first module covers course basics and prerequisites. The subsequent modules 
 -   A computer lab on Wednesday for practical data exploration using Python in Jupyter notebooks (Google Colab)
 
 -   A journal club on Friday for collective explanation and discussion of an assigned research paper
-
-You can either register for the full course or selected modules.
 
 ## Self-directed Learning
 
@@ -170,7 +164,6 @@ We run the course once a year, in Period 1 from August to October.
 
 -   For KTH master students, please register at the KTH course selection system.
 -   For PhD students or anyone from other universities, please sign up using the Google form above.
--   You can also sign up for individual module(s) using the same form above.
 {{< /spoiler >}}
 
 {{< spoiler text="How do I get access to the course material?" >}}

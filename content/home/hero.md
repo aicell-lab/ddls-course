@@ -11,8 +11,8 @@ design:
     gradient_end: 'rgb(153,238,255)'
     text_color_light: false
 cta:
-  url: 'https://ddls.aicell.io/course/ddls-2024/'
-  label: DDLS 2024
+  url: 'https://ddls.aicell.io/course/ddls-2025/'
+  label: DDLS 2025
   icon_pack: fas
   icon: user-graduate
 cta_alt:

@@ -21,7 +21,7 @@ Lectures, Computer Labs, and Journal Clubs will be held online via [Zoom](https:
 You can add the Google Calendar via this link: [Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19mMzg5YjdjZTFkZmMxODAxM2E4NjEzNDJlNzQ2OGJhYzc3NmRlNDg3MzE0NTdkMmMwOTA3OTg5NTIyM2Y0ZDIwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 
 <!-- Google Calendar Embed -->
-<iframe src="https://calendar.google.com/calendar/embed?src=c_f389b7ce1dfc18013a861342e7468bac776de48731457d2c09079895223f4d20%40group.calendar.google.com&ctz=Europe%2FBerlin" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?src=c_f389b7ce1dfc18013a861342e7468bac776de48731457d2c09079895223f4d20%40group.calendar.google.com&ctz=Europe%2FBerlin" style="border: 0" width="750" height="600" frameborder="0" scrolling="no"></iframe>
 
 | Module | Date & Time             | Type          | Teachers                           | Topic                                                                                                                                           |
 |--------|-------------------------|---------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|

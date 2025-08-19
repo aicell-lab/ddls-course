@@ -17,7 +17,7 @@ content:
 
   filter_button:
     - name: All Courses
-      tag: '*'
+      tag: 'previous,current'
     - name: Previous
       tag: previous
     - name: Current

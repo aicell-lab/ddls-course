@@ -15,7 +15,7 @@ weight: 8
 - **Oral Presentation (batch 1):** TBD
 - **Oral Presentation (batch 2):** TBD
 
-Lectures, computer Labs and seminars will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998). The format of the oral presentation (in-person or online) will be decided on an individual basis.
+Lectures, computer labs and seminars will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998). The format of the oral presentation (in-person or online) will be decided on an individual basis.
 
 You can add the Google Calendar via this link: [Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19jMWNkZDVjOTVlODlmNjdlYmU2NDg5NWY5NzFhODdmZDEwYmRlZjNhNjdkY2VlYzQ5NzRkZTEyMjI0ZGZhNzc1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 

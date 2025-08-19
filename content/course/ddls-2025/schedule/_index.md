@@ -7,8 +7,7 @@ weight: 8
 ---
 
 ### Important Dates:
-- **Application open:** TBD
-- **Application closes:** TBD
+- **Application closes:** Aug 25, 2025, 24:00 CEST
 - **First lecture:** Aug 26, 2025, 13:00 CEST
 - **Final Project:** TBD
 - **Final Project consultation:** TBD

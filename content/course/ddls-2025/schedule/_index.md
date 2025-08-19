@@ -16,7 +16,12 @@ weight: 8
 - **Oral Presentation (batch 1):** TBD
 - **Oral Presentation (batch 2):** TBD
 
-Lectures will be held online via Digital platform. Computer Labs and Seminars will take place at SciLifeLab. The format of the oral presentation (in-person or online) will be decided on an individual basis.
+Lectures will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998). Computer Labs and Seminars will take place at SciLifeLab. The format of the oral presentation (in-person or online) will be decided on an individual basis.
+
+You can add the Google Calendar via this link: [Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19jMWNkZDVjOTVlODlmNjdlYmU2NDg5NWY5NzFhODdmZDEwYmRlZjNhNjdkY2VlYzQ5NzRkZTEyMjI0ZGZhNzc1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
+
+<!-- Google Calendar Embed -->
+<iframe src="https://calendar.google.com/calendar/embed?src=c_c1cdd5c95e89f67ebe64895f971a87fd10bdef3a67dceec4974de12224dfa775%40group.calendar.google.com&ctz=Europe%2FBerlin" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 | Module | Date & Time             | Type          | Teachers                           | Topic                                                                                                                                           |
 |--------|-------------------------|---------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|

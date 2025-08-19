@@ -9,7 +9,7 @@ active: true
 superuser: false
 
 # Role/position
-role: 'PhD Student'
+role: 'Teaching Assistant'
 
 # User Groups
 user_groups:
@@ -24,6 +24,9 @@ bio: "PhD student at AICell Lab focusing on computational biology and deep learn
 
 # Social Media and other links
 social:
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto: nils.mechtel@scilifelab.se'
   - icon: github
     icon_pack: fab
     link: https://github.com/nilsmechtel

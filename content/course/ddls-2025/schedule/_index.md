@@ -1,8 +1,44 @@
 ---
-title: Schedule
+title: Course Schedule
 linkTitle: Schedule
-date: 2025-01-01
+date: '2025-01-01'
 type: book
-weight: 10
-course_module: "true"
---- 
+weight: 8
+---
+
+### Important Dates:
+- **Application open:** TBD
+- **Application closes:** TBD
+- **First lecture:** Aug 26, 2025, 13:00 CEST
+- **Final Project:** TBD
+- **Final Project consultation:** TBD
+- **Final Project Report submission deadline:** TBD
+- **Oral Presentation (batch 1):** TBD
+- **Oral Presentation (batch 2):** TBD
+
+Lectures will be held online via Digital platform. Computer Labs and Seminars will take place at SciLifeLab. The format of the oral presentation (in-person or online) will be decided on an individual basis.
+
+| Module | Date & Time             | Type          | Teachers                           | Topic                                                                                                                                           |
+|--------|-------------------------|---------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1      | Tue 26 Aug 13:00-15:00  | 🧑🏻‍🏫Lecture     | Wei Ouyang                         | TBD                                                                                                 |
+| 1      | Wed 27 Aug 13:00-17:00  | 💻Computer Lab | Wei Ouyang                         | TBD                                                                                                         |
+| 1      | Fri 29 Aug 10:00-12:00  | 💬Seminar      | Wei Ouyang                         | TBD |
+| 2      | Tue 02 Sep 13:00-15:00  | 🧑🏻‍🏫Lecture     | Wei Ouyang                         | TBD                                                                                                         |
+| 2      | Wed 03 Sep 13:00-17:00  | 💻Computer Lab | Wei Ouyang                         | TBD                                                                                                                                 |
+| 2      | Fri 05 Sep 10:00-12:00  | 💬Seminar      | Wei Ouyang                         | TBD                                                                                                                                                 |
+| 3      | Tue 09 Sep 13:00-15:00  | 🧑🏻‍🏫Lecture     | Wei Ouyang                         | TBD                                                                                                 |
+| 3      | Wed 10 Sep 13:00-17:00  | 💻Computer Lab | Wei Ouyang                         | TBD                                                                     |
+| 3      | Fri 12 Sep 10:00-12:00  | 💬Seminar      | Wei Ouyang                         | TBD                                                                                                                                                 |
+| 4      | Tue 16 Sep 08:00-10:00  | 🧑🏻‍🏫Lecture     | Wei Ouyang                         | TBD                                                                                         |
+| 4      | Wed 17 Sep 13:00-17:00  | 💻Computer Lab | Wei Ouyang                         | TBD                                                                                |
+| 4      | Fri 19 Sep 10:00-12:00  | 💬Seminar      | Wei Ouyang                         | TBD                                                                                                                                                 |
+| 5      | Tue 23 Sep 08:00-10:00  | 🧑🏻‍🏫Lecture     | Wei Ouyang                         | TBD                                                                                                         |
+| 5      | Wed 24 Sep 13:00-17:00  | 💻Computer Lab | Wei Ouyang                         | TBD                                                                                |
+| 5      | Fri 26 Sep 10:00-12:00  | 💬Seminar      | Wei Ouyang                         | TBD                                                                                                                                                 |
+| 6      | Tue 30 Sep 08:00-10:00  | 🧑🏻‍🏫Lecture     | Wei Ouyang                         | TBD                                                                                                       |
+| 6      | Wed 01 Oct 13:00-17:00  | 💻Computer Lab | Wei Ouyang                         | TBD                                                                                                    |
+| 6      | Fri 03 Oct 10:00-12:00  | 💬Seminar      | Wei Ouyang                         | TBD                                                                                                                                                 |
+|        | Wed 08 Oct 13:00-17:00  | 📝Examination  | Wei Ouyang                         | Final Examination                                                                                                             |
+|        | Thu 16 Oct 08:00-13:00  | 📝Examination  | Wei Ouyang                         | Final Examination                                                                                                             |
+
+If you anticipate that you won't be able to attend any of the sessions, please [contact](/contact) us as soon as possible. 

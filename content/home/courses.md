@@ -16,12 +16,11 @@ content:
   filter_default: 0
 
   filter_button:
-    - name: All Courses
-      tag: 'previous,current'
-    - name: Previous
-      tag: previous
     - name: Current
       tag: current
+    - name: Previous
+      tag: previous
+
 design:
   columns: '1'
   view: masonry

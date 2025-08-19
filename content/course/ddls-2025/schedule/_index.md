@@ -20,7 +20,7 @@ Lectures, computer labs and seminars will be held online via [Zoom](https://kth-
 You can add the Google Calendar via this link: [Google Calendar](https://calendar.google.com/calendar/u/0?cid=Y19jMWNkZDVjOTVlODlmNjdlYmU2NDg5NWY5NzFhODdmZDEwYmRlZjNhNjdkY2VlYzQ5NzRkZTEyMjI0ZGZhNzc1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20)
 
 <!-- Google Calendar Embed -->
-<iframe src="https://calendar.google.com/calendar/embed?src=c_c1cdd5c95e89f67ebe64895f971a87fd10bdef3a67dceec4974de12224dfa775%40group.calendar.google.com&ctz=Europe%2FBerlin" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?src=c_c1cdd5c95e89f67ebe64895f971a87fd10bdef3a67dceec4974de12224dfa775%40group.calendar.google.com&ctz=Europe%2FBerlin" style="border: 0" width="1000" height="600" frameborder="0" scrolling="yes"></iframe>
 
 | Module | Date & Time             | Type          | Teachers                           | Topic                                                                                                                                           |
 |--------|-------------------------|---------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|

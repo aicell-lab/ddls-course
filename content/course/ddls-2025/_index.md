@@ -66,7 +66,7 @@ A core objective is to strengthen your ability to “learn how to learn.” You 
 
 [Module 1](./module-1/)  
 - Introduction to data-driven life sciences  
-- Computational fundamentals, Python basics, reproducibility, first scientific AI agent, and research literature skills (can be subject to change)
+- Computational fundamentals, Python basics, reproducibility, first scientific AI agent, and research literature skills
 - Lab and journal club details released at module start
 
 [Module 2](./module-2/)  

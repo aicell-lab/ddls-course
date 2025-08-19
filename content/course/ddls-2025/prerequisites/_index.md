@@ -1,8 +1,10 @@
 ---
 title: Prerequisites
-date: "2025-08-29"
+linkTitle: Prerequisites
+date: "2025-06-29"
 type: book
-weight: 10
+course_module: "true"
+weight: 5
 imjoy:
     show_jupyter_notebook: |
         async function(notebookName, notebookUrl){

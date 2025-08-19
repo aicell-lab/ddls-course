@@ -71,7 +71,7 @@ A core objective is to strengthen your ability to “learn how to learn.” You 
 
 [Module 2](./module-2/)  
 - Image analysis and microscopy  
-- Image processing, segmentation, deep learning workflows; extend your agent with computer vision utilities (can be subject to change)
+- Image processing, segmentation, deep learning workflows; extend your agent with computer vision utilities
 - Lab and journal club details released at module start
 
 [Module 3](./module-3/)  

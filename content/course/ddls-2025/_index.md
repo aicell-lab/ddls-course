@@ -12,7 +12,7 @@ tags:
 
 {{< toc hide_on="xl" >}}
 
-Welcome to the Data-driven Life Sciences 2025 course, where you will explore the intersection of data science, artificial intelligence, and life sciences to drive innovation and discovery. This fully online course culminates in an in-person hackathon, fostering a vibrant community that gathers the DDLS and SciLifeLab members.
+Welcome to the Data-driven Life Sciences 2025 course, where you will explore the intersection of data science, artificial intelligence, and life sciences to drive innovation and discovery.
 
 The 6 modules aim to introduce learners to computer-driven life sciences, covering application areas in data-driven life sciences. Guest lecturers (DDLS Fellows, SciLifeLab fellows, and SciLifeLab facility training providers) will teach topics including technologies and analysis of data sets from proteomics, transcriptomics, biomolecular structure, molecular dynamics simulations, and various imaging techniques. These modules present, analyze, and discuss models of biological phenomena and related scientific breakthroughs based on such data analysis.
 
@@ -57,7 +57,7 @@ Both the computer lab and the journal club are mandatory and graded activities!
 
 - For the journal club, you will have a list of questions (the same every week) which we will answer during the journal club. Your participation and answer to these questions will be graded during the journal club.
 
-In the final project week/hackathon, course participants will choose a project to be conducted in pairs (Master's students) or individually (PhD students), followed by an oral presentation. The project and presentation will be graded by peers and the examiner. Please note that the oral presentation is only required for Master's students; PhD students are exempt from this requirement.
+In the final project week, course participants will choose a project to be conducted in pairs (Master's students) or individually (PhD students), followed by an oral presentation. The project and presentation will be graded by peers and the examiner. Please note that the oral presentation is only required for Master's students; PhD students are exempt from this requirement.
 
 To obtain ECTS credits or a certification for participation, you must complete all modules.
 
@@ -172,9 +172,6 @@ The course material will be made available on each module's page. You can find t
 
 {{< spoiler text="Can I attend the course remotely?" >}}
 Yes, the entire course is conducted online. All lectures and sessions will be held via Zoom. You can join the lectures, computer labs and journal clubs using this [Zoom link](https://kth-se.zoom.us/j/69812177998).
-
-The hackathon will take place in person at SciLifeLab, Tomtebodavägen 23, 171 65 Solna. While physical attendance at the hackathon is optional and not required for participating in the final project, you will need to arrange your own accommodation if you choose to attend in person. Please note that accommodation costs are not covered by the course. Further details about the hackathon and its schedule will be communicated via email and updated on the course page.
-{{< /spoiler >}}
 
 {{< spoiler text="What if I cannot attend the computer labs or journal club?" >}}
 For all selected modules, it is mandatory to attend all the associated computer labs and journal club in order to receive credit. If you anticipate missing a computer lab or journal club, please notify the course responsible as soon as possible. Exceptions will be considered on a case-by-case basis.

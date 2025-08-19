@@ -5,7 +5,7 @@ summary: Course content of the Data-driven Life Sciences course offered in 2023.
 date: '2023-08-01'
 type: book
 tags:
-  - current
+  - previous
 ---
 
 {{< figure src="featured.jpg" >}}

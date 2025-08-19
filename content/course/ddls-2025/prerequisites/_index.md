@@ -51,33 +51,17 @@ For the computer lab, you will need a computer with internet access, and make su
 
 ## Build a foundation in Python
 
-As a warn up, please make sure you are comfortable with coding in Python. If not, this section will show you the basics of Python.
+As a warm up, please make sure you are comfortable with coding in Python. If not, this section will show you the basics of Python.
 
 To help you get a head start, we've prepared a set of useful ChatGPT prompts designed to assist you in learning basic Python operations. Mastering these operations will be crucial throughout the course.
 
-### What You Need to Do
+### Suggested practice
 
-1\. **Review the ChatGPT Prompts**: Access the prompts and see how they can be used to learn Python basics by visiting [Learn Python with ChatGPT](https://ddls.aicell.io/post/learn-python-with-chatgpt/).
+1.\ **Review the ChatGPT Prompts**: Access the prompts and see how they can be used to learn Python basics by visiting [Learn Python with ChatGPT](https://ddls.aicell.io/post/learn-python-with-chatgpt/).
 
-2\. **Complete the Practice**: Use the prompts to complete the practice exercises. This will help you become familiar with essential Python operations.
+2.\ **Complete the Practice**: Use the prompts to complete the practice exercises. This will help you become familiar with essential Python operations.
 
-3\. **Upload Your Chat History**: Once you have completed the practice, save your chat history.
-
-4\. **Submit Your Work**: Upload the saved chat history using this [Google Form](https://forms.gle/Zgo5b5TkhMEJKchS8).
-
-### Submission Requirements
-
-- **What to Submit**: Your completed ChatGPT chat history file.
-
-- **Deadline**: The deadline for submission is August 27th, as students need to upload the form before the first computer lab on August 28th.
-
-- **Mandatory Participation**: This assignment is required for all students.
-
-### Additional Information
-
-- **Alternative for Advanced Students**: If you already have expertise in Python, you may opt to take a proficiency test instead of completing the tutorial. But you still need to upload your chat history.
-
-By following these steps, you'll ensure you're well-prepared for the course. If you have any questions or need further assistance, feel free to reach out.
+By following these optional steps, you'll be well-prepared for the course. If you have any questions or need further assistance, feel free to reach out.
 
 
 

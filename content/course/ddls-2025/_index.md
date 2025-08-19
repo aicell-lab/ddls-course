@@ -1,8 +1,8 @@
 ---
-title: "📊 HT2025: Data-driven Life Sciences"
+title: "📊 HT 2025: Data-Driven Life Sciences"
 linkTitle: Overview
-summary: Course content of the Data-driven Life Sciences course offered in 2025.
-date: '2025-01-01'
+summary: Course content for the 2025 Data-Driven Life Sciences (DDLS) course.
+date: "2025-01-01"
 type: book
 tags:
   - current
@@ -12,11 +12,9 @@ tags:
 
 {{< toc hide_on="xl" >}}
 
-Welcome to the Data-driven Life Sciences 2025 course, where you will explore the intersection of data science, artificial intelligence, and life sciences to drive innovation and discovery.
+Welcome to the 2025 Data-Driven Life Sciences (DDLS) course. Across six modules you will explore how data science and AI enable discovery in proteomics, transcriptomics, structural biology, molecular simulations, imaging, microbiology, and systems/precision medicine.
 
-The 6 modules aim to introduce learners to computer-driven life sciences, covering application areas in data-driven life sciences. Guest lecturers (DDLS Fellows, SciLifeLab fellows, and SciLifeLab facility training providers) will teach topics including technologies and analysis of data sets from proteomics, transcriptomics, biomolecular structure, molecular dynamics simulations, and various imaging techniques. These modules present, analyze, and discuss models of biological phenomena and related scientific breakthroughs based on such data analysis.
-
-The course is open to  **all the master's, PhD students and anyone who is interested**.
+Guest lecturers (DDLS Fellows, SciLifeLab Fellows, and SciLifeLab facility trainers) present real data, methods, and models underpinning current biological research. The course is open to all Master’s and PhD students as well as other interested participants.
 
 
 ## Registration
@@ -28,134 +26,101 @@ The course is open to  **all the master's, PhD students and anyone who is intere
 
 ## Intended Learning Outcomes
 
--   Describe the field of data-driven life sciences
+By the end of the course you will be able to:
 
--   Present an overview of various application areas
-
--   Provide examples of applications and their associated analysis methods
-
--   Apply statistical and machine learning analysis to biological data sets
-
--   Formulate models of biological phenomena
-
--   Employ AI agents as tools to support scientific reasoning, problem-solving, and exploration of biological datasets
-
--   Critically evaluate the outputs of AI agents and integrate them responsibly into data analysis workflows
-
--   Collaborate effectively with AI-assisted tools to enhance productivity in research and discovery
-
--   Present and review scientific literature in computer-driven life sciences
-
--   Practice good data management, including collection, handling, sharing, and analysis
-
--   Reflect on the limitations, biases, and potential risks of relying on AI agents in scientific inquiry
-
--   Reflect on the ethical consequences of data-driven life sciences
+- Describe the field of data-driven life sciences
+- Summarize major application areas and their data types
+- Give examples of typical analysis workflows
+- Apply core statistical and machine learning methods to biological datasets
+- Formulate simple models of biological phenomena
+- Employ AI tools/agents to support reasoning, problem solving, and exploration
+- Critically evaluate and responsibly integrate AI outputs into analyses
+- Collaborate effectively with AI-assisted tools to enhance research productivity
+- Present and review scientific literature
+- Practice sound data management (collection, handling, sharing, analysis)
+- Reflect on limitations, biases, risks, and ethical considerations of AI
+- Reflect on broader ethical implications of data-driven life sciences
 
 ## Course Format and Credits
 
-The course consists of 6 required modules. Each module is a stand-alone short-form course with 3 sessions per module. Completing all 6 modules earns a total of 7.5 ECTS.
+The course consists of six required modules. Each module spans one week with three core sessions: lecture(s) on Tuesday, a hands‑on computer lab on Wednesday ([Google Colab](https://colab.research.google.com/?utm_source=scs-index) notebooks), and a journal club on Friday. Completing all modules yields 7.5 ECTS.
 
 ## Modules and Certification
-Each course module contains 3 main activities: a lecture on Tuesday, giving background information about the topic(s) of the week; a computer lab, usually on Wednesday, where you will practically explore data exploration using Python in Jupyter notebooks; and a journal club on Friday where you will collectively explain and discuss an assigned research paper.
 
-Both the computer lab and the journal club are mandatory and graded activities!
+Both the computer lab and the journal club are mandatory and pass/fail assessed.
 
-- For the labs, you be given a Jupyter notebook with tutorials and coding exercises. You will be running and practicing coding by running the Jupyter notebook in [Google Colab](https://colab.research.google.com/?utm_source=scs-index). During the lab session, you can discuss your answers with the lab teachers. You will submit your final notebook with answers to the questions to be graded.
+- Labs: You receive a Jupyter notebook with guided exercises. Work in [Google Colab](https://colab.research.google.com/?utm_source=scs-index), discuss during the session, and submit your completed notebook for evaluation.
+- Journal club: You address a standard question set each week while discussing the assigned paper. Participation and contributions are graded.
 
-- For the journal club, you will have a list of questions (the same every week) which we will answer during the journal club. Your participation and answer to these questions will be graded during the journal club.
+Final project: Pairs (Master’s) or individual (PhD) projects culminate in a project report (all) and an oral presentation (Master’s only; PhD optional). Peer assessment precedes examiner grading.
 
-In the final project week, course participants will choose a project to be conducted in pairs (Master's students) or individually (PhD students), followed by an oral presentation. The project and presentation will be graded by peers and the examiner. Please note that the oral presentation is only required for Master's students; PhD students are exempt from this requirement.
+To receive ECTS credits or a certificate of participation you must actively attend and engage in all required sessions of each selected module.
 
-To obtain ECTS credits or a certification for participation, you must complete all modules.
+## Self-Directed Learning
 
-Module 1 (basic module) is a prerequisite for obtaining certification for attendance in any of the subsequent elective modules. To receive a certificate, you must:
-
--   Actively participate in all registered modules by attending and engaging in all sessions.
-
-
-The first module covers course basics and prerequisites. The subsequent modules each run for a week and cover various topics in data-driven life sciences (DDLS). Each week includes three main activities:
-
--   One or two 2-hour lectures on Tuesday providing background information about the week's topic(s)
-
--   A computer lab on Wednesday for practical data exploration using Python in Jupyter notebooks (Google Colab)
-
--   A journal club on Friday for collective explanation and discussion of an assigned research paper
-
-## Self-directed Learning
-
-One of the principal objectives of this course is to instill in you a data-driven mindset essential for life science research. More importantly, we aim to teach you the art of "learning how to learn." This involves honing your ability to independently acquire new knowledge and skills. ChatGPT serves as an excellent tool to facilitate this self-directed learning process. Instead of focusing solely on the course content, we encourage you to embrace this broader, skill-centric approach to education. We will use this self-directed learning approach extensively in the computer lab and journal club sessions.
+A core objective is to strengthen your ability to “learn how to learn.” You are encouraged to use modern AI tools (e.g., ChatGPT, Gemini) to explore concepts, draft code, and critique analyses—while remaining accountable for verifying outputs, documenting usage, and recognizing limitations and biases. This approach is integral to both labs and journal clubs.
 
 ## Course Modules
 
-**Note: The exact content for each module may be subject to change. Please refer to the updated [schedule](./schedule/) for the most current information.**
+**Note: Module details may evolve. See the [schedule](./schedule/) for the latest information.**
 
-[Module 1](./module-1/)
-- **Introduction to Data-Driven Life Sciences**
-- Foundation module covering computational basics, Python fundamentals, and building your first scientific AI agent. Sets the groundwork for all subsequent modules with scientific paper analysis and research methodologies.
-- **Computer Lab** and **Journal Club** will be announced one week before the module starts
+[Module 1](./module-1/)  
+- Introduction to data-driven life sciences  
+- Computational fundamentals, Python basics, reproducibility, first scientific AI agent, and research literature skills  
+- Lab and journal club details released at module start
 
-[Module 2](./module-2/)
-- **Image Analysis and Microscopy**
-- Biological imaging focus with deep learning applications for automated microscopy. Students learn image processing, segmentation, and classification while enhancing their AI agent with computer vision capabilities.
-- **Computer Lab** and **Journal Club** will be announced one week before the module starts
+[Module 2](./module-2/)  
+- Image analysis and microscopy  
+- Image processing, segmentation, deep learning workflows; extend your agent with computer vision utilities  
+- Lab and journal club details released at module start
 
-[Module 3](./module-3/)
-- **Protein Structure and Molecular Biology**
-- Structural biology emphasis covering protein structure prediction, analysis, and design. Hands-on experience with AlphaFold workflows and molecular modeling integrated into student AI agents.
-- **Computer Lab** and **Journal Club** will be announced one week before the module starts
+[Module 3](./module-3/)  
+- Protein structure and molecular biology  
+- Structural data, protein modeling, AlphaFold pipelines, molecular visualization and analysis integration  
+- Lab and journal club details released at module start
 
-[Module 4](./module-4/)
-- **Single-cell Transcriptomics and Genomics**
-- Genomics and single-cell analysis featuring scRNA-seq processing pipelines, pathway analysis, and genomic workflows. Students integrate comprehensive genomics analysis capabilities into their agents.
-- **Computer Lab** and **Journal Club** will be announced one week before the module starts
+[Module 4](./module-4/)  
+- Single-cell transcriptomics and genomics  
+- scRNA‑seq workflows, QC, clustering, pathway/genomic analysis; add genomics functions to your toolkit  
+- Lab and journal club details released at module start
 
-[Module 5](./module-5/)
-- **Precision Medicine and Systems Biology**
-- Clinical applications focus with multi-omics integration methods, biomarker discovery, and clinical data analysis. Emphasizes AI applications in personalized medicine and systems biology modeling.
-- **Computer Lab** and **Journal Club** will be announced one week before the module starts
+[Module 5](./module-5/)  
+- Precision medicine and systems biology  
+- Multi‑omics integration, biomarker discovery, clinical data handling, systems modeling and AI in personalized medicine  
+- Lab and journal club details released at module start
 
-[Module 6](./module-6/)
-- **Microbiology and Epidemiology**
-- Microbial and public health applications covering metagenomics workflows, epidemic modeling, and microbiome analysis. Completes the AI agent toolkit with microbial analysis capabilities.
-- **Computer Lab** and **Journal Club** will be announced one week before the module starts
+[Module 6](./module-6/)  
+- Microbiology and epidemiology  
+- Metagenomics, microbiome profiling, outbreak/epidemic modeling; finalize agent capabilities for microbial data  
+- Lab and journal club details released at module start
 
-[Final Project](./final-project/)
-- **Apply Your Computational Toolkit**
-- Capstone experience where students apply their accumulated knowledge and AI agent tools to real research challenges, working individually (PhD) or in pairs (Master's students) with final presentations.
+[Final Project](./final-project/)  
+- Apply your integrated computational toolkit to a research problem (report for all; presentation for Master’s)
 
-Each module progressively builds both domain expertise and practical AI agent capabilities, culminating in a comprehensive computational toolkit for life sciences research.
+## Assessment
 
-## Grades
+- Computer labs: Pass/Fail (attendance + satisfactory notebook)
+- Journal clubs: Pass/Fail (attendance + engaged participation)
+- Project: Pass/Fail (execution + report)
+- Oral exam (presentation): Graded A–F (Master’s required; PhD optional)
 
-The final grade on the course is determined as follows:
+Peer review precedes final grading and feedback by the teaching team.
 
--   The computer labs are graded P/F. To pass, you need to attend all the labs and answer the questions to a satisfactory degree.
--   Participation in the journal club is graded as P/F. To pass, you need to read the assigned papers, attend all the journal club and participate in discussions.
--   The project is graded P/F. To pass, you need to carry out the project, and get a passing grade on the project report.
--   The oral exam (project presentation) at the end of course will be graded A-F scale.
+## Communication and Groups
 
--   For master students, the grade on the oral exam determines the final grade on the course provided the other three activities have received a passing grade.
--   For PhD students, the oral exam is not mandatory, but you are welcome to join the oral exam if you want to practice your presentation skills.
+Announcements and posts: [here](/post/)  
+Questions: use the contact page [here](/contact/).
 
-The submission of the computer lab, the project report and the oral exam will be first reviewed and graded by your peers, and then the final grade and feedbacks will be given by the teachers and examiner.
+## Instructors
 
-## Communication and groups
+You will meet:  
+- {{< mention "wei" >}}, Assistant Professor in Biophysics (lectures, journal clubs, grading) <wei.ouyang@scilifelab.se> (course responsible)  
+- {{< mention "songtao" >}}, PhD student (lectures support, labs, journal clubs) <songtao.cheng@scilifelab.se>  
+- {{< mention "nils" >}}, PhD student (lectures support, labs, journal clubs) <nils.mechtel@scilifelab.se>
 
-You can find all announcements and posts at [here](/post/).
+## Schedule
 
-For questions, please email the course responsible, see contact [here](/contact/).
-
-## Meet your instructor
-
-In this course, you will meet:
--   {{< mention "wei" >}}, assistant professor in biophysics who will be holding the lectures, journal club and grading them (<weio@kth.se>). Wei is also the course responsible.
--   {{< mention "songtao" >}}, PhD student in biophysics, who will be teaching assistant for the course, chairing lectures, holding the computer labs and journal clubs [songtao.cheng@scilifelab.se)](mailto:songtao.cheng@scilifelab.se)
--   {{< mention "nils" >}}, PhD student in biophysics, who will be teaching assistant for the course, chairing lectures, holding the computer labs and journal clubs(<nils.mechtel@scilifelab.se>)
-
-## Course schedule
-
-See the [course schedule](./schedule/) for the detailed schedule.
+See the [course schedule](./schedule/) for dates and session details.
 
 ## FAQs
 
@@ -163,36 +128,32 @@ See the [course schedule](./schedule/) for the detailed schedule.
 The students are expected to have basic knowledge of biology and programming in Python. If you are not familiar with Python, it will be helpful if you can go through the [prerequisites](./prerequisites).
 {{< /spoiler >}}
 
-{{< spoiler text="How often do the courses run?" >}}
-We run the course once a year, in Period 1 from August to October.
+{{< spoiler text="How often does the course run?" >}}
+Once per year (Period 1: August–October).
 {{< /spoiler >}}
 
-{{< spoiler text="How do I register the course?" >}}
-**Registration is now open for DDLS 2025!**
-
--   For KTH master students, please register at the KTH course selection system.
--   For PhD students or anyone from other universities, please sign up using the Google form above.
+{{< spoiler text="How do I register?" >}}
+- KTH Master’s students: via the KTH course selection system  
+- PhD students and external participants: Google registration form above
 {{< /spoiler >}}
 
-{{< spoiler text="How do I get access to the course material?" >}}
-The course material will be made available on each module's page. You can find the module pages under the [course modules section](#course-modules). We won't be using KTH Canvas.
+{{< spoiler text="How do I access course material?" >}}
+Each module page hosts its materials; we do not use KTH Canvas.
 {{< /spoiler >}}
 
 {{< spoiler text="Can I attend the course remotely?" >}}
 Yes, the entire course is conducted online. All lectures and sessions will be held via Zoom. You can join the lectures, computer labs and journal clubs using this [Zoom link](https://kth-se.zoom.us/j/69812177998).
 
-{{< spoiler text="What if I cannot attend the computer labs or journal club?" >}}
-For all selected modules, it is mandatory to attend all the associated computer labs and journal club in order to receive credit. If you anticipate missing a computer lab or journal club, please notify the course responsible as soon as possible. Exceptions will be considered on a case-by-case basis.
-
-If an exception is granted, you will still be required to submit the notebook for the computer lab or write a report to address the journal club question sheet to ensure you meet the module requirements.
+{{< spoiler text="What if I must miss a lab or journal club?" >}}
+Attendance is mandatory. Contact the course responsible in advance; approved exceptions still require a completed notebook or a written response to the journal club questions.
 {{< /spoiler >}}
 
-{{< spoiler text="Will the lecture be recorded?" >}}
-The recording of lectures may vary depending on the lecturer, and it cannot be guaranteed. However, the slides will be made available after each lecture.
+{{< spoiler text="Will lectures be recorded?" >}}
+Recording is at the lecturer’s discretion; slides will be provided.
 {{< /spoiler >}}
 
-{{< spoiler text="Can I use ChatGPT / Claude or other generative AI tools in the computer labs, journal club, assignments or the final project?" >}}
-Yes, you are encouraged to use these AI tools to facilitate your learning, and perform tasks. However, you need to make sure that you are using them in a responsible way. Importantly, if you used it for submitting any graded activities, please make sure to also attach the exported conversation history with the AI tool.
+{{< spoiler text="Can I use generative AI tools?" >}}
+Yes—responsibly. Disclose AI assistance and attach any relevant conversation history for graded submissions.
 {{< /spoiler >}}
 
-{{< cta cta_text="Begin the course" cta_link="module-1" >}} 
+{{< cta cta_text="Begin the course" cta_link="module-1" >}}

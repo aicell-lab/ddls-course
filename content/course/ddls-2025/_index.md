@@ -66,32 +66,32 @@ A core objective is to strengthen your ability to “learn how to learn.” You 
 
 [Module 1](./module-1/)  
 - Introduction to data-driven life sciences  
-- Computational fundamentals, Python basics, reproducibility, first scientific AI agent, and research literature skills  
+- Computational fundamentals, Python basics, reproducibility, first scientific AI agent, and research literature skills
 - Lab and journal club details released at module start
 
 [Module 2](./module-2/)  
 - Image analysis and microscopy  
-- Image processing, segmentation, deep learning workflows; extend your agent with computer vision utilities  
+- Image processing, segmentation, deep learning workflows; extend your agent with computer vision utilities
 - Lab and journal club details released at module start
 
 [Module 3](./module-3/)  
 - Protein structure and molecular biology  
-- Structural data, protein modeling, AlphaFold pipelines, molecular visualization and analysis integration  
+- Structural data, protein modeling, AlphaFold pipelines, molecular visualization and analysis integration (can be subject to change)
 - Lab and journal club details released at module start
 
 [Module 4](./module-4/)  
 - Single-cell transcriptomics and genomics  
-- scRNA‑seq workflows, QC, clustering, pathway/genomic analysis; add genomics functions to your toolkit  
+- scRNA‑seq workflows, QC, clustering, pathway/genomic analysis; add genomics functions to your toolkit (can be subject to change)
 - Lab and journal club details released at module start
 
 [Module 5](./module-5/)  
 - Precision medicine and systems biology  
-- Multi‑omics integration, biomarker discovery, clinical data handling, systems modeling and AI in personalized medicine  
+- Multi‑omics integration, biomarker discovery, clinical data handling, systems modeling and AI in personalized medicine (can be subject to change)
 - Lab and journal club details released at module start
 
 [Module 6](./module-6/)  
 - Microbiology and epidemiology  
-- Metagenomics, microbiome profiling, outbreak/epidemic modeling; finalize agent capabilities for microbial data  
+- Metagenomics, microbiome profiling, outbreak/epidemic modeling; finalize agent capabilities for microbial data (can be subject to change)
 - Lab and journal club details released at module start
 
 [Final Project](./final-project/)  

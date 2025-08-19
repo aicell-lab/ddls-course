@@ -12,6 +12,8 @@ course_module: "true"
 
 #### Lecturer: Wei Ouyang (DDLS Fellow; Tuesday 26th August 13:00-15:00 CEST)
 
+{{< figure src="Wei_Ouyang.png" class="profile-photo" >}}
+
 Module 1 serves as the foundational introduction to the Data-Driven Life Sciences (DDLS) course. This basic module is designed to familiarize participants with the overarching principles and goals of DDLS, getting prepared for machine learning topics and providing a comprehensive overview of the course structure, content, and logistics. Participants will be introduced to the various topics that will be covered in the subsequent modules, as well as the format of the course, which includes lectures, computer labs, and journal club. The module will also outline the examination and certification requirements.
 
 A key focus of this module will be on introducing tools and tips to facilitate self-learning, including the basics of machine learning, running and using Google Colab, and prompt engineering in ChatGPT. Participants will learn how to use ChatGPT to enhance their learning experience by digesting course material, understanding new concepts, and assisting with coding tasks in the computer lab.

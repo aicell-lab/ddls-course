@@ -14,8 +14,7 @@ subtitle:
 
 content:
   # Contact (edit or remove options as required)
-  email: weio@kth.se
-  appointment_url: 'https://calendly.com/wei-ouyang/meeting'
+  email: ddls-course@scilifelab.se
   # Automatically link email and phone or display as text?
   autolink: true
 design:

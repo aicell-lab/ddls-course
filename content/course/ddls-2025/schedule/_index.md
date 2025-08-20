@@ -42,7 +42,7 @@ You can add the Google Calendar via this link: [Google Calendar](https://calenda
 | 6      | Tue 30 Sep 08:00-10:00  | 🧑🏻‍🏫Lecture     | TBD                         | Microbiology and Epidemiology                                                                                                       |
 | 6      | Wed 01 Oct 13:00-17:00  | 💻Computer Lab | Songtao Cheng, Nils Mechtel                         | Microbiology and Epidemiology                                                                                                    |
 | 6      | Fri 03 Oct 10:00-12:00  | 💬Seminar      | Songtao Cheng, Nils Mechtel                         | Microbiology and Epidemiology                                                                                                                                                 |
-|        | Wed 08 Oct 13:00-17:00  | 📝Examination  | Wei Ouyang                         | Final Examination                                                                                                             |
-|        | Thu 16 Oct 08:00-13:00  | 📝Examination  | Wei Ouyang                         | Final Examination                                                                                                             |
+|        | Wed 08 Oct 13:00-17:00  | 📝Examination  | Wei Ouyang                         | Oral presentations for Master’s students(Batch 1)                                                                                                             |
+|        | Thu 16 Oct 08:00-13:00  | 📝Examination  | Wei Ouyang                         | Oral presentations for Master’s students(Batch 2)                                                                                                            |
 
 If you anticipate that you won't be able to attend any of the sessions, please [contact](/contact) us as soon as possible. 

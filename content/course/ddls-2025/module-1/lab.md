@@ -7,9 +7,7 @@ type: book
 
 Welcome to the first computer lab. This session is designed to get everyone—regardless of prior experience—up to speed with the core concepts and coding practices in machine learning needed for the rest of the course. You will interact with an AI tutor via the Gemini CLI while implementing small machine learning exercises (PyTorch) in a Google Colab notebook.
 
-You do NOT need previous ML experience. Come curious and ready to experiment.
-
-> IMPORTANT: Do NOT close / exit the Gemini CLI (e.g. with `/exit` or Ctrl+C) before you save your chat history with `/chat save computer-lab-1` and copy the checkpoint file. If you exit first, the temporary session data can be lost and you will not be able to submit your chat transcript.
+You do not need previous ML experience. Come curious and ready to experiment.
 
 ## Learning Goals
 
@@ -73,6 +71,30 @@ This launches the interactive tutorial. Follow the AI tutor’s instructions car
 9. The Gemini CLI writes generated Python code to separate local files. Open each produced file’s contents and copy them into new Colab code cells, then run and experiment. Feel free to modify hyperparameters, add print statements, or time code segments.
 
 After completing the tutorial (or reaching the session time limit), proceed to the submission steps below.
+
+> IMPORTANT: Do NOT close or exit the Gemini CLI (e.g. with `/exit` or Ctrl+C) before you save your chat history with `/chat save computer-lab-1` and copy the checkpoint file. If you exit first, the temporary session data can be lost and you will not be able to submit your chat transcript.
+
+### Periodic Saving & Crash Recovery
+
+To be on the safe side, save your chat repeatedly during the session:
+
+```bash
+/chat save computer-lab-1
+```
+
+If a checkpoint with that name already exists, the CLI will ask whether you want to overwrite the previous checkpoint. That overwrite prompt itself confirms the earlier save existed and that the new save completed successfully.
+
+Because the Gemini CLI stores the checkpoint in a temporary path (not automatically synced to Drive), also copy it into your mounted lab folder each time you reach a milestone:
+
+```bash
+cp -i /root/.gemini/tmp/*/checkpoint-computer-lab-1.json <path_to_your_session_folder>/checkpoint-computer-lab-1.json
+```
+
+Explanation:
+* `-i` (interactive) asks before overwriting, preventing accidental loss and confirming the file operation.
+* Replace `<path_to_your_session_folder>` with the path of the folder you `cd`'d into earlier (inside your Drive).
+
+If the Colab runtime crashes or disconnects, your notebook and any files inside the Drive folder are preserved. After reconnecting and restarting Gemini, you can continue. Resume saving periodically after restarting.
 
 
 ## Important tips for the computer lab

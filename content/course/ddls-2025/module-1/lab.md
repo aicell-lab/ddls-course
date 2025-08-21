@@ -39,7 +39,7 @@ Open a new notebook in [Google Colab](https://colab.research.google.com/).
 
 1. Mount Google Drive. Click the folder icon in the left sidebar, then the Google Drive icon, choose your account, and grant permission (`See, edit, create, and delete all of your Google Drive files`).
 
-	![Screenshot showing how to mount Google Drive in Colab](google-colab-mount-drive.png)
+	![Screenshot showing how to mount Google Drive in Colab](../google-colab-mount-drive.png)
 
 2. A folder named `drive` now appears. Expand it to browse your Drive. Create or choose an empty folder dedicated to this lab. Right‑click it and copy its path.
 
@@ -130,7 +130,7 @@ To save your Jupyter Notebook, follow these steps:
 1. Click on "File" in the top menu.
 2. Select "Download" and then choose "Download as .ipynb".
 
-![save ipynb file](save-ipynb-file.png)
+![save ipynb file](../save-ipynb-file.png)
 
 
 Then click the button below to upload BOTH your notebook and the (optionally renamed) chat history JSON file:

@@ -169,14 +169,25 @@ We would also appreciate if you can provide some feedback via the form to help u
 
 ## Grading
 
-Evaluation components:
+This lab is assessed on a Pass / Fail basis. A **Pass** requires substantive engagement, not just minimal submission. Treat the criteria below as the *baseline*; exceeding them strengthens your foundation for later modules.
 
-* Completion: core steps followed (mount, run tutorial, execute code, submission artifacts present).
-* Engagement: evidence of exploratory modifications / markdown reflections.
-* Clarity: readable notebook (section headers, brief explanations, organized cells).
-* Peer Review: after the deadline you will be assigned two peers’ notebooks to review and provide constructive feedback (details forthcoming).
+Evaluation components (all are expected for a Pass):
 
-No points are deducted for initial mistakes. Iterate and document what you learned.
+* **Completion**: All core workflow steps demonstrably executed (Drive mount, Gemini tutorial run, code executed, checkpoint + notebook submitted).
+* **Engagement**: Evidence you explored beyond pure copy/paste (e.g. parameter tweaks, added diagnostics, short markdown reflections on what changed / why).
+* **Clarity**: Notebook is organized (section headers, concise explanations, cleaned redundant cells, outputs visible where meaningful).
+* **Peer Review Commitment**: After the deadline you will review two assigned notebooks and provide constructive, specific feedback (details forthcoming). Submitting your own lab but skipping peer reviews can jeopardize a Pass.
+
+What strengthens your submission (recommended, not strictly required): brief rationale notes before larger code blocks; experiments comparing two settings; clear reporting of observations (loss trends, speed differences, etc.).
+
+Common reasons for a **Fail**:
+* Missing one or both deliverables (checkpoint JSON or executed notebook).
+* Notebook shows little or no execution / outputs (e.g. only un‑run cells, or wholesale copy without adaptation).
+* No attempt to clarify or reflect (pure raw code dump).
+* Ignoring required process (submitting an empty / corrupted checkpoint).
+* Failure to complete assigned peer reviews (without prior approval).
+
+Initial mistakes are fine. Iterate, annotate what you learned, and move forward. Depth of engagement matters more than perfection.
 
 ---
 Questions during the lab? First try refining your prompt to the AI tutor. Still stuck? Then ask a TA with a concise summary: what you tried, what you expected, what happened.

@@ -19,9 +19,9 @@ Guest lecturers (DDLS Fellows, SciLifeLab Fellows, and SciLifeLab facility train
 
 ## Registration
 
-**Registration is now open for DDLS 2025!**
+**Registration is now closed for DDLS 2025.**
 
-{{< cta cta_text="Click Here to Register" cta_link="https://forms.gle/qaAdz2evTXeDH6949" >}}
+<!-- {{< cta cta_text="Click Here to Register" cta_link="https://forms.gle/qaAdz2evTXeDH6949" >}} -->
 
 
 ## Intended Learning Outcomes

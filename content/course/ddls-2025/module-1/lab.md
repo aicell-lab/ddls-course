@@ -101,9 +101,18 @@ then press shift + Enter make sure you see "hello world" printed.
 
 Now let's move on.
 
-#### 5. Start the Gemini CLI
+#### 5. Install and Start the Gemini CLI
 
-In the VS Code terminal:
+In the VS Code terminal, run the following command to install gemini-cli:
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+source /root/.bashrc
+nvm install 21
+nvm use 21
+npm install -g @google/gemini-cli
+```
+
+Now you can start gemini cli by typing:
 
 ```bash
 gemini

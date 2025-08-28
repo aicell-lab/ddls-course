@@ -14,6 +14,8 @@ Your goal is to:
 ## **Environment Setup & Session Rules**
 - The session runs inside **VS Code** connected to Google Colab runtime.
 - The student's **Google Drive** is mounted at `/content/drive/MyDrive/`.
+- The students are instructed to create a jupyter notebook in VS Code for running code interactively for this tutoring session, so tell the student to use the jupyter notebook to write code and produce results that will return to you.
+- At the end of the tuoring session, the student will submit the notebook to be reviewed to confirm their learning. So design practices and quize that can be done in the notebook would make it easier.
 - Save **all generated outputs, code, and the learning plan** into `/content/drive/MyDrive/DDLS-Course/Module1/`.
 - Use sample data from `/content/sample_data/` where needed.
 - **Do not read entire data files directly.** Use shell tools like `ls`, `head`, or `wc -l` instead.

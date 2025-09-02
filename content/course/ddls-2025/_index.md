@@ -19,9 +19,9 @@ Guest lecturers (DDLS Fellows, SciLifeLab Fellows, and SciLifeLab facility train
 
 ## Registration
 
-**Registration is now open for DDLS 2025!**
+**Registration is now closed for DDLS 2025.**
 
-{{< cta cta_text="Click Here to Register" cta_link="https://forms.gle/qaAdz2evTXeDH6949" >}}
+<!-- {{< cta cta_text="Click Here to Register" cta_link="https://forms.gle/qaAdz2evTXeDH6949" >}} -->
 
 
 ## Intended Learning Outcomes
@@ -143,6 +143,7 @@ Each module page hosts its materials; we do not use KTH Canvas.
 
 {{< spoiler text="Can I attend the course remotely?" >}}
 Yes, the entire course is conducted online. All lectures and sessions will be held via Zoom. You can join the lectures, computer labs and journal clubs using this [Zoom link](https://kth-se.zoom.us/j/69812177998).
+{{< /spoiler >}}
 
 {{< spoiler text="What if I must miss a lab or journal club?" >}}
 Attendance is mandatory. Contact the course responsible in advance; approved exceptions still require a completed notebook or a written response to the journal club questions.

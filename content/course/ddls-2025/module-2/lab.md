@@ -31,8 +31,8 @@ By the end of this lab you should be able to:
 
 ### Part 1: Train a U-Net for Image Segmentation
 
-1.  **Open the Notebook:** Click the link below to open the notebook in Google Colab.
-    [click here to access](https://colab.research.google.com/drive/16Z9reacXGbrAFFDjfDq6p5-fvZJRfzVU?usp=sharing)
+1.  **Open the Notebook:** Click the link below to open the notebook in Google Colab.(Access not open yet)
+    <!-- [click here to access](https://colab.research.google.com/drive/16Z9reacXGbrAFFDjfDq6p5-fvZJRfzVU?usp=sharing) -->
 
 2.  **Save a Copy:** In the notebook, click **File → Save a copy in Drive** to create your own editable version. All your work for this part will be done in your copy.
 

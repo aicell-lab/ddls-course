@@ -1,5 +1,5 @@
 ---
-title: "Computer Lab 2: AI-Powered Image Segmentation & Web App Deployment"
+title: "Computer Lab 2: AI-Powered Image Segmentation & Web App Deployment with Your AI Agent"
 linkTitle: "Computer Lab 2"
 weight: 10
 type: book

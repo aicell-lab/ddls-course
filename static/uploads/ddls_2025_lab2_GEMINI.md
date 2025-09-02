@@ -17,7 +17,7 @@ You are an **AI teaching assistant and project coach**. The "web app for microsc
 - **Frontend**: HTML + JavaScript
 - **Libraries**: TensorFlow, NumPy, Matplotlib, OpenCV (optional)
 
-## Custom Segmentation Metric: Jaccard Index
+## Custom Segmentation Metric: Jaccard Index(this is a custom metric in hte model, don't delete this)
 ```python
 def jaccard_index( y_true, y_pred, skip_background=True ):
     ''' Define Jaccard index for multiple labels.

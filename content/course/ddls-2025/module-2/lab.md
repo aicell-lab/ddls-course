@@ -131,7 +131,7 @@ You will be prompted to log in with your Google account. Follow the on-screen in
 
 #### 4. Download the computer lab notebook
 
-In the new VS Code terminal, download the instruction file for the AI agent:
+Open a **new VS Code terminal**, download the instruction file for the AI agent:
 
 ```bash
 cd /content/drive/MyDrive/DDLS-Course/Module2/

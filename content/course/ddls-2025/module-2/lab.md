@@ -4,7 +4,6 @@ linkTitle: "Computer Lab 2"
 weight: 10
 type: book
 ---
-### (Computer lab materials are not ready yet)
 
 Welcome to the second computer lab. This session is divided into two parts. First, you will train a U-Net model for cell segmentation in a guided Jupyter notebook. Second, you will use an AI agent to build and deploy your trained model with a Web UI!
 
@@ -102,7 +101,7 @@ You will be prompted to log in with your Google account. Follow the on-screen in
 
 #### 5. Download the computer lab notebook
 
-In the new VS Code terminal, download the instruction file for the AI agent:
+Open a **new VS Code terminal**, download the instruction file for the AI agent:
 
 ```bash
 cd /content/drive/MyDrive/DDLS-Course/Module2/

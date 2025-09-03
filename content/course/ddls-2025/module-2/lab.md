@@ -18,7 +18,7 @@ By the end of this lab you should be able to:
 
 ## Getting Started
 
-#### Before Start
+### 0. Before Start
 
 **Did you experience any connnection issue with the VS Code Tunnel in Computer Lab 1 last week?** 
 If everything went well for you last week for computer lab 1, you can skip this step. 
@@ -27,7 +27,7 @@ Otherwise, please try to setup a google colab local runtime by following the [in
 
 Alternatively, if none of these works for you, feel free to use Google Colab directly without VS Code, or setup VS Code locally on your laptop. If you do it locally, you might want to setup a conda environment, and if you don't have GPU, it maybe very slow for the model training part.
 
-### Launch the Course Starter Notebook
+### 1. Launch the Course Starter Notebook
 
 Click the button below to open the course starter notebook in Google Colab:
 
@@ -35,11 +35,7 @@ Click the button below to open the course starter notebook in Google Colab:
 
 On the upper right corner, make sure the user icon is your personal Gmail account icon (instead of, e.g. SciLifeLab account if you have one).
 
-This notebook will guide you through setting up VS Code for the lab.
-
-### Step-by-step Setup
-
-#### 1. Set up VS Code Tunnel
+#### 2. Set up VS Code Tunnel
 
 **Set Runtime to GPU:** Ensure your runtime is set to GPU: **Runtime** > **Change runtime type** > **Hardware accelerator** (set to GPU). This is important for running AI model training in this computer lab.
 
@@ -52,38 +48,6 @@ In the starter notebook:
 3. You'll see a URL printed - this is your VS Code access point
 4. Open the URL in your browser or connect via your local VS Code
 
-#### 2. Create Folder Structure
-
-Open the VS Code terminal from the menu `View -> Terminal` (upper left corner). In the terminal, create the course folder structure by typing:
-
-```bash
-mkdir -p /content/drive/MyDrive/DDLS-Course/Module2/
-
-```
-
-Now, let's restart VS Code in this `Module2` folder:
-```
-cd /content/drive/MyDrive/DDLS-Course/Module2/
-code .
-```
-This should open another VS Code browser tab or window and you can close the older one. Further operations will be done in the new window. This is an important step to ensure the VS Code opens in your `Module2` folder, you can verify this by checking your browser address bar, it should become something like: `https://vscode.dev/tunnel/colab/content/drive/MyDrive/DDLS-Course/Module2`.
-
-
-
-### Part 1: Train a U-Net for Image Segmentation
-
-1.  **Open the Starter Notebook:** 
-
-
-2.  **Save a Copy:** In the notebook, click **File → Save a copy in Drive** to create your own editable version. All your work for this part will be done in your copy.
-
-3.  **Follow the Tutorial:** Work through the notebook cells. The tutorial will guide you through the concepts of U-Net, data preparation, model training, and evaluation for segmenting cells in microscopy images. **Answer the questions** and execute the code blocks to train your model.
-
-### Part 2: Build a Web App with an AI Agent
-
-After you have trained your model in the notebook, you will use an AI agent to build a web application that can run inference with it.
-
-#### 1. Set up VS Code Tunnel
 
 In your Colab terminal, run the commands under the "Setup VS Code Tunnel" section.
 
@@ -96,7 +60,14 @@ tar -xf vscode_cli.tar.gz
 
 Open the URL provided in the output to launch VS Code in your browser.
 
-#### 2.Switch to the Module2 Folder
+Open the VS Code terminal from the menu `View -> Terminal` (upper left corner). In the terminal, create the course folder structure by typing:
+
+```bash
+mkdir -p /content/drive/MyDrive/DDLS-Course/Module2/
+
+```
+
+#### 3.Switch to the Module2 Folder
 
 Open a terminal in VS Code (`View -> Terminal`). 
 Move working directory to folder on Google Drive and use this folder as your workspace. This is a crucial step.
@@ -109,7 +80,7 @@ code .
 A new VS Code window or tab will open. Close the old one and continue your work in the new one. The URL should now end with `.../DDLS-Course/Module2`.
 
 
-#### 3. Install and Start the Gemini CLI
+#### 4. Install and Start the Gemini CLI
 
 Next, install the Gemini CLI. This tool provides a command-line interface to interact with the AI agent.
 
@@ -129,7 +100,7 @@ gemini
 
 You will be prompted to log in with your Google account. Follow the on-screen instructions. If the CLI exits after login, run `gemini` again.
 
-#### 4. Download the computer lab notebook
+#### 5. Download the computer lab notebook
 
 Open a **new VS Code terminal**, download the instruction file for the AI agent:
 
@@ -138,7 +109,9 @@ cd /content/drive/MyDrive/DDLS-Course/Module2/
 wget -O ddls_2025_lab2_U_Net_for_cell_segmentation.ipynb https://raw.githubusercontent.com/aicell-lab/ddls-course/main/static/uploads/ddls_2025_lab2_U_Net_for_cell_segmentation.ipynb
 ```
 
-This `ddls_2025_lab2_U_Net_for_cell_segmentation.ipynb` contains the computer lab notebook. You can click on the notebook in the file explorer and open it 
+This `ddls_2025_lab2_U_Net_for_cell_segmentation.ipynb` contains the computer lab notebook. You can click on the notebook in the file explorer and open it.
+
+And now start with computer lab, and follow the instructions in the computer lab.
 
 
 ## Deliverables
@@ -168,6 +141,9 @@ In the VS Code terminal, copy the saved chat history to your project folder:
 cd /content/drive/MyDrive/DDLS-Course/Module2/
 cp /root/.gemini/tmp/*/checkpoint-computer-lab-2.json .
 ```
+#### 3. Add a README.md file
+
+Add a README file to explain the folder structure, or notes for facilitating your peers to review your work.
 
 #### 4. Verify and Share Your Folder
 

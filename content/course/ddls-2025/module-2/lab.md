@@ -4,7 +4,6 @@ linkTitle: "Computer Lab 2"
 weight: 10
 type: book
 ---
-### (Computer lab materials are not ready yet)
 
 Welcome to the second computer lab. This session is divided into two parts. First, you will train a U-Net model for cell segmentation in a guided Jupyter notebook. Second, you will use an AI agent to build and deploy your trained model with a Web UI!
 

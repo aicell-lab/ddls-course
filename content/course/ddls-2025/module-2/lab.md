@@ -141,6 +141,9 @@ In the VS Code terminal, copy the saved chat history to your project folder:
 cd /content/drive/MyDrive/DDLS-Course/Module2/
 cp /root/.gemini/tmp/*/checkpoint-computer-lab-2.json .
 ```
+#### 3. Add a README.md file
+
+Add a README file to explain the folder structure, or notes for facilitating your peers to review your work.
 
 #### 4. Verify and Share Your Folder
 

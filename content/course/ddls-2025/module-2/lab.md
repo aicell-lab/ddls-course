@@ -101,7 +101,7 @@ You will be prompted to log in with your Google account. Follow the on-screen in
 
 #### 5. Download the computer lab notebook
 
-Open a **new VS Code terminal**, download the instruction file for the AI agent:
+Open a **new VS Code terminal**, [download jupyter notebook](https://raw.githubusercontent.com/aicell-lab/ddls-course/main/static/uploads/ddls_2025_lab2_U_Net_for_cell_segmentation.ipynb) by running the following command:
 
 ```bash
 cd /content/drive/MyDrive/DDLS-Course/Module2/

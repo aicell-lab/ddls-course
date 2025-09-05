@@ -27,3 +27,6 @@ Identification of spot-like structures in large, noisy microscopy images is a cr
 During the journal club, we will walk through the question sheet together. Everyone will be selected at random to answer one or more questions from the question sheet, and/or describe selected figures.
 
 Note that it is mandatory to attend the journal club session, and participate in the discussion.
+
+
+ {{< cta cta_text="Show the Journal Club Question Sheet" cta_link="/slides/question-sheet-v2/" >}}

@@ -203,7 +203,7 @@ https://rest.uniprot.org/uniprotkb/search?query=reviewed:true+AND+organism_id:96
 3.  Parses the JSON response to extract the sequence.
 4.  Returns the sequence as a string.
 
-👉 Task 4c:
+👉 Task 4c: Explore the AlphaFold outputs
 
 1.  Explore what files are in the ZIP file containing AlphaFold outputs and write a short description in your notebook. We will later focus only on the PDB file it produces.
 

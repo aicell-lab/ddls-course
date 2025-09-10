@@ -472,45 +472,45 @@ Now that you have your feature table (DataFrame with proteins × features), the 
 
 Your final submission should include the following files:
 
-1.  Notebook --- **Part I** and **Part II**
+1.  Notebooks --- Part I and Part II
 
     **Part I:**
 
--   Demonstrates UniProt search, AlphaFold API sequence retrieval, ColabFold run, and PDB parsing.
+    -   Demonstrates UniProt search, AlphaFold API sequence retrieval, ColabFold run, and PDB parsing.
 
--   Includes basic feature extraction functions you built in Part I.
+    -   Includes basic feature extraction functions you built in Part I.
 
     **Part II:**
 
--   Contains your dataset construction, PDB downloads, feature extraction, and classifier training.
+    -   Contains your dataset construction, PDB downloads, feature extraction, and classifier training.
 
--   Includes evaluation metrics (accuracy, precision, recall, F1), confusion matrix, and feature importance plots.
+    -   Includes evaluation metrics (accuracy, precision, recall, F1), confusion matrix, and feature importance plots.
 
--   Clearly documents which features were implemented and how they relate to your research plan.
+    -   Clearly documents which features were implemented and how they relate to your research plan.
 
-    **Part II Report**
+    **Part II Report:**
 
--   A short, structured summary (1--2 pages or equivalent Markdown cell in your notebook).
+    -   A short, structured summary (1–2 pages or equivalent Markdown cell in your notebook).
 
--   Sections: Introduction, Methods, Results, Discussion.
+    -   Sections: Introduction, Methods, Results, Discussion.
 
--   Focus on your results, which features mattered most, and any biological insights.
+    -   Focus on your results, which features mattered most, and any biological insights.
 
 2.  GEMINI.md --- Research Plan
 
--   Written in Markdown.
+    -   Written in Markdown.
 
--   Describes your chosen classification task, your approach, the features you plan to extract, and how you will evaluate your model.
+    -   Describes your chosen classification task, your approach, the features you plan to extract, and how you will evaluate your model.
 
--   This serves as your project proposal and must be completed before starting Part II.
+    -   This serves as your project proposal and must be completed before starting Part II.
 
 3.  README.md --- Submission Guide
 
--   Brief description of your submission package.
+    -   Brief description of your submission package.
 
--   Outline of files and their purpose (e.g., "Notebook Part I → basic exploration", "Notebook Part II → dataset + classifier").
+    -   Outline the files and their purpose (e.g., "Notebook Part I → basic exploration", "Notebook Part II → dataset + classifier").
 
--   Any notes for the reviewers (e.g., runtime requirements, dependencies, or known limitations).
+    -   Any notes for the reviewers (e.g., runtime requirements, dependencies, or known limitations).
 
 ## Submission Instructions
 

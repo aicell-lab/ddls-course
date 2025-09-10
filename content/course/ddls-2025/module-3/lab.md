@@ -478,7 +478,7 @@ Your final submission should include the following files:
 
 -   Includes basic feature extraction functions you built in Part I.
 
-3.  GEMINI.md --- Research Plan
+2.  GEMINI.md --- Research Plan
 
 -   Written in Markdown.
 
@@ -486,7 +486,7 @@ Your final submission should include the following files:
 
 -   This serves as your project proposal and must be completed before starting Part II.
 
-5.  Notebook --- Part II
+3.  Notebook --- Part II
 
 -   Contains your dataset construction, PDB downloads, feature extraction, and classifier training.
 
@@ -494,7 +494,7 @@ Your final submission should include the following files:
 
 -   Clearly documents which features were implemented and how they relate to your research plan.
 
-7.  Report --- Part II Findings
+4.  Report --- Part II Findings
 
 -   A short, structured summary (1--2 pages or equivalent Markdown cell in your notebook).
 
@@ -502,7 +502,7 @@ Your final submission should include the following files:
 
 -   Focus on your results, which features mattered most, and any biological insights.
 
-9.  README.md --- Submission Guide
+5.  README.md --- Submission Guide
 
 -   Brief description of your submission package.
 

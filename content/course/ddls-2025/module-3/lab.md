@@ -38,27 +38,24 @@ By the end of the lab, you will have gone through a full research-style workflow
 
 
 Part I --- Exploring AlphaFold
-============================
+==============================
 
 ### 1\. Search UniProt for a protein of interest
 
 The UniProt Knowledgebase (UniProtKB) is the central hub for protein sequence and annotation data.\
 We will use the UniProt REST API to search for proteins and download metadata.
 
--   UniProt API documentation:[  https://www.uniprot.org/help/api_queries
+-   UniProt API documentation: https://www.uniprot.org/help/api_queries
 
-    ](https://www.uniprot.org/help/api_queries?utm_source=chatgpt.com)
-
--   Query field reference:[  https://www.uniprot.org/help/query-fields](https://www.uniprot.org/help/query-fields?utm_source=chatgpt.com)
+-   Query field reference: https://www.uniprot.org/help/query-fields
 
 Before writing Python code, try some queries directly on the UniProt website:
 
 -   Reviewed human kinases\
     reviewed:true AND organism_id:9606 AND protein_name:kinase
 
--   Reviewed E. coli enzymes
-
-reviewed:true AND organism_id:562 AND (ec:*)
+-   Reviewed E. coli enzymes\
+    reviewed:true AND organism_id:562 AND (ec:*)
 
 -   Reviewed proteins with known 3D structure\
     reviewed:true AND keyword:"3D-structure"
@@ -70,70 +67,31 @@ reviewed:true AND organism_id:562 AND (ec:*)
 
 Try changing the organism (organism_id), keywords (kinase, membrane, disorder), or properties (length, ec) to explore different sets.
 
-### 2\. Programmatic Access with Python
-
-Once you are comfortable with queries on the website, the next step is to access the API programmatically.
-
-Example API URL:
-
--   Get 5 reviewed human kinases (accession + length):
-
-https://rest.uniprot.org/uniprotkb/search?query=reviewed:true+AND+organism_id:9606+AND+protein_name:kinase&fields=accession,length&format=tsv&size=5
-
-👉 Task: Write a small Python script that:
-
-1.  Takes a UniProt query string.
-
-2.  Sends it to the UniProt REST API.
-
-3.  Returns a list of UniProt IDs (accessions).
-
-4.  Saves them to a .txt or .csv file.
-
-Hints:
-
--   Use the requests library in Python.
-
--   Parse the returned TSV (tab-separated) format into a DataFrame (pandas).
-
--   Start small (size=5), then scale up to 50--100 proteins for your dataset.
-
 * * * * *
 
-### 3\. Download the protein sequence using the AlphaFold API
+### 2\. Retrieve the protein sequence from the AlphaFold API
 
 The AlphaFold Protein Structure Database (AlphaFold DB) not only provides predicted protein structures but also makes sequences and metadata accessible through its public REST API.
 
--   Documentation:[ AlphaFold API Docs](https://alphafold.ebi.ac.uk/api-docs)
+-   Documentation: https://alphafold.ebi.ac.uk/api-docs
 
--   Each UniProt accession in AlphaFold DB has associated endpoints for retrieving the FASTA sequence, the predicted structure (PDB), and additional files (such as PAE and pLDDT confidence scores).
+-   Each UniProt accession in AlphaFold DB has associated endpoints for retrieving the sequence, the predicted structure (PDB), and additional files (such as PAE and pLDDT confidence scores).
 
 For this step:
 
 -   Use the UniProt ID you selected in Part I.
 
--   Query the AlphaFold API to retrieve the protein sequence, save the sequence locally --- this will be the input for the ColabFold notebook in the next step.
+-   Query the AlphaFold API to retrieve the protein sequence (e.g., https://alphafold.ebi.ac.uk/api/prediction/P00374), and save the sequence locally — this will be the input for the ColabFold notebook in the next step.
 
 Note: At this stage, you only need the protein sequence, not the structure. You will fetch the PDBs later when building datasets for classification.
 
-👉 Task: Write a Python function that:
-
-1.  Takes a UniProt ID (e.g. P69905).
-
-Calls the AlphaFold API:\
-https://www.alphafold.ebi.ac.uk/api/prediction/<UniProtID>
-
-1.  Parses the JSON response to extract the sequence.
-
-2.  Returns the sequence as a string.
-
 * * * * *
 
-### 4\. Run AlphaFold2 using ColabFold
+### 3\. Run AlphaFold2 with ColabFold
 
 In this step, you will use the protein sequence retrieved from the AlphaFold API to run a structure prediction with ColabFold:
 
--   Open the ColabFold notebook: [ColabFold AlphaFold2](https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb?utm_source=chatgpt.com) (this is an alphafold implementation from <https://github.com/sokrypton/ColabFold>)
+-   Open the ColabFold notebook: https://colab.research.google.com/github/sokrypton/ColabFold/blob/main/AlphaFold2.ipynb (this is an AlphaFold implementation from https://github.com/sokrypton/ColabFold)
 
 -   Paste your sequence and run the notebook following its instructions.
 
@@ -141,7 +99,7 @@ In this step, you will use the protein sequence retrieved from the AlphaFold API
 
 👉 Your tasks:
 
-1.  Explore what files are in the ZIP and write a short description in your notebook. We will later only focus on the pdb file it produces.
+1.  Explore what files are in the ZIP and write a short description in your notebook. We will later focus only on the PDB file it produces.
 
 2.  Create a Python parser to read the PDB file.
 
@@ -151,7 +109,7 @@ In this step, you will use the protein sequence retrieved from the AlphaFold API
 
 -   Extract per-residue pLDDT values (from the B-factor column).
 
-4.  Write a script to compute basic features that will be useful later for classification, such as:
+3.  Write a script to compute basic features that will be useful later for classification, such as:
 
 -   Protein length (# of residues)
 
@@ -161,10 +119,126 @@ In this step, you will use the protein sequence retrieved from the AlphaFold API
 
 -   Fraction of residues in helix/sheet/coil (via DSSP)
 
--   Contact density (number of Cα--Cα contacts within 8 Å)
+-   Contact density (number of Cα–Cα contacts within 8 Å)
+
+If everything runs successfully, a ZIP folder should be downloaded with AlphaFold outputs.
+
+* * * * *
+
+### 4\. Programmatic Access with Python
+
+Once you are comfortable with queries on the website, the next step is to access the APIs programmatically. Before you move on, start the starter notebook in your Module3 folder.
+
+#### 4.1. Launch the Course Starter Notebook
+
+Click the button below to open the course starter notebook in Google Colab:
+
+[<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/notebooks/ddls-course-starter.ipynb)
+
+On the upper right corner, make sure the user icon is your personal Gmail account icon (instead of, e.g. SciLifeLab account if you have one).
+
+#### 4.2. Set up VS Code Tunnel
+
+**Set Runtime to GPU:** Ensure your runtime is set to GPU: **Runtime** > **Change runtime type** > **Hardware accelerator** (set to GPU). This is important for running AI model training in this computer lab.
+
+Tips: In a Google Colab, you can select a cell with code, and press `shift+Enter` to run it.
+
+In the starter notebook:
+
+1. Run the cells to mount Google Drive (grant permission when prompted)
+2. Run the cell to install and start VS Code tunnel
+3. You'll see a URL printed - this is your VS Code access point
+4. Open the URL in your browser or connect via your local VS Code
 
 
-This step prepares you for Part II, where you will build datasets and train classifiers.
+In your Colab terminal, run the commands under the "Setup VS Code Tunnel" section.
+
+```bash
+# In a Colab terminal
+curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
+tar -xf vscode_cli.tar.gz
+./code tunnel
+```
+
+Open the URL provided in the output to launch VS Code in your browser.
+
+Open the VS Code terminal from the menu `View -> Terminal` (upper-left corner). In the terminal, create the course folder structure by typing:
+
+```bash
+mkdir -p /content/drive/MyDrive/DDLS-Course/Module3/
+
+```
+
+#### 4.3. Switch to the Module3 Folder
+
+Open a terminal in VS Code (`View -> Terminal`).
+Move the working directory to the folder on Google Drive and use this folder as your workspace. This is a crucial step.
+
+```bash
+cd /content/drive/MyDrive/DDLS-Course/Module3/
+code .
+```
+
+A new VS Code window or tab will open. Close the old one and continue your work in the new one. The URL should now end with `.../DDLS-Course/Module3`.
+
+
+#### 4.4. Install and Start the Gemini CLI
+
+Next, install the Gemini CLI. This tool provides a command-line interface to interact with the AI agent.
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+source /root/.bashrc
+nvm install 21
+nvm use 21
+npm install -g @google/gemini-cli
+```
+
+Start the Gemini CLI:
+
+```bash
+gemini
+```
+
+You will be prompted to log in with your Google account. Follow the on-screen instructions. If the CLI exits after login, run `gemini` again.
+
+#### 4.5. Access the APIs Programmatically
+
+Next, you will write Python functions to access the UniProt and AlphaFold APIs programmatically.
+
+Example API URL:
+
+-   Get 5 reviewed human kinases (accession + length):
+
+https://rest.uniprot.org/uniprotkb/search?query=reviewed:true+AND+organism_id:9606+AND+protein_name:kinase&fields=accession,length&format=tsv&size=5
+
+👉 Task 4a: Write a small Python function that:
+
+1.  Takes a UniProt query string.
+
+2.  Sends it to the UniProt REST API.
+
+3.  Returns a list of UniProt IDs (accessions).
+
+4.  Saves them to a .txt or .csv file.
+
+👉 Task 4b: Write a small Python function that:
+
+1.  Takes a UniProt ID (e.g., P69905).
+2.  Calls the AlphaFold API: https://www.alphafold.ebi.ac.uk/api/prediction/<UniProtID>
+3.  Parses the JSON response to extract the sequence.
+4.  Returns the sequence as a string.
+
+Hints:
+
+-   Use the requests library in Python.
+
+-   Parse the returned TSV (tab-separated) format into a DataFrame (pandas).
+
+-   Start small (size=5), then scale up to 50–100 proteins for your dataset.
+
+
+This final step prepares you for Part II, where you will build datasets and train classifiers.
 
 * * * * *
 

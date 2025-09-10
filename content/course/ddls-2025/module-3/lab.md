@@ -79,7 +79,7 @@ The AlphaFold Protein Structure Database (AlphaFold DB) not only provides predic
 
 For this step:
 
--   Use the UniProt ID you selected in Part I.
+-   Use the UniProt ID you selected in section 1.
 
 -   Query the AlphaFold API to retrieve the protein sequence (e.g., https://alphafold.ebi.ac.uk/api/prediction/P00374), and save the sequence locally — this will be the input for the ColabFold notebook in the next step.
 
@@ -205,9 +205,11 @@ https://rest.uniprot.org/uniprotkb/search?query=reviewed:true+AND+organism_id:96
 
 👉 Task 4c: Explore the AlphaFold outputs
 
-1.  Explore the contents of the ZIP file with AlphaFold outputs and write a short description in your notebook. Later, we will focus only on the PDB file it produces.
+1. Upload the ZIP file you downloaded from ColabFold to your Google Drive and move it to your Module3 folder.
 
-2.  Create a Python parser to read the PDB file.
+2.  Explore the contents of the ZIP file with AlphaFold outputs and write a short description in your notebook. Later, we will focus only on the PDB file it produces.
+
+3.  Create a Python parser to read the PDB file.
 
 -   Count the number of atoms.
 
@@ -215,7 +217,7 @@ https://rest.uniprot.org/uniprotkb/search?query=reviewed:true+AND+organism_id:96
 
 -   Extract per-residue pLDDT values (from the B-factor column).
 
-3.  Write a script to compute basic features that will be useful later for classification, such as:
+4.  Write a script to compute basic features that will be useful later for classification, such as:
 
 -   Protein length (# of residues)
 

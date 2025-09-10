@@ -81,7 +81,7 @@ For this step:
 
 -   Use the UniProt ID you selected in section 1.
 
--   Query the AlphaFold API to retrieve the protein sequence (e.g., https://alphafold.ebi.ac.uk/api/prediction/P00374), and save the sequence locally — this will be the input for the ColabFold notebook in the next step.
+-   Query the AlphaFold API to retrieve the protein sequence (e.g., [https://alphafold.ebi.ac.uk/api/prediction/P00374](https://alphafold.ebi.ac.uk/api/prediction/P00374)), and save the sequence locally — this will be the input for the ColabFold notebook in the next step.
 
 Note: At this stage, you only need the protein sequence, not the structure. You will fetch the PDBs later when building datasets for classification.
 

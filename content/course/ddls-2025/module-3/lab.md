@@ -205,7 +205,7 @@ https://rest.uniprot.org/uniprotkb/search?query=reviewed:true+AND+organism_id:96
 
 👉 Task 4c: Explore the AlphaFold outputs
 
-1.  Explore what files are in the ZIP file containing AlphaFold outputs and write a short description in your notebook. We will later focus only on the PDB file it produces.
+1.  Explore the contents of the ZIP file with AlphaFold outputs and write a short description in your notebook. Later, we will focus only on the PDB file it produces.
 
 2.  Create a Python parser to read the PDB file.
 
@@ -227,7 +227,6 @@ https://rest.uniprot.org/uniprotkb/search?query=reviewed:true+AND+organism_id:96
 
 -   Contact density (number of Cα–Cα contacts within 8 Å)
 
-If everything runs successfully, a ZIP folder should be downloaded with AlphaFold outputs.
 
 Hints:
 

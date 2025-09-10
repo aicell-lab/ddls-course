@@ -97,32 +97,6 @@ In this step, you will use the protein sequence retrieved from the AlphaFold API
 
 -   At the end, you will download a ZIP file containing AlphaFold outputs, including the predicted structure in PDB format.
 
-👉 Your tasks:
-
-1.  Explore what files are in the ZIP and write a short description in your notebook. We will later focus only on the PDB file it produces.
-
-2.  Create a Python parser to read the PDB file.
-
--   Count the number of atoms.
-
--   Count the number of residues.
-
--   Extract per-residue pLDDT values (from the B-factor column).
-
-3.  Write a script to compute basic features that will be useful later for classification, such as:
-
--   Protein length (# of residues)
-
--   Mean and variance of pLDDT
-
--   Radius of gyration (Rg)
-
--   Fraction of residues in helix/sheet/coil (via DSSP)
-
--   Contact density (number of Cα–Cα contacts within 8 Å)
-
-If everything runs successfully, a ZIP folder should be downloaded with AlphaFold outputs.
-
 * * * * *
 
 ### 4\. Programmatic Access with Python
@@ -228,6 +202,32 @@ https://rest.uniprot.org/uniprotkb/search?query=reviewed:true+AND+organism_id:96
 2.  Calls the AlphaFold API: https://www.alphafold.ebi.ac.uk/api/prediction/<UniProtID>
 3.  Parses the JSON response to extract the sequence.
 4.  Returns the sequence as a string.
+
+👉 Task 4c:
+
+1.  Explore what files are in the ZIP file containing AlphaFold outputs and write a short description in your notebook. We will later focus only on the PDB file it produces.
+
+2.  Create a Python parser to read the PDB file.
+
+-   Count the number of atoms.
+
+-   Count the number of residues.
+
+-   Extract per-residue pLDDT values (from the B-factor column).
+
+3.  Write a script to compute basic features that will be useful later for classification, such as:
+
+-   Protein length (# of residues)
+
+-   Mean and variance of pLDDT
+
+-   Radius of gyration (Rg)
+
+-   Fraction of residues in helix/sheet/coil (via DSSP)
+
+-   Contact density (number of Cα–Cα contacts within 8 Å)
+
+If everything runs successfully, a ZIP folder should be downloaded with AlphaFold outputs.
 
 Hints:
 

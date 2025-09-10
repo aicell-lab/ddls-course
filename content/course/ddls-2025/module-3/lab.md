@@ -58,10 +58,10 @@ Before writing Python code, try some queries directly on the UniProt website:
     reviewed:true AND organism_id:562 AND (ec:*)
 
 -   Reviewed proteins with known 3D structure\
-    reviewed:true AND keyword:"3D-structure"
+    reviewed:true AND keyword:3D-structure
 
 -   Intrinsically disordered proteins (IDPs)\
-    reviewed:true AND keyword:"Intrinsic disorder"
+    reviewed:true AND keyword:Intrinsic disorder
 
 👉 You can paste these queries into the UniProt search bar: <https://www.uniprot.org/uniprotkb>
 

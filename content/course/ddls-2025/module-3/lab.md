@@ -554,7 +554,7 @@ Fill out the submission form with the link to your `Module3` folder:
 This lab is assessed on a Pass/Fail basis. A **Pass** requires substantive engagement with both parts of the lab.
 
 *   **Completion**: All core workflow steps are executed and all deliverables are submitted.
-*   **Engagement**: The notebook is fully executed, and the web app is functional. There is evidence of you actively participating in the process, including peer review.
+*   **Engagement**: The notebook is fully executed. There is evidence of you actively participating in the process, including peer review.
 *   **Clarity**: Your `Module3` folder is well-organized, and the `README.md` clearly explains your work.
 *   **Peer Review Commitment**: You must provide constructive feedback on two assigned peer submissions after the deadline.
 

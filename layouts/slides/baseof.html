@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default "en-us" }}">
+<head>
+
+  {{/* Asset versions */}}
+  {{ $cdn_url_reveal := "https://cdn.jsdelivr.net/npm/reveal.js@4.3.1" }}
+  {{ $mermaid_version := "9.1.3" }}
+  {{ $mermaid_sri := "sha256-TIYL00Rhw/8WaoUhYTLX9SKIEFdXxg+yMWSLVUbhiLg=" }}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Wowchemy {{with site.Data.wowchemy.version}}{{.}}{{end}} for Hugo">
+
+  {{ with site.Home.OutputFormats.Get "WebAppManifest" }}
+    <link rel="manifest" href="{{ .RelPermalink }}">
+  {{ end }}
+
+  <link rel="icon" type="image/png" href="{{(partial "functions/get_icon" 32).RelPermalink}}">
+  <link rel="apple-touch-icon" type="image/png" href="{{(partial "functions/get_icon" 192).RelPermalink}}">
+
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <title>{{ .Title }} | {{ site.Title }}</title>
+
+  {{/* Load Reveal CSS */}}
+  <link rel="stylesheet" href="{{ $cdn_url_reveal }}/dist/reveal.min.css">
+  {{- $theme := $.Param "slides.theme" | default "black" -}}
+  <link rel="stylesheet" href="{{ $cdn_url_reveal }}/dist/theme/{{ $theme }}.min.css">
+
+  {{/* Hugo Chroma Syntax Highlighter Initialization */}}
+  {{ $hl_theme := $.Param "slides.highlight_style" | default "dracula" }}
+  {{ $hl_theme_path := printf "css/libs/chroma/%s.css" $hl_theme }}
+  {{ if not (fileExists (printf "assets/%s" $hl_theme_path)) }}
+    {{ errorf "Hugo Chroma themes %s.css not found in `css/libs/chroma/`. See https://gohugo.io/commands/hugo_gen_chromastyles/" $hl_theme }}
+  {{ else }}
+    {{ $hl_theme_css := resources.Get $hl_theme_path | minify }}
+    <link rel="stylesheet" href="{{ $hl_theme_css.RelPermalink }}">
+  {{ end }}
+
+  {{/* Load any Reveal CSS customizations */}}
+  {{ $custom_reveal_css := printf "css/reveal_custom.css" }}
+  {{ if (fileExists (printf "assets/%s" $custom_reveal_css)) }}
+    {{ $css_custom := resources.Get "css/reveal_custom.css" }}
+    {{ $style := slice $css_custom | resources.Concat "css/reveal_custom.css" | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ end }}
+
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="{{ $cdn_url_reveal }}/plugin/highlight/monokai.css" id="highlight-theme" />
+  <style>
+    .reveal h1,
+    .reveal h2,
+    .reveal h3,
+    .reveal h4,
+    .reveal h5,
+    .reveal h6 {
+      text-transform: none !important;
+    }
+
+    .reveal iframe {
+      max-width: 100% !important;
+      max-height: 100% !important;
+    }
+
+    .button {
+      cursor: pointer;
+      background-color: #3b60f4;
+      /* Green */
+      border-radius: 3px;
+      color: white;
+      padding: 10px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+
+    .splitter {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+    }
+
+    #separator {
+      visibility: hidden;
+      cursor: col-resize;
+      background-color: #aaa;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='30'><path d='M2 0 v30 M5 0 v30 M8 0 v30' fill='none' stroke='black'/></svg>");
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 6px;
+      height: 100%;
+
+      /* Prevent the browser's built-in drag from interfering */
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    #code-editor {
+      /* width: 20%; */
+      height: 100%;
+      min-width: 10px;
+    }
+
+    #reveal-container {
+      /* width: 80%; */
+      height: 100%;
+      min-width: 10px;
+    }
+  </style>
+
+  <style>
+    .lds-ellipsis {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+    }
+    .lds-ellipsis div {
+      position: absolute;
+      top: 33px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: rgb(62, 148, 240);
+      animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
+    .lds-ellipsis div:nth-child(1) {
+      left: 8px;
+      animation: lds-ellipsis1 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(2) {
+      left: 8px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(3) {
+      left: 32px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+    .lds-ellipsis div:nth-child(4) {
+      left: 56px;
+      animation: lds-ellipsis3 0.6s infinite;
+    }
+    @keyframes lds-ellipsis1 {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes lds-ellipsis3 {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+    @keyframes lds-ellipsis2 {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(24px, 0);
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="slide-loader" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+  <div class="splitter">
+    <div id="slide-editor-container">
+    </div>
+    <div id="separator"></div>
+    <div id="slide-container" class="reveal" style="z-index: 0">
+      <div class="slides markdown-slide-content">
+      </div>
+    </div>
+  </div>
+  {{ block "main" . }}{{ end }}
+  <div id="window-container" style="z-index: 100"></div>
+  <div id="menu-container" style="z-index: 200"></div>
+  
+  <script src="https://lib.imjoy.io/imjoy-loader.js"></script>
+
+  {{/* Load Reveal and built-in plugins. */}}
+  <script src="{{ $cdn_url_reveal }}/dist/reveal.min.js" crossorigin="anonymous"></script>
+  <script src="{{ $cdn_url_reveal }}/plugin/markdown/markdown.min.js" crossorigin="anonymous"></script>
+  <script src="{{ $cdn_url_reveal }}/plugin/notes/notes.min.js" crossorigin="anonymous"></script>
+  <script src="{{ $cdn_url_reveal }}/plugin/search/search.min.js" crossorigin="anonymous"></script>
+  <script src="{{ $cdn_url_reveal }}/plugin/math/math.min.js" crossorigin="anonymous"></script>
+  <script src="{{ $cdn_url_reveal }}/plugin/zoom/zoom.min.js" crossorigin="anonymous"></script>
+  <script src="{{ $cdn_url_reveal }}/plugin/highlight/highlight.min.js" crossorigin="anonymous"></script>
+
+  {{/* Load third-party Reveal plugins. */}}
+  {{ if $.Param "slides.reveal_options.menu_enabled" | default true}}
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/plugin.js" integrity="sha256-M6JwAjnRAWmi+sbXURR/yAhWZKYhAw7YXnnLvIxrdGs=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js" integrity="sha256-l14dklFcW5mWar6w/9KaW0fWVerf3mYr7Wt0+rXzFAA=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.css" integrity="sha256-0fU8HKLaTjgzfaV9CgSqbsN8ilA3zo6zK1M6rlgULd8=" crossorigin="anonymous">
+  {{ end }}
+
+  {{/* Load Mermaid. */}}
+  {{ if $.Param "slides.diagram" | default false}}
+    {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\" title=\"mermaid\"></script>" (printf "https://cdn.jsdelivr.net/npm/mermaid@%s/dist/mermaid.min.js" $mermaid_version) $mermaid_sri | safeHTML }}
+  {{ end }}
+
+  {{/* Initialize slides. */}}
+
+  {{ $utilsjs := resources.Get "js/utils.js" }}
+  <script src="{{ $utilsjs.RelPermalink }}"></script>
+
+  {{ $fullscreenjs := resources.Get "js/fullscreen.js" }}
+  <script src="{{ $fullscreenjs.RelPermalink }}"></script>
+
+  {{ $mainjs := resources.Get "js/main.js" | js.Build (dict "params" (dict "slides" $.Params.slides "permalink" .Permalink "cdn_url_reveal" $cdn_url_reveal)) }} 
+  <script type="module" src="{{ $mainjs.RelPermalink }}"></script>
+
+</body>
+</html>

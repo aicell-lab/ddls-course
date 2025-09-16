@@ -28,3 +28,15 @@ During the journal club, we will walk through the question sheet together. Every
 Note that it is mandatory to attend the journal club session, and participate in the discussion.
 
 {{< cta cta_text="Show the Journal Club Question Sheet" cta_link="/slides/question-sheet-v2/" >}}
+
+## Further Readings
+
+Here are a few recommended papers on foundation models for single-cell analysis for those who want to dig deeper:
+
+- [scBERT: Large-scale pretrained deep language model for cell type annotation of single-cell RNA-seq data](https://www.nature.com/articles/s42256-022-00534-z)
+- [scGPT: Towards Building a Foundation Model for Single-Cell Multi-omics Using Generative AI](https://www.nature.com/articles/s41592-023-02038-4)
+- [A large-scale foundation model on single-cell transcriptomics (GeneFormer)](https://www.biorxiv.org/content/10.1101/2023.01.12.523741v2)
+- [Transfer learning enables predictions in network biology](https://www.nature.com/articles/s41586-023-06139-9)
+- [CellPLM: Pre-training of Cell Language Model Beyond Single Cells](https://www.biorxiv.org/content/10.1101/2023.10.09.561541v1)
+
+For a more comprehensive list, you can refer to this GitHub repository: [awesome-foundation-model-single-cell-papers](https://github.com/OmicsML/awesome-foundation-model-single-cell-papers).

@@ -1,6 +1,6 @@
 ---
 title: "Journal Club 4"
-date: '2025-09-22'
+date: '2025-09-01'
 weight: 20
 type: book
 ---

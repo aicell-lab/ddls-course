@@ -198,7 +198,9 @@ Tip (macOS + conda): after `conda activate sc-mcp`, run `which python` to get th
 ### 4. Orchestrate with Gemini
 
 From Gemini CLI:
-- Plan the pipeline (list steps, parameters, and expected outputs).
+
+- Create a GEMINI.md plan document (task introduction + pipeline plan). Ask Gemini/ChatGPT to draft it and iterate until it’s clear and actionable.
+
 - Call your MCP tools in order, passing file paths between steps.
 - Ask Gemini to summarize key results (top markers per cluster, UMAP interpretation).
 - Generate a one-page Markdown or PDF report at the end.

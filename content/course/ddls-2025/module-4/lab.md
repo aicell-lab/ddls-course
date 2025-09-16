@@ -27,35 +27,18 @@ Part I — Classic scRNASeq Workflow in Jupyter
 
 In this section, you will use the notebook like a bioinformatician at the bench—running cells step by step to build an analysis using Scanpy.
 
-### 1. Recommended: Run locally on your computer (more stable)
+### Option 1. Run locally on your computer
 
 For the most stable experience, we recommend running the analysis locally on your computer with a Python environment.
 
 - Requirements: Python 3.10+ (or Conda/Mamba), 8+ GB RAM recommended
-- Create a clean environment and install packages:
-
-```bash
-# Option A: Conda/Mamba
-conda create -n ddls-scrna python=3.11 -y
-conda activate ddls-scrna
-pip install scanpy scrublet harmonypy bbknn anndata matplotlib seaborn scikit-learn
-
-# Option B: Python venv
-python3 -m venv ddls-scrna
-source ddls-scrna/bin/activate
-pip install --upgrade pip
-pip install scanpy scrublet harmonypy bbknn anndata matplotlib seaborn scikit-learn
-
-# (Optional) Jupyter locally
-pip install jupyterlab
-jupyter lab
-```
+- Create a clean environment
 
 Then follow the steps in “4. Workflow Steps (Scanpy)” below using a local notebook or script in your project folder.
 
 If you cannot run locally or prefer a cloud environment, use option 2 (Colab) below.
 
-### 2. Launch the Course Starter Notebook (Colab option)
+### Option 2. Launch the Course Starter Notebook (Google Colab option)
 
 #### 2.1. Open the Module 4 starter notebook in Google Colab:
 

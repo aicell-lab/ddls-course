@@ -21,10 +21,7 @@ You will perform a standard scRNASeq analysis using **Scanpy** in a Jupyter note
 
 This dataset is small enough to run quickly during class, but still captures the essential features of a real scRNASeq study.
 
-
-### Launch the Course Starter Notebook
-
-#### Open the Module 4 starter notebook in Google Colab:
+### Open the Module 4 in Google Colab:
 
 [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/notebooks/ddls-2025-module-4-computer-lab-scRNASeq.ipynb)
 

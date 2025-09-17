@@ -1,24 +1,47 @@
 ---
 title: "Computer Lab 4: scRNASeq — Classic and MCP/Gemini"
-date: '2025-09-21'
 linkTitle: "Computer Lab 4"
 weight: 10
 type: book
 ---
-Module 4 Computer Lab: Single-Cell RNA-Seq of Lung Inflammation vs Controls
+Module 4 Computer Lab: Single-Cell RNA-Seq of COVID vs Controls
 
 🌍 Introduction
 ===============
 
-In this lab, you will explore **single-cell RNA sequencing (scRNASeq) data** from patients with severe lung inflammation compared to healthy controls. The main goal is to **identify gene expression differences at the single-cell level** between these groups, with a focus on elderly patients.
+In this lab, you will explore **single-cell RNA sequencing (scRNASeq) data** from patients with COVID compared to healthy controls. The main goal is to **identify gene expression differences at the single-cell level** between these groups, with a focus on elderly patients.
+
+You will perform a standard scRNASeq analysis using **Scanpy** in a Jupyter notebook, followed by repackaging the workflow into **MCP tools** and orchestrating it with the **Gemini CLI**.
 
 🧪 Data Description
 -------------------
 
-- **Samples:** 4 patients with lung inflammation and 4 healthy controls  
+- **Samples:** 4 patients with COVID and 4 healthy controls  
 - **Cells:** Each sample has been subsampled to ~1500 cells
 
 This dataset is small enough to run quickly during class, but still captures the essential features of a real scRNASeq study.
+
+
+### Launch the Course Starter Notebook
+
+#### Open the Module 4 starter notebook in Google Colab:
+
+[<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/notebooks/ddls-2025-module-4-computer-lab-scRNASeq.ipynb)
+
+Notes:
+- Runtime can be CPU; GPU is not necessary.
+- You can run a cell with Shift+Enter.
+
+
+Switch to Module4 and use it as your workspace:
+
+```bash
+cd /content/drive/MyDrive/DDLS-Course/Module4/
+code .
+```
+**Alternative option (if VS Code in Colab does not work for you):**
+
+If the VS Code-in-Colab setup fails or you prefer a different setup, please try to setup a google colab local runtime by following the [instructions here](https://research.google.com/colaboratory/local-runtimes.html). You may need to download and setup Docker locally, then run a docker image.
 
 * * * * *
 
@@ -27,135 +50,122 @@ Part I — Classic scRNASeq Workflow in Jupyter
 
 In this section, you will use the notebook like a bioinformatician at the bench—running cells step by step to build an analysis using Scanpy.
 
-### Option 1. Run locally on your computer
+### Work on your notebook
 
-For the most stable experience, we recommend running the analysis locally on your computer with a Python environment.
+You’ll follow a standard Scanpy pipeline: load the .h5ad dataset with metadata, run QC (including doublet detection and optional cell-cycle regression), normalize and select HVGs, integrate batches, embed (PCA/UMAP), cluster (Leiden).
 
-- Requirements: Python 3.10+ (or Conda/Mamba), 8+ GB RAM recommended
-- Create a clean environment
-
-Then follow the steps in “4. Workflow Steps (Scanpy)” below using a local notebook or script in your project folder.
-
-If you cannot run locally or prefer a cloud environment, use option 2 (Colab) below.
-
-### Option 2. Launch the Course Starter Notebook (Google Colab option)
-
-#### 2.1. Open the Module 4 starter notebook in Google Colab:
-
-(Notebook not available yet)[<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/notebooks/ddls-scrna-starter.ipynb)
-
-Notes:
-- Runtime can be CPU; GPU is not necessary.
-- You can run a cell with Shift+Enter.
-
-#### 2.2. Set up VS Code Tunnel (optional, Google Colab)
-
-In a Colab terminal, start the VS Code tunnel:
-
-```bash
-# In a Colab terminal
-curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
-tar -xf vscode_cli.tar.gz
-./code tunnel
-```
-
-Open the URL provided to launch VS Code in your browser.
-
-Create the course folder:
-
-```bash
-mkdir -p /content/drive/MyDrive/DDLS-Course/Module4/
-```
-
-Switch to Module4 and use it as your workspace:
-
-```bash
-cd /content/drive/MyDrive/DDLS-Course/Module4/
-code .
-```
-
-### 4. Work on your notebook
-
-You’ll follow a standard Scanpy pipeline: load the .h5ad dataset with metadata, run QC (including doublet detection and optional cell-cycle regression), normalize and select HVGs, integrate batches, embed (PCA/UMAP), cluster (Leiden), and perform differential expression for key comparisons (e.g., inflamed vs control, elderly focus). The starter notebook provides step-by-step instructions and automatically saves intermediate .h5ad files, plots, and DE tables so you can resume at any step.
-
-At the end of Part I, you will have completed a standard scRNASeq pipeline using Scanpy inside Jupyter.
+At the end of Part I, you will have completed a basic scRNASeq pipeline using Scanpy inside Jupyter.
 
 * * * * *
 
-Part II — MCP + Gemini CLI: Analysis as a "Manager"
+🧩 Part II — Building an AI Agent for Differential Gene Expression with MCP Tools
 ===================================================
 
-In this part, you will repackage the same workflow into **MCP tools** and orchestrate it using the **Gemini CLI**.
+### Why Part II?
 
-- **MCP (Model Context Protocol):** Turn analysis functions into callable tools (e.g., scanpy_run_qc, scanpy_integrate, scanpy_embed_cluster, scanpy_rank_genes, report_build).  
-- **Gemini CLI:** A conversational interface where you plan, call tools, and summarize results directly in chat.
+In Part I, you explored a typical single-cell RNA-seq workflow step by step.
+Now we move from **manual analysis** to **system design**: you will build a set of MCP tools, describe them in a `GEMINI.md` file, and let an AI agent (via the Gemini CLI) use these tools to perform a real biological task.
 
-Why?
-- In Jupyter, you act as the worker (run cells, fix errors, plot).
-- With MCP + Gemini CLI, you act as the manager (instruct the AI to run QC, clustering, marker detection, and report generation).
-- This makes workflows more reproducible and shareable: each tool writes explicit outputs (.h5ad, .json, .csv, .pdf).
+This teaches you how to **design workflows that an AI can reason about and execute automatically**.
 
-### 1. Install and Start the Gemini CLI
+---
 
-```bash
-# In Colab terminal
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-source /root/.bashrc
-nvm install 21
-nvm use 21
-npm install -g @google/gemini-cli
-gemini
-```
+### Setting up
 
-Log in with your Google account if prompted. If the CLI exits after login, run `gemini` again.
+For this part, we will:
 
-### 2. Package Your Workflow as Tools
+* Start a **VS Code Tunnel** from the current notebook (environment already has all required packages installed).
+* Continue the work inside VS Code, where you will develop MCP tools and interact with the Gemini CLI agent.
 
-In your Module4 workspace, create small Python scripts that:
+---
 
-- Reads an input .h5ad and writes an output .h5ad after each step.
-- Accepts parameters via CLI or JSON (thresholds, batch keys, resolution).
-- Produces side outputs: plots (.pdf/.png) and DE tables (.csv).
+### What is MCP?
 
-Suggested tool surface (I/O contracts):
-- scanpy_run_qc(in_h5ad, out_h5ad, qc_params_json) → .h5ad + QC summary .json
-- scanpy_integrate(in_h5ad, out_h5ad, method, key) → .h5ad
-- scanpy_embed_cluster(in_h5ad, out_h5ad, neighbors_k, leiden_res) → .h5ad + UMAP .pdf
-- scanpy_rank_genes(in_h5ad, out_dir, groupby, comparison) → DE .csv + volcano/heatmap .pdf
-- report_build(in_dir, out_md_or_pdf) → README.md or PDF summary
+[MCP (Model Context Protocol)](https://modelcontextprotocol.io/docs/getting-started/intro) lets you wrap analysis steps as **tools** that an AI agent can call.
 
-Expose these as MCP tools (function signatures + JSON schemas). A minimal MCP server template is provided in the starter notebook.
+* Each tool has a clear **name, input, and output**.
+* The agent can decide how to combine tools to solve a task.
+* Instead of one long script, you provide **modular building blocks** that the AI can orchestrate.
+
+Think of it as teaching the agent how to **press the right buttons in your analysis pipeline**.
+
+---
+
+### Task: Differential Gene Expression (DGE)
+
+Now that we have preprocessed our PBMC dataset (Covid vs Control) in Part I, we will analyze **Differential Gene Expression**.
+
+DGE in scRNA-seq is used to:
+
+* Identify **gene markers** that distinguish cell populations.
+* Identify **differentially regulated genes across conditions** (Covid vs Control).
+
+**Your agent should be able to:**
+
+1. Load the processed AnnData file.
+2. Select a cluster or cell type.
+3. Compare gene expression between **Covid and Control** cells within that cluster.
+4. Run DGE tests (parametric and non-parametric):
+
+   * *t-test*
+   * *Wilcoxon rank-sum*
+   * (Optionally: *logreg*)
+5. Compare results between the tests.
+6. Visualize the results (volcano, dotplot, violin, UMAP overlays).
+7. Extend the comparison:
+
+   * Between clusters (marker discovery)
+   * Between conditions (Covid vs Control)
+   * Between samples (consistency check)
+8. Summarize results in a short report.
+
+📌 **Hint:** By default, Scanpy uses `.raw` in AnnData for DGE; this can be changed with `use_raw=False`. The dataset contains >19,000 genes after filtering.
+
+---
+
+### Step 1: Build MCP Tools
+
+Now to allow the AI agent to perform the task, you need to build a set of MCP tools. A minimal MCP server template is provided in the starter notebook.
 
 Minimal MCP server pattern (example):
 
+```bash
+pip install mcp
+```
+
 ```python
-# sc_mcp_server.py
-# Minimal MCP stdio server exposing two placeholder tools.
 from typing import Any, Dict
-import json
+from datetime import datetime
+from mcp.server.fastmcp import FastMCP
 
-MCP = FastMCP("sc-mcp")
-#...
+mcp = FastMCP("sc-mcp")
 
-@MCP.tool("scanpy_run_qc")
-def scanpy_run_qc(in_h5ad: str, out_h5ad: str, qc_params_json: str = "{}"):
-   params = json.loads(qc_params_json or "{}")
-   # ... load AnnData, run QC, write out_h5ad, emit a small summary JSON ...
-   return {"ok": True, "written": out_h5ad, "params": params}
-
-
-@MCP.tool("scanpy_embed_cluster")
-def scanpy_embed_cluster(in_h5ad: str, out_h5ad: str, neighbors_k: int = 15, leiden_res: float = 0.5):
-   # ... compute neighbors/UMAP, Leiden clustering, write out_h5ad ...
-   return {"ok": True, "written": out_h5ad, "k": neighbors_k, "res": leiden_res}
+@mcp.tool("current_time")
+def current_time() -> Dict[str, Any]:
+   current_timestamp = datetime.now().isoformat()
+   return {"current_time": current_timestamp}
 
 
 if __name__ == "__main__":
    # Run as an MCP stdio server (no prints to stdout!)
-   MCP.run(transport="stdio")
+   mcp.run(transport="stdio")
 ```
-
+You can refer to full documentation to [MCP SDK](https://github.com/modelcontextprotocol/python-sdk)
 This skeleton demonstrates the pattern only. In your real server, use an MCP library that implements the protocol and wire real functions that call Scanpy.
+
+Suggested tools for this task are (you may adjust, add, or remove):
+
+* `load_anndata(path)` – load dataset
+* `subset_cells(query)` – select cluster or type
+* `check_group_sizes(groupby="condition")` – confirm enough cells per group
+* `run_dge(groupby, case, ref, method)` – perform test
+* `plot_volcano(dge_results)` – visualize top DEGs
+* `plot_umap(genes)` – show expression on UMAP
+* `compare_tests(results1, results2)` – overlap between methods
+* `save_table(results)` – export DEG table
+* `generate_report(dge_results, plots)` – assemble Markdown report
+
+📌 Write **clear documentation** for each tool (inputs, outputs, usage). This is what enables the AI agent to reason correctly.
 
 ### 3. Wire the server into Gemini CLI
 
@@ -176,84 +186,96 @@ Create or edit `~/.gemini/settings.json` and add an `mcpServers` entry like this
 }
 ```
 
-Tip (macOS + conda): after `conda activate sc-mcp`, run `which python` to get the full Python path. Gemini CLI discovers MCP servers from this file; use `/mcp` in the chat to list available tools.
+Tips: Gemini CLI discovers MCP servers from this file; use `/mcp` in the chat to list available tools.
 
-### 4. Orchestrate with Gemini
+---
 
-From Gemini CLI:
+### Step 2: Write `GEMINI.md`
 
-- Create a GEMINI.md plan document (task introduction + pipeline plan). Ask Gemini/ChatGPT to draft it and iterate until it’s clear and actionable.
+This file tells the AI agent:
 
-- Call your MCP tools in order, passing file paths between steps.
-- Ask Gemini to summarize key results (top markers per cluster, UMAP interpretation).
-- Generate a one-page Markdown or PDF report at the end.
+* **Context**: Covid PBMC dataset, processed and clustered in Part I.
+* **Goal**: Perform DGE analysis to identify marker genes and condition-specific genes.
+* **Tools**: list your MCP tools, with descriptions.
+* **Plan**: outline how the agent should use them (load → subset → DGE → visualize → report).
+* **Instructions**: check group sizes, compare methods, include at least one visualization.
+* **Important Note:** Paste path to your conda environment in GEMINI.md to ensure Gemini installs packages and runs scripts in the correct Python environment. It's because the settings.json file assigns a Python environment to the `mcp` tool specifically, not to Gemini in general.
+* **Deliverables**:
 
-Notes:
-- Each step writes files; tools do not share in-memory state.
-- Prefer deterministic parameters for reproducibility.
+  * Top differentially expressed genes (table)
+  * At least one plot (volcano, dotplot, or violin)
+  * A short interpretation (2–3 sentences in your own words — **add your own salt!**)
 
-Generate PDF or README.md summary
+---
+
+### Step 3: Run Gemini CLI Agent
+
+* Launch the Gemini CLI agent with your `GEMINI.md`.
+* Interact by specifying parameters (e.g., "analyze CD14+ monocytes, compare Covid vs Control").
+* The agent will call your MCP tools step by step.
+
+---
+
+### Step 4: Generate the Report
+
+Finally, use the agent to produce a **Markdown report** `REPORT.md` file that includes:
+
+* Which cluster you analyzed
+* A table of top DEGs with statistics
+* At least one visualization
+* A short interpretation of the results in **your own words**
 
 * * * * *
 
-📌 Notes
--------
-
-- Save intermediate files after each step so you can restart mid-pipeline.  
-- With MCP, file paths (e.g., lung8.qc.h5ad) are how steps pass results. Variables are not persisted between tool calls.
-
-* * * * *
-
-✅ Deliverables
+✅ Deliverables:
 ==============
 
-Your final submission should include:
+Your final submission in Google Drive folder should include:
 
-1. Notebooks — Part I and (optionally) a helper notebook for Part II
-   - Part I: Demonstrates the full Scanpy workflow (QC, doublets, cell cycle, integration, UMAP, clustering, DE).  
-   - Includes saved intermediate .h5ad files and exported plots/tables.
+1. Notebook for Part I.
+   - You might need to move the notebook to folder 'module4', or download the notebook and upload to your google drive folder.
 
 2. MCP Tools + Orchestration (Part II)
    - MCP tool scripts or server (source code).  
-   - A Gemini CLI transcript showing your tool calls and results summaries.  
-   - A generated README.md or PDF report with key figures and findings.
+   - A Gemini CLI transcript showing your tool calls and results summaries.
 
 3. GEMINI.md — Plan
    - Short plan of your MCP tool surface, parameters, and I/O contracts.  
-   - Which comparisons (e.g., inflamed vs control, elderly focus) you will run.
 
 4. README.md — Submission Guide
    - Folder structure, how to reproduce, dependencies, known limitations.
 
-## Submission Instructions
+5. A Markdown report `REPORT.md` with DEGs, figures, and interpretation
 
-### 1. Save Your Gemini Chat History
+## Submission Tips:
+
+### Save Your Gemini Chat History
 
 ```bash
 /chat save computer-lab-4
 ```
 
-### 2. Copy the Checkpoint File
+### Copy the Checkpoint File
 
 ```bash
 cd /content/drive/MyDrive/DDLS-Course/Module4/
 cp /root/.gemini/tmp/*/checkpoint-computer-lab-4.json .
 ```
 
-### 3. Add a README.md
+### Add a README.md
 
 Explain the folder structure and how to run your tools or notebook.
 
-### 4. Verify and Share Your Folder
+### Verify and Share Your Folder
 
 Ensure your Google Drive DDLS-Course/Module4 folder contains all deliverables. Then:
 1. Right-click the Module4 folder and select Share.
 2. Set permissions to "Anyone with the link can view and comment".
 3. Copy the sharing link.
 
-### 5. Submit the Form
+### Submit the Form
 
-{{< cta cta_text="Click Here to Upload" cta_link="/submit-module4/" >}}
+{{< cta cta_text="Click Here to Upload" cta_link="https://forms.gle/d9Q5uvUWbgMRNvTN7" >}}
 
 **Submission Deadline: 24h after the computer lab ends**
 

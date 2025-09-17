@@ -39,13 +39,13 @@ If the VS Code-in-Colab setup fails or you prefer a different setup, please try 
 Part I — Classic scRNASeq Workflow in Jupyter
 =============================================
 
-In this section, you will use the notebook like a bioinformatician at the bench—running cells step by step to build an analysis using Scanpy.
+In this section, you will use the notebook like a bioinformatician at the bench, running cells step by step to build an analysis using Scanpy.
 
 ### Work on your notebook
 
 You’ll follow a standard Scanpy pipeline: load the .h5ad dataset with metadata, run QC (including doublet detection and optional cell-cycle regression), normalize and select HVGs, integrate batches, embed (PCA/UMAP), cluster (Leiden).
 
-At the end of Part I, you will have completed a basic scRNASeq pipeline using Scanpy inside Jupyter.
+At the end of Part I, you will have processed the data as part of a basic scRNASeq pipeline using Scanpy inside Jupyter.
 
 * * * * *
 

@@ -188,12 +188,6 @@ result = add(2, 3)  # should return 5
 print(result)
 ```
 
-You should also ensure the MCP server runs without errors:
-
-```bash
-python /content/drive/MyDrive/DDLS-Course/Module4/sc_mcp_server.py
-```
-
 If this doesn't through any errors, your MCP server is ready to be wired into Gemini CLI.
 
 ### Step 2: Wire the server into Gemini CLI

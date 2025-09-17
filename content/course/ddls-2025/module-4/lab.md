@@ -133,6 +133,7 @@ mcp = FastMCP("sc-mcp")
 
 @mcp.tool("current_time")
 def current_time() -> Dict[str, Any]:
+   """Return the current timestamp as a dictionary with key 'current_time' and ISO string value."""
    current_timestamp = datetime.now().isoformat()
    return {"current_time": current_timestamp}
 

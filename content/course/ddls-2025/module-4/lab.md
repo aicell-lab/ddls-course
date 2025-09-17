@@ -141,6 +141,7 @@ def current_time() -> Dict[str, Any]:
 if __name__ == "__main__":
    # Run as an MCP stdio server (no prints to stdout!)
    mcp.run(transport="stdio")
+   
 ```
 You can refer to full documentation to [MCP SDK](https://github.com/modelcontextprotocol/python-sdk)
 This skeleton demonstrates the pattern only. In your real server, use an MCP library that implements the protocol and wire real functions that call Scanpy.
@@ -159,7 +160,7 @@ Suggested tools for this task are (you may adjust, add, or remove):
 
 📌 Write **clear documentation** for each tool (inputs, outputs, usage). This is what enables the AI agent to reason correctly.
 
-### 3. Wire the server into Gemini CLI
+### Step 2: Wire the server into Gemini CLI
 
 Create or edit `~/.gemini/settings.json` and add an `mcpServers` entry like this:
 
@@ -182,7 +183,7 @@ Tips: Gemini CLI discovers MCP servers from this file; use `/mcp` in the chat to
 
 ---
 
-### Step 2: Write `GEMINI.md`
+### Step 3: Write `GEMINI.md`
 
 This file tells the AI agent:
 
@@ -200,7 +201,7 @@ This file tells the AI agent:
 
 ---
 
-### Step 3: Run Gemini CLI Agent
+### Step 4: Run Gemini CLI Agent
 
 * Launch the Gemini CLI agent with your `GEMINI.md`.
 * Interact by specifying parameters (e.g., "analyze CD14+ monocytes, compare Covid vs Control").
@@ -208,7 +209,7 @@ This file tells the AI agent:
 
 ---
 
-### Step 4: Generate the Report
+### Step 5: Generate the Report
 
 Finally, use the agent to produce a **Markdown report** `REPORT.md` file that includes:
 

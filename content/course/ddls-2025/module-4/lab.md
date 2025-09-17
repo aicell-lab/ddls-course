@@ -9,7 +9,7 @@ Module 4 Computer Lab: Single-Cell RNA-Seq of COVID vs Controls
 🌍 Introduction
 ===============
 
-In this lab, you will explore **single-cell RNA sequencing (scRNASeq) data** from patients with COVID compared to healthy controls. The main goal is to **identify gene expression differences at the single-cell level** between these groups, with a focus on elderly patients.
+In this lab, you will explore **single-cell RNA sequencing (scRNASeq) data** from patients with COVID compared to healthy controls. The main goal is to **identify gene expression differences at the single-cell level** between these groups.
 
 You will perform a standard scRNASeq analysis using **Scanpy** in a Jupyter notebook, followed by repackaging the workflow into **MCP tools** and orchestrating it with the **Gemini CLI**.
 

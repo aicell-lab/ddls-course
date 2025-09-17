@@ -33,12 +33,6 @@ Notes:
 - You can run a cell with Shift+Enter.
 
 
-Switch to Module4 and use it as your workspace:
-
-```bash
-cd /content/drive/MyDrive/DDLS-Course/Module4/
-code .
-```
 **Alternative option (if VS Code in Colab does not work for you):**
 
 If the VS Code-in-Colab setup fails or you prefer a different setup, please try to setup a google colab local runtime by following the [instructions here](https://research.google.com/colaboratory/local-runtimes.html). You may need to download and setup Docker locally, then run a docker image.

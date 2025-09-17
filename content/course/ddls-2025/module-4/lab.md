@@ -66,6 +66,16 @@ This teaches you how to **design workflows that an AI can reason about and execu
 For this part, we will:
 
 * Start a **VS Code Tunnel** from the current notebook (environment already has all required packages installed).
+
+* Switch to the Module2 Folder
+Open a terminal in VS Code (View -> Terminal). Move working directory to folder on Google Drive and use this folder as your workspace.
+
+```
+cd /content/drive/MyDrive/DDLS-Course/Module2/
+code .
+
+```
+
 * Continue the work inside VS Code, where you will develop MCP tools and interact with the Gemini CLI agent.
 
 ---

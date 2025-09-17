@@ -160,23 +160,30 @@ Suggested tools for this task are (you may adjust, add, or remove):
 
 📌 Write **clear documentation** for each tool (inputs, outputs, usage). This is what enables the AI agent to reason correctly.
 
+Save this MCP server script as `sc_mcp_server.py` in your Google Drive folder `/content/drive/MyDrive/DDLS-Course/Module4/`.
+
 ### Step 2: Wire the server into Gemini CLI
 
-Create or edit `~/.gemini/settings.json` and add an `mcpServers` entry like this:
+Create a new file named `settings.json` and add an `mcpServers` entry like this:
 
 ```json
 {
    "mcpServers": {
       "sc-mcp": {
          "type": "stdio",
-         "command": "/FULL/PATH/TO/conda/envs/sc-mcp/bin/python",
-         "args": ["/FULL/PATH/TO/sc_mcp_server.py"],
+         "command": "/usr/local/bin/python",
+         "args": ["/content/drive/MyDrive/DDLS-Course/Module4/sc_mcp_server.py"],
          "env": {
-            "SC_MCP_WORKDIR": "/FULL/PATH/TO/work"
+            "SC_MCP_WORKDIR": "/content/drive/MyDrive/DDLS-Course/Module4/"
          }
       }
    }
 }
+```
+
+Then move this file to the Gemini config directory. WARNING: This will overwrite any existing `settings.json` file, so back it up if needed.
+```bash
+mv /content/drive/MyDrive/DDLS-Course/Module4/settings.json /root/.gemini/settings.json
 ```
 
 Tips: Gemini CLI discovers MCP servers from this file; use `/mcp` in the chat to list available tools.
@@ -189,15 +196,10 @@ This file tells the AI agent:
 
 * **Context**: Covid PBMC dataset, processed and clustered in Part I.
 * **Goal**: Perform DGE analysis to identify marker genes and condition-specific genes.
-* **Tools**: list your MCP tools, with descriptions.
-* **Plan**: outline how the agent should use them (load → subset → DGE → visualize → report).
-* **Instructions**: check group sizes, compare methods, include at least one visualization.
-* **Important Note:** Paste path to your conda environment in GEMINI.md to ensure Gemini installs packages and runs scripts in the correct Python environment. It's because the settings.json file assigns a Python environment to the `mcp` tool specifically, not to Gemini in general.
-* **Deliverables**:
-
-  * Top differentially expressed genes (table)
-  * At least one plot (volcano, dotplot, or violin)
-  * A short interpretation (2–3 sentences in your own words — **add your own salt!**)
+* **Instructions**:
+   * Outline how the agent should perform the task step by step
+   * Specify what output the agent is expected to produce
+   * How the agent should use the MCP tools
 
 ---
 

@@ -209,6 +209,7 @@ This file tells the AI agent:
 * **Instructions**:
    * Outline how the agent should perform the task step by step
    * Specify what output the agent is expected to produce
+   * Define the data path (`/content/drive/MyDrive/DDLS-Course/Module4/data/covid/`)
    * How the agent should use the MCP tools
 
 ---

@@ -135,24 +135,29 @@ pip install mcp
 ```
 
 ```python
-from typing import Any, Dict
-from datetime import datetime
+"""
+FastMCP quickstart example.
+"""
+
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("sc-mcp")
+# Create an MCP server
+mcp = FastMCP("Demo")
 
-@mcp.tool("current_time")
-def current_time() -> Dict[str, Any]:
-   """Return the current timestamp as a dictionary with key 'current_time' and ISO string value."""
-   current_timestamp = datetime.now().isoformat()
-   return {"current_time": current_timestamp}
+
+# Add an addition tool
+@mcp.tool()
+def add(a: int, b: int) -> int:
+    """Add two numbers"""
+    return a + b
 
 
 if __name__ == "__main__":
    # Run as an MCP stdio server (no prints to stdout!)
    mcp.run(transport="stdio")
-   
 ```
+
+
 You can refer to full documentation to [MCP SDK](https://github.com/modelcontextprotocol/python-sdk)
 This skeleton demonstrates the pattern only. In your real server, use an MCP library that implements the protocol and wire real functions that call Scanpy.
 
@@ -170,7 +175,26 @@ Suggested tools for this task are (you may adjust, add, or remove):
 
 📌 Write **clear documentation** for each tool (inputs, outputs, usage). This is what enables the AI agent to reason correctly.
 
+Hint: The input arguments and returned types for the MCP tool functions should be primitive Python types (str, int, float, bool, list, dict). Complex objects like AnnData should be handled inside the tool and saved as a file and returned as a file path (str).
+
 Save this MCP server script as `sc_mcp_server.py` in your Google Drive folder `/content/drive/MyDrive/DDLS-Course/Module4/`.
+
+Before you try your MCP tools with Gemini, you should test each function directly. You can do this by importing the functions in a separate Python script or Jupyter notebook cell. For example, create a new cell in your notebook and run:
+
+```python
+from sc_mcp_server import add
+
+result = add(2, 3)  # should return 5
+print(result)
+```
+
+You should also ensure the MCP server runs without errors:
+
+```bash
+python /content/drive/MyDrive/DDLS-Course/Module4/sc_mcp_server.py
+```
+
+If this doesn't through any errors, your MCP server is ready to be wired into Gemini CLI.
 
 ### Step 2: Wire the server into Gemini CLI
 
@@ -182,10 +206,7 @@ Create a new file named `settings.json` and add an `mcpServers` entry like this:
       "sc-mcp": {
          "type": "stdio",
          "command": "/usr/local/bin/python",
-         "args": ["/content/drive/MyDrive/DDLS-Course/Module4/sc_mcp_server.py"],
-         "env": {
-            "SC_MCP_WORKDIR": "/content/drive/MyDrive/DDLS-Course/Module4/"
-         }
+         "args": ["/content/drive/MyDrive/DDLS-Course/Module4/sc_mcp_server.py"]
       }
    }
 }
@@ -196,7 +217,7 @@ Then move this file to the Gemini config directory. WARNING: This will overwrite
 mv /content/drive/MyDrive/DDLS-Course/Module4/settings.json /root/.gemini/settings.json
 ```
 
-Tips: Gemini CLI discovers MCP servers from this file; use `/mcp` in the chat to list available tools.
+Tips: Gemini CLI discovers MCP servers from this file; use `/mcp list` in the chat to list available tools.
 
 ---
 
@@ -216,9 +237,9 @@ This file tells the AI agent:
 
 ### Step 4: Run Gemini CLI Agent
 
-* Launch the Gemini CLI agent with your `GEMINI.md`.
-* Interact by specifying parameters (e.g., "analyze CD14+ monocytes, compare Covid vs Control").
-* The agent will call your MCP tools step by step.
+* Launch the Gemini CLI agent with your `GEMINI.md`. Make sure the `GEMINI.md` file is discovered by Gemini CLI. You should see this on top of the input box in Gemini CLI: `Using: 1 GEMINI.md file | 1 MCP server (ctrl+t to view)`
+* Run the command `/mcp list` to check if all your MCP tools are available. You should see a list of all your configured MCP tools.
+* The agent will call your MCP tools when needed to perform the task.
 
 ---
 
@@ -226,10 +247,11 @@ This file tells the AI agent:
 
 Finally, use the agent to produce a **Markdown report** `REPORT.md` file that includes:
 
-* Which cluster you analyzed
+* Which clusters you analyzed
 * A table of top DEGs with statistics
 * At least one visualization
-* A short interpretation of the results in **your own words**
+
+Add a short interpretation of the results in **your own words** to the report.
 
 * * * * *
 
@@ -251,7 +273,7 @@ Your final submission in Google Drive folder should include:
 4. README.md — Submission Guide
    - Folder structure, how to reproduce, dependencies, known limitations.
 
-5. A Markdown report `REPORT.md` with DEGs, figures, and interpretation
+5. A Markdown report `REPORT.md` with DEGs, figures, and interpretation.
 
 ## Submission Tips:
 

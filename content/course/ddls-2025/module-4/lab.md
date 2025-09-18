@@ -215,9 +215,11 @@ Tips: Gemini CLI discovers MCP servers from this file; use `/mcp list` in the ch
 
 ---
 
-### Step 3: Write `GEMINI.md`
+### Step 3: Write the `GEMINI.md`
 
-This file tells the AI agent:
+Create a new file named `GEMINI.md` in your Google Drive folder `/content/drive/MyDrive/DDLS-Course/Module4/`.
+
+This file should describe the overall plan for the agent, including:
 
 * **Context**: Covid PBMC dataset, processed and clustered in Part I.
 * **Goal**: Perform DGE analysis to identify marker genes and condition-specific genes.
@@ -229,11 +231,79 @@ This file tells the AI agent:
 
 ---
 
-### Step 4: Run Gemini CLI Agent
+### Step 4: Run the DGE analysis with your Gemini CLI Agent
 
-* Launch the Gemini CLI agent with your `GEMINI.md`. Make sure the `GEMINI.md` file is discovered by Gemini CLI. You should see this on top of the input box in Gemini CLI: `Using: 1 GEMINI.md file | 1 MCP server (ctrl+t to view)`
-* Run the command `/mcp list` to check if all your MCP tools are available. You should see a list of all your configured MCP tools.
-* The agent will call your MCP tools when needed to perform the task.
+Ensure you are in the correct folder:
+```bash
+cd /content/drive/MyDrive/DDLS-Course/Module4/
+```
+
+Then start the Gemini CLI:
+```bash
+gemini
+```
+
+Make sure the `GEMINI.md` file and the MCP server are discovered by Gemini CLI. You should see this on top of the input box in Gemini CLI: `Using: 1 GEMINI.md file | 1 MCP server (ctrl+t to view)`
+
+To check if all your MCP tools are available, enter the command `/mcp list` in the chat interface. You should see a list of all your configured MCP tools.
+
+Now that everything is set up, you can instruct the agent to perform the DGE analysis as described in the section ["Task: Differential Gene Expression (DGE)"](#task-differential-gene-expression-dge). The agent will call your MCP tools when needed to perform the task.
+
+
+#### How to know if the agent is calling your MCP tools?
+
+When Gemini first uses your MCP tool, it will ask you whether to allow the tool call. You should see a prompt like this:
+
+```bash
+ ╭─────────────────────────────────────────────────────────────────────────────────────╮
+ │ ?  add (sc-mcp MCP Server) {"a":5,"b":3} ←                                          │
+ │                                                                                     │
+ │   MCP Server: sc-mcp                                                                │
+ │   Tool: add                                                                         │
+ │                                                                                     │
+ │ Allow execution of MCP tool "add" from server "sc-mcp"?                             │
+ │                                                                                     │
+ │ ● 1. Yes, allow once                                                                │
+ │   2. Yes, always allow tool "add" from server "sc-mcp"                              │
+ │   3. Yes, always allow all tools from server "sc-mcp"                               │
+ │   4. No, suggest changes (esc)                                                      │
+ │                                                                                     │
+ ╰─────────────────────────────────────────────────────────────────────────────────────╯
+ ```
+If you allow the tool call only once, you will also see this message the next time the agent calls the same tool.
+
+After your MCP tool has been executed, you should see which tool was called with what arguments, and the returned result, like this:
+```
+╭──────────────────────────────────────╮
+│  > Add the number 5 to the number 3  │
+╰──────────────────────────────────────╯
+
+ ╭───────────────────────────────────────────────────────────────────────────────╮
+ │ ✓  add (sc-mcp MCP Server) {"a":5,"b":3}                                      │
+ │                                                                               │
+ │    8                                                                          │
+ ╰───────────────────────────────────────────────────────────────────────────────╯
+✦ 8
+```
+
+You can also find the same information in your Gemini chat history:
+
+```json
+{
+   "role": "model",
+   "parts": [
+   {
+      "functionCall": {
+         "name": "add",
+         "args": {
+         "a": 5,
+         "b": 3
+         }
+      }
+   }
+   ]
+}
+```
 
 ---
 
@@ -255,34 +325,43 @@ Add a short interpretation of the results in **your own words** to the report.
 Your final submission in Google Drive folder should include:
 
 1. Notebook for Part I.
-   - You might need to move the notebook to folder 'module4', or download the notebook and upload to your google drive folder.
+   - The completed and executed Jupyter notebook from Part I, saved as `.ipynb`.
 
 2. MCP Tools + Orchestration (Part II)
    - MCP tool scripts or server (source code).  
-   - A Gemini CLI transcript showing your tool calls and results summaries.
+   - A Gemini CLI chat history showing your tool calls and results summaries.
 
 3. GEMINI.md — Plan
-   - Short plan of your MCP tool surface, parameters, and I/O contracts.  
+   - Short plan of your MCP tool surface, parameters, and I/O contracts.
 
 4. README.md — Submission Guide
    - Folder structure, how to reproduce, dependencies, known limitations.
 
-5. A Markdown report `REPORT.md` with DEGs, figures, and interpretation.
+5. A Markdown report `REPORT.md` with DEGs, figures, and your own interpretation.
 
 ## Submission Tips:
 
 ### Save Your Gemini Chat History
 
-```bash
+Regularly save your Gemini chat history to avoid losing records of your work. In the Gemini CLI, run:
+```
 /chat save computer-lab-4
 ```
 
 ### Copy the Checkpoint File
 
+After you closed the Gemini CLI, copy the checkpoint file from the temporary Gemini directory to your Google Drive folder.
 ```bash
 cd /content/drive/MyDrive/DDLS-Course/Module4/
 cp /root/.gemini/tmp/*/checkpoint-computer-lab-4.json .
 ```
+
+You can also instruct Gemini to copy the checkpoint file directly for you while you are still in the Gemini CLI.
+```
+Please run this command: `cp /root/.gemini/tmp/*/checkpoint-computer-lab-4.json .
+```
+
+This will prevent the loss of your chat history if runtime in Google Colab disconnects and gets reset.
 
 ### Add a README.md
 

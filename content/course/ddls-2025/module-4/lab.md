@@ -238,7 +238,7 @@ Ensure you are in the correct folder:
 cd /content/drive/MyDrive/DDLS-Course/Module4/
 ```
 
-Then start the Gemini CLI:
+Then start a new Gemini CLI session:
 ```bash
 gemini
 ```

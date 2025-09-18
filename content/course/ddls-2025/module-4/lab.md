@@ -356,7 +356,7 @@ cd /content/drive/MyDrive/DDLS-Course/Module4/
 cp /root/.gemini/tmp/*/checkpoint-computer-lab-4.json .
 ```
 
-You can also instruct Gemini to copy the checkpoint file directly for you while you are still in the Gemini CLI.
+You can also instruct Gemini to copy the checkpoint file to your Google Drive folder while you are still in the Gemini CLI:
 ```
 Please run this command: `cp /root/.gemini/tmp/*/checkpoint-computer-lab-4.json .
 ```

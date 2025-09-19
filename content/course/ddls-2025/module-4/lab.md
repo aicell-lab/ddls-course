@@ -30,6 +30,19 @@ Notes:
 - You can run a cell with Shift+Enter.
 
 
+#### Install Gemini CLI in Colab
+
+Go to the terminal in Google Colab and run the following commands to install Gemini CLI:
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+source /root/.bashrc
+nvm install 21
+nvm use 21
+npm install -g @google/gemini-cli
+```
+
+
 **Alternative option (if VS Code in Colab does not work for you):**
 
 If the VS Code-in-Colab setup fails or you prefer a different setup, please try to setup a google colab local runtime by following the [instructions here](https://research.google.com/colaboratory/local-runtimes.html). You may need to download and setup Docker locally, then run a docker image.
@@ -233,6 +246,10 @@ This file should describe the overall plan for the agent, including:
 
 ### Step 4: Run the DGE analysis with your Gemini CLI Agent
 
+Important: In order for Gemini CLI to discover your `GEMINI.md` file and MCP server, you need to start a new Gemini CLI session.
+
+Note: If you are already in Gemini CLI, save your chat history `/chat save computer-lab-4` and then exit Gemini CLI `/exit`.
+
 Ensure you are in the correct folder:
 ```bash
 cd /content/drive/MyDrive/DDLS-Course/Module4/
@@ -242,6 +259,8 @@ Then start a new Gemini CLI session:
 ```bash
 gemini
 ```
+
+If you saved a previous chat session, you can continue that session by loading the saved history `/chat load computer-lab-4`.
 
 Make sure the `GEMINI.md` file and the MCP server are discovered by Gemini CLI. You should see this on top of the input box in Gemini CLI: `Using: 1 GEMINI.md file | 1 MCP server (ctrl+t to view)`
 

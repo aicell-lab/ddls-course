@@ -28,4 +28,4 @@ Avlant Nilsson is Assistant Professor in the Department of Cell and Molecular Bi
 
 Golnaz Taheri is an Assistant Professor in the Division of Computational Science and Technology at KTH Royal Institute of Technology and a Data-Driven Life Science (DDLS) SciLifeLab & Wallenberg Fellow. She holds a PhD in Computer Science and previously served as an Assistant Professor in the Data Science Research Group at Stockholm University. Her research focuses on developing novel machine learning methods applied to large-scale, complex biological data to uncover developmental, temporal, and spatial patterns, with applications in personalized medicine, cancer genomics, and other life science domains.
 
-**Title: TBD**
+**Title: A Network-Based Machine Learning Approach to Identify Cancer Driver Genes**

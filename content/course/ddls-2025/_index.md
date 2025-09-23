@@ -62,7 +62,7 @@ A core objective is to strengthen your ability to “learn how to learn.” You 
 
 ## Course Modules
 
-**Note: Module details may evolve. See the [schedule](./schedule/) for the latest information.**
+**Note: Module details are finalized for 2025. See the [schedule](./schedule/) for dates and session times.**
 
 [Module 1](./module-1/)  
 - Introduction to data-driven life sciences  
@@ -76,22 +76,22 @@ A core objective is to strengthen your ability to “learn how to learn.” You 
 
 [Module 3](./module-3/)  
 - Protein structure and molecular biology  
-- Structural data, protein modeling, AlphaFold pipelines, molecular visualization and analysis integration (can be subject to change)
+- Structural data, protein modeling, AlphaFold pipelines, molecular visualization and analysis integration
 - Lab and journal club details released at module start
 
 [Module 4](./module-4/)  
 - Single-cell transcriptomics and genomics  
-- scRNA‑seq workflows, QC, clustering, pathway/genomic analysis; add genomics functions to your toolkit (can be subject to change)
+- scRNA‑seq workflows, QC, clustering, pathway/genomic analysis; add genomics functions to your toolkit
 - Lab and journal club details released at module start
 
 [Module 5](./module-5/)  
 - Precision medicine and systems biology  
-- Multi‑omics integration, biomarker discovery, clinical data handling, systems modeling and AI in personalized medicine (can be subject to change)
+- Multi‑omics integration, biomarker discovery, clinical data handling, systems modeling and AI in personalized medicine
 - Lab and journal club details released at module start
 
 [Module 6](./module-6/)  
-- Microbiology and epidemiology  
-- Metagenomics, microbiome profiling, outbreak/epidemic modeling; finalize agent capabilities for microbial data (can be subject to change)
+- Automated scientific discovery and AI agents  
+- Agentic workflows, tool/data pipeline orchestration, and lab automation integration; evaluate and deploy AI agents for discovery
 - Lab and journal club details released at module start
 
 [Final Project](./final-project/)  

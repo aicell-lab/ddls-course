@@ -1,5 +1,5 @@
 ---
-title: "Module 6 - Automated Scientific Discover and AI Agents"
+title: "Module 6 - Automated Scientific Discovery and AI Agents"
 summary: ""
 linkTitle: "Module 6"
 date: 2025-01-01

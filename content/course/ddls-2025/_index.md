@@ -8,9 +8,9 @@ tags:
   - current
 ---
 
-{{< figure src="featured.jpg" >}}
-
 {{< toc hide_on="xl" >}}
+
+{{< figure src="featured.png" >}}
 
 Welcome to the 2025 Data-Driven Life Sciences (DDLS) course. Across six modules you will explore how data science and AI enable discovery in proteomics, transcriptomics, structural biology, molecular simulations, imaging, microbiology, and systems/precision medicine.
 

@@ -111,16 +111,23 @@ Now that we have built and trained a BINN model in Part I, we will create an AI 
 
 **Suggested functionalities for your agent:**
 
-1. Load and initialize BINN models from saved checkpoints.
-2. Analyze network architecture and parameter statistics.
-3. Generate SHAP explanations for model predictions.
-4. Create various visualizations:
+1. Load the 4 data files needed to build a BINN:
+   - Data matrix (gene expression or other feature data)
+   - Design matrix (sample metadata and experimental conditions)
+   - Pathways file (biological pathway definitions)
+   - Mapping file (mapping between input features and pathway identifiers)
+2. Validate file formats and check for required column headers to ensure data compatibility.
+3. Initialize a new BINN model with the loaded data (do not load from checkpoint to allow processing of new datasets).
+4. Train the BINN model from scratch.
+5. Analyze network architecture and parameter statistics.
+6. Generate SHAP explanations for model predictions.
+7. Create various visualizations:
    - Network structure plots
    - Node importance heatmaps
    - SHAP value distributions
    - Pathway-level summaries
-5. Generate comprehensive analysis reports.
-6. Export results in multiple formats (plots, tables, summaries).
+8. Generate comprehensive analysis reports.
+9. Export results in multiple formats (plots, tables, summaries).
 
 ---
 
@@ -164,7 +171,10 @@ This skeleton demonstrates the pattern only. In your real server, use an MCP lib
 
 Example tools for this task are (you may adjust, add, or remove):
 
-* `load_binn_model(path)` – load saved BINN model
+* `load_data_files(data_matrix_path, design_matrix_path, pathways_path, mapping_path)` – load all 4 required files
+* `validate_file_formats(files_dict)` – check file formats and required column headers
+* `initialize_binn_model(data_matrix, design_matrix, pathways, mapping)` – create new BINN with loaded data
+* `train_binn_model(model, training_params)` – train the BINN from scratch
 * `analyze_architecture(model)` – get network structure info
 * `generate_shap_explanations(model, data)` – compute SHAP values
 * `plot_network_structure(model)` – visualize network graph
@@ -231,7 +241,7 @@ This file should describe the overall plan for the agent, including:
 
 ### Step 4: Run the BINN analysis with your Gemini CLI Agent
 
-**Prerequisite**: Before proceeding, ensure you have completed the BINN model training from Part I. You may use the same dataset or the optional dataset to run the same analysis.
+**Prerequisite**: Before proceeding, ensure you have the 4 required data files available (data matrix, design matrix, pathways file, and mapping file). You may use the dataset from Part I or provide the prostate cancer dataset from [P-NET](https://github.com/marakeby/pnet_prostate_paper). The agent will initialize and train a new BINN model from scratch using these files.
 
 Important: In order for Gemini CLI to discover your `GEMINI.md` file and MCP server, you need to start a new Gemini CLI session.
 

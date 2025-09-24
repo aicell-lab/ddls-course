@@ -218,13 +218,14 @@ This file should describe the overall plan for the agent, including:
 
 **Important Note**: Based on previous experience, AI agents may attempt to read and display entire data matrices, which can cause system crashes. To prevent this issue, include the following critical tips in your GEMINI.md file:
 
+```
 **Critical Tips**
 -------------
 
 -   ⚠️ Files can be large. Do **not** read entire files --- use small previews like `head` or `tail`.
 
 -   ⚠️ Keep outputs concise. Do not print long tables or lists; save detailed results under `results/`.
-
+```
 
 ---
 

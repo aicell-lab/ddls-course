@@ -73,6 +73,14 @@ pre {
   font-size: 0.85rem;
 }
 
+.course-image {
+  height: 300px; /* Keep image at a consistent height */
+  width: auto; /* Preserve aspect ratio */
+  display: block; /* Allow auto margins to center */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Profile photo (lecturer image) used in module pages */
 .profile-photo {
   width: 150px; /* Keep image at a consistent width */

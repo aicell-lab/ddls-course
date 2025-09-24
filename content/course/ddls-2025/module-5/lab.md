@@ -105,9 +105,9 @@ code .
 
 ---
 
-### Task: BINN Model Analysis and Interpretation
+### Task: BINN Model Training and Analysis
 
-Now that we have built and trained a BINN model in Part I, we will create an AI agent to perform comprehensive **BINN analysis and interpretation**.
+Now that we have explored the BINN workflow in Part I, we will create an AI agent to perform comprehensive **BINN model training, analysis, and interpretation** from data files.
 
 **Suggested functionalities for your agent:**
 

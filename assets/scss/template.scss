@@ -73,15 +73,6 @@ pre {
   font-size: 0.85rem;
 }
 
-.course-image {
-  height: 200px; /* Reduced height to prevent overlap */
-  width: auto; /* Preserve aspect ratio */
-  display: block; /* Allow auto margins to center */
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem; /* Add bottom margin for spacing */
-}
-
 /* Profile photo (lecturer image) used in module pages */
 .profile-photo {
   width: 150px; /* Keep image at a consistent width */

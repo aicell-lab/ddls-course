@@ -128,6 +128,8 @@ Now that we have built and trained a BINN model in Part I, we will create an AI 
 
 Now to allow the AI agent to perform the task, you need to build a set of MCP tools. A minimal MCP server template is provided in the starter notebook.
 
+Before you deploy MCP tools with Gemini, You can test each function directly in the notebook. If this doesn't throw any errors, your functions are ready.
+
 Minimal MCP server pattern (example):
 
 ```bash
@@ -160,7 +162,7 @@ if __name__ == "__main__":
 You can refer to full documentation to [MCP SDK](https://github.com/modelcontextprotocol/python-sdk)
 This skeleton demonstrates the pattern only. In your real server, use an MCP library that implements the protocol and wire real functions that call the BINN package.
 
-Suggested tools for this task are (you may adjust, add, or remove):
+Example tools for this task are (you may adjust, add, or remove):
 
 * `load_binn_model(path)` – load saved BINN model
 * `analyze_architecture(model)` – get network structure info
@@ -176,17 +178,6 @@ Suggested tools for this task are (you may adjust, add, or remove):
 Hint: The input arguments and returned types for the MCP tool functions should be primitive Python types (str, int, float, bool, list, dict). Complex objects like BINN models should be handled inside the tool and saved as files, returning file paths (str).
 
 Save this MCP server script as `binn_mcp_server.py` in your Google Drive folder `/content/drive/MyDrive/DDLS-Course/Module5/`.
-
-Before you try your MCP tools with Gemini, you should test each function directly. You can do this by importing the functions in a separate Python script or Jupyter notebook cell. For example, create a new cell in your notebook and run:
-
-```python
-from binn_mcp_server import add
-
-result = add(2, 3)  # should return 5
-print(result)
-```
-
-If this doesn't throw any errors, your MCP server is ready to be wired into Gemini CLI.
 
 ### Step 2: Wire the server into Gemini CLI
 
@@ -224,6 +215,16 @@ This file should describe the overall plan for the agent, including:
 * **Instructions**:
    * Outline how the agent should perform the task step by step
    * Specify what output the agent is expected to produce
+
+**Critical Tips**
+-------------
+
+-   ⚠️ Files can be large. Do **not** read entire files --- use small previews like `head` or `tail`.
+
+-   ⚠️ Keep outputs concise. Do not print long tables or lists; save detailed results under `results/`.
+
+We tried before, we found a problem is that it tends to read and print out all the data matrix, and once that happens it easily crashes.
+So we would suggest to add them in GEMINI.md to avoid this issue.
 
 ---
 

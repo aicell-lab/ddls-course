@@ -216,6 +216,8 @@ This file should describe the overall plan for the agent, including:
    * Outline how the agent should perform the task step by step
    * Specify what output the agent is expected to produce
 
+**Important Note**: Based on previous experience, AI agents may attempt to read and display entire data matrices, which can cause system crashes. To prevent this issue, include the following critical tips in your GEMINI.md file:
+
 **Critical Tips**
 -------------
 
@@ -223,12 +225,12 @@ This file should describe the overall plan for the agent, including:
 
 -   ⚠️ Keep outputs concise. Do not print long tables or lists; save detailed results under `results/`.
 
-We tried before, we found a problem is that it tends to read and print out all the data matrix, and once that happens it easily crashes.
-So we would suggest to add them in GEMINI.md to avoid this issue.
 
 ---
 
 ### Step 4: Run the BINN analysis with your Gemini CLI Agent
+
+**Prerequisite**: Before proceeding, ensure you have completed the BINN model training from Part I. You may use the same dataset or the optional dataset to run the same analysis.
 
 Important: In order for Gemini CLI to discover your `GEMINI.md` file and MCP server, you need to start a new Gemini CLI session.
 

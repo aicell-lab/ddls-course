@@ -9,11 +9,11 @@ weight: 8
 ### Important Dates:
 - **Application closes:** Aug 25, 2025, 24:00 CEST
 - **First lecture:** Aug 26, 2025, 13:00 CEST
-- **Final Project Plan submission deadline:** Oct 6, 2025
+- **Final Project plan submission deadline:** Oct 6, 2025
 - **Final Project:** Oct 6-22, 2025
 - **Final Project consultation 1:** Oct 8, 2025, 13:00-14:00
 - **Final Project consultation 2:** Oct 20, 2025, 13:00-14:00
-- **Final Project Report submission deadline:** Oct 22, 2025, 23:59
+- **Final Project report submission deadline:** Oct 22, 2025, 23:59
 - **Oral Presentation (only for master's students):** Oct 24, 2025, 13:00-16:00
 
 Lectures, computer labs and seminars will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998). The format of the oral presentation (in-person or online) will be decided on an individual basis.
@@ -43,6 +43,8 @@ You can add the Google Calendar via this link: [Google Calendar](https://calenda
 | 6      | Tue 30 Sep 08:00-10:00  | 🧑🏻‍🏫Lecture     | TBD                         | Automated Scientific Discovery and AI Agents                                                                                                       |
 | 6      | Wed 01 Oct 13:00-17:00  | 💻Computer Lab | Songtao Cheng, Nils Mechtel                         | Automated Scientific Discovery and AI Agents                                                                                                    |
 | 6      | Fri 03 Oct 10:00-12:00  | 💬Seminar      | Songtao Cheng, Nils Mechtel                         | Automated Scientific Discovery and AI Agents                                                                                                                                                 |
+|        | Wed 8 Oct, 2025, 13:00-14:00  | 📝Consultation  | Wei Ouyang                         | Project consultation (Drop-in)                                                                                                            |
+|        | Mon 20 Oct, 2025, 13:00-14:00  | 📝Consultation  | Wei Ouyang                         | Project consultation (Drop-in)                                                                                                             |
 |        | Fri 24 Oct 13:00-16:00  | 📝Examination  | Wei Ouyang                         | Oral presentations(master's only)                                                                                                             |
 
 If you anticipate that you won't be able to attend any of the sessions, please [contact](/contact) us as soon as possible. 

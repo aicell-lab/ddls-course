@@ -60,7 +60,7 @@ Your project plan will be approved only if it is:
    - What “good performance” would mean for your task.
 
 5. **Planned MCP Tools**
-   - List at least 5 MCP tools you plan to build (e.g., `load_dataset`, `inspect_distribution`, `preprocess_data`, `train_model`, `evaluate_model`).
+   - List at least 5 MCP tools you plan to build (e.g., `load_dataset`, `inspect_distribution`, `preprocess_data`, `load_model`, `evaluate_model`).
 
 6. **Feasibility Check**
    - Justify that the project is doable in the timeframe.

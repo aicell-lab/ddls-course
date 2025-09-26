@@ -21,6 +21,16 @@ This is your opportunity to demonstrate what you have learned throughout the cou
 - Critically reflecting on AI’s role in scientific discovery.
 - Practicing FAIR and open science principles in your work.
 
+
+### Working Arrangements
+
+**Individual vs. Pair Work:**
+- You may choose to work **individually** or in **pairs** (teams of 2 students).
+- **If working in pairs:** Projects can complement each other and students can collaborate on data exploration, model development, and technical implementation.
+- **Individual accountability:** Each student must complete **all three phases** of the project (exploration, modeling, and accessibility wrapping) and demonstrate individual mastery of the learning objectives.
+- **Individual submissions:** Each student must submit their **own project report** that clearly highlights their specific contributions, analysis, and reflections.
+- **Pair coordination:** If working in pairs, coordinate your project plans during Step 1 to ensure complementary approaches (e.g., different models, evaluation metrics, or accessibility implementations on related datasets or scientific questions).
+
 The project is divided into two steps:
 
 ---

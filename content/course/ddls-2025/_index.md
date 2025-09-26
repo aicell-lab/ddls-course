@@ -12,7 +12,7 @@ tags:
 
 {{< figure src="course-image.png" >}}
 
-Welcome to the 2025 Data-Driven Life Sciences (DDLS) course. Across six modules you will explore how data science and AI enable discovery in proteomics, transcriptomics, structural biology, molecular simulations, imaging, microbiology, and systems/precision medicine.
+Welcome to the 2025 Data-Driven Life Sciences (DDLS) course. Across six modules you will explore how data science and AI enable discovery in proteomics, transcriptomics, structural biology, molecular simulations, imaging, and systems/precision medicine.
 
 Guest lecturers (DDLS Fellows, SciLifeLab Fellows, and SciLifeLab facility trainers) present real data, methods, and models underpinning current biological research. The course is open to all Master’s and PhD students as well as other interested participants.
 

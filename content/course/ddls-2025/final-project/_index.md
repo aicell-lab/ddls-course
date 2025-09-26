@@ -1,5 +1,5 @@
 ---
-title: "Final Project — Exploring and Modeling Life Science Data with AI Agentss"
+title: "Final Project — Exploring and Modeling Life Science Data with AI Agents"
 summary: ""
 linkTitle: Final Project
 date: 2025-01-01
@@ -46,39 +46,43 @@ Your project plan will be approved only if it is:
 
 1. **Scientific Question & Dataset (combined)**  
    - Start with a **rough idea or problem** you are interested in.  
-   - Use a **GenAI tool** (Gemini, Perplexity, ChatGPT, etc.) to brainstorm possible scientific questions and relevant datasets.  
-   - Investigate:
+   - Use a **GenAI tool** (Gemini, Perplexity, ChatGPT, etc.) to brainstorm possible scientific questions and relevant datasets, use “deep research” features to do broad investigation to understand the landscape.  
+   - Arrive at a **refined dataset + scientific question** to work on.  
+   - You will need to also investigate:
      - What datasets are available and accessible?  
      - What is their license/ethics status?  
      - Why is the problem scientifically relevant?  
      - What kind of task (classification, clustering, regression, etc.) is appropriate?  
-   - Arrive at a **refined dataset + scientific question** to work on.  
    - Clearly document the dataset name, source (URL/reference), size, and chosen subset (if needed).  
    - **Appendix requirement:** attach the **AI “deep research” transcript/report** showing your brainstorming process, with both your inputs and the agent’s outputs.
 
 2. **Exploration Goals**  
-   - At least **3 dataset exploration questions** you will address during the project.  
-   - Examples: class balance, distributions, correlations, missing values, feature embeddings.
+   - At least **3 dataset exploration questions** that are important to understand before working on the model training.
+   - Examples: data size, types, value range, missing values, distributions, class balance, correlations.
 
-3. **Proposed Model & Evaluation**  
-   - Planned baseline model(s).  
+3. **Proposed Model & Evaluation**
+   - Planned baseline model, and a few potential improvements.
    - Planned evaluation metric(s).  
    - What “good performance” would mean for your task.
 
 4. **Accessibility Plan**  
    - How will you make your final workflow accessible to others?  
      You can choose between:  
-     - **Option A:** Wrapping your pipeline as a **web application**.  
-     - **Option B:** Wrapping the final workflow into a **minimal MCP toolset** with only a few functions:
+     - **Option A:** Wrapping your pipeline as a **web application** to allow user load data, run inference, display inference and evaluation results.  
+     - **Option B:** Wrapping the final workflow into a **MCP toolset** with tools such as:
        - Load data  
        - Run model inference  
        - Show results  
        - Evaluate model  
+   - **Important:** Your web app or MCP tools, as well as your GitHub repository, **must be made public**.  
+   - These outcomes will be **showcased on the course website** and used as **demonstrations for SciLifeLab researchers and beyond**.  
 
 5. **Feasibility Check**  
    - Justify that the project is doable in the timeframe.  
-   - State expected runtime (≤15 min CPU).  
+   - State expected runtime.  
    - Mention potential risks (large dataset, convergence issues).
+
+6. **Submit the plan before Oct 6, 2025 to get feedback from the teachers**
 
 ---
 
@@ -96,7 +100,8 @@ Once your plan is approved, you will complete the project in three phases:
 ### Phase I — Dataset Exploration
 - Use Python (optionally with AI agent support) to explore the dataset.  
 - Summarize distributions, imbalances, and other key features.  
-- Deliverable: Results and visualizations.  
+- Split the dataset into `train`, `validation`, and `test` sets.  
+- Deliverable: Data exploration visualizations, showing distribution for each dataset split.
 
 ### Phase II — Model Training, Evaluation & Improvement
 - Train a baseline model (with or without AI agent help).  
@@ -109,6 +114,7 @@ Once your plan is approved, you will complete the project in three phases:
   - **Option A:** Build a **simple web application** wrapping your workflow (similar to computer lab 2).  
   - **Option B:** Create a **minimal MCP toolset** (load data, run inference, show results, evaluate model, similar to computer lab 4, 5, 6).  
 - Deliverable: A working wrapper (web app or MCP) with basic documentation.  
+- **Outcome:** Your wrapper and GitHub repository will be **publicly available** and showcased on the **course website** as demonstrations to **SciLifeLab researchers and external audiences**.  
 
 ---
 
@@ -116,16 +122,15 @@ Once your plan is approved, you will complete the project in three phases:
 To promote the **FAIR principles (Findable, Accessible, Interoperable, Reusable)** and support open science:
 
 - Prefer **public datasets**. If using a private dataset, explain how it could be made available in the future.  
-- We recommend creating a **GitHub repository** for your project.  
+- You must create a **public GitHub repository** for your project.  
   - Add the topic `ddls-course-2025` to make your project findable ([GitHub Topics Guide](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics)).  
   - Include a **README file** with an overview and usage instructions.  
   - Document your code properly.  
   - Add a permissive license (e.g., MIT license) to allow reuse.  
   - If a public dataset was used, provide a script or instructions to download it.  
   - Make your project reproducible; upload trained model weights to GitHub Releases or [Zenodo](https://zenodo.org/) if possible.  
-  - Consider publishing your report (e.g., on Zenodo).  
-
-If you cannot share code or data publicly, please state this clearly in your submission.
+  - Consider publishing your report (e.g., on Zenodo). 
+- At the end of the project, we will try to deploy your web app and mcp tools to make it more accessible, e.g via the course website.
 
 ---
 
@@ -147,8 +152,10 @@ You will submit:
 2. **Agent Demo**  
    - 3–5 min screen recording (or asciinema) showing Gemini-CLI (or another AI agent) being used for dataset exploration and/or evaluation.  
 
-3. **Accessibility Wrapper**  
+3. **Accessibility Wrapper & Repository**  
    - Either a simple **web app** or a **minimal MCP toolset** wrapping your final workflow.  
+   - A **public GitHub repository** containing your code, documentation, and reproducibility instructions.  
+   - **Published outcome:** These deliverables will be linked on the course website and demonstrated to **SciLifeLab researchers and beyond**.  
 
 ---
 
@@ -157,7 +164,8 @@ You will submit:
 ✅ Data exploration performed and documented.  
 ✅ A baseline model is trained and evaluated.  
 ✅ At least one attempt to improve performance is demonstrated.  
-✅ A working wrapper (web app or minimal MCP tool) is provided.  
+✅ A working wrapper (web app or minimal MCP tool) is provided **and made public**.  
+✅ A public GitHub repository with README, license, and reproducibility instructions.  
 ✅ Student-authored prompts for agent interactions are included.  
 ✅ Report includes dataset analysis, model justification, evaluation, and accessibility plan.  
 
@@ -176,7 +184,7 @@ You will submit:
 - **Oct 6, 2025** — Project plan + AI deep research log due.  
 - **Oct 8, 2025 (13:00–14:00)** — Consultation session 1.  
 - **Oct 20, 2025 (13:00–14:00)** — Consultation session 2.  
-- **Oct 22, 2025 (23:59)** — Final project submission (report, demo, wrapper).  
+- **Oct 22, 2025 (23:59)** — Final project submission (report, demo, wrapper, repo).  
 - **Oct 24, 2025 (13:00–16:00)** — Oral presentations (Master’s students only).  
 
 ---

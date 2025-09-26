@@ -9,11 +9,11 @@ weight: 8
 ### Important Dates:
 - **Application closes:** Aug 25, 2025, 24:00 CEST
 - **First lecture:** Aug 26, 2025, 13:00 CEST
-- **Final Project:** TBD
-- **Final Project consultation:** TBD
-- **Final Project Report submission deadline:** TBD
-- **Oral Presentation (batch 1):** TBD
-- **Oral Presentation (batch 2):** TBD
+- **Final Project:** Oct 6-22, 2025
+- **Final Project consultation 1:** Oct 8, 2025, 13:00-14:00
+- **Final Project consultation 2:** Oct 20, 2025, 13:00-14:00
+- **Final Project Report submission deadline:** Oct 22, 2025, 23:59
+- **Oral Presentation (only for master's students):** Oct 24, 2025, 13:00-16:00
 
 Lectures, computer labs and seminars will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998). The format of the oral presentation (in-person or online) will be decided on an individual basis.
 
@@ -42,7 +42,6 @@ You can add the Google Calendar via this link: [Google Calendar](https://calenda
 | 6      | Tue 30 Sep 08:00-10:00  | 🧑🏻‍🏫Lecture     | TBD                         | Microbiology and Epidemiology                                                                                                       |
 | 6      | Wed 01 Oct 13:00-17:00  | 💻Computer Lab | Songtao Cheng, Nils Mechtel                         | Microbiology and Epidemiology                                                                                                    |
 | 6      | Fri 03 Oct 10:00-12:00  | 💬Seminar      | Songtao Cheng, Nils Mechtel                         | Microbiology and Epidemiology                                                                                                                                                 |
-|        | Wed 08 Oct 13:00-17:00  | 📝Examination  | Wei Ouyang                         | Oral presentations(Batch 1)                                                                                                             |
-|        | Thu 16 Oct 08:00-13:00  | 📝Examination  | Wei Ouyang                         | Oral presentations(Batch 2)                                                                                                            |
+|        | Fri 24 Oct 13:00-16:00  | 📝Examination  | Wei Ouyang                         | Oral presentations(master's only)                                                                                                             |
 
 If you anticipate that you won't be able to attend any of the sessions, please [contact](/contact) us as soon as possible. 

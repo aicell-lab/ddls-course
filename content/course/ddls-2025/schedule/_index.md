@@ -13,8 +13,8 @@ weight: 8
 - **Final Project:** Oct 6-22, 2025
 - **Final Project consultation 1:** Oct 8, 2025, 13:00-14:00
 - **Final Project consultation 2:** Oct 20, 2025, 13:00-14:00
-- **Final Project report submission deadline:** Oct 22, 2025, 23:59
-- **Oral Presentation (only for master's students):** Oct 24, 2025, 13:00-16:00
+- **Final Project report submission deadline:** Oct 29, 2025, 23:59
+- **Oral Presentation (only for master's students):** Oct 31, 2025, 9:00-12:00
 
 Lectures, computer labs and seminars will be held online via [Zoom](https://kth-se.zoom.us/j/69812177998). The format of the oral presentation (in-person or online) will be decided on an individual basis.
 

@@ -8,16 +8,16 @@ weight: 90
 course_module: "true"
 ---
 
-⚠️ **Note:** This is a draft project plan. Details (including deadlines, deliverables, and evaluation criteria) may change.
+⚠️ **Note:** This is a draft project plan. Details (including deadlines, deliverables, and evaluation criteria) may change. Updates will be announced on the course website and in class.
 
 ---
 
 Welcome to the final project of **DDLS 2025**.  
 This is your opportunity to demonstrate what you have learned throughout the course:
 - Working with real biological datasets.
-- Building **MCP tools** to encapsulate analysis steps.
-- Designing and writing **prompts for LLM agents** (e.g., Gemini-CLI, ChatGPT, Perplexity) to guide exploration, coding, and model training.
+- Using **AI agents** (e.g., Gemini-CLI, ChatGPT, Perplexity) to assist in exploration, coding, and analysis.
 - Designing and evaluating models for meaningful scientific tasks.
+- Making your work more **accessible and reusable** by wrapping it as a **web application** or **MCP tool**.
 - Critically reflecting on AI’s role in scientific discovery.
 - Practicing FAIR and open science principles in your work.
 
@@ -40,76 +40,75 @@ Your project plan will be approved only if it is:
 - **Relevant** to a real scientific problem.  
 - **Shows novelty** (not just reproducing a tutorial, but bringing something creative and realistic).  
 
-### What to Submit (max 3 pages + appendix)
-1. **Dataset Choice**
-   - Dataset name, source (URL/reference), license/ethics statement.
-   - Data type (e.g., imaging, proteomics, scRNA-seq, clinical).
-   - Expected size and subset you will use.
-
-2. **Task Definition**
-   - Clear scientific question (classification, clustering, regression, prediction, etc.).
-   - Why is this task scientifically relevant?
-
-3. **Exploration Goals**
-   - At least **3 dataset exploration questions** you will answer with MCP tools + AI agent.
-   - Examples: class balance, distributions, correlations, missing values, feature embeddings.
-
-4. **Proposed Model & Evaluation**
-   - Planned baseline model(s).
-   - Planned evaluation metric(s).
-   - What “good performance” would mean for your task.
-
-5. **Planned MCP Tools**
-   - List at least 5 MCP tools you plan to build (e.g., `load_dataset`, `inspect_distribution`, `preprocess_data`, `load_model`, `evaluate_model`).
-
-6. **Feasibility Check**
-   - Justify that the project is doable in the timeframe.
-   - State expected runtime (≤15 min CPU).
-   - Mention potential risks (large dataset, convergence issues).
-
 ---
 
-### Required Appendix — AI Deep Research Log
-You must demonstrate that you used a **GenAI tool** (Gemini, Perplexity, ChatGPT, etc.) to brainstorm and refine your dataset choice, task, and methods.
+### What to Submit (max 3 pages + appendix)
 
-- Submit the **chat history** (unedited, but you may highlight key insights).
-- Show how you asked the AI to:
-  1. Brainstorm possible datasets and questions.
-  2. Check feasibility, novelty, and relevance.
-  3. Suggest candidate methods or models.
-  4. Help draft the proposal.
-- Summarize what you **kept, rejected, or modified** from the AI’s advice.
+1. **Scientific Question & Dataset (combined)**  
+   - Start with a **rough idea or problem** you are interested in.  
+   - Use a **GenAI tool** (Gemini, Perplexity, ChatGPT, etc.) to brainstorm possible scientific questions and relevant datasets.  
+   - Investigate:
+     - What datasets are available and accessible?  
+     - What is their license/ethics status?  
+     - Why is the problem scientifically relevant?  
+     - What kind of task (classification, clustering, regression, etc.) is appropriate?  
+   - Arrive at a **refined dataset + scientific question** to work on.  
+   - Clearly document the dataset name, source (URL/reference), size, and chosen subset (if needed).  
+   - **Appendix requirement:** attach the **AI “deep research” transcript/report** showing your brainstorming process, with both your inputs and the agent’s outputs.
+
+2. **Exploration Goals**  
+   - At least **3 dataset exploration questions** you will address during the project.  
+   - Examples: class balance, distributions, correlations, missing values, feature embeddings.
+
+3. **Proposed Model & Evaluation**  
+   - Planned baseline model(s).  
+   - Planned evaluation metric(s).  
+   - What “good performance” would mean for your task.
+
+4. **Accessibility Plan**  
+   - How will you make your final workflow accessible to others?  
+     You can choose between:  
+     - **Option A:** Wrapping your pipeline as a **web application**.  
+     - **Option B:** Wrapping the final workflow into a **minimal MCP toolset** with only a few functions:
+       - Load data  
+       - Run model inference  
+       - Show results  
+       - Evaluate model  
+
+5. **Feasibility Check**  
+   - Justify that the project is doable in the timeframe.  
+   - State expected runtime (≤15 min CPU).  
+   - Mention potential risks (large dataset, convergence issues).
 
 ---
 
 ### Step 1 Evaluation
 - **Pass** → You may proceed to Step 2.  
 - **Revise** → You must update your plan before starting.  
-Plans may be rejected if the dataset/task is too trivial, too close to a lab, overly ambitious, license-restricted, or missing the AI research appendix.
+Plans may be rejected if the dataset/task is too trivial, too close to a lab, overly ambitious, license-restricted, or missing the **AI deep research appendix**.
 
 ---
 
 ## Step 2 — Final Project (Oct 6–22, 2025)
 
-Once your plan is approved, you will complete the project in two parts.
+Once your plan is approved, you will complete the project in three phases:
 
-### Part I — Dataset Exploration & Plan
-- Implement MCP tools for loading, inspecting, and visualizing the dataset.
-- Use an AI agent (Gemini-CLI or similar) to:
-  - Explore the dataset.
-  - Summarize distributions, imbalances, and other key features.
-  - Refine your modeling plan.
-- Write clear **LLM prompts/instructions** to guide the agent through the exploration.
-- Deliverable: Exploration results, visualizations, prompts, and agent transcripts.
+### Phase I — Dataset Exploration
+- Use Python (optionally with AI agent support) to explore the dataset.  
+- Summarize distributions, imbalances, and other key features.  
+- Deliverable: Results and visualizations.  
 
-### Part II — Model Training, Evaluation & Improvement
-- Implement MCP tools for preprocessing, training, inference, and evaluation.
-- Use the AI agent to:
-  - Train the model based on your plan.
-  - Evaluate on validation/test data.
-  - Attempt at least one **improvement step** (better preprocessing, tuning, or different model).
-- Write clear **LLM prompts** for the agent to run training and evaluation.
-- Deliverable: Demonstrate a working model with measurable performance. Show evidence of improvement attempts.
+### Phase II — Model Training, Evaluation & Improvement
+- Train a baseline model (with or without AI agent help).  
+- Evaluate on validation/test data.  
+- Attempt at least one **improvement step** (better preprocessing, tuning, or different model).  
+- Deliverable: A working model with measurable performance and evidence of improvement attempts.  
+
+### Phase III — Accessibility Wrapping
+- After you have a working pipeline, make it **accessible to others** by choosing one of two options:
+  - **Option A:** Build a **simple web application** wrapping your workflow (similar to computer lab 2).  
+  - **Option B:** Create a **minimal MCP toolset** (load data, run inference, show results, evaluate model, similar to computer lab 4, 5, 6).  
+- Deliverable: A working wrapper (web app or MCP) with basic documentation.  
 
 ---
 
@@ -137,31 +136,30 @@ You will submit:
    - **Abstract (≤100 words)**: problem, method, results.  
    - **Background and Motivation**: why you chose this dataset/task.  
    - **Dataset Summary**: data source, preprocessing, splits, distributions.  
-   - **Method Description**: MCP tools, models, evaluation metrics.  
+   - **Method Description**: workflow, models, evaluation metrics.  
    - **Results**: figures, tables, performance metrics vs. baseline.  
    - **Conclusion & Discussion**: findings, limitations, future directions.  
    - **Data and Code Availability**: links to dataset and repo (per FAIR guidelines).  
    - **Acknowledgments**: contributions, support, and note on GenAI tools used.  
    - **References**: relevant literature.  
-   - **Appendices**: agent transcripts, prompts, deep research log, extra figures.  
+   - **Appendices**: AI deep research log (mandatory), prompts, agent transcripts, extra figures.  
 
 2. **Agent Demo**  
-   - 3–5 min screen recording (or asciinema) showing Gemini-CLI answering 3 scientific questions using your tools and your written prompts.
+   - 3–5 min screen recording (or asciinema) showing Gemini-CLI (or another AI agent) being used for dataset exploration and/or evaluation.  
 
-3. **Git repository (recommended)**  
-   - If possible, host your code on GitHub/GitLab.  
-   - Add the topic `ddls-course-2025` for visibility.  
-   - Include README, license, and reproducibility instructions.  
+3. **Accessibility Wrapper**  
+   - Either a simple **web app** or a **minimal MCP toolset** wrapping your final workflow.  
 
 ---
 
 ## Pass Criteria
-✅ Dataset choice is validated.  
-✅ ≥5 MCP tools covering exploration, training, and evaluation.  
-✅ AI agent demonstrated in both exploration & model training.  
+✅ Project plan includes scientific question + dataset refined through AI deep research.  
+✅ Data exploration performed and documented.  
+✅ A baseline model is trained and evaluated.  
+✅ At least one attempt to improve performance is demonstrated.  
+✅ A working wrapper (web app or minimal MCP tool) is provided.  
 ✅ Student-authored prompts for agent interactions are included.  
-✅ Model trained & evaluated on validation/test split.  
-✅ Report includes dataset analysis, model justification, evaluation, and at least one improvement attempt.  
+✅ Report includes dataset analysis, model justification, evaluation, and accessibility plan.  
 
 ---
 
@@ -178,7 +176,7 @@ You will submit:
 - **Oct 6, 2025** — Project plan + AI deep research log due.  
 - **Oct 8, 2025 (13:00–14:00)** — Consultation session 1.  
 - **Oct 20, 2025 (13:00–14:00)** — Consultation session 2.  
-- **Oct 22, 2025 (23:59)** — Final project submission (report, demo, repo recommended).  
+- **Oct 22, 2025 (23:59)** — Final project submission (report, demo, wrapper).  
 - **Oct 24, 2025 (13:00–16:00)** — Oral presentations (Master’s students only).  
 
 ---
@@ -188,7 +186,8 @@ You are encouraged to use ChatGPT, Gemini, Perplexity, or similar for brainstorm
 However:
 - You must **verify all outputs** and remain responsible for correctness.  
 - You must **document** how you used these tools (in the report and acknowledgments).  
-- You must include **agent transcripts** and your **deep research log** in the appendix.  
+- You must include your **AI deep research log** in the appendix (mandatory).  
+- You must include **agent transcripts** and your authored prompts.  
 
 Use AI responsibly — see *AI in Life Sciences: Power with Responsibility*.  
 

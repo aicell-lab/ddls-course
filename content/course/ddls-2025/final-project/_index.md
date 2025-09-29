@@ -94,6 +94,10 @@ Your project plan will be approved only if it is:
 
 6. **Submit the plan before Oct 6, 2025 to get feedback from the teachers**
 
+### Submit Your Document
+
+{{< cta cta_text="Click Here to Upload" cta_link="https://forms.gle/FfDC7hRf1asePvSA9" >}}
+
 ---
 
 ### Step 1 Evaluation

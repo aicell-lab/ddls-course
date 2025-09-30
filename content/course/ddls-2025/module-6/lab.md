@@ -1,7 +1,8 @@
 ---
 title: "Computer Lab 6: Automating Science with Opentrons & Code Agents"
 linkTitle: "Computer Lab 6"
-date: '2025-10-01'
+date: '2025-09
+-01'
 weight: 11
 type: book
 ---
@@ -121,14 +122,13 @@ Keep this URL --- you'll need it for Gemini.
 2. Create a `settings.json` file and add an `mcpServers` entry like this:
 
    ```json
-   {
-      "mcpServers": {
-         "opentrons-mcp": {
-            "type": "sse",
-            "url": "fill your link"
-         }
-      }
-   }
+{
+  "mcpServers": {
+    "opentrons-mcp": {
+      "httpUrl": "your url link"
+    }
+  }
+}
    ```
 
    Then move this file to the Gemini config directory:

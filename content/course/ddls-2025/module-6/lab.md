@@ -133,10 +133,19 @@ Keep this URL --- you'll need it for Gemini.
 
    Then move this file to the Gemini config directory:
    ```bash
+   mkdir -p /root/.gemini
    mv /content/drive/MyDrive/DDLS-Course/Module6/settings.json /root/.gemini/settings.json
    ```
 
    Tips: Gemini CLI discovers MCP servers from this file; use `/mcp list` in the chat to list available tools.
+
+   **Important Note**: Based on previous experience, AI agents may attempt to read and display entire data matrices, which can cause system crashes. To prevent this issue, include the following critical tips in your GEMINI.md file:
+
+   ```
+   **Critical Tips**
+   -------------
+   -   ⚠️ When running Opentrons protocol scripts, add print() statements to show progress and confirm actions like loading labware and instruments.
+   ```
 
 * * * * *
 

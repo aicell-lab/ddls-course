@@ -147,29 +147,9 @@ Keep this URL --- you'll need it for Gemini.
    -   ⚠️ When running Opentrons protocol scripts, add print() statements to show progress and confirm actions like loading labware and instruments.
    ```
 
-* * * * *
-
-### Step 2.3 --- Start Gemini in Colab Terminal and Run Experiments
-
-- Open a Colab terminal.
-- Change to the Module6 directory:
-  ```bash
-  cd /content/drive/MyDrive/DDLS-Course/Module6/
-  ```
-- Launch Gemini:
-  ```bash
-  gemini
-  ```
-
   Make sure the `GEMINI.md` file and the MCP server are discovered by Gemini CLI. You should see this on top of the input box in Gemini CLI: `Using: 1 GEMINI.md file | 1 MCP server (ctrl+t to view)`
 
   To check if all your MCP tools are available, enter the command `/mcp list` in the chat interface. You should see a list of all your configured MCP tools.
-
-- Chat with the agent:
-  - *"Add 100 µL media from reservoir A1 into wells A2--A11, then perform a serial dilution from A1 to A10."*
-  - *"Dose full column 3 (A3--H3) with 50 µL media."*
-- Gemini will generate code, send it to your MCP tool, and you will see simulation outputs.
-
 * * * * *
 
 Deliverables

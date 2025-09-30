@@ -118,13 +118,25 @@ Keep this URL --- you'll need it for Gemini.
    - Guardrails (no large prints, no external commands).
    - Example snippets (e.g. serial dilution, column dosing).
 
-2. Configure Gemini CLI to point to your MCP service:
+2. Create a `settings.json` file and add an `mcpServers` entry like this:
 
-   ```bash
-   gemini \
-     --config GEMINI.md \
-     --mcp-server python-interpreter:https://hypha.aicell.io/<workspace>/mcp/<service-id>/mcp
+   ```json
+   {
+      "mcpServers": {
+         "opentrons-mcp": {
+            "type": "sse",
+            "url": "fill your link"
+         }
+      }
+   }
    ```
+
+   Then move this file to the Gemini config directory:
+   ```bash
+   mv /content/drive/MyDrive/DDLS-Course/Module6/settings.json /root/.gemini/settings.json
+   ```
+
+   Tips: Gemini CLI discovers MCP servers from this file; use `/mcp list` in the chat to list available tools.
 
 * * * * *
 
@@ -135,7 +147,15 @@ Keep this URL --- you'll need it for Gemini.
   ```bash
   cd /content/drive/MyDrive/DDLS-Course/Module6/
   ```
-- Launch Gemini with the above command.
+- Launch Gemini:
+  ```bash
+  gemini
+  ```
+
+  Make sure the `GEMINI.md` file and the MCP server are discovered by Gemini CLI. You should see this on top of the input box in Gemini CLI: `Using: 1 GEMINI.md file | 1 MCP server (ctrl+t to view)`
+
+  To check if all your MCP tools are available, enter the command `/mcp list` in the chat interface. You should see a list of all your configured MCP tools.
+
 - Chat with the agent:
   - *"Add 100 µL media from reservoir A1 into wells A2--A11, then perform a serial dilution from A1 to A10."*
   - *"Dose full column 3 (A3--H3) with 50 µL media."*

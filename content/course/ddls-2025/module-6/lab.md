@@ -1,7 +1,8 @@
 ---
 title: "Computer Lab 6: Automating Science with Opentrons & Code Agents"
 linkTitle: "Computer Lab 6"
-date: '2025-10-01'
+date: '2025-09
+-01'
 weight: 11
 type: book
 ---
@@ -121,14 +122,13 @@ Keep this URL --- you'll need it for Gemini.
 2. Create a `settings.json` file and add an `mcpServers` entry like this:
 
    ```json
-   {
-      "mcpServers": {
-         "opentrons-mcp": {
-            "type": "sse",
-            "url": "fill your link"
-         }
-      }
-   }
+{
+  "mcpServers": {
+    "opentrons-mcp": {
+      "httpUrl": "your url link"
+    }
+  }
+}
    ```
 
    Then move this file to the Gemini config directory:
@@ -149,27 +149,42 @@ Keep this URL --- you'll need it for Gemini.
 
 * * * * *
 
-### Step 2.3 --- Start Gemini in Colab Terminal and Run Experiments
+### Step 2.3 --- Start Gemini in VS Code and Run Experiments
 
-- Open a Colab terminal.
-- Change to the Module6 directory:
-  ```bash
-  cd /content/drive/MyDrive/DDLS-Course/Module6/
-  ```
-- Launch Gemini:
-  ```bash
-  gemini
-  ```
+**Set up VS Code Tunnel (Optional but Recommended)**
 
-  Make sure the `GEMINI.md` file and the MCP server are discovered by Gemini CLI. You should see this on top of the input box in Gemini CLI: `Using: 1 GEMINI.md file | 1 MCP server (ctrl+t to view)`
+For better code editing and debugging experience, you can set up a VS Code tunnel to work with your Colab environment:
 
-  To check if all your MCP tools are available, enter the command `/mcp list` in the chat interface. You should see a list of all your configured MCP tools.
+1. **Install VS Code CLI** in the Colab terminal:
+   ```bash
+   curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
+   tar -xf vscode_cli.tar.gz
+   ```
 
-- Chat with the agent:
-  - *"Add 100 µL media from reservoir A1 into wells A2--A11, then perform a serial dilution from A1 to A10."*
-  - *"Dose full column 3 (A3--H3) with 50 µL media."*
-- Gemini will generate code, send it to your MCP tool, and you will see simulation outputs.
+2. **Start the tunnel**:
+   ```bash
+   ./code tunnel
+   ```
+   Follow the authentication steps using your GitHub account, then name your machine (e.g., "colab").
 
+3. **Open VS Code** in your browser using the provided link and navigate to your Module6 folder:
+   ```bash
+   cd /content/drive/MyDrive/DDLS-Course/Module6/
+   code .
+   ```
+
+**Start Gemini CLI and Verify Setup**
+
+1. **Launch Gemini CLI** in your terminal (either in Colab or VS Code):
+   ```bash
+   gemini
+   ```
+
+2. **Verify MCP server discovery**: You should see this message at the top of the Gemini input box: `Using: 1 GEMINI.md file | 1 MCP server (ctrl+t to view)`
+
+3. **Check available tools**: Enter `/mcp list` in the chat interface to see all your configured MCP tools.
+
+4. **Begin experimenting**: Ask Gemini to design and execute Opentrons protocols using your MCP tools!
 * * * * *
 
 Deliverables

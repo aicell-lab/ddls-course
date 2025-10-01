@@ -9,6 +9,8 @@ type: book
 🌍 Introduction
 ===============
 
+We will build a **virtual laboratory** equipped with automated liquid handling robots to simulate real wetlab operations. Our primary tool is the **Opentrons Flex**, a state-of-the-art liquid handling robot that can perform precise pipetting, sample preparation, and protocol execution. The ultimate goal is to develop **AI agents that can autonomously design and control wetlab operations**, bridging the gap between computational intelligence and physical laboratory automation.
+
 In this lab, you will explore **automation of science experiments** using the Opentrons API for pipetting robots. You will first practice running **protocols in simulation mode** to understand how the API works.
 
 Then, you will move to **Code Agents**: integrating the lab context into a Hypha MCP endpoint, configuring Gemini CLI with your MCP tool, and letting an AI agent design and execute experiments.
@@ -75,6 +77,16 @@ A **Code Agent** is an AI agent that doesn't just *call tools* --- it can also *
 
 This loop is similar to how a human scientist programs: write → run → debug → refine.
 
+### The Three Key Components for Building AI Agents
+
+Building effective AI agents requires three essential components:
+
+1. **Environment**: The computational context where the agent operates (e.g., Google Colab with Opentrons API, labware, and instruments)
+2. **Tools**: The capabilities the agent can use (e.g., MCP tools for executing Python code, controlling lab equipment)
+3. **Prompt**: Clear instructions and guardrails that guide the agent's behavior and decision-making
+
+In this lab, you'll learn to design all three components to create agents that can autonomously design and execute laboratory protocols.
+
 * * * * *
 
 💡 Why do we need Code Agents?
@@ -96,7 +108,18 @@ This approach is inspired by research on [Code Agents](https://arxiv.org/abs/240
 Task 2: Code Agents for Automated Protocol Design
 -------------------------------------------------
 
-### Step 2.1 --- Set up a Hypha MCP Endpoint
+### Step 2.1 --- Define Lab Equipment
+
+In the notebook, you will define the labware and instruments you will use for this task. You can refer to the [Opentrons labware library](https://labware.opentrons.com/) and [hardware modules](https://docs.opentrons.com/v2/new_modules.html#) to find the appropriate definitions.
+
+The notebook will guide you through:
+- Loading labwares
+- Loading instruments
+- Setting up the protocol context
+
+* * * * *
+
+### Step 2.2 --- Set up a Hypha MCP Endpoint
 
 In Colab, you will:
 - Create a **Python interpreter MCP tool** exposing the Opentrons `protocol`, `plate`, `reservoir`, and `pipette` objects.
@@ -110,7 +133,7 @@ Keep this URL --- you'll need it for Gemini.
 
 * * * * *
 
-### Step 2.2 --- Configure Gemini MCP Settings & `GEMINI.md`
+### Step 2.3 --- Configure Gemini MCP Settings & `GEMINI.md`
 
 1. Create a `GEMINI.md` file describing:
    - The role of the agent (designing Opentrons experiments).
@@ -148,7 +171,7 @@ Keep this URL --- you'll need it for Gemini.
 
 * * * * *
 
-### Step 2.3 --- Start Gemini in VS Code and Run Experiments
+### Step 2.4 --- Start Gemini in VS Code and Run Experiments
 
 **Set up VS Code Tunnel (Optional but Recommended)**
 
@@ -164,7 +187,7 @@ For better code editing and debugging experience, you can set up a VS Code tunne
    ```bash
    ./code tunnel
    ```
-   Follow the authentication steps using your GitHub account, then name your machine (e.g., "colab").
+   Follow the authentication steps using your GitHub account, then name your machine "colab".
 
 3. **Open VS Code** in your browser using the provided link and navigate to your Module6 folder:
    ```bash

@@ -139,7 +139,7 @@ Keep this URL --- you'll need it for Gemini.
 
    Tips: Gemini CLI discovers MCP servers from this file; use `/mcp list` in the chat to list available tools.
 
-   **Important Note**: Based on previous experience, AI agents may attempt to read and display entire data matrices, which can cause system crashes. To prevent this issue, include the following critical tips in your GEMINI.md file:
+   **Important Note**: To ensure your actions are properly recorded and to prevent system issues, include the following critical tips in your GEMINI.md file:
 
    ```
    **Critical Tips**

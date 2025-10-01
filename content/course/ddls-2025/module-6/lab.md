@@ -1,7 +1,7 @@
 ---
 title: "Computer Lab 6: Automating Science with Opentrons & Code Agents"
 linkTitle: "Computer Lab 6"
-date: '2025-11-01'
+date: '2025-09-01'
 weight: 11
 type: book
 ---
@@ -22,41 +22,42 @@ This lab combines **programming, robotics simulation, and AI orchestration**.
 Part I --- Getting Started with Opentrons in Google Colab
 -------------------------------------------------------
 
-### Step 1: Open the Module 6 Notebook in Colab
+### Step 1: Launch the Course Starter Notebook
 
-[<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/notebooks/ddls-2025-module-6-computer-lab-automating-science.ipynb)
+Click the button below to open the course starter notebook in Google Colab:
 
-Notes:
-- Runtime: CPU is sufficient.
-- You can run a cell with Shift+Enter.
+[<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/notebooks/ddls-course-starter.ipynb)
 
-#### Install Gemini CLI in Colab
+On the upper right corner, make sure the user icon is your personal Gmail account icon (instead of, e.g. SciLifeLab account if you have one).
 
-Go to the terminal in Google Colab and run the following commands to install Gemini CLI:
+This notebook will guide you through setting up VS Code for the lab.
+
+### Step 2: Set up Module 6 Folder
+
+In the VS Code terminal, create the Module 6 folder structure:
 
 ```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-source /root/.bashrc
-nvm install 21
-nvm use 21
-npm install -g @google/gemini-cli
+mkdir -p /content/drive/MyDrive/DDLS-Course/Module6/
+cd /content/drive/MyDrive/DDLS-Course/Module6/
+code .
 ```
 
-### Step 2: Install and Import the Opentrons API
+Then download the Module 6 lab notebook:
 
-The notebook will guide you through installing the Opentrons package and setting up a **ProtocolContext**.
+```bash
+wget -O ddls-2025-module-6-computer-lab-automating-science.ipynb https://raw.githubusercontent.com/aicell-lab/ddls-course/main/static/notebooks/ddls-2025-module-6-computer-lab-automating-science.ipynb
+```
 
-### Step 3: Practice with the Opentrons API
+### Step 3: Follow the Notebook
 
-You will:
-- Load labware (`96-well plate`, `reservoir`, `tiprack`).
-- Load an instrument (`p1000_single` pipette).
-- Write and run a **serial dilution protocol** in simulation.
-- Inspect the output log from the simulator to confirm your steps.
+The notebook will guide you through:
+- Installing the Opentrons package and setting up a **ProtocolContext**
+- Loading labware
+- Loading instruments
+- Writing and running a **serial dilution protocol** in simulation
+- Building AI agents for automated protocol design
 
-By the end of Part I, you will:
-- Understand how the Opentrons API structures labware, wells, and pipettes.
-- Be able to write short protocols for common lab tasks (aspirate, dispense, mix, transfer).
+Follow the notebook step by step to complete all exercises.
 
 * * * * *
 
@@ -171,29 +172,7 @@ Keep this URL --- you'll need it for Gemini.
 
 * * * * *
 
-### Step 2.4 --- Start Gemini in VS Code and Run Experiments
-
-**Set up VS Code Tunnel (Optional but Recommended)**
-
-For better code editing and debugging experience, you can set up a VS Code tunnel to work with your Colab environment:
-
-1. **Install VS Code CLI** in the Colab terminal:
-   ```bash
-   curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
-   tar -xf vscode_cli.tar.gz
-   ```
-
-2. **Start the tunnel**:
-   ```bash
-   ./code tunnel
-   ```
-   Follow the authentication steps using your GitHub account, then name your machine "colab".
-
-3. **Open VS Code** in your browser using the provided link and navigate to your Module6 folder:
-   ```bash
-   cd /content/drive/MyDrive/DDLS-Course/Module6/
-   code .
-   ```
+### Step 2.4 --- Start Gemini CLI and Run Experiments
 
 **Start Gemini CLI and Verify Setup**
 

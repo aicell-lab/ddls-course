@@ -218,7 +218,9 @@ Submission Tips
 - **Important**: Copy your completed notebook to your Google Drive folder at `DDLS-Course/Module6/` after finishing the lab.
 
 - Share your Google Drive folder with "Anyone with the link can view and comment."
-- Submit via the course form: [https://forms.gle/EHnrmGksJZD3aVx2A](https://forms.gle/EHnrmGksJZD3aVx2A)
+- Submit via the course form:
+
+{{< cta cta_text="Click Here to Upload" cta_link="https://forms.gle/EHnrmGksJZD3aVx2A" >}}
 
 * * * * *
 

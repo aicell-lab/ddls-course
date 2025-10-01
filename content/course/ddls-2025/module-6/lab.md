@@ -192,13 +192,15 @@ Deliverables
 
 At the end of this lab, submit in your Google Drive folder:
 
-1. **Completed Notebook** from Part I.
-2. **MCP Tool + GEMINI.md** (Part II).
+1. **Completed Notebook**
+2. **GEMINI.md**
 3. **Gemini Chat History** showing your designed experiment.
-4. **Short Markdown Report (`REPORT.md`)** summarizing:
+4. **Markdown Report (`REPORT.md`)** summarizing:
    - What protocol you designed.
    - Example output from the agent.
    - Your own reflection: how did the agent help?
+5. **README.md** — Submission Guide
+   - Folder structure, how to reproduce.
 
 * * * * *
 

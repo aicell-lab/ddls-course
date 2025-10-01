@@ -186,6 +186,48 @@ Keep this URL --- you'll need it for Gemini.
 3. **Check available tools**: Enter `/mcp list` in the chat interface to see all your configured MCP tools.
 
 4. **Begin experimenting**: Ask Gemini to design and execute Opentrons protocols using your MCP tools!
+
+**How to know if the agent is calling your MCP tools?**
+
+When Gemini first uses your MCP tool, it will ask you whether to allow the tool call. You should see a prompt like this:
+
+```bash
+ ╭─────────────────────────────────────────────────────────────────────────────────────╮
+ │ ?  run_python (opentrons-mcp MCP Server) {"code":"..."} ←                           │
+ │                                                                                     │
+ │   MCP Server: opentrons-mcp                                                         │
+ │   Tool: run_python                                                                  │
+ │                                                                                     │
+ │ Allow execution of MCP tool "run_python" from server "opentrons-mcp"?               │
+ │                                                                                     │
+ │ ● 1. Yes, allow once                                                                │
+ │   2. Yes, always allow tool "run_python" from server "opentrons-mcp"                │
+ │   3. Yes, always allow all tools from server "opentrons-mcp"                        │
+ │   4. No, suggest changes (esc)                                                      │
+ ╰─────────────────────────────────────────────────────────────────────────────────────╯
+ ```
+If you allow the tool call only once, you will also see this message the next time the agent calls the same tool.
+
+After your MCP tool has been executed, you should see which tool was called with what arguments, and the returned result.
+
+You can also find the same information in your Gemini chat history:
+
+```json
+{
+   "role": "model",
+   "parts": [
+   {
+      "functionCall": {
+         "name": "run_python",
+         "args": {
+            "code": "..."
+         }
+      }
+   }
+   ]
+}
+```
+
 * * * * *
 
 Deliverables

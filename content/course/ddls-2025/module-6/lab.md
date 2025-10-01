@@ -106,10 +106,10 @@ This approach is inspired by research on [Code Agents](https://arxiv.org/abs/240
 
 * * * * *
 
-Task 2: Code Agents for Automated Protocol Design
+Task: Code Agents for Automated Protocol Design
 -------------------------------------------------
 
-### Step 2.1 --- Define Lab Equipment
+### Step 1 --- Define Lab Equipment
 
 In the notebook, you will define the labware and instruments you will use for this task. You can refer to the [Opentrons labware library](https://labware.opentrons.com/) and [hardware modules](https://docs.opentrons.com/v2/new_modules.html#) to find the appropriate definitions.
 
@@ -120,7 +120,7 @@ The notebook will guide you through:
 
 * * * * *
 
-### Step 2.2 --- Set up a Hypha MCP Endpoint
+### Step 2 --- Set up a Hypha MCP Endpoint
 
 In Colab, you will:
 - Create a **Python interpreter MCP tool** exposing the Opentrons `protocol`, `plate`, `reservoir`, and `pipette` objects.
@@ -134,7 +134,7 @@ Keep this URL --- you'll need it for Gemini.
 
 * * * * *
 
-### Step 2.3 --- Configure Gemini MCP Settings & `GEMINI.md`
+### Step 3 --- Configure Gemini MCP Settings & `GEMINI.md`
 
 1. Create a `GEMINI.md` file describing:
    - The role of the agent (designing Opentrons experiments).
@@ -172,7 +172,7 @@ Keep this URL --- you'll need it for Gemini.
 
 * * * * *
 
-### Step 2.4 --- Start Gemini CLI and Run Experiments
+### Step 4 --- Start Gemini CLI and Run Experiments
 
 **Start Gemini CLI and Verify Setup**
 

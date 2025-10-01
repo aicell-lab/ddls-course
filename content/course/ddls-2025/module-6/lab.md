@@ -22,7 +22,19 @@ This lab combines **programming, robotics simulation, and AI orchestration**.
 Part I --- Getting Started with Opentrons in Google Colab
 -------------------------------------------------------
 
-### Step 1: Open the Module 6 Notebook in Colab
+### Step 1: Launch the Course Starter Notebook
+
+Click the button below to open the course starter notebook in Google Colab:
+
+[<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/notebooks/ddls-course-starter.ipynb)
+
+On the upper right corner, make sure the user icon is your personal Gmail account icon (instead of, e.g. SciLifeLab account if you have one).
+
+This notebook will guide you through setting up VS Code for the lab.
+
+### Step 2: Download the Module 6 Lab Notebook
+
+After setting up VS Code, download the actual Module 6 lab notebook and move it to your working directory:
 
 [<img style="display: inline" src="https://colab.research.google.com/assets/colab-badge.svg">](https://colab.research.google.com/github/aicell-lab/ddls-course/blob/main/static/notebooks/ddls-2025-module-6-computer-lab-automating-science.ipynb)
 
@@ -30,23 +42,11 @@ Notes:
 - Runtime: CPU is sufficient.
 - You can run a cell with Shift+Enter.
 
-#### Install Gemini CLI in Colab
-
-Go to the terminal in Google Colab and run the following commands to install Gemini CLI:
-
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-source /root/.bashrc
-nvm install 21
-nvm use 21
-npm install -g @google/gemini-cli
-```
-
-### Step 2: Install and Import the Opentrons API
+### Step 3: Install and Import the Opentrons API
 
 The notebook will guide you through installing the Opentrons package and setting up a **ProtocolContext**.
 
-### Step 3: Practice with the Opentrons API
+### Step 4: Practice with the Opentrons API
 
 You will:
 - Load labware (`96-well plate`, `reservoir`, `tiprack`).
@@ -171,29 +171,7 @@ Keep this URL --- you'll need it for Gemini.
 
 * * * * *
 
-### Step 2.4 --- Start Gemini in VS Code and Run Experiments
-
-**Set up VS Code Tunnel (Optional but Recommended)**
-
-For better code editing and debugging experience, you can set up a VS Code tunnel to work with your Colab environment:
-
-1. **Install VS Code CLI** in the Colab terminal:
-   ```bash
-   curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
-   tar -xf vscode_cli.tar.gz
-   ```
-
-2. **Start the tunnel**:
-   ```bash
-   ./code tunnel
-   ```
-   Follow the authentication steps using your GitHub account, then name your machine "colab".
-
-3. **Open VS Code** in your browser using the provided link and navigate to your Module6 folder:
-   ```bash
-   cd /content/drive/MyDrive/DDLS-Course/Module6/
-   code .
-   ```
+### Step 2.4 --- Start Gemini CLI and Run Experiments
 
 **Start Gemini CLI and Verify Setup**
 

@@ -1,8 +1,7 @@
 ---
 title: "Computer Lab 6: Automating Science with Opentrons & Code Agents"
 linkTitle: "Computer Lab 6"
-date: '2025-09
--01'
+date: '2025-11-01'
 weight: 11
 type: book
 ---

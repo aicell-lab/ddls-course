@@ -107,7 +107,7 @@ Plans may be rejected if the dataset/task is too trivial, too close to a lab, ov
 
 ---
 
-## Step 2 — Final Project (Oct 6–22, 2025)
+## Step 2 — Final Project (Oct 6–29, 2025)
 
 Once your plan is approved, you will complete the project in three phases:
 
@@ -198,8 +198,8 @@ You will submit:
 - **Oct 6, 2025** — Project plan + AI deep research log due.  
 - **Oct 8, 2025 (13:00–14:00)** — Consultation session 1.  
 - **Oct 20, 2025 (13:00–14:00)** — Consultation session 2.  
-- **Oct 22, 2025 (23:59)** — Final project submission (report, demo, wrapper, repo).  
-- **Oct 24, 2025 (13:00–16:00)** — Oral presentations (Master’s students only).  
+- **Oct 29, 2025 (23:59)** — Final project submission (report, demo, wrapper, repo).  
+- **Oct 31, 2025 (9:00-12:00)** — Oral presentations (Master’s students only).  
 
 ---
 

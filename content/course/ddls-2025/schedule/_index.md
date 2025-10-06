@@ -10,7 +10,7 @@ weight: 8
 - **Application closes:** Aug 25, 2025, 24:00 CEST
 - **First lecture:** Aug 26, 2025, 13:00 CEST
 - **Final Project plan submission deadline:** Oct 6, 2025
-- **Final Project:** Oct 6-22, 2025
+- **Final Project:** Oct 6-29, 2025
 - **Final Project consultation 1:** Oct 8, 2025, 13:00-14:00
 - **Final Project consultation 2:** Oct 20, 2025, 13:00-14:00
 - **Final Project report submission deadline:** Oct 29, 2025, 23:59

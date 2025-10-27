@@ -211,6 +211,29 @@ You will submit:
 
 ---
 
+## Oral Presentations
+
+**Who must present:**
+- **Master's students:** Oral presentations are **mandatory**.
+- **Other course participants:** You are welcome to present as well, as long as time allows.
+
+**Who can attend:**
+- All course participants are welcome to join and observe the presentations.
+
+**Format:**
+- **Duration:** 10 minutes for your presentation, followed by a 5-minute Q&A session.
+- **Platform:** The presentations will take place **online via Zoom** (see the calendar event for details).
+- **Demo (optional):** A live or recorded demo of your accessibility choice (web app or MCP toolset) is not required, but you are welcome to include it. If you choose to demo, your presentation time can be extended by 3–5 minutes.
+
+**What to present:**
+- Overview of your scientific question and dataset.
+- Key findings from your data exploration.
+- Your model approach, evaluation, and improvement attempts.
+- Your accessibility wrapper (web app or MCP toolset).
+- Reflections on AI use and lessons learned.
+
+---
+
 ## Note on GenAI Tools
 You are encouraged to use ChatGPT, Gemini, Perplexity, or similar for brainstorming, coding assistance, and report writing.  
 However:

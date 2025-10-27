@@ -166,7 +166,11 @@ You will submit:
 2. **Accessibility Wrapper & Repository**  
    - Either a simple **web app** or a **minimal MCP toolset** wrapping your final workflow.  
    - A **public GitHub repository** containing your code, documentation, and reproducibility instructions.  
-   - **Published outcome:** These deliverables will be linked on the course website and demonstrated to **SciLifeLab researchers and beyond**.  
+   - **Published outcome:** These deliverables will be linked on the course website and demonstrated to **SciLifeLab researchers and beyond**.
+
+### Submit Your Final Project
+
+{{< cta cta_text="Click Here to Upload" cta_link="https://forms.gle/uEgXCkPYKHZGYq916" >}}  
 
 3. **Accessibility Demo Video (3–5 minutes)**  
    Choose the appropriate demo format based on your accessibility option:

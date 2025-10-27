@@ -163,13 +163,20 @@ You will submit:
    - **References**: relevant literature.  
    - **Appendices**: AI deep research log (mandatory), prompts, agent transcripts, extra figures.  
 
-2. **Agent Demo**  
-   - 3–5 min screen recording (or asciinema) showing Gemini-CLI (or another AI agent) being used for dataset exploration and/or evaluation.  
-
-3. **Accessibility Wrapper & Repository**  
+2. **Accessibility Wrapper & Repository**  
    - Either a simple **web app** or a **minimal MCP toolset** wrapping your final workflow.  
    - A **public GitHub repository** containing your code, documentation, and reproducibility instructions.  
    - **Published outcome:** These deliverables will be linked on the course website and demonstrated to **SciLifeLab researchers and beyond**.  
+
+3. **Accessibility Demo Video (3–5 minutes)**  
+   Choose the appropriate demo format based on your accessibility option:
+   - **Option A (Web Application):** Screen recording showing your web app in action, demonstrating all available features and that it works as intended.  
+   - **Option B (MCP Toolset):** Screen recording (or asciinema) showing an AI agent (e.g., Gemini-CLI) using your MCP tools for dataset exploration, model inference, evaluation, and result visualization.  
+   - **Note:** You may fast-forward or cut long waiting times (e.g., model training/inference) in your final submission video to match the length requirement while still demonstrating full functionality.  
+
+### Submit Your Final Project
+
+{{< cta cta_text="Click Here to Upload" cta_link="https://forms.gle/uEgXCkPYKHZGYq916" >}}  
 
 ---
 
@@ -179,6 +186,7 @@ You will submit:
 ✅ A baseline model is trained and evaluated.  
 ✅ At least one attempt to improve performance is demonstrated.  
 ✅ A working wrapper (web app or minimal MCP tool) is provided **and made public**.  
+✅ A 3–5 minute demo video showing the accessibility wrapper in action (web app features or agent using MCP tools).  
 ✅ A public GitHub repository with README, license, and reproducibility instructions.  
 ✅ Student-authored prompts for agent interactions are included.  
 ✅ Report includes dataset analysis, model justification, evaluation, and accessibility plan.  
@@ -198,8 +206,8 @@ You will submit:
 - **Oct 6, 2025** — Project plan + AI deep research log due.  
 - **Oct 8, 2025 (13:00–14:00)** — Consultation session 1.  
 - **Oct 20, 2025 (13:00–14:00)** — Consultation session 2.  
-- **Oct 29, 2025 (23:59)** — Final project submission (report, demo, wrapper, repo).  
-- **Oct 31, 2025 (9:00-12:00)** — Oral presentations (Master’s students only).  
+- **Oct 29, 2025 (23:59)** — Final project submission (report, accessibility demo video, wrapper, repo).  
+- **Oct 31, 2025 (9:00-12:00)** — Oral presentations (Master's students only).
 
 ---
 

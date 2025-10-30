@@ -215,7 +215,7 @@ You will submit:
 
 **Who must present:**
 - **Master's students:** Oral presentations are **mandatory**.
-- **Other course participants:** You are welcome to present as well, as long as time allows.
+- **Other course participants:** You are welcome to present as well, as long as time allows. Please sign up using the following link: https://forms.gle/zZWUaG2uhH3fiB9q7
 
 **Who can attend:**
 - All course participants are welcome to join and observe the presentations.

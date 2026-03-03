@@ -310,6 +310,74 @@
 }
 #fs-btn:hover { background: rgba(255,255,255,0.2); }
 #fs-btn svg { width: 15px; height: 15px; fill: currentColor; }
+
+/* ══════════════════════════════════════
+   MOBILE — vertical scroll layout
+   Reveal.js scaling is disabled; each
+   slide stacks vertically and scrolls.
+══════════════════════════════════════ */
+@media (max-width: 768px) {
+  html, body { overflow-y: auto !important; height: auto !important; }
+
+  .reveal-viewport { height: auto !important; min-height: 100vh; }
+  .reveal          { height: auto !important; overflow: visible !important; }
+
+  .reveal .slides {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    left: auto !important; top: auto !important;
+    display: block !important;
+  }
+
+  .reveal .slides > section {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    padding: 2.4rem 1.2rem !important;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  .slide-body {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    gap: 1.2rem;
+  }
+
+  /* Stack grids to single column */
+  .two-col, .three-col,
+  [style*="grid-template-columns"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  /* Scale down headings */
+  .reveal h1 { font-size: 2em !important; }
+  .reveal h2 { font-size: 1.5em !important; }
+
+  /* Hide desktop-only chrome */
+  .reveal .progress,
+  .reveal .controls,
+  .reveal .slide-number,
+  #fs-btn { display: none !important; }
+
+  /* Stat row wraps */
+  .stat-row { flex-wrap: wrap; gap: 1.2rem !important; }
+  .badge-row { flex-wrap: wrap; gap: 0.5rem !important; }
+
+  /* Evo track scrolls horizontally */
+  .evo-track { overflow-x: auto; padding-bottom: 0.5rem; }
+}
 </style>
 </head>
 <body>
@@ -903,54 +971,60 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
 <script>
+const isMobile = window.innerWidth <= 768;
+
 Reveal.initialize({
   hash: true,
-  slideNumber: 'c/t',
-  transition: 'fade',
+  slideNumber: isMobile ? false : 'c/t',
+  transition: isMobile ? 'none' : 'fade',
   transitionSpeed: 'fast',
-  backgroundTransition: 'fade',
-  controls: true,
-  progress: true,
-  center: false,        // We control layout per slide with flex
+  backgroundTransition: isMobile ? 'none' : 'fade',
+  controls: !isMobile,
+  progress: !isMobile,
+  center: false,
   width: 1600,
-  height: 900,          // 16:9, fits laptop screens well
+  height: 900,
   margin: 0.03,
   minScale: 0.2,
   maxScale: 2.0,
+  disableLayout: isMobile,   // On mobile: CSS controls layout, not Reveal
   plugins: []
 });
 
-// Fullscreen toggle
+// Fullscreen toggle (desktop only)
 const fsBtn      = document.getElementById('fs-btn');
 const fsLabel    = document.getElementById('fs-label');
 const fsExpand   = document.getElementById('fs-icon-expand');
 const fsCompress = document.getElementById('fs-icon-compress');
 
-fsBtn.addEventListener('click', () => {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen().catch(() => {});
-  } else {
-    document.exitFullscreen();
-  }
-});
+if (!isMobile) {
+  fsBtn.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen();
+    }
+  });
 
-document.addEventListener('fullscreenchange', () => {
-  const isFs = !!document.fullscreenElement;
-  fsExpand.style.display   = isFs ? 'none'  : 'block';
-  fsCompress.style.display = isFs ? 'block' : 'none';
-  fsLabel.textContent      = isFs ? 'Exit'  : 'Fullscreen';
-  setTimeout(() => Reveal.layout(), 200);
-});
+  document.addEventListener('fullscreenchange', () => {
+    const isFs = !!document.fullscreenElement;
+    fsExpand.style.display   = isFs ? 'none'  : 'block';
+    fsCompress.style.display = isFs ? 'block' : 'none';
+    fsLabel.textContent      = isFs ? 'Exit'  : 'Fullscreen';
+    setTimeout(() => Reveal.layout(), 200);
+  });
+}
 
-// Make every section fill the full slide height so flex layouts work
-Reveal.on('ready', () => setSectionHeights());
-Reveal.on('slidechanged', () => setSectionHeights());
+// Fill slide height on desktop only
 function setSectionHeights() {
+  if (isMobile) return;
   const h = Reveal.getComputedSlideSize().height;
   document.querySelectorAll('.reveal .slides > section').forEach(s => {
     s.style.height = h + 'px';
   });
 }
+Reveal.on('ready', () => setSectionHeights());
+Reveal.on('slidechanged', () => setSectionHeights());
 </script>
 </body>
 </html>

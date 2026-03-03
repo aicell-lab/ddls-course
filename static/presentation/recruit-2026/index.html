@@ -322,8 +322,15 @@
   .reveal-viewport { height: auto !important; min-height: 100vh; }
   .reveal          { height: auto !important; overflow: visible !important; }
 
+  /* The .backgrounds layer has z-index:2 on its children, covering .slides (z-index:1).
+     Hide it on mobile — we use section data-background colours via a CSS fallback instead. */
+  .reveal .backgrounds { display: none !important; }
+  /* Give each section its own background colour so slides still look distinct */
+  .reveal .slides > section { background: #080c1e !important; }
+
   .reveal .slides {
-    position: static !important;
+    position: relative !important;   /* must be non-static for z-index to apply */
+    z-index: 10 !important;
     width: 100% !important;
     height: auto !important;
     transform: none !important;

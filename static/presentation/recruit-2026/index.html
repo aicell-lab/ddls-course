@@ -502,7 +502,79 @@
 </section>
 
 <!-- ══════════════════════════════════════
-     SLIDE 3 — HOW RESEARCH HAS CHANGED
+     SLIDE 3 — USING AI RIGHT
+════════════════════════════════════════ -->
+<section data-background="linear-gradient(160deg,#0f0a24 0%,#0a0e24 60%,#0d1628 100%)">
+<div class="slide-body space-between">
+
+  <div>
+    <div class="eyebrow" style="background:rgba(251,191,36,0.18); border:1px solid rgba(251,191,36,0.4); color:#fbbf24;">⚠️ A New Paradigm — But Not Without Pitfalls</div>
+    <h2>Using AI Right Is a <span class="grad-gold">Critical Skill</span></h2>
+    <p class="sub">Everyone can type a prompt. Very few understand what's actually happening — or how to use AI agents reliably and responsibly.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; flex:1; align-items:start; padding:0.6rem 0;">
+
+    <!-- Left: LLM pitfalls -->
+    <div style="display:flex; flex-direction:column; gap:1rem;">
+      <div style="font-size:0.72em; font-weight:800; color:#94a3b8; text-transform:uppercase; letter-spacing:0.1em;">⚡ Known LLM Failure Modes</div>
+
+      <div style="background:rgba(239,68,68,0.09); border:1px solid rgba(239,68,68,0.28); border-radius:14px; padding:1.1rem 1.3rem;">
+        <div style="font-size:0.78em; font-weight:800; color:#f87171; margin-bottom:0.35rem;">🌀 Hallucination</div>
+        <div style="font-size:0.63em; color:#94a3b8; line-height:1.6;">LLMs generate fluent, confident text — even when it's factually wrong. A model citing a paper that doesn't exist, or a drug dose that kills. Knowing when <em>not</em> to trust output is essential.</div>
+      </div>
+
+      <div style="background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.25); border-radius:14px; padding:1.1rem 1.3rem;">
+        <div style="font-size:0.78em; font-weight:800; color:#fbbf24; margin-bottom:0.35rem;">📉 Context Rot</div>
+        <div style="font-size:0.63em; color:#94a3b8; line-height:1.6;">Performance degrades as context windows grow long. Early instructions get "forgotten," reasoning drifts, and errors compound across multi-step agent tasks — a silent killer in research pipelines.</div>
+      </div>
+
+      <div style="background:rgba(139,92,246,0.09); border:1px solid rgba(139,92,246,0.28); border-radius:14px; padding:1.1rem 1.3rem;">
+        <div style="font-size:0.78em; font-weight:800; color:#c4b5fd; margin-bottom:0.35rem;">⚖️ Ethical Implications</div>
+        <div style="font-size:0.63em; color:#94a3b8; line-height:1.6;">Bias in training data, opaque decision-making, data privacy, and the risk of automating consequential decisions without oversight. Life sciences stakes are high — patients, policy, publication.</div>
+      </div>
+    </div>
+
+    <!-- Right: new paradigm + Ralph loop -->
+    <div style="display:flex; flex-direction:column; gap:1rem;">
+      <div style="font-size:0.72em; font-weight:800; color:#94a3b8; text-transform:uppercase; letter-spacing:0.1em;">🤖 Agent Engineering — A New Craft</div>
+
+      <div style="background:rgba(52,211,153,0.07); border:1px solid rgba(52,211,153,0.28); border-radius:14px; padding:1.1rem 1.3rem;">
+        <div style="font-size:0.72em; color:#94a3b8; line-height:1.65;">
+          Writing a prompt is to AI agents what writing one line of code is to software engineering.
+          Real agentic systems require <strong style="color:#34d399;">tool design, memory management, error handling, evaluation loops,</strong> and knowing when to let the agent run — and when to stop it.
+        </div>
+      </div>
+
+      <!-- Ralph loop diagram -->
+      <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:1.1rem 1.3rem;">
+        <div style="font-size:0.66em; font-weight:800; color:#e2e8f0; margin-bottom:0.7rem;">The Agent Loop <span style="color:#64748b; font-weight:500;">(e.g. the Ralph Loop)</span></div>
+        <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap;">
+          <div style="background:rgba(102,126,234,0.2); border:1px solid rgba(102,126,234,0.4); border-radius:8px; padding:0.4rem 0.7rem; font-size:0.58em; font-weight:700; color:#818cf8; white-space:nowrap;">🧠 LLM reasons</div>
+          <div style="color:#475569; font-size:0.65em;">→</div>
+          <div style="background:rgba(52,211,153,0.12); border:1px solid rgba(52,211,153,0.35); border-radius:8px; padding:0.4rem 0.7rem; font-size:0.58em; font-weight:700; color:#34d399; white-space:nowrap;">🔧 calls tool</div>
+          <div style="color:#475569; font-size:0.65em;">→</div>
+          <div style="background:rgba(251,191,36,0.1); border:1px solid rgba(251,191,36,0.35); border-radius:8px; padding:0.4rem 0.7rem; font-size:0.58em; font-weight:700; color:#fbbf24; white-space:nowrap;">📋 observes result</div>
+          <div style="color:#475569; font-size:0.65em;">→</div>
+          <div style="background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:8px; padding:0.4rem 0.7rem; font-size:0.58em; font-weight:700; color:#f87171; white-space:nowrap;">✅ or stops</div>
+        </div>
+        <div style="font-size:0.58em; color:#475569; line-height:1.6; margin-top:0.7rem;">
+          Each iteration updates the agent's context. Poorly designed loops accumulate errors, waste tokens, or loop forever. <strong style="color:#64748b;">Knowing how to architect, debug and constrain this loop is the real engineering skill.</strong>
+        </div>
+      </div>
+
+      <div style="background:linear-gradient(135deg,rgba(52,211,153,0.1),rgba(102,126,234,0.1)); border:1px solid rgba(52,211,153,0.3); border-radius:10px; padding:0.9rem 1.1rem; font-size:0.62em; color:#a7f3d0; line-height:1.65;">
+        <strong style="color:#34d399;">DDLS teaches this.</strong> You'll build agents, diagnose failure modes, and develop the critical judgment to verify what AI produces — not just prompt it.
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 4 — HOW RESEARCH HAS CHANGED
 ════════════════════════════════════════ -->
 <section data-background="linear-gradient(160deg,#0a0e24 0%,#0f172a 100%)">
 <div class="slide-body space-between">

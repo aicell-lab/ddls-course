@@ -171,83 +171,83 @@ design:
 </style>
 
 <div class="sp-section">
-  <div class="sp-header">
-    <div class="sp-eyebrow">🎬 Student Projects</div>
-    <h2 class="sp-title">What Past Students Built</h2>
-    <p class="sp-sub">
-      The final project is 3 weeks of building something real — AI-powered tools,
-      web apps, and research demos used by actual labs.
-    </p>
-  </div>
+<div class="sp-header">
+<div class="sp-eyebrow">🎬 Student Projects</div>
+<h2 class="sp-title">What Past Students Built</h2>
+<p class="sp-sub">
+The final project is 3 weeks of building something real — AI-powered tools,
+web apps, and research demos used by actual labs.
+</p>
+</div>
 
-  <div class="sp-grid">
+<div class="sp-grid">
 
-    <div class="sp-card">
-      <a href="https://drive.google.com/file/d/1x7oETvVaafs2IaQ9I_qRwtxDK8rzLW7K/view" target="_blank" rel="noopener" style="text-decoration:none;">
-        <div class="sp-thumb">
-          <div class="sp-thumb-overlay g1"></div>
-          <span class="sp-decor tl">🔬</span>
-          <div class="sp-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <span class="sp-decor br">🧬</span>
-        </div>
-      </a>
-      <div class="sp-body">
-        <div class="sp-tag">🌊 Environmental Science · SciLifeLab</div>
-        <div class="sp-name">Karin Garefelt</div>
-        <div class="sp-desc">Built a full-stack web app for classifying plankton from IFCB flow cytometry images — deployed at SciLifeLab and now used by researchers.</div>
-        <a href="https://drive.google.com/file/d/1x7oETvVaafs2IaQ9I_qRwtxDK8rzLW7K/view" target="_blank" rel="noopener" class="sp-watch">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          Watch Presentation
-        </a>
-      </div>
-    </div>
+<div class="sp-card">
+<a href="https://drive.google.com/file/d/1x7oETvVaafs2IaQ9I_qRwtxDK8rzLW7K/view" target="_blank" rel="noopener" style="text-decoration:none;">
+<div class="sp-thumb">
+<div class="sp-thumb-overlay g1"></div>
+<span class="sp-decor tl">🔬</span>
+<div class="sp-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+<span class="sp-decor br">🧬</span>
+</div>
+</a>
+<div class="sp-body">
+<div class="sp-tag">🌊 Environmental Science · SciLifeLab</div>
+<div class="sp-name">Karin Garefelt</div>
+<div class="sp-desc">Built a full-stack web app for classifying plankton from IFCB flow cytometry images — deployed at SciLifeLab and now used by researchers.</div>
+<a href="https://drive.google.com/file/d/1x7oETvVaafs2IaQ9I_qRwtxDK8rzLW7K/view" target="_blank" rel="noopener" class="sp-watch">
+<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+Watch Presentation
+</a>
+</div>
+</div>
 
-    <div class="sp-card">
-      <a href="https://drive.google.com/file/d/1V1KTlZGfuHrkeY69tJ6gblYrd3ln3cfD/view" target="_blank" rel="noopener" style="text-decoration:none;">
-        <div class="sp-thumb">
-          <div class="sp-thumb-overlay g2"></div>
-          <span class="sp-decor tl">🤖</span>
-          <div class="sp-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <span class="sp-decor br">💻</span>
-        </div>
-      </a>
-      <div class="sp-body">
-        <div class="sp-tag">⚡ AI Coding Workflows · KTH PhD</div>
-        <div class="sp-name">Lasse Stahnke</div>
-        <div class="sp-desc">Developed an AI-assisted coding workflow tool that uses agents to automate data analysis pipelines — from raw data to publishable figures.</div>
-        <a href="https://drive.google.com/file/d/1V1KTlZGfuHrkeY69tJ6gblYrd3ln3cfD/view" target="_blank" rel="noopener" class="sp-watch">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          Watch Presentation
-        </a>
-      </div>
-    </div>
+<div class="sp-card">
+<a href="https://drive.google.com/file/d/1V1KTlZGfuHrkeY69tJ6gblYrd3ln3cfD/view" target="_blank" rel="noopener" style="text-decoration:none;">
+<div class="sp-thumb">
+<div class="sp-thumb-overlay g2"></div>
+<span class="sp-decor tl">🤖</span>
+<div class="sp-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+<span class="sp-decor br">💻</span>
+</div>
+</a>
+<div class="sp-body">
+<div class="sp-tag">⚡ AI Coding Workflows · KTH PhD</div>
+<div class="sp-name">Lasse Stahnke</div>
+<div class="sp-desc">Developed an AI-assisted coding workflow tool that uses agents to automate data analysis pipelines — from raw data to publishable figures.</div>
+<a href="https://drive.google.com/file/d/1V1KTlZGfuHrkeY69tJ6gblYrd3ln3cfD/view" target="_blank" rel="noopener" class="sp-watch">
+<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+Watch Presentation
+</a>
+</div>
+</div>
 
-    <div class="sp-card">
-      <a href="https://drive.google.com/file/d/1N6Eyys-mgpR1myEzDuMHLMgMghkPOKD2/view" target="_blank" rel="noopener" style="text-decoration:none;">
-        <div class="sp-thumb">
-          <div class="sp-thumb-overlay g3"></div>
-          <span class="sp-decor tl">🧪</span>
-          <div class="sp-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <span class="sp-decor br">🔭</span>
-        </div>
-      </a>
-      <div class="sp-body">
-        <div class="sp-tag">🔬 Research Automation · SciLifeLab</div>
-        <div class="sp-name">Augusta Jensen</div>
-        <div class="sp-desc">Created an AI-driven research demo showing how an AI agent can search literature, summarize findings, and propose next experimental steps.</div>
-        <a href="https://drive.google.com/file/d/1N6Eyys-mgpR1myEzDuMHLMgMghkPOKD2/view" target="_blank" rel="noopener" class="sp-watch">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          Watch Presentation
-        </a>
-      </div>
-    </div>
+<div class="sp-card">
+<a href="https://drive.google.com/file/d/1N6Eyys-mgpR1myEzDuMHLMgMghkPOKD2/view" target="_blank" rel="noopener" style="text-decoration:none;">
+<div class="sp-thumb">
+<div class="sp-thumb-overlay g3"></div>
+<span class="sp-decor tl">🧪</span>
+<div class="sp-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+<span class="sp-decor br">🔭</span>
+</div>
+</a>
+<div class="sp-body">
+<div class="sp-tag">🔬 Research Automation · SciLifeLab</div>
+<div class="sp-name">Augusta Jensen</div>
+<div class="sp-desc">Created an AI-driven research demo showing how an AI agent can search literature, summarize findings, and propose next experimental steps.</div>
+<a href="https://drive.google.com/file/d/1N6Eyys-mgpR1myEzDuMHLMgMghkPOKD2/view" target="_blank" rel="noopener" class="sp-watch">
+<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+Watch Presentation
+</a>
+</div>
+</div>
 
-  </div>
+</div>
 
-  <div class="sp-cta-row">
-    <a href="/showcase/" class="sp-more-btn">
-      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-      See All 21 Student Projects →
-    </a>
-  </div>
+<div class="sp-cta-row">
+<a href="/showcase/" class="sp-more-btn">
+<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+See All 21 Student Projects →
+</a>
+</div>
 </div>

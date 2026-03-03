@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data-Driven Life Sciences — KTH 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/night.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   BASE
+══════════════════════════════════════ */
+:root {
+  --c-purple: #818cf8;
+  --c-green:  #34d399;
+  --c-gold:   #f59e0b;
+  --c-red:    #f87171;
+  --card-bg:  rgba(255,255,255,0.055);
+  --card-br:  rgba(255,255,255,0.11);
+}
+
+.reveal { font-family: 'Inter', sans-serif; }
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  color: #fff;
+  margin: 0;
+}
+.reveal h1 { font-size: 3.4em; line-height: 1.05; }
+.reveal h2 { font-size: 2.0em; line-height: 1.1; }
+
+/* Remove default section padding – we control it per slide */
+.reveal .slides section { padding: 0; text-align: left; box-sizing: border-box; }
+
+/* ══════════════════════════════════════
+   UTILITY
+══════════════════════════════════════ */
+.grad {
+  background: linear-gradient(90deg, #818cf8 0%, #a78bfa 50%, #34d399 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.grad-gold {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.center { text-align: center !important; }
+
+/* Eyebrow pill */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.58em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35em 1em;
+  border-radius: 999px;
+  margin-bottom: 0.55em;
+}
+.eyebrow        { background: rgba(129,140,248,0.18); border: 1px solid rgba(129,140,248,0.4); color: #a5b4fc; }
+.eyebrow.green  { background: rgba(52,211,153,0.14);  border: 1px solid rgba(52,211,153,0.4);  color: #6ee7b7; }
+.eyebrow.gold   { background: rgba(245,158,11,0.14);  border: 1px solid rgba(245,158,11,0.4);  color: #fcd34d; }
+.eyebrow.red    { background: rgba(248,113,113,0.14); border: 1px solid rgba(248,113,113,0.4); color: #fca5a5; }
+
+/* Sub-heading */
+.sub {
+  font-size: 0.72em;
+  line-height: 1.75;
+  color: #94a3b8;
+  margin: 0.4em 0 0;
+}
+
+/* Badge pill row */
+.badge-row { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+.badge {
+  display: inline-flex; align-items: center; gap: 0.4em;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 999px; padding: 0.32em 0.9em;
+  font-size: 0.58em; color: #cbd5e1; font-weight: 600;
+}
+
+/* Stat block */
+.stat-row { display: flex; gap: 3rem; flex-wrap: wrap; align-items: center; }
+.stat-num {
+  font-size: 2.6em; font-weight: 900; line-height: 1;
+  background: linear-gradient(135deg, #818cf8, #34d399);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.stat-label { font-size: 0.6em; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.25em; }
+
+/* Divider */
+.divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 0; }
+
+/* ══════════════════════════════════════
+   CARDS
+══════════════════════════════════════ */
+.card-grid { display: grid; gap: 1.1rem; }
+.card-grid.c2 { grid-template-columns: 1fr 1fr; }
+.card-grid.c3 { grid-template-columns: 1fr 1fr 1fr; }
+.card-grid.c4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-br);
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem;
+  font-size: 0.65em;
+}
+.card.b-purple { border-color: rgba(129,140,248,0.38); }
+.card.b-green  { border-color: rgba(52,211,153,0.38);  }
+.card.b-gold   { border-color: rgba(245,158,11,0.38);  }
+.card.b-pink   { border-color: rgba(240,93,251,0.38);  }
+
+.card-icon  { font-size: 2.2em; display: block; margin-bottom: 0.5em; }
+.card-title { font-weight: 800; font-size: 1.05em; color: #e2e8f0; margin-bottom: 0.3em; }
+.card-desc  { color: #94a3b8; line-height: 1.65; }
+.card-tag   {
+  display: inline-block; margin-top: 0.65em;
+  background: rgba(129,140,248,0.18); color: #a5b4fc;
+  font-size: 0.82em; font-weight: 700; padding: 0.22em 0.65em; border-radius: 6px;
+}
+
+/* ══════════════════════════════════════
+   TIMELINE (horizontal)
+══════════════════════════════════════ */
+.tl-track {
+  display: flex; align-items: flex-start; position: relative;
+  padding: 0.5rem 0;
+}
+.tl-track::before {
+  content: '';
+  position: absolute; top: 37px; left: 32px; right: 32px; height: 2px;
+  background: linear-gradient(90deg, rgba(100,116,139,0.4), rgba(52,211,153,0.55));
+}
+.tl-step {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  gap: 0.55rem; position: relative; z-index: 1;
+}
+.tl-node {
+  width: 64px; height: 64px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.75em;
+  border: 2px solid rgba(100,116,139,0.45);
+  background: rgba(15,23,42,0.85);
+  flex-shrink: 0;
+}
+.tl-node.now {
+  border-color: #34d399;
+  background: rgba(16,185,129,0.18);
+  box-shadow: 0 0 22px rgba(52,211,153,0.42);
+}
+.tl-year  { font-size: 0.58em; font-weight: 700; color: #64748b; text-align: center; }
+.tl-label { font-size: 0.62em; font-weight: 600; color: #e2e8f0; text-align: center; line-height: 1.3; max-width: 120px; }
+.tl-label.hi { color: #34d399; }
+
+/* ══════════════════════════════════════
+   MODULE LIST
+══════════════════════════════════════ */
+.mod-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.mod-item {
+  display: flex; align-items: center; gap: 0.85rem;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 12px; padding: 0.7rem 1rem;
+  font-size: 0.63em;
+}
+.mod-num {
+  width: 32px; height: 32px; border-radius: 9px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff; font-weight: 800; font-size: 0.9em;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.mod-icon { font-size: 1.35em; flex-shrink: 0; }
+.mod-name { font-weight: 700; color: #e2e8f0; line-height: 1.25; }
+.mod-desc { color: #64748b; font-size: 0.88em; margin-top: 0.1em; }
+
+/* ══════════════════════════════════════
+   QUOTES
+══════════════════════════════════════ */
+.quote-card {
+  background: linear-gradient(135deg, rgba(102,126,234,0.13), rgba(118,75,162,0.1));
+  border: 1px solid rgba(102,126,234,0.3);
+  border-radius: 18px; padding: 1.6rem 1.7rem;
+  position: relative; font-size: 0.65em;
+}
+.quote-card::before {
+  content: '\201C'; position: absolute; top: 0.2rem; left: 1rem;
+  font-size: 4.5em; line-height: 1; color: #667eea; opacity: 0.3;
+  font-family: Georgia, serif;
+}
+.quote-text { font-style: italic; color: #c4c9f0; line-height: 1.75; padding-top: 1rem; }
+.quote-author { display: flex; align-items: center; gap: 0.8rem; margin-top: 1.1rem; }
+.quote-avatar {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff; font-weight: 800; font-size: 0.85em;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.quote-name { font-weight: 700; color: #e2e8f0; font-size: 0.96em; }
+.quote-role { color: #667eea; font-size: 0.8em; font-weight: 600; margin-top: 0.1em; }
+
+/* ══════════════════════════════════════
+   VIDEO MINI CARDS
+══════════════════════════════════════ */
+.vm-card {
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px; overflow: hidden; font-size: 0.63em;
+}
+.vm-thumb {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.vm-thumb::before { content: ''; position: absolute; inset: 0; opacity: 0.2; }
+.vm1 .vm-thumb::before { background: linear-gradient(135deg,#667eea,#764ba2); }
+.vm2 .vm-thumb::before { background: linear-gradient(135deg,#11998e,#38ef7d); }
+.vm3 .vm-thumb::before { background: linear-gradient(135deg,#f093fb,#f5576c); }
+.vm-play {
+  width: 52px; height: 52px; background: rgba(255,255,255,0.92);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 1;
+}
+.vm-play svg { width: 22px; height: 22px; fill: #667eea; margin-left: 3px; }
+.vm-body { padding: 0.9rem 1.1rem; }
+.vm-name { font-weight: 700; color: #e2e8f0; margin-bottom: 0.3em; font-size: 1.05em; }
+.vm-desc { color: #64748b; line-height: 1.55; }
+
+/* ══════════════════════════════════════
+   CHECKLIST
+══════════════════════════════════════ */
+.check-list { list-style: none; margin: 0; padding: 0; }
+.check-list li {
+  display: flex; align-items: flex-start; gap: 0.65em;
+  padding: 0.45em 0; font-size: 0.66em; color: #cbd5e1;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before { content: '✓'; color: #34d399; font-weight: 800; font-size: 1.05em; flex-shrink: 0; }
+
+/* ══════════════════════════════════════
+   CALLOUT BOX
+══════════════════════════════════════ */
+.callout {
+  background: linear-gradient(135deg, rgba(52,211,153,0.11), rgba(129,140,248,0.09));
+  border: 1px solid rgba(52,211,153,0.28);
+  border-radius: 14px; padding: 1.25rem 1.6rem;
+  font-size: 0.68em; color: #a7f3d0; line-height: 1.75;
+}
+.callout strong { color: #6ee7b7; }
+
+/* ══════════════════════════════════════
+   TWO-COL / THREE-COL
+══════════════════════════════════════ */
+.two-col   { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+.three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.3rem; }
+
+/* ══════════════════════════════════════
+   SLIDE WRAPPERS  — each slide uses a
+   flex column that fills 100% height so
+   content distributes vertically.
+══════════════════════════════════════ */
+.slide-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 3.5% 5%;
+}
+.slide-body.center-v {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.slide-body.space-between { justify-content: space-between; }
+
+/* Slide-level grow helper */
+.grow { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+/* ══════════════════════════════════════
+   CTA BUTTON
+══════════════════════════════════════ */
+.cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff; font-weight: 800; font-size: 0.82em;
+  padding: 0.8em 2.2em; border-radius: 12px; text-decoration: none;
+  box-shadow: 0 6px 28px rgba(102,126,234,0.42); letter-spacing: 0.01em;
+}
+
+/* ══════════════════════════════════════
+   SLIDE NUMBER
+══════════════════════════════════════ */
+.reveal .slide-number { color: #334155; font-family: 'Inter', sans-serif; font-size: 13px; }
+
+/* ══════════════════════════════════════
+   FULLSCREEN BUTTON
+══════════════════════════════════════ */
+#fs-btn {
+  position: fixed; top: 14px; right: 14px; z-index: 9999;
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 8px; color: #fff; padding: 7px 12px; cursor: pointer;
+  font-size: 13px; font-family: 'Inter', sans-serif; font-weight: 600;
+  display: flex; align-items: center; gap: 6px; transition: background 0.15s;
+  backdrop-filter: blur(6px);
+}
+#fs-btn:hover { background: rgba(255,255,255,0.2); }
+#fs-btn svg { width: 15px; height: 15px; fill: currentColor; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ══════════════════════════════════════
+     SLIDE 1 — TITLE
+════════════════════════════════════════ -->
+<section data-background="radial-gradient(ellipse at 65% 45%, #1e1060 0%, #0a0e24 65%)">
+<div class="slide-body center-v" style="gap:1.6rem;">
+
+  <div>
+    <div class="eyebrow" style="margin:0 auto 0.6em;">🧬 KTH Royal Institute of Technology &nbsp;·&nbsp; SciLifeLab</div>
+    <h1 style="text-align:center; font-size:3.6em;">
+      <span class="grad">Data-Driven</span><br>Life Sciences
+    </h1>
+    <p style="font-size:0.78em; color:#94a3b8; max-width:680px; margin:0.7rem auto 0; line-height:1.75; text-align:center;">
+      The course that teaches you to work <em>with</em> AI —<br>
+      not just study the biology AI is already transforming.
+    </p>
+  </div>
+
+  <div class="badge-row" style="justify-content:center; gap:0.75rem;">
+    <span class="badge">🤖 AI Agents</span>
+    <span class="badge">🔬 Life Sciences</span>
+    <span class="badge">💻 Hands-on Labs</span>
+    <span class="badge">7.5 ECTS</span>
+    <span class="badge">P3 2026</span>
+  </div>
+
+  <hr class="divider" style="width:60%; align-self:center;">
+
+  <div class="stat-row" style="justify-content:center; gap:4rem;">
+    <div class="stat-item" style="text-align:center;">
+      <div class="stat-num">6</div><div class="stat-label">Modules</div>
+    </div>
+    <div class="stat-item" style="text-align:center;">
+      <div class="stat-num">7.5</div><div class="stat-label">ECTS</div>
+    </div>
+    <div class="stat-item" style="text-align:center;">
+      <div class="stat-num">100+</div><div class="stat-label">Alumni</div>
+    </div>
+    <div class="stat-item" style="text-align:center;">
+      <div class="stat-num">4×</div><div class="stat-label">Years running</div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 2 — THE WORLD HAS CHANGED
+════════════════════════════════════════ -->
+<section data-background="#080c1e">
+<div class="slide-body space-between">
+
+  <div>
+    <div class="eyebrow red">⚡ The World Has Changed</div>
+    <h2>Every Decade, A New Shift in How We Work</h2>
+  </div>
+
+  <div style="display:flex; flex-direction:column; gap:2.2rem; flex:1; justify-content:center; padding:1rem 0;">
+    <div>
+      <p style="font-size:0.6em; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.85rem;">📚 How we find &amp; use information</p>
+      <div class="tl-track">
+        <div class="tl-step">
+          <div class="tl-node">📚</div>
+          <div class="tl-year">Pre-2000s</div>
+          <div class="tl-label">Library &amp; textbooks</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-node">🔍</div>
+          <div class="tl-year">2000s</div>
+          <div class="tl-label">Google search</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-node">💬</div>
+          <div class="tl-year">2022</div>
+          <div class="tl-label">ChatGPT &amp; LLMs</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-node now">🤖</div>
+          <div class="tl-year">Today</div>
+          <div class="tl-label hi">AI Agents — autonomous workflows</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.6em; font-weight:700; color:#64748b; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.85rem;">💻 How we write code</p>
+      <div class="tl-track">
+        <div class="tl-step">
+          <div class="tl-node">⌨️</div>
+          <div class="tl-year">Pre-2021</div>
+          <div class="tl-label">Type every line in an IDE</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-node">✨</div>
+          <div class="tl-year">2021</div>
+          <div class="tl-label">GitHub Copilot — suggestions</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-node">⚡</div>
+          <div class="tl-year">2023</div>
+          <div class="tl-label">Cursor — writes whole functions</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-node now">🚀</div>
+          <div class="tl-year">Today</div>
+          <div class="tl-label hi">Vibe coding — describe and ship</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>The question isn't whether AI will change your field — it already has.</strong>
+    Will you direct AI effectively, or struggle to keep up with those who do?
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 3 — HOW RESEARCH HAS CHANGED
+════════════════════════════════════════ -->
+<section data-background="linear-gradient(160deg,#0a0e24 0%,#0f172a 100%)">
+<div class="slide-body space-between">
+
+  <div>
+    <div class="eyebrow green">🔬 The Changing Nature of Science</div>
+    <h2>How Biological Research Has Evolved</h2>
+    <p class="sub">The scientific method itself is being transformed — from purely human-driven to AI-autonomous.</p>
+  </div>
+
+  <!-- Three stages as horizontal cards -->
+  <div style="display:grid; grid-template-columns:1fr 40px 1fr 40px 1fr; align-items:center; flex:1; padding:0.8rem 0;">
+
+    <!-- Stage 1 -->
+    <div style="background:rgba(100,116,139,0.12); border:1px solid rgba(100,116,139,0.3); border-radius:18px; padding:1.5rem 1.4rem; height:100%; box-sizing:border-box; display:flex; flex-direction:column; gap:0.7rem;">
+      <div style="display:inline-block; background:rgba(100,116,139,0.2); border:1px solid rgba(100,116,139,0.4); color:#94a3b8; font-size:0.52em; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:0.3em 0.8em; border-radius:6px; width:fit-content;">Traditional</div>
+      <div style="font-size:2.4em;">🧫</div>
+      <div style="font-size:0.58em; color:#64748b; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">Pre-2000s → ongoing</div>
+      <div style="font-size:0.82em; font-weight:800; color:#e2e8f0; line-height:1.2;">Hypothesis-Driven Research</div>
+      <div style="font-size:0.62em; color:#64748b; line-height:1.65; flex:1;">A scientist forms a hypothesis, designs a targeted experiment, and interprets results manually. Powerful — but slow and bounded by human capacity.</div>
+      <div style="display:flex; flex-direction:column; gap:0.3rem;">
+        <div style="font-size:0.56em; color:#64748b; display:flex; align-items:center; gap:0.5em;"><span style="width:6px;height:6px;border-radius:50%;background:#64748b;flex-shrink:0;"></span>Observe → Hypothesize → Experiment → Publish</div>
+        <div style="font-size:0.56em; color:#64748b; display:flex; align-items:center; gap:0.5em;"><span style="width:6px;height:6px;border-radius:50%;background:#64748b;flex-shrink:0;"></span>e.g. Koch's postulates, Mendel's genetics</div>
+      </div>
+    </div>
+
+    <!-- Arrow 1 -->
+    <div style="display:flex; align-items:center; justify-content:center;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+
+    <!-- Stage 2 -->
+    <div style="background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); border-radius:18px; padding:1.5rem 1.4rem; height:100%; box-sizing:border-box; display:flex; flex-direction:column; gap:0.7rem;">
+      <div style="display:inline-block; background:rgba(59,130,246,0.18); border:1px solid rgba(59,130,246,0.4); color:#60a5fa; font-size:0.52em; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:0.3em 0.8em; border-radius:6px; width:fit-content;">Computational Biology</div>
+      <div style="font-size:2.4em;">💻</div>
+      <div style="font-size:0.58em; color:#3b82f6; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">2000s → present</div>
+      <div style="font-size:0.82em; font-weight:800; color:#e2e8f0; line-height:1.2;">Data-Driven Hypothesis Generation</div>
+      <div style="font-size:0.62em; color:#64748b; line-height:1.65; flex:1;">Large-scale biological data (genomes, proteomes, single-cell profiles) analyzed computationally. ML reveals patterns that generate hypotheses no human would find.</div>
+      <div style="display:flex; flex-direction:column; gap:0.3rem;">
+        <div style="font-size:0.56em; color:#64748b; display:flex; align-items:center; gap:0.5em;"><span style="width:6px;height:6px;border-radius:50%;background:#3b82f6;flex-shrink:0;"></span>Dataset → ML patterns → Hypothesis → Validate</div>
+        <div style="font-size:0.56em; color:#64748b; display:flex; align-items:center; gap:0.5em;"><span style="width:6px;height:6px;border-radius:50%;background:#3b82f6;flex-shrink:0;"></span>e.g. GWAS, scRNA-seq, AlphaFold</div>
+      </div>
+    </div>
+
+    <!-- Arrow 2 -->
+    <div style="display:flex; align-items:center; justify-content:center;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+
+    <!-- Stage 3 -->
+    <div style="background:linear-gradient(145deg,rgba(139,92,246,0.12),rgba(16,185,129,0.08)); border:1px solid rgba(139,92,246,0.42); border-radius:18px; padding:1.5rem 1.4rem; height:100%; box-sizing:border-box; display:flex; flex-direction:column; gap:0.7rem; box-shadow:0 0 28px rgba(139,92,246,0.12);">
+      <div style="display:inline-block; background:linear-gradient(135deg,rgba(139,92,246,0.25),rgba(16,185,129,0.2)); border:1px solid rgba(139,92,246,0.5); color:#c4b5fd; font-size:0.52em; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:0.3em 0.8em; border-radius:6px; width:fit-content;">🚀 Emerging Now</div>
+      <div style="font-size:2.4em;">🤖</div>
+      <div style="font-size:0.58em; color:#a78bfa; font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">2024 → future</div>
+      <div style="font-size:0.82em; font-weight:800; line-height:1.2; background:linear-gradient(135deg,#a78bfa,#34d399); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">The AI Scientist — Autonomous Research</div>
+      <div style="font-size:0.62em; color:#64748b; line-height:1.65; flex:1;">AI agents autonomously review literature, generate hypotheses, design &amp; simulate experiments, analyze results, and draft papers. Humans set goals; AI drives the loop.</div>
+      <div style="display:flex; flex-direction:column; gap:0.3rem;">
+        <div style="font-size:0.56em; color:#64748b; display:flex; align-items:center; gap:0.5em;"><span style="width:6px;height:6px;border-radius:50%;background:#8b5cf6;flex-shrink:0;"></span>AI reviews literature → hypothesizes → iterates</div>
+        <div style="font-size:0.56em; color:#64748b; display:flex; align-items:center; gap:0.5em;"><span style="width:6px;height:6px;border-radius:50%;background:#8b5cf6;flex-shrink:0;"></span>e.g. Sakana "AI Scientist", MIT antibiotic AI</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <strong>DDLS trains you for Stage 2 and Stage 3.</strong>
+    Data-driven analysis, AI agent workflows, and the critical judgment to evaluate what autonomous systems produce.
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 4 — AI IS REWRITING BIOLOGY
+════════════════════════════════════════ -->
+<section data-background="linear-gradient(160deg,#0a0e24 0%,#0f172a 100%)">
+<div class="slide-body space-between">
+
+  <div>
+    <div class="eyebrow green">🧬 AI × Biology</div>
+    <h2>Biology Is Being Rewritten by AI</h2>
+    <p class="sub">Four breakthroughs that define the new era of life sciences.</p>
+  </div>
+
+  <div class="card-grid c2 grow" style="align-content:stretch;">
+    <div class="card b-purple" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <span class="card-icon">🧬</span>
+        <div class="card-title">AlphaFold (2020)</div>
+        <div class="card-desc">DeepMind solved protein structure prediction — a 60-year grand challenge — in days. Every protein in the human genome, predicted and published for free.</div>
+      </div>
+      <span class="card-tag">Structural Biology</span>
+    </div>
+    <div class="card b-green" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <span class="card-icon">🔬</span>
+        <div class="card-title">Single-Cell Sequencing</div>
+        <div class="card-desc">We can now profile gene expression in individual cells — mapping every cell type in the human body. Machine learning is essential to interpret this data.</div>
+      </div>
+      <span class="card-tag">Genomics &amp; Transcriptomics</span>
+    </div>
+    <div class="card b-gold" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <span class="card-icon">👁️</span>
+        <div class="card-title">AI Microscopy</div>
+        <div class="card-desc">Deep learning detects cancer cells, classifies organisms, and tracks cellular dynamics from images with superhuman accuracy — in real time.</div>
+      </div>
+      <span class="card-tag">Imaging &amp; Computer Vision</span>
+    </div>
+    <div class="card b-purple" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <span class="card-icon">💊</span>
+        <div class="card-title">Precision Medicine</div>
+        <div class="card-desc">By integrating genomic, clinical, and environmental data, AI enables treatments tailored to individual patients — not just average populations.</div>
+      </div>
+      <span class="card-tag">Systems Biology</span>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 4 — SIX MODULES
+════════════════════════════════════════ -->
+<section data-background="#080c1e">
+<div class="slide-body">
+
+  <div class="two-col" style="flex:1; align-items:stretch;">
+    <div style="display:flex; flex-direction:column; justify-content:center; gap:1.2rem;">
+      <div>
+        <div class="eyebrow">📚 Course Overview</div>
+        <h2>Six Modules,<br>Six Fields</h2>
+        <p class="sub" style="margin-top:0.6em;">One week per module. Real data, real methods, real researchers. Guest lecturers from SciLifeLab, KTH, and international institutions.</p>
+      </div>
+      <div class="badge-row">
+        <span class="badge">Aug–Oct 2025</span>
+        <span class="badge">Online via Zoom</span>
+        <span class="badge">7.5 ECTS</span>
+      </div>
+      <div class="callout" style="font-size:0.64em;">
+        <strong>No prerequisites</strong> beyond basic programming and statistics.
+        Master's and PhD students welcome — from any relevant discipline.
+      </div>
+    </div>
+
+    <div class="mod-list" style="justify-content:center;">
+      <div class="mod-item">
+        <div class="mod-num">1</div><span class="mod-icon">🤖</span>
+        <div><div class="mod-name">Intro to Data-Driven Life Sciences</div><div class="mod-desc">AI tools, agents, and the scientific method</div></div>
+      </div>
+      <div class="mod-item">
+        <div class="mod-num">2</div><span class="mod-icon">🔬</span>
+        <div><div class="mod-name">Image Analysis &amp; Microscopy</div><div class="mod-desc">Deep learning for biological imaging</div></div>
+      </div>
+      <div class="mod-item">
+        <div class="mod-num">3</div><span class="mod-icon">🧬</span>
+        <div><div class="mod-name">Protein Structure &amp; Molecular Biology</div><div class="mod-desc">AlphaFold, protein language models</div></div>
+      </div>
+      <div class="mod-item">
+        <div class="mod-num">4</div><span class="mod-icon">🧫</span>
+        <div><div class="mod-name">Single-cell Transcriptomics &amp; Genomics</div><div class="mod-desc">scRNA-seq, trajectory inference</div></div>
+      </div>
+      <div class="mod-item">
+        <div class="mod-num">5</div><span class="mod-icon">💊</span>
+        <div><div class="mod-name">Precision Medicine &amp; Systems Biology</div><div class="mod-desc">Multi-omics integration, patient stratification</div></div>
+      </div>
+      <div class="mod-item">
+        <div class="mod-num">6</div><span class="mod-icon">🚀</span>
+        <div><div class="mod-name">Automated Scientific Discovery &amp; AI Agents</div><div class="mod-desc">Autonomous research workflows with AI</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 5 — HOW YOU LEARN
+════════════════════════════════════════ -->
+<section data-background="linear-gradient(160deg,#0a0e24 0%,#0f172a 100%)">
+<div class="slide-body space-between">
+
+  <div class="center">
+    <div class="eyebrow" style="margin:0 auto 0.5em;">🎯 Learning Format</div>
+    <h2>Learning, Augmented by AI</h2>
+    <p class="sub" style="margin:0.4em auto 0; max-width:680px;">Every week follows the same rhythm. The same workflow you'll use in your research career.</p>
+  </div>
+
+  <div class="card-grid c4 grow" style="align-content:stretch;">
+    <div class="card b-purple" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <span class="card-icon">🎓</span>
+        <div class="card-title">Expert Lecture</div>
+        <div class="card-desc">DDLS Fellows, SciLifeLab researchers &amp; KTH faculty presenting cutting-edge real methods and current research.</div>
+      </div>
+      <span class="card-tag">2 hrs / week</span>
+    </div>
+    <div class="card b-green" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <span class="card-icon">💻</span>
+        <div class="card-title">AI-Augmented Lab</div>
+        <div class="card-desc">Google Colab notebooks with AI coding agents. You direct the analysis — AI handles the boilerplate and heavy lifting.</div>
+      </div>
+      <span class="card-tag">4 hrs / week</span>
+    </div>
+    <div class="card b-gold" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <span class="card-icon">📖</span>
+        <div class="card-title">Journal Club</div>
+        <div class="card-desc">Read, present, and debate landmark papers. Develop scientific reading skills — AI helps you prepare and challenge.</div>
+      </div>
+      <span class="card-tag">2 hrs / week</span>
+    </div>
+    <div class="card b-pink" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <span class="card-icon">🏗️</span>
+        <div class="card-title">Final Project</div>
+        <div class="card-desc">3 weeks to build a real tool, web app, or analysis pipeline. Past projects were deployed in actual research labs.</div>
+      </div>
+      <span class="card-tag">3 weeks</span>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 6 — STUDENT PROJECTS
+════════════════════════════════════════ -->
+<section data-background="#080c1e">
+<div class="slide-body space-between">
+
+  <div>
+    <div class="eyebrow green">🎬 Student Projects</div>
+    <h2>What Past Students Built</h2>
+    <p class="sub">From the last cohort — AI tools and apps used in real research settings.</p>
+  </div>
+
+  <div class="three-col grow" style="align-content:stretch;">
+    <div class="vm-card vm1" style="display:flex; flex-direction:column;">
+      <a href="https://drive.google.com/file/d/1x7oETvVaafs2IaQ9I_qRwtxDK8rzLW7K/view" target="_blank" style="text-decoration:none; display:block;">
+        <div class="vm-thumb">
+          <div class="vm-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+      </a>
+      <div class="vm-body" style="flex:1;">
+        <div class="vm-name">Karin Garefelt</div>
+        <div class="vm-desc" style="margin-top:0.4em;">🌊 IFCB Plankton Classification Web App — built and deployed at SciLifeLab for active use by researchers.</div>
+      </div>
+    </div>
+    <div class="vm-card vm2" style="display:flex; flex-direction:column;">
+      <a href="https://drive.google.com/file/d/1V1KTlZGfuHrkeY69tJ6gblYrd3ln3cfD/view" target="_blank" style="text-decoration:none; display:block;">
+        <div class="vm-thumb">
+          <div class="vm-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+      </a>
+      <div class="vm-body" style="flex:1;">
+        <div class="vm-name">Lasse Stahnke</div>
+        <div class="vm-desc" style="margin-top:0.4em;">⚡ AI-Supported Coding Workflow Tool — agents that automate analysis pipelines from raw data to publication-ready figures.</div>
+      </div>
+    </div>
+    <div class="vm-card vm3" style="display:flex; flex-direction:column;">
+      <a href="https://drive.google.com/file/d/1N6Eyys-mgpR1myEzDuMHLMgMghkPOKD2/view" target="_blank" style="text-decoration:none; display:block;">
+        <div class="vm-thumb">
+          <div class="vm-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+      </a>
+      <div class="vm-body" style="flex:1;">
+        <div class="vm-name">Augusta Jensen</div>
+        <div class="vm-desc" style="margin-top:0.4em;">🔬 AI Research Demo — autonomous literature search, finding, and summarizing findings, then proposing next experimental steps.</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:0.56em; color:#475569; text-align:center;">
+    → All 21 project videos at <strong style="color:#667eea;">ddls.aicell.io/showcase</strong>
+  </p>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 7 — WHAT STUDENTS SAY
+════════════════════════════════════════ -->
+<section data-background="linear-gradient(160deg,#0a0e24 0%,#0f172a 100%)">
+<div class="slide-body space-between">
+
+  <div>
+    <div class="eyebrow gold">💬 Student Voices</div>
+    <h2>What Students Say</h2>
+  </div>
+
+  <div class="three-col grow" style="align-content:stretch;">
+    <div class="quote-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div class="quote-text">"I was surprised by how quickly I could build my first web app! The DDLS course broadened my knowledge and taught me to use AI tools effectively in real research."</div>
+      <div class="quote-author">
+        <div class="quote-avatar">KG</div>
+        <div><div class="quote-name">Karin Garefelt</div><div class="quote-role">SciLifeLab · Plankton App</div></div>
+      </div>
+    </div>
+    <div class="quote-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div class="quote-text">"The course provided a solid introduction to applying agentic AI in both research and coding. The final project was especially useful — I put everything into practice immediately."</div>
+      <div class="quote-author">
+        <div class="quote-avatar">LS</div>
+        <div><div class="quote-name">Lasse Stahnke</div><div class="quote-role">KTH PhD Student · AI Coding</div></div>
+      </div>
+    </div>
+    <div class="quote-card" style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div class="quote-text">"A great introduction to the world of data-driven life science research — interesting lectures, hands-on experience with Google Colab and Gemini CLI as an AI agent."</div>
+      <div class="quote-author">
+        <div class="quote-avatar">AJ</div>
+        <div><div class="quote-name">Augusta Jensen</div><div class="quote-role">SciLifeLab · Research Demo</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 8 — WHY TAKE THIS COURSE
+════════════════════════════════════════ -->
+<section data-background="#080c1e">
+<div class="slide-body">
+
+  <div class="two-col" style="flex:1; align-items:stretch;">
+    <div style="display:flex; flex-direction:column; justify-content:space-between; gap:1rem;">
+      <div>
+        <div class="eyebrow">🎯 Why Take This?</div>
+        <h2>Skills That Set You Apart</h2>
+        <p class="sub" style="margin-top:0.5em;">These tools are already used in top research labs worldwide. Graduate with real experience using them.</p>
+      </div>
+      <ul class="check-list" style="flex:1;">
+        <li>Use AI agents to automate data analysis &amp; model training</li>
+        <li>Apply deep learning to biological images, sequences, and graphs</li>
+        <li>Work with real datasets across 6 cutting-edge fields</li>
+        <li>Build tools that researchers (and AI agents) can use</li>
+        <li>Critically evaluate &amp; responsibly integrate AI outputs</li>
+        <li>Graduate with a real, deployed project in your portfolio</li>
+        <li>Join a growing network of KTH &amp; SciLifeLab alumni</li>
+      </ul>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:1rem; justify-content:center;">
+      <div class="card b-purple">
+        <span class="card-icon">🏛️</span>
+        <div class="card-title">Course Details</div>
+        <div class="card-desc" style="line-height:2.1;">
+          <strong style="color:#a5b4fc;">Credits:</strong> 7.5 ECTS<br>
+          <strong style="color:#a5b4fc;">Period:</strong> P3 · Jan–Mar 2026<br>
+          <strong style="color:#a5b4fc;">Format:</strong> Online (Zoom)<br>
+          <strong style="color:#a5b4fc;">Open to:</strong> KTH Master's &amp; PhD, SciLifeLab researchers<br>
+          <strong style="color:#a5b4fc;">Workload:</strong> ~8–10 hrs / week
+        </div>
+      </div>
+      <div class="card b-green">
+        <span class="card-icon">👨‍🏫</span>
+        <div class="card-title">Guest Lecturers</div>
+        <div class="card-desc">DDLS Fellows, SciLifeLab facility trainers, KTH faculty — researchers who built the tools and methods you'll use.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 9 — JOIN / CTA
+════════════════════════════════════════ -->
+<section data-background="radial-gradient(ellipse at 50% 55%, #1e1060 0%, #0a0e24 65%)">
+<div class="slide-body center-v" style="gap:1.8rem;">
+
+  <div>
+    <div class="eyebrow" style="margin:0 auto 0.6em;">🚀 Ready?</div>
+    <h2 style="font-size:2.8em; text-align:center;">
+      Join <span class="grad">DDLS 2026</span>
+    </h2>
+    <p style="font-size:0.76em; color:#94a3b8; max-width:620px; margin:0.6rem auto 0; line-height:1.8; text-align:center;">
+      Open to all KTH Master's and PhD students, SciLifeLab researchers,
+      and motivated participants from other institutions.
+    </p>
+  </div>
+
+  <a href="https://ddls.aicell.io" class="cta-btn">
+    Explore the Course → ddls.aicell.io
+  </a>
+
+  <div class="badge-row" style="justify-content:center;">
+    <span class="badge">📧 Contact via ddls.aicell.io</span>
+    <span class="badge">🏛️ KTH Royal Institute of Technology</span>
+    <span class="badge">🧬 AICell Lab · Wei Ouyang</span>
+  </div>
+
+  <hr class="divider" style="width:55%; align-self:center;">
+
+  <div class="stat-row" style="justify-content:center; gap:4rem;">
+    <div class="stat-item" style="text-align:center;"><div class="stat-num">7.5</div><div class="stat-label">ECTS</div></div>
+    <div class="stat-item" style="text-align:center;"><div class="stat-num">6</div><div class="stat-label">Modules</div></div>
+    <div class="stat-item" style="text-align:center;"><div class="stat-num">25+</div><div class="stat-label">Projects / year</div></div>
+    <div class="stat-item" style="text-align:center;"><div class="stat-num">100%</div><div class="stat-label">Online</div></div>
+  </div>
+
+</div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SLIDE 11 — AICELL LAB OPPORTUNITIES
+════════════════════════════════════════ -->
+<section data-background="linear-gradient(160deg,#080c1e 0%,#0f172a 60%,#0a1628 100%)">
+<div class="slide-body space-between">
+
+  <div>
+    <div class="eyebrow" style="background:linear-gradient(135deg,rgba(52,211,153,0.18),rgba(99,102,241,0.18)); border:1px solid rgba(52,211,153,0.4); color:#34d399;">🔬 AICell Lab · Wei Ouyang</div>
+    <h2>Interested in Working With Us?</h2>
+    <p class="sub">Beyond the course — we welcome motivated students for hands-on research at the frontier of AI and life sciences.</p>
+  </div>
+
+  <!-- Opportunity cards -->
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; flex:1; padding:0.8rem 0;">
+
+    <div style="background:rgba(52,211,153,0.07); border:1px solid rgba(52,211,153,0.25); border-radius:18px; padding:1.6rem 1.5rem; display:flex; flex-direction:column; gap:0.7rem;">
+      <div style="font-size:2.4em;">📋</div>
+      <div style="font-size:0.9em; font-weight:800; color:#34d399;">Project Work</div>
+      <div style="font-size:0.65em; color:#94a3b8; line-height:1.7; flex:1;">Short-term research projects building AI tools for biological analysis — suitable as a course project or independent work. Collaborate directly with our team.</div>
+      <div style="font-size:0.6em; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.07em;">Flexible duration · KTH credit possible</div>
+    </div>
+
+    <div style="background:rgba(99,102,241,0.09); border:1px solid rgba(99,102,241,0.3); border-radius:18px; padding:1.6rem 1.5rem; display:flex; flex-direction:column; gap:0.7rem;">
+      <div style="font-size:2.4em;">🎓</div>
+      <div style="font-size:0.9em; font-weight:800; color:#818cf8;">Master's Thesis</div>
+      <div style="font-size:0.65em; color:#94a3b8; line-height:1.7; flex:1;">30 ECTS thesis projects at the intersection of AI, computer vision, LLMs, and biology. Work on real research challenges alongside PhD students and postdocs.</div>
+      <div style="font-size:0.6em; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.07em;">30 hp · Degree project · KTH registered</div>
+    </div>
+
+    <div style="background:rgba(249,115,22,0.07); border:1px solid rgba(249,115,22,0.25); border-radius:18px; padding:1.6rem 1.5rem; display:flex; flex-direction:column; gap:0.7rem;">
+      <div style="font-size:2.4em;">💼</div>
+      <div style="font-size:0.9em; font-weight:800; color:#fb923c;">Internship</div>
+      <div style="font-size:0.65em; color:#94a3b8; line-height:1.7; flex:1;">Summer or semester internships embedded in ongoing lab projects. Build AI-powered tools, deploy them in real research workflows, and contribute to publications.</div>
+      <div style="font-size:0.6em; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.07em;">Paid · SciLifeLab / KTH · Stockholm</div>
+    </div>
+
+  </div>
+
+  <!-- Contact callout -->
+  <div style="background:linear-gradient(135deg,rgba(52,211,153,0.1),rgba(99,102,241,0.1)); border:1px solid rgba(52,211,153,0.3); border-radius:14px; padding:1.2rem 1.8rem; display:flex; align-items:center; gap:1.5rem; justify-content:center;">
+    <div style="font-size:2rem;">✉️</div>
+    <div>
+      <div style="font-size:0.78em; font-weight:800; color:#e2e8f0; margin-bottom:0.3rem;">Get in touch — we'd love to hear from you</div>
+      <div style="font-size:0.65em; color:#94a3b8; line-height:1.6;">Reach out via the course website or find us at <strong style="color:#34d399;">ddls.aicell.io</strong> · AICell Lab, SciLifeLab / KTH · Wei Ouyang</div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+</div><!-- /slides -->
+</div><!-- /reveal -->
+
+<!-- Fullscreen button -->
+<button id="fs-btn" title="Toggle fullscreen">
+  <svg viewBox="0 0 24 24" id="fs-icon-expand"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+  <svg viewBox="0 0 24 24" id="fs-icon-compress" style="display:none"><path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z"/></svg>
+  <span id="fs-label">Fullscreen</span>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+Reveal.initialize({
+  hash: true,
+  slideNumber: 'c/t',
+  transition: 'fade',
+  transitionSpeed: 'fast',
+  backgroundTransition: 'fade',
+  controls: true,
+  progress: true,
+  center: false,        // We control layout per slide with flex
+  width: 1600,
+  height: 900,          // 16:9, fits laptop screens well
+  margin: 0.03,
+  minScale: 0.2,
+  maxScale: 2.0,
+  plugins: []
+});
+
+// Fullscreen toggle
+const fsBtn      = document.getElementById('fs-btn');
+const fsLabel    = document.getElementById('fs-label');
+const fsExpand   = document.getElementById('fs-icon-expand');
+const fsCompress = document.getElementById('fs-icon-compress');
+
+fsBtn.addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen();
+  }
+});
+
+document.addEventListener('fullscreenchange', () => {
+  const isFs = !!document.fullscreenElement;
+  fsExpand.style.display   = isFs ? 'none'  : 'block';
+  fsCompress.style.display = isFs ? 'block' : 'none';
+  fsLabel.textContent      = isFs ? 'Exit'  : 'Fullscreen';
+  setTimeout(() => Reveal.layout(), 200);
+});
+
+// Make every section fill the full slide height so flex layouts work
+Reveal.on('ready', () => setSectionHeights());
+Reveal.on('slidechanged', () => setSectionHeights());
+function setSectionHeights() {
+  const h = Reveal.getComputedSlideSize().height;
+  document.querySelectorAll('.reveal .slides > section').forEach(s => {
+    s.style.height = h + 'px';
+  });
+}
+</script>
+</body>
+</html>

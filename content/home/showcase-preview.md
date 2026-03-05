@@ -247,7 +247,7 @@ Watch Presentation
 <div class="sp-cta-row">
 <a href="/showcase/" class="sp-more-btn">
 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-See All 21 Student Projects →
+See Student Projects →
 </a>
 </div>
 </div>

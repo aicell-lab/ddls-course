@@ -2,6 +2,9 @@
 .idea/
 _vendor/
 
+# Svamp session state
+.svamp/
+
 # Hugo
 /resources/
 public/

@@ -165,7 +165,7 @@ design:
   </div>
 
   <div class="hero-ctas">
-    <a href="/course/ddls-2025/" class="hero-btn-primary">
+    <a href="/course/ddls-2026/" class="hero-btn-primary">
       <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
       Explore the Course
     </a>

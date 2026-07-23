@@ -5,7 +5,7 @@ summary: Course content for the 2025 Data-Driven Life Sciences (DDLS) course.
 date: "2025-01-01"
 type: book
 tags:
-  - current
+  - previous
 ---
 
 {{< toc hide_on="xl" >}}

@@ -50,7 +50,7 @@ By the end of the course you will be able to:
 
 ## Course Format and Credits
 
-The course consists of six required modules. Each module spans one week with three fixed sessions: a lecture on **Tuesday 10:00–12:00**, a hands-on computer lab on **Wednesday 13:00–17:00** ([Google Colab](https://colab.research.google.com/?utm_source=scs-index) notebooks), and a journal club on **Friday 10:00–12:00**. Completing all modules plus the final project yields **7.5 ECTS**.
+The course consists of six required modules. Each module spans one week. Most **lectures are pre-recorded and released online at the start of the module week**, so you can watch them at your own pace — the exceptions are two live sessions: the **Module 1 introduction** and the **Module 6 final-project briefing**. The hands-on **computer lab** (**Wednesday 13:00–17:00**, [Google Colab](https://colab.research.google.com/?utm_source=scs-index) notebooks) and the **journal club** (**Friday 10:00–12:00**) are held live over Zoom each week. Completing all modules plus the final project yields **7.5 ECTS**.
 
 Credit breakdown:
 
@@ -75,14 +75,14 @@ A core objective is to strengthen your ability to "learn how to learn." You are 
 
 ## Course Modules
 
-**Note: The topics and guest lecturers for the six modules are being finalized and will be announced ahead of the course start. See the [schedule](./schedule/) for dates and session times as they are confirmed.**
+**Note: The six module topics are set. The guest lecturers for Modules 4 and 5 are still being confirmed. See the [schedule](./schedule/) for dates and session times.**
 
-- [Module 1](./module-1/) — *Topic and lecturer to be announced*
-- [Module 2](./module-2/) — *Topic and lecturer to be announced*
-- [Module 3](./module-3/) — *Topic and lecturer to be announced*
-- [Module 4](./module-4/) — *Topic and lecturer to be announced*
-- [Module 5](./module-5/) — *Topic and lecturer to be announced*
-- [Module 6](./module-6/) — *Topic and lecturer to be announced*
+- [Module 1](./module-1/) — Introduction to Data-Driven Life Sciences
+- [Module 2](./module-2/) — Image Analysis and Microscopy
+- [Module 3](./module-3/) — Precision Medicine and Systems Biology
+- [Module 4](./module-4/) — Protein Structure and Molecular Biology
+- [Module 5](./module-5/) — Single-cell Transcriptomics and Genomics
+- [Module 6](./module-6/) — Automated Scientific Discovery and AI Agents
 - [Final Project](./final-project/) — Apply what you learned to your own project (report for all; presentation for Master's)
 
 ## Assessment

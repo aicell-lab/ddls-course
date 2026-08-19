@@ -18,36 +18,37 @@ Lectures, computer labs, and journal clubs are held online via Zoom. The Zoom li
 
 ### Weekly Structure
 
-Each module runs over one week with three fixed sessions (all times CET/CEST):
+Each module runs over one week. The computer lab and journal club are held live over Zoom at fixed times (all times CET/CEST):
 
-- **Tuesday, 10:00–12:00 — Lecture** (guest lecturer)
+- **Lecture** — most lectures are **pre-recorded and released online at the start of the module week**. Two sessions are live: the **Module 1 introduction** (Tue 25 Aug, 10:00–12:00) and the **Module 6 final-project briefing** (Tue 29 Sep, 10:00–11:00).
 - **Wednesday, 13:00–17:00 — Computer Lab** (hands-on, [Google Colab](https://colab.research.google.com/))
 - **Friday, 10:00–12:00 — Journal Club / Seminar**
 
 ### Session Schedule
 
-The dates and times below are fixed. The topics and guest lecturers for each module are being finalized and will be added here before the course starts.
+The lab and seminar times below are fixed. Recorded lectures are released at the start of each module week. The guest lecturers for Modules 4 and 5 are still being confirmed.
 
 | Module | Date & Time | Type | Topic | Teachers |
 |--------|-------------|------|-------|----------|
-| 1 | Tue 25 Aug, 10:00–12:00 | 🧑🏻‍🏫 Lecture | To be announced | To be announced |
-| 1 | Wed 26 Aug, 13:00–17:00 | 💻 Computer Lab | To be announced | Course team |
-| 1 | Fri 28 Aug, 10:00–12:00 | 💬 Seminar | To be announced | Course team |
-| 2 | Tue 1 Sep, 10:00–12:00 | 🧑🏻‍🏫 Lecture | To be announced | To be announced |
-| 2 | Wed 2 Sep, 13:00–17:00 | 💻 Computer Lab | To be announced | Course team |
-| 2 | Fri 4 Sep, 10:00–12:00 | 💬 Seminar | To be announced | Course team |
-| 3 | Tue 8 Sep, 10:00–12:00 | 🧑🏻‍🏫 Lecture | To be announced | To be announced |
-| 3 | Wed 9 Sep, 13:00–17:00 | 💻 Computer Lab | To be announced | Course team |
-| 3 | Fri 11 Sep, 10:00–12:00 | 💬 Seminar | To be announced | Course team |
-| 4 | Tue 15 Sep, 10:00–12:00 | 🧑🏻‍🏫 Lecture | To be announced | To be announced |
-| 4 | Wed 16 Sep, 13:00–17:00 | 💻 Computer Lab | To be announced | Course team |
-| 4 | Fri 18 Sep, 10:00–12:00 | 💬 Seminar | To be announced | Course team |
-| 5 | Tue 22 Sep, 10:00–12:00 | 🧑🏻‍🏫 Lecture | To be announced | To be announced |
-| 5 | Wed 23 Sep, 13:00–17:00 | 💻 Computer Lab | To be announced | Course team |
-| 5 | Fri 25 Sep, 10:00–12:00 | 💬 Seminar | To be announced | Course team |
-| 6 | Tue 29 Sep, 10:00–12:00 | 🧑🏻‍🏫 Lecture | To be announced | To be announced |
-| 6 | Wed 30 Sep, 13:00–17:00 | 💻 Computer Lab | To be announced | Course team |
-| 6 | Fri 2 Oct, 10:00–12:00 | 💬 Seminar | To be announced | Course team |
+| 1 | Tue 25 Aug, 10:00–12:00 | 🧑🏻‍🏫 Lecture (live) | Introduction to Data-Driven Life Sciences | Wei Ouyang |
+| 1 | Wed 26 Aug, 13:00–17:00 | 💻 Computer Lab | Introduction to Data-Driven Life Sciences | Course team |
+| 1 | Fri 28 Aug, 10:00–12:00 | 💬 Seminar | Introduction to Data-Driven Life Sciences | Course team |
+| 2 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Image Analysis and Microscopy | Estibaliz Gómez de Mariscal |
+| 2 | Wed 2 Sep, 13:00–17:00 | 💻 Computer Lab | Image Analysis and Microscopy | Course team |
+| 2 | Fri 4 Sep, 10:00–12:00 | 💬 Seminar | Image Analysis and Microscopy | Course team |
+| 3 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Precision Medicine and Systems Biology | Avlant Nilsson, Golnaz Taheri |
+| 3 | Wed 9 Sep, 13:00–17:00 | 💻 Computer Lab | Precision Medicine and Systems Biology | Course team |
+| 3 | Fri 11 Sep, 10:00–12:00 | 💬 Seminar | Precision Medicine and Systems Biology | Course team |
+| 4 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Protein Structure and Molecular Biology | To be confirmed |
+| 4 | Wed 16 Sep, 13:00–17:00 | 💻 Computer Lab | Protein Structure and Molecular Biology | Course team |
+| 4 | Fri 18 Sep, 10:00–12:00 | 💬 Seminar | Protein Structure and Molecular Biology | Course team |
+| 5 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Single-cell Transcriptomics and Genomics | To be confirmed |
+| 5 | Wed 23 Sep, 13:00–17:00 | 💻 Computer Lab | Single-cell Transcriptomics and Genomics | Course team |
+| 5 | Fri 25 Sep, 10:00–12:00 | 💬 Seminar | Single-cell Transcriptomics and Genomics | Course team |
+| 6 | Tue 29 Sep, 10:00–11:00 | 🧑🏻‍🏫 Lecture (live) | Final-project briefing | Wei Ouyang |
+| 6 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Automated Scientific Discovery and AI Agents | Wei Ouyang, Gabriel Reder |
+| 6 | Wed 30 Sep, 13:00–17:00 | 💻 Computer Lab | Automated Scientific Discovery and AI Agents | Course team |
+| 6 | Fri 2 Oct, 10:00–12:00 | 💬 Seminar | Automated Scientific Discovery and AI Agents | Course team |
 | — | TBA | 📝 Examination | Final project — oral presentations (Master's only) | Course team |
 
 If you anticipate that you won't be able to attend any of the sessions, please [contact](/contact/) us as soon as possible.

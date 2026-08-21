@@ -12,7 +12,7 @@ course_module: "true"
 
 **Recorded lecture — released online at the start of the module week**, plus a **1-hour
 live lecture on Tuesday 29 September 2026, 10:00–11:00 CEST** to introduce and announce the
-final project. The computer lab (Wednesday 13:00–17:00) and journal club (Friday
+final project. The computer lab (Wednesday 13:00–17:00) and seminar (Friday
 10:00–12:00) are held live over Zoom.
 
 Module 6 focuses on automated scientific discovery and AI agents. You will learn how to design, build, and evaluate agentic workflows that plan experiments, orchestrate tools and data pipelines, and interface with lab automation. The module also opens the final project: the live session walks through the project brief, expectations, and timeline.
@@ -34,4 +34,4 @@ Gabriel Reder is a research associate in automated laboratory discovery and info
 
 Discovery in the biological laboratory is a difficult and time-consuming process. At every step, practitioners are faced with repetitive, complex, and labor-intensive tasks. Generative AI, especially large language models, can allow scientists to automate many of these tasks including experimentation, compilation, and data analysis. In this lecture, we will explore some examples of how researchers can utilize modern AI tools to aid their discovery research in the lab and at the desk.
 
-The computer lab notebook and the journal-club paper and question set will be released at the start of the module week.
+The computer lab notebook will be released at the start of the module week; you will present your lab work at the Friday seminar.

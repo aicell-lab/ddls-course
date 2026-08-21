@@ -18,18 +18,9 @@ Guest lecturers (DDLS Fellows, SciLifeLab Fellows, and SciLifeLab facility train
 
 ## Registration
 
-**Registration for DDLS 2026 is open.** The course is offered online and free of charge.
+**Registration for DDLS 2026 is now closed.** The course is offered online and free of charge.
 
-{{< cta cta_text="Sign up for DDLS 2026" cta_link="https://forms.gle/gbozCHmj3rZxqrbWA" >}}
-
-How to register depends on your affiliation:
-
-- **KTH Master's students:** register in Ladok, course code **[SK2538](https://www.kth.se/student/kurser/kurs/SK2538?l=en)**.
-- **KTH PhD students:** register in Ladok, course code **[FSK3538](https://www.kth.se/student/kurser/kurs/FSK3538?l=en)**, or email the PhD program administrator.
-- **Master's students from other Swedish universities:** contact your program administration for approval before signing up.
-- **PhD students from other universities and other participants:** sign up via the form above; we can issue a certificate of participation upon completion (check with your program administrator that the course can be credited).
-
-If you do not need course credits, you are welcome to join the full course or individual modules; a certificate can still be provided.
+Thank you to everyone who signed up. Accepted participants have been notified by email with the course details and joining information. If you have a question about your registration, contact us at <ddls-course@scilifelab.se>.
 
 ## Intended Learning Outcomes
 
@@ -50,7 +41,7 @@ By the end of the course you will be able to:
 
 ## Course Format and Credits
 
-The course consists of six required modules. Each module spans one week. Most **lectures are pre-recorded and released online at the start of the module week**, so you can watch them at your own pace — the exceptions are two live sessions: the **Module 1 introduction** and the **Module 6 final-project briefing**. The hands-on **computer lab** (**Wednesday 13:00–17:00**, [Google Colab](https://colab.research.google.com/?utm_source=scs-index) notebooks) and the **journal club** (**Friday 10:00–12:00**) are held live over Zoom each week. Completing all modules plus the final project yields **7.5 ECTS**.
+The course consists of six required modules. Each module spans one week. Most **lectures are pre-recorded and released online at the start of the module week**, so you can watch them at your own pace — the exceptions are two live sessions: the **Module 1 introduction** and the **Module 6 final-project briefing**. The hands-on **computer lab** (**Wednesday 13:00–17:00**, [Google Colab](https://colab.research.google.com/?utm_source=scs-index) notebooks) and the **seminar** (**Friday 10:00–12:00**) are held live over Zoom each week. Completing all modules plus the final project yields **7.5 ECTS**.
 
 Credit breakdown:
 
@@ -60,10 +51,10 @@ Credit breakdown:
 
 ## Modules and Certification
 
-Both the computer lab and the journal club are mandatory and pass/fail assessed.
+Both the computer lab and the seminar are mandatory and pass/fail assessed.
 
 - Labs: You receive a Jupyter notebook with guided exercises. Work in [Google Colab](https://colab.research.google.com/?utm_source=scs-index), discuss during the session, and submit your completed notebook for evaluation.
-- Journal club: You address a standard question set each week while discussing the assigned paper. Participation and contributions are graded.
+- Seminar: Each week you present and discuss the work you carried out during that module's computer lab. Participation and contributions are graded. (The seminar format will be introduced in the Module 1 live session.)
 
 Final project: You carry out your own project on a topic that relates to the content of the course, culminating in a project report (all participants). **Master's students** additionally give a **mandatory oral presentation, graded A–F**, which is the course grade. **PhD students and other participants** are assessed **pass/fail**, and their oral presentation is optional. Details will be announced during the course.
 
@@ -71,7 +62,7 @@ To receive ECTS credits or a certificate of participation you must actively atte
 
 ## Self-Directed Learning
 
-A core objective is to strengthen your ability to "learn how to learn." You are encouraged to use modern AI tools (e.g., ChatGPT, Claude, Gemini) to explore concepts, draft code, and critique analyses—while remaining accountable for verifying outputs, documenting usage, and recognizing limitations and biases. This approach is integral to both labs and journal clubs.
+A core objective is to strengthen your ability to "learn how to learn." You are encouraged to use modern AI tools (e.g., ChatGPT, Claude, Gemini) to explore concepts, draft code, and critique analyses—while remaining accountable for verifying outputs, documenting usage, and recognizing limitations and biases. This approach is integral to both labs and seminars.
 
 ## Course Modules
 
@@ -87,7 +78,7 @@ A core objective is to strengthen your ability to "learn how to learn." You are 
 
 ## Assessment
 
-Computer labs and journal clubs are **pass/fail for everyone** (attendance + satisfactory notebook / engaged participation).
+Computer labs and seminars are **pass/fail for everyone** (attendance + satisfactory notebook / engaged participation).
 
 **Master's students:**
 - Final project report — pass/fail
@@ -108,9 +99,9 @@ Questions: use the contact page [here](/contact/) or email <ddls-course@scilifel
 ## Instructors
 
 You will meet:  
-- {{< mention "wei" >}}, Assistant Professor in Biophysics (lectures, journal clubs, grading) <wei.ouyang@scilifelab.se> (course responsible)  
-- {{< mention "songtao" >}}, PhD student (lectures support, labs, journal clubs) <songtao.cheng@scilifelab.se>  
-- {{< mention "nils" >}}, PhD student (lectures support, labs, journal clubs) <nils.mechtel@scilifelab.se>
+- {{< mention "wei" >}}, Assistant Professor in Biophysics (lectures, seminars, grading) <wei.ouyang@scilifelab.se> (course responsible)  
+- {{< mention "songtao" >}}, PhD student (lectures support, labs, seminars) <songtao.cheng@scilifelab.se>  
+- {{< mention "nils" >}}, PhD student (lectures support, labs, seminars) <nils.mechtel@scilifelab.se>
 
 ## Schedule
 
@@ -127,9 +118,7 @@ Autumn 2026, Period 1 (50% pace): **24 August – 23 October 2026**. The course 
 {{< /spoiler >}}
 
 {{< spoiler text="How do I register?" >}}
-- KTH Master's students: in Ladok, course code [SK2538](https://www.kth.se/student/kurser/kurs/SK2538?l=en)
-- KTH PhD students: in Ladok, course code [FSK3538](https://www.kth.se/student/kurser/kurs/FSK3538?l=en), or by email to the PhD program administrator
-- Other participants: via the [sign-up form](https://forms.gle/gbozCHmj3rZxqrbWA)
+Registration for DDLS 2026 is now closed. If you signed up, watch for course information by email. For questions, contact <ddls-course@scilifelab.se>.
 {{< /spoiler >}}
 
 {{< spoiler text="How do I access course material?" >}}
@@ -140,8 +129,8 @@ Each module page hosts its materials; we do not use KTH Canvas.
 Yes, the entire course is conducted online via Zoom. The Zoom link will be shared with registered participants ahead of the course start.
 {{< /spoiler >}}
 
-{{< spoiler text="What if I must miss a lab or journal club?" >}}
-Attendance is mandatory. Contact the course responsible in advance; approved exceptions still require a completed notebook or a written response to the journal club questions.
+{{< spoiler text="What if I must miss a lab or seminar?" >}}
+Attendance is mandatory. Contact the course responsible in advance; approved exceptions still require a completed notebook and arranging to present your lab work to the group.
 {{< /spoiler >}}
 
 {{< spoiler text="Will lectures be recorded?" >}}

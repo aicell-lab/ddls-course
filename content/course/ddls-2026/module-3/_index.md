@@ -11,7 +11,7 @@ course_module: "true"
 **Module week**: Week 37 (starting 8 September 2026)
 
 **Recorded lectures — released online at the start of the module week.** The computer lab
-(Wednesday 13:00–17:00) and journal club (Friday 10:00–12:00) are held live over Zoom.
+(Wednesday 13:00–17:00) and seminar (Friday 10:00–12:00) are held live over Zoom.
 
 Module 3 focuses on clinical applications of AI and machine learning with an emphasis on multi-omics integration, biomarker discovery, and clinical data analysis. The module highlights how biologically informed models and novel machine learning methods can advance personalized medicine, cancer genomics, and systems biology modeling.
 
@@ -34,4 +34,4 @@ Avlant Nilsson is Assistant Professor in the Department of Cell and Molecular Bi
 
 Golnaz Taheri is an Assistant Professor in the Division of Computational Science and Technology at KTH Royal Institute of Technology and a Data-Driven Life Science (DDLS) SciLifeLab & Wallenberg Fellow. She holds a PhD in Computer Science and previously served as an Assistant Professor in the Data Science Research Group at Stockholm University. Her research focuses on developing novel **machine learning methods** applied to large-scale, complex biological data to uncover developmental, temporal, and spatial patterns, with applications in **personalized medicine**, **cancer genomics**, and other life science domains.
 
-The computer lab notebook and the journal-club paper and question set will be released at the start of the module week.
+The computer lab notebook will be released at the start of the module week; you will present your lab work at the Friday seminar.

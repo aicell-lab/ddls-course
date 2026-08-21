@@ -14,15 +14,15 @@ weight: 8
 - **Final project period:** *to be announced*
 - **Oral presentations (Master's students):** *to be announced*
 
-Lectures, computer labs, and journal clubs are held online via Zoom. The Zoom link and a calendar subscription will be shared with registered participants ahead of the course start. The format of the oral presentation (in-person or online) will be decided on an individual basis.
+Lectures, computer labs, and seminars are held online via Zoom. The Zoom link and a calendar subscription will be shared with registered participants ahead of the course start. The format of the oral presentation (in-person or online) will be decided on an individual basis.
 
 ### Weekly Structure
 
-Each module runs over one week. The computer lab and journal club are held live over Zoom at fixed times (all times CET/CEST):
+Each module runs over one week. The computer lab and seminar are held live over Zoom at fixed times (all times CET/CEST):
 
 - **Lecture** — most lectures are **pre-recorded and released online at the start of the module week**. Two sessions are live: the **Module 1 introduction** (Tue 25 Aug, 10:00–12:00) and the **Module 6 final-project briefing** (Tue 29 Sep, 10:00–11:00).
 - **Wednesday, 13:00–17:00 — Computer Lab** (hands-on, [Google Colab](https://colab.research.google.com/))
-- **Friday, 10:00–12:00 — Journal Club / Seminar**
+- **Friday, 10:00–12:00 — Seminar** — present and discuss the work you did in that week's computer lab
 
 ### Session Schedule
 

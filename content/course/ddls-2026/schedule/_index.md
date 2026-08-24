@@ -14,7 +14,11 @@ weight: 8
 - **Final project period:** *to be announced*
 - **Oral presentations (Master's students):** *to be announced*
 
-Lectures, computer labs, and seminars are held online via Zoom. The Zoom link and a calendar subscription will be shared with registered participants ahead of the course start. The format of the oral presentation (in-person or online) will be decided on an individual basis.
+All live sessions are held online on the **same Zoom meeting** all term: <https://kth-se.zoom.us/j/66475726850>
+
+{{< cta cta_text="▶️ Join on Zoom — https://kth-se.zoom.us/j/66475726850" cta_link="https://kth-se.zoom.us/j/66475726850" >}}
+
+Bookmark this link — it is the same for every computer lab, seminar, and live lecture. The format of the oral presentation (in-person or online) will be decided on an individual basis.
 
 ### Weekly Structure
 

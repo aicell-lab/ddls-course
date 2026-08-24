@@ -16,6 +16,16 @@ Welcome to the 2026 Data-Driven Life Sciences (DDLS) course — a hands-on maste
 
 Guest lecturers (DDLS Fellows, SciLifeLab Fellows, and SciLifeLab facility trainers) present real data, methods, and models underpinning current biological research. The course is primarily aimed at KTH Master's students, and is also open to PhD students and other interested participants.
 
+## 🔗 Join the Course Online (Zoom)
+
+All live sessions — the computer labs (Wed 13:00–17:00), seminars (Fri 10:00–12:00), and the two live lectures (Module 1 introduction and Module 6 final-project briefing) — are held on the **same Zoom meeting** all term:
+
+{{< cta cta_text="▶️ Join on Zoom — https://kth-se.zoom.us/j/66475726850" cta_link="https://kth-se.zoom.us/j/66475726850" >}}
+
+**Meeting link:** <https://kth-se.zoom.us/j/66475726850>
+
+Bookmark this link — it is the same for every session. Session dates and times are on the [schedule](./schedule/).
+
 ## Registration
 
 **Registration for DDLS 2026 is now closed.** The course is offered online and free of charge.

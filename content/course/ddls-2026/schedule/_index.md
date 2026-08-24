@@ -20,6 +20,18 @@ All live sessions are held online on the **same Zoom meeting** all term: <https:
 
 Bookmark this link — it is the same for every computer lab, seminar, and live lecture. The format of the oral presentation (in-person or online) will be decided on an individual basis.
 
+### 📅 Course Calendar
+
+Add the DDLS 2026 calendar to your own calendar app to get every computer lab, seminar, and live lecture (each with the Zoom link) automatically — or read it directly below.
+
+{{< cta cta_text="➕ Add to Google Calendar" cta_link="https://calendar.google.com/calendar/u/0?cid=Y181NjAzZDk1ZmE1ODA0MWY1NDliNDM2Y2YwOGY0Y2ZhZGFmYTA3NzQyZTg5MWYxOWMxZjhiMjY5YTgyZTg5MDM1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20" >}}
+
+Using Apple Calendar, Outlook, or another app? Subscribe with the [iCal feed](https://calendar.google.com/calendar/ical/c_5603d95fa58041f549b436cf08f4cfadafa07742e891f19c1f8b269a82e89035%40group.calendar.google.com/public/basic.ics).
+
+<div style="position: relative; border: 1px solid var(--gray-300, #d1d5db); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin: 1.5rem 0; background: #fff;">
+  <iframe src="https://calendar.google.com/calendar/embed?src=c_5603d95fa58041f549b436cf08f4cfadafa07742e891f19c1f8b269a82e89035%40group.calendar.google.com&ctz=Europe%2FStockholm&mode=AGENDA&showTitle=0&showPrint=0&showCalendars=0&showTz=0" style="border: 0; width: 100%; height: 600px; display: block;" frameborder="0" scrolling="no" title="DDLS 2026 course calendar"></iframe>
+</div>
+
 ### Weekly Structure
 
 Each module runs over one week. The computer lab and seminar are held live over Zoom at fixed times (all times CET/CEST):

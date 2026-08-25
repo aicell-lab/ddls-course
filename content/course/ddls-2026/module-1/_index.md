@@ -16,6 +16,15 @@ course_module: "true"
 delivered live to open the course; the recorded lectures for the following modules are
 released at the start of each module week (see the [schedule](../schedule/)).
 
+### Lecture slides
+
+The slides from the live introduction are online — they open straight in your browser,
+no download needed. Move through the deck with the **arrow keys**, **space**, the
+on-screen arrows, or by swiping on a phone. Press **F** for full screen, and **P** to
+print or save the whole deck as a PDF.
+
+{{< cta cta_text="Open the Module 1 slides" cta_link="/presentation/ddls-2026-module-1/" >}}
+
 {{< figure src="Wei_Ouyang.png" class="profile-photo" >}}
 
 Module 1 serves as the foundational introduction to the Data-Driven Life Sciences (DDLS) course. This basic module is designed to familiarize participants with the overarching principles and goals of DDLS, getting prepared for machine learning topics and providing a comprehensive overview of the course structure, content, and logistics. Participants will be introduced to the various topics that will be covered in the subsequent modules, as well as the format of the course, which includes lectures, computer labs, and seminars. The module will also outline the examination and certification requirements.

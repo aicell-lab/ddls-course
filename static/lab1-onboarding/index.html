@@ -15,9 +15,10 @@
   .wrap{max-width:1600px;margin:0 auto;padding:0}
   /* opened directly (not embedded): pin the player to the screen so the controls,
      chapter list and narration are always visible without scrolling */
-  body.standalone{overflow:hidden}
-  body.standalone .wrap,
-  body.standalone #film{height:100%;max-width:none}
+  /* centre the player in the screen and let the surround read as a frame, not as
+     content that ran out */
+  body.standalone{overflow:hidden; display:flex; align-items:center; justify-content:center}
+  body.standalone .wrap{width:100%; max-width:none}
   noscript{display:block;padding:24px;font-family:'IBM Plex Sans',sans-serif;color:#41505f}
 </style>
 </head>

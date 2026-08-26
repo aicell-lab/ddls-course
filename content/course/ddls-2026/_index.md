@@ -26,6 +26,23 @@ All live sessions — the computer labs (Wed 13:00–17:00), seminars (Fri 10:00
 
 Bookmark this link — it is the same for every session. Session dates and times are on the [schedule](./schedule/).
 
+## 🚪 The Course Portal
+
+The hands-on part of the course runs through the **course portal**. Each week it hosts the
+**data owner** you interview, issues the **API key** that connects your local AI agent, and
+lets you **download** the week's dataset and your own transcripts. You'll use it live in
+every Wednesday lab.
+
+{{< cta cta_text="Open the course portal — portal.ddls.aicell.io" cta_link="https://portal.ddls.aicell.io" >}}
+
+**First time?** Activate your account with the email you registered with and the course code
+we emailed you, then set a password. Full step-by-step instructions are on each module's
+computer-lab page (start with [Computer Lab 1](./module-1/lab/)).
+
+> Everything you need to *know* — how the labs work, the method, the setup guide, the
+> assessment — lives here on the course website and stays available after the course ends.
+> The portal holds the live, per-week pieces (the chatbot, your keys, the datasets).
+
 ## Registration
 
 **Registration for DDLS 2026 is now closed.** The course is offered online and free of charge.
@@ -51,7 +68,7 @@ By the end of the course you will be able to:
 
 ## Course Format and Credits
 
-The course consists of six required modules. Each module spans one week. Most **lectures are pre-recorded and released online at the start of the module week**, so you can watch them at your own pace — the exceptions are two live sessions: the **Module 1 introduction** and the **Module 6 final-project briefing**. The hands-on **computer lab** (**Wednesday 13:00–17:00**, [Google Colab](https://colab.research.google.com/?utm_source=scs-index) notebooks) and the **seminar** (**Friday 10:00–12:00**) are held live over Zoom each week. Completing all modules plus the final project yields **7.5 ECTS**.
+The course consists of six required modules. Each module spans one week. Most **lectures are pre-recorded and released online at the start of the module week**, so you can watch them at your own pace — the exceptions are two live sessions: the **Module 1 introduction** and the **Module 6 final-project briefing**. The hands-on **computer lab** (**Wednesday 13:00–17:00**, run through the [course portal](https://portal.ddls.aicell.io)) and the **seminar** (**Friday 10:00–12:00**) are held live over Zoom each week. Completing all modules plus the final project yields **7.5 ECTS**.
 
 Credit breakdown:
 
@@ -63,8 +80,8 @@ Credit breakdown:
 
 Both the computer lab and the seminar are mandatory and pass/fail assessed.
 
-- Labs: You receive a Jupyter notebook with guided exercises. Work in [Google Colab](https://colab.research.google.com/?utm_source=scs-index), discuss during the session, and submit your completed notebook for evaluation.
-- Seminar: Each week you present and discuss the work you carried out during that module's computer lab. Participation and contributions are graded. (The seminar format will be introduced in the Module 1 live session.)
+- Labs: Each week you take on someone else's biological problem through the [course portal](https://portal.ddls.aicell.io) — you **interview** a data owner to pin down the real question, then **direct an AI agent** to solve it and **verify** the result like a scientist. You submit your transcripts and a short report; the teaching team reads the transcript, not just the result. See each module's computer-lab page for full instructions.
+- Seminar: Each week you present and defend the work you carried out during that module's computer lab. Presenters are drawn at random (7 min + 3 min discussion), so everyone prepares. See [Seminar 1](./module-1/seminar/) for the format.
 
 Final project: You carry out your own project on a topic that relates to the content of the course, culminating in a project report (all participants). **Master's students** additionally give a **mandatory oral presentation, graded A–F**, which is the course grade. **PhD students and other participants** are assessed **pass/fail**, and their oral presentation is optional. Details will be announced during the course.
 
@@ -140,7 +157,7 @@ Yes, the entire course is conducted online via Zoom. The Zoom link will be share
 {{< /spoiler >}}
 
 {{< spoiler text="What if I must miss a lab or seminar?" >}}
-Attendance is mandatory. Contact the course responsible in advance; approved exceptions still require a completed notebook and arranging to present your lab work to the group.
+Labs and seminars are the mandatory live core. You may miss **one** mandatory session in total (a lab *or* a seminar, not one of each). Email <ddls-course@scilifelab.se> **before** the session — not after. If you miss a lab, you still submit that week's transcripts and report.
 {{< /spoiler >}}
 
 {{< spoiler text="Will lectures be recorded?" >}}

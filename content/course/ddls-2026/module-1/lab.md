@@ -32,7 +32,7 @@ By the end of this lab you should be able to:
   definite ones.
 - **Translate** an interview transcript into two working documents: an `AGENTS.md` (the
   brief) and a `spec.md` (every detail, number, path and trap).
-- Set up a local **analyst agent** and point it at the course portal.
+- Set up **Pi**, your local **analyst agent**, and point it at the course portal.
 - **Direct** the agent to build an analysis, and **validate** it like a scientist — with
   controls, not vibes.
 - Produce a short **report** you own, and prepare to defend it at Friday's seminar.
@@ -73,7 +73,7 @@ chatbot), issues the **API key** your local analyst agent will use, and lets you
 1. Go to the portal at `https://ddls-portal-6228434e.svc.hypha.aicell.io` and choose **Activate account**.
 2. Enter **the email you registered for the course with** and the **course code** we sent
    you by email.
-3. **Choose a password.** That's it — you're in.
+3. **Choose a password** (and confirm it in the second box). That's it — you're in.
 
 **Coming back later** (e.g. after closing the tab): use **Sign in** with the same **email +
 the password you just set** — not the course code. The code is only for first activation.
@@ -86,6 +86,10 @@ What the portal gives you (four things, and only these):
 - **Download your interview transcript** — the full chat, to feed into Part 2.
 - **Generate an API key** — for your local analyst agent (Part 3).
 - **Download the dataset** — the real files Agent A is talking about (Part 4).
+
+> **Where to find each:** the chat, the transcript and the dataset are all on **this week's
+> lab page** inside the portal; the **API key** is generated on your **dashboard**
+> (the landing page after you sign in).
 
 ## Part 1 — The interview (Agent A)
 
@@ -234,12 +238,56 @@ and talks to the course model **through the portal gateway** — so every call c
 your portal budget, and the teaching team sees the transcript. Pi reads an `AGENTS.md`
 context file and can run code, read files and write output.
 
-> **New to the terminal? Two minutes of setup first.** Pi runs in a **terminal** (macOS:
-> *Terminal.app*; Windows: *PowerShell*; Linux: your shell). You install it with **npm**,
-> which comes with **Node.js** — you need **version 18 or newer**. Check what you have by
-> running `node --version`. If it prints nothing, or a number below 18, install the latest
-> LTS from <https://nodejs.org> first, then reopen the terminal. Everything below is
-> copy-paste — you won't be writing code, just running commands.
+{{< spoiler text="**Why Pi, and not Codex or another agent?**" >}}
+We benchmarked Pi head-to-head against OpenAI's Codex CLI on a real week-1 task, both driven
+through this exact course gateway. Three things decided it:
+
+- **It works through our portal today.** Pi reaches the course model over the standard
+  chat-completions API with a one-line config change. Codex needs a different API mode the
+  course gateway doesn't serve, so it couldn't complete the task through the portal.
+- **It's cheaper and faster.** Roughly **4× lower cost** per task and **~3× faster** in our
+  test — which matters when a fixed budget has to stretch across six lab weeks and a project.
+- **Quality was a wash.** Both produced a solid analysis and avoided the same traps.
+
+So the course standardises on Pi. The skill you're building — *directing and checking* an
+agent — carries over to any agent; Pi is simply the one we support in the labs.
+{{< /spoiler >}}
+
+> **Never opened a terminal before? Start here — this assumes zero experience.**
+> Pi is a program you run by typing commands into a **terminal**: a plain text window where you
+> type instructions and press Enter instead of clicking buttons. You'll open it once and paste in
+> the commands below — you won't be writing any code yourself.
+>
+> **Step A — open a terminal:**
+> - **Windows:** click the **Start** button, type `PowerShell`, and open **Windows PowerShell**.
+> - **macOS:** press **⌘ Command + Space**, type `Terminal`, and press **Return**.
+> - **Linux:** open your applications menu and search for **Terminal** (or press **Ctrl + Alt + T**).
+>
+> A window with a blinking cursor appears. To run a command, type (or paste) it and press
+> **Enter / Return**.
+>
+> **Step B — install Node.js** (this also installs `npm`, the tool that installs Pi). First check
+> whether you already have it — run:
+> ```bash
+> node --version
+> ```
+> If that prints a number **18.0 or higher**, you're set — go to step 1 below. If it prints
+> nothing or a lower number, install the **LTS** version:
+> - **Windows & macOS (easiest):** download the installer from
+>   **<https://nodejs.org/en/download>** — pick the **LTS** build (the page detects your system),
+>   run the downloaded file, and click through the defaults (an `.msi` on Windows, a `.pkg` on macOS).
+> - **macOS with Homebrew** (optional): `brew install node`
+> - **Linux:** use your distro's package manager — official commands per distro are at
+>   **<https://nodejs.org/en/download/package-manager/all>**.
+>
+> Then **close and reopen the terminal** and confirm both tools are ready:
+> ```bash
+> node --version
+> npm --version
+> ```
+> Both should print a version number. Full official walkthrough: **<https://nodejs.org/learn>**.
+> Still stuck? Bring it to the start of the lab — the first part of the live session is exactly
+> for getting everyone set up. Everything below is copy-paste.
 
 **1. Install Pi:**
 

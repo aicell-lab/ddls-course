@@ -623,6 +623,60 @@ Two non-negotiables (they are the course AI policy):
 - **Disclose the AI use.** Say how you worked and attach your chat history. Use is expected;
   hiding it is not.
 
+### Ask for it as one HTML file
+
+Don't take the report as Markdown, and don't fight a Word document. Ask for **one
+self-contained `report.html`** — the styling and the figures embedded *inside* that single
+file. Double-click and it opens; email it to the data owner and it still works on their
+machine, with no attachments to lose and nothing to install. Need paper? **Ctrl+P** turns it
+into a clean PDF.
+
+The reason isn't decoration. HTML is the one format where the agent can put a table *as* a
+table, a figure *as* a figure, and your caveats somewhere your eye actually lands — instead of
+flattening all three into the same grey wall of text. Anthropic's
+[*The unreasonable effectiveness of HTML*](https://claude.com/blog/using-claude-code-the-unreasonable-effectiveness-of-html)
+makes the case at length and lands on the point that matters here: the real win is that **you
+start reading the output properly again**. An unread report is an unchecked report — and
+Part 5 was entirely about checking.
+
+**Copy this into Pi** (adjust the section list if your run needs different sections):
+
+```text
+Write my lab report as ONE self-contained HTML file called report.html — CSS in a <style>
+tag, no external files, no CDN links. It has to open from a double-click and still work when
+I email it to the data owner.
+
+Embed the figures with a script, never by hand: write the HTML with plain <img> tags pointing
+at the PNG filenames first, then run a short Python script that rewrites each src into a
+base64 data URI. Don't print base64 into the chat.
+
+Read spec.md, my results file and the analysis code first, then write these sections:
+1. The question the data owner actually asked — in their words.
+2. What I built — the analysis in plain language a biologist can follow.
+3. What I found — the numbers, with the figure(s).
+4. What I checked — every control I ran, and whether it passed.
+5. What I would NOT claim — what this data cannot answer, what would change the conclusion,
+   where I'm unsure. Be blunt; don't soften this section.
+6. AI disclosure — which agent did what, and what I verified myself.
+
+Style: clean and typographic, not a dashboard. Single column, max-width about 46em, generous
+line height, system font stack, one restrained accent colour, real <table> elements for
+numbers. Add a @media print block so Ctrl+P gives a clean PDF.
+
+Every number must come from my actual output files. Don't invent or re-round anything — if a
+number isn't in the files, leave a visible TODO instead.
+```
+
+> **Why the "embed with a script" line is in there.** Left to itself the agent will happily
+> dump 150 kB of base64 through the conversation to get the picture into the file — it works,
+> but it burns your budget on a blob neither of you will ever read. Telling it to do the
+> substitution *in a script* keeps the image out of the chat entirely.
+
+Then **open the file and read it** — that is the entire point of asking for something readable.
+Check every number against your own output. If section 5 has gone soft ("further work is
+needed"), push back: *"You hedged. What specifically can this dataset not answer?"* On the
+course gateway a run of this prompt takes well under a minute.
+
 ## Part 7 — Prepare your seminar presentation
 
 At **Friday's seminar (10:00–12:00)** we draw presenters **at random**, and everyone must
@@ -637,6 +691,82 @@ lab:
 
 Being drawn with nothing prepared is a fail for that seminar. It exists so that **everyone**
 spends Thursday thinking critically about their own work.
+
+### Build the deck as one HTML file too
+
+Same move, same reason: **one `slides.html`**, opened in your browser, arrow keys to advance.
+Nothing to install, no font gone missing on someone else's laptop, and **Ctrl+P** prints one
+slide per page if you want a PDF on a USB stick as backup.
+
+**Copy this into Pi:**
+
+```text
+Make my seminar deck as ONE self-contained HTML file called slides.html. One <section> per
+slide, each filling the viewport with its content vertically centred; arrow keys and space
+advance.
+
+Embed the figure with a script: write a plain <img> tag pointing at the PNG first, then run a
+short Python script that rewrites that src into a base64 data URI inside the file. Do NOT load
+the image at runtime with fetch() or XHR — that breaks when the file is opened from disk.
+
+Eight slides, no more. I get 7 minutes, so that's about 45 seconds each:
+1. Title: the question, who the data owner is, my name.
+2. The question behind the question: what they asked vs what they actually needed.
+3. The data: what I was given, and what was missing from it.
+4. What I built: how I briefed the agent (AGENTS.md / spec.md).
+5. The result: the main figure, large, and one sentence of claim.
+6. What I checked: each control, and what it ruled out.
+7. What I would NOT claim: the honest limits.
+8. What I'd do next, and what I'd ask the owner.
+
+Style: high contrast, big type (body at least 28px, slide titles 3rem+), at most ~40 words on
+a slide, one accent colour, generous margins. No bullet walls — if a slide needs a paragraph,
+it's two slides. Under each <section>, put an HTML comment with the speaker notes: what I
+should actually say out loud for those 45 seconds. Add a @media print rule that puts one slide
+per page, so I have a PDF backup.
+
+Use only numbers that appear in my results file.
+
+Then check your own work and fix what fails: confirm the file has a data:image/ src, no
+fetch(, no http:// or https:// links, and that the inline JavaScript parses.
+```
+
+That last paragraph is doing real work: without it the agent tends to fetch the image at
+runtime, which looks fine on its machine and shows a broken box on yours. Making it check its
+own output is cheaper than finding out on Friday morning.
+
+Then rehearse once against a clock. Seven minutes is eight slides at roughly 45 seconds each —
+and the two the room will actually push on are **what you checked** and **what you would not
+claim**. Know those cold.
+
+<details>
+<summary><b>Optional — an agent skill that makes these pages look genuinely good</b></summary>
+
+If you want more than clean typography — a pipeline diagram, a sidebar you can navigate, a
+properly rendered comparison table — there's a Pi extension for it. From inside your lab
+folder:
+
+```bash
+pi install git:github.com/nicobailon/visual-explainer -l
+```
+
+The `-l` keeps it local to this folder rather than installing it for everything you ever do.
+Restart Pi, then ask in plain words: *"Use the visual-explainer skill to build a page in this
+folder that explains what the analysis did, the batch structure of the data, and the control I
+ran."*
+
+We tested this against the course gateway on `gpt-5.6-luna`: it installs and runs. Two things
+to know before you lean on it:
+
+- It pulls its fonts from a CDN, so the page is **not** fully offline — it still opens without
+  a connection, it just falls back to a system font. For the report you actually hand in, the
+  plain prompt in Part 6 is the safer choice.
+- It also drops a copy of the page in `~/.agent/diagrams/`. Harmless, but don't be surprised.
+
+This is enrichment, not a requirement. A plain, honest `report.html` passes this lab; a
+beautiful one that you didn't check does not.
+
+</details>
 
 ## What to hand in — and what we look at
 

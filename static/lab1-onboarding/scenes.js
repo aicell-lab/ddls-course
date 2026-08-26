@@ -768,50 +768,61 @@
 
   /* ============================================================ 9 · env var */
   (function () {
-    var s = film.scene('env', { title: 'Put your key in the environment', kicker: 'Step 08', dur: 22 });
-    head(s, 'Step 08 · on your laptop', 'Put your key in the environment',
-      'The one line that really does differ between PowerShell and everything else.');
+    var s = film.scene('env', { title: 'Save the key in a .env file', kicker: 'Step 08', dur: 30 });
+    head(s, 'Step 08 · on your laptop', 'Save the key in a <span style="font-family:var(--mono);font-size:.86em">.env</span> file, then load it',
+      'The portal shows a key once. Put it on disk in your lab folder so you never need it again.');
 
-    var solo = U.osSolo({ x: 300, y: 196, w: 1000 });
+    var solo = U.osSolo({ x: 260, y: 190, w: 1080 });
     s.node.appendChild(solo.node);
     s.enter(solo.node, 0.3, 0.5);
 
+    var K = FAKE_KEY.slice(0, 22) + '…';
     OSK.forEach(function (k) {
       var o = OS[k];
       var col = solo.variant(k);
       col.appendChild(el('div', 'os-tag', '<span class="badge">' + icon(o.badge, 13) + '</span>' + o.name + ' · ' + o.shell));
 
-      var t = U.terminal(k, null, { h: 240 });
+      var t = U.terminal(k, null, { h: 300 });
       t.node.style.width = '100%';
-      t.body.style.fontSize = '14px';
+      t.body.style.fontSize = '13.6px';
       col.appendChild(t.node);
 
+      // write the file
       var c1 = t.cmd(k === 'win'
-        ? '$env:DDLS_API_KEY = "' + FAKE_KEY.slice(0, 22) + '…"'
-        : 'export DDLS_API_KEY="' + FAKE_KEY.slice(0, 22) + '…"');
+        ? 'Set-Content .env "DDLS_API_KEY=' + K + '"'
+        : "echo 'DDLS_API_KEY=" + K + "' > .env");
+      var c2 = t.cmd(k === 'win' ? 'Add-Content .gitignore ".env"' : 'echo ".env" >> .gitignore');
       t.gap();
-      var c2 = t.cmd(k === 'win' ? 'echo $env:DDLS_API_KEY' : 'echo $DDLS_API_KEY');
-      var o2 = t.out(FAKE_KEY.slice(0, 22) + '…', 'ok'); o2.classList.add('fx');
-      s.type(c1.txt, c1.text, 1.4, 2.4);
-      s.type(c2.txt, c2.text, 5.4, 1.3);
-      s.enter(o2, 7.2, 0.3);
+      // load it into this terminal
+      var c3 = t.cmd(k === 'win'
+        ? 'Get-Content .env | ForEach-Object { if ($_ -match \'^\\s*([^#][^=]*)=(.*)$\') {\n    [Environment]::SetEnvironmentVariable($matches[1].Trim(), $matches[2].Trim()) } }'
+        : 'set -a; source .env; set +a');
+      t.gap();
+      var c4 = t.cmd(k === 'win' ? 'echo $env:DDLS_API_KEY' : 'echo $DDLS_API_KEY');
+      var o4 = t.out(K, 'ok'); o4.classList.add('fx');
+
+      s.type(c1.txt, c1.text, 1.4, 2.2);
+      s.type(c2.txt, c2.text, 4.4, 1.4);
+      s.type(c3.txt, c3.text, 8.0, k === 'win' ? 3.4 : 1.6);
+      s.type(c4.txt, c4.text, 13.4, 1.2);
+      s.enter(o4, 15.2, 0.3);
 
       var note = el('div', 'os-note fx', k === 'win'
-        ? '<b>Other shells:</b> macOS and Linux use <code>export DDLS_API_KEY="…"</code> instead. ' +
-          '<b>Keep it:</b> <code>setx DDLS_API_KEY "…"</code>, then open a new PowerShell window.'
-        : '<b>Other shells:</b> Windows PowerShell uses <code>$env:DDLS_API_KEY = "…"</code> instead. ' +
-          '<b>Keep it:</b> add the same <code>export</code> line to <code>' + (k === 'mac' ? '~/.zshrc' : '~/.bashrc') + '</code>.');
+        ? '<b>No quotes needed</b> around the value inside the file. Prefer a window? <code>notepad .env</code> works just as well.'
+        : '<b>No quotes needed</b> around the value inside the file. <code>set -a</code> exports everything the file sets; <code>set +a</code> stops that again.');
       col.appendChild(note);
-      s.enter(note, 9.4, 0.4);
+      s.enter(note, 16.4, 0.4);
     });
 
-    s.note('<b>This lasts only in this window.</b> Close the terminal and the key is gone — that is the single most common reason Pi says it has no API key.',
-      11.4, 6.4, { x: 380, y: 806, width: 700, tone: 'warm' });
+    s.note('<b>The file survives. The loading does not.</b> Run the load line in <b>every new terminal</b> before you start Pi — a missing key is the single most common reason Pi refuses to talk to us.',
+      18.0, 6.6, { x: 300, y: 806, width: 800, tone: 'warm' });
 
-    s.say(0, 5.0, 'Paste the key you just copied into your terminal, as an environment variable.', 'KEY');
-    s.say(5.0, 4.2, 'Echo it back to check it actually took.');
-    s.say(9.2, 4.6, 'This is the one command that genuinely differs: <code>$env:</code> in PowerShell, <code>export</code> everywhere else.');
-    s.say(13.8, 7.6, 'And remember: it only lives in <b>this</b> window. New terminal, set it again — or put it in your shell profile, or use <code>setx</code> on Windows.');
+    s.say(0, 5.4, 'The portal shows your key exactly once, so do not leave it in a terminal that you are about to close.', 'KEY');
+    s.say(5.4, 4.6, 'Write it into a file called <code>.env</code>, in the lab folder you made earlier — one line, no quotes.');
+    s.say(10.0, 4.4, 'And add <code>.env</code> to <code>.gitignore</code> straight away. This key is a password; it must never reach git.');
+    s.say(14.4, 5.0, 'Then load the file into this terminal, and echo it back to check it actually took.');
+    s.say(19.4, 5.6, 'A <code>.env</code> file only sits on disk. Loading it is a separate step, and you repeat it in every new terminal.');
+    s.say(25.0, 4.8, 'Lose the key and there is no recovery — generate a fresh one in the portal. The file is what stops that happening.');
   })();
 
   /* ============================================================ 10 · start pi */
@@ -833,6 +844,10 @@
       t.body.style.height = '340px';
       col.appendChild(t.node);
 
+      var c0 = t.cmd(k === 'win'
+        ? 'Get-Content .env | ForEach-Object { if ($_ -match \'^\\s*([^#][^=]*)=(.*)$\') {\n    [Environment]::SetEnvironmentVariable($matches[1].Trim(), $matches[2].Trim()) } }'
+        : 'set -a; source .env; set +a');
+      t.gap();
       var c1 = t.cmd('pi --provider ddls --model gpt-5.6-luna');
       t.gap();
       var banner = t.out('<span class="ok">pi</span> 0.84.3  ·  provider <span class="path">ddls</span>  ·  model <span class="path">gpt-5.6-luna</span>', '');
@@ -849,20 +864,21 @@
       var idle = t.idle('› ');
       [banner, banner2, banner3, r1, r2, r3, r4, idle].forEach(function (n) { n.classList.add('fx'); });
 
-      s.type(c1.txt, c1.text, 1.2, 2.4);
-      s.enter(banner, 4.2, 0.3); s.enter(banner2, 4.5, 0.3); s.enter(banner3, 4.8, 0.3);
-      s.type(c2.txt, c2.text, 6.4, 2.6);
-      s.stagger([r1, r2, r3, r4], 10.0, 0.4, 0.3);
-      s.enter(idle, 12.2, 0.3);
-      s.ring(banner, 4.6, 3.0, { pad: 3 });
+      s.type(c0.txt, c0.text, 0.9, k === 'win' ? 2.0 : 1.1);
+      s.type(c1.txt, c1.text, 2.6, 2.2);
+      s.enter(banner, 5.2, 0.3); s.enter(banner2, 5.5, 0.3); s.enter(banner3, 5.8, 0.3);
+      s.type(c2.txt, c2.text, 7.2, 2.6);
+      s.stagger([r1, r2, r3, r4], 10.8, 0.4, 0.3);
+      s.enter(idle, 13.0, 0.3);
+      s.ring(banner, 5.6, 3.0, { pad: 3 });
     });
 
     s.note('<b>Ask something small first.</b> If this answers, your key, your config and the gateway are all working — before you hand it anything that matters.',
       12.6, 6.0, { x: 380, y: 800, width: 700 });
 
-    s.say(0, 4.2, 'Run Pi from inside your lab folder. Same command on every platform.', 'RUN PI');
-    s.say(4.2, 4.4, 'The banner tells you which provider and model you actually got — check it says <code>ddls</code>.');
-    s.say(8.6, 4.0, 'Then ask it something trivial.');
+    s.say(0, 5.2, 'New terminal, so load the key first — then run Pi from inside your lab folder. The command itself is the same on every platform.', 'RUN PI');
+    s.say(5.2, 4.4, 'The banner tells you which provider and model you actually got — check it says <code>ddls</code>.');
+    s.say(9.6, 3.0, 'Then ask it something trivial.');
     s.say(12.6, 8.4, 'If that comes back, everything is wired: key, config, gateway. If it errors, fix it here — not halfway through the analysis.');
   })();
 

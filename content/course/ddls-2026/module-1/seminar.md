@@ -86,12 +86,17 @@ not after.
 You already did the work in the lab; preparing to defend it is quick:
 
 - **Pull your three artefacts** from the lab: the interview transcript (Agent A), the analysis
-  transcript (Agent B), and your short report with `AGENTS.md` / `spec.md`.
-- **Draft 3–5 slides** around the four points above. Slides optional but recommended — you can
+  transcript (Agent B), and your short report with `AGENTS.md` / `spec.md`. Pi saves each run
+  as a `.jsonl` file under `~/.pi/agent/sessions/` — if you launched Pi more than once, collect
+  them all; together they are your Agent-B transcript.
+- **Draft 4–5 slides** around the four points above. Slides optional but recommended — you can
   even have your agent draft them from your report, then fix them.
 - **Rehearse the 7 minutes once, out loud.** If you run long, cut the "what I built" detail
   first — the problem and the verification matter most.
 - **Look up one or two references** on how your problem is usually approached, for point 4.
+  Pi has no web search, so use your own browser — or have Pi fetch a citation from its shell
+  (e.g. `curl 'https://api.crossref.org/works?query=YOUR+TOPIC'`). Never let the agent invent a
+  DOI: check that every reference actually resolves before you cite it.
 
 ---
 

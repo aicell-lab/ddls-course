@@ -435,7 +435,8 @@ Your submission is your **transcript plus your report**:
 - **The interview transcript** (your conversation with Agent A) — downloaded from the
   portal.
 - **The analysis transcript** (your conversation with Agent B) — the chat history from your
-  local agent.
+  local agent. Pi saves each run as a `.jsonl` file under `~/.pi/agent/sessions/`; if you ran
+  Pi more than once, include them all.
 - **The report** (AI-assisted, checked by you), with `AGENTS.md` and `spec.md` alongside.
 
 This lab is graded **pass/fail**. And the thing that changes how you should work all

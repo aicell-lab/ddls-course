@@ -1145,8 +1145,8 @@
   /* ====================================================== 12b · validate */
   (function () {
     var s = film.scene('validate', { title: 'Validate it — controls, not vibes', kicker: 'Step 13', dur: 36 });
-    head(s, 'Step 13 · the actual work', 'Now try to break it',
-      'Code that runs is not code that is right. Nothing turns red when the answer is wrong.');
+    head(s, 'Step 13 · the actual work', 'Corner it from three directions',
+      'Code that runs is not code that is right — and a fluent explanation is not proof. Nothing turns red when the answer is wrong.');
 
     var solo = U.osSolo({ x: 130, y: 190, w: 1000 });
     s.node.appendChild(solo.node);
@@ -1173,7 +1173,7 @@
         ['  Adélie↔chinstrap    3 and 2 the other way', ''],
         ['&nbsp;', ''],
         ['<span class="ok">Shuffled-label refit   33.7%</span>  (chance ≈ 33.3%)', ''],
-        ['Majority-class         44.2%  (always Adélie)', '']
+        ['Majority-class         44.2%  (always Adélie)   <span class="dim">— a second, dumber method</span>', '']
       ].map(function (l) { var d = t.out(l[0], l[1]); d.classList.add('fx'); return d; });
       t.gap();
       var idle = t.idle('› '); idle.classList.add('fx');
@@ -1185,18 +1185,18 @@
       s.ring(L[4], 22.0, 6.0, { tone: 'warm', pad: 4 });
     });
 
-    s.note('<b>The shuffle is the one that matters.</b> Randomise the labels and re-fit: the rule should collapse to guessing. 33.7% against a chance of 33.3% means nothing is leaking — no island, no sex, no <code>sample_id</code>.',
+    s.note('<b>A negative control</b> — Part 5, family 5. Give the method two groups that <i>should</i> look the same and it must find nothing. Shuffle the species labels, re-fit: 33.7% against a chance of 33.3%. Nothing is leaking — no island, no sex, no <code>sample_id</code>.',
       13.4, 7.2, { x: 1150, y: 200, width: 400 });
 
-    s.note('<b>And now read it properly. 97.1% is not a pass.</b> She asked for <b>98–99%, per species</b> — and Adélie is at 91.3%, chinstrap at 90.5%. The overall number was hiding exactly the confusion she warned you about. Back to Pi.',
+    s.note('<b>And a known benchmark. 97.1% is not a pass.</b> She asked for <b>98–99%, per species</b> — Adélie is at 91.3%, chinstrap at 90.5%. The overall number was hiding exactly the confusion she warned you about. Back to Pi.',
       22.0, 8.0, { x: 1150, y: 200, width: 400, tone: 'warm' });
 
     s.say(0, 5.0, 'The analysis runs. That tells you nothing — a wrong answer runs just as happily as a right one.', 'VALIDATE');
-    s.say(5.0, 5.0, 'So ask for the result and the controls in the same breath: per-species accuracy, then shuffle the labels, then a baseline any idiot could beat.');
+    s.say(5.0, 5.0, 'Part 5 gives you five families of check. In week one, one move from each is the win — so ask for the result and the checks in the same breath.');
     s.say(10.0, 3.4, 'Ninety-seven percent. Looks like a finished lab.');
-    s.say(13.4, 8.6, 'First the shuffle. Randomise the species labels, re-fit, and the rule collapses to 33.7% — chance. Nothing is leaking. If it had stayed high, something in your columns was spelling out the answer.');
-    s.say(22.0, 8.2, 'Then read the per-species line, which is the one she actually asked for. Adélie 91.3%, chinstrap 90.5% — both under her 98 to 99 percent bar. The overall number was hiding it.');
-    s.say(30.2, 5.8, 'That is the difference between a result and a checked result. Go back, tell Pi what failed, and iterate — this loop <b>is</b> the lab.');
+    s.say(13.4, 8.6, 'First a <b>negative control</b>: give the method labels that mean nothing and it must find nothing. Shuffled, the rule collapses to 33.7% — chance. If it had stayed high, a column was spelling out the answer.');
+    s.say(22.0, 8.2, 'Then check it against <b>what is known</b> — her own bar. Adélie 91.3%, chinstrap 90.5%, both under 98 to 99 percent per species. The overall number was hiding it.');
+    s.say(30.2, 5.8, 'Two routes, and they disagree with the headline. That is the difference between a result and a checked one — go back, tell Pi what failed, and iterate.');
   })();
 
   /* ============================================================ 13 · hand in */

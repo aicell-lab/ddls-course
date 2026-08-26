@@ -45,7 +45,7 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} AICell Lab. All the course material is licensed under {license}'
+    notice: '© {year} AICell Lab. All the course material is licensed under {license}.<br><span class="small text-muted">Made with AI: this course — its instructions, the online portal, and the walkthrough video — was designed and produced with the help of Claude Code, and may contain mistakes. Please use your judgement, double-check each step, and adapt where something does not work as written.</span>'
     license:
       enable: true
       allow_derivatives: true

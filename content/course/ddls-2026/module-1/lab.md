@@ -47,6 +47,13 @@ By the end of this lab you should be able to:
   controls, not vibes.
 - Produce a short **report** you own, and prepare to defend it at Friday's seminar.
 
+> **What "good" means today.** The win is **completing the whole loop once** — interview →
+> translate → direct → verify → report — with a result you actually checked. A modest answer
+> you *verified* beats an ambitious one you never finished, every time. Don't chase a deep or
+> perfect analysis: if you walk out with one clean, defensible result and a short report, you
+> have passed the lab and you have something real to present on Friday. The skill on trial is
+> how you **steer, translate and check** — not how sophisticated the analysis is.
+
 ### The one rule: it must be someone else's problem
 
 Many of you have your own dataset. Using it is the **worst** way to learn this. When the
@@ -147,6 +154,32 @@ whenever you stall.
 > Don't confuse the two wands: the one **on a message** grades a question you already asked;
 > the one **beside Send** proposes the next one.
 
+### How a good interview flows
+
+You're not filling in a form top to bottom — you're steering a conversation through five moves,
+roughly in order. Twenty to twenty-five minutes of this and you'll have everything Part 3 needs.
+
+1. **Frame it, then find the real decision.** Open by saying you're here to *understand the
+   problem, not solve it live* — you're the apprentice, they're the expert. Then, before any data
+   talk: *"What decision changes once you know the answer, and what happens if it comes back
+   wrong?"* If nothing changes and nothing breaks, it isn't yet a question worth analysing — keep
+   digging until you find the one that is.
+2. **Turn the vague ask into one precise question.** Don't accept the headline ("we want to know
+   if the treatment works"). Force a concrete, recent example: *"Tell me about the last time this
+   came up — what did you actually look at?"* Pin down what counts as **one row**, what exactly is
+   measured or compared, and over which population.
+3. **Walk the data column by column.** For each field: what it literally means, its units, and —
+   the part everyone skips — *how it was collected*. Provenance is where the traps hide. "Who
+   typed this in, and when?" surfaces more problems than any other question.
+4. **Hunt the traps and hidden constraints.** How are missing values marked? Did any definition
+   change over time? Are there duplicates? How did rows *end up* in this set (selection bias)? And
+   is there anything you're **not allowed** to do with the data?
+5. **Play it back.** Say your whole understanding in a short paragraph — goal, question, data,
+   traps, what "done" looks like — and let them correct you. That correction is usually the single
+   most valuable minute of the interview.
+
+The checklist below is *what you must walk away with*; the five moves above are *how you get there*.
+
 ### The four probes — what you must come back with
 
 If you cannot answer all four of these afterwards, you have not finished the interview.
@@ -182,6 +215,16 @@ definite. When you get a hedge, ask the one question that pins it down:
 were told will turn out to be slightly different from what is actually in the data — every
 time. In this lab, that means: make sure you know exactly what the dataset contains before
 you move on.
+
+> **Four ways an interview quietly goes useless — and the fix:**
+> - **You accept jargon you didn't ground.** → Whenever a word is doing real work ("hit",
+>   "positive", "clean"), ask *"what does that mean here?"* and get one concrete example.
+> - **You start solutioning** ("I'll train a classifier that…"). → Stay in *their* world. You're
+>   here to understand the problem; picking the method is Part 4's job, not the interview's.
+> - **You ask leading questions** ("so data quality is the main issue, right?"). → Ask open, and
+>   let *them* supply the framing. A leading question just gets your own guess echoed back.
+> - **You skip how the data was made.** → Always ask how it was collected and what a blank or a
+>   zero actually means. The answer is almost never "nothing".
 
 ### Practice: sharpen these answers
 
@@ -262,7 +305,7 @@ So the course standardises on Pi. The skill you're building — *directing and c
 agent — carries over to any agent; Pi is simply the one we support in the labs.
 {{< /spoiler >}}
 
-> **Prefer to watch?** Steps [7–12 of the walkthrough](/lab1-onboarding/?c=7) do this whole
+> **Prefer to watch?** Steps [7–13 of the walkthrough](/lab1-onboarding/?c=folder) do this whole
 > setup on Windows, macOS and Linux side by side — folder, terminal, Node, Pi, config file,
 > API key, first run.
 
@@ -326,7 +369,17 @@ already have it:
 node --version
 ```
 
-If that prints **18.0 or higher**, skip to step 2. Otherwise install the **LTS** build:
+If that prints **22.0 or higher**, you're set — **skip to step 2**. Otherwise expand the
+installer instructions for your system:
+
+> **Node 18 or 20 is not enough — and it fails in a way that looks like something else.** Pi
+> needs Node **22+**. On an older Node, `npm install` still "succeeds" (you'll see only an
+> `EBADENGINE` *warning*, not an error), and then Pi dies on its first run with a message about
+> `globSync` / `does not provide an export named 'globSync'`. If you see that, your Node is too
+> old — upgrade to 22+ and reinstall Pi.
+
+<details>
+<summary><b>Install Node.js (LTS) — per system</b> (only if <code>node --version</code> is missing or below 22)</summary>
 
 - **Windows & macOS (easiest):** download the installer from **<https://nodejs.org/en/download>**
   — pick the **LTS** build (the page detects your system), run the downloaded file, and click
@@ -344,11 +397,32 @@ npm --version
 
 Both should print a version number. Full official walkthrough: **<https://nodejs.org/learn>**.
 
+</details>
+
 **2. Install Pi:**
 
 ```bash
 npm install -g @earendil-works/pi-coding-agent
 ```
+
+<details>
+<summary><b>Got a permission error (<code>EACCES</code> / "permission denied") on macOS or Linux?</b></summary>
+
+A global npm install can fail with `EACCES` because npm's default folder isn't writable by you.
+**Don't `sudo npm install`, and don't reinstall Node from nodejs.org** — the `.pkg`/installer
+puts Node back in the same protected location, so the error just comes back. Fix it properly by
+pointing npm's global folder at your home directory:
+
+```bash
+npm config set prefix ~/.npm-global
+export PATH="$HOME/.npm-global/bin:$PATH"      # add this line to ~/.zshrc or ~/.bashrc too
+npm install -g @earendil-works/pi-coding-agent
+```
+
+(The cleanest long-term fix is a version manager like [nvm](https://github.com/nvm-sh/nvm),
+which installs Node entirely inside your home folder and sidesteps the problem for good.)
+
+</details>
 
 **3. Point Pi at the DDLS gateway.** Pi ignores `OPENAI_BASE_URL`, so it needs a custom
 provider file. Create `~/.pi/agent/models.json` with exactly this:
@@ -374,7 +448,7 @@ provider file. Create `~/.pi/agent/models.json` with exactly this:
 
 **Pick your operating system below:**
 
-<details open>
+<details>
 <summary><b>How to create that file — per system</b> (the folder starts with a dot, which trips up every file manager)</summary>
 
 Pi always looks in a `.pi` folder inside your home folder — **including on Windows**, where the
@@ -455,6 +529,13 @@ No quotes are needed around the value. Saving it here — instead of just typing
 dies when you close the terminal — means you can re-load it every time without going back to the
 portal (which won't show you the key again).
 
+> **Windows: File Explorer won't let you name a file `.env`** (the same dot-file trap as the
+> `.pi` folder). Create it from PowerShell instead — from inside your `ddls-week1` folder:
+> ```powershell
+> Set-Content .env "DDLS_API_KEY=paste-your-portal-key-here"
+> ```
+> (Or run `notepad .env`, click **Yes** to create it, paste the line, and **Ctrl + S**.)
+
 > **Key hygiene.** Treat this key like a password: **never commit it or share it.** Add `.env`
 > to your `.gitignore` so it can never be pushed to git — from inside the folder:
 > ```bash
@@ -500,6 +581,18 @@ Do this drafting **inside Pi** — the analyst agent you just set up in Part 2. 
 is already sitting in the working folder, so launch Pi there and have it **read the
 transcript** and draft these documents; you then **review and correct** everything it
 produces. Work *from the transcript*, never from memory.
+
+> **"You can outsource your thinking, but you can't outsource your understanding."**
+> — Andrej Karpathy
+>
+> This is the step it's most tempting to skip — let Pi spit out two tidy files and move on. **Don't.**
+> The agent will faithfully build whatever these files say, *including the misunderstandings you
+> didn't catch* — so an auto-generated spec you never read doesn't save you the work, it just
+> hides the moment your confusion quietly became the data owner's broken result. These two files
+> are where **you** do the thinking. That understanding is the one thing you cannot hand to the
+> agent, and it is exactly what this course examines. **You will not leave this part quickly:**
+> you will read, question, and rewrite `AGENTS.md` and `spec.md` several times before they're
+> right — and every later part inherits their quality.
 
 ### Step 1 — review it back as prose first
 
@@ -552,12 +645,35 @@ A good `spec.md` captures:
 > job. After you load the data in Part 4, **come back and correct `spec.md`** against what
 > the file actually contains. Interview → draft spec → *load data* → fix spec is the loop.
 
+### Step 3 — read every line, then iterate (this is the real work)
+
+A first draft — yours or Pi's — is a *starting point*, never a finished product. This is the loop
+that actually builds the understanding the course is grading. Do it inside Pi:
+
+1. **Read every line yourself.** Not skim — read. For each sentence ask: *do I actually know this
+   is true, or did the agent guess it?* Mark everything you couldn't defend to the data owner.
+2. **Hunt what's wrong or missing.** AI drafts are *confidently incomplete*: they nail the obvious
+   path and go silent on the edge cases, invent a column name or a threshold that was never said,
+   or contradict themselves two paragraphs apart. Those gaps are what you're here to close.
+3. **Make Pi interrogate _you_.** Turn the tables: *"Ask me about anything ambiguous or missing in
+   this spec, and list every assumption you'd have to make to run it."* Answer from **your**
+   understanding, then fold those answers back into the files. If you can't answer, that's a
+   question you still owe the transcript.
+4. **Refine, tighten, delete.** Fix the wrong claim, add the missing trap, cut the vague filler
+   that sounds good but tells the agent nothing.
+5. **Re-read the whole thing.** Each pass you understand the problem a little better — so a file
+   that looked finished last round now reads as sloppy. That discomfort *is* the learning; don't
+   stop at "looks plausible", stop at "accurately describes the real project".
+
+Fifteen minutes iterating here saves hours of confidently-wrong analysis later. Only when the two
+files would let a competent stranger reproduce the work — do you hand them to Agent B in Part 4.
+
 ## Part 4 — Direct the agent to solve the problem
 
 Now you have a briefed analyst, the dataset already sitting in your working folder, and a
 real problem. Time to build.
 
-> **Prefer to watch?** [Steps 13–14 of the walkthrough](/lab1-onboarding/?c=13) show the brief
+> **Prefer to watch?** [Steps 14–15 of the walkthrough](/lab1-onboarding/?c=brief) show the brief
 > sitting next to the data, and the agent reading the data back — including the moment it
 > catches a mistake in the spec.
 
@@ -570,6 +686,9 @@ real problem. Time to build.
 - Ask it to **explain the data back to you** before it analyses anything: "Load the data,
   and tell me what you actually see — shapes, columns, ranges, anything surprising."
   Compare that to what the interview told you. Mismatches here are gold.
+- **Make it plan before it codes.** "Before you write any code, give me your plan as numbered
+  steps and tell me where it could go wrong." Correcting a plan costs one sentence; correcting a
+  finished analysis costs a rerun. This is the cheapest place to catch a wrong turn.
 - Start with **one slice** — one file, one group, a stupid baseline — end to end, *before*
   good. Get a full pipeline running, then improve it.
 - When it goes off track, don't argue in chat — **fix the file**. If it keeps forgetting a
@@ -582,30 +701,118 @@ real problem. Time to build.
   doesn't, you've found something that will contaminate every comparison downstream — deal
   with it before you trust a single "hit".
 
+**A starting prompt you can paste** (adapt the last line to your task):
+
+```text
+Read AGENTS.md and spec.md, then load the dataset in this folder.
+First, tell me what you actually see in the data — shapes, columns, units, ranges,
+missing values, anything that contradicts the spec. Do NOT analyse yet.
+Then give me a numbered plan for answering the question in spec.md, and flag the two
+places the plan is most likely to be wrong.
+Wait for me to approve the plan before you write any analysis code.
+```
+
+Everything after that is a conversation: approve or correct the plan, ask for one small result,
+check it (Part 5), then advance. You are the director — Pi doesn't move to the next step until you
+say so.
+
+> **The one loop everyone finishes — even if you're behind.** If the interview ran long or Pi
+> fought you during setup, do **not** chase the most complete analysis. A simple result you
+> *verified* beats an ambitious one you never finished. As soon as Pi is running, work in this
+> rhythm instead:
+>
+> 1. **One simple go.** Ask for one basic answer against the data — the smallest end-to-end
+>    result you can get (a single number, a single group comparison). Nothing clever yet.
+> 2. **One straightforward check.** Before you believe it, verify that one result — pick a single
+>    quick check from Part 5: a **smell test** (is the number's order of magnitude even sane?), a
+>    **negative control** (shuffle the labels — the effect should vanish), or a **second method**
+>    that ought to agree. If it doesn't survive, good — you learned something; fix and re-run.
+> 3. **Iterate the two.** Advance the analysis a little, verify again — repeat as far as time
+>    allows. Every loop leaves you with a complete, defensible result you could present.
+>
+> **Reserve the last 30 minutes for the report — be in Part 6 by 16:30.** The computer lab runs
+> **13:00–17:00**, so when the clock reaches **16:30**, whatever state you're in, stop advancing
+> and switch to *Part 6 — Produce results and a short report*: make the plot(s) and write the
+> short summary. That report is the basis for Friday's seminar presentation. Walking out with **one
+> verified result and a written summary is a finished lab**; a half-built "perfect" analysis
+> with no report is not.
+
 ## Part 5 — Validate & verify (think like a scientist)
 
-**Code that runs is not code that's right.** The agent is an unreliable instrument that
-will happily report a beautiful p-value driven entirely by a batch effect, and *nothing
-will turn red*. You already know how to handle an unreliable instrument — point those
-habits at this one.
+**Code that runs is not code that's right.** The agent is an unreliable instrument that will
+happily report a beautiful result driven entirely by a batch effect, a mislabelled column, or an
+answer that leaked into its own inputs — and *nothing will turn red*. Your job here is the heart of
+the whole course: **you verify the *answer*, not the machine.**
 
-Run controls. Don't trust a result until it survives them:
+You can't read the agent's mind, and you don't need to. The reliable way to trust a black-box
+result is to **corner it from several independent directions and only believe it when they agree**:
+get to the same answer another way, stress the agent to prove itself wrong, and check the result
+against what's already known about the world. One warning runs through all of it — **a fluent
+explanation is not proof.** A language model will narrate a confident, plausible story for a wrong
+answer, and it tends to fold the instant you push back. So every challenge below has to end in
+something *you can check*, not just a reassuring reply.
 
-- **Shuffle the labels.** Re-run with the group labels randomly permuted. The effect should
-  **vanish**. If it survives, you have a leak.
-- **Beat a dumb baseline.** Mean predictor, majority class. If your clever analysis can't
-  beat "always guess the average", something is off.
-- **Check the split.** Is the same sample / batch / patient on both sides of your
-  comparison? That's the classic disaster.
-- **Ask it to argue against itself.** "Give me three reasons this result is an artefact."
-  Then go check whether any of them bite.
+Below are five families of check. **Pick at least one move from each family.** In Week 1, running
+this loop **once** — one independent recompute, one adversarial prompt, one reality check — is the
+win. You don't need all of it.
 
-Also sanity-check the obvious: do the numbers have the right order of magnitude? Did any
-rows get silently dropped in a join? Does the effect hold if you remove one group?
+**1 · Does it pass the smell test?** — *cheap plausibility; rule out the obviously-wrong first*
+- Eyeball the numbers: are they in a sane range? An average age of 350, a negative count, or
+  "99.8% accurate on messy real data" is a bug, not a triumph.
+- Check the **direction and the size**: does the sign match intuition, and is the effect a
+  believable magnitude — or suspiciously huge?
+- Check the totals: "40,000 responders" out of 20,000 rows means something is double-counted.
+- Ask for a quick summary/histogram of each key column — a spike at zero or every value identical
+  is usually an encoding problem, not a finding.
 
-**Design at least one test of your own** — a criterion you decide *in advance* that the
-result must pass to be believable — and write it into `spec.md`. Then iterate: fix, re-run,
-re-check.
+**2 · Can you get there another way?** — *independent triangulation; the strongest evidence there is*
+- **Estimate it yourself first**, by hand, from a few rows — *then* read the agent's number. If
+  it's off by 10×, investigate. (Guess before you look, so its answer doesn't anchor yours.)
+- Ask the agent to **redo it with a completely different method** — ideally a simpler one you can
+  follow — and show both answers side by side. Agreement across methods is hard to fake.
+- **Spot-check one case by hand:** pick 3 rows, compute the result yourself, confirm it matches.
+- Does the finding **hold on an independent slice** — the other half of the data, another batch,
+  another site? A real effect travels; an artefact usually doesn't.
+
+**3 · Stress the agent to prove it.** — *adversarial prompting; surfaces weak spots, doesn't certify*
+- *"I don't believe this is right — **prove it**, with the actual numbers and the exact code you ran."*
+- *"**Argue the opposite:** give me the three strongest reasons this conclusion could be false, and
+  exactly what I'd check to rule each one out."*
+- *"What is the **smallest change** to the data or settings that flips this result? Make that
+  change and show me."*
+- *"What **boring alternative** — a batch effect, the order of the rows, a confounder — could
+  produce this same result?"*
+
+**4 · Make it show its work.** — *open the box; inspect the process, not just the answer*
+- *"Show me the **exact code** you ran to get this number."*
+- *"Take **5 real rows** and show every intermediate value, from raw data to final result."*
+- *"Draw a **flow diagram**: input data → each transformation → output."* A diagram makes a missing
+  step or a wrong join visible at a glance, where prose hides it.
+- *"List every **assumption** you made about this data to get this answer."*
+
+**5 · Check against what's known.** — *domain plausibility & controls; reality is the referee*
+- **Known-fact check.** Does the result agree with something you can look up? If it flags markers
+  for a disease, are any *already-known* ones in the list? If it contradicts settled biology, the
+  burden of proof is on the result, not the textbook.
+- **Positive control.** Run it on a case where you already know the answer — does it recover it?
+- **Negative control.** Run it on two groups that *should* look the same (e.g. shuffle the group
+  labels, or split one group in half and compare the halves). It should find **nothing**. If it
+  "discovers" an effect there, your method is inventing signal — this is the honest version of the
+  old "shuffle test", and it matters because it catches a method that's fooling itself.
+- **Too good to be true = leakage.** Near-perfect results almost always mean the answer leaked into
+  the inputs. Ask *"is any column secretly a stand-in for the thing we're predicting?"*, remove it,
+  and see whether the result collapses.
+
+> **Design one test of your own, in advance.** Before you run anything, decide a single criterion
+> the result *must* pass to be believable — and write it into `spec.md`. A check you commit to
+> beforehand is worth ten you rationalise afterwards. Then iterate: fix, re-run, re-check.
+
+**The bottom line.** You will rarely *prove* a black-box result correct. What you can do — and what
+this lab trains — is **triangulate** (two independent routes to the same answer), **stress-test**
+(actively try to break it), and **reality-check** (does it fit what's known). When all three point
+the same way, you can stand behind the number at Friday's seminar. When they don't, you've found
+something — and saying *"here's the result, here's the one check it failed, here's what I'd do
+next"* is a **stronger** outcome than a polished result you never questioned.
 
 ## Part 6 — Produce results and a short report
 

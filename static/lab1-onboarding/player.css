@@ -378,11 +378,16 @@ body{
 .player.compact .osfilter .lbl{font-size:.7em}
 .player.compact .tcode{font-size:.74em; min-width:5.4em}
 
-/* ---------- full screen ---------- */
-.player:fullscreen{
+/* ---------- full screen, and the standalone page ---------- */
+/* .fit is what the standalone page uses: the whole player is exactly one screen tall and
+   the picture takes whatever the chrome leaves, so the controls are never below the fold. */
+.player:fullscreen,
+.player.fit{
   border-radius:0; width:100%; max-width:none; height:100%;
   display:flex; flex-direction:column; background:var(--deep);
 }
-.player:fullscreen .viewport{flex:1 1 auto; aspect-ratio:auto; min-height:0; background:#0b1220}
+.player:fullscreen .viewport,
+.player.fit .viewport{flex:1 1 auto; aspect-ratio:auto; min-height:0; background:#0b1220}
+.player.fit .chapters{max-height:26vh; overflow:auto}
 .player:fullscreen .chapters{max-height:22vh; overflow:auto; flex-wrap:wrap}
 .player:fullscreen .overlay .box{max-width:44em}

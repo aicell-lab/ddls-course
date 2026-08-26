@@ -10,8 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="player.css">
 <style>
-  body{background:#f7f6f3;padding:0;margin:0}
+  html,body{height:100%}
+  body{background:#0b1220;padding:0;margin:0}
   .wrap{max-width:1600px;margin:0 auto;padding:0}
+  /* opened directly (not embedded): pin the player to the screen so the controls,
+     chapter list and narration are always visible without scrolling */
+  body.standalone{overflow:hidden}
+  body.standalone .wrap,
+  body.standalone #film{height:100%;max-width:none}
   noscript{display:block;padding:24px;font-family:'IBM Plex Sans',sans-serif;color:#41505f}
 </style>
 </head>
@@ -27,6 +33,15 @@
 <script>
 // Deep-link to a chapter: /lab1-onboarding/?c=8 (or #c=8) jumps straight to step 8.
 (function () {
+  // Standalone tab: make the player exactly one screen tall. Embedded in the lab page it
+  // keeps its natural height instead, and reports it so the iframe can size to fit.
+  var standalone = window.self === window.top;
+  if (standalone) {
+    document.body.classList.add('standalone');
+    var pl = document.querySelector('.player');
+    if (pl) { pl.classList.add('fit'); window.dispatchEvent(new Event('resize')); }
+  }
+
   var m = /[?#&]c=(\d+)/.exec(location.search + location.hash);
   if (m) {
     var chips = document.querySelectorAll('.chapters .chip');
@@ -35,6 +50,7 @@
   }
   // Report our height so an embedding page can size its iframe to fit.
   function report() {
+    if (standalone) return;               // nobody is sizing an iframe to us
     var el = document.querySelector('.player');
     if (!el) return;
     var h = Math.ceil(el.getBoundingClientRect().height);

@@ -1,0 +1,32 @@
+{{/*
+  Overrides wowchemy-plugin-netlify's index.headers.
+
+  Identical to the upstream template except for X-Frame-Options: the theme emits DENY,
+  which blocks framing from EVERY origin — including this site framing its own pages. That
+  broke the Lab 1 walkthrough, which the lab page embeds from /lab1-onboarding/ in an
+  iframe on the same origin. SAMEORIGIN keeps other sites out (the actual clickjacking
+  protection) while letting our own pages embed our own pages.
+
+  site.Params.security.allow_frame: true still drops the header entirely, as upstream.
+*/}}
+{{- $csp_policy := site.Params.security.csp.policy | default "" -}}
+{{- $csp_report_only := site.Params.security.csp.report_only | default false -}}
+{{- $allow_frame := site.Params.security.allow_frame | default false -}}
+{{- $default_perms := "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" -}}
+{{- $permissions_policy := site.Params.security.permissions.policy | default $default_perms -}}
+# Netlify headers
+# Automatically generated
+# Documentation: https://wowchemy.com/docs/hugo-tutorials/security/
+/*
+  {{if not $allow_frame}}X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: frame-ancestors 'self'{{end}}
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Referrer-Policy: strict-origin-when-cross-origin
+  {{with $csp_policy}}Content-Security-Policy{{if $csp_report_only}}-Report-Only{{end}}: {{replaceRE "(\\s\\s+)" " " (trim . " ")}}{{end}}
+  {{with $permissions_policy}}Permissions-Policy: {{replaceRE "(\\s\\s+)" " " (trim . " ")}}{{end}}
+/index.webmanifest
+  Content-Type: application/manifest+json
+/index.xml
+  Content-Type: application/rss+xml

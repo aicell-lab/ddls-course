@@ -1011,6 +1011,21 @@ upload button per file**, so each lands under the right name on our server:
 - **`AGENTS.md`** — the brief you wrote for the analyst.
 - **`spec.md`** *(optional)* and one **extra** slot for anything else you want us to see.
 
+> **Can't find your Pi transcripts?** Don't dig through the terminal — the analysis transcript is
+> the one file that's easy to lose, because Pi tucks each run away under `~/.pi/agent/sessions/`.
+> So let the agent gather everything for you. Paste this into **Pi** at the end of your run:
+>
+> ```text
+> Make a folder called submissions/ in my current working directory. Copy my report.html and
+> AGENTS.md into it (and spec.md if I have one). Then find every Pi session transcript from
+> TODAY under ~/.pi/agent/sessions/ and copy them into submissions/ with clear names
+> (analysis-transcript-1.jsonl, analysis-transcript-2.jsonl, …). Finally, list exactly what you
+> copied so I can check nothing is missing.
+> ```
+>
+> Now every file except the **interview** transcript (download that from the portal into the same
+> `submissions/` folder) is in one place — open the folder and drag each file to its upload button.
+
 Put your **name** in the field at the top (so we can match your work even if you signed in with
 an unusual email), and a short **note to the teachers** if you like. Re-submit any time — we
 always grade your most recent upload. A **countdown to the deadline** is shown right on the page.

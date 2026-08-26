@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DDLS 2026 · Lab 1 — the whole run-through</title>
+<meta name="description" content="A synthesized walkthrough of DDLS 2026 Lab 1: activate the portal, interview the data owner, download the transcript and dataset, install and configure the Pi analyst agent on Windows, macOS or Linux, and direct it at the problem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="player.css">
+<style>
+  body{background:#f7f6f3;padding:0;margin:0}
+  .wrap{max-width:1600px;margin:0 auto;padding:0}
+  noscript{display:block;padding:24px;font-family:'IBM Plex Sans',sans-serif;color:#41505f}
+</style>
+</head>
+<body>
+<div class="wrap"><div id="film"></div></div>
+<noscript>
+  This walkthrough is an interactive HTML animation and needs JavaScript.
+  The same steps are written out in full in Parts 1–4 of the lab instructions below.
+</noscript>
+<script src="engine.js"></script>
+<script src="ui.js"></script>
+<script src="scenes.js"></script>
+<script>
+// Deep-link to a chapter: /lab1-onboarding/?c=8 (or #c=8) jumps straight to step 8.
+(function () {
+  var m = /[?#&]c=(\d+)/.exec(location.search + location.hash);
+  if (m) {
+    var chips = document.querySelectorAll('.chapters .chip');
+    var i = Math.min(Math.max(parseInt(m[1], 10) - 1, 0), chips.length - 1);
+    if (chips[i]) chips[i].click();
+  }
+  // Report our height so an embedding page can size its iframe to fit.
+  function report() {
+    var el = document.querySelector('.player');
+    if (!el) return;
+    var h = Math.ceil(el.getBoundingClientRect().height);
+    parent.postMessage({ ddlsFilm: 'height', height: h }, '*');
+  }
+  // Embedded: wait for the parent to say the reader has actually scrolled to us.
+  window.addEventListener('message', function (e) {
+    if (!e.data || e.data.ddlsFilm !== 'play') return;
+    var tl = window.__timelines && window.__timelines['ddls-lab1-onboarding'];
+    var ov = document.querySelector('.overlay');
+    if (!tl || (ov && !ov.classList.contains('hidden') && e.data.force !== true)) {
+      if (ov) ov.classList.add('hidden');
+    }
+    if (tl) tl.play();
+  });
+  window.addEventListener('resize', report);
+  window.addEventListener('load', report);
+  setTimeout(report, 300); setTimeout(report, 1200);
+})();
+</script>
+</body>
+</html>

@@ -23,6 +23,16 @@ exactly the skill being examined.
 
 {{< toc >}}
 
+## Watch it first — the whole lab in about six minutes
+
+Never opened a terminal before? Start here. This walkthrough is a real run of everything
+below: activating the portal, interviewing the data owner, downloading the transcript and
+data, installing and configuring Pi, and directing it at the problem — with **Windows,
+macOS and Linux shown side by side** for every step that differs. Use the chapter buttons
+to jump, or the **Show:** filter to keep only your own operating system on screen.
+
+{{< htmlvideo src="/lab1-onboarding/" title="DDLS Lab 1 — the whole run-through" caption="Everything in it really happened: the interview is a real transcript from the portal, and in step 12 the agent really does catch the data owner being wrong. Names and keys are stand-ins." >}}
+
 ## Learning goals
 
 By the end of this lab you should be able to:
@@ -30,9 +40,9 @@ By the end of this lab you should be able to:
 - Run a structured **interview** with a data owner using the four probes
   (GOAL · DATA · WHAT YOU TRIED · WHAT DONE LOOKS LIKE), and steer vague answers into
   definite ones.
+- Set up **Pi**, your local **analyst agent**, and point it at the course portal.
 - **Translate** an interview transcript into two working documents: an `AGENTS.md` (the
   brief) and a `spec.md` (every detail, number, path and trap).
-- Set up **Pi**, your local **analyst agent**, and point it at the course portal.
 - **Direct** the agent to build an analysis, and **validate** it like a scientist — with
   controls, not vibes.
 - Produce a short **report** you own, and prepare to defend it at Friday's seminar.
@@ -58,7 +68,13 @@ generate one API key. If your machine is locked down, sort that out before the s
 not during it.
 
 **Having an agent running already helps.** If you got a coding agent working after the
-lecture, great — you'll reuse that muscle here. If not, Part 3 walks you through it from zero.
+lecture, great — you'll reuse that muscle here. If not, Part 2 walks you through it from zero.
+
+> **When you get stuck — and you will.** That's the lab, not a failure. Do this, in order:
+> **first sharpen your prompt** — being stuck is usually the agent doing exactly what you
+> asked, so re-read your own words and make them precise; that *is* the skill this course
+> trains. **Still stuck? Ask a TA** in the chat with a concise summary — what you tried, what
+> you expected, what happened. Don't burn lab time silently.
 
 ## Access the portal
 
@@ -67,6 +83,8 @@ chatbot), issues the **API key** your local analyst agent will use, and lets you
 **download** both the dataset and your interview transcript.
 
 {{< cta cta_text="Open the course portal" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io" >}}
+
+> **Prefer to watch?** [Step 1 of the walkthrough](/lab1-onboarding/?c=2) shows activation end to end.
 
 **First time — activate your account** (do this once):
 
@@ -83,9 +101,9 @@ If the email or code is not recognised, tell a TA in the chat — don't burn lab
 What the portal gives you (four things, and only these):
 
 - **Chat with the data owner** (Agent A) — your interview happens here, in the browser.
-- **Download your interview transcript** — the full chat, to feed into Part 2.
-- **Generate an API key** — for your local analyst agent (Part 3).
-- **Download the dataset** — the real files Agent A is talking about (Part 4).
+- **Download your interview transcript** — the full chat, to feed into Part 3.
+- **Generate an API key** — for your local analyst agent (Part 2).
+- **Download the dataset** — the real files Agent A is talking about (Part 2).
 
 > **Where to find each:** the chat, the transcript and the dataset are all on **this week's
 > lab page** inside the portal; the **API key** is generated on your **dashboard**
@@ -93,14 +111,29 @@ What the portal gives you (four things, and only these):
 
 ## Part 1 — The interview (Agent A)
 
+> **Prefer to watch?** [Step 2 of the walkthrough](/lab1-onboarding/?c=3) shows a real interview, three questions deep.
+
 Open the **chat with the data owner** in the portal. Agent A is playing a busy scientist
 who has data and a question but has not thought hard about either. Your job is not to fill
 in a form — it is to **steer a conversation** until you could hand the whole thing to
 someone who has never met this person.
 
 > The entire chat is **logged server-side** — there is no separate "submit interview" step.
-> But at the end, **download the transcript**: you need it for Part 2, and the agent reads
+> But at the end, **download the transcript**: you need it for Part 3, and the agent reads
 > the transcript, never your notes.
+
+**Two buttons on every message you send.** Hover any of your own messages in the chat and a
+small toolbar appears to its left — [watch it in step 4 of the walkthrough](/lab1-onboarding/?c=4):
+
+- **The wand — "Coach me".** A *separate* coach reads your question in the context of the
+  conversation so far and tells you how it could have been sharper. It gives **hints, never a
+  rewrite** — the asking is the skill being examined, so it will not hand you the question.
+  It costs a fraction of a cent and it is the only feedback you get before Friday's seminar.
+  **Use it early and often, especially on your first two or three questions.**
+- **The bin — delete from here.** Deletes that message *and everything after it*, from the chat
+  **and from the data owner's memory**. So a vague question is not a permanent stain on your
+  transcript: delete it, ask it properly, and get a genuinely fresh answer. (Budget already
+  spent is not refunded, and the deletion cannot be undone.)
 
 ### The four probes — what you must come back with
 
@@ -174,13 +207,261 @@ number, a column, a file, or a comparison. That's the whole move.
 When you're satisfied you have all four probes covered and have "seen a file", **download
 the transcript** and move on.
 
-## Part 2 — Translate: build `AGENTS.md` and `spec.md`
+## Part 2 — Set up your analyst agent & grab your materials
+
+Your analyst agent is **Pi**, a lightweight coding agent. It runs **on your own machine**
+and talks to the course model **through the portal gateway** — so every call counts against
+your portal budget, and the teaching team sees the transcript. Pi reads an `AGENTS.md`
+context file and can run code, read files and write output.
+
+By the end of this part you'll have four things ready: a **working folder**, your
+**interview transcript** and the **dataset file(s)** saved inside it, and **Pi installed and
+pointed at the portal** — everything you need before you translate (Part 3) and direct (Part 4).
+
+{{< spoiler text="**Why Pi, and not Codex or another agent?**" >}}
+We benchmarked Pi head-to-head against OpenAI's Codex CLI on a real week-1 task, both driven
+through this exact course gateway. Three things decided it:
+
+- **It works through our portal today.** Pi reaches the course model over the standard
+  chat-completions API with a one-line config change. Codex needs a different API mode the
+  course gateway doesn't serve, so it couldn't complete the task through the portal.
+- **It's cheaper and faster.** Roughly **4× lower cost** per task and **~3× faster** in our
+  test — which matters when a fixed budget has to stretch across six lab weeks and a project.
+- **Quality was a wash.** Both produced a solid analysis and avoided the same traps.
+
+**Use Pi for this course even if you already have Codex or Claude Code.** Pi is deliberately
+**minimal** — a small, transparent surface — and that is exactly why it's the right tool for
+*learning*: you can see what the agent is actually doing, which is the whole point here (the
+skill is the harness and your judgement, not a heavyweight tool). Independent benchmarks of
+coding agents on large, real codebases — see [Databricks' write-up](https://www.databricks.com/blog/benchmarking-coding-agents-databricks-multi-million-line-codebase) —
+reinforce that agent choice genuinely matters and how to measure it; for the labs we simply
+want the agent that keeps the mechanics visible.
+
+**One model, on purpose.** The portal serves a single, deliberately small and cheap model,
+`gpt-5.6-luna` — for two reasons. First, budget: every call is metered in real dollars against
+your quota. Second, and more important, **a weaker model is the better teacher.** A powerful
+model papers over a vague spec — it silently guesses what you meant, so you never find out
+where your direction was ambiguous. On a small model, imprecise instructions produce visibly
+wrong or subtly-off results, and *that* feedback is what trains the
+specification-and-verification skill this course is about. Treat the weak model as a feature:
+it makes the quality of **your** direction visible.
+
+So the course standardises on Pi. The skill you're building — *directing and checking* an
+agent — carries over to any agent; Pi is simply the one we support in the labs.
+{{< /spoiler >}}
+
+> **Prefer to watch?** Steps [5–10 of the walkthrough](/lab1-onboarding/?c=6) do this whole
+> setup on Windows, macOS and Linux side by side — folder, terminal, Node, Pi, config file,
+> API key, first run.
+
+### Grab your materials and make a working folder
+
+Make a folder for this lab (say `ddls-week1`) and, from **this week's lab page in the
+portal**, download **both** of these into it:
+
+- **Your interview transcript** — the full chat with Agent A, saved from the portal. This is
+  what you'll translate in Part 3; the analyst reads the transcript, never your notes.
+- **The dataset** — the real file(s) Agent A was talking about.
+
+> **The download is deliberately bare — just the raw data file(s).** No README, no data
+> dictionary, no column guide. That is exactly what a real data owner drops in your inbox:
+> the numbers, and nothing that explains them. Everything a data dictionary *would* have told
+> you — what each column means, its units, how missing values are marked, which fields to
+> trust — has to come from **your interview transcript** and from **reading the file itself**
+> (Part 4's first prompt below). That reconstructed knowledge is precisely what `spec.md` is
+> for. If you find yourself wishing the download had a readme, go back to your transcript: the
+> answer is either in there, or it's a question you didn't ask.
+
+### Install and configure Pi
+
+> **Never opened a terminal before? Start here — this assumes zero experience.**
+> Pi is a program you run by typing commands into a **terminal**: a plain text window where you
+> type instructions and press Enter instead of clicking buttons. You'll open it once and paste in
+> the commands below — you won't be writing any code yourself.
+>
+> **Open a terminal:**
+> - **Windows:** click the **Start** button, type `PowerShell`, and open **Windows PowerShell**.
+> - **macOS:** press **⌘ Command + Space**, type `Terminal`, and press **Return**.
+> - **Linux:** open your applications menu and search for **Terminal** (or press **Ctrl + Alt + T**).
+>
+> A window with a blinking cursor appears. To run a command, type (or paste) it and press
+> **Enter / Return**.
+>
+> **Better: open it _inside_ your lab folder**, so you don't have to type any paths. Make the
+> folder first (say `ddls-week1`), put both downloads in it, then:
+> - **Windows 11:** right-click the folder ▸ **Open in Terminal**. (Windows 10: hold **Shift**,
+>   right-click ▸ *Open PowerShell window here*. Or click Explorer's address bar, type
+>   `powershell`, press Enter.)
+> - **macOS:** right-click the folder ▸ **Services ▸ New Terminal at Folder**. It ships with
+>   macOS but is **off by default** — turn it on in **System Settings ▸ Keyboard ▸ Keyboard
+>   Shortcuts ▸ Services ▸ Files and Folders**.
+> - **Linux (Ubuntu/GNOME):** right-click inside the folder ▸ **Open in Terminal**. Missing?
+>   `sudo apt install nautilus-extension-gnome-terminal`.
+>
+> **Works everywhere, if none of that does:** open a terminal any way you like, type `cd` and a
+> space, then **drag the folder into the terminal window** — the path types itself. On Windows,
+> right-click the folder ▸ *Copy as path* and paste it after `cd `.
+>
+> Then work through the numbered steps below, in order — they're all copy-paste. Still stuck?
+> Bring it to the start of the lab; the first part of the live session is exactly for getting
+> everyone set up.
+
+**1. Install Node.js** (this also installs `npm`, the tool that installs Pi). **Everyone needs
+this** — Pi is an npm package, so without Node the next step fails. First check whether you
+already have it:
+
+```bash
+node --version
+```
+
+If that prints **18.0 or higher**, skip to step 2. Otherwise install the **LTS** build:
+
+- **Windows & macOS (easiest):** download the installer from **<https://nodejs.org/en/download>**
+  — pick the **LTS** build (the page detects your system), run the downloaded file, and click
+  through the defaults (an `.msi` on Windows, a `.pkg` on macOS).
+- **macOS with Homebrew** (optional): `brew install node`
+- **Linux:** use your distro's package manager — official commands per distro are at
+  **<https://nodejs.org/en/download/package-manager/all>**.
+
+Then **close and reopen the terminal** and confirm both tools are ready:
+
+```bash
+node --version
+npm --version
+```
+
+Both should print a version number. Full official walkthrough: **<https://nodejs.org/learn>**.
+
+**2. Install Pi:**
+
+```bash
+npm install -g @earendil-works/pi-coding-agent
+```
+
+**3. Point Pi at the DDLS gateway.** Pi ignores `OPENAI_BASE_URL`, so it needs a custom
+provider file. Create `~/.pi/agent/models.json` with exactly this:
+
+```json
+{
+  "providers": {
+    "ddls": {
+      "baseUrl": "https://ddls-portal-6228434e.svc.hypha.aicell.io/v1",
+      "api": "openai-completions",
+      "apiKey": "$DDLS_API_KEY",
+      "models": [
+        { "id": "gpt-5.6-luna", "reasoning": false, "input": ["text"],
+          "samplingParams": { "reasoning_effort": "none" } }
+      ]
+    }
+  }
+}
+```
+
+> The `samplingParams` line is **required** — it's what lets the course model use tools.
+> Don't try to set `OPENAI_BASE_URL`; Pi won't read it.
+
+<details>
+<summary><b>How to create that file — per system</b> (the folder starts with a dot, which trips up every file manager)</summary>
+
+Pi always looks in a `.pi` folder inside your home folder — **including on Windows**, where the
+full path is `C:\Users\<you>\.pi\agent\models.json`.
+
+**Windows (PowerShell):**
+```powershell
+mkdir -Force "$env:USERPROFILE\.pi\agent"
+notepad "$env:USERPROFILE\.pi\agent\models.json"
+```
+Notepad asks *"Do you want to create a new file?"* — click **Yes**, paste, then **Ctrl + S**.
+Don't create the folder in File Explorer (it refuses names starting with a dot), and don't use
+*Save as* — that would save it as `models.json.txt`.
+
+**macOS:**
+```bash
+mkdir -p ~/.pi/agent
+touch ~/.pi/agent/models.json
+open -e ~/.pi/agent/models.json
+```
+The `touch` line matters: `open -e` refuses a file that doesn't exist yet. TextEdit opens it —
+paste, **⌘ S**, close. (`~` is your home folder; Finder hides it — press **⌘ ⇧ .** to see it.)
+
+**Linux:**
+```bash
+mkdir -p ~/.pi/agent
+nano ~/.pi/agent/models.json
+```
+Paste, then **Ctrl + O**, **Enter** to save and **Ctrl + X** to quit. Pasting into nano is
+usually **Ctrl + Shift + V**, not Ctrl + V.
+
+**Prefer an editor you already use?** `code ~/.pi/agent/models.json` opens it in VS Code on any
+OS. Or, on macOS/Linux, skip the editor entirely and write the whole file in one go with a
+heredoc (the quotes around `JSON` keep `$DDLS_API_KEY` literal, which is what you want):
+```bash
+mkdir -p ~/.pi/agent
+cat > ~/.pi/agent/models.json <<'JSON'
+{
+  "providers": {
+    "ddls": {
+      "baseUrl": "https://ddls-portal-6228434e.svc.hypha.aicell.io/v1",
+      "api": "openai-completions",
+      "apiKey": "$DDLS_API_KEY",
+      "models": [
+        { "id": "gpt-5.6-luna", "reasoning": false, "input": ["text"],
+          "samplingParams": { "reasoning_effort": "none" } }
+      ]
+    }
+  }
+}
+JSON
+```
+
+**Confirm it's really there** before moving on — this should print the JSON back:
+```bash
+cat ~/.pi/agent/models.json                          # macOS / Linux
+```
+On Windows PowerShell: `Get-Content "$env:USERPROFILE\.pi\agent\models.json"`. If it errors or
+comes back empty, the file didn't save where Pi looks — redo this step.
+
+</details>
+
+**4. Put your portal API key in the environment.** Generate a key in the portal (**Generate
+API key** on your dashboard — copy it, you may not see it again), then:
+
+```bash
+export DDLS_API_KEY="paste-your-portal-key-here"
+```
+
+On Windows PowerShell:
+
+```powershell
+$env:DDLS_API_KEY = "paste-your-portal-key-here"
+```
+
+**5. Run Pi** from the folder you'll work in:
+
+```bash
+pi --provider ddls --model gpt-5.6-luna
+```
+
+Ask it something small first — "list the files in this folder and tell me what you see" —
+to confirm it's talking to the portal before you hand it the real task. Pi can read/write
+files and run shell commands in that folder. It has **no built-in web search** — if you need
+the web, ask it to fetch pages with `curl`/`wget` via its shell tool. A full lab's worth of
+calls costs only a few cents, so don't ration your prompts — but keep an eye on the usage
+meter on your portal dashboard.
+
+> If Pi errors on the model or endpoint, check that `~/.pi/agent/models.json` matches the
+> block above exactly and that `DDLS_API_KEY` is set in the **same** terminal you launched
+> `pi` from. Ask a TA if it persists.
+
+## Part 3 — Translate: build `AGENTS.md` and `spec.md`
 
 You have a transcript. It is human-shaped: hedged, out of order, full of throwaway
 sentences (one of which is probably the whole problem). Now make it machine-shaped.
 
-For this drafting step you can use **any** chatbot (ChatGPT, Claude, or the local analyst
-agent once you set it up in Part 3). Work *from the transcript*, never from memory.
+Do this drafting **inside Pi** — the analyst agent you just set up in Part 2. Your transcript
+is already sitting in the working folder, so launch Pi there and have it **read the
+transcript** and draft these documents; you then **review and correct** everything it
+produces. Work *from the transcript*, never from memory.
 
 ### Step 1 — review it back as prose first
 
@@ -209,7 +490,9 @@ A good `AGENTS.md`:
 - [ ] **Points to `spec.md`** for everything detailed, instead of inlining it.
 
 **`spec.md` — every detail behind the brief.** This is where the throwaway sentence about
-"plate 3" lives. Nothing is too small.
+"plate 3" lives. Nothing is too small. In effect, `spec.md` **is the data dictionary the
+download didn't come with** — the one you rebuild from the interview and from opening the
+file. Nobody hands it to you; you write it.
 
 A good `spec.md` captures:
 
@@ -231,129 +514,18 @@ A good `spec.md` captures:
 > job. After you load the data in Part 4, **come back and correct `spec.md`** against what
 > the file actually contains. Interview → draft spec → *load data* → fix spec is the loop.
 
-## Part 3 — Set up your analyst agent (Agent B)
-
-Your analyst agent is **Pi**, a lightweight coding agent. It runs **on your own machine**
-and talks to the course model **through the portal gateway** — so every call counts against
-your portal budget, and the teaching team sees the transcript. Pi reads an `AGENTS.md`
-context file and can run code, read files and write output.
-
-{{< spoiler text="**Why Pi, and not Codex or another agent?**" >}}
-We benchmarked Pi head-to-head against OpenAI's Codex CLI on a real week-1 task, both driven
-through this exact course gateway. Three things decided it:
-
-- **It works through our portal today.** Pi reaches the course model over the standard
-  chat-completions API with a one-line config change. Codex needs a different API mode the
-  course gateway doesn't serve, so it couldn't complete the task through the portal.
-- **It's cheaper and faster.** Roughly **4× lower cost** per task and **~3× faster** in our
-  test — which matters when a fixed budget has to stretch across six lab weeks and a project.
-- **Quality was a wash.** Both produced a solid analysis and avoided the same traps.
-
-So the course standardises on Pi. The skill you're building — *directing and checking* an
-agent — carries over to any agent; Pi is simply the one we support in the labs.
-{{< /spoiler >}}
-
-> **Never opened a terminal before? Start here — this assumes zero experience.**
-> Pi is a program you run by typing commands into a **terminal**: a plain text window where you
-> type instructions and press Enter instead of clicking buttons. You'll open it once and paste in
-> the commands below — you won't be writing any code yourself.
->
-> **Step A — open a terminal:**
-> - **Windows:** click the **Start** button, type `PowerShell`, and open **Windows PowerShell**.
-> - **macOS:** press **⌘ Command + Space**, type `Terminal`, and press **Return**.
-> - **Linux:** open your applications menu and search for **Terminal** (or press **Ctrl + Alt + T**).
->
-> A window with a blinking cursor appears. To run a command, type (or paste) it and press
-> **Enter / Return**.
->
-> **Step B — install Node.js** (this also installs `npm`, the tool that installs Pi). First check
-> whether you already have it — run:
-> ```bash
-> node --version
-> ```
-> If that prints a number **18.0 or higher**, you're set — go to step 1 below. If it prints
-> nothing or a lower number, install the **LTS** version:
-> - **Windows & macOS (easiest):** download the installer from
->   **<https://nodejs.org/en/download>** — pick the **LTS** build (the page detects your system),
->   run the downloaded file, and click through the defaults (an `.msi` on Windows, a `.pkg` on macOS).
-> - **macOS with Homebrew** (optional): `brew install node`
-> - **Linux:** use your distro's package manager — official commands per distro are at
->   **<https://nodejs.org/en/download/package-manager/all>**.
->
-> Then **close and reopen the terminal** and confirm both tools are ready:
-> ```bash
-> node --version
-> npm --version
-> ```
-> Both should print a version number. Full official walkthrough: **<https://nodejs.org/learn>**.
-> Still stuck? Bring it to the start of the lab — the first part of the live session is exactly
-> for getting everyone set up. Everything below is copy-paste.
-
-**1. Install Pi:**
-
-```bash
-npm install -g @earendil-works/pi-coding-agent
-```
-
-**2. Point Pi at the DDLS gateway.** Pi ignores `OPENAI_BASE_URL`, so it needs a custom
-provider file. Create `~/.pi/agent/models.json` with exactly this:
-
-```json
-{
-  "providers": {
-    "ddls": {
-      "baseUrl": "https://ddls-portal-6228434e.svc.hypha.aicell.io/v1",
-      "api": "openai-completions",
-      "apiKey": "$DDLS_API_KEY",
-      "models": [
-        { "id": "gpt-5.6-luna", "reasoning": false, "input": ["text"],
-          "samplingParams": { "reasoning_effort": "none" } }
-      ]
-    }
-  }
-}
-```
-
-> The `samplingParams` line is **required** — it's what lets the course model use tools.
-> Don't try to set `OPENAI_BASE_URL`; Pi won't read it.
-
-**3. Put your portal API key in the environment.** Generate a key in the portal (**Generate
-API key** on your dashboard — copy it, you may not see it again), then:
-
-```bash
-export DDLS_API_KEY="paste-your-portal-key-here"
-```
-
-On Windows PowerShell:
-
-```powershell
-$env:DDLS_API_KEY = "paste-your-portal-key-here"
-```
-
-**4. Run Pi** from the folder you'll work in:
-
-```bash
-pi --provider ddls --model gpt-5.6-luna
-```
-
-Ask it something small first — "list the files in this folder and tell me what you see" —
-to confirm it's talking to the portal before you hand it the real task. Pi can read/write
-files and run shell commands in that folder. It has **no built-in web search** — if you need
-the web, ask it to fetch pages with `curl`/`wget` via its shell tool. A full lab's worth of
-calls costs only a few cents, so don't ration your prompts — but keep an eye on the usage
-meter on your portal dashboard.
-
-> If Pi errors on the model or endpoint, check that `~/.pi/agent/models.json` matches the
-> block above exactly and that `DDLS_API_KEY` is set in the **same** terminal you launched
-> `pi` from. Ask a TA if it persists.
-
 ## Part 4 — Direct the agent to solve the problem
 
-Now you have a briefed analyst and a real problem. Time to build.
+Now you have a briefed analyst, the dataset already sitting in your working folder, and a
+real problem. Time to build.
 
-1. **Download the dataset** from the portal into your working folder.
-2. Put your `AGENTS.md` and `spec.md` in the **same folder** so the agent reads them.
-3. Point the agent at the task and let it work — then iterate.
+> **Prefer to watch?** [Steps 11–12 of the walkthrough](/lab1-onboarding/?c=12) show the brief
+> sitting next to the data, and the agent reading the data back — including the moment it
+> catches a mistake in the spec.
+
+1. Make sure your `AGENTS.md` and `spec.md` sit in the **same folder** as the dataset, so the
+   agent reads them all together.
+2. Point the agent at the task and let it work — then iterate.
 
 **How to prompt (build the smallest thing that works first):**
 
@@ -435,7 +607,7 @@ Your submission is your **transcript plus your report**:
 - **The interview transcript** (your conversation with Agent A) — downloaded from the
   portal.
 - **The analysis transcript** (your conversation with Agent B) — the chat history from your
-  local agent. Pi saves each run as a `.jsonl` file under `~/.pi/agent/sessions/`; if you ran
+  local agent. Pi saves each run as a `.jsonl` file under `~/.pi/agent/sessions/` (on Windows, `C:\Users\<you>\.pi\agent\sessions\`); if you ran
   Pi more than once, include them all.
 - **The report** (AI-assisted, checked by you), with `AGENTS.md` and `spec.md` alongside.
 
@@ -452,6 +624,5 @@ verification is exactly what we're after.
 
 ---
 
-Stuck during the lab? First try sharpening your prompt — that's the skill. Still stuck?
-Ask a TA with a concise summary: what you tried, what you expected, what happened. Good luck,
-and have fun — this is the job.
+Good luck, and have fun — this is the job. (Stuck? See
+[**When you get stuck**](#before-you-start) up top: sharpen your prompt first, then ask a TA.)

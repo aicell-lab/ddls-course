@@ -1,0 +1,52 @@
+{{/*
+  htmlvideo — embed a self-contained HTML walkthrough (see /static/lab1-onboarding/).
+  Not a real video file: a seekable, deterministic HTML animation, so the text stays
+  crisp, searchable and readable on any screen.
+
+    {{< htmlvideo src="/lab1-onboarding/" title="…" caption="…" >}}
+*/}}
+{{ $src := .Get "src" }}
+{{ $id := printf "htmlvideo-%d" (add 1 .Ordinal) }}
+{{ if not (.Page.Scratch.Get "htmlvideoCSS") }}{{ .Page.Scratch.Set "htmlvideoCSS" true }}
+<style>
+figure.html-video{margin:1.6rem 0}
+</style>
+{{ end }}
+<figure class="html-video">
+  <iframe id="{{ $id }}"
+          src="{{ $src }}"
+          title="{{ with .Get `title` }}{{ . }}{{ else }}Walkthrough{{ end }}"
+          loading="lazy"
+          scrolling="no"
+          style="width:100%;height:620px;border:0;border-radius:14px;display:block;background:#0b1220"
+          allow="fullscreen"></iframe>
+  {{ with .Get "caption" }}
+  <figcaption style="margin-top:.55rem;font-size:.9rem;opacity:.75;line-height:1.5">
+    {{ . | markdownify }}
+    <a href="{{ $src }}" target="_blank" rel="noopener" style="white-space:nowrap">Open in a new tab &rarr;</a>
+  </figcaption>
+  {{ end }}
+</figure>
+<script>
+(function () {
+  var f = document.getElementById('{{ $id }}');
+  if (!f) return;
+  window.addEventListener('message', function (e) {
+    if (!e.data || e.data.ddlsFilm !== 'height') return;
+    if (e.source !== f.contentWindow) return;
+    f.style.height = e.data.height + 'px';
+  });
+  // Start it only when the reader actually reaches it — the iframe cannot tell on its own.
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    var started = false;
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting || started) return;
+        started = true;
+        f.contentWindow.postMessage({ ddlsFilm: 'play' }, '*');
+      });
+    }, { threshold: 0.5 }).observe(f);
+  }
+})();
+</script>

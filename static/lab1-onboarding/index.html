@@ -42,11 +42,19 @@
     if (pl) { pl.classList.add('fit'); window.dispatchEvent(new Event('resize')); }
   }
 
-  var m = /[?#&]c=(\d+)/.exec(location.search + location.hash);
+  // ?c=8 jumps to chapter 8. ?c=folder does the same by name and survives a chapter being
+  // inserted before it — prefer the slug when linking from prose.
+  var m = /[?#&]c=([A-Za-z0-9_-]+)/.exec(location.search + location.hash);
   if (m) {
     var chips = document.querySelectorAll('.chapters .chip');
-    var i = Math.min(Math.max(parseInt(m[1], 10) - 1, 0), chips.length - 1);
-    if (chips[i]) chips[i].click();
+    var i = -1;
+    if (/^\d+$/.test(m[1])) {
+      i = Math.min(Math.max(parseInt(m[1], 10) - 1, 0), chips.length - 1);
+    } else {
+      var ids = window.__filmChapters || [];
+      for (var j = 0; j < ids.length; j++) { if (ids[j] === m[1]) { i = j; break; } }
+    }
+    if (i >= 0 && chips[i]) chips[i].click();
   }
   // Report our height so an embedding page can size its iframe to fit.
   function report() {

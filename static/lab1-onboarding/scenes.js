@@ -478,29 +478,35 @@
 
   /* ============================================================ 5 · folder + terminal */
   (function () {
-    var s = film.scene('folder', { title: 'A folder, and a terminal in it', kicker: 'Step 04', dur: 34 });
-    head(s, 'Step 04 · on your laptop', 'Make a folder — then open a terminal <em>inside</em> it',
-      'A terminal is just a text window. Open it from the folder and you start in the right place.');
+    var s = film.scene('folder', { title: 'A folder, and a terminal in it', kicker: 'Step 04', dur: 46 });
+    head(s, 'Step 04 · on your laptop', 'Make the folder first, put both files in it, <em>then</em> open a terminal',
+      'Order matters: a terminal opened from the folder starts inside it, so you never type a path.');
 
     var grid = el('div', 'os-grid');
     s.node.appendChild(grid);
     s.enter(grid, 0.3, 0.5);
 
-    // the three menus really are different — this is the one screen where that matters
+    // the three file managers really do differ — new-folder route and terminal route both
     var ROUTE = {
       win: {
+        newf: ['View', 'New ▸ Folder', 'Open in Terminal'], newfPick: 'New ▸ Folder',
+        shortcut: '<b>Shortcut:</b> <code>Ctrl + Shift + N</code> makes a new folder.',
         path: 'Right-click the folder ▸ <b>Open in Terminal</b>',
         sub: 'Windows 11 has this in the normal right-click menu — no Shift needed.',
         fall: '<b>Windows 10, or not listed?</b> Hold <b>Shift</b> and right-click ▸ <i>Open PowerShell window here</i>. ' +
           'Or click the address bar, type <code>powershell</code>, press Enter.'
       },
       mac: {
+        newf: ['Get Info', 'New Folder', 'Show View Options'], newfPick: 'New Folder',
+        shortcut: '<b>Shortcut:</b> <code>⇧ ⌘ N</code>, or File ▸ New Folder.',
         path: 'Right-click the folder ▸ <b>Services ▸ New Terminal at Folder</b>',
-        sub: 'It ships with macOS, but it is switched off until you turn it on.',
+        sub: 'It ships with macOS, but is switched off until you turn it on.',
         fall: '<b>Not in the menu?</b> System Settings ▸ Keyboard ▸ Keyboard Shortcuts ▸ <b>Services</b> ▸ ' +
           'Files and Folders ▸ tick <i>New Terminal at Folder</i>.'
       },
       lin: {
+        newf: ['New Folder', 'Paste', 'Open in Terminal'], newfPick: 'New Folder',
+        shortcut: '<b>Shortcut:</b> <code>Ctrl + Shift + N</code> makes a new folder.',
         path: 'Right-click inside the folder ▸ <b>Open in Terminal</b>',
         sub: 'Ubuntu ships this with Files; a bare GNOME install may not.',
         fall: '<b>Missing?</b> <code>sudo apt install nautilus-extension-gnome-terminal</code> — ' +
@@ -513,69 +519,181 @@
       var col = U.osColumn(k);
       grid.appendChild(col);
 
-      var fm = U.fileManager(k, { x: 0, y: 0, w: 100 });
+      // starts in Downloads, ends inside ddls-week1
+      var fm = U.fileManager(k, { x: 0, y: 0, w: 100 }, 'Downloads');
       fm.node.style.position = 'relative';
       fm.node.style.width = '100%';
       fm.body.style.height = '186px';
       col.appendChild(fm.node);
 
-      var f1 = fm.file('ddls-week1');
-      var f2 = fm.file('ddls-week1-…-dataset.zip', 'file');
-      var f3 = fm.file('ddls-week1-interview.md', 'file');
-      [f1, f2, f3].forEach(function (f) { f.classList.add('fx'); });
-      s.enter(f1, 1.0 + i * 0.15, 0.4);
-      s.enter(f2, 1.4 + i * 0.15, 0.4);
-      s.enter(f3, 1.7 + i * 0.15, 0.4);
+      var zip = fm.file('ddls-week1-…-dataset.zip', 'file');
+      var doc = fm.file('ddls-week1-interview.md', 'file');
+      var dir = fm.file('ddls-week1');
+      dir.style.display = 'none';
+      [zip, doc].forEach(function (f) { f.classList.add('fx'); });
+      s.enter(zip, 0.9 + i * 0.12, 0.4);
+      s.enter(doc, 1.2 + i * 0.12, 0.4);
 
-      s.klass(f1, 'sel', 4.6, 7.4);
-      var menu = fm.menu(o.ctx, o.ctxPick, { x: 60, y: 40 });
-      menu.classList.add('fx');
-      s.enter(menu, 5.2 + i * 0.12, 0.32);
-      s.exit(menu, 11.8, 0.3);
+      // 1 · make the folder
+      var m1 = fm.menu(R.newf, R.newfPick, { x: 92, y: 30 });
+      m1.classList.add('fx');
+      s.enter(m1, 2.8 + i * 0.12, 0.3);
+      s.exit(m1, 5.0, 0.25);
+      dir.classList.add('fx');
+      s.at(5.2, 0.05, function (p, phase) { dir.style.display = phase === 'after' ? '' : 'none'; });
+      s.enter(dir, 5.3, 0.4);
 
-      // what to click, spelled out — the menus genuinely do not match
+      // 2 · move both downloads into it
+      s.klass(zip, 'sel', 8.0, 2.6);
+      s.klass(doc, 'sel', 8.0, 2.6);
+      s.exit(zip, 10.2, 0.4);
+      s.exit(doc, 10.2, 0.4);
+      s.at(10.7, 0.05, function (p, phase) {
+        var gone = phase === 'after';
+        zip.style.display = gone ? 'none' : '';
+        doc.style.display = gone ? 'none' : '';
+      });
+      s.klass(dir, 'sel', 10.4, 1.4);
+
+      // 3 · open it — same window, new location
+      var zip2 = fm.file('ddls-week1-…-dataset.zip', 'file');
+      var doc2 = fm.file('ddls-week1-interview.md', 'file');
+      [zip2, doc2].forEach(function (f) { f.style.display = 'none'; f.classList.add('fx'); });
+      s.at(13.2, 0.05, function (p, phase) {
+        var inside = phase === 'after';
+        fm.where.textContent = inside ? 'ddls-week1' : 'Downloads';
+        dir.style.display = inside ? 'none' : '';
+        zip2.style.display = inside ? '' : 'none';
+        doc2.style.display = inside ? '' : 'none';
+      });
+      s.enter(zip2, 13.4, 0.35);
+      s.enter(doc2, 13.7, 0.35);
+
+      var shortcut = el('div', 'os-note fx', R.shortcut);
+      shortcut.style.minHeight = '34px';
+      col.appendChild(shortcut);
+      s.enter(shortcut, 6.0 + i * 0.12, 0.4);
+
+      // 4 · terminal, from inside that folder
+      var m2 = fm.menu(o.ctx, o.ctxPick, { x: 60, y: 40 });
+      m2.classList.add('fx');
+      s.enter(m2, 16.0 + i * 0.12, 0.32);
+      s.exit(m2, 22.0, 0.3);
+
       var route = el('div', 'os-note fx');
-      route.style.minHeight = '78px';
+      route.style.minHeight = '74px';
       route.innerHTML = R.path + '<div style="color:#6b7a8a;margin-top:4px">' + R.sub + '</div>';
       col.appendChild(route);
-      s.enter(route, 6.0 + i * 0.12, 0.4);
+      s.enter(route, 16.6 + i * 0.12, 0.4);
 
       var note = el('div', 'os-note warm fx');
-      note.style.minHeight = '96px';
+      note.style.minHeight = '92px';
       note.innerHTML = R.fall;
       col.appendChild(note);
-      s.enter(note, 12.6 + i * 0.12, 0.4);
+      s.enter(note, 23.0 + i * 0.12, 0.4);
 
-      var t = U.terminal(k, null, { h: 190 });
+      var t = U.terminal(k, null, { h: 150 });
       t.node.style.marginTop = '12px';
       t.node.classList.add('fx');
       col.appendChild(t.node);
       t.idle();
-      s.enter(t.node, 20.0 + i * 0.15, 0.5);
-      s.ring(t.body, 22.4, 3.0, { pad: 3 });
+      s.enter(t.node, 31.0 + i * 0.15, 0.5);
+      s.ring(t.body, 33.4, 3.0, { pad: 3 });
     });
 
     s.note('<b>Works on all three, whatever your menu says:</b> open a terminal any way you like, type ' +
       '<code>cd</code> and a space, then drag the folder into the window — the path types itself. ' +
       'On Windows, right-click the folder ▸ <i>Copy as path</i> and paste it instead.',
-      15.4, 5.4, { x: 300, y: 812, width: 1000, tone: 'warm' });
+      26.4, 4.6, { x: 300, y: 828, width: 1000, tone: 'warm' });
 
-    s.say(0, 4.4, 'Make one folder for this lab and put both downloads in it.', 'FOLDER');
-    s.say(4.4, 6.0, 'Now the part that saves you pain: open the terminal <b>from the folder itself</b>, so it starts in the right place.');
-    s.say(10.4, 5.0, 'This is the one screen where the three systems really differ — find your own column.');
-    s.say(15.4, 5.0, 'And if your menu does not have it, none of that matters: type <code>cd</code>, a space, then drag the folder into the terminal window.');
-    s.say(20.4, 5.0, 'A terminal is only a text window: you type a line, press Enter, it answers.');
-    s.say(25.4, 8.6, 'Windows uses PowerShell, macOS and Linux use zsh or bash. The prompt looks different — but from here the commands are the same, so we follow just one.');
+    s.say(0, 3.0, 'Both downloads have landed in Downloads, where everything else already is.', 'FOLDER');
+    s.say(3.0, 5.0, 'So first make one folder for this lab — call it <code>ddls-week1</code>. Everything from here happens inside it.');
+    s.say(8.0, 5.2, 'Move both files into it: the transcript and the dataset. That folder is about to become your analyst agent\'s entire world.');
+    s.say(13.2, 3.2, 'Then open the folder, so you are standing in it.');
+    s.say(16.4, 5.4, 'And now the part that saves you pain: open the terminal <b>from this folder</b>, so it starts inside it and you never type a path.');
+    s.say(21.8, 4.6, 'This is the one screen where the three systems really differ — find your own column.');
+    s.say(26.4, 4.6, 'If your menu does not have it, none of that matters: type <code>cd</code>, a space, then drag the folder into the terminal window.');
+    s.say(31.0, 4.6, 'A terminal is only a text window: you type a line, press Enter, it answers.');
+    s.say(35.6, 10.4, 'Windows uses PowerShell, macOS and Linux use zsh or bash. The prompt looks different — but from here the commands are the same, so we follow just one.');
   })();
 
-  /* ============================================================ 6 · node + pi */
+  /* ============================================================ 6a · node.js */
   (function () {
-    var s = film.scene('install', { title: 'Install Pi', kicker: 'Step 05', dur: 28 });
-    head(s, 'Step 05 · on your laptop', 'Check Node, then install Pi',
-      'Identical on all three systems — so from here we show one terminal: yours.');
+    var s = film.scene('node', { title: 'Install Node.js', kicker: 'Step 05', dur: 30 });
+    head(s, 'Step 05 · on your laptop', 'Install Node.js — everyone needs this',
+      'Pi is an npm package, so without Node the next step fails. Check first: you may already have it.');
 
-    // one terminal, in the viewer's own platform. The other two are built and kept
-    // in step behind it, so the Show: chips can switch without rebuilding anything.
+    var grid = el('div', 'os-grid');
+    s.node.appendChild(grid);
+    s.enter(grid, 0.3, 0.5);
+
+    var HOW = {
+      win: ['Download the <b>LTS</b> installer from <b>nodejs.org/en/download</b> — the page detects your system — ' +
+            'and run the <code>.msi</code>, clicking through the defaults.', 'monitor'],
+      mac: ['Same <b>LTS</b> installer from <b>nodejs.org/en/download</b> (a <code>.pkg</code>). ' +
+            'With Homebrew already set up, <code>brew install node</code> does it too.', 'apple'],
+      lin: ['Use your distribution’s package manager — the official per-distro commands are at ' +
+            '<b>nodejs.org/en/download/package-manager/all</b>.', 'terminal']
+    };
+
+    OSK.forEach(function (k, i) {
+      var o = OS[k];
+      var col = U.osColumn(k);
+      grid.appendChild(col);
+
+      var t = U.terminal(k, null, { h: 168 });
+      t.node.style.width = '100%';
+      t.body.style.fontSize = '13px';
+      col.appendChild(t.node);
+      var c1 = t.cmd('node --version');
+      var o1 = t.out(k === 'win' ? "node : The term 'node' is not recognized."
+        : k === 'mac' ? 'zsh: command not found: node'
+        : 'bash: node: command not found', 'err');
+      o1.classList.add('fx');
+      s.type(c1.txt, c1.text, 1.2 + i * 0.1, 1.0);
+      s.enter(o1, 2.8, 0.25);
+
+      var how = el('div', 'os-note fx');
+      how.style.minHeight = '96px';
+      how.innerHTML = HOW[k][0];
+      col.appendChild(how);
+      s.enter(how, 6.4 + i * 0.12, 0.4);
+
+      // after the installer: a NEW terminal, and both tools answer
+      var t2 = U.terminal(k, null, { h: 168 });
+      t2.node.style.width = '100%';
+      t2.node.style.marginTop = '12px';
+      t2.body.style.fontSize = '13px';
+      t2.node.classList.add('fx');
+      col.appendChild(t2.node);
+      var d1 = t2.cmd('node --version');
+      var e1 = t2.out('v22.14.0', 'ok'); e1.classList.add('fx');
+      var d2 = t2.cmd('npm --version');
+      var e2 = t2.out('10.9.4', 'ok'); e2.classList.add('fx');
+      s.enter(t2.node, 15.0 + i * 0.15, 0.5);
+      s.type(d1.txt, d1.text, 16.4 + i * 0.1, 1.0);
+      s.enter(e1, 18.0, 0.25);
+      s.type(d2.txt, d2.text, 19.4 + i * 0.1, 1.0);
+      s.enter(e2, 21.0, 0.25);
+    });
+
+    s.note('<b>Close the terminal and open a new one after installing.</b> The old window still has the old PATH, so <code>node</code> will keep looking missing even though it is there.',
+      12.0, 5.4, { x: 300, y: 824, width: 1000, tone: 'warm' });
+
+    s.say(0, 4.4, 'Pi is installed with npm, which comes with Node.js — so Node comes first.', 'NODE');
+    s.say(4.4, 4.0, 'Ask for its version. If that prints 18.0 or higher, you already have it: skip ahead.');
+    s.say(8.4, 3.6, 'Nothing, or a lower number, and you install the LTS build.');
+    s.say(12.0, 5.4, 'Then close the terminal and open a new one from your folder again — the window you already had still has the old settings.');
+    s.say(17.4, 5.0, 'Now both answer: <code>node</code> and <code>npm</code>. That is the whole prerequisite.');
+    s.say(22.4, 7.6, 'If either still comes back empty, bring it to the start of Wednesday’s lab — the first part of the session is exactly for this.');
+  })();
+
+  /* ============================================================ 6b · install pi */
+  (function () {
+    var s = film.scene('install', { title: 'Install Pi', kicker: 'Step 06', dur: 22 });
+    head(s, 'Step 06 · on your laptop', 'Install Pi, your analyst agent',
+      'One command, identical on all three systems — so from here we show one terminal: yours.');
+
     var solo = U.osSolo({ x: 300, y: 196, w: 1000 });
     s.node.appendChild(solo.node);
     s.enter(solo.node, 0.3, 0.5);
@@ -585,14 +703,11 @@
       var o = OS[k];
       col.appendChild(el('div', 'os-tag', '<span class="badge">' + icon(o.badge, 13) + '</span>' + o.name + ' · ' + o.shell));
 
-      var t = U.terminal(k, null, { h: 360 });
+      var t = U.terminal(k, null, { h: 300 });
       t.node.style.width = '100%';
       t.body.style.fontSize = '14px';
       col.appendChild(t.node);
 
-      var c1 = t.cmd('node --version');
-      var o1 = t.out('v22.14.0', 'ok'); o1.classList.add('fx');
-      t.gap();
       var c2 = t.cmd('npm install -g @earendil-works/pi-coding-agent');
       var o2 = t.out('added 61 packages in 6s', 'dim'); o2.classList.add('fx');
       var o3 = t.out('<span class="ok">✓</span> pi 0.84.3 installed', ''); o3.classList.add('fx');
@@ -600,13 +715,11 @@
       var c3 = t.cmd('pi --version');
       var o4 = t.out('0.84.3', 'ok'); o4.classList.add('fx');
 
-      s.type(c1.txt, c1.text, 1.4, 1.1);
-      s.enter(o1, 3.0, 0.25);
-      s.type(c2.txt, c2.text, 6.2, 2.6);
-      s.enter(o2, 10.4, 0.3);
-      s.enter(o3, 11.0, 0.3);
-      s.type(c3.txt, c3.text, 14.0, 0.9);
-      s.enter(o4, 15.4, 0.25);
+      s.type(c2.txt, c2.text, 1.2, 2.6);
+      s.enter(o2, 5.2, 0.3);
+      s.enter(o3, 5.8, 0.3);
+      s.type(c3.txt, c3.text, 8.4, 0.9);
+      s.enter(o4, 9.8, 0.25);
 
       var note = el('div', 'os-note warm fx', k === 'win'
         ? '<b>"Running scripts is disabled"?</b> Run once: <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code>, answer <b>Y</b>, then try again.'
@@ -614,54 +727,16 @@
           ? '<b>Permission errors (EACCES)?</b> Do not reach for <code>sudo</code> — reinstall Node from nodejs.org, which puts npm somewhere you own.'
           : '<b>Permission errors (EACCES)?</b> Do not reach for <code>sudo</code> — install Node with <code>nvm</code> and run it again.');
       col.appendChild(note);
-      s.enter(note, 16.4, 0.4);
+      s.enter(note, 11.0, 0.4);
     });
 
-    s.note('Same three commands everywhere. <b>-g</b> means "install it once, for the whole machine".',
-      11.6, 4.4, { x: 480, y: 806, width: 620 });
+    s.note('<b>-g</b> means "install it once, for the whole machine" — you do this in week 1 only, not every lab.',
+      6.0, 4.6, { x: 460, y: 806, width: 660 });
 
-    s.say(0, 3.4, 'Pi needs Node. Check whether you already have it.', 'INSTALL');
-    s.say(3.4, 5.6, 'A number of 18 or higher and you are set. Nothing, or something lower — install the LTS build from nodejs.org and reopen the terminal.');
-    s.say(9.0, 4.6, 'Then one command installs Pi. It is the same on Windows, macOS and Linux.');
-    s.say(13.6, 5.0, 'Ask Pi its version to confirm the install actually landed.');
-    s.say(18.6, 9.4, 'Use <b>Show:</b> under the picture if you want to see another platform — but the commands do not change, only the prompt in front of them.');
-  })();
-
-  /* ============================================================ 7 · api key */
-  (function () {
-    var s = film.scene('key', { title: 'Generate your API key', kicker: 'Step 06', dur: 19 });
-    head(s, 'Step 06 · in the browser', 'Generate your API key',
-      'This is what lets Pi talk to the course model — and what meters your budget.');
-
-    var br = U.browser('', { x: 140, y: 172, w: 980, h: 668 });
-    br.setUrl(HOST + '/dashboard');
-    s.node.appendChild(br.node);
-    var pg = U.dashboardPage({ keys: 0 });
-    br.body.appendChild(pg.node);
-    s.enter(br.node, 0.2, 0.5);
-    pg.reveal.style.opacity = 0;
-    // the page scrolls down as you reach the key panel, the way it really does
-    s.at(3.6, 1.0, function (p, phase) {
-      var y = (phase === 'before') ? 0 : -170 * (phase === 'after' ? 1 : p * p * (3 - 2 * p));
-      pg.node.style.transform = 'translateY(' + y.toFixed(1) + 'px)';
-    });
-
-    s.klass(pg.labelField, 'focus', 1.6, 2.4);
-    tap(s, pg.labelField, 1.7);
-    s.type(pg.labelVal, 'my-laptop', 2.0, 1.1);
-    tap(s, pg.genBtn, 4.6);
-    s.type(pg.keyVal, FAKE_KEY, 5.4, 1.6, { caret: false });
-    s.enter(pg.reveal, 5.2, 0.45);
-    s.at(5.0, 0.1, function (p, ph) { pg.keysStat.textContent = ph === 'after' ? '1' : '0'; });
-    tap(s, pg.copyBtn, 8.4);
-
-    s.note('<b>Copy it now.</b> The portal shows a key exactly once. Lost it? Generate another — that is fine.',
-      9.0, 5.4, { anchor: pg.reveal, side: 'bottom', dy: 16, dx: 120 });
-
-    s.say(0, 4.4, 'Back to your dashboard. Give the key a label so you know which machine it is on.', 'API KEY');
-    s.say(4.4, 4.4, 'Generate, and the key appears once.');
-    s.say(8.8, 4.2, 'Copy it straight away — you will paste it into your terminal in a moment.');
-    s.say(13.0, 6.0, 'Every call Pi makes with this key is metered against your $5, and logged. That is by design: we read what your agent did.');
+    s.say(0, 4.6, 'One command installs Pi, and it is the same on Windows, macOS and Linux.', 'INSTALL');
+    s.say(4.6, 3.8, 'Then ask Pi its version, to confirm the install actually landed.');
+    s.say(8.4, 4.6, 'That is the last thing you install. Everything after this is configuration.');
+    s.say(13.0, 9.0, 'Use <b>Show:</b> under the picture if you want to see another platform — but the command does not change, only the prompt in front of it.');
   })();
 
   /* ============================================================ 8 · models.json */
@@ -766,10 +841,47 @@
     s.say(23.0, 6.8, 'Note <code>"$DDLS_API_KEY"</code> — the key is <b>not</b> in this file. Pi reads it from your environment, which is what you set next.');
   })();
 
+  /* ============================================================ 7 · api key */
+  (function () {
+    var s = film.scene('key', { title: 'Generate your API key', kicker: 'Step 08', dur: 19 });
+    head(s, 'Step 08 · in the browser', 'Generate your API key',
+      'This is what lets Pi talk to the course model — and what meters your budget.');
+
+    var br = U.browser('', { x: 140, y: 172, w: 980, h: 668 });
+    br.setUrl(HOST + '/dashboard');
+    s.node.appendChild(br.node);
+    var pg = U.dashboardPage({ keys: 0 });
+    br.body.appendChild(pg.node);
+    s.enter(br.node, 0.2, 0.5);
+    pg.reveal.style.opacity = 0;
+    // the page scrolls down as you reach the key panel, the way it really does
+    s.at(3.6, 1.0, function (p, phase) {
+      var y = (phase === 'before') ? 0 : -170 * (phase === 'after' ? 1 : p * p * (3 - 2 * p));
+      pg.node.style.transform = 'translateY(' + y.toFixed(1) + 'px)';
+    });
+
+    s.klass(pg.labelField, 'focus', 1.6, 2.4);
+    tap(s, pg.labelField, 1.7);
+    s.type(pg.labelVal, 'my-laptop', 2.0, 1.1);
+    tap(s, pg.genBtn, 4.6);
+    s.type(pg.keyVal, FAKE_KEY, 5.4, 1.6, { caret: false });
+    s.enter(pg.reveal, 5.2, 0.45);
+    s.at(5.0, 0.1, function (p, ph) { pg.keysStat.textContent = ph === 'after' ? '1' : '0'; });
+    tap(s, pg.copyBtn, 8.4);
+
+    s.note('<b>Copy it now.</b> The portal shows a key exactly once. Lost it? Generate another — that is fine.',
+      9.0, 5.4, { anchor: pg.reveal, side: 'bottom', dy: 16, dx: 120 });
+
+    s.say(0, 4.4, 'Now the key. Back to your dashboard. Give the key a label so you know which machine it is on.', 'API KEY');
+    s.say(4.4, 4.4, 'Generate, and the key appears once.');
+    s.say(8.8, 4.2, 'Copy it straight away — you will paste it into your terminal in a moment.');
+    s.say(13.0, 6.0, 'Every call Pi makes with this key is metered against your $5, and logged. That is by design: we read what your agent did.');
+  })();
+
   /* ============================================================ 9 · env var */
   (function () {
-    var s = film.scene('env', { title: 'Save the key in a .env file', kicker: 'Step 08', dur: 30 });
-    head(s, 'Step 08 · on your laptop', 'Save the key in a <span style="font-family:var(--mono);font-size:.86em">.env</span> file, then load it',
+    var s = film.scene('env', { title: 'Save the key in a .env file', kicker: 'Step 09', dur: 30 });
+    head(s, 'Step 09 · on your laptop', 'Save the key in a <span style="font-family:var(--mono);font-size:.86em">.env</span> file, then load it',
       'The portal shows a key once. Put it on disk in your lab folder so you never need it again.');
 
     var solo = U.osSolo({ x: 260, y: 190, w: 1080 });
@@ -827,8 +939,8 @@
 
   /* ============================================================ 10 · start pi */
   (function () {
-    var s = film.scene('start', { title: 'Start Pi', kicker: 'Step 09', dur: 21 });
-    head(s, 'Step 09 · on your laptop', 'Start Pi — and check it is really talking to us',
+    var s = film.scene('start', { title: 'Start Pi', kicker: 'Step 10', dur: 21 });
+    head(s, 'Step 10 · on your laptop', 'Start Pi — and check it is really talking to us',
       'Same command everywhere. Only the prompt in front of it changes.');
 
     var solo = U.osSolo({ x: 240, y: 200, w: 1120 });
@@ -884,8 +996,8 @@
 
   /* ============================================================ 11 · the brief */
   (function () {
-    var s = film.scene('brief', { title: 'Put the brief next to the data', kicker: 'Step 10', dur: 16 });
-    head(s, 'Step 10 · the actual work', 'Put the brief next to the data',
+    var s = film.scene('brief', { title: 'Put the brief next to the data', kicker: 'Step 11', dur: 16 });
+    head(s, 'Step 11 · the actual work', 'Put the brief next to the data',
       'Agent B starts as an empty folder. What you put in it is the whole job.');
 
     var wrap = el('div');
@@ -934,8 +1046,8 @@
 
   /* ============================================================ 12 · direct it */
   (function () {
-    var s = film.scene('direct', { title: 'Direct it — and check', kicker: 'Step 11', dur: 32 });
-    head(s, 'Step 11 · the actual work', 'Ask it to read the data back to you first',
+    var s = film.scene('direct', { title: 'Direct it — and check', kicker: 'Step 12', dur: 32 });
+    head(s, 'Step 12 · the actual work', 'Ask it to read the data back to you first',
       'Before any analysis. This is where the mismatches show up.');
 
     var LINES = [
@@ -989,7 +1101,7 @@
 
   /* ============================================================ 13 · hand in */
   (function () {
-    var s = film.scene('handin', { title: 'What you hand in', kicker: 'Step 12', dur: 16 });
+    var s = film.scene('handin', { title: 'What you hand in', kicker: 'Step 13', dur: 16 });
     var hero = el('div', 'hero');
     hero.innerHTML = '<h1>What you hand in.</h1>' +
       '<p>Not just the answer. The <b>record of how you got there</b> — because that is what we read.</p>';
@@ -1029,6 +1141,9 @@
 
   /* HyperFrames contract: a paused, seekable timeline the renderer can scrub
      frame-by-frame into an MP4. Same file, no changes. */
+  // chapter ids in order, so a link can say ?c=folder instead of a brittle ?c=7
+  window.__filmChapters = film.scenes.map(function (sc) { return sc.id; });
+
   window.__timelines = window.__timelines || {};
   window.__timelines['ddls-lab1-onboarding'] = {
     duration: film.dur,

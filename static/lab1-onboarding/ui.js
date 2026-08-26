@@ -374,19 +374,21 @@
   }
 
   /* ---------------- file manager ---------------- */
-  function fileManager(osKey, box) {
+  function fileManager(osKey, box, title) {
     var o = OS[osKey];
     var n = el('div', 'fm ' + osKey);
     n.style.position = 'absolute'; pos(n, box);
     var bar = el('div', 'fm-bar');
+    var where = el('span', 'where', title || o.fmPath);
     bar.innerHTML = osKey === 'mac'
-      ? '<span style="position:absolute;left:10px;display:flex;gap:6px"><span class="dot r" style="width:10px;height:10px"></span><span class="dot y" style="width:10px;height:10px"></span><span class="dot g" style="width:10px;height:10px"></span></span><span>' + o.fmPath + '</span>'
-      : '<span style="display:flex;color:#0b62b4">' + icon('folder', 13) + '</span><span>' + o.fmPath + '</span>';
+      ? '<span style="position:absolute;left:10px;display:flex;gap:6px"><span class="dot r" style="width:10px;height:10px"></span><span class="dot y" style="width:10px;height:10px"></span><span class="dot g" style="width:10px;height:10px"></span></span>'
+      : '<span style="display:flex;color:#0b62b4">' + icon('folder', 13) + '</span>';
+    bar.appendChild(where);
     bar.style.position = 'relative';
     var body = el('div', 'fm-body');
     n.appendChild(bar); n.appendChild(body);
     return {
-      node: n, body: body, os: o,
+      node: n, body: body, os: o, where: where,
       file: function (name, kind) {
         var f = el('div', 'file');
         f.innerHTML = '<div class="ic">' + icon(kind === 'file' ? 'file' : 'folder', 32, 1.5) + '</div><div class="nm">' + name + '</div>';

@@ -1040,7 +1040,7 @@ Your submission is your **transcript plus your report**:
   Pi more than once, include one per run.
 - **The report** (AI-assisted, checked by you), with `AGENTS.md` and `spec.md` alongside.
 
-**How to submit — all in the portal, no Google Forms.** Open your week in the
+**How to submit — all in the portal.** Open your week in the
 [course portal](https://ddls-portal-6228434e.svc.hypha.aicell.io/) and click **Hand in**
 (also on each week card and at the top of the week page). The **Computer-lab** card has **one
 upload button per file**, so each lands under the right name on our server:

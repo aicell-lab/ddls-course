@@ -437,6 +437,28 @@ which installs Node entirely inside your home folder and sidesteps the problem f
 
 </details>
 
+<details>
+<summary><b>Windows: <code>npm</code> won't run — "running scripts is disabled on this system"?</b></summary>
+
+If `npm --version` (or `npm install`) fails with a red error about **`npm.ps1` cannot be loaded
+because running scripts is disabled** (`UnauthorizedAccess` / `PSSecurityException`), PowerShell's
+execution policy is blocking npm's script. Node is fine — you just need to allow signed scripts:
+
+1. **Open Windows PowerShell as Administrator** — click **Start**, type `PowerShell`, right-click
+   **Windows PowerShell** ▸ **Run as administrator**.
+2. Run:
+   ```powershell
+   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+   ```
+3. It asks you to confirm. **Type `Y` and press Enter** (on a non-English Windows the choice may be
+   `S`/`Sì` or `J`/`Ja` — pick *Yes*; the default is *No*, so just pressing Enter does nothing).
+
+Now `npm --version` prints a version number and `npm install -g @earendil-works/pi-coding-agent`
+works. `RemoteSigned` only allows scripts you write locally plus signed ones from the internet — it
+does **not** turn off Windows' script protection wholesale.
+
+</details>
+
 **3. Point Pi at the DDLS gateway.** Pi ignores `OPENAI_BASE_URL`, so it needs a custom
 provider file. Create `~/.pi/agent/models.json` with exactly this:
 

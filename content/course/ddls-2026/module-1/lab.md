@@ -1015,10 +1015,12 @@ beautiful one that you didn't check does not.
 Your submission is your **transcript plus your report**:
 
 - **The interview transcript** (your conversation with Agent A) — downloaded from the
-  portal.
-- **The analysis transcript** (your conversation with Agent B) — the chat history from your
-  local agent. Pi saves each run as a `.jsonl` file under `~/.pi/agent/sessions/` (on Windows, `C:\Users\<you>\.pi\agent\sessions\`); if you ran
-  Pi more than once, include them all.
+  portal as a Markdown (`.md`) file.
+- **The analysis transcript** (your conversation with Agent B) — a readable **`.md` or `.txt`**
+  log of your Pi session. Pi records each run as `.jsonl` under `~/.pi/agent/sessions/` (on
+  Windows, `C:\Users\<you>\.pi\agent\sessions\`), but we want it as plain Markdown we can read
+  straight through — just ask Pi to write it out (prompt below). If you ran Pi more than once,
+  include one per run.
 - **The report** (AI-assisted, checked by you), with `AGENTS.md` and `spec.md` alongside.
 
 **How to submit — all in the portal, no Google Forms.** Open your week in the
@@ -1027,21 +1029,23 @@ Your submission is your **transcript plus your report**:
 upload button per file**, so each lands under the right name on our server:
 
 - **Report** — your one self-contained `report.html`.
-- **Interview transcript** — your chat with Agent A, downloaded from the portal.
-- **Analysis transcript(s)** — your Pi run logs (`~/.pi/agent/sessions/*.jsonl`); add as many
+- **Interview transcript** — your chat with Agent A, downloaded from the portal (`.md`).
+- **Analysis transcript(s)** — your Pi session written out as **`.md` or `.txt`**; add as many
   as you launched.
 - **`AGENTS.md`** — the brief you wrote for the analyst.
-- **`spec.md`** *(optional)* and one **extra** slot for anything else you want us to see.
+- **`spec.md`** — your task spec for the analyst (goal · data · traps). Plus one **extra** slot
+  for anything else you want us to see.
 
-> **Can't find your Pi transcripts?** Don't dig through the terminal — the analysis transcript is
-> the one file that's easy to lose, because Pi tucks each run away under `~/.pi/agent/sessions/`.
-> So let the agent gather everything for you. Paste this into **Pi** at the end of your run:
+> **Turn your Pi run into a readable transcript — and gather everything in one place.** Don't dig
+> through the terminal or hand in a raw `.jsonl`. Let the agent do it. Paste this into **Pi** at
+> the end of your run:
 >
 > ```text
-> Make a folder called submissions/ in my current working directory. Copy my report.html and
-> AGENTS.md into it (and spec.md if I have one). Then find every Pi session transcript from
-> TODAY under ~/.pi/agent/sessions/ and copy them into submissions/ with clear names
-> (analysis-transcript-1.jsonl, analysis-transcript-2.jsonl, …). Finally, list exactly what you
+> Make a folder called submissions/ in my current working directory. Copy my report.html,
+> AGENTS.md and spec.md into it. Then read every Pi session transcript from TODAY under
+> ~/.pi/agent/sessions/ and, for each run, write a clean Markdown log of the whole conversation
+> (my messages and your replies, in order) to submissions/analysis-transcript-1.md,
+> analysis-transcript-2.md, … — plain readable text, not JSON. Finally, list exactly what you
 > copied so I can check nothing is missing.
 > ```
 >

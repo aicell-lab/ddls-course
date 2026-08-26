@@ -36,28 +36,40 @@ imjoy:
             }
         }
 ---
+## What this course expects
+
+This course trains a single skill: taking **someone else's** biological problem, interviewing them until the question is precise, then **directing and verifying an AI agent** that does the analysis for you. The scarce ability is **specification, direction, and verification** — not writing code by hand. So the prerequisites are not a programming test. What we ask you to bring:
+
+- **Direct and check an AI agent.** Be ready to give an AI assistant a clear, specific instruction, read what it produces, and judge whether the result is sensible. No prior experience with AI coding agents is required — Module 1 gets everyone started.
+- **Read and interpret code and results at a basic level.** You will rarely write code from scratch, but you must be able to *read* it and sanity-check what an agent gives you: follow the logic of a short script, spot an obvious mistake, and distrust a number that looks too clean. You do not need to produce Python fluently — you do need to be able to follow it.
+- **Scientific and biological curiosity.** Enough interest in the biology to want the answer to be right, and enough scepticism to check it rather than trust it.
+- **Willingness to work on someone else's problem.** A hard rule of the course: **you may not use your own data or research problem.** Every lab and the final project use a problem that belongs to someone else, which you reach by interviewing them. Come prepared to interview a real data owner and to state a context that is not already in your own head.
+
+> **On programming:** Python is **not** a hard entry requirement this year. The examined skill is directing an agent, not coding by hand. Even so, comfort *reading* code and outputs makes the labs far easier — if you have never seen Python, the optional refresher below gets you to the "I can read and check this" level, which is all you need.
+
 ## Be prepared
 
-As prerequisites for the course, we recommend becoming familiar with the following:
+We recommend becoming familiar with the following before the course starts:
 
 - Browse the [SciLifeLab Data-Driven Life Science](https://www.scilifelab.se/data-driven) (DDLS) initiative to understand national priorities and the concept of the [data life cycle](https://data-guidelines.scilifelab.se/data-life-cycle/), which is central in this course.
-- Refresh core Python basics (variables, data types, control flow, functions, modules, simple plotting, reading/writing files). See the resources below.
+- Get an AI coding agent running on your own machine (e.g. [Claude Code](https://www.anthropic.com/claude-code), OpenAI Codex, Gemini CLI, or Cursor) and make it do one small real task. Installing it and trying it once is the single best preparation for the labs.
+- (Optional) Refresh your ability to *read* Python — variables, control flow, functions, and how a short data-analysis script is put together — so you can follow and check what an agent writes. See the resources below.
 
 Technical setup for labs (all online):
-- A computer with reliable internet access
-- A modern browser (e.g. [Chrome](https://www.google.com/chrome/))
+- A computer **you are allowed to install software on** (you will run an AI coding agent locally)
+- Reliable internet access and a modern browser (e.g. [Chrome](https://www.google.com/chrome/))
 - A Google account (for [Google Colab](https://colab.research.google.com/) and Drive storage)
-- (Optional but encouraged) Accounts for AI coding/assistant tools (e.g. [ChatGPT](https://chat.openai.com/)); free tiers are sufficient
+- An account with at least one AI assistant / coding agent (e.g. [ChatGPT](https://chat.openai.com/), Claude, or Gemini); free tiers are enough to start
 - A [GitHub account](https://github.com/) for versioning and sharing notebooks/code
 
-## Build a foundation in Python
+## Optional: getting comfortable reading Python
 
-As a warm‑up, ensure you are comfortable coding in Python. If you are new or rusty, use any of the options below. There is no submission requirement—this is for your own preparation.
+You will not be asked to write much code, but being able to **read** it — and notice when something is off — makes every lab easier. If Python is new or rusty, use any of the options below to reach that level. There is no submission requirement; this is for your own preparation.
 
 ### Option A: Guided practice with AI
-Use curated prompts to accelerate review: [Learn Python with ChatGPT](https://ddls.aicell.io/post/learn-python-with-chatgpt/). Treat AI output critically—run code, fix errors, and keep notes of what you clarified.
+Use curated prompts to accelerate review: [Learn Python with ChatGPT](https://ddls.aicell.io/post/learn-python-with-chatgpt/). Treat AI output critically—run code, fix errors, and keep notes of what you clarified. This is itself good practice for the course: you are directing and checking an AI rather than memorising syntax.
 
-Recommended minimal competency checklist:
+A comfortable-to-read checklist — you should be able to *follow* code that uses these, not necessarily write it from memory:
 - Running cells in Colab / Jupyter
 - Using `print`, f-strings, and basic input/output
 - Lists, tuples, dictionaries, sets (creation, indexing, iteration)

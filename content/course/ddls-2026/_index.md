@@ -137,7 +137,7 @@ See the [course schedule](./schedule/) for dates and session details.
 ## FAQs
 
 {{< spoiler text="Are there prerequisites?" >}}
-Students are expected to have basic knowledge of biology and to be able to program in Python before the course starts. If you are not familiar with Python, please go through the [prerequisites](./prerequisites/).
+The examined skill is **directing and verifying an AI agent**, not writing code by hand — so Python is **not** a hard entry requirement this year. You should be comfortable *reading* code and sanity-checking results at a basic level, have some scientific/biological curiosity, and be willing to work on **someone else's** problem (a hard course rule — you may not use your own data). If you have never seen Python, the optional refresher on the [prerequisites](./prerequisites/) page gets you to the "I can read and check this" level, which is all you need.
 {{< /spoiler >}}
 
 {{< spoiler text="When does the course run?" >}}

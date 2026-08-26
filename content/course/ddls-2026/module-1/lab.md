@@ -48,17 +48,17 @@ problem, not your own.
 
 ## Before you start
 
-**Prerequisites — you don't need to write much code, but you must be able to read it.**
-You will read what the analyst agent writes and decide whether it is right. If you are shaky
-on reading Python, skim the [prerequisites](../../prerequisites/) first.
+**You don't need to be a programmer.** You won't be writing the analysis — the agent does
+that. Your job is to *read* what it produces and judge whether it's right, the way you'd
+sanity-check any instrument you didn't build. If reading code is new to you, skim the
+[prerequisites](../../prerequisites/) first — that's all the coding background this lab asks for.
 
 **Bring a laptop you can install software on.** You will install a command-line agent and
-set two environment variables. If your machine is locked down, sort that out before the
-session — not during it.
+generate one API key. If your machine is locked down, sort that out before the session —
+not during it.
 
-**Have an agent running already helps.** If you got Codex, Claude Code, Gemini CLI or Cursor
-working after the lecture, great — you'll reuse that muscle here. If not, Part 3 walks you
-through it from zero.
+**Having an agent running already helps.** If you got a coding agent working after the
+lecture, great — you'll reuse that muscle here. If not, Part 3 walks you through it from zero.
 
 ## Access the portal
 
@@ -227,86 +227,77 @@ A good `spec.md` captures:
 > job. After you load the data in Part 4, **come back and correct `spec.md`** against what
 > the file actually contains. Interview → draft spec → *load data* → fix spec is the loop.
 
-## Part 3 — Set up the analyst agent (Agent B) locally
+## Part 3 — Set up your analyst agent (Agent B)
 
-The analyst is a coding agent running **on your own machine**, pointed at the course
-portal for its model. Pick **one** of the two options below. Both are terminal agents that
-read an `AGENTS.md` and can run code, read files and write output.
+Your analyst agent is **Pi**, a lightweight coding agent. It runs **on your own machine**
+and talks to the course model **through the portal gateway** — so every call counts against
+your portal budget, and the teaching team sees the transcript. Pi reads an `AGENTS.md`
+context file and can run code, read files and write output.
 
-> **New to the terminal? Two minutes of setup first.** These agents run in a **terminal**
-> (macOS: *Terminal.app*; Windows: *PowerShell*; Linux: your shell). You install them with
-> **npm**, which comes with **Node.js** — you need **version 22 or newer**. Check what you
-> have by running `node --version`. If it prints nothing, or a number below 22, install the
-> latest LTS from <https://nodejs.org> first, then reopen the terminal. Everything below is
+> **New to the terminal? Two minutes of setup first.** Pi runs in a **terminal** (macOS:
+> *Terminal.app*; Windows: *PowerShell*; Linux: your shell). You install it with **npm**,
+> which comes with **Node.js** — you need **version 18 or newer**. Check what you have by
+> running `node --version`. If it prints nothing, or a number below 18, install the latest
+> LTS from <https://nodejs.org> first, then reopen the terminal. Everything below is
 > copy-paste — you won't be writing code, just running commands.
 
-### Option A — OpenAI Codex CLI
-
-Lightweight coding agent that runs in your terminal.
-
-- Docs and install: <https://github.com/openai/codex>
-- npm package: <https://www.npmjs.com/package/@openai/codex>
-
-Install (needs Node.js 22+):
+**1. Install Pi:**
 
 ```bash
-npm install -g @openai/codex
+npm install -g @earendil-works/pi-coding-agent
 ```
 
-### Option B — Pi (open-source coding agent)
+**2. Point Pi at the DDLS gateway.** Pi ignores `OPENAI_BASE_URL`, so it needs a custom
+provider file. Create `~/.pi/agent/models.json` with exactly this:
 
-Minimal, fully open-source terminal agent. It uses an `agents.md` context file, which
-matches this lab nicely.
-
-- Docs and install: <https://github.com/earendil-works/pi>
-
-Install (needs Node.js):
-
-```bash
-npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+```json
+{
+  "providers": {
+    "ddls": {
+      "baseUrl": "https://ddls-portal-6228434e.svc.hypha.aicell.io/v1",
+      "api": "openai-completions",
+      "apiKey": "$DDLS_API_KEY",
+      "models": [
+        { "id": "gpt-5.6-luna", "reasoning": false, "input": ["text"],
+          "samplingParams": { "reasoning_effort": "none" } }
+      ]
+    }
+  }
+}
 ```
 
-### Point the agent at the portal
+> The `samplingParams` line is **required** — it's what lets the course model use tools.
+> Don't try to set `OPENAI_BASE_URL`; Pi won't read it.
 
-The portal exposes an **OpenAI-compatible API**, so any OpenAI-style agent can use it. You
-just override two environment variables so the agent talks to the portal instead of
-OpenAI.
-
-1. In the portal, open **Generate API key** and create a key. Copy it — you may not be able
-   to see it again.
-2. In your terminal, set the two variables (Mac/Linux `bash`/`zsh`):
+**3. Put your portal API key in the environment.** Generate a key in the portal (**Generate
+API key** on your dashboard — copy it, you may not see it again), then:
 
 ```bash
-export OPENAI_API_KEY="paste-your-portal-key-here"
-export OPENAI_BASE_URL="https://ddls-portal-6228434e.svc.hypha.aicell.io/v1"
+export DDLS_API_KEY="paste-your-portal-key-here"
 ```
 
 On Windows PowerShell:
 
 ```powershell
-$env:OPENAI_API_KEY = "paste-your-portal-key-here"
-$env:OPENAI_BASE_URL = "https://ddls-portal-6228434e.svc.hypha.aicell.io/v1"
+$env:DDLS_API_KEY = "paste-your-portal-key-here"
 ```
 
-The portal serves **one** model, **`gpt-5.6-luna`** — that's the model name to use if your
-agent asks for one (most default to whatever `OPENAI_BASE_URL` offers). A full lab's worth
-of calls costs only a few cents against your budget, so don't ration your prompts — but do
-keep an eye on the usage meter on your portal dashboard.
-
-3. Start the agent in the folder you'll work in:
+**4. Run Pi** from the folder you'll work in:
 
 ```bash
-codex        # if you chose Option A
-# or
-pi           # if you chose Option B
+pi --provider ddls --model gpt-5.6-luna
 ```
 
 Ask it something small first — "list the files in this folder and tell me what you see" —
-to confirm it's talking to the portal before you hand it the real task.
+to confirm it's talking to the portal before you hand it the real task. Pi can read/write
+files and run shell commands in that folder. It has **no built-in web search** — if you need
+the web, ask it to fetch pages with `curl`/`wget` via its shell tool. A full lab's worth of
+calls costs only a few cents, so don't ration your prompts — but keep an eye on the usage
+meter on your portal dashboard.
 
-> If the agent errors on the model or endpoint, check that `OPENAI_BASE_URL` ends in `/v1`
-> and that you're in a **new** terminal where the `export` actually took effect. Ask a TA
-> if it persists.
+> If Pi errors on the model or endpoint, check that `~/.pi/agent/models.json` matches the
+> block above exactly and that `DDLS_API_KEY` is set in the **same** terminal you launched
+> `pi` from. Ask a TA if it persists.
 
 ## Part 4 — Direct the agent to solve the problem
 

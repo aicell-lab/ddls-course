@@ -74,6 +74,14 @@ sanity-check any instrument you didn't build. If reading code is new to you, ski
 generate one API key. If your machine is locked down, sort that out before the session —
 not during it.
 
+**Install a code editor before the session — we recommend [VS Code](https://code.visualstudio.com/).**
+This lab has you *looking at* files (the dataset, your transcript), *editing* two short text files
+(`AGENTS.md` and `spec.md` in Part 3), and *typing commands*. VS Code does all three in one window:
+a file tree on the left, an editor in the middle, and a built-in terminal at the bottom
+(**Terminal ▸ New Terminal**, or `` Ctrl+` ``) — so you can run every command in this lab without
+leaving the editor. Any editor works, but if you don't have a favourite, install VS Code and open
+your lab folder with **File ▸ Open Folder**.
+
 **Having an agent running already helps.** If you got a coding agent working after the
 lecture, great — you'll reuse that muscle here. If not, Part 2 walks you through it from zero.
 
@@ -333,6 +341,11 @@ portal**, download **both** of these into it:
 > Pi is a program you run by typing commands into a **terminal**: a plain text window where you
 > type instructions and press Enter instead of clicking buttons. You'll open it once and paste in
 > the commands below — you won't be writing any code yourself.
+>
+> **Easiest — use VS Code.** If you installed VS Code (see *Before you start*), open your lab
+> folder with **File ▸ Open Folder**, then open a terminal *inside it* with **Terminal ▸ New
+> Terminal** (or `` Ctrl+` ``). You get the file tree, the editor, and a terminal already pointed
+> at the right folder — all in one window, so you can skip the OS-specific steps below.
 >
 > **Open a terminal:**
 > - **Windows:** click the **Start** button, type `PowerShell`, and open **Windows PowerShell**.

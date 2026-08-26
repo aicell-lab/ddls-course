@@ -1016,11 +1016,12 @@ Your submission is your **transcript plus your report**:
 
 - **The interview transcript** (your conversation with Agent A) — downloaded from the
   portal as a Markdown (`.md`) file.
-- **The analysis transcript** (your conversation with Agent B) — a readable **`.md` or `.txt`**
-  log of your Pi session. Pi records each run as `.jsonl` under `~/.pi/agent/sessions/` (on
-  Windows, `C:\Users\<you>\.pi\agent\sessions\`), but we want it as plain Markdown we can read
-  straight through — just ask Pi to write it out (prompt below). If you ran Pi more than once,
-  include one per run.
+- **The analysis transcript** (your conversation with Agent B) — a log of your Pi session. Pi
+  records each run as `.jsonl` under `~/.pi/agent/sessions/` (on Windows,
+  `C:\Users\<you>\.pi\agent\sessions\`). You can hand in **either** the raw **`.jsonl`** file
+  **or** a readable **`.md` / `.txt`** log — we accept all three. We *prefer* a readable Markdown
+  version (just ask Pi to write it out — prompt below), but the raw `.jsonl` is fine. If you ran
+  Pi more than once, include one per run.
 - **The report** (AI-assisted, checked by you), with `AGENTS.md` and `spec.md` alongside.
 
 **How to submit — all in the portal, no Google Forms.** Open your week in the
@@ -1030,15 +1031,16 @@ upload button per file**, so each lands under the right name on our server:
 
 - **Report** — your one self-contained `report.html`.
 - **Interview transcript** — your chat with Agent A, downloaded from the portal (`.md`).
-- **Analysis transcript(s)** — your Pi session written out as **`.md` or `.txt`**; add as many
-  as you launched.
+- **Analysis transcript(s)** — your Pi session as **`.md`, `.txt`, or the raw `.jsonl`** Pi
+  writes; add as many as you launched.
 - **`AGENTS.md`** — the brief you wrote for the analyst.
 - **`spec.md`** — your task spec for the analyst (goal · data · traps). Plus one **extra** slot
   for anything else you want us to see.
 
-> **Turn your Pi run into a readable transcript — and gather everything in one place.** Don't dig
-> through the terminal or hand in a raw `.jsonl`. Let the agent do it. Paste this into **Pi** at
-> the end of your run:
+> **Gather everything in one place — and, if you like, turn the Pi log into readable Markdown.**
+> The raw `.jsonl` is fine to hand in, but you don't have to dig through the terminal for it — let
+> the agent gather your files (and, optionally, rewrite the log as plain Markdown). Paste this into
+> **Pi** at the end of your run:
 >
 > ```text
 > Make a folder called submissions/ in my current working directory. Copy my report.html,
@@ -1061,6 +1063,14 @@ shapes what we do next. **Due Friday 10:00, before the seminar.**
 
 The **Seminar** card takes a single **self-contained `.html` deck** and nothing else (see the
 [seminar page](../seminar/) for how to build one). Same deadline: **Friday 10:00.**
+
+> **Submitting is required even if you can't attend.** The lab and seminar are live and
+> mandatory, but *attending* and *handing in* are separate obligations. If you have to miss the
+> Wednesday lab or the Friday seminar (email
+> [ddls-course@scilifelab.se](mailto:ddls-course@scilifelab.se) **before** the session), you must
+> **still upload your report, transcripts and seminar deck through the portal before the deadline —
+> Friday 10:00 CEST, before the seminar starts.** A missed session with notice is excused; a
+> missing submission is not.
 
 This lab is graded **pass/fail**. And the thing that changes how you should work all
 term: **we read the transcript.** Specifically, we read it for —

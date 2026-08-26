@@ -81,6 +81,12 @@ session in total** — a lab *or* a seminar, not one of each. If you must miss t
 email [ddls-course@scilifelab.se](mailto:ddls-course@scilifelab.se) **before** the session,
 not after.
 
+> **Attending and submitting are separate — the hand-in is always required.** Even if you can't
+> join the live seminar, you must still upload your `slides.html` deck through the **Hand in**
+> button in the [course portal](https://ddls-portal-6228434e.svc.hypha.aicell.io/) **before the
+> deadline: Friday 10:00 CEST, before the seminar starts.** Missing the session (with notice) is
+> excused; a missing submission is not.
+
 ## How to prepare (Thursday, ~30 minutes)
 
 You already did the work in the lab; preparing to defend it is quick:
@@ -97,6 +103,7 @@ You already did the work in the lab; preparing to defend it is quick:
   embedded, so it opens straight from a browser with no other files. Your agent can build this
   for you from your report in a few minutes. We may pull it up on screen and present *from your
   file*, so keep it self-contained — everyone submits, since presenters are drawn at random.
+  **Deadline: Friday 10:00 CEST, before the seminar** — a live countdown is shown on the page.
 - **Rehearse the 7 minutes once, out loud.** If you run long, cut the "what I built" detail
   first — the problem and the verification matter most.
 - **Look up one or two references** on how your problem is usually approached, for point 4.

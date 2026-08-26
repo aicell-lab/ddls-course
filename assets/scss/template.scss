@@ -81,3 +81,66 @@ pre {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* ------------------------------------------------------------------ *
+ * Book / docs pages (lab, seminar, module, prerequisites — type:book)
+ * Constrain the reading width on large monitors and keep the layout
+ * comfortable on mobile and iPad. Applies to every `type: book` page.
+ * ------------------------------------------------------------------ */
+
+/* 1. Cap the whole docs layout so it never stretches edge-to-edge on
+ *    wide/4K screens; centre it once it hits the cap. */
+.container-fluid.docs {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 2. Constrain the reading measure of long-form prose for legibility,
+ *    while letting wide elements (code, tables, figures, callouts) use
+ *    the full column width. ~46rem ≈ a comfortable line length. */
+.docs-content {
+  overflow-wrap: break-word; /* wrap long inline code / URLs, no h-scroll */
+
+  > p,
+  > ul,
+  > ol,
+  > dl,
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    max-width: 46rem;
+  }
+
+  /* Never let code blocks, tables, or media force horizontal scroll of
+   *  the whole page on small screens. */
+  pre {
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .table-responsive,
+  table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* 3. Trim the heavy left padding on tablet (md/lg) where horizontal
+ *    space is tighter; keep the generous gutter only on xl+. */
+@media (max-width: 991.98px) {
+  .docs-content.pl-md-5 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}

@@ -999,6 +999,28 @@ Your submission is your **transcript plus your report**:
   Pi more than once, include them all.
 - **The report** (AI-assisted, checked by you), with `AGENTS.md` and `spec.md` alongside.
 
+**How to submit — all in the portal, no Google Forms.** Open your week in the
+[course portal](https://ddls-portal-6228434e.svc.hypha.aicell.io/) and click **Hand in**
+(also on each week card and at the top of the week page). The **Computer-lab** card has **one
+upload button per file**, so each lands under the right name on our server:
+
+- **Report** — your one self-contained `report.html`.
+- **Interview transcript** — your chat with Agent A, downloaded from the portal.
+- **Analysis transcript(s)** — your Pi run logs (`~/.pi/agent/sessions/*.jsonl`); add as many
+  as you launched.
+- **`AGENTS.md`** — the brief you wrote for the analyst.
+- **`spec.md`** *(optional)* and one **extra** slot for anything else you want us to see.
+
+Put your **name** in the field at the top (so we can match your work even if you signed in with
+an unusual email), and a short **note to the teachers** if you like. Re-submit any time — we
+always grade your most recent upload. A **countdown to the deadline** is shown right on the page.
+Please also fill the short **feedback panel** (it's open by default and *recommended*): a few
+1–5 sliders plus boxes for ideas to improve **the course** and **the portal** — it genuinely
+shapes what we do next. **Due Friday 10:00, before the seminar.**
+
+The **Seminar** card takes a single **self-contained `.html` deck** and nothing else (see the
+[seminar page](../seminar/) for how to build one). Same deadline: **Friday 10:00.**
+
 This lab is graded **pass/fail**. And the thing that changes how you should work all
 term: **we read the transcript.** Specifically, we read it for —
 

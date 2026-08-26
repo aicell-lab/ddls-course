@@ -91,6 +91,12 @@ You already did the work in the lab; preparing to defend it is quick:
   them all; together they are your Agent-B transcript.
 - **Draft 4–5 slides** around the four points above. Slides optional but recommended — you can
   even have your agent draft them from your report, then fix them.
+- **Upload your deck in the [course portal](https://ddls-portal-6228434e.svc.hypha.aicell.io/)**
+  — click **Hand in**, use the **Seminar** card. Submit **one self-contained `.html` file** and
+  nothing else: a single HTML page with everything (styles, and any images inlined as data URIs)
+  embedded, so it opens straight from a browser with no other files. Your agent can build this
+  for you from your report in a few minutes. We may pull it up on screen and present *from your
+  file*, so keep it self-contained — everyone submits, since presenters are drawn at random.
 - **Rehearse the 7 minutes once, out loud.** If you run long, cut the "what I built" detail
   first — the problem and the verification matter most.
 - **Look up one or two references** on how your problem is usually approached, for point 4.

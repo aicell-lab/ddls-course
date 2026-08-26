@@ -33,7 +33,7 @@ The hands-on part of the course runs through the **course portal**. Each week it
 lets you **download** the week's dataset and your own transcripts. You'll use it live in
 every Wednesday lab.
 
-{{< cta cta_text="Open the course portal — portal.ddls.aicell.io" cta_link="https://portal.ddls.aicell.io" >}}
+{{< cta cta_text="Open the course portal" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io" >}}
 
 **First time?** Activate your account with the email you registered with and the course code
 we emailed you, then set a password. Full step-by-step instructions are on each module's
@@ -68,7 +68,7 @@ By the end of the course you will be able to:
 
 ## Course Format and Credits
 
-The course consists of six required modules. Each module spans one week. Most **lectures are pre-recorded and released online at the start of the module week**, so you can watch them at your own pace — the exceptions are two live sessions: the **Module 1 introduction** and the **Module 6 final-project briefing**. The hands-on **computer lab** (**Wednesday 13:00–17:00**, run through the [course portal](https://portal.ddls.aicell.io)) and the **seminar** (**Friday 10:00–12:00**) are held live over Zoom each week. Completing all modules plus the final project yields **7.5 ECTS**.
+The course consists of six required modules. Each module spans one week. Most **lectures are pre-recorded and released online at the start of the module week**, so you can watch them at your own pace — the exceptions are two live sessions: the **Module 1 introduction** and the **Module 6 final-project briefing**. The hands-on **computer lab** (**Wednesday 13:00–17:00**, run through the [course portal](https://ddls-portal-6228434e.svc.hypha.aicell.io)) and the **seminar** (**Friday 10:00–12:00**) are held live over Zoom each week. Completing all modules plus the final project yields **7.5 ECTS**.
 
 Credit breakdown:
 
@@ -80,7 +80,7 @@ Credit breakdown:
 
 Both the computer lab and the seminar are mandatory and pass/fail assessed.
 
-- Labs: Each week you take on someone else's biological problem through the [course portal](https://portal.ddls.aicell.io) — you **interview** a data owner to pin down the real question, then **direct an AI agent** to solve it and **verify** the result like a scientist. You submit your transcripts and a short report; the teaching team reads the transcript, not just the result. See each module's computer-lab page for full instructions.
+- Labs: Each week you take on someone else's biological problem through the [course portal](https://ddls-portal-6228434e.svc.hypha.aicell.io) — you **interview** a data owner to pin down the real question, then **direct an AI agent** to solve it and **verify** the result like a scientist. You submit your transcripts and a short report; the teaching team reads the transcript, not just the result. See each module's computer-lab page for full instructions.
 - Seminar: Each week you present and defend the work you carried out during that module's computer lab. Presenters are drawn at random (7 min + 3 min discussion), so everyone prepares. See [Seminar 1](./module-1/seminar/) for the format.
 
 Final project: You carry out your own project on a topic that relates to the content of the course, culminating in a project report (all participants). **Master's students** additionally give a **mandatory oral presentation, graded A–F**, which is the course grade. **PhD students and other participants** are assessed **pass/fail**, and their oral presentation is optional. Details will be announced during the course.

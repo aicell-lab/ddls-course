@@ -66,11 +66,11 @@ Everything for today lives behind one course portal. It hosts Agent A (the data-
 chatbot), issues the **API key** your local analyst agent will use, and lets you
 **download** both the dataset and your interview transcript.
 
-{{< cta cta_text="Open the course portal" cta_link="https://portal.ddls.aicell.io" >}}
+{{< cta cta_text="Open the course portal" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io" >}}
 
 **First time — activate your account** (do this once):
 
-1. Go to the portal at `https://portal.ddls.aicell.io` and choose **Activate account**.
+1. Go to the portal at `https://ddls-portal-6228434e.svc.hypha.aicell.io` and choose **Activate account**.
 2. Enter **the email you registered for the course with** and the **course code** we sent
    you by email.
 3. **Choose a password.** That's it — you're in.
@@ -278,14 +278,14 @@ OpenAI.
 
 ```bash
 export OPENAI_API_KEY="paste-your-portal-key-here"
-export OPENAI_BASE_URL="https://portal.ddls.aicell.io/v1"
+export OPENAI_BASE_URL="https://ddls-portal-6228434e.svc.hypha.aicell.io/v1"
 ```
 
 On Windows PowerShell:
 
 ```powershell
 $env:OPENAI_API_KEY = "paste-your-portal-key-here"
-$env:OPENAI_BASE_URL = "https://portal.ddls.aicell.io/v1"
+$env:OPENAI_BASE_URL = "https://ddls-portal-6228434e.svc.hypha.aicell.io/v1"
 ```
 
 The portal serves **one** model, **`gpt-5.6-luna`** — that's the model name to use if your

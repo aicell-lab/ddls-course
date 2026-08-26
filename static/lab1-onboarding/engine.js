@@ -247,7 +247,7 @@
     this.rects = new Map();
     this.dirty = true;
     this.osFocus = null;
-    this.title = opts.title || 'Lab 1 — the whole run-through';
+    this.title = opts.title || 'Data-Driven Life Sciences 2026 — Computer Lab 1';
     this.subtitle = opts.subtitle || '';
     this._build();
   }

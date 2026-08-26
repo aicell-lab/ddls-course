@@ -273,7 +273,16 @@ body{
 
 /* ---------- title / recap cards ---------- */
 .hero{position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; padding:0 110px}
-.hero h1{font-family:var(--serif); font-size:66px; line-height:1.06; margin:0 0 18px; letter-spacing:-.02em}
+.hero h1{font-family:var(--serif); font-size:60px; line-height:1.06; margin:0 0 14px; letter-spacing:-.02em}
+/* title-card lines above and below the course name */
+.hero .eyebrow{
+  font-family:var(--mono); font-size:16px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--blue); font-weight:500; margin:0 0 16px;
+}
+.hero h2{
+  font-family:var(--serif); font-size:33px; font-weight:600; letter-spacing:-.01em;
+  color:var(--ink-2); margin:0 0 20px; line-height:1.2;
+}
 .hero p{font-size:23px; color:var(--ink-2); margin:0; max-width:1080px; line-height:1.5}
 .steps{display:grid; grid-template-columns:repeat(6,1fr); gap:14px; margin-top:52px}
 .step{background:#fff; border:1px solid var(--rule-light); border-radius:12px; padding:15px 15px 17px}

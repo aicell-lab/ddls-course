@@ -14,8 +14,8 @@
 
   var film = new E.Film(document.getElementById('film'), {
     id: 'ddls-lab1-onboarding',
-    title: 'Lab 1, end to end',
-    subtitle: 'Activate · interview · download · install Pi · direct it. About six and a half minutes, on Windows, macOS and Linux.'
+    title: 'Data-Driven Life Sciences 2026 — Computer Lab 1',
+    subtitle: 'Module 1 · Introduction to Data-Driven Life Sciences. Activate, interview, install Pi, direct it — about seven minutes, on Windows, macOS and Linux.'
   });
 
   /* scene header helper */
@@ -34,10 +34,12 @@
 
   /* ============================================================ 1 · intro */
   (function () {
-    var s = film.scene('intro', { title: 'What you are about to do', kicker: 'Lab 1', dur: 15 });
+    var s = film.scene('intro', { title: 'What you are about to do', kicker: 'DDLS 2026', dur: 17 });
     var hero = el('div', 'hero');
     hero.innerHTML =
-      '<h1>Lab 1, end to end.</h1>' +
+      '<div class="eyebrow">KTH · SK2538 / FSK3538 · Autumn 2026</div>' +
+      '<h1>Data-Driven Life Sciences 2026</h1>' +
+      '<h2>Module 1 · Computer Lab 1 — interview a data owner, direct an analyst agent</h2>' +
       '<p>Everything Wednesday asks of you — activate the portal, interview a scientist you have never met, ' +
       'install an analyst agent on your own laptop, and point it at her problem. ' +
       'Nothing here is faked: this is a real run, and the agent really does catch her being wrong.</p>';
@@ -54,16 +56,18 @@
     });
     hero.appendChild(steps);
     s.node.appendChild(hero);
-    s.enter(hero.querySelector('h1'), 0.3, 0.6);
-    s.enter(hero.querySelector('p'), 0.9, 0.6);
-    s.stagger(Array.prototype.slice.call(steps.children), 1.7, 0.18, 0.45);
+    s.enter(hero.querySelector('.eyebrow'), 0.2, 0.5);
+    s.enter(hero.querySelector('h1'), 0.5, 0.6);
+    s.enter(hero.querySelector('h2'), 1.1, 0.6);
+    s.enter(hero.querySelector('p'), 1.7, 0.6);
+    s.stagger(Array.prototype.slice.call(steps.children), 2.5, 0.18, 0.45);
 
     var n = s.note('Two agents, and <b>you are the only channel between them</b>. Agent A owns the problem. Agent B does the labour. Nothing crosses except what you write down.',
-      4.2, 9.5, { x: 110, y: 742, width: 700 });
+      5.4, 9.4, { x: 110, y: 742, width: 700 });
 
-    s.say(0, 4.2, 'This is the whole of Lab 1, in about six and a half minutes.', 'START');
-    s.say(4.2, 5.5, 'You will interview a data owner in the browser, then set up a coding agent on your own machine and direct it at her problem.');
-    s.say(9.7, 5.3, 'Every terminal step is shown for <b>Windows, macOS and Linux</b> side by side — pick your column, or filter to just yours in the bar below.');
+    s.say(0, 5.4, 'Data-Driven Life Sciences 2026, Module 1: the whole of Computer Lab 1, in about seven minutes.', 'START');
+    s.say(5.4, 5.4, 'You will interview a data owner in the browser, then set up a coding agent on your own machine and direct it at her problem.');
+    s.say(10.8, 6.0, 'Every terminal step is shown for <b>Windows, macOS and Linux</b> side by side — pick your column, or filter to just yours in the bar below.');
   })();
 
   /* ============================================================ 2 · activate */

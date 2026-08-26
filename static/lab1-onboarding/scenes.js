@@ -1000,52 +1000,86 @@
 
   /* ============================================================ 11 · the brief */
   (function () {
-    var s = film.scene('brief', { title: 'Put the brief next to the data', kicker: 'Step 11', dur: 16 });
-    head(s, 'Step 11 · the actual work', 'Put the brief next to the data',
-      'Agent B starts as an empty folder. What you put in it is the whole job.');
+    var s = film.scene('brief', { title: 'Draft the brief, inside Pi', kicker: 'Step 11', dur: 44 });
+    head(s, 'Step 11 · the actual work', 'Draft <span style="font-family:var(--mono);font-size:.86em">AGENTS.md</span> and <span style="font-family:var(--mono);font-size:.86em">spec.md</span> — inside Pi',
+      'Two prompts, then you edit both by hand. The transcript is already in the folder; work from it, never from memory.');
 
-    var wrap = el('div');
-    wrap.style.cssText = 'position:absolute;left:56px;top:196px;width:660px';
-    var fm = U.fileManager('lin', { x: 0, y: 0, w: 660 });
-    fm.node.style.position = 'relative';
-    fm.body.style.height = '370px';
-    wrap.appendChild(fm.node);
-    s.node.appendChild(wrap);
-    s.enter(wrap, 0.3, 0.5);
-    var names = [['AGENTS.md', 'file'], ['spec.md', 'file'], ['penguins.csv', 'file'],
-    ['ddls-week1-interview.md', 'file']];
-    var fs = names.map(function (n) { var f = fm.file(n[0], n[1]); f.classList.add('fx'); return f; });
-    s.stagger(fs, 1.0, 0.22, 0.4);
-    fs[0].querySelector('.ic').style.color = '#0b62b4';
-    fs[1].querySelector('.ic').style.color = '#0b62b4';
+    var solo = U.osSolo({ x: 56, y: 186, w: 900 });
+    s.node.appendChild(solo.node);
+    s.enter(solo.node, 0.3, 0.5);
 
+    OSK.forEach(function (k) {
+      var col = solo.variant(k);
+      var t = U.terminal(k, null, { h: 620 });
+      t.node.style.width = '100%';
+      t.body.style.fontSize = '13.2px';
+      t.body.style.height = '560px';
+      col.appendChild(t.node);
+
+      // step 1 — read it back as prose, so you can catch a mishearing before it is baked in
+      var c1 = t.cmd('read ddls-week1-interview.md. Do not analyse the data yet. Write a\nshort human-readable summary to summary.html: the goal, the data and\nwhere it lives, what has been tried, what "done" looks like, and every\ntrap or caveat you can find.', '› ');
+      t.gap();
+      var a1 = t.out('<span class="ok">write</span> <span class="path">summary.html</span> <span class="dim">(48 lines)</span>', '');
+      var a2 = t.out('Wrote summary.html, a self-contained interview summary. It covers the', '');
+      var a3 = t.out('goal, data location and schema, prior attempts, definition of done, and', '');
+      var a4 = t.out('all stated caveats. No data analysis was performed.', '');
+      t.gap();
+      // step 2 — only once the prose is right, split it
+      var c2 = t.cmd('now split summary.html into two files. AGENTS.md: under 200 lines,\nloaded every turn — the GOAL, where the data lives, the MUST-NOTs, and\na pointer to spec.md. spec.md: every number, column meaning, unit, trap,\nthe metric, the controls, and what done looks like. Invent nothing.', '› ');
+      t.gap();
+      var b1 = t.out('<span class="ok">write</span> <span class="path">AGENTS.md</span>  ·  <span class="ok">write</span> <span class="path">spec.md</span>', '');
+      var b2 = t.out('Created:', '');
+      var b3 = t.out('  · <span class="path">AGENTS.md</span> — 16 lines', '');
+      var b4 = t.out('  · <span class="path">spec.md</span> — 51 lines', '');
+      t.gap();
+      var idle = t.idle('› ');
+      [a1, a2, a3, a4, b1, b2, b3, b4, idle].forEach(function (n) { n.classList.add('fx'); });
+
+      s.type(c1.txt, c1.text, 1.0, 4.4, { caret: false });
+      s.stagger([a1, a2, a3, a4], 6.2, 0.4, 0.28);
+      s.type(c2.txt, c2.text, 17.0, 4.6, { caret: false });
+      s.stagger([b1, b2, b3, b4], 22.6, 0.4, 0.28);
+      s.enter(idle, 24.6, 0.3);
+      s.ring(a1, 6.6, 3.0, { pad: 3 });
+    });
+
+    s.note('<b>Read the summary and correct it before you go on.</b> This is where you catch the agent mishearing the scientist — after the split, that mistake is in both files.',
+      10.6, 5.8, { x: 986, y: 200, width: 560, tone: 'warm' });
+
+    // the two files, as they actually came out
     var cards = el('div');
-    cards.style.cssText = 'position:absolute;left:756px;top:196px;width:788px;display:flex;flex-direction:column;gap:20px';
+    cards.style.cssText = 'position:absolute;left:986px;top:196px;width:560px;display:flex;flex-direction:column;gap:16px';
     s.node.appendChild(cards);
-    [['AGENTS.md', 'read every turn — keep it under ~200 lines',
-      'Never use <b>island</b>, <b>sex</b>, <b>study_year</b> or <b>sample_id</b> as inputs.<br>' +
-      'Never report a single overall accuracy — per species, and the Adélie↔chinstrap swap.<br>' +
-      'Never silently drop rows: the two unmeasured birds get flagged, not deleted.'],
-    ['spec.md', 'everything detailed — this is your data dictionary now',
-      '344 rows, one per bird · bill length = culmen along the top ridge · 2 birds with no measurements ' +
-      '(<span style="font-family:var(--mono)">PAL0708-ADE-004</span>, <span style="font-family:var(--mono)">PAL0910-GEN-120</span>) · ' +
-      '9 more with no sex · bar for done: 98–99% on held-out birds.']
+    [['AGENTS.md', '16 lines · read every turn',
+      '<b>GOAL</b> — a measurement-only rule for Adélie, chinstrap and gentoo, usable in the hand in about 90 seconds.<br>' +
+      '<b>MUST NOT</b> — use <b>island</b> or <b>sex</b> as inputs · silently drop the two unmeasured birds · ' +
+      'rely on a single aggregate score instead of per-species errors.<br>' +
+      '<b>→ spec.md</b> for every detail.'],
+    ['spec.md', '51 lines · the data dictionary the download did not come with',
+      '344 rows, one per bird · bill length = culmen along the top, in mm · ' +
+      '<span style="font-family:var(--mono);font-size:13px">PAL0708-ADE-004</span> and ' +
+      '<span style="font-family:var(--mono);font-size:13px">PAL0910-GEN-120</span> have no measurements at all — flag, never drop · ' +
+      'nine more with no sex · done = 98–99% on held-out birds, reported per species.']
     ].forEach(function (c) {
       var d = el('div', 'card fx');
-      d.style.cssText = 'padding:20px 24px';
+      d.style.cssText = 'padding:18px 20px';
       d.innerHTML = '<div style="font-family:var(--mono);font-size:15px;color:#0b62b4;font-weight:500">' + c[0] + '</div>' +
-        '<div style="font-size:13px;color:#6b7a8a;margin:3px 0 9px">' + c[1] + '</div>' +
-        '<div style="font-size:15.5px;color:#41505f;line-height:1.75">' + c[2] + '</div>';
+        '<div style="font-size:12.6px;color:#6b7a8a;margin:3px 0 9px">' + c[1] + '</div>' +
+        '<div style="font-size:14px;color:#41505f;line-height:1.65">' + c[2] + '</div>';
       cards.appendChild(d);
     });
-    s.stagger(Array.prototype.slice.call(cards.children), 3.0, 0.6, 0.5);
+    s.stagger(Array.prototype.slice.call(cards.children), 26.4, 0.7, 0.5);
 
-    s.note('Everything in these two files came out of the interview. <b>There is no data dictionary in the download</b> — if a column\'s meaning is not in your transcript, you do not know it.',
-      8.0, 6.6, { x: 60, y: 640, width: 660 });
+    s.note('<b>Now edit both by hand.</b> Nothing may be <i>added</i> that the transcript did not imply — you are making the implicit explicit, not inventing. And notice what is <b>not</b> in there: nothing about <code>sample_id</code>. She never mentioned it, so the draft cannot know. That one arrives in a moment, when you finally open the file.',
+      35.0, 8.4, { x: 986, y: 560, width: 560, tone: 'warm' });
 
-    s.say(0, 4.0, 'Now the real work. Drop the spreadsheet and the transcript into your folder.', 'BRIEF');
-    s.say(4.0, 4.6, 'Next to them, two files you write: <code>AGENTS.md</code> — short, always loaded — and <code>spec.md</code>, where every detail lives.');
-    s.say(8.6, 7.4, 'The test: could a competent stranger, with only these two files and the data, deliver what she wants — without asking you a single question?');
+    s.say(0, 5.6, 'Now the real work — and you do it inside Pi, in the folder where the transcript already is.', 'BRIEF');
+    s.say(5.6, 5.0, 'First ask it to read the transcript back to you as prose: goal, data, what was tried, what done looks like, every trap.');
+    s.say(10.6, 6.4, 'Read that, and correct it. Once you split it into two files, a misheard sentence is in both of them — catch it here.');
+    s.say(17.0, 5.6, 'Then split it. <code>AGENTS.md</code> is short and loaded every turn; <code>spec.md</code> holds every detail behind it.');
+    s.say(22.6, 6.0, 'Sixteen lines and fifty-one. The brief stays cheap to load, and the detail is one file away when the agent needs it.');
+    s.say(28.6, 6.4, 'Then edit both by hand. The test: could a competent stranger, with only these two files and the data, deliver what she wants — without asking you anything?');
+    s.say(35.0, 9.0, 'And notice the gap. Nothing here mentions <code>sample_id</code>, because she never did. Your spec is a draft until you have opened the file — which is exactly what happens next.');
   })();
 
   /* ============================================================ 12 · direct it */

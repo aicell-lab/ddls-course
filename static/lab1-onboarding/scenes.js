@@ -625,7 +625,7 @@
   (function () {
     var s = film.scene('node', { title: 'Install Node.js', kicker: 'Step 05', dur: 30 });
     head(s, 'Step 05 · on your laptop', 'Install Node.js — everyone needs this',
-      'Pi is an npm package, so without Node the next step fails. Check first: you may already have it.');
+      'Pi needs Node 22 or newer. Check first — you may already have it, but an older one will not do.');
 
     var grid = el('div', 'os-grid');
     s.node.appendChild(grid);
@@ -671,7 +671,7 @@
       t2.node.classList.add('fx');
       col.appendChild(t2.node);
       var d1 = t2.cmd('node --version');
-      var e1 = t2.out('v22.14.0', 'ok'); e1.classList.add('fx');
+      var e1 = t2.out('v22.22.0', 'ok'); e1.classList.add('fx');
       var d2 = t2.cmd('npm --version');
       var e2 = t2.out('10.9.4', 'ok'); e2.classList.add('fx');
       s.enter(t2.node, 15.0 + i * 0.15, 0.5);
@@ -682,14 +682,16 @@
     });
 
     s.note('<b>Close the terminal and open a new one after installing.</b> The old window still has the old PATH, so <code>node</code> will keep looking missing even though it is there.',
-      12.0, 5.4, { x: 300, y: 824, width: 1000, tone: 'warm' });
+      12.4, 4.6, { x: 300, y: 824, width: 1000, tone: 'warm' });
+    s.note('<b>An old Node is worse than none.</b> Node 18 or 20 installs Pi with only a warning, then Pi dies on the first run with <code>does not provide an export named \'globSync\'</code>. If you see that, your Node is too old.',
+      17.4, 6.2, { x: 300, y: 824, width: 1000, tone: 'warm' });
 
     s.say(0, 4.4, 'Pi is installed with npm, which comes with Node.js — so Node comes first.', 'NODE');
-    s.say(4.4, 4.0, 'Ask for its version. If that prints 18.0 or higher, you already have it: skip ahead.');
-    s.say(8.4, 3.6, 'Nothing, or a lower number, and you install the LTS build.');
+    s.say(4.4, 4.6, 'Ask for its version. Pi needs <b>22 or higher</b> — if you already have that, skip ahead.');
+    s.say(9.0, 3.4, 'Nothing, or an older number, and you install the current LTS build.');
     s.say(12.0, 5.4, 'Then close the terminal and open a new one from your folder again — the window you already had still has the old settings.');
-    s.say(17.4, 5.0, 'Now both answer: <code>node</code> and <code>npm</code>. That is the whole prerequisite.');
-    s.say(22.4, 7.6, 'If either still comes back empty, bring it to the start of Wednesday’s lab — the first part of the session is exactly for this.');
+    s.say(17.4, 6.2, 'Watch the number, not just that it answered. An old Node installs Pi with only a warning, then Pi dies on the first run.');
+    s.say(23.6, 6.4, 'If <code>node</code> or <code>npm</code> still comes back empty, bring it to the start of Wednesday’s lab — the first part of the session is exactly for this.');
   })();
 
   /* ============================================================ 6b · install pi */
@@ -728,8 +730,8 @@
       var note = el('div', 'os-note warm fx', k === 'win'
         ? '<b>"Running scripts is disabled"?</b> Run once: <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code>, answer <b>Y</b>, then try again.'
         : k === 'mac'
-          ? '<b>Permission errors (EACCES)?</b> Do not reach for <code>sudo</code> — reinstall Node from nodejs.org, which puts npm somewhere you own.'
-          : '<b>Permission errors (EACCES)?</b> Do not reach for <code>sudo</code> — install Node with <code>nvm</code> and run it again.');
+          ? '<b>Permission errors (EACCES)?</b> Do not reach for <code>sudo</code> — install Node with <code>nvm</code>, or point npm somewhere you own: <code>npm config set prefix ~/.npm-global</code>.'
+          : '<b>Permission errors (EACCES)?</b> Do not reach for <code>sudo</code> — install Node with <code>nvm</code>, or point npm somewhere you own: <code>npm config set prefix ~/.npm-global</code>.');
       col.appendChild(note);
       s.enter(note, 11.0, 0.4);
     });
@@ -943,7 +945,7 @@
 
   /* ============================================================ 10 · start pi */
   (function () {
-    var s = film.scene('start', { title: 'Start Pi', kicker: 'Step 10', dur: 21 });
+    var s = film.scene('start', { title: 'Start Pi', kicker: 'Step 10', dur: 24 });
     head(s, 'Step 10 · on your laptop', 'Start Pi — and check it is really talking to us',
       'Same command everywhere. Only the prompt in front of it changes.');
 
@@ -967,15 +969,15 @@
       var c1 = t.cmd('pi --provider ddls --model gpt-5.6-luna');
       t.gap();
       var banner = t.out('<span class="ok">pi</span> 0.84.3  ·  provider <span class="path">ddls</span>  ·  model <span class="path">gpt-5.6-luna</span>', '');
-      var banner2 = t.out('reading context: AGENTS.md', 'dim');
+      var banner2 = t.out('no AGENTS.md in this folder yet', 'dim');
       var banner3 = t.out('tools: read · write · edit · bash', 'dim');
       t.gap();
       var c2 = t.cmd('list the files in this folder and tell me what you see', '› ');
       t.gap();
-      var r1 = t.out('Four files. <span class="path">penguins.csv</span> (344 data rows + header, 9 columns),', '');
-      var r2 = t.out('<span class="path">ddls-week1-interview.md</span>, and the <span class="path">AGENTS.md</span> and <span class="path">spec.md</span>', '');
-      var r3 = t.out('you wrote. There is no data dictionary — what the columns mean', '');
-      var r4 = t.out('is only in the interview. Nothing here is analysed yet.', '');
+      var r1 = t.out('Two files. <span class="path">penguins.csv</span> (344 data rows + header, 9 columns)', '');
+      var r2 = t.out('and <span class="path">ddls-week1-interview.md</span>, a transcript of an interview about', '');
+      var r3 = t.out('those birds. There is no data dictionary and no brief for me yet —', '');
+      var r4 = t.out('nothing here is analysed.', '');
       t.gap();
       var idle = t.idle('› ');
       [banner, banner2, banner3, r1, r2, r3, r4, idle].forEach(function (n) { n.classList.add('fx'); });
@@ -990,12 +992,15 @@
     });
 
     s.note('<b>Ask something small first.</b> If this answers, your key, your config and the gateway are all working — before you hand it anything that matters.',
-      12.6, 6.0, { x: 380, y: 800, width: 700 });
+      12.6, 5.2, { x: 380, y: 800, width: 700 });
+    s.note('<b>Two files, and no brief.</b> That is Agent B at the start: an empty folder with your materials in it and no idea what you want. Filling that gap is the next step — and it is the whole job.',
+      18.0, 5.4, { x: 380, y: 800, width: 760 });
 
     s.say(0, 5.2, 'New terminal, so load the key first — then run Pi from inside your lab folder. The command itself is the same on every platform.', 'RUN PI');
     s.say(5.2, 4.4, 'The banner tells you which provider and model you actually got — check it says <code>ddls</code>.');
     s.say(9.6, 3.0, 'Then ask it something trivial.');
-    s.say(12.6, 8.4, 'If that comes back, everything is wired: key, config, gateway. If it errors, fix it here — not halfway through the analysis.');
+    s.say(12.6, 5.4, 'If that comes back, everything is wired: key, config, gateway. If it errors, fix it here — not halfway through the analysis.');
+    s.say(18.0, 6.0, 'And look at what it can see: two files, no brief, no idea what you want. That is Agent B at the start — an empty folder. What you put in it is the whole job.');
   })();
 
   /* ============================================================ 11 · the brief */
@@ -1137,9 +1142,66 @@
     s.say(23.0, 9.0, 'It also confirms the leak you were warned about: <code>sample_id</code> spells out the species. Ban it, and re-check every result against a shuffled-label control.');
   })();
 
+  /* ====================================================== 12b · validate */
+  (function () {
+    var s = film.scene('validate', { title: 'Validate it — controls, not vibes', kicker: 'Step 13', dur: 36 });
+    head(s, 'Step 13 · the actual work', 'Now try to break it',
+      'Code that runs is not code that is right. Nothing turns red when the answer is wrong.');
+
+    var solo = U.osSolo({ x: 130, y: 190, w: 1000 });
+    s.node.appendChild(solo.node);
+    s.enter(solo.node, 0.3, 0.5);
+
+    OSK.forEach(function (k) {
+      var col = solo.variant(k);
+      var t = U.terminal(k, null, { h: 600 });
+      t.node.style.width = '100%';
+      t.body.style.fontSize = '13.4px';
+      t.body.style.height = '540px';
+      col.appendChild(t.node);
+
+      var c1 = t.cmd('build the simplest measurement-only rule you can — never island,\nsex, study_year or sample_id — evaluate it on held-out birds, and\nreport accuracy PER SPECIES plus the Adelie/chinstrap confusion.\nThen run two controls: shuffle the species labels and re-fit, and a\nmajority-class baseline.', '› ');
+      t.gap();
+      var L = [
+        ['Held-out evaluation (30%, stratified, fixed seed). Depth-4 tree on the', ''],
+        ['four caliper measurements. The two unmeasured birds are flagged.', ''],
+        ['&nbsp;', ''],
+        ['Overall accuracy      <b>97.1%</b>', ''],
+        ['  Adélie              42/46   <span class="warn">91.3%</span>', ''],
+        ['  Chinstrap           19/21   <span class="warn">90.5%</span>', ''],
+        ['  Gentoo              36/37   97.3%', ''],
+        ['  Adélie↔chinstrap    3 and 2 the other way', ''],
+        ['&nbsp;', ''],
+        ['<span class="ok">Shuffled-label refit   33.7%</span>  (chance ≈ 33.3%)', ''],
+        ['Majority-class         44.2%  (always Adélie)', '']
+      ].map(function (l) { var d = t.out(l[0], l[1]); d.classList.add('fx'); return d; });
+      t.gap();
+      var idle = t.idle('› '); idle.classList.add('fx');
+
+      s.type(c1.txt, c1.text, 1.0, 4.6, { caret: false });
+      s.stagger(L, 7.0, 0.34, 0.28);
+      s.enter(idle, 11.4, 0.3);
+      s.ring(L[9], 13.4, 4.0, { pad: 4 });
+      s.ring(L[4], 22.0, 6.0, { tone: 'warm', pad: 4 });
+    });
+
+    s.note('<b>The shuffle is the one that matters.</b> Randomise the labels and re-fit: the rule should collapse to guessing. 33.7% against a chance of 33.3% means nothing is leaking — no island, no sex, no <code>sample_id</code>.',
+      13.4, 7.2, { x: 1150, y: 200, width: 400 });
+
+    s.note('<b>And now read it properly. 97.1% is not a pass.</b> She asked for <b>98–99%, per species</b> — and Adélie is at 91.3%, chinstrap at 90.5%. The overall number was hiding exactly the confusion she warned you about. Back to Pi.',
+      22.0, 8.0, { x: 1150, y: 200, width: 400, tone: 'warm' });
+
+    s.say(0, 5.0, 'The analysis runs. That tells you nothing — a wrong answer runs just as happily as a right one.', 'VALIDATE');
+    s.say(5.0, 5.0, 'So ask for the result and the controls in the same breath: per-species accuracy, then shuffle the labels, then a baseline any idiot could beat.');
+    s.say(10.0, 3.4, 'Ninety-seven percent. Looks like a finished lab.');
+    s.say(13.4, 8.6, 'First the shuffle. Randomise the species labels, re-fit, and the rule collapses to 33.7% — chance. Nothing is leaking. If it had stayed high, something in your columns was spelling out the answer.');
+    s.say(22.0, 8.2, 'Then read the per-species line, which is the one she actually asked for. Adélie 91.3%, chinstrap 90.5% — both under her 98 to 99 percent bar. The overall number was hiding it.');
+    s.say(30.2, 5.8, 'That is the difference between a result and a checked result. Go back, tell Pi what failed, and iterate — this loop <b>is</b> the lab.');
+  })();
+
   /* ============================================================ 13 · hand in */
   (function () {
-    var s = film.scene('handin', { title: 'What you hand in', kicker: 'Step 13', dur: 16 });
+    var s = film.scene('handin', { title: 'What you hand in', kicker: 'Step 14', dur: 16 });
     var hero = el('div', 'hero');
     hero.innerHTML = '<h1>What you hand in.</h1>' +
       '<p>Not just the answer. The <b>record of how you got there</b> — because that is what we read.</p>';

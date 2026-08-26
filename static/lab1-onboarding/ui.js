@@ -222,8 +222,9 @@
     form.style.cssText = 'border-top:1px solid #e8e5de;padding:10px;display:flex;gap:8px';
     var input = el('div', 'field'); input.style.flex = '1';
     input.innerHTML = '<span class="v"></span>';
+    var suggest = el('div', 'sugg-btn', icon('wand', 16));
     var send = el('div', 'btn', icon('send', 14) + ' Send');
-    form.appendChild(input); form.appendChild(send);
+    form.appendChild(input); form.appendChild(suggest); form.appendChild(send);
     chat.appendChild(chead); chat.appendChild(thread); chat.appendChild(form);
 
     var side = el('div');
@@ -252,7 +253,7 @@
 
     return {
       node: wrap, thread: thread, input: input, inputVal: input.querySelector('.v'),
-      send: send, dsBtn: dsBtn, trBtn: trBtn, lbBtn: lbBtn,
+      send: send, suggest: suggest, form: form, chatBox: chat, dsBtn: dsBtn, trBtn: trBtn, lbBtn: lbBtn,
       budget: bud.querySelector('.bv'), chat: chat, actions: actions
     };
   }
@@ -264,8 +265,8 @@
     var row = el('div', 'umsg-row');
     var acts = el('div', 'msg-actions');
     var wand = el('div', 'mact wand', icon('wand', 14));
-    var del = el('div', 'mact del', icon('trash', 14));
-    acts.appendChild(wand); acts.appendChild(del);
+    var edit = el('div', 'mact edit', icon('pen', 14));
+    acts.appendChild(wand); acts.appendChild(edit);
     var b = el('div', 'bubble me');
     b.textContent = text;
     row.appendChild(acts); row.appendChild(b);
@@ -274,8 +275,28 @@
       '<div class="coach-h"><span class="t">' + icon('wand', 13) + 'Interview coach · hints, not answers</span>' +
       '<span class="x">' + icon('x', 13) + '</span></div><div class="coach-b"></div>';
     wrap.appendChild(row); wrap.appendChild(panel);
-    return { node: wrap, row: row, actions: acts, wand: wand, del: del, bubble: b,
+    return { node: wrap, row: row, actions: acts, wand: wand, edit: edit, bubble: b,
              panel: panel, body: panel.querySelector('.coach-b') };
+  }
+
+  /* "questions you could ask next" popover — sits just above the composer */
+  function suggestPanel(items) {
+    var n = el('div', 'sugg');
+    n.innerHTML =
+      '<div class="sugg-h"><span class="t">' + icon('wand', 13) +
+      'Questions you could ask next · tap one to edit &amp; send</span>' +
+      '<span class="x">' + icon('x', 13) + '</span></div><div class="sugg-b"></div>';
+    var body = n.querySelector('.sugg-b');
+    var loading = el('div');
+    loading.style.cssText = 'font-style:italic;color:#6b7a8a;font-size:12.8px;padding:4px 8px';
+    loading.textContent = 'Reading the interview so far…';
+    body.appendChild(loading);
+    var rows = (items || []).map(function (t) {
+      var d = el('div', 'sugg-item', t);
+      body.appendChild(d);
+      return d;
+    });
+    return { node: n, body: body, loading: loading, items: rows };
   }
 
   /* the browser's confirm() sheet, drawn the way Chrome drops it from the top */
@@ -414,7 +435,7 @@
 
   global.DDLSUI = {
     OS: OS, browser: browser, activatePage: activatePage, dashboardPage: dashboardPage,
-    weekPage: weekPage, bubble: bubble, userMsg: userMsg, confirmSheet: confirmSheet, terminal: terminal, fileManager: fileManager,
+    weekPage: weekPage, bubble: bubble, userMsg: userMsg, confirmSheet: confirmSheet, suggestPanel: suggestPanel, terminal: terminal, fileManager: fileManager,
     osColumn: osColumn, osSolo: osSolo, shelf: shelf, shelfItem: shelfItem, pos: pos
   };
 })(window);

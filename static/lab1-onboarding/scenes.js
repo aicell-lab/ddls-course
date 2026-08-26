@@ -15,7 +15,7 @@
   var film = new E.Film(document.getElementById('film'), {
     id: 'ddls-lab1-onboarding',
     title: 'Lab 1, end to end',
-    subtitle: 'Activate · interview · download · install Pi · direct it. About six minutes, on Windows, macOS and Linux.'
+    subtitle: 'Activate · interview · download · install Pi · direct it. About six and a half minutes, on Windows, macOS and Linux.'
   });
 
   /* scene header helper */
@@ -61,7 +61,7 @@
     var n = s.note('Two agents, and <b>you are the only channel between them</b>. Agent A owns the problem. Agent B does the labour. Nothing crosses except what you write down.',
       4.2, 9.5, { x: 110, y: 742, width: 700 });
 
-    s.say(0, 4.2, 'This is the whole of Lab 1, in about six minutes.', 'START');
+    s.say(0, 4.2, 'This is the whole of Lab 1, in about six and a half minutes.', 'START');
     s.say(4.2, 5.5, 'You will interview a data owner in the browser, then set up a coding agent on your own machine and direct it at her problem.');
     s.say(9.7, 5.3, 'Every terminal step is shown for <b>Windows, macOS and Linux</b> side by side — pick your column, or filter to just yours in the bar below.');
   })();
@@ -203,11 +203,11 @@
     s.say(31.9, 12.0, 'Then ask what would make her <b>distrust</b> the answer. That reply just handed you the trap and the bar: ban island and sex, report per species, 98–99% on held-out birds.');
   })();
 
-  /* ====================================================== 3b · coach + undo */
+  /* ====================================================== 3b · coach + edit */
   (function () {
-    var s = film.scene('coach', { title: 'Ask the coach, undo a bad turn', kicker: 'Step 02', dur: 42 });
+    var s = film.scene('coach', { title: 'Coach me, and edit', kicker: 'Step 02', dur: 46 });
     head(s, 'Step 02 · still in the browser', 'Two buttons on every message you send',
-      'A coach that tells you how to ask better — and an undo, so a wasted question costs nothing.');
+      'A coach that tells you how to ask better — and an edit, so a wasted question costs nothing.');
 
     var br = U.browser('', { x: 96, y: 168, w: 1000, h: 700 });
     br.setUrl(HOST + '/week/1');
@@ -219,7 +219,7 @@
     br.body.appendChild(pg.node);
     s.enter(br.node, 0.2, 0.5);
 
-    // one text node + caret for the whole scene: two questions get typed into one box
+    // one text node + caret for the whole scene: the box gets written several times
     var inkSpan = el('span'), inkCaret = el('span', 'caret off');
     pg.inputVal.textContent = '';
     pg.inputVal.appendChild(inkSpan); pg.inputVal.appendChild(inkCaret);
@@ -260,14 +260,13 @@
       'catalogue from the boat.', 4.8, 4.2, { caret: false });
 
     s.note('<b>A thin answer is a symptom, not bad luck.</b> She is telling you the question had three questions inside it.',
-      9.6, 5.0, { x: 1128, y: 214, width: 430 });
+      9.6, 4.6, { x: 1128, y: 214, width: 430 });
 
-    // --- hover reveals the toolbar ------------------------------------------
-    s.klass(um.node, 'hovered', 11.0, 15.0);
-    s.point(um.bubble, 11.0, 0.7, { dx: -60 });
-    s.ring(um.actions, 11.8, 3.0, { pad: 5 });
-    s.note('<b>Hover any message you sent.</b> Two buttons appear: the wand asks a coach how you could have asked it better, the bin deletes it.',
-      12.4, 5.2, { x: 1128, y: 214, width: 430 });
+    // --- the tools: pinned on your latest message ---------------------------
+    s.klass(um.node, 'pinned', 3.9, 26.6);
+    s.ring(um.actions, 10.8, 3.0, { pad: 5 });
+    s.note('<b>Your latest message keeps its two buttons out.</b> Older ones show theirs when you hover. The wand asks a coach; the pencil edits.',
+      11.4, 5.0, { x: 1128, y: 214, width: 430 });
 
     // --- the coach ----------------------------------------------------------
     s.klass(um.wand, 'hot', 13.8, 1.2);
@@ -290,37 +289,30 @@
       'Follow up separately on <b>traps relevant to the rule</b>: missing measurements versus missing sex, duplicate IDs, colony or year effects, prior cleaning.'
     ].map(function (h) { var li = el('li', 'fx', h); ul.appendChild(li); return li; });
     s.stagger(HINTS, 16.0, 0.85, 0.35);
-
     s.at(15.6, 0.05, function (p, ph) { pg.budget.textContent = ph === 'after' ? '$4.9931' : '$4.9957'; });
 
     s.note('<b>Hints, never a rewrite.</b> It will not write the question for you — that is the skill being examined. Use it early and often; a coaching turn costs about a quarter of a cent.',
-      20.6, 6.4, { x: 1128, y: 214, width: 430, tone: 'warm' });
+      20.4, 6.0, { x: 1128, y: 214, width: 430, tone: 'warm' });
 
-    // --- delete from here ---------------------------------------------------
-    s.klass(um.node, 'hovered', 26.0, 4.4);
-    s.klass(um.del, 'hot', 26.2, 1.0);
+    // --- edit: the message comes back to the box, the turn is undone ---------
+    s.klass(um.edit, 'hot', 26.2, 1.0);
     s.point(um.bubble, 26.0, 0.6, { dx: -40 });
-    tap(s, um.del, 26.6);
-
-    var cf = U.confirmSheet(HOST.split('.')[0] + '…aicell.io',
-      'Delete this message and every message after it?\n\nThis clears them from the chat and from the data owner’s memory, so you can ask a different question and see a different answer. It cannot be undone (already-spent budget is not refunded).');
-    cf.node.classList.add('fx');
-    br.body.appendChild(cf.node);
-    s.enter(cf.node, 27.0, 0.3);
-    tap(s, cf.ok, 29.6);
-    s.exit(cf.node, 29.8, 0.25);
-    s.exit(um.node, 29.9, 0.3);
-    s.exit(reply, 29.9, 0.3);
-    s.at(30.2, 0.05, function (p, phase) {
+    tap(s, um.edit, 26.6);
+    s.exit(um.node, 26.9, 0.3);
+    s.exit(reply, 26.9, 0.3);
+    s.at(27.2, 0.05, function (p, phase) {
       var gone = phase === 'after';
       um.node.style.display = gone ? 'none' : '';
       reply.style.display = gone ? 'none' : '';
+      if (gone) setInput(VAGUE, false);
     });
+    s.klass(pg.input, 'focus', 27.2, 8.0);
+    s.ring(pg.input, 27.6, 2.6, { pad: 4 });
 
-    s.note('<b>And she forgets it too.</b> The turn is gone from her memory, not just from your screen — ask it properly and you get a genuinely fresh answer.',
-      30.6, 5.6, { x: 1128, y: 214, width: 430 });
+    s.note('<b>No pop-up here:</b> it was your most recent question, so it just comes back. Edit an older one and it warns you first — everything after it goes too.',
+      28.0, 5.6, { x: 1128, y: 214, width: 430 });
 
-    // --- the question as it should have been --------------------------------
+    // --- rewrite it properly -------------------------------------------------
     var um2 = U.userMsg(GOOD);
     um2.panel.style.display = 'none';
     um2.node.style.display = 'none';
@@ -328,31 +320,116 @@
     var reply2 = U.bubble('them', '');
     reply2.style.display = 'none';
     pg.thread.appendChild(reply2);
-    s.at(31.4, 0.05, function (p, phase) {
+    s.at(33.8, 0.05, function (p, phase) {
       var on = phase === 'after';
       um2.node.style.display = on ? '' : 'none';
       reply2.style.display = on ? '' : 'none';
     });
+    s.klass(um2.node, 'pinned', 34.4, 11.4);
 
-    s.klass(pg.input, 'focus', 31.5, 3.2);
-    typeInput(GOOD, 31.8, 2.6);
-    tap(s, pg.send, 34.8);
-    s.at(34.8, 0.05, function (p, phase) { if (phase === 'after') setInput('', false); });
+    typeInput(GOOD, 30.6, 2.6);
+    tap(s, pg.send, 34.0);
+    s.at(34.0, 0.05, function (p, phase) { if (phase === 'after') setInput('', false); });
     um2.node.classList.add('fx');
-    s.enter(um2.node, 35.0, 0.3);
-    s.enter(reply2, 35.5, 0.3);
+    s.enter(um2.node, 34.4, 0.3);
+    s.enter(reply2, 34.9, 0.3);
     s.type(reply2, 'Yes — one row per bird, 344 rows: species, island, bill_length_mm, bill_depth_mm, ' +
       'flipper_length_mm, body_mass_g, sex, study_year, sample_id. Millimetres and grams. There isn\'t a ' +
-      'parser from my side.', 35.9, 4.4, { caret: false });
+      'parser from my side.', 35.3, 4.4, { caret: false });
+
+    s.note('<b>And she has forgotten the bad one.</b> The deleted turn is gone from her memory too, so this is a fresh answer, not a patched one.',
+      40.2, 5.2, { x: 1128, y: 214, width: 430 });
 
     s.say(0, 4.6, 'You will ask a bad question. Everyone does — so the portal gives you two ways out.', 'COACH');
     s.say(4.6, 5.2, 'Here is one: three questions bundled into four words. Watch what it earns.');
-    s.say(9.8, 5.4, 'A deflection. She cannot answer it without guessing which answer you wanted.');
-    s.say(15.2, 5.4, 'Hover the message and press the wand. A separate coach reads your question in context and tells you what was wrong with it.');
-    s.say(20.6, 5.4, 'It gives hints, never a rewrite — the asking is the part you are here to learn. It costs a fraction of a cent, so use it.');
-    s.say(26.0, 4.6, 'The bin next to it deletes that message and everything after it.');
-    s.say(30.6, 5.4, 'That clears it from her memory too, so you can ask again properly and get a real answer instead of a patched one.');
-    s.say(36.0, 6.0, 'Same subject, one purpose, and the columns and units come back in a single reply. That is the whole difference.');
+    s.say(9.8, 4.6, 'A deflection. She cannot answer it without guessing which answer you wanted.');
+    s.say(14.4, 6.0, 'Press the wand. A separate coach reads your question in context and tells you what was wrong with it — hints, never a rewrite.');
+    s.say(20.4, 5.6, 'The asking is the part you are here to learn, so it will not hand you the question. It costs a fraction of a cent. Use it.');
+    s.say(26.0, 5.6, 'The pencil edits. Your message comes back into the box, and that turn is deleted — from the chat and from her memory.');
+    s.say(31.6, 4.6, 'So rewrite it into one question with one purpose, and send it again.');
+    s.say(36.2, 9.8, 'The columns and units come back in a single reply. Nothing is stained: a bad question you edited away is not in your transcript at all.');
+  })();
+
+  /* ====================================================== 3c · suggest next */
+  (function () {
+    var s = film.scene('suggest', { title: 'Stuck? Ask for questions', kicker: 'Step 02', dur: 26 });
+    head(s, 'Step 02 · still in the browser', 'Stuck on what to ask next?',
+      'The wand beside Send proposes questions from your interview so far. It is free.');
+
+    var br = U.browser('', { x: 96, y: 168, w: 1000, h: 700 });
+    br.setUrl(HOST + '/week/1');
+    s.node.appendChild(br.node);
+    var pg = U.weekPage();
+    pg.thread.style.justifyContent = 'flex-end';
+    pg.chat.style.height = '470px';
+    pg.budget.textContent = '$4.9931';
+    br.body.appendChild(pg.node);
+    s.enter(br.node, 0.2, 0.5);
+
+    var inkSpan = el('span'), inkCaret = el('span', 'caret off');
+    pg.inputVal.textContent = '';
+    pg.inputVal.appendChild(inkSpan); pg.inputVal.appendChild(inkCaret);
+
+    var q = U.userMsg("What's in the file — one row per bird? Which columns, what units, and how do I load it?");
+    q.panel.style.display = 'none';
+    q.node.classList.add('pinned');
+    pg.thread.appendChild(q.node);
+    var a = U.bubble('them', '');
+    a.textContent = 'Yes — one row per bird, 344 rows: species, island, bill_length_mm, bill_depth_mm, ' +
+      'flipper_length_mm, body_mass_g, sex, study_year, sample_id. Millimetres and grams. There isn\'t a ' +
+      'parser from my side.';
+    pg.thread.appendChild(a);
+
+    // real output from the portal's /chat/suggest on this very interview
+    var QS = [
+      'How were the measurements taken and recorded, by whom, and over what dates or field sessions?',
+      'How are missing measurements and sex values coded in the spreadsheet, and are there any other unusual or invalid values?',
+      'What ranges and units should I expect for each measurement, and which columns or observations do you trust least?'
+    ];
+    var sp = U.suggestPanel(QS);
+    sp.node.style.display = 'none';
+    sp.node.classList.add('fx');
+    pg.chat.insertBefore(sp.node, pg.form);
+
+    s.ring(pg.suggest, 1.4, 3.0, { pad: 5 });
+    s.note('<b>The wand next to Send.</b> Not the same wand as on your messages: that one grades a question you already asked, this one proposes the next ones.',
+      1.8, 5.2, { x: 1128, y: 214, width: 430 });
+
+    tap(s, pg.suggest, 4.4);
+    s.at(4.6, 0.05, function (p, phase) { sp.node.style.display = phase === 'after' ? '' : 'none'; });
+    s.enter(sp.node, 4.7, 0.35);
+    s.exit(sp.loading, 6.0, 0.2);
+    s.at(6.2, 0.05, function (p, phase) { sp.loading.style.display = phase === 'after' ? 'none' : ''; });
+    sp.items.forEach(function (i) { i.classList.add('fx'); });
+    s.stagger(sp.items, 6.3, 0.5, 0.3);
+
+    s.note('It reads the interview so far and aims at the gaps — <b>provenance, how missing values are coded, the ranges you should expect and what she trusts least</b>. Probes, in question form.',
+      9.4, 5.6, { x: 1128, y: 214, width: 430 });
+
+    // pick one — it drops into the box for you to edit
+    s.klass(sp.items[1], 'hot', 15.0, 1.6);
+    s.point(sp.items[1], 15.0, 0.6);
+    tap(s, sp.items[1], 15.6);
+    s.exit(sp.node, 15.9, 0.3);
+    s.at(16.2, 0.05, function (p, phase) {
+      var gone = phase === 'after';
+      sp.node.style.display = gone ? 'none' : '';
+      inkSpan.textContent = gone ? QS[1] : '';
+      pg.inputVal.style.transform = gone
+        ? 'translateX(' + Math.min(0, (pg.input.clientWidth - 26) - pg.inputVal.offsetWidth).toFixed(0) + 'px)'
+        : '';
+    });
+    s.klass(pg.input, 'focus', 16.2, 6.0);
+    s.ring(pg.input, 16.6, 2.6, { pad: 4 });
+
+    s.note('<b>It only fills the box.</b> Nothing is sent until you press Send — so put it in your own words first, and keep it a question you understand.',
+      17.4, 5.6, { x: 1128, y: 214, width: 430, tone: 'warm' });
+
+    s.say(0, 5.2, 'The hardest part of an interview is knowing what you have not asked yet.', 'SUGGEST');
+    s.say(5.2, 4.2, 'The wand beside Send reads your conversation and proposes two to four questions.');
+    s.say(9.4, 5.6, 'They aim at the gaps: how the data was collected, how missing values are coded, what ranges to expect and which columns she trusts least.');
+    s.say(15.0, 5.4, 'Tap one and it drops into the box. It is not sent — rewrite it in your own words first.');
+    s.say(20.4, 5.4, 'And it is free: suggestions are not billed to your five dollars. There is no reason not to press it when you stall.');
   })();
 
   /* ============================================================ 4 · downloads */

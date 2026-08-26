@@ -23,7 +23,7 @@ exactly the skill being examined.
 
 {{< toc >}}
 
-## Watch it first — the whole lab in about six minutes
+## Watch it first — the whole lab in about six and a half minutes
 
 Never opened a terminal before? Start here. This walkthrough is a real run of everything
 below: activating the portal, interviewing the data owner, downloading the transcript and
@@ -122,18 +122,30 @@ someone who has never met this person.
 > But at the end, **download the transcript**: you need it for Part 3, and the agent reads
 > the transcript, never your notes.
 
-**Two buttons on every message you send.** Hover any of your own messages in the chat and a
-small toolbar appears to its left — [watch it in step 4 of the walkthrough](/lab1-onboarding/?c=4):
+**Two buttons on every message you send.** Your most recent question keeps them visible;
+on older ones they appear when you hover — [watch it in step 4 of the walkthrough](/lab1-onboarding/?c=4):
 
 - **The wand — "Coach me".** A *separate* coach reads your question in the context of the
   conversation so far and tells you how it could have been sharper. It gives **hints, never a
   rewrite** — the asking is the skill being examined, so it will not hand you the question.
   It costs a fraction of a cent and it is the only feedback you get before Friday's seminar.
   **Use it early and often, especially on your first two or three questions.**
-- **The bin — delete from here.** Deletes that message *and everything after it*, from the chat
-  **and from the data owner's memory**. So a vague question is not a permanent stain on your
-  transcript: delete it, ask it properly, and get a genuinely fresh answer. (Budget already
-  spent is not refunded, and the deletion cannot be undone.)
+- **The pencil — "Edit".** Pulls that message back into the input box so you can rephrase it,
+  and deletes it *and everything after it* from the chat **and from the data owner's memory**.
+  So a vague question is not a permanent stain on your transcript: edit it, ask it properly,
+  and get a genuinely fresh answer. Editing your **latest** question applies straight away;
+  editing an **older** one asks you to confirm first, because every turn after it is lost.
+  (Budget already spent is not refunded, and it cannot be undone.)
+
+**Stuck on what to ask next?** There is a third wand **next to the Send button** —
+[step 5 of the walkthrough](/lab1-onboarding/?c=5). It reads your interview so far and proposes
+**two to four questions** aimed at the gaps you have not covered (goal, data, provenance, traps,
+definition of done). Tap one and it drops into the input box — it is *not* sent, so rewrite it
+in your own words first. **Suggestions are free**: they are not billed against your $5. Press it
+whenever you stall.
+
+> Don't confuse the two wands: the one **on a message** grades a question you already asked;
+> the one **beside Send** proposes the next one.
 
 ### The four probes — what you must come back with
 
@@ -250,7 +262,7 @@ So the course standardises on Pi. The skill you're building — *directing and c
 agent — carries over to any agent; Pi is simply the one we support in the labs.
 {{< /spoiler >}}
 
-> **Prefer to watch?** Steps [5–10 of the walkthrough](/lab1-onboarding/?c=6) do this whole
+> **Prefer to watch?** Steps [7–12 of the walkthrough](/lab1-onboarding/?c=7) do this whole
 > setup on Windows, macOS and Linux side by side — folder, terminal, Node, Pi, config file,
 > API key, first run.
 
@@ -360,7 +372,9 @@ provider file. Create `~/.pi/agent/models.json` with exactly this:
 > The `samplingParams` line is **required** — it's what lets the course model use tools.
 > Don't try to set `OPENAI_BASE_URL`; Pi won't read it.
 
-<details>
+**Pick your operating system below:**
+
+<details open>
 <summary><b>How to create that file — per system</b> (the folder starts with a dot, which trips up every file manager)</summary>
 
 Pi always looks in a `.pi` folder inside your home folder — **including on Windows**, where the
@@ -374,6 +388,11 @@ notepad "$env:USERPROFILE\.pi\agent\models.json"
 Notepad asks *"Do you want to create a new file?"* — click **Yes**, paste, then **Ctrl + S**.
 Don't create the folder in File Explorer (it refuses names starting with a dot), and don't use
 *Save as* — that would save it as `models.json.txt`.
+
+One-liner that creates the folder **and** the file and opens it for editing in one go:
+```powershell
+New-Item -ItemType Directory -Force "$HOME\.pi\agent" | Out-Null; New-Item -ItemType File -Force "$HOME\.pi\agent\models.json" | Out-Null; notepad "$HOME\.pi\agent\models.json"
+```
 
 **macOS:**
 ```bash
@@ -423,20 +442,39 @@ comes back empty, the file didn't save where Pi looks — redo this step.
 
 </details>
 
-**4. Put your portal API key in the environment.** Generate a key in the portal (**Generate
-API key** on your dashboard — copy it, you may not see it again), then:
+**4. Save your portal API key to a `.env` file.** Generate a key in the portal (**Generate
+API key** on your dashboard). **The portal shows the key only once**, so save it *immediately* —
+if you lose it, your only option is to generate a fresh one. Inside your `ddls-week1` folder
+(the working folder from earlier in this part), create a file called `.env` with a single line:
 
-```bash
-export DDLS_API_KEY="paste-your-portal-key-here"
+```
+DDLS_API_KEY=paste-your-portal-key-here
 ```
 
-On Windows PowerShell:
+No quotes are needed around the value. Saving it here — instead of just typing an `export` that
+dies when you close the terminal — means you can re-load it every time without going back to the
+portal (which won't show you the key again).
 
-```powershell
-$env:DDLS_API_KEY = "paste-your-portal-key-here"
-```
+> **Key hygiene.** Treat this key like a password: **never commit it or share it.** Add `.env`
+> to your `.gitignore` so it can never be pushed to git — from inside the folder:
+> ```bash
+> echo ".env" >> .gitignore
+> ```
 
-**5. Run Pi** from the folder you'll work in:
+**5. Load the key before every Pi run.** A `.env` file just sits on disk — you have to load it
+into the environment of the terminal you launch Pi from, **each time you open a new terminal**:
+
+- **macOS / Linux (bash / zsh):**
+  ```bash
+  set -a; source .env; set +a
+  ```
+  (Equivalently: `export $(grep -v '^#' .env | xargs)`.)
+- **Windows PowerShell:**
+  ```powershell
+  Get-Content .env | ForEach-Object { if ($_ -match '^\s*([^#][^=]*)=(.*)$') { [Environment]::SetEnvironmentVariable($matches[1].Trim(), $matches[2].Trim()) } }
+  ```
+
+**6. Run Pi** from the folder you'll work in:
 
 ```bash
 pi --provider ddls --model gpt-5.6-luna
@@ -519,7 +557,7 @@ A good `spec.md` captures:
 Now you have a briefed analyst, the dataset already sitting in your working folder, and a
 real problem. Time to build.
 
-> **Prefer to watch?** [Steps 11–12 of the walkthrough](/lab1-onboarding/?c=12) show the brief
+> **Prefer to watch?** [Steps 13–14 of the walkthrough](/lab1-onboarding/?c=13) show the brief
 > sitting next to the data, and the agent reading the data back — including the moment it
 > catches a mistake in the spec.
 

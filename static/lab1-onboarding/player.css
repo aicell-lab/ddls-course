@@ -122,13 +122,15 @@ body{
 .umsg{display:flex; flex-direction:column; align-items:flex-end; gap:6px}
 .umsg-row{display:flex; align-items:flex-end; gap:6px; justify-content:flex-end}
 .msg-actions{display:flex; align-items:center; gap:4px; opacity:0}
-.umsg.hovered .msg-actions{opacity:1}
+.umsg.hovered .msg-actions,
+.umsg.pinned .msg-actions{opacity:1}   /* the latest question keeps its tools out */
 .mact{
   width:24px; height:24px; border-radius:6px; display:flex; align-items:center;
   justify-content:center; color:#94a3b8; flex:none;
 }
 .mact.wand.hot{background:#ede9fe; color:#6d28d9}
 .mact.del.hot{background:#fef2f2; color:#dc2626}
+.mact.edit.hot{background:#fffbeb; color:#d97706}
 .coach{background:#f5f3ff; border:1px solid #ddd6fe; border-radius:12px; padding:10px 12px; max-width:88%}
 .coach-h{display:flex; align-items:center; justify-content:space-between; margin-bottom:6px}
 .coach-h .t{display:flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:#6d28d9}
@@ -137,6 +139,22 @@ body{
 .coach-b ul{margin:0; padding-left:15px}
 .coach-b li{margin-bottom:5px}
 .coach-b b{color:#111827}
+
+/* "suggest what to ask next" popover, above the composer */
+.sugg{background:#f5f3ff; border:1px solid #ddd6fe; border-radius:12px; padding:9px 11px; margin:0 12px 8px}
+.sugg-h{display:flex; align-items:center; justify-content:space-between; margin-bottom:5px}
+.sugg-h .t{display:flex; align-items:center; gap:6px; font-size:12px; font-weight:600; color:#6d28d9}
+.sugg-h .x{color:#a78bfa; display:flex}
+.sugg-item{
+  font-size:12.8px; line-height:1.45; color:#1f2937; border-radius:8px;
+  padding:5px 8px; margin-bottom:1px;
+}
+.sugg-item.hot{background:#ede9fe}
+.sugg-btn{
+  width:40px; border:1px solid #ddd6fe; border-radius:9px; color:#7c3aed; background:#fff;
+  display:flex; align-items:center; justify-content:center; flex:none;
+}
+.sugg-btn.press{background:#f5f3ff; transform:translateY(1px)}
 
 /* the browser's own confirm() sheet */
 .confirm{

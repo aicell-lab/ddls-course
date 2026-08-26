@@ -919,6 +919,22 @@ Check every number against your own output. If section 5 has gone soft ("further
 needed"), push back: *"You hedged. What specifically can this dataset not answer?"* On the
 course gateway a run of this prompt takes well under a minute.
 
+### Hand in your lab work now
+
+**Once `report.html` exists, you've finished the lab — hand it in.** Don't wait for Part 7:
+the lab and the seminar are two separate submissions. Open the
+[course portal](https://ddls-portal-6228434e.svc.hypha.aicell.io/), click **Hand in**, and use
+the **Computer-lab** card. It has **one upload button per file**:
+
+- **`report.html`** · **interview transcript** (Agent A, `.md` from the portal) ·
+  **analysis transcript(s)** (Agent B — `.md`, `.txt`, or the raw `.jsonl`) · **`AGENTS.md`** ·
+  **`spec.md`**.
+
+**Deadline: Friday 10:00 CEST, before the seminar** — and you must submit **even if you can't
+attend** the lab or seminar. The seminar deck you build next (Part 7) is handed in the same way,
+via the **Seminar** card. Full details, and a one-paste prompt that gathers every file for you,
+are in [**What to hand in**](#what-to-hand-in--and-what-we-look-at) at the end of this page.
+
 ## Part 7 — Prepare your seminar presentation
 
 At **Friday's seminar (10:00–12:00)** we draw presenters **at random**, and everyone must

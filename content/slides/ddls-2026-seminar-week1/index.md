@@ -77,6 +77,16 @@ slides:
 
 -----
 
+## Why the lab comes out the same week
+
+* A few of you asked us to release the material a week early. We thought about it — and we keep to **same-week release on purpose.**
+* Each week's lab is shaped by the **previous week's feedback** — so *when* we release is itself a **data-driven decision**. We'd rather not release it blindly.
+* Some weeks bring a **live guest lecture** — handing out the lab before the topic is introduced wouldn't make sense.
+* The lab runs on the **live portal** — we can watch it and keep it healthy in the **fixed lab window**, not around the clock for a week.
+* And yes, it's **more intense** than having days to prepare. That part is deliberate: **focused time + a bit of pressure is how this skill sticks.**
+
+-----
+
 ## Where the labs stand — your feedback
 
 * **We read every submission.** All of them.

@@ -1,0 +1,212 @@
+/* ===========================================================================
+   scientific-presentation — design system
+   Scholarly, light, figure-first. 1920x1080 canvas.
+
+     Surfaces   warm paper #f7f6f3 default · white #ffffff figure plates ·
+                deep navy #0b1220 for title and section dividers only
+     Accent     one blue #0b62b4. The 4-colour categorical palette below is
+                for DATA SERIES ONLY — never decorate with it.
+     Type       Source Serif 4 headings · IBM Plex Sans body · IBM Plex Mono
+                labels, code, axis ticks
+     Scale      body >= 28px; 24px is a hard floor for labels and citations
+   =========================================================================== */
+
+*{ min-width:0; box-sizing:border-box; }
+
+:root{
+  --paper:#f7f6f3;
+  --white:#ffffff;
+  --ink:#141a24;
+  --ink-2:#41505f;
+  --ink-3:#6b7a8a;
+  --rule:#d9d6cf;
+  --rule-2:#e8e5de;
+
+  --ink-deep:#0b1220;
+  --ink-deep-2:#131c30;
+  --on-deep:#eef2f7;
+  --on-deep-2:rgba(238,242,247,.62);
+
+  --blue:#0b62b4;
+  --blue-soft:#e4eef8;
+  --blue-line:#a8c8e6;
+
+  /* DATA SERIES ONLY */
+  --d1:#0b62b4;
+  --d2:#0f7d78;
+  --d3:#b8760c;
+  --d4:#98306b;
+  --d5:#4a5568;
+
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans','Helvetica Neue',Helvetica,sans-serif;
+  --mono:'IBM Plex Mono','SFMono-Regular',Menlo,monospace;
+}
+
+.slide{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--sans); text-wrap:pretty;
+  -webkit-font-smoothing:antialiased;
+}
+.slide.deep{ background:var(--ink-deep); color:var(--on-deep); }
+.slide.plate{ background:var(--white); }
+
+/* ---- Frame -------------------------------------------------------------- */
+.pad{ position:absolute; inset:0; padding:88px 112px 76px; display:flex;
+      flex-direction:column; z-index:1; }
+.pad.center{ justify-content:center; }
+.pad.between{ justify-content:space-between; }
+.pad.tight{ padding:72px 96px 64px; }
+
+/* ---- Type scale --------------------------------------------------------- */
+h1{ font:600 96px/1.02 var(--serif); margin:0; letter-spacing:-.02em; }
+h2{ font:600 68px/1.08 var(--serif); margin:0; letter-spacing:-.014em; }
+h3{ font:600 40px/1.16 var(--serif); margin:0; letter-spacing:-.008em; }
+h4{ font:600 30px/1.24 var(--sans); margin:0; }
+
+.eyebrow{ font:500 24px/1 var(--mono); letter-spacing:.18em;
+          text-transform:uppercase; color:var(--blue); }
+.slide.deep .eyebrow{ color:#7fc0ff; }
+
+.lead{ font:400 38px/1.42 var(--sans); color:var(--ink-2); margin:0; max-width:30ch; }
+.body{ font:400 29px/1.5 var(--sans); color:var(--ink-2); margin:0; }
+.body strong{ color:var(--ink); font-weight:600; }
+.slide.deep .lead,.slide.deep .body{ color:var(--on-deep-2); }
+.slide.deep .body strong,.slide.deep strong{ color:var(--on-deep); }
+
+.hi{ color:var(--blue); }
+.slide.deep .hi{ color:#7fc0ff; }
+.rule{ height:1px; background:var(--rule); }
+.slide.deep .rule{ background:rgba(238,242,247,.18); }
+
+/* Citation — required on any figure or number from the literature */
+.cite{ font:400 24px/1.35 var(--mono); color:var(--ink-3); letter-spacing:.01em; }
+.slide.deep .cite{ color:rgba(238,242,247,.5); }
+.cite a{ color:inherit; }
+
+/* Term being defined for the first time */
+.term{ font-weight:600; color:var(--ink); border-bottom:2px solid var(--blue-line);
+       padding-bottom:1px; }
+.slide.deep .term{ color:var(--on-deep); border-color:rgba(127,192,255,.5); }
+
+/* ---- Lists — markers are positioned, never grid columns ----------------- */
+ul.points,ul.dash{ list-style:none; margin:0; padding:0; display:grid; }
+ul.points{ gap:26px; counter-reset:li; font:400 33px/1.34 var(--sans); }
+ul.points li{ color:var(--ink); position:relative; padding-left:66px; }
+ul.points li::before{ content:counter(li,decimal-leading-zero); counter-increment:li;
+  font:500 24px/1 var(--mono); color:var(--blue); position:absolute; left:0; top:.4em; }
+ul.dash{ gap:22px; font:400 29px/1.42 var(--sans); }
+ul.dash li{ color:var(--ink-2); position:relative; padding-left:40px; }
+ul.dash li::before{ content:'—'; color:var(--blue); position:absolute; left:0; top:0; }
+ul.dash li strong{ color:var(--ink); font-weight:600; }
+.slide.deep ul.points li{ color:var(--on-deep); }
+.slide.deep ul.dash li{ color:var(--on-deep-2); }
+
+/* ---- Figure plate — the default content container ----------------------- */
+figure.fig{ margin:0; background:var(--white); border:1px solid var(--rule-2);
+            padding:36px 40px 28px; display:flex; flex-direction:column; gap:20px; }
+figure.fig.bare{ background:none; border:none; padding:0; }
+figure.fig svg{ display:block; width:100%; height:auto; }
+figcaption{ font:400 26px/1.4 var(--sans); color:var(--ink-2);
+            display:flex; justify-content:space-between; gap:32px; align-items:baseline; }
+figcaption b{ color:var(--ink); font-weight:600; }
+.slide.deep figure.fig{ background:rgba(255,255,255,.04); border-color:rgba(238,242,247,.14); }
+.slide.deep figcaption{ color:var(--on-deep-2); }
+
+/* ---- Split layouts ------------------------------------------------------ */
+.split{ display:grid; gap:64px; flex:1; align-items:center; }
+.split.f{ grid-template-columns:1fr 1fr; }
+.split.fig-left{ grid-template-columns:1.35fr 1fr; }
+.split.fig-right{ grid-template-columns:1fr 1.35fr; }
+.split.wide-fig{ grid-template-columns:1fr 2fr; }
+.split.top{ align-items:start; }
+
+/* ---- Cards / concept boxes ---------------------------------------------- */
+.cards{ display:grid; gap:24px; }
+.c2{ grid-template-columns:repeat(2,1fr); }
+.c3{ grid-template-columns:repeat(3,1fr); }
+.c4{ grid-template-columns:repeat(4,1fr); }
+.card{ background:var(--white); border:1px solid var(--rule-2); padding:32px 30px;
+       display:flex; flex-direction:column; gap:12px; }
+.card .k{ font:500 24px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase;
+          color:var(--blue); }
+.card .t{ font:600 32px/1.16 var(--serif); }
+.card .d{ font:400 26px/1.4 var(--sans); color:var(--ink-2); }
+.slide.deep .card{ background:rgba(255,255,255,.05); border-color:rgba(238,242,247,.14); }
+.slide.deep .card .d{ color:var(--on-deep-2); }
+.slide.deep .card .k{ color:#7fc0ff; }
+
+/* Definition callout — for a term this audience has not met */
+.define{ border-left:4px solid var(--blue); background:var(--blue-soft);
+         padding:28px 34px; display:flex; flex-direction:column; gap:10px; }
+.define .k{ font:500 24px/1 var(--mono); letter-spacing:.14em;
+            text-transform:uppercase; color:var(--blue); }
+.define .d{ font:400 30px/1.42 var(--sans); color:var(--ink); }
+.slide.deep .define{ background:rgba(127,192,255,.1); border-color:#7fc0ff; }
+.slide.deep .define .d{ color:var(--on-deep); }
+
+/* ---- Section divider ---------------------------------------------------- */
+.divider .num{ font:600 190px/0.86 var(--serif); color:transparent;
+   -webkit-text-stroke:1.5px rgba(238,242,247,.34); letter-spacing:-.03em; }
+.divider h2{ font-size:82px; margin-top:20px; }
+
+/* ---- Table -------------------------------------------------------------- */
+table.grid{ width:100%; border-collapse:collapse; }
+table.grid th{ font:500 24px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase;
+   color:var(--blue); text-align:left; padding:0 22px 16px 0;
+   border-bottom:1px solid var(--rule); }
+table.grid td{ font:400 28px/1.36 var(--sans); color:var(--ink-2);
+   padding:18px 22px 18px 0; border-bottom:1px solid var(--rule-2); vertical-align:top; }
+table.grid td.b{ color:var(--ink); font-weight:600; }
+
+/* ---- Code --------------------------------------------------------------- */
+.code{ background:#101823; color:#d8e3f0; border:1px solid var(--rule-2);
+       padding:28px 32px; font:400 25px/1.58 var(--mono); white-space:pre-wrap; }
+.code .c{ color:#7f93a8; }
+.code .k{ color:#f2a25c; }
+.code .s{ color:#8fd3a0; }
+
+/* ---- Honest placeholder ------------------------------------------------- */
+.frame{ border:1px dashed var(--blue-line); background:var(--blue-soft);
+        display:grid; place-items:center; }
+.frame span{ font:500 26px/1.4 var(--mono); letter-spacing:.1em; text-transform:uppercase;
+             color:var(--blue); text-align:center; padding:16px 24px; }
+
+/* ===========================================================================
+   Animation. Scoped to the ACTIVE slide so it replays on re-entry —
+   deck_stage.js adds .is-active to the visible slide.
+   =========================================================================== */
+@keyframes rise{ from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+@keyframes fade{ from{opacity:0} to{opacity:1} }
+@keyframes draw{ to{ stroke-dashoffset:0 } }
+@keyframes pulse{ 0%,100%{opacity:.35} 50%{opacity:1} }
+
+.slide.is-active [data-anim="rise"]{ animation:rise .6s cubic-bezier(.2,.7,.2,1) both; }
+.slide.is-active [data-anim="fade"]{ animation:fade .7s ease both; }
+/* Draw-on paths: set stroke-dasharray/offset inline to the path length. */
+.slide.is-active [data-anim="draw"]{ animation:draw 1.3s ease-out both; }
+
+/* Stagger: data-delay="1".."8" -> 0.12s steps */
+[data-delay="1"]{ animation-delay:.12s !important }
+[data-delay="2"]{ animation-delay:.24s !important }
+[data-delay="3"]{ animation-delay:.36s !important }
+[data-delay="4"]{ animation-delay:.48s !important }
+[data-delay="5"]{ animation-delay:.60s !important }
+[data-delay="6"]{ animation-delay:.72s !important }
+[data-delay="7"]{ animation-delay:.84s !important }
+[data-delay="8"]{ animation-delay:.96s !important }
+
+/* Hidden until its slide is active, so nothing flashes pre-animated. */
+.slide:not(.is-active) [data-anim]{ opacity:0; }
+
+@media (prefers-reduced-motion:reduce){
+  .slide.is-active [data-anim]{ animation:none !important; opacity:1 !important; }
+  .slide:not(.is-active) [data-anim]{ opacity:1; }
+  [data-anim="draw"]{ stroke-dashoffset:0 !important; }
+  animate,animateTransform,animateMotion{ display:none; }
+}
+/* Print: every slide is "active" and every animation is finished. */
+@media print{
+  .slide [data-anim]{ animation:none !important; opacity:1 !important;
+                      stroke-dashoffset:0 !important; }
+}

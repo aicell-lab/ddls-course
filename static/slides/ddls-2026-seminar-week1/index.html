@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DDLS 2026 — Seminar 1: Week-1 debrief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./deck.css">
+<style>
+  /* Seminar-specific tokens layered on the scientific-presentation system. */
+
+  /* SciLifeLab mark — provenance, top-right, quiet. */
+  .slidemark{ position:absolute; top:34px; right:46px; z-index:4;
+              height:44px; width:auto; opacity:.5; user-select:none; pointer-events:none; }
+  .slide.deep .slidemark{ opacity:.72; }
+
+  /* Footnote band — attribution, one step below content. */
+  .foot{ position:absolute; left:112px; right:112px; bottom:30px; z-index:3;
+         font:400 22px/1.3 var(--mono); color:var(--ink-3); letter-spacing:.01em; }
+  .slide.deep .foot{ color:rgba(238,242,247,.46); }
+  .slide:has(.foot) .pad{ padding-bottom:100px; }
+
+  /* Big stat row — the participation numbers. */
+  .stats3{ display:grid; grid-template-columns:repeat(3,1fr); gap:56px; max-width:1500px; }
+  .stats3 .v{ font:600 128px/0.9 var(--serif); color:var(--blue); letter-spacing:-.02em; }
+  .stats3 .l{ font:400 27px/1.34 var(--sans); color:var(--ink-2); margin-top:16px; }
+  .stats3 .l strong{ color:var(--ink); font-weight:600; }
+
+  /* Emphasis pill for the specify → direct → verify loop. */
+  .loop{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+  .loop .st{ font:600 40px/1 var(--serif); color:var(--ink); }
+  .loop .ar{ font:500 34px/1 var(--mono); color:var(--blue); }
+
+  /* A→you→B channel diagram labels. */
+  .chan text{ font-family:var(--mono); }
+</style>
+</head>
+<body>
+
+<div id="deck">
+
+<!-- 01 ─────────────────────────────────────────────────────────── Title -->
+<section class="slide deep" data-screen-label="01 Title">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad between">
+    <div class="eyebrow" data-anim="fade">DDLS 2026 · SK2538 / FSK3538 · Seminar 1</div>
+    <div>
+      <h1 data-anim="rise">Week 1 — Debrief</h1>
+      <p class="lead" data-anim="rise" data-delay="1" style="margin-top:30px;max-width:26ch">
+        The computer lab, your feedback, and how these seminars work.</p>
+    </div>
+    <div>
+      <div class="rule" style="margin-bottom:22px"></div>
+      <div class="cite">Data-Driven Life Sciences · KTH / SciLifeLab · Friday 28 August 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 ────────────────────────────────────────────────────────── Agenda -->
+<section class="slide" data-screen-label="02 Agenda">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">This morning</div>
+    <h2 style="margin-bottom:40px">Two parts, and room for questions</h2>
+    <div class="cards c2" style="margin:auto 0">
+      <div class="card" data-anim="rise">
+        <div class="k">Part 1</div>
+        <div class="t">The computer lab</div>
+        <div class="d">What it trained, what the goal really was, and a full look at <strong>your feedback</strong> — grounded in the numbers.</div>
+      </div>
+      <div class="card" data-anim="rise" data-delay="1">
+        <div class="k">Part 2</div>
+        <div class="t">The seminar</div>
+        <div class="d">What this Friday session is for, how presentations work, and how to prepare for the one you'll give.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 ──────────────────────────────────────────── What the course trains -->
+<section class="slide" data-screen-label="03 What the course trains">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Why we're doing this</div>
+    <h2 style="margin-bottom:34px">We train the <span class="hi">forward-deployed scientist</span></h2>
+    <ul class="dash" style="max-width:32ch;font-size:31px">
+      <li>You take <strong>someone else's</strong> biological problem.</li>
+      <li>You <strong>interview</strong> them until the question is precise.</li>
+      <li>You <strong>direct an AI agent</strong> to do the labour — while <strong>you</strong> supply the judgement.</li>
+    </ul>
+    <div class="loop" style="margin-top:46px" data-anim="fade" data-delay="2">
+      <span class="st">Specify</span><span class="ar">→</span>
+      <span class="st">Direct</span><span class="ar">→</span>
+      <span class="st">Verify</span>
+    </div>
+    <p class="body" style="margin-top:26px;max-width:44ch">The scarce skill is specification, direction and verification — <em>the harness, not the model.</em></p>
+  </div>
+</section>
+
+<!-- 04 ─────────────────────────────────────────── The two-agent lab recap -->
+<section class="slide" data-screen-label="04 The two-agent lab">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Recap</div>
+    <h2 style="margin-bottom:30px">Two agents — and you are the only channel</h2>
+    <figure class="fig bare" style="margin:6px 0 26px">
+      <svg class="chan" viewBox="0 0 1600 300" role="img" aria-label="Agent A to you to Agent B">
+        <!-- Agent A -->
+        <rect x="40" y="90" width="380" height="120" rx="8" fill="var(--white)" stroke="var(--rule)" />
+        <text x="230" y="140" text-anchor="middle" fill="var(--ink)" font-size="34" font-weight="600" font-family="'Source Serif 4',serif">Agent A</text>
+        <text x="230" y="180" text-anchor="middle" fill="var(--ink-2)" font-size="24">the data owner</text>
+        <!-- YOU -->
+        <rect x="610" y="70" width="380" height="160" rx="8" fill="var(--blue-soft)" stroke="var(--blue)" stroke-width="2" />
+        <text x="800" y="140" text-anchor="middle" fill="var(--blue)" font-size="40" font-weight="600" font-family="'Source Serif 4',serif">YOU</text>
+        <text x="800" y="182" text-anchor="middle" fill="var(--ink-2)" font-size="24">the only channel</text>
+        <!-- Agent B -->
+        <rect x="1180" y="90" width="380" height="120" rx="8" fill="var(--white)" stroke="var(--rule)" />
+        <text x="1370" y="140" text-anchor="middle" fill="var(--ink)" font-size="34" font-weight="600" font-family="'Source Serif 4',serif">Agent B — Pi</text>
+        <text x="1370" y="180" text-anchor="middle" fill="var(--ink-2)" font-size="24">the analyst</text>
+        <!-- arrows -->
+        <g stroke="var(--blue)" stroke-width="3" fill="none">
+          <path d="M420 150 H600" marker-end="url(#ah)" />
+          <path d="M990 150 H1170" marker-end="url(#ah)" />
+        </g>
+        <text x="510" y="132" text-anchor="middle" fill="var(--ink-3)" font-size="22">interview</text>
+        <text x="1080" y="132" text-anchor="middle" fill="var(--ink-3)" font-size="22">direct</text>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="var(--blue)" />
+          </marker>
+        </defs>
+      </svg>
+    </figure>
+    <p class="body" style="max-width:60ch">Nothing passes from A to B except what <strong>you</strong> write down. That channel <strong>is</strong> the examined skill.</p>
+  </div>
+</section>
+
+<!-- 05 ───────────────────────────────────────── What the goal really was -->
+<section class="slide" data-screen-label="05 What the goal really was">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Lab 1</div>
+    <h2 style="margin-bottom:34px">The goal was to run the <span class="hi">whole loop once</span></h2>
+    <ul class="dash" style="max-width:52ch;font-size:31px">
+      <li>Interview Agent A → use the portal → set up Pi locally → direct it → produce <strong>something</strong>, end to end.</li>
+      <li>One full pass, hands on <strong>every</strong> part of the machinery.</li>
+      <li>The aim was <strong>familiarity with the pipeline</strong> — not the result at the end of it.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 06 ────────────────────────────────────────────── What the goal was NOT -->
+<section class="slide" data-screen-label="06 What the goal was NOT">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Lab 1</div>
+    <h2 style="margin-bottom:30px">What it was <span class="hi">not</span></h2>
+    <ul class="dash" style="max-width:46ch;font-size:31px">
+      <li><strong>Not</strong> a deep, polished, publication-grade analysis.</li>
+      <li><strong>Not</strong> finishing with time to spare.</li>
+      <li><strong>Not</strong> completing every validation step.</li>
+    </ul>
+    <div class="define" style="margin-top:40px;max-width:60ch" data-anim="fade" data-delay="1">
+      <div class="k">Remember</div>
+      <div class="d">A rough, rushed, incomplete-feeling first pass is completely fine — and expected. <strong>Week-1 quality is not graded.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 ─────────────────────────────────────────────── By the numbers -->
+<section class="slide" data-screen-label="07 By the numbers">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Part 1 · the computer lab</div>
+    <h2 style="margin-bottom:56px">Lab 1 — by the numbers</h2>
+    <div class="stats3" style="margin:auto 0">
+      <div data-anim="rise"><div class="v">20</div><div class="l">of you handed in a <strong>full lab</strong> — interview to delivered report</div></div>
+      <div data-anim="rise" data-delay="1"><div class="v">16</div><div class="l"><strong>seminar decks</strong> prepared for today</div></div>
+      <div data-anim="rise" data-delay="2"><div class="v">16</div><div class="l">detailed <strong>feedback responses</strong> — we read every word</div></div>
+    </div>
+    <div class="foot">Source: DDLS course portal — submissions table and feedback form, Week 1 (as of 28 Aug 2026).</div>
+  </div>
+</section>
+
+<!-- 08 ─────────────────────────────────────────────── How you rated it -->
+<section class="slide" data-screen-label="08 How you rated it">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Part 1 · the computer lab</div>
+    <h2 style="margin-bottom:24px">How you rated it</h2>
+    <figure class="fig" style="margin:auto 0;max-width:1500px">
+      <svg viewBox="0 0 1400 470" role="img" aria-label="Average ratings out of 5: Portal 4.3, Design 4.2, Instructions 4.0, Overall 3.6">
+        <!-- gridlines 0..5 -->
+        <g font-family="'IBM Plex Mono',monospace" font-size="22" fill="var(--ink-3)">
+          <!-- track baseline x0=360, x5=1320 -> 192px/unit -->
+          <line x1="360" y1="30" x2="360" y2="410" stroke="var(--rule)" />
+          <line x1="1320" y1="30" x2="1320" y2="410" stroke="var(--rule-2)" stroke-dasharray="4 6" />
+          <text x="360" y="448" text-anchor="middle">0</text>
+          <text x="1320" y="448" text-anchor="middle">5.0</text>
+        </g>
+        <!-- bars: y rows at 40,140,240,340; height 60 -->
+        <g font-family="'IBM Plex Sans',sans-serif">
+          <!-- Portal 4.3 -> 360 + 4.3*192 = 1185.6 -->
+          <text x="340" y="80" text-anchor="end" font-size="27" fill="var(--ink)">Portal</text>
+          <rect x="360" y="48" width="826" height="56" fill="var(--d1)" />
+          <text x="1206" y="84" font-size="30" font-weight="600" fill="var(--ink)" font-family="'Source Serif 4',serif">4.3</text>
+          <!-- Design 4.2 -> 360 + 806 = 1166 -->
+          <text x="340" y="180" text-anchor="end" font-size="27" fill="var(--ink)">Design</text>
+          <rect x="360" y="148" width="806" height="56" fill="var(--d1)" />
+          <text x="1186" y="184" font-size="30" font-weight="600" fill="var(--ink)" font-family="'Source Serif 4',serif">4.2</text>
+          <!-- Instructions 4.0 -> 360 + 768 = 1128 -->
+          <text x="340" y="280" text-anchor="end" font-size="27" fill="var(--ink)">Instructions</text>
+          <rect x="360" y="248" width="768" height="56" fill="var(--d1)" />
+          <text x="1148" y="284" font-size="30" font-weight="600" fill="var(--ink)" font-family="'Source Serif 4',serif">4.0</text>
+          <!-- Overall 3.6 -> 360 + 691 = 1051 -->
+          <text x="340" y="380" text-anchor="end" font-size="27" fill="var(--ink)">Overall</text>
+          <rect x="360" y="348" width="691" height="56" fill="var(--d5)" />
+          <text x="1071" y="384" font-size="30" font-weight="600" fill="var(--ink)" font-family="'Source Serif 4',serif">3.6</text>
+        </g>
+      </svg>
+      <figcaption><b>Mean rating, out of 5</b><span class="cite">DDLS portal feedback form · n = 16</span></figcaption>
+    </figure>
+    <p class="body" style="margin-top:20px;max-width:66ch">A deliberately-stretchy first lab landing near <strong>3.6 overall</strong> is a <strong>healthy, honest</strong> signal — not a disappointing one.</p>
+  </div>
+</section>
+
+<!-- 09 ──────────────────────────────────────── What you did remarkably well -->
+<section class="slide" data-screen-label="09 What you did well">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Reading your submissions</div>
+    <h2 style="margin-bottom:30px">What you did <span class="hi">remarkably well</span></h2>
+    <ul class="dash" style="max-width:64ch;font-size:29px">
+      <li>You <strong>refused vague words</strong> — you made Agent A define "trustworthy", "unusable", "scaffold class".</li>
+      <li>You asked the killer question — <em>"what would make you NOT trust this result?"</em> — and turned it into must-nots.</li>
+      <li>You <strong>read the brief back</strong> to check your own understanding.</li>
+      <li>You caught <strong>data traps</strong>: header mismatches, leakage, temporal splits, "blanks are never zero".</li>
+      <li>You <strong>directed</strong> Pi rather than trusting it — pushing back, auditing its own spec.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 10 ──────────────────────────────────────── Five feedback themes -->
+<section class="slide" data-screen-label="10 What you told us">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Your feedback, grouped</div>
+    <h2 style="margin-bottom:30px">Five things came back again and again</h2>
+    <table class="grid" style="margin:auto 0">
+      <tr><td class="b" style="width:44%">Setup ate the clock</td><td>Installing Pi, the terminal, Windows especially</td></tr>
+      <tr><td class="b">Time vs. careful checking</td><td>"I had to rush the validation steps"</td></tr>
+      <tr><td class="b">A confusing start</td><td>"At first I wasn't sure what to even ask"</td></tr>
+      <tr><td class="b">It felt stressful</td><td>"A lot of us didn't finish in time"</td></tr>
+      <tr><td class="b">Online, it's hard to know</td><td>"…whether I was on the right track"</td></tr>
+    </table>
+    <p class="body" style="margin-top:24px">Let's take them one at a time.</p>
+  </div>
+</section>
+
+<!-- 11 ─────────────────────────────────────────── Setup ate the clock -->
+<section class="slide" data-screen-label="11 Setup ate the clock">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Feedback · 1 of 3</div>
+    <h2 style="margin-bottom:30px">"Setup ate the clock"</h2>
+    <ul class="dash" style="max-width:60ch;font-size:30px">
+      <li>By far the most common note — Pi, the terminal, permissions, <strong>Windows</strong> in particular.</li>
+      <li>You're right, and it's a <strong>one-time cost</strong>: Pi and the portal are set up <strong>now</strong>. Next week you walk in already installed.</li>
+      <li>We're adding an OS-by-OS <strong>setup checklist</strong> so the lab window goes to <em>thinking</em>, not <em>installing</em>.</li>
+    </ul>
+    <p class="body" style="margin-top:34px;max-width:58ch">The skill we grade was never "can you install a CLI tool."</p>
+  </div>
+</section>
+
+<!-- 12 ────────────────────────────────────── Not enough time to check -->
+<section class="slide" data-screen-label="12 Time to check">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Feedback · 2 of 3</div>
+    <h2 style="margin-bottom:30px">"Not enough time to check carefully"</h2>
+    <ul class="dash" style="max-width:62ch;font-size:30px">
+      <li>The tension between the clock and doing verification properly is <strong>real</strong>.</li>
+      <li>But Week-1 quality is <strong>not graded</strong> — rushing the last validation step this week is <strong>expected</strong>, not a failure.</li>
+      <li>As setup time disappears, <strong>more of the window goes to the actual loop</strong>.</li>
+    </ul>
+    <div class="define" style="margin-top:36px;max-width:64ch" data-anim="fade" data-delay="1">
+      <div class="k">The skill</div>
+      <div class="d">Noticing <em>"I didn't have time to check this"</em> and <strong>writing it down</strong> is itself the job. Many of you did exactly that.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 ────────────────────────────────────── I wasn't sure what to ask -->
+<section class="slide" data-screen-label="13 What to even ask">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Feedback · 3 of 3</div>
+    <h2 style="margin-bottom:30px">"I wasn't sure what to even ask"</h2>
+    <ul class="dash" style="max-width:62ch;font-size:30px">
+      <li>Sitting with someone else's problem and not yet knowing the right question — <strong>that confusion is the job.</strong></li>
+      <li>It is the <strong>hardest part</strong>, and it is <strong>the point</strong>. It gets easier fast.</li>
+      <li>We're tightening the lab's opening so the <strong>first move</strong> is clearer — without removing the productive struggle.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 14 ─────────────────────────────────── Why the lab comes same week -->
+<section class="slide" data-screen-label="14 Same-week release">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">You asked: release it a week early?</div>
+    <h2 style="margin-bottom:28px">Why the lab comes out the <span class="hi">same week</span></h2>
+    <ul class="dash" style="max-width:66ch;font-size:28px">
+      <li>Each week's lab is shaped by the <strong>previous week's feedback</strong> — <em>when</em> we release is itself a <strong>data-driven decision</strong>. We'd rather not release it blindly.</li>
+      <li>Some weeks bring a <strong>live guest lecture</strong> — handing out the lab before the topic is introduced wouldn't make sense.</li>
+      <li>The lab runs on the <strong>live portal</strong> — we keep it healthy in the <strong>fixed lab window</strong>, not around the clock for a week.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 15 ──────────────────────────────────────── A bit of stress, on purpose -->
+<section class="slide deep" data-screen-label="15 A bit of stress">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad center">
+    <div class="eyebrow" style="margin-bottom:22px">And yes — it's more intense</div>
+    <h2 style="max-width:24ch">A bit of stress, <span class="hi">on purpose</span></h2>
+    <p class="lead" style="margin-top:28px;max-width:40ch">Dedicated, focused time — plus a little pressure — is how this skill actually sticks. Comfortable and diffuse doesn't build it.</p>
+    <p class="body" style="margin-top:30px;max-width:60ch">But we care that it's manageable: you may <strong>miss one</strong> mandatory session — email <strong>ddls-course@scilifelab.se</strong> <em>before</em> it. If it tips into overwhelming, <strong>tell us</strong> — that's data too.</p>
+  </div>
+</section>
+
+<!-- 16 ───────────────────────────────────── Small things you asked for -->
+<section class="slide" data-screen-label="16 Things you asked for">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Portal ideas — we're taking these away</div>
+    <h2 style="margin-bottom:38px">Small things you asked for</h2>
+    <div class="cards c3" style="margin:auto 0">
+      <div class="card" data-anim="rise"><div class="k">Clarity</div><div class="t">Explain-simply</div><div class="d">A one-tap "explain this in plain terms" for jargon in Agent A's replies.</div></div>
+      <div class="card" data-anim="rise" data-delay="1"><div class="k">Focus</div><div class="t">A stopping point</div><div class="d">A clear "good enough" for the suggestion wand, so it doesn't loop forever.</div></div>
+      <div class="card" data-anim="rise" data-delay="2"><div class="k">Confidence</div><div class="t">On-track signals</div><div class="d">Clearer cues during the lab that you're heading the right way.</div></div>
+    </div>
+    <p class="body" style="margin-top:30px">Keep them coming — the portal is <strong>ours to shape together.</strong></p>
+  </div>
+</section>
+
+<!-- 17 ───────────────────────────────────── Individualised feedback -->
+<section class="slide" data-screen-label="17 Individualised feedback">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Where your lab stands</div>
+    <h2 style="margin-bottom:30px">Individualised feedback is coming</h2>
+    <ul class="dash" style="max-width:60ch;font-size:31px">
+      <li><strong>We read every submission.</strong> All of them.</li>
+      <li>You each get written feedback: what you did well, what to improve, what to be aware of.</li>
+      <li><strong>AI-drafted</strong> from your real interview + files, then <strong>reviewed by the teaching team</strong> before it reaches you.</li>
+    </ul>
+    <p class="body" style="margin-top:34px">Watch your <strong>portal bell / dashboard.</strong></p>
+  </div>
+</section>
+
+<!-- 18 ───────────────────────────────────────────── Part 2 divider -->
+<section class="slide deep" data-screen-label="18 Part 2">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad between">
+    <div class="eyebrow">Part 2</div>
+    <div class="divider">
+      <div class="num">02</div>
+      <h2 style="margin-top:16px">The seminar</h2>
+      <p class="lead" style="margin-top:26px;max-width:34ch">How this Friday session works — and the one you'll give.</p>
+    </div>
+    <div></div>
+  </div>
+</section>
+
+<!-- 19 ─────────────────────────────────────────── What the seminar is for -->
+<section class="slide" data-screen-label="19 What the seminar is for">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Part 2 · the seminar</div>
+    <h2 style="margin-bottom:30px">A weekly checkpoint, not an exam</h2>
+    <ul class="dash" style="max-width:60ch;font-size:31px">
+      <li>First, we <strong>review the computer lab together</strong> — the shared debrief we just did.</li>
+      <li>What worked, what tripped people up, what to carry into next week.</li>
+      <li><strong>Then</strong> we move on to a few selected presentations.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 20 ─────────────────────────────────────────── How presentations work -->
+<section class="slide" data-screen-label="20 How presentations work">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Part 2 · the seminar</div>
+    <h2 style="margin-bottom:38px">How presentations work</h2>
+    <div class="cards c3" style="margin:auto 0">
+      <div class="card" data-anim="rise"><div class="k">Who</div><div class="t">~7–10, at random</div><div class="d">Drawn each week. Everyone should be ready — it could be you.</div></div>
+      <div class="card" data-anim="rise" data-delay="1"><div class="k">What</div><div class="t">Your own work</div><div class="d">The work you did in <strong>that week's</strong> computer lab — not a paper.</div></div>
+      <div class="card" data-anim="rise" data-delay="2"><div class="k">How long</div><div class="t">7 + 3 minutes</div><div class="d">Seven to present, three to discuss. This replaced the old journal club.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 21 ──────────────────────────────────────────────── Core idea (deep) -->
+<section class="slide deep" data-screen-label="21 Core idea">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad center">
+    <div class="eyebrow" style="margin-bottom:30px">The core idea</div>
+    <h2 style="font-size:74px;max-width:26ch">"You can outsource your thinking, but not your understanding."</h2>
+  </div>
+</section>
+
+<!-- 22 ─────────────────────────────────────── Outsource doing not knowing -->
+<section class="slide" data-screen-label="22 Doing not knowing">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Why we present orally</div>
+    <h2 style="margin-bottom:30px">Outsource the <span class="hi">doing</span>, not the <span class="hi">knowing</span></h2>
+    <ul class="dash" style="max-width:62ch;font-size:31px">
+      <li>We made it <strong>easy to produce</strong> — the AI writes the report, even the slides.</li>
+      <li>That does <strong>not</strong> make it any easier to <strong>understand</strong> what was done.</li>
+      <li>To present it out loud, you have to actually understand it — so preparation starts from <strong>your own work</strong>, not the slides the AI made.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 23 ─────────────────────────────────────────── What this means for you -->
+<section class="slide" data-screen-label="23 What this means for you">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad">
+    <div class="eyebrow" style="margin-bottom:16px">Before the seminar</div>
+    <h2 style="margin-bottom:30px">Be ready to explain your own work</h2>
+    <ul class="dash" style="max-width:52ch;font-size:31px">
+      <li>Your <strong>question</strong> — what you were really asked.</li>
+      <li>Your <strong>data</strong> — and its traps.</li>
+      <li>What the <strong>analysis</strong> actually did.</li>
+      <li>What you <strong>would</strong> and <strong>would not</strong> trust.</li>
+    </ul>
+    <div class="define" style="margin-top:36px;max-width:60ch" data-anim="fade" data-delay="1">
+      <div class="k">To pass the seminar</div>
+      <div class="d">You must be able to <strong>present your work if you are selected.</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- 24 ─────────────────────────────────────────────────── Let's begin -->
+<section class="slide deep" data-screen-label="24 Let's begin">
+  <img class="slidemark" src="./scilifelab-symbol.png" alt="SciLifeLab" />
+  <div class="pad center">
+    <div class="eyebrow" style="margin-bottom:22px">Let's begin</div>
+    <h1 style="font-size:82px">You did the hard first pass.</h1>
+    <p class="lead" style="margin-top:28px;max-width:40ch">Today: debrief together, then a few of you present. Bring your questions — this room is for figuring it out.</p>
+  </div>
+</section>
+
+</div>
+
+<script id="speaker-notes" type="application/json">[
+"Welcome. First live seminar. They got through Lab 1 yesterday — a real lift. Today: what the lab was for, what you told us, and how these seminars run.",
+"Two parts and lots of room for questions. Part 1 the lab and your feedback; Part 2 how the seminar works.",
+"Anchor: we train the forward-deployed scientist. Someone else's problem, interview to precision, direct the agent, you keep the judgement. The loop is specify-direct-verify. The harness, not the model.",
+"Recap the two-agent design. You are the ONLY channel between Agent A and Agent B — that channel is the examined skill.",
+"Be explicit: the goal of Lab 1 was to run the whole loop once and touch every part. Familiarity, not the result.",
+"And what it was NOT: not polished, not finished-with-time-to-spare, not every validation step. Week-1 quality is not graded. Say this plainly — it lands.",
+"By the numbers — 20 full hand-ins, 16 seminar decks, 16 feedback responses. Thank them.",
+"The ratings: portal 4.3, design 4.2, instructions 4.0, overall 3.6. Frame 3.6 as healthy honesty for a hard first lab, not a bad score.",
+"Celebrate real moves you saw: refusing vague words, the 'what would make you not trust this' question, reading the brief back, catching data traps, directing Pi not trusting it.",
+"The five feedback themes, grouped. Read them, then say: let's take them one at a time.",
+"Theme 1 — setup ate the clock, Windows especially. One-time cost; already installed now; setup checklist coming. We never graded installing a CLI.",
+"Theme 2 — not enough time to check. Real tension, but quality isn't graded in week 1; noticing and writing down 'I couldn't check this' IS the skill.",
+"Theme 3 — didn't know what to ask. That confusion is the job; hardest part and the point; we'll tighten the opening without removing the struggle.",
+"Same-week release — the data-driven-decision argument, guest lectures, live-portal maintenance window. This is deliberate.",
+"A bit of stress on purpose — dedicated time plus a little pressure is how it sticks. But it must stay manageable: you may miss one session, email us before. If overwhelming, tell us.",
+"Small portal ideas we're taking away: explain-simply, a stopping point for the wand, on-track signals. The portal is ours to shape together.",
+"Individualised feedback is coming — we read everything; AI-drafted, teacher-reviewed; watch the bell.",
+"Transition to Part 2 — the seminar itself.",
+"What the seminar is for: shared debrief first (what we just did), then selected presentations. A checkpoint, not an exam.",
+"How presentations work: ~7–10 at random, your own lab work, 7+3 minutes. Replaced the journal club.",
+"The core idea — you can outsource your thinking but not your understanding. Let it sit.",
+"Outsource the doing, not the knowing. The AI makes producing easy; understanding is still on you; prep starts from your own work.",
+"What to be ready to explain: question, data, analysis, what you'd and wouldn't trust. To pass the seminar you must present if selected.",
+"Close — you did the hard first pass. Debrief, then presentations. Bring questions. Let's start."
+]</script>
+
+<script>window.DECK_CONFIG = { storageKey: 'deck:ddls-seminar-1', resume: true };</script>
+<script src="./deck_stage.js"></script>
+</body>
+</html>

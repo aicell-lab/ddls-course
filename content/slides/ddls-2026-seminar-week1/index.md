@@ -1,6 +1,6 @@
 ---
 title: 'DDLS 2026 — Seminar 1'
-summary: 'Week 1 seminar: computer-lab goals, feedback, and how the seminar works'
+summary: 'Week 1 seminar: computer-lab debrief, your feedback, and how the seminar works'
 authors: []
 tags: []
 categories: []
@@ -16,14 +16,14 @@ slides:
 
 * Good morning — and welcome to our first live seminar.
 * You made it through the first computer lab yesterday. That was a real lift.
-* This morning: let's talk about what it was for, and how these seminars work.
+* This morning: what the lab was for, **what you told us**, and how these seminars work.
 * We're figuring this out together — bring your questions.
 
 -----
 
 ## Agenda
 
-* **Part 1 — The computer lab:** what it trained, what the goal really was, and your feedback.
+* **Part 1 — The computer lab:** what it trained, what the goal really was, and a full debrief of **your feedback**.
 * **Part 2 — The seminar:** what it's for, how presentations work, and how to prepare.
 * Plenty of room for **questions** along the way.
 
@@ -68,12 +68,84 @@ slides:
 
 -----
 
+## Lab 1 — by the numbers
+
+* **20 of you handed in a full lab** — the whole loop, interview to delivered report.
+* **16 seminar decks** prepared for today.
+* **16 of you left detailed feedback ratings** — thank you, we read every word.
+* How you rated it (out of 5):
+  * **Portal — 4.3**  ·  **Design — 4.2**  ·  **Instructions — 4.0**
+  * **Overall — 3.6**
+* A hard, deliberately-stretchy first lab landing around **3.6 overall** is a **healthy, honest** signal — not a disappointing one.
+
+-----
+
+## What you did remarkably well
+
+* You **refused vague words.** You made Agent A define "trustworthy", "unusable", "scaffold class" instead of guessing.
+* You asked the **killer question** — *"what would make you NOT trust this result?"* — and turned the answer into your must-nots.
+* You **read the brief back** to Agent A to check your own understanding.
+* You caught **data traps**: CSV headers that didn't match the description, leakage (island / sample-id → species), temporal splits, "blanks are never zero".
+* You wrote honest **"what I would NOT claim"** sections.
+* You **directed** Pi rather than trusting it — pushing back on odd rankings, auditing its own spec.
+
+-----
+
+## What you told us — the honest feedback
+
+We grouped everything you wrote. Five themes came back again and again:
+
+* **Setup ate the clock** — installing Pi, the terminal, Windows especially.
+* **Time vs. careful checking** — "I had to rush the validation steps."
+* **A confusing start** — "at first I wasn't sure what to even ask."
+* **It felt stressful** — "a lot of us didn't finish in time."
+* **Online, it's hard to know** you're on the right track.
+
+Let's take them one at a time.
+
+-----
+
+## "Setup ate the clock"
+
+* By far the most common note — Pi, the terminal, permissions, **Windows** in particular.
+* You're right, and it's a **one-time cost**: Pi and the portal are set up **now**. Next week you walk in already installed.
+* **What we're doing:** an OS-by-OS **setup checklist** (incl. Windows) so the lab window goes to *thinking*, not *installing*.
+* The skill we're grading was never "can you install a CLI tool."
+
+-----
+
+## "Not enough time to check carefully"
+
+* Several of you felt the tension between the clock and doing verification properly. That tension is **real**.
+* But remember: **Week-1 quality is not graded.** Rushing the last validation step in week 1 is **expected**, not a failure.
+* As setup time disappears, **more of the window goes to the actual loop** — interview, direct, verify.
+* Noticing *"I didn't have time to check this"* and **writing it down** is itself the skill. Many of you did exactly that.
+
+-----
+
+## "I wasn't sure what to even ask"
+
+* A confusing start — *"what do I ask Agent A?"* — came up a lot.
+* Here's the thing: **that confusion IS the job.** Sitting with someone else's problem and not yet knowing the right question is what a forward-deployed scientist does every day.
+* It is **the hardest part**, and it is **the point**. It gets easier fast.
+* **What we're doing:** tightening the lab's opening instructions so the *first move* is clearer — without removing the productive struggle.
+
+-----
+
 ## If it felt too long — that's okay
 
-* Several of you told us the lab felt long or stressful. Thank you for saying so.
 * Feeling rushed was **never the bar**. The point was the **process**, not the polish.
 * Struggling to ask Agent A the **right question** at first? That is exactly the skill we're practising — **not a failing**.
-* You are supposed to be a bit uncomfortable in week 1. It gets easier.
+* You are supposed to be a bit uncomfortable in week 1. **It gets easier.**
+
+-----
+
+## A bit of stress — on purpose
+
+* We hear that this is **more intense** than a slow, week-long lab. That is a **deliberate design choice**, not an oversight.
+* We believe **dedicated, focused time — plus a little pressure — is how this skill actually sticks.** Comfortable and diffuse doesn't build it.
+* But we also **care that it's manageable**: you may **miss one** mandatory session (a lab *or* a seminar). Just email **ddls-course@scilifelab.se** *before* the session.
+* If it tips from stretching into overwhelming, **tell us** — that's data too.
 
 -----
 
@@ -84,6 +156,26 @@ slides:
 * Some weeks bring a **live guest lecture** — handing out the lab before the topic is introduced wouldn't make sense.
 * The lab runs on the **live portal** — we can watch it and keep it healthy in the **fixed lab window**, not around the clock for a week.
 * And yes, it's **more intense** than having days to prepare. That part is deliberate: **focused time + a bit of pressure is how this skill sticks.**
+
+-----
+
+## "Online, it's hard to know if I'm on track"
+
+* Real, and worth naming: no one is leaning over your shoulder.
+* That's exactly what the **live lab window**, this **seminar**, the **portal coach**, and us **watching the portal** are for.
+* **Ask early and ask often** — in the lab window, in chat, here. If you hit it, others did too.
+
+-----
+
+## Small things you asked for
+
+You gave us concrete portal ideas. A few we're taking away:
+
+* A **"explain this simply"** helper / glossary for jargon in Agent A's replies.
+* A **stopping point** for the suggestion "wand" so it doesn't loop forever.
+* Clearer signals that you're **on the right track** during the lab.
+
+Keep them coming — the portal is **ours to shape together**.
 
 -----
 
@@ -115,7 +207,7 @@ slides:
 
 ## What the seminar is for
 
-* First, to **review the computer lab together** — a shared debrief.
+* First, to **review the computer lab together** — a shared debrief (that's what we just did).
 * We look at what worked, what tripped people up, and what to carry into next week.
 * **Then** we move on to selected presentations.
 * Think of it as a weekly checkpoint, not an exam.

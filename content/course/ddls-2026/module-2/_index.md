@@ -12,8 +12,10 @@ course_module: "true"
 
 #### Lecturer: Estibaliz Gómez de Mariscal (EMBO Postdoctoral Fellow, Optical Cell Biology Group, ITQB NOVA, NOVA University of Lisbon, Portugal)
 
-**Recorded lecture — released online at the start of the module week.** The computer lab
+**Recorded lecture — now available online.** Watch it in the course portal. The computer lab
 (Wednesday 13:00–17:00) and seminar (Friday 10:00–12:00) are held live over Zoom.
+
+{{< cta cta_text="Watch the recorded lecture" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/lectures" >}}
 
 {{< figure src="Estibaliz_Gomez.jpg" class="profile-photo" >}}
 

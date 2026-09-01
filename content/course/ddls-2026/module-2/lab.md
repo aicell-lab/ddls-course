@@ -33,21 +33,23 @@ the skill being examined.
 
 The lab runs **13:00–17:00 (4 hours)**. Week 1 was too intense and gave you no timing — this
 week fixes that. The table below is a **guide**, not a stopwatch: work at your own pace, but
-**do not run past 17:00**, and treat the 16:30 line as hard.
+**do not run past 17:00**, and treat the 15:30 switch to building as hard.
 
 | Time | Duration | What you're doing |
 |---|---|---|
-| 13:00–13:15 | 15 min | Set up: start the environment install (it runs while you interview), open the portal, generate your API key |
+| 13:00–13:15 | 15 min | Set up: start the environment install (it runs while you interview), open the portal, generate your API key, turn on Pi's vision |
 | 13:15–13:45 | 30 min | **Interview** the data owner (Agent A) — get the image facts |
-| 13:45–14:05 | 20 min | **Translate** the interview into goal · data · traps; write `AGENTS.md` / `spec.md` |
-| 14:05–14:20 | 15 min | **Configure** the analyst (Agent B / Pi) in an empty folder |
-| 14:20–15:50 | 90 min | **Direct** the analyst: run a pretrained model on a small image subset |
-| 15:50–16:30 | 40 min | **Validate**: overlays, a held-out check or class balance, name one imaging caveat |
-| 16:30–17:00 | 30 min | **Hard switch → build your deliverable** (the interactive viewer app + short write-up) |
+| 13:45–14:10 | 25 min | **Translate**: have Pi draft `AGENTS.md` / `spec.md`, then **review them by hand** against the transcript and the files |
+| 14:10–15:30 | 80 min | **Direct** the analyst with the prompt recipe: run a pretrained model on a small subset, overlays, a metric vs a baseline, a vision check |
+| 15:30–16:45 | 75 min | **Build your deliverable** — the FastAPI + Tailwind results app; open it and check every overlay and number |
+| 16:45–17:00 | 15 min | Write the short summary and **gather your submission** folder |
 
-> **At 16:30, stop analysing and start packaging** — whatever state you're in. A checked
-> partial result beats an unfinished perfect one. Reserve the last half hour for the viewer
-> and the short summary; that is what you present on Friday.
+> **Treat 15:30 as a hard switch: stop analysing and build the app** — whatever state your
+> analysis is in. A checked partial result you can *show* beats an unfinished perfect one. In
+> our own timed run the whole loop (draft → analyse 22 fields → build the app) took the agent
+> under two minutes of work and about **$0.02** — the clock goes to *your* thinking, reviewing
+> and checking, not to waiting on Pi. Reserve the last stretch for the app and the summary;
+> that is what you present on Friday.
 >
 > **Seminar preparation is separate.** You prepare the seminar *later* — on Thursday, ~30–45
 > minutes — not inside these four hours (see the [Seminar 2](../seminar/) page). Don't try to
@@ -61,14 +63,19 @@ By the end of this lab you should be able to:
   facts (format, scale, modality, labels, traps) that tabular data never has.
 - Reuse **Pi**, your local analyst agent, pointed at the course portal.
 - **Translate** the interview into an `AGENTS.md` (the brief) and a `spec.md` (every detail,
-  path, channel, pixel size and trap).
-- **Direct** the agent to run a **pretrained** model on a small image subset — no training
-  from scratch — and **validate** it with overlays and a baseline, not vibes.
-- Build a small **interactive viewer** (`viewer.html`) so you and the seminar audience can
-  *see* the images and the results, and defend them on Friday.
+  path, channel, pixel size and trap) — and **review them by hand** before you run anything.
+- **Direct** the agent with a reusable **prompt recipe** (a clear goal · a loose method with a
+  humble fallback · explicit validation, verification and stopping criteria) — a way of working
+  you will reuse every week of the course.
+- Run a **pretrained** model on a small image subset — no training from scratch — and
+  **validate** it with a baseline, overlays, and Pi's own **vision** (ask it to *look* at the
+  output image), not vibes.
+- Build a small **deployable app** (FastAPI + Tailwind) so you, the seminar audience — and, in
+  the final project, a real client — can *see* the images and results, mark what's wrong, and
+  defend them on Friday.
 
 > **What "good" means today.** The win is **completing the whole loop once** — interview →
-> translate → direct → verify → build the viewer — with a result you actually checked and can
+> translate → direct → verify → build the app — with a result you actually checked and can
 > *show*. A modest, verified result you can display on screen beats an ambitious one you never
 > finished. The skill on trial is how you **steer, translate and check** — not how
 > sophisticated the model is.
@@ -191,7 +198,11 @@ Create a working folder for this lab (say `ddls-week2`), open a terminal inside 
 python3 -m venv .venv && source .venv/bin/activate
 pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
 pip install timm "cellpose>=4.2,<5" scikit-image scikit-learn numpy pillow tifffile matplotlib
+pip install fastapi "uvicorn[standard]" python-multipart
 ```
+
+> The last line is for your **Part 5 deliverable** (a FastAPI + Tailwind app). It's tiny and
+> installs in seconds — the big download is the CPU PyTorch build on the line above.
 
 > **Windows PowerShell:** activate the venv with `.\.venv\Scripts\Activate.ps1` instead of the
 > `source` line; the two `pip install` lines are identical. If PowerShell blocks the activate
@@ -248,7 +259,7 @@ provider file. Create `~/.pi/agent/models.json` with exactly this:
       "api": "openai-completions",
       "apiKey": "$DDLS_API_KEY",
       "models": [
-        { "id": "gpt-5.6-luna", "reasoning": false, "input": ["text"],
+        { "id": "gpt-5.6-luna", "reasoning": false, "input": ["text", "image"],
           "samplingParams": { "reasoning_effort": "none" } }
       ]
     }
@@ -258,6 +269,13 @@ provider file. Create `~/.pi/agent/models.json` with exactly this:
 
 > The `samplingParams` line is **required** — it's what lets the course model use tools.
 > Don't try to set `OPENAI_BASE_URL`; Pi won't read it.
+
+> **New this week — let Pi *see* images.** Notice the `"input"` line reads
+> `["text", "image"]`, not just `["text"]`. That one word turns on the model's **vision**: Pi
+> can now open a PNG and actually look at it — which you'll use in Part 4 to have it check its
+> own overlays. **If you set Pi up in Week 1, edit that one line** in `~/.pi/agent/models.json`
+> to add `"image"`. Looking at an image is cheap (about **$0.0003** each), and it's one of the
+> most useful checks you have on image work.
 
 <details>
 <summary><b>How to create that file — per system</b> (the folder starts with a dot, which trips up every file manager)</summary>
@@ -303,7 +321,7 @@ cat > ~/.pi/agent/models.json <<'JSON'
       "api": "openai-completions",
       "apiKey": "$DDLS_API_KEY",
       "models": [
-        { "id": "gpt-5.6-luna", "reasoning": false, "input": ["text"],
+        { "id": "gpt-5.6-luna", "reasoning": false, "input": ["text", "image"],
           "samplingParams": { "reasoning_effort": "none" } }
       ]
     }
@@ -359,50 +377,112 @@ folder. It has **no built-in web search**. Keep an eye on the usage meter on you
 
 ## Part 3 — Configure and direct the analyst (Agent B / Pi)
 
-Same shape as Week 1: an **empty folder** → write `AGENTS.md` and `spec.md` from the interview
-→ run Pi and direct it. Your transcript and the images are already in the folder from Part 2.
+This is where the real skill lives, and it is the **way of working you reuse every week of the
+course**: you don't do the analysis — you **direct** an agent to do it and you **judge** what
+comes back. Same shape as Week 1 (an empty folder → `AGENTS.md` + `spec.md` → run Pi), but this
+week we make the steps explicit. Work through them in order.
 
-### Translate: build `AGENTS.md` and `spec.md`
+### Step 1 — Get your inputs in the folder
 
-Do this drafting **inside Pi**. Have it read your transcript and draft the two files; then
-**review and correct** everything, working *from the transcript*, never from memory. As in
-Week 1:
+You already have them from Part 2: your **interview transcript** and the **image dataset**,
+both sitting in your `ddls-week2` folder, with Pi able to see them. Nothing else.
 
-- **`AGENTS.md`** — the brief loaded every turn. Keep it under ~200 lines: the **GOAL** in a
-  sentence or two, **where the images live and how to load them**, the **MUST-NOTs** (e.g.
-  "don't rescale 16-bit images as if they were 8-bit", "don't mix channels"), and a pointer to
-  `spec.md`.
-- **`spec.md`** — every detail: **format, pixel dimensions, bit depth, channels and what each
-  is, pixel size / µm-per-pixel, magnification, modality**, every trap (out-of-focus fields,
-  illumination, batch variation), the **metric and baseline**, and what "done" looks like. In
-  effect `spec.md` **is the data dictionary the download didn't come with** — you rebuild it
-  from the interview and from opening the images.
+### Step 2 — Draft `AGENTS.md` and `spec.md` *with* Pi
 
-> **Your spec is a draft until you've opened the images.** Everything the owner told you will
-> be *slightly* wrong — a channel order, a stated pixel size, an image that's actually 16-bit.
-> After Pi loads the images, **come back and correct `spec.md`** against what the files actually
-> contain. Interview → draft spec → *load images* → fix spec is the loop. For the full
-> translation method (review-as-prose, then split, then iterate), see
-> [Part 3 of Computer Lab 1](../../module-1/lab/#part-3--translate-build-agentsmd-and-specmd).
-
-### Direct: run a pretrained model on a small subset
-
-Point Pi at the task and iterate. Make it **explain the images back to you first** — shapes,
-dtype, channel count, intensity ranges, anything that contradicts the spec — *before* it
-analyses anything. Mismatches here are gold. Then have it **plan before it codes**, and start
-on **one slice**: a handful of images, end to end, before scaling.
-
-**A starting prompt you can paste** (adapt the last line to your task):
+Launch Pi and have it read the transcript and the files and draft both, so you start from a
+real draft, not a blank page:
 
 ```text
-Read AGENTS.md and spec.md, then load a FEW images from the dataset in this folder.
-First, tell me what you actually see — image shape, dtype/bit depth, number of channels,
-intensity ranges per channel, pixel size if in the metadata, anything that contradicts the
-spec. Do NOT analyse yet. Save one raw image (and each channel) as a PNG so I can look at it.
-Then give me a numbered plan for answering the question in spec.md, name the pretrained model
-you'd use and why, and flag the two places the plan is most likely to be wrong.
-Wait for me to approve the plan before you write any analysis code.
+Read my interview transcript (the .md file in this folder) and look at the data/ folder. From
+ONLY what the transcript and the files actually show, write two files, then stop — do not
+analyse anything yet:
+
+1. AGENTS.md — how you operate here: the environment (a .venv is already set up), where the
+   data lives and how to load it, where to write outputs (results/), and the rule that every
+   number you report must be checked against the ground truth.
+2. spec.md — the problem: the exact decision the owner needs, the data (paths, dimensions,
+   bit depth, channel/stain, how any masks/labels are encoded), the definition of "done", the
+   metric and the baseline to beat, and the traps to watch.
+
+Then give me a 3-line summary of what you wrote.
 ```
+
+- **`AGENTS.md`** is the brief loaded every turn: the **GOAL** in a sentence or two, **where
+  the images live and how to load them**, the **MUST-NOTs** ("don't rescale 16-bit as if it
+  were 8-bit", "don't mix channels"), and a pointer to `spec.md`.
+- **`spec.md`** is every detail: **format, pixel dimensions, bit depth, channels and what each
+  is, pixel size / µm-per-pixel, magnification, modality**, every trap, the **metric and
+  baseline**, and what "done" looks like. It **is the data dictionary the download didn't come
+  with** — you rebuild it from the interview and from opening the images.
+
+### Step 3 — Review them by hand (the gate)
+
+**This is the manual step that separates a pass from a fail.** The agent's draft is a
+*proposal*. Read both files line by line and correct them **against the transcript and the
+actual files — never from memory.** Tick off:
+
+- [ ] The **goal** is the owner's real decision, not "segment the images". (In our test run the
+      owner needed a *field-by-field trust decision*, not one average — the agent got that only
+      because the transcript did.)
+- [ ] Every **path** is right and the images load.
+- [ ] **Bit depth, channels and what each channel is** match what the files actually contain.
+- [ ] **Pixel size / magnification** is stated (or explicitly marked *unknown* — don't let the
+      agent invent it).
+- [ ] The **traps** from the interview are all listed (blank/edge fields, touching objects,
+      dim fields, debris, batch variation).
+- [ ] The **metric and baseline** are concrete, and the agent hasn't invented an
+      "owner-approved" acceptance threshold the owner never gave.
+
+Fix what's wrong, then move on. For the full translation method (review-as-prose, then split,
+then iterate) see [Part 3 of Computer Lab 1](../../module-1/lab/#part-3--translate-build-agentsmd-and-specmd).
+
+### Step 4 — Direct with the prompt recipe
+
+Now direct the analysis. Use this **four-part recipe every time you ask an agent to do real
+work** — this term and beyond. It is what turns a vague ask into a directed, checkable job:
+
+> **GOAL** — one line. Point at the spec: *"answer the question in `spec.md`."*
+> **METHOD (a direction, not an order) + humble fallback + optional HINT** — suggest an
+> approach, then explicitly license the agent to overrule you: *"I suggest X; if that's a poor
+> fit for this data, say so and propose something better **before** you write code."* Add a
+> **HINT** only where you know something it can't guess (the one channel, the pixel size, the
+> trap).
+> **VALIDATION & VERIFICATION** — the concrete checks that make the result trustworthy: a
+> **baseline to beat**, an **overlay / held-out split / class-balance** check, **and a vision
+> check** — *"then open the overlay yourself and tell me whether the outlines actually sit on
+> the cells."*
+> **STOPPING CRITERION** — when to stop: *"plan before you code; stop and show me once you have
+> the per-field table and your overlay judgement; if the error is large, surface it plainly
+> rather than tuning parameters forever."*
+
+**A paste-ready example** (this is a *counting/segmentation* example — adapt the method, hint
+and metric to **your** task and dataset):
+
+```text
+GOAL: Answer the question in spec.md — for each field, count the nuclei and decide whether the
+count is safe to use, checked against the ground-truth masks.
+
+METHOD (a direction, not an order): I suggest Cellpose (a general pretrained nucleus model);
+if that's a poor fit here, say so and propose something better BEFORE you write code. HINT:
+the masks label each nucleus as a distinct integer, so the ground-truth count = number of
+unique nonzero labels; one field is essentially blank and must come out ~0.
+
+VALIDATION & VERIFICATION: process a handful of fields first. For each, report your machine
+count, the ground-truth count, and the signed difference, and write results/results.json plus
+one overlay PNG per field (your outlines drawn on the image). Print the mean absolute error.
+THEN use your vision: open 2–3 overlays (include a crowded one) and tell me honestly whether
+the outlines sit on real objects or are off — don't just trust the numbers.
+
+STOPPING CRITERION: plan before coding; stop and show me the table + your vision judgement.
+If the error is large or an overlay looks wrong, surface it rather than endlessly tuning.
+```
+
+Make Pi **explain the images back to you first** (shapes, dtype, channels, intensity ranges —
+mismatches with the spec are gold), **plan before it codes**, and start on **one slice** — a
+handful of images end to end — before scaling. When we ran exactly this recipe, the agent
+planned, wrote the pipeline, processed the fields, produced the table and overlays, **and
+caught its own failures** (a false count on the blank field, over-splitting in the crowded one)
+when it looked at the overlays — in about 25 seconds.
 
 ### Analyst toolkit — CPU-only, pretrained, no training from scratch
 
@@ -449,64 +529,99 @@ four** of these:
    predictions on the raw image (the single most convincing check for image work), a
    **held-out evaluation** on images the model's head never saw, or a **class-balance check**
    (how many of each class — is the "accuracy" just the majority class?).
-4. **Name one imaging caveat and how it could bias the result.** Choose a real one from your
+4. **Have Pi *look* at its own output (the vision check).** This is new this week and it is
+   powerful: because you turned on vision in Part 2, Pi can open its overlays/montages and
+   judge them. Ask it plainly — *"open the overlay for the crowded field and tell me whether
+   the outlines actually sit on the cells or are off."* In our run this is exactly how the agent
+   caught outlines drawn over a blank field and touching nuclei split in two — errors the count
+   number alone hid. **Then look yourself** and see if you agree.
+5. **Name one imaging caveat and how it could bias the result.** Choose a real one from your
    interview: **pixel size / magnification** differences, **staining or illumination
    variation** between sessions, or **class imbalance** — and say concretely how it could push
    the number the wrong way.
 
 If a check fails, that's a finding, not a failure: *"here's the result, here's the overlay that
 showed the model missing the dim cells, here's what I'd do next"* is a **stronger** outcome
-than a polished number you never looked at. For the full five-family verification toolkit
-(smell test, triangulation, adversarial prompting, show-its-work, controls), see
+than a polished number you never looked at.
+
+> **You are the human in the loop — and in the final project, so is a real client.** No metric
+> replaces a person looking at the picture. That is exactly why your deliverable in Part 5 is a
+> viewer you can *see* results in and **mark what's wrong**: this week you are that reviewer;
+> in the final project the data owner will be. Build the surface that lets a human catch what
+> the numbers miss.
+
+For the full five-family verification toolkit (smell test, triangulation, adversarial
+prompting, show-its-work, controls), see
 [Part 5 of Computer Lab 1](../../module-1/lab/#part-5--validate--verify-think-like-a-scientist).
 
-## Part 5 — Build your deliverable: an interactive image-and-results viewer
+## Part 5 — Build your deliverable: a deployable results app
 
 **This is new this week, and it matters.** Pi is a command-line agent — it **cannot show you
-images**. But microscopy work is fundamentally visual: a segmentation is only trustworthy once
-you *see* the outlines on the cells, and a classifier is only convincing once you *see* which
-images it got right. So this week your deliverable is not just a written report — it is a small
-**interactive web app** that lets you, and Friday's audience, **browse the images and see the
-analysis results overlaid**.
+images**. But microscopy work is visual: a segmentation is only trustworthy once you *see* the
+outlines on the cells. So this week your deliverable is a small **deployable web app** — a
+**FastAPI** backend serving your images and results, with a **Tailwind** frontend — that lets
+you, Friday's audience, and (in the final project) a real client **browse the images, see the
+results overlaid, and mark what's wrong.** This is the product a forward-deployed scientist
+ships: not a number in a chat, but a thing the problem-owner can open and use.
 
-Build it as a **single self-contained `viewer.html`** — plain HTML + JavaScript, **no build
-step**, opens by double-click in any browser. Keep it **lightweight**: an afternoon-sized
-artifact, not a framework app. **Direct Pi to build it from your results** (Pi writes the
-HTML/JS and can embed images as data-URIs or reference the local image files), then **open it
-yourself and check it** — the whole point is that you look at your own results.
+You **direct Pi to build it** and then **open it yourself and check every overlay and number.**
+There are two tiers — do the **Core** first; reach for **Strong** only once Core runs.
 
-**A concrete spec you can hand to Pi:**
+**Core (required).** A FastAPI app that serves your field images, your overlay PNGs and your
+`results.json`, with a Tailwind gallery: every field as a card showing the overlay, the
+headline numbers, a **SAFE / SET-ASIDE** badge, and a summary panel on top (the headline metric
+vs its baseline, plus the one caveat). It runs with `uvicorn app:app`.
 
 ```text
-Build me a single self-contained viewer.html — plain HTML + vanilla JavaScript, CSS in a
-<style> tag, no CDN links, no build step. It must open from a double-click and work offline.
+Package this work as a small deployable product so a human can SEE and CHECK the results.
+Build a FastAPI + Tailwind app in this folder:
 
-It shows my microscopy analysis so a seminar audience can SEE the results:
-1. A gallery/grid of image thumbnails.
-2. Click a thumbnail to open that image large, with the model's result OVERLAID — for
-   segmentation, the predicted outlines/mask on top of the raw image (a toggle to show/hide
-   the overlay is a plus); for classification, the predicted class + confidence shown beside
-   the image.
-3. A summary panel with the HEADLINE metric and the BASELINE it beats
-   (e.g. "accuracy 0.82 vs 0.55 majority-class baseline", or "mean IoU 0.71 vs 0.20 threshold").
-4. A short caveats note: the one imaging caveat I identified and how it could bias the result.
+- app.py (FastAPI) that serves the field images, the overlay PNGs in results/overlays/, and
+  results/results.json.
+- A single-page Tailwind frontend at "/" (Tailwind via CDN): a gallery of all fields. Each
+  card shows the overlay image, the machine result and the ground-truth result, the signed
+  difference, and a colored SAFE / SET-ASIDE badge from the per-field decision.
+- A summary panel at the top: number of fields, the headline metric vs its baseline, and one
+  plain-language caveat sentence.
+- requirements.txt and a short README with the exact run command.
 
-Embed the images with a script, not by hand: write the HTML referencing PNG filenames first,
-then run a short Python script that rewrites each src into a base64 data URI inside the file.
-Do NOT print base64 into the chat, and do NOT fetch images at runtime (that breaks from disk).
-Use only numbers that appear in my actual results files. Keep it to one file.
+Read everything from disk (no database). When done, tell me the exact command and port to run
+it, then stop.
 ```
 
-Then **open `viewer.html` and check it** against your own output — every overlay, every number.
-If an overlay looks wrong, that's exactly the kind of thing the room will catch on Friday, so
-catch it now.
+Then run it and **look at your own work**:
 
-**A short written summary accompanies the viewer** (a paragraph or a small section is fine): the
-**goal**, the **result vs its baseline**, the **imaging caveat**, and your **AI-use disclosure**
-(which agent did what, and what you verified yourself). The two course non-negotiables still
-apply: **own every number** (if it's wrong, it's wrong under your name) and **disclose the AI
-use**. You can ask Pi to fold this summary into the top of `viewer.html`, or keep it as a short
-`summary.md` — either is fine.
+```bash
+uvicorn app:app --reload --port 8000    # then open http://localhost:8000
+```
+
+**Strong (encouraged, only after Core runs).** Add a detail view where a human can **zoom into
+one field and mark what the model got wrong** — the surface a real client uses to give you
+feedback. This is the forward-deployed loop in miniature.
+
+```text
+Now add a detail view: click a field to open it large in a zoomable / pannable viewer with the
+overlay on top, and a simple draw-annotation layer (click to drop points, or drag a box) with
+a Save button that POSTs the annotations to FastAPI and writes results/annotations.json. This
+is where a human marks the objects the model missed or invented. Keep using Tailwind; no
+database — just append to the JSON file.
+```
+
+> **On the viewer library:** a zoomable canvas is all Core needs, and an agent will usually
+> build one from plain JS. If you want true map-style zoom over a large field, **OpenLayers**
+> (an image layer + a `Vector` draw interaction) is a good choice — name it explicitly in the
+> prompt if you want it, or let Pi propose the lightest thing that works. Either passes; don't
+> burn the clock fighting a library.
+
+**Deploying it (optional, if you're ahead).** Because it's a normal FastAPI app, it deploys
+like any web service — a `Dockerfile` and `uvicorn`, or a free host. You don't have to deploy
+today, but building it *deployable* is the point: this is the artifact you hand a client.
+
+**A short written summary accompanies the app** (a paragraph or small `summary.md` is fine):
+the **goal**, the **result vs its baseline**, the **imaging caveat**, and your **AI-use
+disclosure** (which agent did what, and what you verified yourself). The two course
+non-negotiables still apply: **own every number** (if it's wrong, it's wrong under your name)
+and **disclose the AI use**.
 
 ## What to hand in — and what we look at
 
@@ -518,9 +633,11 @@ Your submission is your **transcript(s) plus your analysis and your deliverable*
   the raw `.jsonl` **or** a readable `.md` / `.txt` log — we accept all three, and prefer a
   readable Markdown version. Include one per run if you launched Pi more than once. Include the
   analysis **code** Pi wrote.
-- **`viewer.html`** — your self-contained interactive deliverable.
+- **Your app** — the deliverable folder (`app.py`, any templates/static, your `results/` with
+  the overlays and `results.json`, `requirements.txt`, and the short README). Zip it if that's
+  easier to upload.
 - **The short written summary** — goal, result vs baseline, caveat, and AI-use disclosure
-  (`summary.md`, or embedded at the top of the viewer).
+  (`summary.md`).
 - **`AGENTS.md`** and **`spec.md`** — the brief and the spec you wrote.
 
 **How to submit — all in the portal.** Open your week in the
@@ -536,12 +653,13 @@ we do next.
 > at the end of your run:
 >
 > ```text
-> Make a folder called submissions/ in my current working directory. Copy my viewer.html,
-> summary.md, AGENTS.md and spec.md into it. Then read every Pi session transcript from TODAY
-> under ~/.pi/agent/sessions/ and, for each run, write a clean Markdown log of the whole
-> conversation (my messages and your replies, in order) to submissions/analysis-transcript-1.md,
-> analysis-transcript-2.md, … — plain readable text, not JSON. Finally, list exactly what you
-> copied so I can check nothing is missing.
+> Make a folder called submissions/ in my current working directory. Copy my app (app.py, any
+> templates/static, results/, requirements.txt, README), plus summary.md, AGENTS.md and
+> spec.md into it. Then read every Pi session transcript from TODAY under ~/.pi/agent/sessions/
+> and, for each run, write a clean Markdown log of the whole conversation (my messages and your
+> replies, in order) to submissions/analysis-transcript-1.md, analysis-transcript-2.md, … —
+> plain readable text, not JSON. Finally, list exactly what you copied so I can check nothing
+> is missing.
 > ```
 >
 > Then download the **interview** transcript from the portal into the same `submissions/`
@@ -561,11 +679,11 @@ for:
 - What did you **check** — the overlay, the baseline, the caveat — and what did you take on
   faith?
 
-A polished viewer on top of a transcript that shows no steering and no skepticism is not a
-pass. A modest result with a transcript that shows real interviewing, translation and
-verification is exactly what we're after.
+A polished app on top of a transcript that shows no steering and no skepticism is not a pass. A
+modest result with a transcript that shows real interviewing, translation and verification is
+exactly what we're after.
 
 ---
 
-Good luck, and have fun — this is the job. Remember the hard line: **at 16:30, stop analysing
-and build the viewer.** A checked partial result you can *show* beats an unfinished perfect one.
+Good luck, and have fun — this is the job. Remember the hard line: **at 15:30, stop analysing
+and build the app.** A checked partial result you can *show* beats an unfinished perfect one.

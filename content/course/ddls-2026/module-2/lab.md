@@ -584,40 +584,57 @@ tool for you to babysit.
 **Step 1 — install it and sign in (you, once):**
 
 ```bash
-# uv manages its own Python, so this works even on an older system Python:
-uv tool install google-colab-cli
+# uv manages its own Python, so this works even on an older system Python.
+# The extra pin avoids a current dependency bug — see the note below.
+uv tool install google-colab-cli --with "jupyter-kernel-client<1.0"
 # First run prints a Google sign-in URL — sign in, paste the code back ONCE. Token is cached.
 colab new -s ddls-gpu --gpu T4
 ```
+
+> **Why the `--with` pin?** As of this writing a plain `uv tool install google-colab-cli` pulls a
+> too-new `jupyter-kernel-client`, and running code on the VM then fails with
+> `module 'jupyter_kernel_client' has no attribute 'KernelClient'`. Pinning `<1.0` fixes it. If a
+> future version has resolved this, the pin is harmless.
 
 > T4 is Colab's **standard free-tier GPU** and needs no paid compute units. Our lab slot
 > (Wed afternoon in Europe) is early morning in the US — **off-peak, when free GPUs are most
 > available** — but availability is never guaranteed. If you don't get a T4, just fall back to CPU
 > with a small subset; don't lose lab time fighting it.
 
-**Step 2 — hand the rest to Pi.** With the session already running, paste this into Pi (adjust
-paths and the analysis command to your task):
+**Step 2 — hand the rest to Pi.** The one catch: `colab upload` / `colab download` move **a single
+file at a time — they do not take folders**. So the pattern is **zip → upload → unzip on the VM →
+run → zip results → download → unzip locally**. Pi handles all of it; paste this in (adjust paths
+and the analysis to your task):
 
 ```text
 I have a running Colab GPU session named "ddls-gpu" (via the `colab` CLI). Offload the heavy run
-to it, then bring the results back so I can inspect them locally. Do this with shell commands:
+to it, then bring the results back so I can inspect them locally. IMPORTANT: `colab upload` and
+`colab download` only move ONE FILE at a time, so use zip archives for folders. Do this with shell
+commands:
   1. Install what the analysis needs on the VM:   colab install -s ddls-gpu cellpose tifffile
-  2. Upload my input images:                       colab upload -s ddls-gpu ./images /content/images
-  3. Run my analysis ON THE VM by sending a local script (kernel state persists between calls, and
-     this avoids the short default timeout of `colab run`):
-        colab exec -s ddls-gpu -f run_gpu.py
-     Write run_gpu.py to read /content/images, run the model on the GPU, and write masks +
-     overlays + a metrics.json into /content/results.
-  4. Download the results back:                    colab download -s ddls-gpu /content/results ./results
+     (torch is already installed on Colab — no need to reinstall it.)
+  2. Zip my images and upload the single zip:
+        zip -r images.zip images
+        colab upload -s ddls-gpu images.zip /content/images.zip
+  3. Run my analysis ON THE VM by sending a local script. `colab exec` DEFAULTS TO A 30s TIMEOUT,
+     so pass a generous --timeout for a real model run (kernel state persists between exec calls):
+        colab exec -s ddls-gpu -f run_gpu.py --timeout 1200
+     Write run_gpu.py so that it: unzips /content/images.zip, runs the model on the GPU, writes
+     masks + overlays + metrics.json into /content/results/, and then zips that folder to
+     /content/results.zip.
+  4. Download the single results zip and unzip it locally:
+        colab download -s ddls-gpu /content/results.zip ./results.zip
+        unzip -o results.zip
   5. Shut the VM down when done:                   colab stop -s ddls-gpu
 Report the metric and confirm the overlays are in ./results so I can open them in my viewer app.
 ```
 
-Use `colab exec -f run_gpu.py` (send a script) rather than `colab run` — `run` has a short default
-timeout that will kill a real model run. The VM is **ephemeral**: deps and model weights download
-fresh each session (a minute or two), and anything not `download`ed is lost when you `colab stop`.
-Your validation, vision check and app (Parts 4–5) still run **locally** on the results you pulled
-back.
+Two things I verified will bite you otherwise: **`upload`/`download` are single-file only** (zip
+your folders), and **`colab exec` defaults to a 30-second timeout** — pass `--timeout` for any real
+model run (this is why the script goes via `exec -f`, not `colab run`, which has the same short
+default). The VM is **ephemeral**: deps and model weights download fresh each session (a minute or
+two), and anything not `download`ed is lost when you `colab stop`. Your validation, vision check and
+app (Parts 4–5) still run **locally** on the results you pulled back.
 
 </details>
 

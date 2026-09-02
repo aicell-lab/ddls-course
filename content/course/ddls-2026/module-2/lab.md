@@ -32,18 +32,18 @@ the skill being examined.
 ## Suggested time budget
 
 The lab runs **13:00–17:00 (4 hours)**. The table below is a **guide**, not a stopwatch: work
-at your own pace, but **do not run past 17:00**, and treat the 15:30 switch to building as hard.
+at your own pace, but **do not run past 17:00**, and treat the 15:45 switch to building as hard.
 
 | Time | Duration | What you're doing |
 |---|---|---|
-| 13:00–13:15 | 15 min | Set up **Pi**: install Node + Pi, point it at the gateway (vision on), open the portal, generate your API key |
-| 13:15–13:45 | 30 min | **Interview** the data owner (Agent A) — get the image facts |
-| 13:45–14:15 | 30 min | **Translate**: have Pi draft `AGENTS.md` / `spec.md`, **review them by hand**, then have **Pi set up the Python environment** for the task |
-| 14:15–15:30 | 75 min | **Direct** the analyst with the prompt recipe: run a pretrained model on a small subset, overlays, a metric vs a baseline, a vision check |
-| 15:30–16:45 | 75 min | **Build your deliverable** — the FastAPI + Tailwind results app; open it and check every overlay and number |
+| 13:15–13:30 | 15 min | Set up **Pi**: install Node + Pi, point it at the gateway (vision on), open the portal, generate your API key |
+| 13:30–14:00 | 30 min | **Interview** the data owner (Agent A) — get the image facts |
+| 14:00–14:30 | 30 min | **Translate**: have Pi draft `AGENTS.md` / `spec.md`, **review them by hand**, then have **Pi set up the Python environment** for the task |
+| 14:30–15:45 | 75 min | **Direct** the analyst with the prompt recipe: run a pretrained model on a small subset, overlays, a metric vs a baseline, a vision check |
+| 15:45–16:45 | 60 min | **Build your deliverable** — the FastAPI + Tailwind results app; open it and check every overlay and number |
 | 16:45–17:00 | 15 min | Write the short summary and **gather your submission** folder |
 
-> **Treat 15:30 as a hard switch: stop analysing and build the app** — whatever state your
+> **Treat 15:45 as a hard switch: stop analysing and build the app** — whatever state your
 > analysis is in. A checked partial result you can *show* beats an unfinished perfect one. In
 > our own timed run the whole loop (draft → analyse 22 fields → build the app) took the agent
 > under two minutes of work and about **$0.02** — the clock goes to *your* thinking, reviewing
@@ -69,9 +69,8 @@ By the end of this lab you should be able to:
 - Run a **pretrained** model on a small image subset — no training from scratch — and
   **validate** it with a baseline, overlays, and Pi's own **vision** (ask it to *look* at the
   output image), not vibes.
-- Build a small **deployable app** (FastAPI + Tailwind) so you, the seminar audience — and, in
-  the final project, a real client — can *see* the images and results, mark what's wrong, and
-  defend them on Friday.
+- Build a small **deployable app** (FastAPI + Tailwind) so you and the seminar audience can
+  *see* the images and results, mark what's wrong, and defend them on Friday.
 
 > **What "good" means today.** The win is **completing the whole loop once** — interview →
 > translate → direct → verify → build the app — with a result you actually checked and can
@@ -109,8 +108,8 @@ What the portal gives you (the same four things as Week 1, now for image data):
 
 ## Part 1 — Interview the image data owner (Agent A)
 
-> **⏱ 13:15–13:45 · finish interviewing by 13:45.** (Kick off the Part 2 install first, at
-> 13:00 — it downloads while you interview.)
+> **⏱ 13:30–14:00 · finish interviewing by 14:00.** (Kick off the Part 2 setup first, at
+> 13:15 — Pi installs and the dataset downloads while you interview.)
 
 Open the **chat with the data owner** in the portal. This week Agent A is playing a
 microscopist who has images and a question but has not thought hard about either. Your job is
@@ -184,9 +183,9 @@ question that pins it down:
 | "We tried deep learning, it didn't work." | "Which model, on how many images, and what did the output actually look like on one field?" |
 | "The images are all similar." | "Same scope, same day, same magnification? Or were some sessions different?" |
 
-## Part 2 — Set up Pi and grab your materials (start this FIRST, at 13:00)
+## Part 2 — Set up Pi and grab your materials (start this FIRST, at 13:15)
 
-> **⏱ 13:00–13:15 · be set up by 13:15.** Do this before Part 1, so Pi is ready the moment your
+> **⏱ 13:15–13:30 · be set up by 13:30.** Do this before Part 1, so Pi is ready the moment your
 > interview ends. **You don't install the Python analysis packages here** — you'll direct **Pi**
 > to do that in Part 3, once the interview tells you what the task actually needs.
 
@@ -377,8 +376,8 @@ folder. It has **no built-in web search**. Keep an eye on the usage meter on you
 
 ## Part 3 — Configure and direct the analyst (Agent B / Pi)
 
-> **⏱ 13:45–15:30 · finish directing by 15:30.** Steps 1–4 (draft, review, set up the
-> environment) by ~14:15; Step 5 (direct the analysis) 14:15–15:30. At **15:30 you stop
+> **⏱ 14:00–15:45 · finish directing by 15:45.** Steps 1–4 (draft, review, set up the
+> environment) by ~14:30; Step 5 (direct the analysis) 14:30–15:45. At **15:45 you stop
 > analysing**, whatever state you're in, and move to Part 5.
 
 This is where the real skill lives, and it is the **way of working you reuse every week of the
@@ -559,7 +558,7 @@ images, on a subset you could actually process, and checked the result.**
 
 ## Part 4 — Validate (the raised bar)
 
-> **⏱ No separate slot — do this *inside* Part 3's Direct block (14:15–15:30).** Validation is
+> **⏱ No separate slot — do this *inside* Part 3's Direct block (14:30–15:45).** Validation is
 > part of directing the agent, not a step you bolt on afterwards.
 
 **Code that runs is not code that's right.** This week the bar is explicit — you must do **all
@@ -602,7 +601,7 @@ prompting, show-its-work, controls), see
 
 ## Part 5 — Build your deliverable: a deployable results app
 
-> **⏱ 15:30–16:45 · start building at 15:30 no matter what; have the app running by 16:45.**
+> **⏱ 15:45–16:45 · start building at 15:45 no matter what; have the app running by 16:45.**
 > Build the **Core** app first; reach for **Strong** only if it's running and time is left.
 
 **This is new this week, and it matters.** Pi is a command-line agent — it **cannot show you
@@ -757,5 +756,5 @@ Presenters are **drawn at random**, so everyone prepares. On Thursday (not squee
 
 ---
 
-Good luck, and have fun — this is the job. Remember the hard line: **at 15:30, stop analysing
+Good luck, and have fun — this is the job. Remember the hard line: **at 15:45, stop analysing
 and build the app.** A checked partial result you can *show* beats an unfinished perfect one.

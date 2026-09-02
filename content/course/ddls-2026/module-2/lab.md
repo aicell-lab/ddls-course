@@ -189,10 +189,12 @@ question that pins it down:
 > interview ends. **You don't install the Python analysis packages here** — you'll direct **Pi**
 > to do that in Part 3, once the interview tells you what the task actually needs.
 
-**No GPU is needed or expected** — everything in this lab runs on a laptop **CPU**, *provided
+**No GPU is needed** — everything in this lab runs on a laptop **CPU**, *provided
 you work on a small subset of images*: **a handful (6–15) of images** for segmentation — each
 one takes ~1–2 min on CPU — or a few hundred to a few thousand small **crops** for a
-feature-based classifier. Do not try to process a whole dataset on a laptop.
+feature-based classifier. Do not try to process a whole dataset on a laptop. (If you finish early
+and want to run something heavier on a free cloud GPU, there's an optional Pi-driven Colab path at
+the end of Part 3 — but the whole lab passes on CPU.)
 
 Create a working folder for this lab and open a terminal inside it — this is the empty room your
 analyst agent will work in:
@@ -550,11 +552,74 @@ case: run on a **subset** first, sanity-check, then scale only if the laptop can
 Emphasis: the point is not a fancy model. It is that you **ran a real pretrained model on real
 images, on a subset you could actually process, and checked the result.**
 
-> **No GPU needed — and don't go looking for one.** This lab is built to finish on a laptop
-> **CPU** *as long as you work on a small subset* (a handful of fields for segmentation; cached
-> features for a classifier). Renting a cloud GPU (Colab and the like) means a separate Google
-> sign-in and quota setup your agent can't do for you, and the free tier often won't grant a GPU
-> anyway — it would cost you more lab time than it saves. Keep the subset small instead.
+> **No GPU needed.** This lab is built to finish on a laptop **CPU** *as long as you work on a
+> small subset* (a handful of fields for segmentation; cached features for a classifier). Do the
+> whole lab on CPU first — a working result on 10 images beats a stalled GPU setup. Only if you
+> are **well ahead of the clock** and want to run something heavier (Cellpose on more fields, SAM)
+> is the optional free-GPU path below worth it.
+
+<details>
+<summary><strong>Optional (only if you're ahead): offload heavy runs to a free Colab T4 GPU, driven by Pi</strong></summary>
+
+<br>
+
+**Skip this unless you're ahead of the clock.** It is a convenience, not part of the required bar,
+and it adds a one-time sign-in. The lab is designed to pass entirely on CPU with a small subset —
+keep the subset small either way.
+
+Google ships an official **[Colab command-line tool](https://github.com/googlecolab/google-colab-cli)**
+that spins up a free cloud VM with a **T4 GPU** and runs your local scripts on it. Once you've
+signed in once, **Pi can drive the whole thing** — provision, install, upload your images, run,
+download the results, shut down — so the GPU is just faster compute behind your agent, not another
+tool for you to babysit.
+
+**Two things to know before you decide:**
+
+- **macOS / Linux only.** The CLI does not support Windows — if you're on Windows, skip this and
+  stay on CPU.
+- **One human step, once.** *You* run the first command and do a normal Google sign-in (copy a URL
+  into your browser, sign in, paste the code back — no Cloud project, no OAuth setup; it uses
+  Google's built-in sign-in and caches the token). Everything after that is Pi's job.
+
+**Step 1 — install it and sign in (you, once):**
+
+```bash
+# uv manages its own Python, so this works even on an older system Python:
+uv tool install google-colab-cli
+# First run prints a Google sign-in URL — sign in, paste the code back ONCE. Token is cached.
+colab new -s ddls-gpu --gpu T4
+```
+
+> T4 is Colab's **standard free-tier GPU** and needs no paid compute units. Our lab slot
+> (Wed afternoon in Europe) is early morning in the US — **off-peak, when free GPUs are most
+> available** — but availability is never guaranteed. If you don't get a T4, just fall back to CPU
+> with a small subset; don't lose lab time fighting it.
+
+**Step 2 — hand the rest to Pi.** With the session already running, paste this into Pi (adjust
+paths and the analysis command to your task):
+
+```text
+I have a running Colab GPU session named "ddls-gpu" (via the `colab` CLI). Offload the heavy run
+to it, then bring the results back so I can inspect them locally. Do this with shell commands:
+  1. Install what the analysis needs on the VM:   colab install -s ddls-gpu cellpose tifffile
+  2. Upload my input images:                       colab upload -s ddls-gpu ./images /content/images
+  3. Run my analysis ON THE VM by sending a local script (kernel state persists between calls, and
+     this avoids the short default timeout of `colab run`):
+        colab exec -s ddls-gpu -f run_gpu.py
+     Write run_gpu.py to read /content/images, run the model on the GPU, and write masks +
+     overlays + a metrics.json into /content/results.
+  4. Download the results back:                    colab download -s ddls-gpu /content/results ./results
+  5. Shut the VM down when done:                   colab stop -s ddls-gpu
+Report the metric and confirm the overlays are in ./results so I can open them in my viewer app.
+```
+
+Use `colab exec -f run_gpu.py` (send a script) rather than `colab run` — `run` has a short default
+timeout that will kill a real model run. The VM is **ephemeral**: deps and model weights download
+fresh each session (a minute or two), and anything not `download`ed is lost when you `colab stop`.
+Your validation, vision check and app (Parts 4–5) still run **locally** on the results you pulled
+back.
+
+</details>
 
 ## Part 4 — Validate (the raised bar)
 

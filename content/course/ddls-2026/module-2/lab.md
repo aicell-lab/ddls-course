@@ -37,10 +37,10 @@ week fixes that. The table below is a **guide**, not a stopwatch: work at your o
 
 | Time | Duration | What you're doing |
 |---|---|---|
-| 13:00–13:15 | 15 min | Set up: start the environment install (it runs while you interview), open the portal, generate your API key, turn on Pi's vision |
+| 13:00–13:15 | 15 min | Set up **Pi**: install Node + Pi, point it at the gateway (vision on), open the portal, generate your API key |
 | 13:15–13:45 | 30 min | **Interview** the data owner (Agent A) — get the image facts |
-| 13:45–14:10 | 25 min | **Translate**: have Pi draft `AGENTS.md` / `spec.md`, then **review them by hand** against the transcript and the files |
-| 14:10–15:30 | 80 min | **Direct** the analyst with the prompt recipe: run a pretrained model on a small subset, overlays, a metric vs a baseline, a vision check |
+| 13:45–14:15 | 30 min | **Translate**: have Pi draft `AGENTS.md` / `spec.md`, **review them by hand**, then have **Pi set up the Python environment** for the task |
+| 14:15–15:30 | 75 min | **Direct** the analyst with the prompt recipe: run a pretrained model on a small subset, overlays, a metric vs a baseline, a vision check |
 | 15:30–16:45 | 75 min | **Build your deliverable** — the FastAPI + Tailwind results app; open it and check every overlay and number |
 | 16:45–17:00 | 15 min | Write the short summary and **gather your submission** folder |
 
@@ -109,6 +109,9 @@ What the portal gives you (the same four things as Week 1, now for image data):
 - **Download the dataset** — the real image file(s) Agent A is talking about.
 
 ## Part 1 — Interview the image data owner (Agent A)
+
+> **⏱ 13:15–13:45 · finish interviewing by 13:45.** (Kick off the Part 2 install first, at
+> 13:00 — it downloads while you interview.)
 
 Open the **chat with the data owner** in the portal. This week Agent A is playing a
 microscopist who has images and a question but has not thought hard about either. Your job is
@@ -182,47 +185,49 @@ question that pins it down:
 | "We tried deep learning, it didn't work." | "Which model, on how many images, and what did the output actually look like on one field?" |
 | "The images are all similar." | "Same scope, same day, same magnification? Or were some sessions different?" |
 
-## Part 2 — Set up your environment (start this FIRST, at 13:00)
+## Part 2 — Set up Pi and grab your materials (start this FIRST, at 13:00)
 
-Kick off the install **before** the interview so it downloads while you talk to Agent A. It
-pulls a **few hundred MB** (the CPU build of PyTorch is the big one), so it is not instant.
+> **⏱ 13:00–13:15 · be set up by 13:15.** Do this before Part 1, so Pi is ready the moment your
+> interview ends. **You don't install the Python analysis packages here** — you'll direct **Pi**
+> to do that in Part 3, once the interview tells you what the task actually needs.
 
 **No GPU is needed or expected** — everything in this lab runs on a laptop **CPU**, *provided
 you work on a small subset of images*: **a handful (6–15) of images** for segmentation — each
 one takes ~1–2 min on CPU — or a few hundred to a few thousand small **crops** for a
 feature-based classifier. Do not try to process a whole dataset on a laptop.
 
-Create a working folder for this lab (say `ddls-week2`), open a terminal inside it, and run:
+Create a working folder for this lab and open a terminal inside it — this is the empty room your
+analyst agent will work in:
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
-pip install timm "cellpose>=4.2,<5" scikit-image scikit-learn numpy pillow tifffile matplotlib
-pip install fastapi "uvicorn[standard]" python-multipart
+mkdir ddls-week2 && cd ddls-week2
 ```
 
-> The last line is for your **Part 5 deliverable** (a FastAPI + Tailwind app). It's tiny and
-> installs in seconds — the big download is the CPU PyTorch build on the line above.
+**Download the image dataset now** from this week's lab page in the portal into that folder:
 
-> **Windows PowerShell:** activate the venv with `.\.venv\Scripts\Activate.ps1` instead of the
-> `source` line; the two `pip install` lines are identical. If PowerShell blocks the activate
-> script, see the execution-policy fix in [Computer Lab 1, Part 2](../../module-1/lab/#part-2--set-up-your-analyst-agent--grab-your-materials).
-
-While that installs, **download both of these** from this week's lab page in the portal into
-your `ddls-week2` folder:
-
-- **Your interview transcript** — the full chat with Agent A (`.md`). The analyst reads the
-  transcript, never your notes.
 - **The image dataset** — the real image file(s) Agent A was talking about. As in Week 1 the
   download is deliberately bare: the pixels and nothing that explains them. Everything a data
   dictionary *would* tell you — channels, pixel size, what's labelled — has to come from your
   interview and from opening the images.
 
+> **Your interview transcript comes later.** You download it from the portal at the **end of
+> Part 1** (once you've actually interviewed Agent A) — it doesn't exist yet. Save it into this
+> same `ddls-week2` folder so both the transcript and the dataset sit together for Part 3.
+
 ### Set up Pi (the analyst agent)
 
-This is the **same Pi setup as Week 1** — if you already have `~/.pi/agent/models.json` from
-last week, it still works and you can skip to Part 3. If you joined this week, do it now; it is
-repeated here in full so you don't need to flip back.
+**Did [Computer Lab 1](../../module-1/lab/)?** Your Pi still works — you only need this week's
+**one-line vision change** just below, then skip to [Part 3](#part-3--configure-and-direct-the-analyst-agent-b--pi).
+**New this week?** Expand **Full Pi setup** and do it once.
+
+> **New this week — let Pi *see* images.** Open `~/.pi/agent/models.json` and change the model's
+> `"input"` line from `["text"]` to `["text", "image"]`. That one word turns on the model's
+> **vision** — Pi can now open a PNG and actually *look* at it, which you use in Part 4 to have it
+> check its own overlays. It's cheap (about **$0.0003** per image) and one of the most useful
+> checks you have on image work. *(New this week? The file in the setup below already has this.)*
+
+<details>
+<summary><b>Full Pi setup</b> — expand only if you don't have Pi yet (new this week)</summary>
 
 Your analyst agent is **Pi**, a lightweight coding agent. It runs **on your own machine** and
 talks to the course model **through the portal gateway** — so every call counts against your
@@ -268,14 +273,8 @@ provider file. Create `~/.pi/agent/models.json` with exactly this:
 ```
 
 > The `samplingParams` line is **required** — it's what lets the course model use tools.
-> Don't try to set `OPENAI_BASE_URL`; Pi won't read it.
-
-> **New this week — let Pi *see* images.** Notice the `"input"` line reads
-> `["text", "image"]`, not just `["text"]`. That one word turns on the model's **vision**: Pi
-> can now open a PNG and actually look at it — which you'll use in Part 4 to have it check its
-> own overlays. **If you set Pi up in Week 1, edit that one line** in `~/.pi/agent/models.json`
-> to add `"image"`. Looking at an image is cheap (about **$0.0003** each), and it's one of the
-> most useful checks you have on image work.
+> Don't try to set `OPENAI_BASE_URL`; Pi won't read it. The `"input": ["text", "image"]` above
+> is this week's vision change — leave it as shown.
 
 <details>
 <summary><b>How to create that file — per system</b> (the folder starts with a dot, which trips up every file manager)</summary>
@@ -371,11 +370,17 @@ Ask it something small first — "list the files in this folder and tell me what
 confirm it's talking to the portal. Pi can read/write files and run shell commands in that
 folder. It has **no built-in web search**. Keep an eye on the usage meter on your dashboard.
 
-> **Run Pi inside the activated venv.** Launch `pi` from the same terminal where you ran
-> `source .venv/bin/activate`, so the Python packages you installed (Cellpose, timm,
-> scikit-image…) are on the path when Pi runs its code.
+</details>
+
+> **You haven't installed the Python analysis packages yet — that's deliberate.** In Part 3
+> you'll direct Pi to set up the environment (with `uv`) and install exactly what your task
+> needs. For now, just confirm Pi runs and can see your transcript and dataset.
 
 ## Part 3 — Configure and direct the analyst (Agent B / Pi)
+
+> **⏱ 13:45–15:30 · finish directing by 15:30.** Steps 1–4 (draft, review, set up the
+> environment) by ~14:15; Step 5 (direct the analysis) 14:15–15:30. At **15:30 you stop
+> analysing**, whatever state you're in, and move to Part 5.
 
 This is where the real skill lives, and it is the **way of working you reuse every week of the
 course**: you don't do the analysis — you **direct** an agent to do it and you **judge** what
@@ -384,8 +389,9 @@ week we make the steps explicit. Work through them in order.
 
 ### Step 1 — Get your inputs in the folder
 
-You already have them from Part 2: your **interview transcript** and the **image dataset**,
-both sitting in your `ddls-week2` folder, with Pi able to see them. Nothing else.
+You already have both: your **interview transcript** (downloaded at the end of Part 1) and the
+**image dataset** (downloaded in Part 2), sitting together in your `ddls-week2` folder, with Pi
+able to see them. Nothing else.
 
 ### Step 2 — Draft `AGENTS.md` and `spec.md` *with* Pi
 
@@ -397,9 +403,10 @@ Read my interview transcript (the .md file in this folder) and look at the data/
 ONLY what the transcript and the files actually show, write two files, then stop — do not
 analyse anything yet:
 
-1. AGENTS.md — how you operate here: the environment (a .venv is already set up), where the
-   data lives and how to load it, where to write outputs (results/), and the rule that every
-   number you report must be checked against the ground truth.
+1. AGENTS.md — how you operate here: the environment (use uv — create it with `uv venv` and run
+   all Python with `uv run`, which works the same on every OS), where the data lives and how to
+   load it, where to write outputs (results/), and the rule that every number you report must be
+   checked against the ground truth.
 2. spec.md — the problem: the exact decision the owner needs, the data (paths, dimensions,
    bit depth, channel/stain, how any masks/labels are encoded), the definition of "done", the
    metric and the baseline to beat, and the traps to watch.
@@ -436,7 +443,37 @@ actual files — never from memory.** Tick off:
 Fix what's wrong, then move on. For the full translation method (review-as-prose, then split,
 then iterate) see [Part 3 of Computer Lab 1](../../module-1/lab/#part-3--translate-build-agentsmd-and-specmd).
 
-### Step 4 — Direct with the prompt recipe
+### Step 4 — Let Pi set up the Python environment (with `uv`)
+
+You don't hand-install packages — **you direct Pi to set up the environment from the spec.** It
+knows the task now, so it can install exactly what's needed (a segmentation job needs different
+tools than a classifier) and nothing you won't use. We use **[uv](https://docs.astral.sh/uv/)**,
+a fast Python manager that behaves the **same on macOS, Linux and Windows** and needs **no
+"activate" step** — you and Pi just prefix commands with `uv run`. Paste:
+
+```text
+Set up the Python environment for this task using uv (install uv first if it isn't available; if
+Python itself is missing, use `uv python install`). Create the environment with `uv venv`, then
+`uv pip install` ONLY the packages your approach in spec.md actually needs. This is a CPU-only
+laptop — if you need PyTorch, install the CPU build (--index-url
+https://download.pytorch.org/whl/cpu). Also install fastapi, uvicorn[standard] and
+python-multipart for the results app I'll build later. Verify each package imports with
+`uv run python -c "import ..."`, and tell me exactly what you installed and why. From now on, run
+all Python with `uv run` (e.g. `uv run python script.py`).
+```
+
+The heavy one is the CPU PyTorch build (a few hundred MB) **if** your task needs it — Cellpose
+and `timm` do; segmentation with `scikit-image` alone skips it. The first Cellpose run later also
+downloads its model weights (~1.2 GB, one-time). So let Pi pick the lightest tool that fits.
+While it installs, re-read your `spec.md`.
+
+> **Why uv?** A plain `venv` leaks OS differences (`.venv/bin` vs `.venv\Scripts`, `python` vs
+> `python3`) and needs an activate step that doesn't survive an agent's separate commands.
+> `uv run` sidesteps all of that — one command that behaves identically everywhere. (Prefer not
+> to install uv? `python -m venv .venv` still works; you'd just use `.venv/bin/python` — or
+> `.venv\Scripts\python` on Windows — instead of `uv run python`.)
+
+### Step 5 — Direct with the prompt recipe
 
 Now direct the analysis. Use this **four-part recipe every time you ask an agent to do real
 work** — this term and beyond. It is what turns a vague ask into a directed, checkable job:
@@ -468,8 +505,9 @@ the masks label each nucleus as a distinct integer, so the ground-truth count = 
 unique nonzero labels; one field is essentially blank and must come out ~0.
 
 VALIDATION & VERIFICATION: process a handful of fields first. For each, report your machine
-count, the ground-truth count, and the signed difference, and write results/results.json plus
-one overlay PNG per field (your outlines drawn on the image). Print the mean absolute error.
+count, the ground-truth count, the signed difference, and a SAFE / SET-ASIDE decision, and
+write these to results/results.json, plus one overlay PNG per field (your outlines drawn on
+the image) into results/overlays/. Print the mean absolute error.
 THEN use your vision: open 2–3 overlays (include a crowded one) and tell me honestly whether
 the outlines sit on real objects or are off — don't just trust the numbers.
 
@@ -514,10 +552,34 @@ case: run on a **subset** first, sanity-check, then scale only if the laptop can
 Emphasis: the point is not a fancy model. It is that you **ran a real pretrained model on real
 images, on a subset you could actually process, and checked the result.**
 
+<details>
+<summary><b>Too slow on your laptop? (optional) — offload to a free Colab GPU</b></summary>
+
+If a run is crawling on CPU **and you have time to spare**, hand the heavy compute to Google
+Colab's free **GPU** — and, true to the course, have **Pi set it up**, not you. You need a
+**Google account**, and the CLI is **macOS/Linux only** (on Windows, use Colab in the browser).
+Paste into Pi:
+
+```text
+This is too slow on CPU. Set up the Google Colab CLI (pip install google-colab-cli) so we can run
+the heavy step on a free Colab GPU. Walk me through the one-time Google sign-in, then package the
+analysis as a script and run it with: colab run --gpu T4 <script>.py. Bring the results back into
+results/ when it finishes. Show me each command before you run it.
+```
+
+Colab's free tier usually offers a **T4 GPU** (subject to availability). This is a real
+forward-deployed move: you didn't learn a new tool — you **directed your agent** to stand up the
+infrastructure. Only reach for it if CPU is genuinely blocking you; the lab is fully doable on
+CPU with a small subset.
+</details>
+
 ## Part 4 — Validate (the raised bar)
 
+> **⏱ No separate slot — do this *inside* Part 3's Direct block (14:15–15:30).** Validation is
+> part of directing the agent, not a step you bolt on afterwards.
+
 **Code that runs is not code that's right.** This week the bar is explicit — you must do **all
-four** of these:
+five** of these:
 
 1. **Actually run a pretrained model on the images.** Not a plan, not a description — a real
    run that produced predictions on real image data.
@@ -556,6 +618,9 @@ prompting, show-its-work, controls), see
 
 ## Part 5 — Build your deliverable: a deployable results app
 
+> **⏱ 15:30–16:45 · start building at 15:30 no matter what; have the app running by 16:45.**
+> Build the **Core** app first; reach for **Strong** only if it's running and time is left.
+
 **This is new this week, and it matters.** Pi is a command-line agent — it **cannot show you
 images**. But microscopy work is visual: a segmentation is only trustworthy once you *see* the
 outlines on the cells. So this week your deliverable is a small **deployable web app** — a
@@ -589,10 +654,11 @@ Read everything from disk (no database). When done, tell me the exact command an
 it, then stop.
 ```
 
-Then run it and **look at your own work**:
+Then run it and **look at your own work** (`uv run` uses the env Pi built — same command on every
+OS; Pi will also tell you the exact command):
 
 ```bash
-uvicorn app:app --reload --port 8000    # then open http://localhost:8000
+uv run uvicorn app:app --reload --port 8000    # then open http://localhost:8000
 ```
 
 **Strong (encouraged, only after Core runs).** Add a detail view where a human can **zoom into
@@ -625,6 +691,9 @@ and **disclose the AI use**.
 
 ## What to hand in — and what we look at
 
+> **⏱ 16:45–17:00 · write the summary, gather the folder, and upload by 17:00.** Don't run past
+> 17:00; seminar prep is a separate job on Thursday (see the [Seminar 2](../seminar/) page).
+
 Your submission is your **transcript(s) plus your analysis and your deliverable**:
 
 - **The interview transcript** (Agent A) — downloaded from the portal as Markdown (`.md`).
@@ -634,8 +703,8 @@ Your submission is your **transcript(s) plus your analysis and your deliverable*
   readable Markdown version. Include one per run if you launched Pi more than once. Include the
   analysis **code** Pi wrote.
 - **Your app** — the deliverable folder (`app.py`, any templates/static, your `results/` with
-  the overlays and `results.json`, `requirements.txt`, and the short README). Zip it if that's
-  easier to upload.
+  the overlays and `results.json`, `requirements.txt`, and the short README), **zipped into a
+  single `app.zip`** (the **App** button takes one `.zip`).
 - **The short written summary** — goal, result vs baseline, caveat, and AI-use disclosure
   (`summary.md`).
 - **`AGENTS.md`** and **`spec.md`** — the brief and the spec you wrote.
@@ -653,13 +722,13 @@ we do next.
 > at the end of your run:
 >
 > ```text
-> Make a folder called submissions/ in my current working directory. Copy my app (app.py, any
-> templates/static, results/, requirements.txt, README), plus summary.md, AGENTS.md and
-> spec.md into it. Then read every Pi session transcript from TODAY under ~/.pi/agent/sessions/
-> and, for each run, write a clean Markdown log of the whole conversation (my messages and your
-> replies, in order) to submissions/analysis-transcript-1.md, analysis-transcript-2.md, … —
-> plain readable text, not JSON. Finally, list exactly what you copied so I can check nothing
-> is missing.
+> Make a folder called submissions/ in my current working directory. Zip my app folder (app.py,
+> any templates/static, results/, requirements.txt, README) into submissions/app.zip. Copy
+> summary.md, AGENTS.md and spec.md into submissions/. Then read every Pi session transcript
+> from TODAY under ~/.pi/agent/sessions/ and, for each run, write a clean Markdown log of the
+> whole conversation (my messages and your replies, in order) to
+> submissions/analysis-transcript-1.md, analysis-transcript-2.md, … — plain readable text, not
+> JSON. Finally, list exactly what you copied so I can check nothing is missing.
 > ```
 >
 > Then download the **interview** transcript from the portal into the same `submissions/`
@@ -682,6 +751,25 @@ for:
 A polished app on top of a transcript that shows no steering and no skepticism is not a pass. A
 modest result with a transcript that shows real interviewing, translation and verification is
 exactly what we're after.
+
+## Next: prepare for the seminar
+
+Wednesday's lab produced the work; **Friday's [seminar](../seminar/) is where you defend it.**
+Presenters are **drawn at random**, so everyone prepares. On Thursday (not squeezed into the lab):
+
+1. **Understand your own results.** Be able to say — without notes — what your headline number
+   means, whether it beat the baseline, what the overlay shows, and the one caveat you'd flag.
+   You own every number; the seminar is where you prove it.
+2. **Build a short presentation** — a single self-contained **`slides.html`** deck **in your own
+   visual style**, with your key visuals (an overlay or two, the metric-vs-baseline, the caveat)
+   embedded right in the file. Your agent can draft it from your `summary.md`; then you fix it.
+   The [Seminar 2](../seminar/) page has the format, a style menu, and a paste-ready prompt.
+3. **Submit `slides.html` before the seminar** via the **Seminar** card in the portal —
+   **deadline Friday 10:00 CEST**, required even if you can't attend.
+4. **Be ready to be presented.** If you're drawn, we show your submitted deck on screen and you
+   talk to it, so it must stand on its own and advance with the **← / → arrow keys**.
+
+{{< cta cta_text="Prepare for Seminar 2" cta_link="../seminar/" >}}
 
 ---
 

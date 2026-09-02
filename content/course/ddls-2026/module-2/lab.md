@@ -31,9 +31,8 @@ the skill being examined.
 
 ## Suggested time budget
 
-The lab runs **13:00–17:00 (4 hours)**. Week 1 was too intense and gave you no timing — this
-week fixes that. The table below is a **guide**, not a stopwatch: work at your own pace, but
-**do not run past 17:00**, and treat the 15:30 switch to building as hard.
+The lab runs **13:00–17:00 (4 hours)**. The table below is a **guide**, not a stopwatch: work
+at your own pace, but **do not run past 17:00**, and treat the 15:30 switch to building as hard.
 
 | Time | Duration | What you're doing |
 |---|---|---|
@@ -552,26 +551,11 @@ case: run on a **subset** first, sanity-check, then scale only if the laptop can
 Emphasis: the point is not a fancy model. It is that you **ran a real pretrained model on real
 images, on a subset you could actually process, and checked the result.**
 
-<details>
-<summary><b>Too slow on your laptop? (optional) — offload to a free Colab GPU</b></summary>
-
-If a run is crawling on CPU **and you have time to spare**, hand the heavy compute to Google
-Colab's free **GPU** — and, true to the course, have **Pi set it up**, not you. You need a
-**Google account**, and the CLI is **macOS/Linux only** (on Windows, use Colab in the browser).
-Paste into Pi:
-
-```text
-This is too slow on CPU. Set up the Google Colab CLI (pip install google-colab-cli) so we can run
-the heavy step on a free Colab GPU. Walk me through the one-time Google sign-in, then package the
-analysis as a script and run it with: colab run --gpu T4 <script>.py. Bring the results back into
-results/ when it finishes. Show me each command before you run it.
-```
-
-Colab's free tier usually offers a **T4 GPU** (subject to availability). This is a real
-forward-deployed move: you didn't learn a new tool — you **directed your agent** to stand up the
-infrastructure. Only reach for it if CPU is genuinely blocking you; the lab is fully doable on
-CPU with a small subset.
-</details>
+> **No GPU needed — and don't go looking for one.** This lab is built to finish on a laptop
+> **CPU** *as long as you work on a small subset* (a handful of fields for segmentation; cached
+> features for a classifier). Renting a cloud GPU (Colab and the like) means a separate Google
+> sign-in and quota setup your agent can't do for you, and the free tier often won't grant a GPU
+> anyway — it would cost you more lab time than it saves. Keep the subset small instead.
 
 ## Part 4 — Validate (the raised bar)
 

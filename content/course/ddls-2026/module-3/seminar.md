@@ -1,0 +1,237 @@
+---
+title: "Seminar 3: Defend Your Analysis"
+linkTitle: "Seminar 3"
+summary: ""
+weight: 20
+type: book
+---
+
+**Friday 10:00–12:00 CEST · live on Zoom · mandatory.**
+
+The Friday seminar is where you **defend the omics analysis you did in Wednesday's computer lab**.
+It is not a lecture and it is not a paper-reading club — you present *your own* analysis from a
+**short slide deck you built from your results**, and the room questions it. The format is the same
+as every seminar in the course (weeks 1–6); this page tunes it to Week 3's work.
+
+{{< toc >}}
+
+## What the seminar is
+
+This year the course trains you to be a **forward-deployed scientist** — to take someone else's
+problem, direct an AI agent to solve it, and **own every number that comes back**. Owning a result
+means being able to stand behind it out loud, so the seminar is your own work, defended. This week
+the thing you defend is a **claim about the data** — and, specifically, whether the impressive number
+your owner loved is *real* or a trap.
+
+Think of it as the weekly checkpoint for the skill the labs build: not "did the code run" but **did
+you interview well, direct clearly, and verify honestly** — and, this week, **did you establish the
+honest baseline and catch the trap before you believed the headline.**
+
+## How it runs
+
+- **Presenters are drawn at random.** Each week we pick **7–10 students** live. Everyone must arrive
+  ready — there is no volunteering-only and no opting out.
+- **7 minutes to present + 3 minutes of discussion**, per person. Keep to time; we will.
+- **We show your submitted `slides.html` deck on screen** when you're drawn, and you talk to it —
+  the baseline-vs-model panel, the shortlist, the caveat, all embedded in the deck. (You don't
+  screen-share your own machine; the portal drives your deck, so it must stand alone. You may
+  live-demo the running dashboard in the 3-minute discussion if you like.)
+- The rest of the room (and the teaching team) asks questions. Being able to answer them *is* the
+  exam.
+
+> **Being drawn with nothing prepared is a fail for that seminar.** The random draw is the whole
+> point: it means **everyone** spends Thursday thinking critically about their own work, not just the
+> volunteers.
+
+## What to present — four things
+
+You have 7 minutes. Don't narrate the whole afternoon; make these four points land, **using the
+visuals in your deck**.
+
+1. **The problem — the question behind the question.** What did the omics data owner *actually* want
+   — a defensible prediction, or a short trustworthy shortlist for a costly experiment? And **what
+   had they already tried and were proud of?** Show that you found the real question, and the flashy
+   result you had to interrogate.
+2. **What you built.** How you translated the interview into a brief (`AGENTS.md` / `spec.md`) and
+   directed the analyst agent — which method (logistic regression, a random forest, a
+   length-corrected recurrence ranking, or a strong BINN / graph approach) and why. The shape of the
+   pipeline, not every command.
+3. **The honest baseline and the trap — show it on a slide.** Put up the **baseline-vs-model panel**:
+   the trivial number (majority class / single best gene / raw-frequency ranking) *next to* your
+   model's number, and the real margin. Then name the **trap you checked** (a dominant single gene, a
+   batch/covariate confounder, gene length, network-hub bias) and **what it did to the number**. And,
+   crucially, **what did you refuse to claim?**
+4. **The caveat.** Name the one biological caveat you'd flag — class imbalance, a confounder you
+   couldn't fully rule out, genes that act by amplification rather than mutation, a study-biased truth
+   set — and how it could bias the result. This is the point the room will push on hardest.
+
+The single best thing you can say in a DDLS seminar this week is *"the owner's number was real but
+one gene alone matched it, so the trustworthy answer is the humble one — here's the baseline, here's
+the trap, and here's what I would not yet claim."* That is what we are listening for.
+
+### Two more things every deck must do this week
+
+New requirements from Week 3 on — small, but we now look for them explicitly and the room will ask:
+
+5. **Disclose your AI use — on a slide.** One line or a small panel: **which agent did what** (the
+   interview owner, Pi for the analysis, Pi/other for the deck) and, crucially, **what *you*
+   checked yourself**. "Pi wrote the pipeline; I re-ran the baseline by hand and confirmed the
+   single-gene number" is exactly the disclosure we want. Owning the work means being open about how
+   it was made — this is a course non-negotiable, not a confession.
+6. **State your limitations — and what you'd do with another week.** Don't oversell. Name what your
+   result does *not* establish, the check you didn't have time to run, and the one thing you'd do
+   next (a leave-one-batch-out split, a second cohort, a wet-lab validation of the top gene). A
+   presenter who names their own limitations is trusted more, not less — and it is the difference
+   between a student and someone who just ran a script.
+
+## Give a good talk: structure and delivery
+
+A defence is a *talk*, not a data dump. You have seven minutes; spend them deliberately. This is the
+structure we're looking for — roughly one idea per slide, ~1 minute each:
+
+| Slide | ~time | What it does |
+|---|---|---|
+| **1 · The question** | 1 min | The owner, their data, the decision that hangs on it — and the flashy result you had to interrogate. Land *why anyone should care.* |
+| **2 · What you built** | 1 min | Interview → `AGENTS.md`/`spec.md` → which method and why. The *shape*, not the commands. |
+| **3 · Baseline vs model** | 1.5 min | The panel: trivial number next to your model's, the real margin. This is the heart — slow down here. |
+| **4 · The trap** | 1.5 min | Name it, show what it did to the number, and say what you *refused* to claim. |
+| **5 · The shortlist** | 1 min | The interpretable genes/pathways a client could act on — the deliverable, not a score. |
+| **6 · Limitations + AI use** | 1 min | The one caveat, what you'd do next, and your AI-use disclosure. End here — don't trail off. |
+
+Delivery habits that separate a strong defence from a nervous read:
+
+- **One idea per slide.** If a slide has two arguments, it's two slides. No wall of text — a slide is
+  a prompt for *you*, not a document for the reader.
+- **Lead with the point, then the evidence.** "One gene does it alone — here's the panel," not a
+  build-up that hides the finding on the last line.
+- **Talk to your figure.** When the baseline-vs-model panel is up, point at the two numbers and the
+  gap out loud. Let people read a chart *while* you explain it; don't read bullets at them.
+- **Rehearse once, out loud, against the clock.** Seven minutes is short. If you run long, cut the
+  "what I built" detail first — the question, the panel, the trap and the caveat are what matter.
+- **Have one hard answer ready.** The room *will* ask "how do you know the model is worth it?" —
+  point to the baseline, the margin, and the trap check. Anticipate the one question you'd least like
+  to get and prepare for it.
+
+## How you're assessed
+
+Seminars are graded **pass/fail** on preparation and critical engagement — not on getting a "good"
+result. **A modest, honest finding that survived the trap check passes easily** — in fact it's the
+whole point this week. A polished, impressive number with no baseline and no trap check does not.
+
+We are specifically listening for:
+
+- Did you find the **question behind the question** — including what the owner already tried?
+- Did you **establish the honest baseline** and **catch the trap**?
+- Where did you **refuse** what the agent (or the owner) handed you, and report the humble truth?
+- Did you **disclose your AI use** and **name your limitations** honestly, rather than overselling?
+- Is the deck **clearly yours** — a structure you thought about and a look you chose — not a stock
+  template pasted from a prompt?
+
+For Master's students, the **course grade (A–F) comes from the final oral defence**, not the weekly
+seminars — but the seminars are where you rehearse exactly that skill. Treat every Friday as a
+low-stakes run at the exam.
+
+## Attendance
+
+Labs and seminars are the mandatory, live core of the course. **You may miss one mandatory session
+in total** — a lab *or* a seminar, not one of each. If you must miss the seminar, email
+[ddls-course@scilifelab.se](mailto:ddls-course@scilifelab.se) **before** the session, not after.
+
+> **Attending and submitting are separate — the hand-in is always required.** Even if you can't join
+> the live seminar, you must still hand in **both** your lab work (the dashboard, transcripts,
+> summary — via the **Computer-lab** card) **and** your **`slides.html`** deck (via the **Seminar**
+> card) in the [course portal](https://ddls-portal-6228434e.svc.hypha.aicell.io/) **before the
+> deadline: Friday 10:00 CEST, before the seminar starts.** Missing the session (with notice) is
+> excused; a missing submission is not.
+
+## How to prepare (Thursday, ~30–45 minutes — NOT in the lab window)
+
+**Do this on Thursday, after the lab — not squeezed into Wednesday's four hours.** The 13:00–17:00
+lab is for the interview, the analysis and building the dashboard; **seminar prep is a separate, later
+job.** You already did the work in the lab, so preparing to defend it is quick.
+
+**What you present from: a single self-contained `slides.html` deck.** When you're drawn, the portal
+loads *your* deck on the shared screen — so it has to stand on its own. Two rules, and nothing more:
+
+1. **One self-contained `.html` file.** Everything inlined — CSS and JS in the file, images as
+   `data:` URIs or absolute `https://` links. No separate image files, no PDF, no PPTX (the portal
+   serves the file alone, so relative links to your laptop won't resolve).
+2. **Slides advance with the ← / → arrow keys.** The portal drives your deck with the arrow keys, so
+   any deck that responds to them works. Easiest path: **Reveal.js from a CDN** (arrow-key navigation
+   out of the box) — or a simple keyboard-driven deck if you prefer.
+
+> **Make it yours — don't ship the default.** Last year every deck looked identical because everyone
+> pasted the same prompt. This year, **decide your own visual style first**, then tell the agent. Pick
+> a direction and a couple of specifics — for example: a **mood** (clean lab-notebook · bold data-viz
+> on dark · editorial/print · minimal monochrome · conference-poster), **2–3 colours** you like, a
+> **font pairing** (e.g. a serif headline with a mono caption), and **one layout habit** (big chart
+> left / text right, a running footer with your headline metric). A deck that looks like *yours* is
+> part of owning the work.
+
+Your agent can build this from your `summary.md` — **but hand it your style**, not the default. Fill
+in the `STYLE:` line, then paste into **Pi** (adjust file names):
+
+```text
+Build a single self-contained slides.html presentation for a 7-minute seminar, using Reveal.js
+loaded from a CDN. Content comes from summary.md and my results/. Make ~6 slides:
+(1) title + the question behind the question, and what the owner already tried; (2) what I built —
+interview → AGENTS.md/spec.md → which method and why; (3) the honest baseline-vs-model panel with the
+real margin; (4) the trap I checked and what it did to the number; (5) the interpretable shortlist and
+what I refused to claim; (6) limitations + what I'd do with another week + my AI-use disclosure (which
+agent did what, and what I checked myself).
+STYLE: <describe your look — mood, 2–3 colours, font pairing, layout habit. Make it distinctive, not a
+stock template.>
+Embed every chart directly in the HTML (inline SVG or a base64 data URI) — the file must work with NO
+other files next to it. Slides must advance with the left/right arrow keys. Output only slides.html.
+```
+
+**Don't ship the agent's first draft — iterate at least one round.** The single biggest difference
+between a forgettable deck and a good one is that you *looked at it and fixed it*. Run this loop:
+
+1. **Build** the first draft (the prompt above).
+2. **Open it and arrow through it** as if presenting. Where do you stumble? Which slide has two ideas?
+   Where is there a wall of text? Is the baseline-vs-model panel the clear centre, or buried?
+3. **Critique it** — yours and the agent's. Ask Pi to be a tough reviewer:
+   *"You are a strict presentation coach. Look at slides.html and tell me the three weakest slides and
+   exactly why — too much text, no clear point, a figure that doesn't support the claim — then propose
+   specific fixes. Don't rewrite yet."* Read its critique, decide what you agree with, and only then
+   direct the fixes.
+4. **Revise and check every number by hand** — the numbers, the trap and the caveat are yours, not the
+   agent's. A confident wrong number on a slide is worse than no slide.
+5. **Rehearse once, out loud, against the clock.** If you run long, cut the "what I built" detail
+   first — the problem, the baseline-vs-model panel, the trap and the caveat matter most. Have one
+   concrete answer ready for the discussion (e.g. "how do you know the model is worth it?" → point to
+   the baseline, the margin, and the trap check).
+
+That back-and-forth *is* the forward-deployed skill applied to a presentation: you direct, you judge,
+you own the result.
+
+> **Want to go further on design? (optional)** If you'd like a sharper, more distinctive deck, there
+> are "design skills" you can add to a coding agent that has filesystem access (Claude Code, Cursor,
+> Codex, Gemini CLI — not the plain Pi/Reveal.js path above). Two that work well:
+>
+> - **[frontend-slides](https://github.com/zarazhangrui/frontend-slides)** — *generates* a whole
+>   distinctive deck from your `summary.md`, with a menu of styles (built to avoid the generic
+>   "AI-slop" look, which is exactly the diversity we want). In Claude Code:
+>   `/plugin marketplace add https://github.com/zarazhangrui/frontend-slides` then
+>   `/plugin install frontend-slides@frontend-slides`; or point any coding agent at the repo's
+>   `SKILL.md` and ask it to build your `slides.html`. It emits one self-contained file that advances
+>   with the arrow keys — so it works with the seminar screen out of the box. *(We tested this.)*
+> - **[Impeccable](https://impeccable.style/tutorials/getting-started/)** — *polishes* a deck you
+>   already have: `npx impeccable install`, then `/impeccable polish slides.html` makes small,
+>   targeted fixes to spacing, type and colour.
+>
+> Both are purely optional and not needed to pass — a plain, honest deck in your own style is
+> completely fine. Whatever you use, keep the two rules above (one self-contained `.html`, arrow-key
+> nav) and **check every number yourself**.
+
+You hand in the deck via the portal's **Seminar** card: upload your **`slides.html`**. Your dashboard
+and transcripts are already handed in with your lab work, so the Seminar card is just the deck.
+Everyone submits, since presenters are drawn at random. **Deadline: Friday 10:00 CEST, before the
+seminar** — a live countdown is shown on the page.
+
+---
+
+This week's lab sets up everything you'll present. If you haven't done it yet, start there:
+
+{{< cta cta_text="Go to Computer Lab 3" cta_link="../lab/" >}}

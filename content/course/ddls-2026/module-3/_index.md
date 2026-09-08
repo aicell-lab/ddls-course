@@ -10,8 +10,10 @@ course_module: "true"
 
 **Module week**: Week 37 (starting 8 September 2026)
 
-**Recorded lectures — released online at the start of the module week.** The computer lab
+**Recorded lecture — now available online.** Watch it in the course portal. The computer lab
 (Wednesday 13:00–17:00) and seminar (Friday 10:00–12:00) are held live over Zoom.
+
+{{< cta cta_text="Watch the recorded lecture" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/lectures" >}}
 
 Module 3 focuses on clinical applications of AI and machine learning with an emphasis on multi-omics integration, biomarker discovery, and clinical data analysis. The module highlights how biologically informed models and novel machine learning methods can advance personalized medicine, cancer genomics, and systems biology modeling.
 

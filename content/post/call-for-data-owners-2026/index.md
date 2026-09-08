@@ -15,7 +15,7 @@ DDLS community: master's students, PhD students, postdocs and researchers.
 It costs you **two 1-hour meetings**. You get a working prototype on your data and a written
 report back.
 
-{{< cta cta_text="Register a project →" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/data-owner" >}}
+{{< cta cta_text="Register a project →" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/signup-projects" >}}
 
 ## How it runs
 
@@ -82,7 +82,7 @@ Registering takes about five minutes and gives you a private project page: it is
 your sample file, watch the project move through its stages, and raise anything that comes up
 while it runs.
 
-{{< cta cta_text="Register a project →" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/data-owner" >}}
+{{< cta cta_text="Register a project →" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/signup-projects" >}}
 
 Not sure whether your problem fits? Write to <ddls-course@scilifelab.se>. If you have a dataset
 and a question you care about, it very probably fits.

@@ -27,7 +27,7 @@
   --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
   --sans:'IBM Plex Sans','Helvetica Neue',Helvetica,sans-serif;
   --mono:'IBM Plex Mono','SFMono-Regular',Menlo,monospace;
-  --maxw:1120px;
+  --maxw:1180px;
 }
 *{box-sizing:border-box;min-width:0}
 html{scroll-behavior:smooth}
@@ -89,8 +89,11 @@ strong{font-weight:600;color:var(--ink)}
 .hero{background:var(--deep);color:var(--on-deep);overflow:hidden;
       padding:clamp(5rem,11vw,8rem) 0 clamp(3.5rem,7vw,5.5rem)}
 .hero .grid{display:grid;gap:clamp(2.5rem,5vw,4rem);align-items:center;
-            grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
-@media(max-width:900px){.hero .grid{grid-template-columns:1fr}}
+            grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr)}
+.heroFig{padding:clamp(.75rem,1.4vw,1.15rem)}
+.heroSvg{display:block;width:100%;height:auto}
+@media(max-width:1080px){.hero .grid{grid-template-columns:1fr}
+  .heroFig{max-width:640px}}
 .hero h1{font-size:clamp(2.7rem,6.4vw,5.1rem)}
 .hero h1 .l{display:block;opacity:0;transform:translateY(22px);
             animation:rise .9s cubic-bezier(.2,.7,.3,1) forwards}
@@ -151,6 +154,63 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
 .whoList li{background:var(--white);padding:.9rem 1.1rem}
 .whoList b{display:block;font:600 1.02rem/1.2 var(--serif);color:var(--ink)}
 .whoList span{display:block;margin-top:.15rem;font-size:.85rem;color:var(--ink-3)}
+
+/* ---- wide vs narrow ------------------------------------------------------
+   Below 760px the SVG figures scale their labels down to 3-7px, which is not
+   readable. Each one has a native-HTML twin that takes over on phones. */
+.narrowOnly{display:none}
+@media(max-width:900px){
+  .wideOnly{display:none!important}
+  .narrowOnly{display:block}
+}
+
+/* stacked step list (workflow + hero flow on phones) */
+.mSteps{list-style:none;margin:0;padding:0;counter-reset:ms}
+.mStep{position:relative;display:grid;grid-template-columns:auto 1fr;gap:.85rem;
+       padding:.85rem 0}
+.mStep+.mStep{border-top:1px solid var(--rule-2)}
+.mStep .dot{counter-increment:ms;width:30px;height:30px;border-radius:50%;flex:none;
+            background:var(--ink);color:#fff;display:flex;align-items:center;
+            justify-content:center;font:600 .82rem/1 var(--mono)}
+.mStep .dot::before{content:counter(ms)}
+.mSteps[style*="counter-reset:none"] .dot::before{content:none}
+.mStep.last .dot{background:var(--blue)}
+.mStep h4{margin:.15rem 0 0;font:600 1rem/1.25 var(--serif)}
+.mStep p{margin:.3rem 0 0;font-size:.88rem;line-height:1.5;color:var(--ink-2)}
+.mChip{display:inline-block;margin-top:.35rem;font:500 .68rem/1 var(--mono);
+       letter-spacing:.04em;text-transform:uppercase;border-radius:99px;padding:.35rem .6rem;
+       color:var(--blue);background:var(--blue-soft)}
+.mChip.grey{color:var(--ink-3);background:#f0eee9}
+.mNote{margin:.9rem 0 0;padding:.7rem .85rem;border-left:3px solid var(--rule);
+       background:var(--paper);font-size:.84rem;line-height:1.5;color:var(--ink-2)}
+.deep .mNote{border-left-color:rgba(238,242,247,.25);background:rgba(238,242,247,.05);
+             color:var(--on-deep-2)}
+.mBand{margin:0 0 .9rem;border-radius:10px;background:var(--blue-soft);color:var(--blue);
+       padding:.6rem .8rem;font:600 .82rem/1.35 var(--sans);text-align:center}
+
+/* stacked "flow" cards: A -> B -> C with arrows between */
+.mFlow{list-style:none;margin:0;padding:0}
+.mFlow li{border:1px solid var(--rule-2);border-radius:12px;padding:.8rem .9rem;
+          background:var(--white)}
+.deep .mFlow li{background:rgba(238,242,247,.05);border-color:rgba(238,242,247,.16)}
+.mFlow li+li{margin-top:1.6rem;position:relative}
+.mFlow li+li::before{content:"";position:absolute;left:50%;top:-1.25rem;width:1px;height:.9rem;
+                     background:var(--rule)}
+.deep .mFlow li+li::before{background:rgba(238,242,247,.3)}
+.mFlow li+li::after{content:"";position:absolute;left:50%;top:-.45rem;width:7px;height:7px;
+                    border-right:1.5px solid var(--rule);border-bottom:1.5px solid var(--rule);
+                    transform:translateX(-50%) rotate(45deg)}
+.deep .mFlow li+li::after{border-color:rgba(238,242,247,.4)}
+.mFlow .lab{font:500 .66rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+            color:var(--blue)}
+.deep .mFlow .lab{color:var(--blue-bright)}
+.mFlow b{display:block;margin-top:.3rem;font:600 .98rem/1.3 var(--serif);color:var(--ink)}
+.deep .mFlow b{color:var(--on-deep)}
+.mFlow span{display:block;margin-top:.2rem;font-size:.84rem;line-height:1.45;color:var(--ink-2)}
+.deep .mFlow span{color:var(--on-deep-2)}
+.mFlow .tasks{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.55rem}
+.mFlow .tasks i{font-style:normal;font:400 .7rem/1 var(--mono);border-radius:99px;
+                padding:.35rem .55rem;background:rgba(127,192,255,.16);color:#bfe0ff}
 
 /* ---- foldable explainer -------------------------------------------------- */
 .fold{margin-top:1.5rem;border:1px solid var(--rule);border-radius:12px;background:var(--paper);
@@ -303,101 +363,248 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
         <a class="btn btn-g" href="#how">How it works</a>
       </div>
       <div class="trust">
-        <span><i>◆</i> Every project gets an answer — if no student takes yours, our AI data
-          scientist does</span>
+        <span><i>◆</i> Every project gets an answer — if nobody is free to take yours, our AI
+          data scientist does</span>
       </div>
     </div>
 
-    <!-- HERO FIGURE: a question, a dataset, and an answer that assembles itself -->
-    <figure class="fig rv" id="heroFig" aria-labelledby="heroFigT">
-      <svg viewBox="0 0 460 340" role="img" aria-labelledby="heroFigT heroFigD">
-        <title id="heroFigT">From an unanswered question to a checked answer</title>
-        <desc id="heroFigD">A researcher's question and a pile of unanalysed data on the left
-          feed through a directed AI agent in the middle, producing a small checked chart and a
-          written report on the right.</desc>
+    <!-- HERO FIGURE: the loop this whole page is about — you brief a person, the person
+         directs a frontier AI agent, and a checked answer comes back to you. Animated with
+         SMIL so it loops without JS and still reads correctly frozen in a screenshot. -->
+    <figure class="fig heroFig wideOnly" aria-labelledby="hfT hfD">
+      <svg viewBox="0 0 560 430" role="img" aria-labelledby="hfT hfD" class="heroSvg">
+        <title id="hfT">How a forward-deployed AI scientist works on your problem</title>
+        <desc id="hfD">Your question and your data go to a forward-deployed scientist, who
+          interviews you and then directs an AI agent. The agent writes and runs the code —
+          loading data, analysing, plotting, running controls. The scientist checks every number
+          and hands back a report and a runnable app. The cycle repeats until the answer is
+          sharp.</desc>
+
         <defs>
-          <linearGradient id="hg" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#7fc0ff" stop-opacity=".15"/>
-            <stop offset="1" stop-color="#7fc0ff" stop-opacity=".55"/>
+          <linearGradient id="agentGlow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7fc0ff" stop-opacity=".38"/>
+            <stop offset="1" stop-color="#0b62b4" stop-opacity=".12"/>
           </linearGradient>
+          <linearGradient id="flowA" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#7fc0ff" stop-opacity=".1"/>
+            <stop offset="1" stop-color="#7fc0ff" stop-opacity=".5"/>
+          </linearGradient>
+          <marker id="hArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6"
+                  markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#7fc0ff"/>
+          </marker>
+          <marker id="hArrowBack" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6"
+                  markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#0f7d78"/>
+          </marker>
         </defs>
 
-        <!-- left: the question -->
-        <g class="fade" style="animation-delay:.2s">
-          <rect x="14" y="26" width="150" height="52" rx="10"
-                fill="rgba(238,242,247,.07)" stroke="rgba(238,242,247,.2)"/>
-          <text x="28" y="47" font-family="IBM Plex Mono, monospace" font-size="9.5"
-                fill="#7fc0ff" letter-spacing="1.4">YOUR QUESTION</text>
-          <text x="28" y="65" font-family="Source Serif 4, serif" font-size="13.5"
+        <!-- ============ 1. YOU ============ -->
+        <g class="hg">
+          <rect x="12" y="24" width="150" height="114" rx="13"
+                fill="rgba(238,242,247,.07)" stroke="rgba(238,242,247,.22)"/>
+          <circle cx="38" cy="52" r="12" fill="rgba(127,192,255,.18)"/>
+          <circle cx="38" cy="48.5" r="4.4" fill="#7fc0ff"/>
+          <path d="M30 60a8 8 0 0 1 16 0" fill="#7fc0ff"/>
+          <text x="58" y="50" font-family="IBM Plex Mono, monospace" font-size="11"
+                fill="#7fc0ff" letter-spacing="1.5">YOU</text>
+          <text x="58" y="63" font-family="IBM Plex Sans, sans-serif" font-size="10"
+                fill="rgba(238,242,247,.6)">the researcher</text>
+          <text x="26" y="87" font-family="Source Serif 4, serif" font-size="12.5"
                 fill="#eef2f7">“Does it do anything?”</text>
+          <!-- the dataset, unread -->
+          <g fill="#7fc0ff" opacity=".45">
+            <g id="hdots"></g>
+          </g>
+          <text x="26" y="120" font-family="IBM Plex Mono, monospace" font-size="11"
+                fill="rgba(238,242,247,.45)" letter-spacing="1.2">+ YOUR DATA</text>
         </g>
 
-        <!-- left: the unanalysed data -->
-        <g class="fade" style="animation-delay:.45s">
-          <text x="28" y="112" font-family="IBM Plex Mono, monospace" font-size="9.5"
-                fill="rgba(238,242,247,.5)" letter-spacing="1.4">YOUR DATA</text>
-          <g fill="#7fc0ff" opacity=".5">
-            <!-- 6x7 dot field: a dataset nobody has read -->
-            <g id="dots"></g>
+        <!-- brief -->
+        <path id="pathBrief" d="M168 76 C 205 76, 210 96, 236 96" fill="none"
+              stroke="url(#flowA)" stroke-width="2.5" marker-end="url(#hArrow)"/>
+        <text x="196" y="66" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+              font-size="11" fill="rgba(238,242,247,.55)" letter-spacing=".8">INTERVIEW</text>
+        <circle r="3.2" fill="#7fc0ff">
+          <animateMotion dur="6s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1"
+                         calcMode="linear" begin="0s">
+            <mpath href="#pathBrief"/>
+          </animateMotion>
+          <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- ============ 2. THE FORWARD-DEPLOYED SCIENTIST ============ -->
+        <g class="hg">
+          <rect x="236" y="60" width="176" height="74" rx="13" fill="#0b62b4" opacity=".16"/>
+          <rect x="236" y="60" width="176" height="74" rx="13" fill="none" stroke="#7fc0ff"
+                stroke-width="1.4"/>
+          <circle cx="262" cy="88" r="11.5" fill="rgba(127,192,255,.25)"/>
+          <circle cx="262" cy="84.5" r="4.2" fill="#7fc0ff"/>
+          <path d="M254.5 96a7.5 7.5 0 0 1 15 0" fill="#7fc0ff"/>
+          <text x="282" y="84" font-family="IBM Plex Sans, sans-serif" font-size="11.5"
+                font-weight="600" fill="#eef2f7">Forward-deployed</text>
+          <text x="282" y="98" font-family="IBM Plex Sans, sans-serif" font-size="11.5"
+                font-weight="600" fill="#eef2f7">AI scientist</text>
+          <text x="250" y="120" font-family="IBM Plex Mono, monospace" font-size="10.5"
+                fill="rgba(238,242,247,.62)" letter-spacing=".4">directs &amp; verifies</text>
+        </g>
+
+        <!-- directs -->
+        <path id="pathDirect" d="M324 140 L 324 178" fill="none" stroke="#7fc0ff"
+              stroke-width="2.5" marker-end="url(#hArrow)"/>
+        <text x="334" y="163" font-family="IBM Plex Mono, monospace" font-size="11"
+              fill="rgba(238,242,247,.55)" letter-spacing=".8">DIRECTS</text>
+        <circle r="3.2" fill="#7fc0ff">
+          <animateMotion dur="6s" repeatCount="indefinite" begin="1.1s">
+            <mpath href="#pathDirect"/>
+          </animateMotion>
+          <animate attributeName="opacity" values="0;0;1;1;0" dur="6s" keyTimes="0;.18;.22;.34;.4"
+                   repeatCount="indefinite" begin="1.1s"/>
+        </circle>
+
+        <!-- ============ 3. THE AI AGENT ============ -->
+        <g class="hg">
+          <rect x="196" y="180" width="256" height="128" rx="16" fill="url(#agentGlow)"/>
+          <rect x="196" y="180" width="256" height="128" rx="16" fill="none"
+                stroke="#7fc0ff" stroke-width="1.4"/>
+          <!-- pulsing core -->
+          <circle cx="232" cy="212" r="13" fill="#7fc0ff" opacity=".9"/>
+          <circle cx="232" cy="212" r="13" fill="none" stroke="#7fc0ff" stroke-width="1.5">
+            <animate attributeName="r" values="13;22;13" dur="3.4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".8;0;.8" dur="3.4s" repeatCount="indefinite"/>
+          </circle>
+          <path d="M226 208 l-4 4 4 4 M238 208 l4 4 -4 4" stroke="#0b1220" stroke-width="1.8"
+                fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="256" y="209" font-family="IBM Plex Sans, sans-serif" font-size="13"
+                font-weight="600" fill="#eef2f7">AI agent</text>
+          <text x="256" y="223" font-family="IBM Plex Mono, monospace" font-size="11"
+                fill="#7fc0ff" letter-spacing=".9">DOES THE LABOUR</text>
+
+          <!-- what the agent actually does, lighting up in sequence -->
+          <g font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing=".2">
+            <g>
+              <rect x="210" y="238" width="114" height="24" rx="7" fill="rgba(238,242,247,.08)"
+                    stroke="rgba(238,242,247,.18)">
+                <animate attributeName="fill" values="rgba(238,242,247,.08);rgba(127,192,255,.34);rgba(238,242,247,.08)"
+                         dur="5.6s" repeatCount="indefinite" begin="0s"/>
+              </rect>
+              <text x="221" y="254" fill="rgba(238,242,247,.85)">load the data</text>
+            </g>
+            <g>
+              <rect x="330" y="238" width="114" height="24" rx="7" fill="rgba(238,242,247,.08)"
+                    stroke="rgba(238,242,247,.18)">
+                <animate attributeName="fill" values="rgba(238,242,247,.08);rgba(127,192,255,.34);rgba(238,242,247,.08)"
+                         dur="5.6s" repeatCount="indefinite" begin="1.4s"/>
+              </rect>
+              <text x="341" y="254" fill="rgba(238,242,247,.85)">write the code</text>
+            </g>
+            <g>
+              <rect x="210" y="270" width="114" height="24" rx="7" fill="rgba(238,242,247,.08)"
+                    stroke="rgba(238,242,247,.18)">
+                <animate attributeName="fill" values="rgba(238,242,247,.08);rgba(127,192,255,.34);rgba(238,242,247,.08)"
+                         dur="5.6s" repeatCount="indefinite" begin="2.8s"/>
+              </rect>
+              <text x="221" y="286" fill="rgba(238,242,247,.85)">run the controls</text>
+            </g>
+            <g>
+              <rect x="330" y="270" width="114" height="24" rx="7" fill="rgba(238,242,247,.08)"
+                    stroke="rgba(238,242,247,.18)">
+                <animate attributeName="fill" values="rgba(238,242,247,.08);rgba(127,192,255,.34);rgba(238,242,247,.08)"
+                         dur="5.6s" repeatCount="indefinite" begin="4.2s"/>
+              </rect>
+              <text x="341" y="286" fill="rgba(238,242,247,.85)">plot the result</text>
+            </g>
           </g>
         </g>
 
-        <!-- the flow -->
-        <path id="flow" d="M175 150 C 215 150, 215 150, 246 150" stroke="url(#hg)"
-              stroke-width="26" fill="none" stroke-linecap="round" class="fade"
-              style="animation-delay:.8s"/>
+        <!-- checked, then handed back -->
+        <path id="pathCheck" d="M452 244 C 492 244, 500 200, 500 168" fill="none"
+              stroke="#0f7d78" stroke-width="2.5" marker-end="url(#hArrowBack)"/>
+        <text x="516" y="216" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+              font-size="11" fill="#5fd0c4" letter-spacing=".8" transform="rotate(-90 516 216)">CHECKED</text>
+        <circle r="3.2" fill="#5fd0c4">
+          <animateMotion dur="6s" repeatCount="indefinite" begin="2.6s">
+            <mpath href="#pathCheck"/>
+          </animateMotion>
+          <animate attributeName="opacity" values="0;0;1;1;0" dur="6s" keyTimes="0;.42;.46;.6;.66"
+                   repeatCount="indefinite" begin="2.6s"/>
+        </circle>
 
-        <!-- middle: the agent, directed -->
-        <g class="pop" style="animation-delay:.95s">
-          <circle cx="246" cy="150" r="34" fill="rgba(11,98,180,.28)" stroke="#7fc0ff" stroke-width="1.5"/>
-          <circle cx="246" cy="150" r="46" fill="none" stroke="rgba(127,192,255,.3)"
-                  stroke-width="1" stroke-dasharray="3 6">
-            <animateTransform attributeName="transform" type="rotate"
-                              from="0 246 150" to="360 246 150" dur="22s" repeatCount="indefinite"/>
-          </circle>
-          <text x="246" y="148" text-anchor="middle" font-family="IBM Plex Mono, monospace"
-                font-size="9" fill="#7fc0ff" letter-spacing="1.1">AGENT</text>
-          <text x="246" y="160" text-anchor="middle" font-family="IBM Plex Mono, monospace"
-                font-size="7" fill="rgba(238,242,247,.7)">+ JUDGEMENT</text>
-        </g>
-
-        <!-- right: the answer -->
-        <g class="fade" style="animation-delay:1.3s">
-          <rect x="316" y="72" width="130" height="96" rx="10" fill="#fff" opacity=".97"/>
-          <text x="330" y="90" font-family="IBM Plex Mono, monospace" font-size="8"
-                fill="#6b7a8a" letter-spacing="1.2">EFFECT SIZE</text>
-          <!-- honest schematic: three bars + an error bar, no numbers claimed -->
-          <rect x="330" y="128" width="18" height="26" fill="#a8c8e6"/>
-          <rect x="356" y="112" width="18" height="42" fill="#0b62b4"/>
-          <rect x="382" y="134" width="18" height="20" fill="#a8c8e6"/>
-          <line x1="365" y1="100" x2="365" y2="122" stroke="#141a24" stroke-width="1.3"/>
-          <line x1="360" y1="100" x2="370" y2="100" stroke="#141a24" stroke-width="1.3"/>
-          <line x1="360" y1="122" x2="370" y2="122" stroke="#141a24" stroke-width="1.3"/>
-          <line x1="326" y1="154" x2="434" y2="154" stroke="#d9d6cf" stroke-width="1"/>
-        </g>
-        <g class="fade" style="animation-delay:1.5s">
-          <rect x="316" y="180" width="130" height="60" rx="10"
-                fill="rgba(238,242,247,.07)" stroke="rgba(238,242,247,.2)"/>
-          <text x="330" y="200" font-family="IBM Plex Mono, monospace" font-size="8"
-                fill="#7fc0ff" letter-spacing="1.2">REPORT</text>
-          <line x1="330" y1="212" x2="430" y2="212" stroke="rgba(238,242,247,.34)" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="330" y1="221" x2="412" y2="221" stroke="rgba(238,242,247,.24)" stroke-width="2.5" stroke-linecap="round"/>
-          <line x1="330" y1="230" x2="396" y2="230" stroke="rgba(238,242,247,.24)" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- ============ 4. WHAT YOU GET ============ -->
+        <g class="hg">
+          <rect x="432" y="36" width="118" height="132" rx="13" fill="#fff" opacity=".97"/>
+          <text x="446" y="55" font-family="IBM Plex Mono, monospace" font-size="11"
+                fill="#6b7a8a" letter-spacing="1.1">YOUR ANSWER</text>
+          <!-- schematic bars, drawn from no real data -->
+          <rect x="446" y="94" width="16" height="24" fill="#a8c8e6">
+            <animate attributeName="height" values="0;24" dur=".9s" begin="1.6s" fill="freeze"/>
+            <animate attributeName="y" values="118;94" dur=".9s" begin="1.6s" fill="freeze"/>
+          </rect>
+          <rect x="470" y="76" width="16" height="42" fill="#0b62b4">
+            <animate attributeName="height" values="0;42" dur=".9s" begin="1.85s" fill="freeze"/>
+            <animate attributeName="y" values="118;76" dur=".9s" begin="1.85s" fill="freeze"/>
+          </rect>
+          <rect x="494" y="100" width="16" height="18" fill="#a8c8e6">
+            <animate attributeName="height" values="0;18" dur=".9s" begin="2.1s" fill="freeze"/>
+            <animate attributeName="y" values="118;100" dur=".9s" begin="2.1s" fill="freeze"/>
+          </rect>
+          <line x1="478" y1="64" x2="478" y2="86" stroke="#141a24" stroke-width="1.2" opacity="0">
+            <animate attributeName="opacity" values="0;1" dur=".5s" begin="2.7s" fill="freeze"/>
+          </line>
+          <line x1="443" y1="118" x2="522" y2="118" stroke="#d9d6cf" stroke-width="1"/>
+          <text x="446" y="136" font-family="IBM Plex Mono, monospace" font-size="10.5"
+                fill="#6b7a8a" letter-spacing=".8">REPORT + APP</text>
+          <line x1="446" y1="146" x2="522" y2="146" stroke="#d9d6cf" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="446" y1="154" x2="506" y2="154" stroke="#e8e5de" stroke-width="2.5" stroke-linecap="round"/>
         </g>
 
-        <!-- timing -->
-        <g class="fade" style="animation-delay:1.7s">
-          <line x1="14" y1="286" x2="446" y2="286" stroke="rgba(238,242,247,.2)" stroke-width="1"/>
-          <text x="14" y="308" font-family="IBM Plex Mono, monospace" font-size="9.5"
-                fill="rgba(238,242,247,.55)">day 0</text>
-          <text x="446" y="308" text-anchor="end" font-family="IBM Plex Mono, monospace"
-                font-size="9.5" fill="#7fc0ff">≈ 3 weeks later</text>
-          <text x="230" y="308" text-anchor="middle" font-family="IBM Plex Mono, monospace"
-                font-size="9.5" fill="rgba(238,242,247,.55)">2 hours of your time</text>
-        </g>
+        <!-- the loop back to you -->
+        <path d="M432 102 C 400 102, 400 26, 300 26 C 220 26, 200 34, 168 40" fill="none"
+              stroke="rgba(238,242,247,.22)" stroke-width="1.3" stroke-dasharray="4 5"
+              marker-end="url(#hArrow)"/>
+        <text x="300" y="18" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+              font-size="11" fill="rgba(238,242,247,.45)" letter-spacing=".8">
+          AND BACK TO YOU — EACH ROUND SHARPER</text>
+
+        <!-- footer rule -->
+        <line x1="12" y1="352" x2="548" y2="352" stroke="rgba(238,242,247,.16)" stroke-width="1"/>
+        <text x="12" y="372" font-family="IBM Plex Mono, monospace" font-size="10.5"
+              fill="rgba(238,242,247,.55)">day 0</text>
+        <text x="280" y="372" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+              font-size="10.5" fill="rgba(238,242,247,.55)">2 hours of your time</text>
+        <text x="548" y="372" text-anchor="end" font-family="IBM Plex Mono, monospace"
+              font-size="10.5" fill="#7fc0ff">≈ 3 weeks later</text>
+        <text x="12" y="396" font-family="IBM Plex Mono, monospace" font-size="11"
+              fill="rgba(238,242,247,.38)">Schematic. Chart shape is illustrative, not measured data.</text>
       </svg>
-      <figcaption>Schematic. The chart shape is illustrative, not measured data.</figcaption>
     </figure>
+
+    <div class="narrowOnly">
+      <ul class="mFlow">
+        <li>
+          <span class="lab">You</span>
+          <b>Your question &amp; your data</b>
+          <span>“Does it do anything?” — plus the dataset nobody has had time to read.</span>
+        </li>
+        <li>
+          <span class="lab">Interviews you, then directs</span>
+          <b>A forward-deployed AI scientist</b>
+          <span>Specifies · directs · verifies. Someone from the course, not a black box.</span>
+        </li>
+        <li>
+          <span class="lab">Does the labour</span>
+          <b>An AI agent</b>
+          <span>The person supplies the judgement; the agent does the work.</span>
+          <span class="tasks"><i>load the data</i><i>write the code</i><i>run the controls</i><i>plot the result</i></span>
+        </li>
+        <li>
+          <span class="lab">Checked, then handed back</span>
+          <b>Your answer</b>
+          <span>A written report and an app you can run yourself — then round two, sharper.</span>
+        </li>
+      </ul>
+      <p class="mNote">2 hours of your time · ≈ 3 weeks end to end</p>
+    </div>
   </div>
 </header>
 
@@ -495,7 +702,7 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
         patience.</p>
     </div>
 
-    <figure class="fig rv" id="gapFig">
+    <figure class="fig wideOnly rv" id="gapFig">
       <svg viewBox="0 0 1000 320" role="img" aria-labelledby="gapT gapD">
         <title id="gapT">The ownership gap, and the role that closes it</title>
         <desc id="gapD">On the left, the scientist who owns the question, the sample and the
@@ -556,6 +763,34 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
       </svg>
       <figcaption>The gap closed by one person — the role this course trains.</figcaption>
     </figure>
+    <div class="narrowOnly rv">
+      <ul class="mFlow">
+        <li>
+          <span class="lab">One side</span>
+          <b>The scientist</b>
+          <span>Owns the question and the sample. Knows what wrong looks like — and cannot run
+            the analysis.</span>
+        </li>
+        <li style="border-style:dashed;background:#f0eee9">
+          <span class="lab" style="color:var(--ink-3)">Between them</span>
+          <b>The gap</b>
+          <span>Where most projects die.</span>
+        </li>
+        <li>
+          <span class="lab">The other side</span>
+          <b>The analyst</b>
+          <span>Owns the methods and the pipelines. Has never seen your sample — and is booked
+            for four months.</span>
+        </li>
+        <li style="background:var(--deep);border-color:var(--deep)">
+          <span class="lab" style="color:var(--blue-bright)">The role this course trains</span>
+          <b style="color:var(--on-deep)">The forward-deployed scientist</b>
+          <span style="color:rgba(238,242,247,.66)">Interviews one side, directs the other.
+            One person.</span>
+        </li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
@@ -581,7 +816,7 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
       </p>
     </div>
 
-    <figure class="fig rv rv-d1" id="ladderFig">
+    <figure class="fig wideOnly rv rv-d1" id="ladderFig">
       <svg viewBox="0 0 520 330" role="img" aria-labelledby="ladT ladD">
         <title id="ladT">The translation ladder</title>
         <desc id="ladD">Five rungs descending from a scientific question, to a measurable
@@ -640,6 +875,63 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
       </svg>
       <figcaption>Only a person who knows the biology can pick rung 02.</figcaption>
     </figure>
+    <div class="narrowOnly rv">
+      <ol class="mSteps" style="counter-reset:none">
+        <li class="mStep"><span class="dot" style="background:var(--ink-3)">01</span>
+          <div><h4>The scientific question</h4><p>“Does this drug change how the cells look?”</p></div></li>
+        <li class="mStep" style="background:var(--blue-soft);border-radius:10px">
+          <span class="dot" style="background:var(--blue)">02</span>
+          <div><h4>A measurable quantity</h4><p>Mean nuclear area per well, from DAPI.
+            <strong>Only a person who knows the biology can pick this one.</strong></p></div></li>
+        <li class="mStep"><span class="dot" style="background:var(--ink-3)">03</span>
+          <div><h4>A machine task</h4><p>Segment nuclei → measure → compare to control.</p></div></li>
+        <li class="mStep"><span class="dot" style="background:var(--ink-3)">04</span>
+          <div><h4>An objective and a metric</h4><p>Effect size + 95% CI, FDR across 84 genes.</p></div></li>
+        <li class="mStep"><span class="dot" style="background:var(--ink-3)">05</span>
+          <div><h4>A split and a control</h4><p>Hold out plate 4 · shuffle labels · buffer wells.</p></div></li>
+      </ol>
+      <p class="mNote"><strong>An AI agent can run all five.</strong> It cannot tell you that
+        rung 02 was the wrong quantity to measure.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ the agents ============================ -->
+<section class="pad-s deep">
+  <div class="wrap">
+    <div class="head wide rv" style="margin-bottom:clamp(1.5rem,3vw,2.2rem)">
+      <p class="eyebrow">What we actually run</p>
+      <h2 style="font-size:clamp(1.5rem,2.8vw,2.2rem)">Frontier AI agents, pointed at your problem</h2>
+      <p class="lead" style="margin-top:.9rem">
+        The whole course is about one thing: getting real scientific work out of an AI agent
+        <em>reliably</em>. Not prompting tricks — specification, direction and verification.
+      </p>
+    </div>
+    <div class="cards">
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></div>
+        <h3>A real coding agent</h3>
+        <p>Not a chatbot in a browser tab. An agent that reads your files, writes and runs code,
+          plots, and iterates on its own output until the task is done.</p>
+      </div>
+      <div class="card rv rv-d1">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="m8 7-4 5 4 5"/><path d="m16 7 4 5-4 5"/></svg></div>
+        <h3>A person in the loop</h3>
+        <p>Every agent run is specified, steered and checked by a course participant. They sign
+          the result — “the agent said so” is not a methods section.</p>
+      </div>
+      <div class="card rv rv-d2">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Controls, not vibes</h3>
+        <p>Held-out splits, shuffled labels, buffer wells. The agent is fast and fallible, so
+          checking it is part of the work rather than an afterthought.</p>
+      </div>
+    </div>
+    <p class="note rv" style="margin-top:1.6rem;color:rgba(238,242,247,.5);max-width:70ch">
+      This is what the course teaches, and what your project is a live exercise in. You do not
+      need to know anything about agents to take part.
+    </p>
   </div>
 </section>
 
@@ -653,7 +945,7 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
         without you.</p>
     </div>
 
-    <figure class="fig rv" id="flowFig">
+    <figure class="fig wideOnly rv" id="flowFig">
       <!-- WORKFLOW: kept in sync with portal/templates/_project_workflow.html -->
       <svg viewBox="0 0 1080 350" role="img" aria-labelledby="flowT flowD">
         <title id="flowT">How a volunteered project runs, in five steps</title>
@@ -690,6 +982,29 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
         </text>
       </svg>
     </figure>
+    <div class="narrowOnly rv">
+      <p class="mBand">Your total time: two 1-hour meetings — about 2 hours, over three weeks</p>
+      <ol class="mSteps">
+        <li class="mStep"><span class="dot"></span><div>
+          <h4>Sign up</h4><span class="mChip grey">2 minutes</span>
+          <p>Tell us the question. Attach a sample file now if you like.</p></div></li>
+        <li class="mStep"><span class="dot"></span><div>
+          <h4>Meeting 1</h4><span class="mChip">1 hour · online</span>
+          <p>They interview you — and this is where you hand the data over.</p></div></li>
+        <li class="mStep"><span class="dot"></span><div>
+          <h4>They build it</h4><span class="mChip grey">2–3 days</span>
+          <p>An AI agent does the work; a person checks every number.</p></div></li>
+        <li class="mStep"><span class="dot"></span><div>
+          <h4>Meeting 2</h4><span class="mChip">1 hour · online</span>
+          <p>You say what is wrong. More rounds only if you both want them.</p></div></li>
+        <li class="mStep last"><span class="dot"></span><div>
+          <h4>Hand-over</h4><span class="mChip grey">yours to keep</span>
+          <p>A written report and an analysis app you can run yourself.</p></div></li>
+      </ol>
+      <p class="mNote">We match you with a participant. If nobody is free, our AI data scientist
+        runs it — <strong>every project gets an answer</strong>.</p>
+    </div>
+
   </div>
 </section>
 
@@ -813,7 +1128,7 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
         </ul>
       </div>
 
-      <figure class="fig rv rv-d1" id="timelineFig">
+      <figure class="fig wideOnly rv rv-d1" id="timelineFig">
         <svg viewBox="0 0 520 300" role="img" aria-labelledby="tlT tlD">
           <title id="tlT">Timeline from registration to hand-over</title>
           <desc id="tlD">Register by 25 September, matched in late September, first meeting in
@@ -850,6 +1165,21 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
           </g>
         </svg>
       </figure>
+    <div class="narrowOnly rv">
+      <ol class="mSteps" style="counter-reset:none">
+        <li class="mStep"><span class="dot" style="background:var(--blue)">●</span><div>
+          <h4>Friday 25 September</h4><p>Deadline to sign up a project.</p></div></li>
+        <li class="mStep"><span class="dot" style="background:var(--rule);color:var(--ink-2)">○</span><div>
+          <h4>Late September</h4><p>We match you and introduce you by email.</p></div></li>
+        <li class="mStep"><span class="dot" style="background:var(--blue)">●</span><div>
+          <h4>Early October</h4><p>Meeting 1 — the interview · 1 hour.</p></div></li>
+        <li class="mStep"><span class="dot" style="background:var(--blue)">●</span><div>
+          <h4>Mid October</h4><p>Meeting 2 — the prototype · 1 hour.</p></div></li>
+        <li class="mStep"><span class="dot" style="background:#0f7d78">✓</span><div>
+          <h4>By 23 October</h4><p>Hand-over — report, figures, app.</p></div></li>
+      </ol>
+    </div>
+
     </div>
   </div>
 </section>
@@ -857,7 +1187,7 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
 <!-- ============================ every project answered ============================ -->
 <section class="pad deep">
   <div class="wrap split rev">
-    <figure class="fig rv" id="agentFig">
+    <figure class="fig wideOnly rv" id="agentFig">
       <svg viewBox="0 0 480 260" role="img" aria-labelledby="agT agD">
         <title id="agT">Two routes, one promise</title>
         <desc id="agD">A registered project goes either to a student or, if none is free, to the
@@ -894,6 +1224,20 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
         </g>
       </svg>
     </figure>
+    <div class="narrowOnly rv">
+      <ul class="mFlow">
+        <li><span class="lab">Registered</span><b>Your project</b></li>
+        <li><span class="lab">The normal route</span><b>A course participant</b>
+          <span>A master's student, PhD student, postdoc or researcher on the course.</span></li>
+        <li><span class="lab">If nobody is free</span><b>Our AI data scientist</b>
+          <span>It interviews you in the same meeting and does the same work.</span></li>
+        <li style="background:#0f7d78;border-color:#0f7d78">
+          <span class="lab" style="color:#bff0ea">Either way</span>
+          <b style="color:#fff">Your answer</b>
+          <span style="color:rgba(255,255,255,.85)">Both routes checked by the teaching team.</span></li>
+      </ul>
+    </div>
+
 
     <div class="rv rv-d1">
       <p class="eyebrow">Our side of the bargain</p>
@@ -923,7 +1267,7 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
       up while it runs.
     </p>
     <div class="cta-row">
-      <a class="btn btn-p" href="https://ddls-portal-6228434e.svc.hypha.aicell.io/data-owner">
+      <a class="btn btn-p" href="https://ddls-portal-6228434e.svc.hypha.aicell.io/signup-projects">
         Sign up a project
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -953,12 +1297,12 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---- hero dot field: a dataset nobody has read ------------------------- */
-  var dots = document.getElementById("dots");
+  var dots = document.getElementById("hdots");
   if (dots) {
     var frag = "";
-    for (var r = 0; r < 5; r++)
-      for (var c = 0; c < 8; c++)
-        frag += '<circle cx="' + (32 + c * 17) + '" cy="' + (128 + r * 17) + '" r="3.1"/>';
+    for (var r = 0; r < 2; r++)
+      for (var c = 0; c < 12; c++)
+        frag += '<circle cx="' + (27 + c * 10.5) + '" cy="' + (100 + r * 9) + '" r="2.4"/>';
     dots.innerHTML = frag;
   }
 

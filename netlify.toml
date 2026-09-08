@@ -19,3 +19,11 @@
   package = "netlify-plugin-hugo-cache-resources"
   [plugins.inputs]
     debug = true
+
+# The recruitment landing page moved from /forward-deployed-scientist/ to a name that says
+# what it is. The old path was already published and shared, so keep it alive.
+[[redirects]]
+  from = "/forward-deployed-scientist/*"
+  to = "/call-for-projects-2026/"
+  status = 301
+  force = true

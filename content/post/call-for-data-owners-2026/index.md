@@ -31,7 +31,7 @@ That skill cannot be practised on a tidy teaching dataset, and it cannot be prac
 own data — when you already know the context, you never learn to state it. It needs a real
 person with a real problem who has not explained it before. So for the final project, every
 student needs a client. That is what we are asking you to be. We describe the role in full on
-[**The Forward-Deployed Scientist**](/forward-deployed-scientist/).
+[**The Forward-Deployed Scientist**](/call-for-projects-2026/).
 
 ## What we ask, and what you get
 

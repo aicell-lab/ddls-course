@@ -906,8 +906,8 @@ rounds are optional by agreement. They get back a **short report plus a runnable
 data scientist does.
 
 **Know someone with a biological question and some data?** Send them the call, or use your **personal
-invite link** — on your portal dashboard as `/data-owner?ref=<your-code>`. A project that signs up
-through your link gives **you first claim** on it.
+invite link** — on your portal dashboard as `/signup-projects?ref=<your-code>`. A project that signs
+up through your link gives **you first claim** on it.
 
 {{< cta cta_text="See the call for projects" cta_link="https://ddls.aicell.io/call-for-projects-2026/" >}}
 

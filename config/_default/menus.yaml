@@ -7,6 +7,9 @@ main:
   - name: Home
     url: '/'
     weight: 10
+  - name: The Role
+    url: '/forward-deployed-scientist/'
+    weight: 15
   - name: Courses
     weight: 20
     identifier: courses

@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call for research problems &amp; data — 2 hours of your time, an answer in 3 weeks · DDLS 2026</title>
+<meta name="description" content="Two hours of your time, an answer in three weeks, free. Hand us a real biological question and a student on our KTH/SciLifeLab master's course interviews you, builds the analysis with an AI agent, and hands back a report and an app you can run.">
+<meta property="og:title" content="Bring us your data problem — DDLS 2026">
+<meta property="og:description" content="2 hours of your time · 3 weeks to an answer · free. A forward-deployed AI scientist from the DDLS course at KTH and SciLifeLab works on your data problem.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b62b4' stroke-width='2' stroke-linecap='round'><path d='M2 15c6.667-6 13.333 0 20-6'/><path d='M15 2c-1.798 1.998-2.518 3.995-2.807 5.993'/><path d='M9 22c1.798-1.998 2.518-3.995 2.807-5.993'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================================
+   DDLS 2026 — data-owner recruitment page.
+   Visual system lifted from the Module 1 lecture deck (deck.css): warm paper,
+   deep navy for chapter breaks, ONE blue accent, Source Serif 4 + IBM Plex.
+   =========================================================================== */
+:root{
+  --paper:#f7f6f3; --white:#fff; --ink:#141a24; --ink-2:#41505f; --ink-3:#6b7a8a;
+  --rule:#d9d6cf; --rule-2:#e8e5de;
+  --deep:#0b1220; --deep-2:#131c30; --on-deep:#eef2f7; --on-deep-2:rgba(238,242,247,.62);
+  --blue:#0b62b4; --blue-soft:#e4eef8; --blue-line:#a8c8e6; --blue-bright:#7fc0ff;
+  --teal:#0f7d78; --amber:#b8760c; --magenta:#98306b;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans','Helvetica Neue',Helvetica,sans-serif;
+  --mono:'IBM Plex Mono','SFMono-Regular',Menlo,monospace;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+     -webkit-font-smoothing:antialiased;text-wrap:pretty;line-height:1.55}
+img,svg{max-width:100%}
+a{color:var(--blue);text-underline-offset:2px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{position:relative}
+
+/* ---- type ---------------------------------------------------------------- */
+h1,h2,h3{font-family:var(--serif);margin:0;letter-spacing:-.015em;font-weight:600}
+h1{font-size:clamp(2.5rem,6vw,4.6rem);line-height:1.02;letter-spacing:-.025em}
+h2{font-size:clamp(1.8rem,3.6vw,2.9rem);line-height:1.1}
+h3{font-size:clamp(1.15rem,1.9vw,1.4rem);line-height:1.25}
+.eyebrow{font:500 .74rem/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;
+         color:var(--blue);margin:0 0 1.1rem}
+.deep .eyebrow{color:var(--blue-bright)}
+.lead{font-size:clamp(1.06rem,1.7vw,1.32rem);color:var(--ink-2);line-height:1.55;max-width:40ch;margin:0}
+.deep .lead{color:var(--on-deep-2)}
+.body{color:var(--ink-2);max-width:62ch}
+strong{font-weight:600;color:var(--ink)}
+.deep strong{color:var(--on-deep)}
+.hi{color:var(--blue)} .deep .hi{color:var(--blue-bright)}
+.note{font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
+
+/* ---- surfaces ------------------------------------------------------------ */
+.deep{background:var(--deep);color:var(--on-deep)}
+.plate{background:var(--white)}
+.pad{padding:clamp(4rem,9vw,7.5rem) 0}
+.pad-s{padding:clamp(2.5rem,5vw,4rem) 0}
+.hr{height:1px;background:var(--rule-2);border:0;margin:0}
+
+/* ---- sticky bar ---------------------------------------------------------- */
+.bar{position:fixed;inset:0 0 auto;z-index:60;background:rgba(247,246,243,.9);
+     backdrop-filter:blur(10px);border-bottom:1px solid transparent;
+     transform:translateY(-100%);transition:transform .35s ease,border-color .35s}
+.bar.on{transform:none;border-bottom-color:var(--rule-2)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:1rem}
+.bar b{font-family:var(--serif);font-size:1.02rem;font-weight:600}
+.bar .sub{color:var(--ink-3);font-size:.86rem}
+@media(max-width:620px){.bar .sub{display:none}}
+
+/* ---- buttons ------------------------------------------------------------- */
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:500;font-size:.98rem;
+     border-radius:10px;padding:.78rem 1.35rem;text-decoration:none;border:1px solid transparent;
+     transition:transform .18s ease,background .18s ease,border-color .18s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-p{background:var(--blue);color:#fff}
+.btn-p:hover{background:#094e90}
+.btn-g{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn-g:hover{border-color:var(--blue-line);background:var(--white)}
+.deep .btn-g{color:var(--on-deep);border-color:rgba(238,242,247,.28)}
+.deep .btn-g:hover{border-color:rgba(238,242,247,.55);background:rgba(238,242,247,.06)}
+.btn-sm{padding:.5rem .95rem;font-size:.88rem;border-radius:8px}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.2rem}
+
+/* ---- hero ---------------------------------------------------------------- */
+.hero{background:var(--deep);color:var(--on-deep);overflow:hidden;
+      padding:clamp(5rem,11vw,8rem) 0 clamp(3.5rem,7vw,5.5rem)}
+.hero .grid{display:grid;gap:clamp(2.5rem,5vw,4rem);align-items:center;
+            grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+@media(max-width:900px){.hero .grid{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.7rem,6.4vw,5.1rem)}
+.hero h1 .l{display:block;opacity:0;transform:translateY(22px);
+            animation:rise .9s cubic-bezier(.2,.7,.3,1) forwards}
+.hero h1 .l:nth-child(2){animation-delay:.1s}
+.hero h1 .amp{font-style:normal;color:var(--blue-bright);font-weight:400}
+.hero .kicker{margin:1.4rem 0 0;font-size:clamp(1.15rem,2.1vw,1.62rem);line-height:1.3;
+              font-weight:500;color:var(--on-deep);max-width:22ch;
+              opacity:0;transform:translateY(18px);
+              animation:rise .8s cubic-bezier(.2,.7,.3,1) .24s forwards}
+.hero .lead{margin-top:1.5rem;font-size:clamp(1rem,1.5vw,1.14rem);max-width:46ch}
+.hero .lead,.hero .cta-row,.hero .trust{opacity:0;transform:translateY(18px);
+            animation:rise .8s cubic-bezier(.2,.7,.3,1) .38s forwards}
+.hero .cta-row{animation-delay:.5s}
+.hero .trust{animation-delay:.62s}
+@keyframes rise{to{opacity:1;transform:none}}
+/* Three across, always — the whole point is that the deal reads in one glance. */
+.deal{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;
+      grid-template-columns:repeat(3,minmax(0,auto));justify-content:start;
+      opacity:0;transform:translateY(18px);
+      animation:rise .8s cubic-bezier(.2,.7,.3,1) .32s forwards}
+.deal li{padding:0 1.15rem;border-left:1px solid rgba(238,242,247,.2);min-width:0}
+.deal li:first-child{padding-left:0;border-left:0}
+.deal b{display:block;font:600 clamp(1.35rem,2.3vw,1.85rem)/1 var(--serif);
+        letter-spacing:-.02em;color:var(--blue-bright);white-space:nowrap}
+.deal span{display:block;margin-top:.32rem;font:400 .68rem/1.3 var(--mono);
+           letter-spacing:.02em;color:var(--on-deep-2)}
+@media(max-width:420px){.deal li{padding:0 .8rem}.deal span{font-size:.62rem}}
+.trust{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.5rem 1.15rem;max-width:46ch;
+       font:400 .78rem/1.55 var(--mono);color:var(--on-deep-2)}
+.trust i{font-style:normal;color:var(--blue-bright)}
+.glow{position:absolute;width:min(70vw,760px);aspect-ratio:1;border-radius:50%;
+      background:radial-gradient(circle,rgba(11,98,180,.30),transparent 66%);
+      top:-24%;right:-14%;pointer-events:none;filter:blur(6px)}
+
+/* ---- figure frames ------------------------------------------------------- */
+figure{margin:0}
+.fig{background:var(--white);border:1px solid var(--rule-2);border-radius:16px;
+     padding:clamp(1rem,2.2vw,1.75rem);overflow-x:auto}
+.deep .fig{background:rgba(238,242,247,.045);border-color:rgba(238,242,247,.14)}
+figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
+.deep figcaption{color:rgba(238,242,247,.5)}
+
+/* ---- generic layout helpers --------------------------------------------- */
+.split{display:grid;gap:clamp(2rem,4.5vw,3.5rem);align-items:center;
+       grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+.split.rev{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+@media(max-width:880px){.split,.split.rev{grid-template-columns:1fr}}
+.head{max-width:40ch;margin-bottom:clamp(2rem,4vw,3rem)}
+.head.wide{max-width:52ch}
+.head p{margin:.9rem 0 0}
+
+/* ---- who we are ---------------------------------------------------------- */
+.who{display:grid;gap:clamp(2rem,4vw,3.5rem);grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+     align-items:start}
+@media(max-width:880px){.who{grid-template-columns:1fr}}
+.whoList{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--rule-2);
+         border:1px solid var(--rule-2);border-radius:14px;overflow:hidden}
+.whoList li{background:var(--white);padding:.9rem 1.1rem}
+.whoList b{display:block;font:600 1.02rem/1.2 var(--serif);color:var(--ink)}
+.whoList span{display:block;margin-top:.15rem;font-size:.85rem;color:var(--ink-3)}
+
+/* ---- foldable explainer -------------------------------------------------- */
+.fold{margin-top:1.5rem;border:1px solid var(--rule);border-radius:12px;background:var(--paper);
+      overflow:hidden}
+.fold summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.75rem;
+              padding:.95rem 1.1rem;font-weight:500;color:var(--ink);user-select:none}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary:hover{background:#f2f0eb}
+.fold .q{flex:1;font-size:.98rem}
+.fold .chev{flex:none;color:var(--blue);transition:transform .25s ease}
+.fold[open] .chev{transform:rotate(180deg)}
+.foldBody{padding:0 1.1rem 1.1rem;border-top:1px solid var(--rule-2)}
+.foldBody p{margin:.85rem 0 0;font-size:.95rem;line-height:1.6;color:var(--ink-2)}
+.foldBody blockquote{margin:.95rem 0 0;padding:.85rem 1rem;border-left:3px solid var(--blue-line);
+                     background:var(--white);border-radius:0 8px 8px 0;
+                     font-family:var(--serif);font-size:1.02rem;line-height:1.5;color:var(--ink)}
+
+/* ---- the short-commitment note ------------------------------------------- */
+.shortBox{margin-top:1rem;border:1px solid var(--blue-line);background:var(--blue-soft);
+          border-radius:14px;padding:1.1rem 1.25rem}
+.shortTitle{margin:0 0 .4rem;font:500 .72rem/1 var(--mono);letter-spacing:.14em;
+            text-transform:uppercase;color:var(--blue)}
+.shortBox p{margin:0;font-size:.92rem;line-height:1.55;color:var(--ink-2)}
+.shortBox strong{color:var(--ink)}
+
+/* ---- cards --------------------------------------------------------------- */
+.cards{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(238px,1fr))}
+.card{background:var(--white);border:1px solid var(--rule-2);border-radius:14px;padding:1.4rem}
+.deep .card{background:rgba(238,242,247,.05);border-color:rgba(238,242,247,.14)}
+.card h3{margin-bottom:.45rem;font-size:1.08rem}
+.card p{margin:0;font-size:.94rem;color:var(--ink-2)}
+.deep .card p{color:var(--on-deep-2)}
+.ic{width:38px;height:38px;border-radius:10px;background:var(--blue-soft);color:var(--blue);
+    display:flex;align-items:center;justify-content:center;margin-bottom:.9rem}
+.deep .ic{background:rgba(127,192,255,.13);color:var(--blue-bright)}
+.ic svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.9;
+        stroke-linecap:round;stroke-linejoin:round}
+
+/* ---- numbered duty list -------------------------------------------------- */
+.duties{list-style:none;margin:0;padding:0;counter-reset:d}
+.duty{display:grid;grid-template-columns:auto 1fr;gap:1.35rem;padding:1.6rem 0;
+      border-top:1px solid var(--rule-2);align-items:start}
+.duty:last-child{border-bottom:1px solid var(--rule-2)}
+.duty .n{counter-increment:d;width:44px;height:44px;border-radius:50%;flex:none;
+         border:1.5px solid var(--blue-line);color:var(--blue);background:var(--white);
+         display:flex;align-items:center;justify-content:center;
+         font:600 1.02rem/1 var(--mono)}
+.duty .n::before{content:counter(d)}
+.duty h3{font-size:1.18rem}
+.duty p{margin:.4rem 0 0;color:var(--ink-2);max-width:58ch}
+.chip{display:inline-block;font:500 .74rem/1 var(--mono);letter-spacing:.06em;
+      text-transform:uppercase;color:var(--blue);background:var(--blue-soft);
+      border-radius:99px;padding:.42rem .7rem;margin-left:.6rem;vertical-align:2px}
+.chip.grey{color:var(--ink-3);background:#f0eee9}
+.duty .top{display:flex;flex-wrap:wrap;align-items:baseline}
+
+/* ---- yes / no list ------------------------------------------------------- */
+.fit{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
+.fit li{display:grid;grid-template-columns:22px 1fr;gap:.7rem;align-items:start;
+        font-size:.96rem;color:var(--ink-2)}
+.fit svg{width:17px;height:17px;margin-top:3px;stroke-width:2.2;fill:none;
+         stroke-linecap:round;stroke-linejoin:round}
+.fit .y svg{stroke:var(--teal)} .fit .n svg{stroke:var(--ink-3)}
+.fit .n{color:var(--ink-3)}
+
+/* ---- stat strip ---------------------------------------------------------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+       gap:1px;background:var(--rule-2);border:1px solid var(--rule-2);
+       border-radius:14px;overflow:hidden;margin-top:2.6rem}
+.deep .stats{background:rgba(238,242,247,.14);border-color:rgba(238,242,247,.14)}
+.stat{background:var(--paper);padding:1.15rem 1.2rem}
+.deep .stat{background:var(--deep)}
+.stat b{display:block;font:600 1.7rem/1 var(--serif);letter-spacing:-.02em}
+.stat span{display:block;margin-top:.35rem;font-size:.8rem;color:var(--ink-3)}
+.deep .stat span{color:var(--on-deep-2)}
+
+/* ---- reveal on scroll ---------------------------------------------------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv-d1{transition-delay:.09s}.rv-d2{transition-delay:.18s}
+.rv-d3{transition-delay:.27s}.rv-d4{transition-delay:.36s}
+
+/* ---- SVG animation primitives -------------------------------------------- */
+.draw{stroke-dasharray:var(--len,900);stroke-dashoffset:var(--len,900)}
+.in .draw{animation:draw 1.5s cubic-bezier(.35,.6,.3,1) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.pop{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.86)}
+.in .pop{animation:pop .5s cubic-bezier(.2,.8,.3,1) forwards}
+@keyframes pop{to{opacity:1;transform:none}}
+.fade{opacity:0}.in .fade{animation:fade .7s ease forwards}
+@keyframes fade{to{opacity:1}}
+
+/* ---- final CTA ----------------------------------------------------------- */
+.final{background:linear-gradient(160deg,var(--deep),var(--deep-2));color:var(--on-deep);
+       text-align:center;overflow:hidden}
+.final h2{max-width:20ch;margin:0 auto}
+.final .lead{margin:1.2rem auto 0;max-width:52ch}
+.final .cta-row{justify-content:center}
+.foot{background:var(--deep);color:var(--on-deep-2);border-top:1px solid rgba(238,242,247,.12);
+      padding:2rem 0;font-size:.86rem}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+.foot a{color:var(--blue-bright)}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .draw{stroke-dashoffset:0}.pop,.fade{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================ sticky bar ============================ -->
+<div class="bar" id="bar">
+  <div class="wrap">
+    <div><b>Data-Driven Life Sciences</b> <span class="sub">· <strong style="color:var(--blue);font-weight:600">2 hours of your time, an answer in 3 weeks</strong></span></div>
+    <a class="btn btn-p btn-sm" href="#join">Sign up a project</a>
+  </div>
+</div>
+
+<!-- ============================ hero ============================ -->
+<header class="hero deep">
+  <div class="glow"></div>
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">Data-Driven Life Sciences · KTH &amp; SciLifeLab · Autumn 2026</p>
+      <h1>
+        <span class="l">Call for research</span>
+        <span class="l">problems <em class="amp">&amp;</em> data</span>
+      </h1>
+      <p class="kicker">
+        We send a <span class="hi">forward-deployed AI scientist</span> to work on your data.
+      </p>
+      <ul class="deal">
+        <li><b>2 hours</b><span>your total time</span></li>
+        <li><b>3 weeks</b><span>to an answer</span></li>
+        <li><b>Free</b><span>no obligation</span></li>
+      </ul>
+      <p class="lead">
+        Two 1-hour meetings is the whole ask. In between, someone from our master's course
+        builds a working analysis on your data with an AI agent and hands back a report and an
+        app you can run yourself.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-p" href="#join">
+          Sign up a project — 2 minutes
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-g" href="#how">How it works</a>
+      </div>
+      <div class="trust">
+        <span><i>◆</i> Every project gets an answer — if no student takes yours, our AI data
+          scientist does</span>
+      </div>
+    </div>
+
+    <!-- HERO FIGURE: a question, a dataset, and an answer that assembles itself -->
+    <figure class="fig rv" id="heroFig" aria-labelledby="heroFigT">
+      <svg viewBox="0 0 460 340" role="img" aria-labelledby="heroFigT heroFigD">
+        <title id="heroFigT">From an unanswered question to a checked answer</title>
+        <desc id="heroFigD">A researcher's question and a pile of unanalysed data on the left
+          feed through a directed AI agent in the middle, producing a small checked chart and a
+          written report on the right.</desc>
+        <defs>
+          <linearGradient id="hg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#7fc0ff" stop-opacity=".15"/>
+            <stop offset="1" stop-color="#7fc0ff" stop-opacity=".55"/>
+          </linearGradient>
+        </defs>
+
+        <!-- left: the question -->
+        <g class="fade" style="animation-delay:.2s">
+          <rect x="14" y="26" width="150" height="52" rx="10"
+                fill="rgba(238,242,247,.07)" stroke="rgba(238,242,247,.2)"/>
+          <text x="28" y="47" font-family="IBM Plex Mono, monospace" font-size="9.5"
+                fill="#7fc0ff" letter-spacing="1.4">YOUR QUESTION</text>
+          <text x="28" y="65" font-family="Source Serif 4, serif" font-size="13.5"
+                fill="#eef2f7">“Does it do anything?”</text>
+        </g>
+
+        <!-- left: the unanalysed data -->
+        <g class="fade" style="animation-delay:.45s">
+          <text x="28" y="112" font-family="IBM Plex Mono, monospace" font-size="9.5"
+                fill="rgba(238,242,247,.5)" letter-spacing="1.4">YOUR DATA</text>
+          <g fill="#7fc0ff" opacity=".5">
+            <!-- 6x7 dot field: a dataset nobody has read -->
+            <g id="dots"></g>
+          </g>
+        </g>
+
+        <!-- the flow -->
+        <path id="flow" d="M175 150 C 215 150, 215 150, 246 150" stroke="url(#hg)"
+              stroke-width="26" fill="none" stroke-linecap="round" class="fade"
+              style="animation-delay:.8s"/>
+
+        <!-- middle: the agent, directed -->
+        <g class="pop" style="animation-delay:.95s">
+          <circle cx="246" cy="150" r="34" fill="rgba(11,98,180,.28)" stroke="#7fc0ff" stroke-width="1.5"/>
+          <circle cx="246" cy="150" r="46" fill="none" stroke="rgba(127,192,255,.3)"
+                  stroke-width="1" stroke-dasharray="3 6">
+            <animateTransform attributeName="transform" type="rotate"
+                              from="0 246 150" to="360 246 150" dur="22s" repeatCount="indefinite"/>
+          </circle>
+          <text x="246" y="148" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+                font-size="9" fill="#7fc0ff" letter-spacing="1.1">AGENT</text>
+          <text x="246" y="160" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+                font-size="7" fill="rgba(238,242,247,.7)">+ JUDGEMENT</text>
+        </g>
+
+        <!-- right: the answer -->
+        <g class="fade" style="animation-delay:1.3s">
+          <rect x="316" y="72" width="130" height="96" rx="10" fill="#fff" opacity=".97"/>
+          <text x="330" y="90" font-family="IBM Plex Mono, monospace" font-size="8"
+                fill="#6b7a8a" letter-spacing="1.2">EFFECT SIZE</text>
+          <!-- honest schematic: three bars + an error bar, no numbers claimed -->
+          <rect x="330" y="128" width="18" height="26" fill="#a8c8e6"/>
+          <rect x="356" y="112" width="18" height="42" fill="#0b62b4"/>
+          <rect x="382" y="134" width="18" height="20" fill="#a8c8e6"/>
+          <line x1="365" y1="100" x2="365" y2="122" stroke="#141a24" stroke-width="1.3"/>
+          <line x1="360" y1="100" x2="370" y2="100" stroke="#141a24" stroke-width="1.3"/>
+          <line x1="360" y1="122" x2="370" y2="122" stroke="#141a24" stroke-width="1.3"/>
+          <line x1="326" y1="154" x2="434" y2="154" stroke="#d9d6cf" stroke-width="1"/>
+        </g>
+        <g class="fade" style="animation-delay:1.5s">
+          <rect x="316" y="180" width="130" height="60" rx="10"
+                fill="rgba(238,242,247,.07)" stroke="rgba(238,242,247,.2)"/>
+          <text x="330" y="200" font-family="IBM Plex Mono, monospace" font-size="8"
+                fill="#7fc0ff" letter-spacing="1.2">REPORT</text>
+          <line x1="330" y1="212" x2="430" y2="212" stroke="rgba(238,242,247,.34)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="330" y1="221" x2="412" y2="221" stroke="rgba(238,242,247,.24)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="330" y1="230" x2="396" y2="230" stroke="rgba(238,242,247,.24)" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+
+        <!-- timing -->
+        <g class="fade" style="animation-delay:1.7s">
+          <line x1="14" y1="286" x2="446" y2="286" stroke="rgba(238,242,247,.2)" stroke-width="1"/>
+          <text x="14" y="308" font-family="IBM Plex Mono, monospace" font-size="9.5"
+                fill="rgba(238,242,247,.55)">day 0</text>
+          <text x="446" y="308" text-anchor="end" font-family="IBM Plex Mono, monospace"
+                font-size="9.5" fill="#7fc0ff">≈ 3 weeks later</text>
+          <text x="230" y="308" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+                font-size="9.5" fill="rgba(238,242,247,.55)">2 hours of your time</text>
+        </g>
+      </svg>
+      <figcaption>Schematic. The chart shape is illustrative, not measured data.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<!-- ============================ who is asking ============================ -->
+<section class="pad-s plate" style="border-bottom:1px solid var(--rule-2)">
+  <div class="wrap who">
+    <div class="rv">
+      <p class="eyebrow">Who is asking</p>
+      <h2 style="font-size:clamp(1.5rem,2.6vw,2.1rem)">
+        We are a course — and we are training<br>forward-deployed AI scientists
+      </h2>
+      <p class="body" style="margin-top:1rem">
+        <strong>Data-Driven Life Sciences</strong> (SK2538 / FSK3538) is a master's course at
+        <strong>KTH</strong>, run with <strong>SciLifeLab</strong> by the AICell Lab. We are its
+        students and its teaching team — master's students, PhD students, postdocs and
+        researchers.
+      </p>
+      <p class="body" style="margin-top:.8rem">
+        The course trains one specific role, and it can only be practised on someone else's real
+        problem. That is the entire reason we are writing to you.
+      </p>
+
+      <details class="fold rv">
+        <summary>
+          <span class="q">What is a forward-deployed AI scientist?</span>
+          <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="foldBody">
+          <p>
+            The name is borrowed from software. A <strong>forward-deployed engineer</strong> — a
+            role made well known by <strong>Palantir</strong>, and since 2024 used at the major
+            AI labs — is the engineer who is sent to sit <em>with the customer</em>, rather than
+            the one who stays with the codebase. They learn the customer's problem first-hand and
+            build against it directly, in days rather than quarters.
+          </p>
+          <p>
+            The life-science version is what this course trains:
+          </p>
+          <blockquote>
+            A scientist who can sit down with <strong>someone else's</strong> biological problem,
+            interview them until the question is precise, and come back <strong>within days</strong>
+            with a working, checked answer — with an <strong>AI agent doing the labour</strong> and
+            themselves supplying the <strong>judgement</strong>.
+          </blockquote>
+          <p>
+            What makes it new is the agent. An AI agent can now execute almost any analysis you
+            can specify, which moves the scarce skill from <em>implementation</em> to
+            <strong>specification, direction and verification</strong>. The failure mode stops
+            being "the code didn't run" and becomes "the code ran beautifully on the wrong
+            question" — so the person's job is to choose the right question, then check the
+            answer hard enough to sign it.
+          </p>
+          <p class="note" style="margin-top:1rem">
+            More on the role, and how the course is built around it, further down this page.
+          </p>
+        </div>
+      </details>
+
+      <p style="margin-top:1.4rem">
+        <a class="btn btn-g btn-sm" href="https://ddls.aicell.io" target="_blank" rel="noopener">
+          Visit the course site — ddls.aicell.io
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        </a>
+      </p>
+    </div>
+
+    <div class="rv rv-d1">
+      <ul class="whoList">
+        <li><b>SK2538 / FSK3538</b><span>KTH master's &amp; PhD course, 7.5 credits</span></li>
+        <li><b>KTH · SciLifeLab</b><span>run by the AICell Lab, part of the national DDLS programme</span></li>
+        <li><b>Since 2022</b><span>this is the fifth year the course has run</span></li>
+        <li><b>26 participants</b><span>master's and PhD students, postdocs, researchers</span></li>
+      </ul>
+      <div class="shortBox">
+        <p class="shortTitle">This is deliberately short</p>
+        <p>
+          It is not an open-ended collaboration and we are not asking for a grant, a co-authorship
+          or a commitment. <strong>Two 1-hour meetings, about three weeks, then it is done</strong>
+          — and you keep whatever was built.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ the gap ============================ -->
+<section class="pad" id="how">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="eyebrow">The problem we are both in</p>
+      <h2>Most projects die in the gap between two people</h2>
+      <p class="body">One person owns the question. Another owns the methods. They are
+        rarely the same person, and the queue between them is longer than the project's
+        patience.</p>
+    </div>
+
+    <figure class="fig rv" id="gapFig">
+      <svg viewBox="0 0 1000 320" role="img" aria-labelledby="gapT gapD">
+        <title id="gapT">The ownership gap, and the role that closes it</title>
+        <desc id="gapD">On the left, the scientist who owns the question, the sample and the
+          knowledge of what wrong looks like. On the right, the analyst who owns the methods and
+          the pipelines, booked for four months. Between them a shaded gap labelled where most
+          projects die. Below, a single figure bridges the two, interviewing on one side and
+          directing methods on the other.</desc>
+
+        <!-- the gap band -->
+        <rect x="360" y="24" width="280" height="128" rx="10" fill="#f0eee9" class="fade"/>
+        <text x="500" y="80" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+              font-size="12" fill="#6b7a8a" letter-spacing="1.6" class="fade"
+              style="animation-delay:.3s">THE GAP</text>
+        <text x="500" y="104" text-anchor="middle" font-family="Source Serif 4, serif"
+              font-size="15" fill="#41505f" class="fade" style="animation-delay:.4s">
+          where most projects die</text>
+
+        <!-- left party -->
+        <g class="pop">
+          <rect x="24" y="24" width="316" height="128" rx="12" fill="#fff" stroke="#d9d6cf"/>
+          <circle cx="60" cy="60" r="15" fill="#e4eef8"/>
+          <circle cx="60" cy="55" r="5.5" fill="#0b62b4"/>
+          <path d="M50 68a10 10 0 0 1 20 0" fill="#0b62b4"/>
+          <text x="88" y="58" font-family="Source Serif 4, serif" font-size="19" font-weight="600" fill="#141a24">The scientist</text>
+          <text x="88" y="80" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#41505f">owns the question · owns the sample</text>
+          <text x="88" y="100" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#41505f">knows what wrong looks like</text>
+          <text x="88" y="128" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#b8760c">cannot run the analysis</text>
+        </g>
+
+        <!-- right party -->
+        <g class="pop" style="animation-delay:.18s">
+          <rect x="660" y="24" width="316" height="128" rx="12" fill="#fff" stroke="#d9d6cf"/>
+          <circle cx="696" cy="60" r="15" fill="#e4eef8"/>
+          <circle cx="696" cy="55" r="5.5" fill="#0b62b4"/>
+          <path d="M686 68a10 10 0 0 1 20 0" fill="#0b62b4"/>
+          <text x="724" y="58" font-family="Source Serif 4, serif" font-size="19" font-weight="600" fill="#141a24">The analyst</text>
+          <text x="724" y="80" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#41505f">owns the methods · owns the pipelines</text>
+          <text x="724" y="100" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#41505f">has never seen your sample</text>
+          <text x="724" y="128" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="#b8760c">booked for four months</text>
+        </g>
+
+        <!-- the bridge -->
+        <path d="M182 152 C 182 214, 500 214, 500 236" fill="none" stroke="#a8c8e6"
+              stroke-width="2" class="draw" style="--len:340px;animation-delay:.5s"/>
+        <path d="M818 152 C 818 214, 500 214, 500 236" fill="none" stroke="#a8c8e6"
+              stroke-width="2" class="draw" style="--len:340px;animation-delay:.5s"/>
+
+        <g class="pop" style="animation-delay:1.15s">
+          <rect x="300" y="236" width="400" height="62" rx="14" fill="#0b1220"/>
+          <circle cx="344" cy="267" r="14" fill="rgba(127,192,255,.2)"/>
+          <circle cx="344" cy="262" r="5" fill="#7fc0ff"/>
+          <path d="M334.5 275a9.5 9.5 0 0 1 19 0" fill="#7fc0ff"/>
+          <text x="372" y="262" font-family="Source Serif 4, serif" font-size="17"
+                font-weight="600" fill="#eef2f7">The forward-deployed scientist</text>
+          <text x="372" y="282" font-family="IBM Plex Sans, sans-serif" font-size="12.5"
+                fill="rgba(238,242,247,.66)">interviews one side · directs the other · one person</text>
+        </g>
+      </svg>
+      <figcaption>The gap closed by one person — the role this course trains.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ what changed ============================ -->
+<section class="pad plate">
+  <div class="wrap split">
+    <div class="rv">
+      <p class="eyebrow">What changed</p>
+      <h2>An agent can run every step. It cannot choose the right one.</h2>
+      <p class="body" style="margin-top:1.1rem">
+        Answering a real question means climbing down a ladder, from a human sentence to
+        something a machine can run and a human can check. AI agents can now execute
+        <strong>every rung of it</strong>.
+      </p>
+      <p class="body" style="margin-top:1rem">
+        What they cannot do is tell you that <strong>rung two was the wrong quantity to
+        measure</strong> — that the thing you chose to count was not the thing that matters.
+        That judgement is yours, and it is why this still needs a scientist in the loop.
+      </p>
+      <p class="body" style="margin-top:1rem">
+        Which is exactly why our students need <em>your</em> problem: the judgement only gets
+        trained on questions that are real.
+      </p>
+    </div>
+
+    <figure class="fig rv rv-d1" id="ladderFig">
+      <svg viewBox="0 0 520 330" role="img" aria-labelledby="ladT ladD">
+        <title id="ladT">The translation ladder</title>
+        <desc id="ladD">Five rungs descending from a scientific question, to a measurable
+          quantity, to a machine task, to an objective and metric, to a split and a control.
+          A bracket marks that an AI agent can execute all five. Rung two, the measurable
+          quantity, is highlighted as the one only a human can choose.</desc>
+
+        <!-- agent bracket -->
+        <path d="M470 26 h16 v276 h-16" fill="none" stroke="#a8c8e6" stroke-width="1.5"
+              class="draw" style="--len:320px"/>
+        <text x="498" y="150" font-family="IBM Plex Mono, monospace" font-size="10.5"
+              fill="#0b62b4" letter-spacing="1.5" transform="rotate(90 498 150)"
+              text-anchor="middle" class="fade" style="animation-delay:.9s">AGENT RUNS ALL FIVE</text>
+
+        <g font-family="IBM Plex Sans, sans-serif">
+          <!-- rung 1 -->
+          <g class="pop">
+            <rect x="14" y="18" width="440" height="50" rx="9" fill="#f7f6f3" stroke="#e8e5de"/>
+            <text x="32" y="40" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#6b7a8a">01</text>
+            <text x="62" y="40" font-size="13.5" font-weight="600" fill="#141a24">The scientific question</text>
+            <text x="62" y="57" font-size="12" fill="#41505f">“Does this drug change how the cells look?”</text>
+          </g>
+          <!-- rung 2 — the human one -->
+          <g class="pop" style="animation-delay:.14s">
+            <rect x="14" y="76" width="440" height="50" rx="9" fill="#e4eef8" stroke="#0b62b4" stroke-width="1.6"/>
+            <text x="32" y="98" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#0b62b4">02</text>
+            <text x="62" y="98" font-size="13.5" font-weight="600" fill="#141a24">A measurable quantity</text>
+            <text x="62" y="115" font-size="12" fill="#41505f">mean nuclear area per well, from DAPI</text>
+          </g>
+          <!-- rungs 3-5 -->
+          <g class="pop" style="animation-delay:.26s">
+            <rect x="14" y="134" width="440" height="50" rx="9" fill="#f7f6f3" stroke="#e8e5de"/>
+            <text x="32" y="156" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#6b7a8a">03</text>
+            <text x="62" y="156" font-size="13.5" font-weight="600" fill="#141a24">A machine task</text>
+            <text x="62" y="173" font-size="12" fill="#41505f">segment nuclei → measure → compare to control</text>
+          </g>
+          <g class="pop" style="animation-delay:.36s">
+            <rect x="14" y="192" width="440" height="50" rx="9" fill="#f7f6f3" stroke="#e8e5de"/>
+            <text x="32" y="214" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#6b7a8a">04</text>
+            <text x="62" y="214" font-size="13.5" font-weight="600" fill="#141a24">An objective and a metric</text>
+            <text x="62" y="231" font-size="12" fill="#41505f">effect size + 95% CI, FDR across 84 genes</text>
+          </g>
+          <g class="pop" style="animation-delay:.46s">
+            <rect x="14" y="250" width="440" height="50" rx="9" fill="#f7f6f3" stroke="#e8e5de"/>
+            <text x="32" y="272" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="#6b7a8a">05</text>
+            <text x="62" y="272" font-size="13.5" font-weight="600" fill="#141a24">A split and a control</text>
+            <text x="62" y="289" font-size="12" fill="#41505f">hold out plate 4 · shuffle labels · buffer wells</text>
+          </g>
+        </g>
+
+        <!-- the human callout on rung 2 -->
+        <g class="fade" style="animation-delay:1.1s">
+          <path d="M6 101 h-0" stroke="none"/>
+          <circle cx="8" cy="101" r="4" fill="#0b62b4"/>
+        </g>
+      </svg>
+      <figcaption>Only a person who knows the biology can pick rung 02.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ the procedure ============================ -->
+<section class="pad">
+  <div class="wrap">
+    <div class="head wide rv">
+      <p class="eyebrow">The procedure</p>
+      <h2>Two meetings. Three weeks. One answer.</h2>
+      <p class="body">Everything in blue is time you spend. Everything else happens
+        without you.</p>
+    </div>
+
+    <figure class="fig rv" id="flowFig">
+      <!-- WORKFLOW: kept in sync with portal/templates/_project_workflow.html -->
+      <svg viewBox="0 0 1080 350" role="img" aria-labelledby="flowT flowD">
+        <title id="flowT">How a volunteered project runs, in five steps</title>
+        <desc id="flowD">Step 1, register the project, five minutes. Step 2, meeting one, one
+          hour online, where the student interviews you. Step 3, they build a prototype in under
+          a week. Step 4, meeting two, one hour online, where you say what is wrong. Steps three
+          and four repeat for one or two short rounds. Step 5, hand-over: code, figures and a
+          written report, yours to keep.</desc>
+        <defs>
+          <marker id="fA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+                  orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7fb0dc"/></marker>
+          <marker id="fB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+                  orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#b6ada0"/></marker>
+        </defs>
+
+        <rect x="20" y="8" width="1040" height="30" rx="15" fill="#e4eef8" class="fade"/>
+        <text x="540" y="28" text-anchor="middle" font-family="IBM Plex Sans, sans-serif"
+              font-size="13" font-weight="600" fill="#0b62b4" class="fade" style="animation-delay:.15s">
+          Your total time: two 1-hour meetings — about 2 hours, spread over three weeks
+        </text>
+
+        <g id="flowSteps" font-family="IBM Plex Sans, sans-serif"></g>
+
+        <path d="M 756 240 L 756 272 L 540 272 L 540 240" fill="none" stroke="#b6ada0"
+              stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#fB)"
+              class="fade" style="animation-delay:1.1s"/>
+        <text x="648" y="292" text-anchor="middle" font-family="IBM Plex Sans, sans-serif"
+              font-size="11.5" fill="#6b7a8a" class="fade" style="animation-delay:1.2s">
+          further rounds are optional — by agreement between you and the student</text>
+
+        <text x="540" y="328" text-anchor="middle" font-family="IBM Plex Sans, sans-serif"
+              font-size="13" font-weight="600" fill="#141a24" class="fade" style="animation-delay:1.35s">
+          We match you with a student. If none is free, our AI data scientist runs it — every project gets an answer.
+        </text>
+      </svg>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================ exactly what you do ============================ -->
+<section class="pad plate">
+  <div class="wrap">
+    <div class="head wide rv">
+      <p class="eyebrow">Your part, precisely</p>
+      <h2>Exactly how it goes</h2>
+      <p class="body">No preparation, no slides, no code. Five things, in order — and
+        two of them take an hour.</p>
+    </div>
+
+    <ol class="duties">
+      <li class="duty rv">
+        <span class="n"></span>
+        <div>
+          <div class="top"><h3>Sign up</h3><span class="chip">2 minutes, now</span></div>
+          <p>Not a form — an assistant asks you a few short questions and writes the details
+            down for you. You can attach a sample file there if one is handy, but it is
+            optional and most people do not.</p>
+        </div>
+      </li>
+      <li class="duty rv">
+        <span class="n"></span>
+        <div>
+          <div class="top"><h3>We match you with a student</h3><span class="chip grey">nothing to do</span></div>
+          <p>We pair your problem with a participant on the course and introduce you by email.
+            If no student is free for your project, our AI data scientist takes it on instead —
+            either way, you get an answer.</p>
+        </div>
+      </li>
+      <li class="duty rv">
+        <span class="n"></span>
+        <div>
+          <div class="top"><h3>Meeting 1 — the interview</h3><span class="chip">1 hour · online</span></div>
+          <p>They ask you what you want to find out, how the data was produced, what you have
+            already tried, and what would make you distrust a result. <strong>This is also where
+            you hand the data over</strong> — so come with it ready, or with a way to share it.
+            Recorded for teaching only if you agree.</p>
+        </div>
+      </li>
+      <li class="duty rv">
+        <span class="n"></span>
+        <div>
+          <div class="top"><h3>They build it</h3><span class="chip grey">2–3 days</span></div>
+          <p>An AI agent does the implementation; the student directs it and checks every number.
+            You hear nothing for a couple of days, which is normal.</p>
+        </div>
+      </li>
+      <li class="duty rv">
+        <span class="n"></span>
+        <div>
+          <div class="top"><h3>Meeting 2 — you correct it</h3><span class="chip">1 hour · online</span></div>
+          <p>They show you what they built, and your job is to say what is wrong, what is missing
+            and what to drop. Being told it is wrong is the expected outcome. Further rounds are
+            optional — only if you and the student both want them.</p>
+        </div>
+      </li>
+      <li class="duty rv">
+        <span class="n"></span>
+        <div>
+          <div class="top"><h3>Hand-over</h3><span class="chip grey">nothing to do</span></div>
+          <p>A written report, plus a small analysis app or the code itself — something that runs
+            on your data after the student is gone. Yours to keep, use, ignore or build on.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="note rv" style="margin-top:1.8rem;max-width:62ch">
+      You need no programming and no AI experience. You bring the biology and the judgement
+      about whether an answer is believable — the half of this that cannot be automated.
+    </p>
+  </div>
+</section>
+
+<!-- ============================ why join ============================ -->
+<section class="pad">
+  <div class="wrap">
+    <div class="head wide rv">
+      <p class="eyebrow">Why bother</p>
+      <h2>What you get out of it</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></svg></div>
+        <h3>A working prototype</h3>
+        <p>Code, figures and a pipeline that still runs after the student is gone — plus a
+          short written report.</p>
+      </div>
+      <div class="card rv rv-d1">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M16 10a2 2 0 0 1-2 2H6.8a2 2 0 0 0-1.4.6l-2.2 2.2A.7.7 0 0 1 2 14.3V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/><path d="M20 9a2 2 0 0 1 2 2v10.3a.7.7 0 0 1-1.2.5l-2.2-2.2a2 2 0 0 0-1.4-.6H10a2 2 0 0 1-2-2v-1"/></svg></div>
+        <h3>Someone asking hard questions</h3>
+        <p>An outsider has to ask what you never say out loud. That is often worth as much as
+          the analysis itself.</p>
+      </div>
+      <div class="card rv rv-d2">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M9.9 4.2 12 2l2.1 2.2 2.9-.6.6 2.9L20.8 8l-1.5 2.6 1.5 2.6-2.8 1.5-.6 2.9-2.9-.6L12 19l-2.1-2-2.9.6-.6-2.9L3.6 13.2 5.1 10.6 3.6 8l2.8-1.5.6-2.9z"/></svg></div>
+        <h3>An answer either way</h3>
+        <p>If no student takes your project, our AI data scientist runs it. Nobody who
+          volunteers goes away empty-handed.</p>
+      </div>
+      <div class="card rv rv-d3">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></div>
+        <h3>No cost, no obligation</h3>
+        <p>Free, no claim on your data, results or authorship. Use what they build, or don't.</p>
+      </div>
+    </div>
+
+    <div class="split" style="margin-top:clamp(3rem,6vw,4.5rem)">
+      <div class="rv">
+        <h3 style="font-size:1.35rem">What makes a good project</h3>
+        <ul class="fit" style="margin-top:1.2rem">
+          <li class="y"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>A <strong>real, unanswered question</strong> — not a demo, not something already solved.</span></li>
+          <li class="y"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Data that <strong>exists now</strong> and that you may share. A de-identified or subsampled extract is completely fine.</span></li>
+          <li class="y"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Something a motivated student can move in <strong>under three weeks part-time</strong>. It does not need to be big data.</span></li>
+          <li class="y"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Imaging, omics, screens, clinical tables, sequencing, structures, awkward spreadsheets — all welcome.</span></li>
+          <li class="n"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Data that cannot leave your machine in any form — though tell us anyway, we may be able to arrange around it.</span></li>
+          <li class="n"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg><span>A question you already know the answer to. Nothing for either side to learn.</span></li>
+        </ul>
+      </div>
+
+      <figure class="fig rv rv-d1" id="timelineFig">
+        <svg viewBox="0 0 520 300" role="img" aria-labelledby="tlT tlD">
+          <title id="tlT">Timeline from registration to hand-over</title>
+          <desc id="tlD">Register by 25 September, matched in late September, first meeting in
+            early October, prototype and second meeting during October, hand-over by 23
+            October.</desc>
+          <line x1="46" y1="34" x2="46" y2="266" stroke="#e8e5de" stroke-width="2"
+                class="draw" style="--len:240px"/>
+          <g font-family="IBM Plex Sans, sans-serif">
+            <g class="pop">
+              <circle cx="46" cy="42" r="8" fill="#0b62b4"/>
+              <text x="76" y="38" font-size="14.5" font-weight="600" fill="#141a24">Friday 25 September</text>
+              <text x="76" y="57" font-size="12.5" fill="#41505f">deadline to register a project</text>
+            </g>
+            <g class="pop" style="animation-delay:.12s">
+              <circle cx="46" cy="98" r="6" fill="#fff" stroke="#a8c8e6" stroke-width="2.5"/>
+              <text x="76" y="94" font-size="14.5" font-weight="600" fill="#141a24">Late September</text>
+              <text x="76" y="113" font-size="12.5" fill="#41505f">we match you and introduce you by email</text>
+            </g>
+            <g class="pop" style="animation-delay:.24s">
+              <circle cx="46" cy="154" r="8" fill="#0b62b4"/>
+              <text x="76" y="150" font-size="14.5" font-weight="600" fill="#141a24">Early October</text>
+              <text x="76" y="169" font-size="12.5" fill="#41505f">meeting 1 — the interview · 1 hour</text>
+            </g>
+            <g class="pop" style="animation-delay:.36s">
+              <circle cx="46" cy="210" r="8" fill="#0b62b4"/>
+              <text x="76" y="206" font-size="14.5" font-weight="600" fill="#141a24">Mid October</text>
+              <text x="76" y="225" font-size="12.5" fill="#41505f">meeting 2 — the prototype · 1 hour</text>
+            </g>
+            <g class="pop" style="animation-delay:.48s">
+              <circle cx="46" cy="262" r="6" fill="#fff" stroke="#0f7d78" stroke-width="2.5"/>
+              <text x="76" y="258" font-size="14.5" font-weight="600" fill="#141a24">By 23 October</text>
+              <text x="76" y="277" font-size="12.5" fill="#0f7d78">hand-over — code, figures, report</text>
+            </g>
+          </g>
+        </svg>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ every project answered ============================ -->
+<section class="pad deep">
+  <div class="wrap split rev">
+    <figure class="fig rv" id="agentFig">
+      <svg viewBox="0 0 480 260" role="img" aria-labelledby="agT agD">
+        <title id="agT">Two routes, one promise</title>
+        <desc id="agD">A registered project goes either to a student or, if none is free, to the
+          course's AI data scientist. Both routes converge on the same hand-over, checked by the
+          teaching team.</desc>
+        <g font-family="IBM Plex Sans, sans-serif">
+          <g class="pop">
+            <rect x="10" y="104" width="120" height="52" rx="11" fill="rgba(238,242,247,.08)" stroke="rgba(238,242,247,.24)"/>
+            <text x="70" y="127" text-anchor="middle" font-size="13" font-weight="600" fill="#eef2f7">Your project</text>
+            <text x="70" y="145" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="rgba(238,242,247,.55)">REGISTERED</text>
+          </g>
+          <path d="M134 122 C 168 122, 168 66, 200 66" fill="none" stroke="#7fc0ff" stroke-width="2" class="draw" style="--len:120px;animation-delay:.3s"/>
+          <path d="M134 138 C 168 138, 168 194, 200 194" fill="none" stroke="#b8760c" stroke-width="2" stroke-dasharray="4 4" class="draw" style="--len:120px;animation-delay:.3s"/>
+          <g class="pop" style="animation-delay:.8s">
+            <rect x="200" y="40" width="150" height="52" rx="11" fill="rgba(127,192,255,.14)" stroke="#7fc0ff"/>
+            <text x="275" y="63" text-anchor="middle" font-size="13" font-weight="600" fill="#eef2f7">A student</text>
+            <text x="275" y="80" text-anchor="middle" font-size="11" fill="rgba(238,242,247,.62)">the normal route</text>
+          </g>
+          <g class="pop" style="animation-delay:.92s">
+            <rect x="200" y="168" width="150" height="52" rx="11" fill="rgba(184,118,12,.14)" stroke="#b8760c"/>
+            <text x="275" y="191" text-anchor="middle" font-size="13" font-weight="600" fill="#eef2f7">AI data scientist</text>
+            <text x="275" y="208" text-anchor="middle" font-size="11" fill="rgba(238,242,247,.62)">if no student is free</text>
+          </g>
+          <path d="M354 66 C 386 66, 386 122, 412 122" fill="none" stroke="#7fc0ff" stroke-width="2" class="draw" style="--len:110px;animation-delay:1.1s"/>
+          <path d="M354 194 C 386 194, 386 138, 412 138" fill="none" stroke="#b8760c" stroke-width="2" stroke-dasharray="4 4" class="draw" style="--len:110px;animation-delay:1.1s"/>
+          <g class="pop" style="animation-delay:1.5s">
+            <rect x="412" y="98" width="62" height="64" rx="11" fill="#0f7d78"/>
+            <text x="443" y="124" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">Your</text>
+            <text x="443" y="140" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">answer</text>
+          </g>
+          <text x="240" y="246" text-anchor="middle" font-family="IBM Plex Mono, monospace"
+                font-size="10" fill="rgba(238,242,247,.5)" class="fade" style="animation-delay:1.8s">
+            BOTH ROUTES CHECKED BY THE TEACHING TEAM</text>
+        </g>
+      </svg>
+    </figure>
+
+    <div class="rv rv-d1">
+      <p class="eyebrow">Our side of the bargain</p>
+      <h2>Every project gets an answer</h2>
+      <p class="lead" style="margin-top:1.2rem">
+        We would rather have more projects than students. If nobody takes yours, our AI data
+        scientist runs it — it interviews you in the same meeting, does the same work, and a
+        member of the teaching team checks everything before it reaches you.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>2 × 1 h</b><span>meetings, online</span></div>
+        <div class="stat"><b>~3 weeks</b><span>start to hand-over</span></div>
+        <div class="stat"><b>0 kr</b><span>and no obligation</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ final CTA ============================ -->
+<section class="pad final" id="join">
+  <div class="wrap rv">
+    <p class="eyebrow">Register</p>
+    <h2>Hand us the question you never had time to answer</h2>
+    <p class="lead">
+      Signing up takes about two minutes and gives you a private project page — upload your
+      sample file there, watch the work move through its stages, and raise anything that comes
+      up while it runs.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-p" href="https://ddls-portal-6228434e.svc.hypha.aicell.io/data-owner">
+        Sign up a project
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <p class="note" style="margin-top:1.6rem;color:rgba(238,242,247,.62)">
+      Not sure yet? The assistant answers questions too — ask it there before you commit
+      to anything.
+    </p>
+    <p class="note" style="margin-top:1.4rem;color:rgba(238,242,247,.5)">
+      Deadline: <strong style="color:#7fc0ff">Friday 25 September 2026</strong> ·
+      <a href="mailto:ddls-course@scilifelab.se?subject=DDLS%202026%20—%20question%20about%20volunteering%20a%20project"
+         style="color:rgba(238,242,247,.62);text-decoration:underline">contact the course team</a>
+    </p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Data-Driven Life Sciences · SK2538 / FSK3538 · KTH Royal Institute of Technology &amp; SciLifeLab</span>
+    <span><a href="https://ddls.aicell.io">ddls.aicell.io</a> · <a href="mailto:ddls-course@scilifelab.se">ddls-course@scilifelab.se</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- hero dot field: a dataset nobody has read ------------------------- */
+  var dots = document.getElementById("dots");
+  if (dots) {
+    var frag = "";
+    for (var r = 0; r < 5; r++)
+      for (var c = 0; c < 8; c++)
+        frag += '<circle cx="' + (32 + c * 17) + '" cy="' + (128 + r * 17) + '" r="3.1"/>';
+    dots.innerHTML = frag;
+  }
+
+  /* ---- workflow steps, built from data so the copy lives in one place ---- */
+  var STEPS = [
+    ["1", "Sign up", "2 minutes",
+     ["Tell us the question.", "Attach a sample file", "now if you like."]],
+    ["2", "Meeting 1", "1 hour · online",
+     ["They interview you —", "and this is where you", "hand the data over."]],
+    ["3", "They build it", "2\u20133 days",
+     ["An AI agent does the", "work; a person checks", "every number."]],
+    ["4", "Meeting 2", "1 hour · online",
+     ["You say what is wrong.", "More rounds only if", "you both want them."]],
+    ["5", "Hand-over", "yours to keep",
+     ["A written report and", "an analysis app you", "can run yourself."]]
+  ];
+  var host = document.getElementById("flowSteps");
+  if (host) {
+    var out = "";
+    STEPS.forEach(function (s, i) {
+      var x = 20 + i * 216, last = i === STEPS.length - 1, d = 0.25 + i * 0.11;
+      var paid = s[2].indexOf("hour") >= 0;
+      out +=
+        '<g class="pop" style="animation-delay:' + d + 's">' +
+        '<rect x="' + x + '" y="78" width="176" height="152" rx="14" fill="#fff" stroke="' +
+          (last ? "#0b62b4" : "#d9d6cf") + '" stroke-width="' + (last ? 2 : 1) + '"/>' +
+        '<circle cx="' + (x + 26) + '" cy="78" r="16" fill="' + (last ? "#0b62b4" : "#141a24") + '"/>' +
+        '<text x="' + (x + 26) + '" y="83" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">' + s[0] + '</text>' +
+        '<text x="' + (x + 16) + '" y="121" font-size="14.5" font-weight="600" fill="#141a24" font-family="Source Serif 4, Georgia, serif">' + s[1] + '</text>' +
+        '<rect x="' + (x + 15) + '" y="131" width="' + (9 + s[2].length * 5.7).toFixed(1) + '" height="19" rx="9.5" fill="' + (paid ? "#e4eef8" : "#f2f0eb") + '"/>' +
+        '<text x="' + (x + 19.5) + '" y="144.5" font-size="10.5" font-weight="500" fill="' + (paid ? "#0b62b4" : "#6b7a8a") + '">' + s[2] + '</text>' +
+        s[3].map(function (line, j) {
+          return '<text x="' + (x + 16) + '" y="' + (172 + j * 16) + '" font-size="11.5" fill="#41505f">' + line + '</text>';
+        }).join("") +
+        (last ? "" : '<line x1="' + (x + 182) + '" y1="154" x2="' + (x + 210) + '" y2="154" stroke="#7fb0dc" stroke-width="2" marker-end="url(#fA)"/>') +
+        '</g>';
+    });
+    host.innerHTML = out;
+  }
+
+  /* ---- reveal on scroll -------------------------------------------------- */
+  var targets = document.querySelectorAll(".rv");
+  if (reduce || !("IntersectionObserver" in window)) {
+    targets.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
+    targets.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---- sticky bar appears once the hero is behind you -------------------- */
+  var bar = document.getElementById("bar"), hero = document.querySelector(".hero");
+  if (bar && hero && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (e) {
+      bar.classList.toggle("on", !e[0].isIntersecting);
+    }, { threshold: 0 }).observe(hero);
+  }
+})();
+</script>
+</body>
+</html>

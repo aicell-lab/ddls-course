@@ -8,8 +8,9 @@ Do you have a dataset sitting on a drive and a question about it you have never 
 answer?
 
 We are looking for **around 25 researchers** — at SciLifeLab, KTH and across the Swedish
-life-science community — to volunteer that question to a student on the master's course
-**Data-Driven Life Sciences** (SK2538 / FSK3538).
+life-science community — to volunteer that question to someone on the course
+**Data-Driven Life Sciences** (SK2538 / FSK3538), which runs at KTH with SciLifeLab for the
+DDLS community: master's students, PhD students, postdocs and researchers.
 
 It costs you **two 1-hour meetings**. You get a working prototype on your data and a written
 report back.
@@ -36,12 +37,12 @@ student needs a client. That is what we are asking you to be. We describe the ro
 ## What we ask, and what you get
 
 **How it goes:** sign up in about two minutes — an assistant asks a few questions, there is no
-form · we match you with a student · a 1-hour meeting where they interview you, **and where you
+form · we match you with a participant · a 1-hour meeting where they interview you, **and where you
 hand the data over** · they build it over two or three days · a second 1-hour meeting where you
 say what is wrong · hand-over. Further rounds only if you and the student both want them.
 
-**You get** a written report and a small analysis app or code that runs on your data after the
-student is gone, and an outsider asking careful questions about your data — which is often worth as much
+**You get** a written report and a small analysis app or code that runs on your data after they
+are gone, and an outsider asking careful questions about your data — which is often worth as much
 as the analysis. No cost, no obligation, and no claim on your data or results.
 
 **You need no programming or AI experience.** You bring the biology and the judgement about
@@ -60,7 +61,7 @@ whether an answer is believable.
 
 ## Every project gets an answer
 
-We would rather have more projects than students. If nobody takes yours, **our AI data scientist
+We would rather have more projects than people. If nobody is free to take yours, **our AI data scientist
 runs it instead** — it interviews you in the same meeting, does the same work, and a member of
 the teaching team checks everything before it reaches you. Nobody who volunteers goes away
 empty-handed.

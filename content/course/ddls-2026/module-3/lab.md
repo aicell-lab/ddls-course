@@ -768,7 +768,7 @@ building it *deployable* is the point: this is the artifact you hand a client.
 The dashboard shows the result; the **report** is where you *explain and defend* it. This is the
 document the owner (and, in the final project, a real client) actually reads to decide whether to trust
 you — so this week we ask for more than Week 2's paragraph. Write a `report.md` (a page or two; the
-agent can draft it from your `summary.md` and results, then **you** fix every line) with this structure:
+agent can draft it from your results and the analysis transcript, then **you** fix every line) with this structure:
 
 1. **The question** — one or two sentences, in the owner's terms: the decision that hangs on this, and
    who acts on it. If a reader can't tell what changes because of your answer, start here again.

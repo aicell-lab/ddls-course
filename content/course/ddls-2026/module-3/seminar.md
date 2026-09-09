@@ -168,12 +168,12 @@ loads *your* deck on the shared screen — so it has to stand on its own. Two ru
 > left / text right, a running footer with your headline metric). A deck that looks like *yours* is
 > part of owning the work.
 
-Your agent can build this from your `summary.md` — **but hand it your style**, not the default. Fill
+Your agent can build this from your `report.md` — **but hand it your style**, not the default. Fill
 in the `STYLE:` line, then paste into **Pi** (adjust file names):
 
 ```text
 Build a single self-contained slides.html presentation for a 7-minute seminar, using Reveal.js
-loaded from a CDN. Content comes from summary.md and my results/. Make ~6 slides:
+loaded from a CDN. Content comes from report.md and my results/. Make ~6 slides:
 (1) title + the question behind the question, and what the owner already tried; (2) what I built —
 interview → AGENTS.md/spec.md → which method and why; (3) the honest baseline-vs-model panel with the
 real margin; (4) the trap I checked and what it did to the number; (5) the interpretable shortlist and
@@ -211,7 +211,7 @@ you own the result.
 > Codex, Gemini CLI — not the plain Pi/Reveal.js path above). Two that work well:
 >
 > - **[frontend-slides](https://github.com/zarazhangrui/frontend-slides)** — *generates* a whole
->   distinctive deck from your `summary.md`, with a menu of styles (built to avoid the generic
+>   distinctive deck from your `report.md`, with a menu of styles (built to avoid the generic
 >   "AI-slop" look, which is exactly the diversity we want). In Claude Code:
 >   `/plugin marketplace add https://github.com/zarazhangrui/frontend-slides` then
 >   `/plugin install frontend-slides@frontend-slides`; or point any coding agent at the repo's

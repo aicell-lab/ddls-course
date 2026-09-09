@@ -121,7 +121,19 @@ strong{font-weight:600;color:var(--ink)}
 .deal span{display:block;margin-top:.32rem;font:400 .68rem/1.3 var(--mono);
            letter-spacing:.02em;color:var(--on-deep-2)}
 @media(max-width:420px){.deal li{padding:0 .8rem}.deal span{font-size:.62rem}}
-.trust{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.5rem 1.15rem;max-width:46ch;
+.deadline{display:inline-flex;align-items:center;gap:.55rem;margin:1.9rem 0 0;
+          border:1px solid rgba(184,118,12,.55);background:rgba(184,118,12,.14);
+          border-radius:99px;padding:.5rem .95rem;font-size:.9rem;color:var(--on-deep);
+          opacity:0;transform:translateY(18px);
+          animation:rise .8s cubic-bezier(.2,.7,.3,1) .56s forwards}
+.deadline strong{color:#ffc978;font-weight:600}
+.dl-sub{color:var(--on-deep-2);font-size:.84rem}
+.dl-dot{width:7px;height:7px;border-radius:50%;background:#f0a53a;flex:none}
+.dl-dot::after{content:"";display:block;width:7px;height:7px;border-radius:50%;
+               background:#f0a53a;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.7}70%{transform:scale(3.2);opacity:0}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.dl-dot::after{animation:none}}
+.trust{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.5rem 1.15rem;max-width:46ch;
        font:400 .78rem/1.55 var(--mono);color:var(--on-deep-2)}
 .trust i{font-style:normal;color:var(--blue-bright)}
 .glow{position:absolute;width:min(70vw,760px);aspect-ratio:1;border-radius:50%;
@@ -327,7 +339,7 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
 <!-- ============================ sticky bar ============================ -->
 <div class="bar" id="bar">
   <div class="wrap">
-    <div><b>Data-Driven Life Sciences</b> <span class="sub">· <strong style="color:var(--blue);font-weight:600">2 hours of your time, an answer in 3 weeks</strong></span></div>
+    <div><b>Data-Driven Life Sciences</b> <span class="sub">· <strong style="color:var(--blue);font-weight:600">closes Fri 25 Sept</strong></span></div>
     <a class="btn btn-p btn-sm" href="#join">Sign up a project</a>
   </div>
 </div>
@@ -362,6 +374,11 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
         </a>
         <a class="btn btn-g" href="#how">How it works</a>
       </div>
+      <p class="deadline">
+        <span class="dl-dot"></span>
+        Sign-ups close <strong>Friday 25 September 2026</strong>
+        <span class="dl-sub">— about two weeks</span>
+      </p>
       <div class="trust">
         <span><i>◆</i> Every project gets an answer — if nobody is free to take yours, our AI
           data scientist does</span>
@@ -1277,7 +1294,7 @@ figcaption{margin-top:.85rem;font:400 .82rem/1.5 var(--mono);color:var(--ink-3)}
       to anything.
     </p>
     <p class="note" style="margin-top:1.4rem;color:rgba(238,242,247,.5)">
-      Deadline: <strong style="color:#7fc0ff">Friday 25 September 2026</strong> ·
+      Sign-ups close <strong style="color:#ffc978">Friday 25 September 2026</strong> ·
       <a href="mailto:ddls-course@scilifelab.se?subject=DDLS%202026%20—%20question%20about%20volunteering%20a%20project"
          style="color:rgba(238,242,247,.62);text-decoration:underline">contact the course team</a>
     </p>

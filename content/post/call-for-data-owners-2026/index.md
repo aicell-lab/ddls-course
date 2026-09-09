@@ -15,6 +15,8 @@ DDLS community: master's students, PhD students, postdocs and researchers.
 It costs you **two 1-hour meetings**. You get a working prototype on your data and a written
 report back.
 
+**Sign-ups close Friday 25 September 2026.**
+
 {{< cta cta_text="Register a project →" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/signup-projects" >}}
 
 ## How it runs

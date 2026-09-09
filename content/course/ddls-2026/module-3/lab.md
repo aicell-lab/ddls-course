@@ -893,26 +893,22 @@ Presenters are **drawn at random**, so everyone prepares. On Thursday (not squee
 ## Looking ahead: start lining up a real data owner for your final project
 
 {{% callout note %}}
-**Your final project needs a *real* data owner — start looking now.** The labs use simulated owners;
-the final project does not. You'll take on a **real researcher's** biological question (someone else's,
-never your own) and hand back an answer they can use. The strongest projects come from owners *you* help
-us find — so get your team ready and start asking around now, before the pool fills.
+**Your final project needs a *real* data owner — start lining one up now.** The labs use simulated
+owners; the final project does not. You'll take on a **real researcher's** biological question
+(someone else's, never your own) and hand back an answer they can use. The strongest projects come
+from owners *you* help us find, so get your team together and start asking around this week — don't
+wait for the pool to fill.
 
-**What you're offering a researcher** (use these numbers when you invite one): about **2 hours of their
-time over ~3 weeks** — a **first 1-hour meeting** where they hand over the data and explain the question,
-you **build for 2–3 days**, then a **second 1-hour meeting** where they tell you what's wrong; further
-rounds are optional by agreement. They get back a **short report plus a runnable app / analysis code**.
-**Every project gets an answer** — if nobody on the course is free to take one, the course's own AI
-data scientist does.
+**Read the final-project page now and start planning** — it has the whole format, what you're
+offering a researcher, the deliverables and the dates. Know someone with a biological question and
+some data? Point them there, or use your **personal invite link** (on your portal dashboard,
+`/signup-projects?ref=<your-code>`) — a project that signs up through your link gives **you first
+claim** on it.
 
-**Know someone with a biological question and some data?** Send them the call, or use your **personal
-invite link** — on your portal dashboard as `/signup-projects?ref=<your-code>`. A project that signs
-up through your link gives **you first claim** on it.
+**Deadline — end of Week 5 (Friday 25 September 2026):** you must have **found your data owner and
+registered your project** by then to take part. Don't leave it late — start this week.
 
-{{< cta cta_text="See the call for projects" cta_link="https://ddls.aicell.io/call-for-projects-2026/" >}}
-
-**Owner sign-up deadline: Friday 25 September 2026.** Full final-project instructions (format,
-deliverables, dates) will follow — this is your heads-up to line a data owner up early.
+{{< cta cta_text="Read the final-project brief" cta_link="https://ddls.aicell.io/course/ddls-2026/final-project/" >}}
 {{% /callout %}}
 
 ---

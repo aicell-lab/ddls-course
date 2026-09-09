@@ -11,7 +11,10 @@ weight: 8
 - **Course period:** 24 August – 23 October 2026 (Autumn 2026, Period 1, 50% pace)
 - **First lecture:** Tuesday 25 August 2026, 10:00–12:00
 - **Teaching period (6 modules):** 25 August – 2 October 2026
-- **Final project period:** *to be announced*
+- **Final project period:** late September – **23 October 2026** — find a client now, see the
+  [Final Project](../final-project/) page
+- **Deadline for researchers to sign up a project:** Friday 25 September 2026 —
+  [the public call](/call-for-projects-2026/)
 - **Oral presentations (Master's students):** *to be announced*
 
 All live sessions are held online on the **same Zoom meeting** all term: <https://kth-se.zoom.us/j/66475726850>

@@ -10,13 +10,14 @@ course_module: "true"
 
 **Module week**: Week 38 (starting 15 September 2026)
 
-**Lecture to be confirmed — released online at the start of the module week if available.**
-The computer lab (Wednesday 13:00–17:00) and seminar (Friday 10:00–12:00) are held
-live over Zoom.
+#### Guest lecturer: Patrick Bryant (Assistant Professor at Stockholm University & DDLS Fellow)
+
+**Recorded lecture — now available online.** Watch it in the course portal. The computer lab
+(Wednesday 13:00–17:00) and seminar (Friday 10:00–12:00) are held live over Zoom.
+
+{{< cta cta_text="Watch the recorded lecture" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/lectures" >}}
 
 Module 4 emphasizes structural biology, covering protein structure prediction, analysis, and design. Students gain hands-on experience with AlphaFold-style workflows and molecular modeling, integrated into their AI agents.
-
-#### Guest lecturer (to be confirmed): Patrick Bryant (Assistant Professor at Stockholm University & DDLS Fellow)
 
 Patrick Bryant's research seeks to answer questions about the evolution of proteins and how this information can be used to create a new range of AI tools. [Google Scholar](https://scholar.google.com/citations?user=KPlaFQQAAAAJ&hl=sv&oi=ao)
 

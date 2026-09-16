@@ -441,22 +441,21 @@ On Windows PowerShell: `Get-Content "$env:USERPROFILE\.pi\agent\models.json"`.
 
 </details>
 
-**4. Save your keys to a `.env` file.** Generate a key in the portal (**Generate API key** on your
-dashboard). **The portal shows the key only once**, so save it immediately. Inside your `ddls-week4`
-folder, create a file called `.env` with two lines — your **portal API key** (for Pi) and the
-**fold key** (for the GPU fold service; copy it from the "Fold a structure on our GPU" panel on your
-week page):
+**4. Save your portal API key to a `.env` file.** Generate a key in the portal (**Generate API key** on
+your dashboard). **The portal shows the key only once**, so save it immediately. Inside your `ddls-week4`
+folder, create a file called `.env` with a single line:
 
 ```
 DDLS_API_KEY=paste-your-portal-key-here
-DDLS_FOLD_KEY=paste-the-fold-key-here
 ```
 
-> **Key hygiene.** Treat both keys like passwords: never commit or share them, and **never paste a key
+> **Key hygiene.** Treat this key like a password: never commit or share it, and **never paste a key
 > into `AGENTS.md`** (that file is committed and pushed). Keys live only in `.env` — the git setup you
-> hand Pi in Part 3 puts `.env` in `.gitignore`, so it stays out of every commit; check anyway. On
-> Windows, create the file with `Set-Content .env "DDLS_API_KEY=…`nDDLS_FOLD_KEY=…"` (File Explorer
-> refuses dot-files).
+> hand Pi in Part 3 puts `.env` in `.gitignore`. On Windows, create the file with
+> `Set-Content .env "DDLS_API_KEY=paste-your-portal-key-here"` (File Explorer refuses dot-files).
+>
+> *(You don't add the fold-service key here. In Part 3 you paste **one instruction** from the portal's
+> "Fold a structure on our GPU" panel to Pi, and it adds `DDLS_FOLD_KEY` to `.env` for you.)*
 
 **5. Load the key before every Pi run** — each time you open a new terminal:
 
@@ -524,14 +523,12 @@ matches the claim on each and compare. Neither needs a GPU on *your* laptop.
   complex**. You must fold **that exact sequence** on our service and read *its* confidence, then compare
   it against the database model. The course hosts a small **key-gated ESMFold** service on our own GPUs.
 
-  - **How you use it — key in `.env`, instruction in `AGENTS.md`.** The portal's **"Fold a structure on
-    our GPU"** panel gives you two things to copy: the **`DDLS_FOLD_KEY=…`** line for your **`.env`**
-    (gitignored — the key never touches a committed file), and a **tokenless instruction** for your
-    **`AGENTS.md`** that points Pi at `…/skill.md` and tells it to read the key from `$DDLS_FOLD_KEY`.
-    You drop the instruction into `AGENTS.md` when you build it in
-    **[Part 3, Step 2](#step-2--draft-agentsmd-and-specmd-with-pi)** — your agent's memory, so Pi knows
-    how to fold all lab. After that, just tell Pi *"fold this on the course service and read the
-    pLDDT/PAE"* whenever a sequence isn't in the AlphaFold DB.
+  - **How you use it — one instruction, and Pi sets it up.** The portal's **"Fold a structure on our
+    GPU"** panel gives you **one instruction to copy**. Paste it to Pi (in the chat, *not* into a file)
+    when you set up in **[Part 3, Step 2](#step-2--draft-agentsmd-and-specmd-with-pi)** — Pi stores the
+    fold key in your `.env` (gitignored, never committed), and notes how to fold in `AGENTS.md` (no key
+    in it). After that, just tell Pi *"fold this on the course service and read the pLDDT/PAE"* whenever
+    a sequence isn't in the AlphaFold DB. You never edit `.env` or `AGENTS.md` by hand.
   - **Limits & reliability.** **≤ 400 residues total, ≤ 2 chains, one fold at a time, 40 folds/hour**,
     and a fold takes **~1–5 seconds**. **Folds are FREE** — they don't touch your portal budget. If a
     call comes back **HTTP 429 or 503 with a `Retry-After` header**, the service is **up** but busy or
@@ -596,11 +593,11 @@ them. Nothing else.
 
 ### Step 2 — Draft `AGENTS.md` and `spec.md` *with* Pi
 
-> **First, grab your fold-service access.** Open the **"Fold a structure on our GPU"** panel on your
-> week page in the portal (click to reveal). It gives you two copies: the **`DDLS_FOLD_KEY=…`** line
-> goes in your **`.env`** (you added it in Part 2 — the key never enters a committed file), and the
-> **tokenless instruction** goes in the `<PASTE the instruction…>` slot in the prompt below, so it lands
-> in your `AGENTS.md`. Pi then reads the key from `$DDLS_FOLD_KEY` and knows how to fold all lab.
+> **Folding is one extra instruction — Pi does it, you don't touch files.** Right after Pi drafts your
+> `AGENTS.md` / `spec.md` below, open the **"Fold a structure on our GPU"** panel in the portal, copy the
+> **single instruction**, and paste it to Pi (in the chat). Pi adds `DDLS_FOLD_KEY` to your `.env`
+> (gitignored) and appends a short fold note to `AGENTS.md` — no key in `AGENTS.md`, nothing for you to
+> edit by hand.
 
 Launch Pi and have it read the transcript and the files and draft both, so you start from a real draft,
 not a blank page:
@@ -615,9 +612,7 @@ what the transcript and the files actually show, write two files, then stop — 
 1. AGENTS.md — how you operate here: the environment (use uv — create it with `uv venv` and run all
    Python with `uv run`, which works the same on every OS), where the data lives and how to load a
    structure (pLDDT is in the B-factor column of the mmCIF; PAE is in the JSON), where to write
-   outputs (results/), the fold-service instruction <PASTE the instruction you copied from the portal's
-   "Fold a structure on our GPU" panel here> so you know how to fold sequences that aren't in the AlphaFold DB,
-   a **Version control** rule (this folder is a git repo — commit the current state *before* any big
+   outputs (results/), a **Version control** rule (this folder is a git repo — commit the current state *before* any big
    change, and commit again whenever something starts working, with short clear messages), and the rule
    that you never report an answer about a structure without first reporting the confidence that matches
    the claim AND confirming the model is actually this protein.

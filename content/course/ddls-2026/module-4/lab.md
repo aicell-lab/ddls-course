@@ -33,8 +33,9 @@ skill being examined.
 > gateway config is repeated in **Part 2** below so you can follow it standalone.
 
 > **Opening walkthrough slides.** We open the lab with a short slide walkthrough of the whole workflow —
-> you can re-open it any time as a recap: **[Lab 4 walkthrough deck](/presentation/ddls-2026-module-4/)**
-> (advance with the ← / → arrow keys).
+> you can re-open it any time as a recap (advance with the ← / → arrow keys):
+
+{{< cta cta_text="Open the Lab 4 walkthrough slides" cta_link="/presentation/ddls-2026-module-4/" >}}
 
 {{< toc >}}
 

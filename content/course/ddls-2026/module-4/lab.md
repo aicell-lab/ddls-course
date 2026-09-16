@@ -523,8 +523,9 @@ matches the claim on each and compare. Neither needs a GPU on *your* laptop.
   complex**. You must fold **that exact sequence** on our service and read *its* confidence, then compare
   it against the database model. The course hosts a small **key-gated ESMFold** service on our own GPUs.
 
-  - **How you use it — one instruction, and Pi sets it up.** The portal's **"Fold a structure on our
-    GPU"** panel gives you **one instruction to copy**. Paste it to Pi (in the chat, *not* into a file)
+  - **How you use it — one instruction, and Pi sets it up.** On your **week page in the portal, just
+    above the interview chat window**, there's a collapsed card titled **"Fold a structure on our GPU ·
+    free"** — **click it to expand**, and it gives you **one instruction to copy**. Paste it to Pi (in the chat, *not* into a file)
     when you set up in **[Part 3, Step 2](#step-2--draft-agentsmd-and-specmd-with-pi)** — Pi stores the
     fold key in your `.env` (gitignored, never committed), and notes how to fold in `AGENTS.md` (no key
     in it). After that, just tell Pi *"fold this on the course service and read the pLDDT/PAE"* whenever
@@ -594,10 +595,11 @@ them. Nothing else.
 ### Step 2 — Draft `AGENTS.md` and `spec.md` *with* Pi
 
 > **Folding is one extra instruction — Pi does it, you don't touch files.** Right after Pi drafts your
-> `AGENTS.md` / `spec.md` below, open the **"Fold a structure on our GPU"** panel in the portal, copy the
-> **single instruction**, and paste it to Pi (in the chat). Pi adds `DDLS_FOLD_KEY` to your `.env`
-> (gitignored) and appends a short fold note to `AGENTS.md` — no key in `AGENTS.md`, nothing for you to
-> edit by hand.
+> `AGENTS.md` / `spec.md` below, go to your **week page in the portal** and find the collapsed card
+> **"Fold a structure on our GPU · free"** — it sits **right above the interview chat window**. Click it
+> to expand, **Copy** the single instruction, and paste it to Pi (in the chat). Pi adds `DDLS_FOLD_KEY`
+> to your `.env` (gitignored) and appends a short fold note to `AGENTS.md` — no key in `AGENTS.md`,
+> nothing for you to edit by hand.
 
 Launch Pi and have it read the transcript and the files and draft both, so you start from a real draft,
 not a blank page:

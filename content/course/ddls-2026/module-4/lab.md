@@ -517,13 +517,13 @@ matches the claim on each and compare. Neither needs a GPU on *your* laptop.
   and **everything you need is a single URL**.
 
   - **Reveal it, then let your agent remember it.** On your week page in the portal, open the collapsed
-    **"Fold a structure on our GPU"** panel (click to reveal) and press **Copy skill** — it copies one
-    `/skill.md?token=…` URL that already carries your key *and* the whole API (endpoint, body, limits).
-    **Grab it when you build your `AGENTS.md` (Part 3, Step 2)** and paste it in there — `AGENTS.md` is
-    your agent's memory, so this is exactly the kind of thing to record once so Pi knows how to fold for
-    the rest of the lab. After that, whenever a sequence isn't in the AlphaFold DB, just tell Pi *"fold
-    this on the course service and read the pLDDT/PAE"* — it reads the URL and does the rest. You never
-    hand-write a request.
+    **"Fold a structure on our GPU"** panel (click to reveal) and press **Copy** — it copies a ready-made
+    **instruction with your key embedded** (a sentence like *"To fold a sequence that isn't in the
+    AlphaFold DB, read the fold-service instructions at …/skill.md?token=… and follow them"*), not a bare
+    URL. **Paste that into your `AGENTS.md` when you build it (Part 3, Step 2)** — `AGENTS.md` is your
+    agent's memory, so recording it once means Pi knows how to fold for the rest of the lab — or simply
+    give it to Pi when you first set it up. After that, whenever a sequence isn't in the AlphaFold DB,
+    just tell Pi *"fold this on the course service and read the pLDDT/PAE"* and it does the rest.
   - **Limits & reliability.** **≤ 400 residues total, ≤ 2 chains, one fold at a time, 40 folds/hour**,
     and a fold takes **~1–5 seconds**. **Folds are FREE** — they don't touch your portal budget. If a
     call comes back **HTTP 429 or 503 with a `Retry-After` header**, the service is **up** but busy or
@@ -599,8 +599,8 @@ what the transcript and the files actually show, write two files, then stop — 
 1. AGENTS.md — how you operate here: the environment (use uv — create it with `uv venv` and run all
    Python with `uv run`, which works the same on every OS), where the data lives and how to load a
    structure (pLDDT is in the B-factor column of the mmCIF; PAE is in the JSON), where to write
-   outputs (results/), the fold-service skill URL <PASTE the "Copy skill" URL from the portal's "Fold a
-   structure on our GPU" panel here> so you know how to fold sequences that aren't in the AlphaFold DB,
+   outputs (results/), the fold-service instruction <PASTE the instruction you copied from the portal's
+   "Fold a structure on our GPU" panel here> so you know how to fold sequences that aren't in the AlphaFold DB,
    a **Version control** rule (this folder is a git repo — commit the current state *before* any big
    change, and commit again whenever something starts working, with short clear messages), and the rule
    that you never report an answer about a structure without first reporting the confidence that matches
@@ -616,7 +616,7 @@ Then give me a 3-line summary of what you wrote.
 
 - **`AGENTS.md`** is the brief loaded every turn — and your agent's **memory** for anything it should
   know all lab: the **GOAL** in a sentence or two, **where the data lives and how to load a structure**,
-  **the fold-service skill URL** you copied from the portal (so Pi always knows how to fold), the
+  **the fold-service instruction** you copied from the portal (so Pi always knows how to fold), the
   **MUST-NOTs** ("never report a fold as solid without the
   per-residue confidence there", "never read a binding interface off a model without the interface
   error", "confirm the model's sequence matches the owner's construct first"), the **Version control

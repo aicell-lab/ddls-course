@@ -180,23 +180,32 @@ loads *your* deck on the shared screen — so it has to stand on its own. Two ru
 > this as a style reference"* — a concrete example steers the look far better than adjectives. The goal
 > is to **raise the quality and make it distinctly yours**, not just fill six slides.
 
-Your agent can build this from your `report.md` — **but hand it your style**, not the default. Fill in
-the `STYLE:` line, then paste into **Pi** (adjust file names):
+Your agent can build this from your `report.md` — **but hand it your style**, not the default. **Make
+the 3D structure a live, spinning viewer** embedded right in the deck (3Dmol.js, coloured by pLDDT) —
+a rotating model reads far better on screen than a static screenshot, and it's the centrepiece of your
+talk. Fill in the `STYLE:` line, then paste into **Pi** (adjust file names):
 
 ```text
 Build a single self-contained slides.html presentation for a 7-minute seminar, using Reveal.js loaded
 from a CDN. Content comes from report.md and my results/. Make ~6 slides:
 (1) title + the question behind the question, and which part of the model the owner was relying on;
 (2) what I built — interview → AGENTS.md/spec.md → how I read the structure and which confidence the
-claim needed; (3) the structure coloured by pLDDT plus the confidence that matches the claim
-(per-residue for a region, or the interface PAE for a binding claim); (4) the trap I checked and what it
+claim needed; (3) a LIVE, auto-rotating 3D viewer of the structure embedded in the slide (3Dmol.js from
+a CDN), coloured by pLDDT with the residues the owner cares about highlighted, next to the confidence
+that matches the claim (a per-residue pLDDT track for a region, or the interface PAE heatmap for a
+binding claim); (4) the trap I checked and what it
 did to the answer; (5) the honest answer — the residues they can trust, or why the model doesn't support
 the claim; (6) limitations + what I'd do with another week + my AI-use disclosure (which agent did what,
 and what I checked myself).
 STYLE: <describe your look — mood, 2–3 colours, font pairing, layout habit. Make it distinctive, not a
 stock template.>
 Embed every figure directly in the HTML (inline SVG or a base64 data URI) — the file must work with NO
-other files next to it. Slides must advance with the left/right arrow keys. Output only slides.html.
+other files next to it. For the 3D viewer on slide 3: load 3Dmol.js from a CDN and paste my structure's
+PDB text straight into the HTML (a JS string or a hidden <script type="text/plain"> block — no external
+file); render it coloured by B-factor (= pLDDT) with my target residues highlighted, and call
+viewer.spin(true) so it ROTATES on its own during the talk. Initialise and resize the viewer when its
+slide becomes active (Reveal's 'ready' and 'slidechanged' events) so it shows up and keeps spinning.
+Slides must advance with the left/right arrow keys. Output only slides.html.
 ```
 
 **Don't ship the agent's first draft — iterate at least one round.** The single biggest difference

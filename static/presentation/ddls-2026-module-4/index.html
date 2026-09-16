@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DDLS 2026 — Computer Lab 4: Trust a Protein Structure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./deck.css">
+<script src="https://3Dmol.org/build/3Dmol-min.js"></script>
+<style>
+  /* Dark hero/divider slides — solid navy, no image asset needed. */
+  .slide.art{ background:var(--ink-deep); }
+  .foot{ position:absolute; left:112px; right:112px; bottom:30px; z-index:3;
+         font:400 22px/1.3 var(--mono); color:var(--ink-3); letter-spacing:.01em; }
+  .slide.deep .foot, .slide.art .foot{ color:rgba(238,242,247,.46); }
+  .slide:has(.foot) .pad{ padding-bottom:100px; }
+  .slideno{ position:absolute; bottom:30px; right:46px; z-index:4;
+            font:400 24px/1 var(--mono); color:var(--ink-3); opacity:.42;
+            letter-spacing:.06em; user-select:none; }
+  .slide.deep .slideno, .slide.art .slideno{ color:var(--on-deep); opacity:.36; }
+  #deck-counter{ display:none !important; }
+  .slidemark{ position:absolute; top:34px; right:46px; z-index:4; height:46px; width:auto;
+              opacity:.48; user-select:none; pointer-events:none; }
+  .slide.deep .slidemark, .slide.art .slidemark{ opacity:.62; }
+
+  /* Module-4 specifics ------------------------------------------------ */
+  .cards.c5{ grid-template-columns:repeat(5,1fr); gap:18px; }
+  .card .stepicon{ width:38px; height:38px; margin-bottom:4px; }
+  .card .num{ font:500 22px/1 var(--mono); color:var(--blue); letter-spacing:.14em; }
+  .card.step-hot{ border-color:var(--d3); background:#fdf8f2; }
+  .kbd{ display:inline-block; font:500 21px/1 var(--mono); color:var(--ink-2);
+        background:var(--white); border:1px solid var(--rule-2); border-bottom-width:3px;
+        border-radius:8px; padding:6px 11px; margin:0 2px; }
+  /* small mock "panels" that stand in for portal / github screenshots */
+  .mock{ background:var(--white); border:1px solid var(--rule-2); border-radius:14px;
+         box-shadow:0 12px 34px rgba(11,18,32,.10); overflow:hidden; }
+  .mock .bar{ display:flex; align-items:center; gap:8px; padding:12px 16px;
+              background:#f0efeb; border-bottom:1px solid var(--rule-2); }
+  .mock .bar i{ width:12px; height:12px; border-radius:50%; background:#cfccc4; display:inline-block; }
+  .mock .bar .url{ margin-left:12px; font:400 20px/1 var(--mono); color:var(--ink-3); }
+  .mock .body{ padding:22px 24px; }
+  .btn{ display:inline-flex; align-items:center; gap:8px; font:600 22px/1 var(--sans);
+        color:#fff; background:var(--blue); border-radius:10px; padding:12px 18px; }
+  .btn.ghost{ color:var(--ink-2); background:var(--white); border:1px solid var(--rule-2); }
+  .codebox{ font:400 21px/1.5 var(--mono); color:var(--ink); background:#f7f6f3;
+            border:1px solid var(--rule-2); border-radius:10px; padding:16px 18px; white-space:pre-wrap; }
+  .warn{ color:var(--d3); font-weight:600; }
+  .ok{ color:var(--teal, #0f7d78); font-weight:600; }
+  #viewwrap{ display:grid; grid-template-columns:860px 1fr; gap:44px; align-items:center; }
+  #viewer3d{ position:relative; width:860px; height:600px; border-radius:16px;
+             border:1px solid var(--rule-2); background:#f7f6f3;
+             box-shadow:0 14px 40px rgba(11,18,32,.12); }
+  #viewer3d .tag{ position:absolute; left:16px; bottom:14px; z-index:5;
+                  font:500 20px/1 var(--mono); color:var(--ink-3);
+                  background:rgba(255,255,255,.82); border:1px solid var(--rule-2);
+                  border-radius:999px; padding:8px 14px; }
+
+  /* Presenter notes overlay — lives OUTSIDE the scaled deck, toggled with N. */
+  #pnote-wrap{ position:fixed; left:0; right:0; bottom:0; z-index:9999;
+    background:rgba(11,18,32,.93); color:#eef2f7; padding:22px 30px 24px;
+    box-shadow:0 -10px 40px rgba(0,0,0,.4); }
+  #pnote-wrap .hd{ font:500 18px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase;
+    color:#7fc0ff; margin-bottom:10px; }
+  #pnote{ font:400 30px/1.42 var(--serif); max-width:1400px; }
+  #pnote-hint{ position:fixed; right:16px; bottom:12px; z-index:9998;
+    font:400 18px/1 var(--mono); color:rgba(120,130,150,.75); user-select:none; }
+</style>
+</head>
+<body>
+
+<div id="deck">
+
+<!-- 01 ─────────────────────────────────────────────────── Title -->
+<section class="slide art deep" data-screen-label="01 Title">
+  <div class="pad between">
+    <div class="eyebrow" data-anim="fade">DDLS 2026 · SK2538 / FSK3538 · Module 4 · Live lab walkthrough</div>
+    <div>
+      <h1 data-anim="rise">Trust a Protein<br>Structure</h1>
+      <p class="lead" data-anim="rise" data-delay="1" style="margin-top:30px;max-width:30ch">
+        Interview a structural-biology data owner. Direct an agent. Decide whether the model
+        actually answers the question.</p>
+    </div>
+    <div>
+      <div class="rule" style="margin-bottom:22px"></div>
+      <div class="cite">Computer Lab 4 · Wednesday 13:00–17:00 · advance with <span class="kbd" style="color:#eef2f7;background:transparent;border-color:rgba(255,255,255,.3)">→</span>
+        &nbsp;·&nbsp; press <span class="kbd" style="color:#eef2f7;background:transparent;border-color:rgba(255,255,255,.3)">N</span> for speaker notes</div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 ────────────────────────────────────────── Welcome / objective -->
+<section class="slide" data-screen-label="02 Welcome">
+  <div class="pad">
+    <div class="eyebrow">Welcome to Week 4</div>
+    <h2 style="margin:16px 0 20px">Same job — new data: a <span class="hi">protein structure</span></h2>
+    <p class="body" style="max-width:1400px">You run the exact forward-deployed-scientist loop from weeks 1–3.
+      What changes: the data is now a protein <em>sequence</em> and a 3D <em>structure with a confidence score</em>.
+      The bar goes up in one specific way — a model can look convincing and still be confident about
+      the <strong>wrong thing</strong> for the owner's question.</p>
+    <div class="cards c3" style="margin-top:34px;max-width:1500px">
+      <div class="card" data-anim="rise"><div class="t">The skill on trial</div><div class="d">Trust a structure — read the <em>right</em> confidence and check it's their protein — not just fetch one.</div></div>
+      <div class="card" data-anim="rise" data-delay="1"><div class="t">You produce</div><div class="d">A small <strong>viewer app</strong> (structure + confidence), a structured <strong>report</strong>, and a <strong>public GitHub repo</strong>.</div></div>
+      <div class="card" data-anim="rise" data-delay="2"><div class="t">Graded on</div><div class="d">Pass/fail — and <strong>we read the transcript</strong>: did you find the question behind the question?</div></div>
+    </div>
+    <div class="foot">Computer Lab 4 · full instructions: ddls.aicell.io/course/ddls-2026/module-4/lab/</div>
+  </div>
+</section>
+
+<!-- 03 ──────────────────────────────────────────── Today in one loop -->
+<section class="slide" data-screen-label="03 Time">
+  <div class="pad">
+    <div class="eyebrow">How today runs · 13:00–17:00</div>
+    <h2 style="margin:16px 0 26px">One loop, once — checked, and defensible</h2>
+    <ul class="points" style="max-width:1500px">
+      <li data-anim="rise"><strong>13:15 · Set up Pi</strong> and open the portal (do this first — it installs while you interview)</li>
+      <li data-anim="rise" data-delay="1"><strong>13:30 · Interview</strong> your data owner (Agent A)</li>
+      <li data-anim="rise" data-delay="2"><strong>14:00 · Brief &amp; direct Pi</strong> — write <span class="term">AGENTS.md</span> / <span class="term">spec.md</span>, review by hand, then direct the analysis</li>
+      <li data-anim="rise" data-delay="3"><strong>15:45 · Hard switch</strong> — stop analysing, <strong>build the viewer</strong></li>
+      <li data-anim="rise" data-delay="4"><strong>16:45 · Wrap</strong> — write the report, publish to GitHub, hand in</li>
+    </ul>
+    <p class="body" style="margin-top:28px;max-width:1400px">The analysis loop is cheap — a couple of minutes of agent work for a few cents.
+      The clock goes to <em>your</em> thinking, reviewing and checking. A checked partial result you can show beats an unfinished perfect one.</p>
+    <div class="foot">Treat 15:45 as a hard switch to building · seminar prep is a separate job on Thursday</div>
+  </div>
+</section>
+
+<!-- 04 ─────────────────────────────────────────────── The workflow -->
+<section class="slide" data-screen-label="04 Workflow">
+  <div class="pad">
+    <div class="eyebrow">The workflow · you are the only link between the two agents</div>
+    <h2 style="margin:16px 0 30px">Interview → direct → check → build → hand in</h2>
+    <div class="cards c5" style="max-width:1600px">
+      <div class="card" data-anim="rise"><div class="num">01</div><div class="t">Interview A</div><div class="d">The data owner. Pin down the molecule, the claim, and what they trust.</div></div>
+      <div class="card" data-anim="rise" data-delay="1"><div class="num">02</div><div class="t">Brief &amp; direct Pi</div><div class="d">Turn the interview into AGENTS.md + spec.md; direct the analysis.</div></div>
+      <div class="card" data-anim="rise" data-delay="2"><div class="num">03</div><div class="t">Check results</div><div class="d">Read the <em>right</em> confidence; look at the model; is it their protein?</div></div>
+      <div class="card" data-anim="rise" data-delay="3"><div class="num">04</div><div class="t">Build</div><div class="d">A 3D structure + confidence viewer, and a report.</div></div>
+      <div class="card step-hot" data-anim="rise" data-delay="4"><div class="num">05</div><div class="t">Publish &amp; hand in</div><div class="d">Push to GitHub; submit transcripts, app, report, repo URL.</div></div>
+    </div>
+    <p class="body" style="margin-top:32px;max-width:1400px">Nothing passes between the two agents except what <strong>you</strong> write down. That channel — you — is exactly the examined skill.</p>
+    <div class="foot">You get one data owner, assigned at random · you work theirs, never your own protein</div>
+  </div>
+</section>
+
+<!-- 05 ──────────────────────────────────────────── Step 1 · Interview -->
+<section class="slide" data-screen-label="05 Interview">
+  <div class="pad">
+    <div class="eyebrow">Step 1 · Interview the data owner (Agent A)</div>
+    <h2 style="margin:16px 0 22px">Find what they intend to <span class="hi">trust</span> — and for what decision</h2>
+    <div class="cards c2" style="max-width:1500px">
+      <div class="card" data-anim="rise"><div class="t">Pin down</div><div class="d">The molecule (one chain or a complex? how long?), the files, the <strong>exact claim</strong> and which residues it touches, and how sure they are — <em>right there</em>.</div></div>
+      <div class="card" data-anim="rise" data-delay="1"><div class="t">Their confidence is the clue</div><div class="d">A structure viewer makes everything look solid. Get them to describe <em>why</em> they trust the model — without tipping them off that you doubt it.</div></div>
+    </div>
+    <p class="body" style="margin-top:30px;max-width:1400px">Use the <strong>Interview playbook</strong> and the two coaching helpers (Coach me · Suggest a question) in the portal.
+      A vague question earns a vague answer; a precise one earns the truth. Then <strong>play it back</strong> and let them correct you.</p>
+    <div class="foot">The chat is logged · download the transcript at the end — your analyst reads the transcript, never your notes</div>
+  </div>
+</section>
+
+<!-- 06 ──────────────────────────────────────── Step 2 · Brief & direct -->
+<section class="slide" data-screen-label="06 Direct Pi">
+  <div class="pad">
+    <div class="eyebrow">Step 2 · Brief &amp; direct Pi (Agent B) — your empty-folder analyst</div>
+    <h2 style="margin:16px 0 22px">Translate the interview into a brief the agent follows</h2>
+    <ul class="points" style="max-width:1500px">
+      <li data-anim="rise"><span class="term">AGENTS.md</span> — how Pi operates here (env, where the data is, the fold-service instruction, a git commit rule)</li>
+      <li data-anim="rise" data-delay="1"><span class="term">spec.md</span> — the protein, the exact claim, the confidence that matches it, and the check that could break it</li>
+      <li data-anim="rise" data-delay="2"><strong>Review both by hand</strong> against the transcript and the files — this is the step that separates a pass from a fail</li>
+      <li data-anim="rise" data-delay="3">Direct with the recipe: add a <strong>CONFIDENCE CHECK</strong> and a <strong>STRUCTURE CHECK</strong>, and gate the agent round by round</li>
+    </ul>
+    <p class="body" style="margin-top:28px;max-width:1400px">You don't do the analysis — you <strong>direct</strong> it and <strong>judge</strong> what comes back. Same shape as every week.</p>
+    <div class="foot">Pi runs on your machine, talks to the course model through the portal gateway · every call is metered</div>
+  </div>
+</section>
+
+<!-- 07 ──────────────────────────────────────────── The fold service -->
+<section class="slide" data-screen-label="07 Fold service">
+  <div class="pad">
+    <div class="eyebrow">Get the folding service from the portal → give it to Pi</div>
+    <h2 style="margin:14px 0 20px">Fold the owner's own construct on <span class="hi">our GPU</span> — one URL</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;max-width:1560px">
+      <div class="mock" data-anim="rise">
+        <div class="bar"><i></i><i></i><i></i><span class="url">ddls-portal…/week/4</span></div>
+        <div class="body">
+          <div style="font:600 25px/1.2 var(--sans);color:var(--ink);margin-bottom:6px">▸ Fold a structure on our GPU · free</div>
+          <div style="font:400 21px/1.4 var(--sans);color:var(--ink-3);margin-bottom:16px">Click to reveal your fold API access.</div>
+          <div class="codebox" style="font-size:18px">To fold a sequence that isn't in the AlphaFold DB, read the fold-service instructions at …/skill.md?token=•••••• and follow them.</div>
+          <div style="margin-top:16px"><span class="btn">⧉ Copy</span></div>
+        </div>
+      </div>
+      <ul class="points" style="margin:0">
+        <li data-anim="rise" data-delay="1"><strong>Reveal</strong> the panel on your week page, press <strong>Copy</strong> — one instruction, key embedded</li>
+        <li data-anim="rise" data-delay="2"><strong>Paste it into your <span class="term">AGENTS.md</span></strong> when you build it — the agent's memory</li>
+        <li data-anim="rise" data-delay="3">Then just tell Pi <em>"fold this and read the pLDDT / PAE"</em> — it does the rest</li>
+        <li data-anim="rise" data-delay="4">Free · ≤ 400 aa · a fold takes ~1–5 s · open source: <span style="font-family:var(--mono);font-size:20px">github.com/aicell-lab/ddls-structure-api</span></li>
+      </ul>
+    </div>
+    <div class="foot">AlphaFold DB gives the canonical model (a cross-check); our service folds their actual construct/complex</div>
+  </div>
+</section>
+
+<!-- 08 ─────────────────────────────────────────── Step 3 · Check -->
+<section class="slide" data-screen-label="08 Check">
+  <div class="pad">
+    <div class="eyebrow">Step 3 · Check the results — don't trust the cartoon</div>
+    <h2 style="margin:16px 0 24px">Read the confidence that <span class="hi">matches the claim</span></h2>
+    <div class="cards c3" style="max-width:1560px">
+      <div class="card" data-anim="rise"><div class="t">Is a region a real fold?</div><div class="d">Read <strong>per-residue pLDDT</strong> for exactly those residues — not the global score.</div></div>
+      <div class="card" data-anim="rise" data-delay="1"><div class="t">Do two chains bind?</div><div class="d">Read the <strong>interface PAE</strong>. High per-chain confidence is <em>not</em> evidence of binding.</div></div>
+      <div class="card" data-anim="rise" data-delay="2"><div class="t">Is it even their protein?</div><div class="d">Align the model's sequence to their construct; confirm the assembly (monomer vs complex).</div></div>
+    </div>
+    <p class="body" style="margin-top:30px;max-width:1400px"><strong>Look</strong> at the model (vision is on): a low-confidence region or a shaky interface is obvious once you know to look.
+      A finding that deflates the owner's plan is a <strong>win</strong>, not a failure.</p>
+    <div class="foot">Gate Pi round by round — never let "the answer" arrive before the confidence that must back it</div>
+  </div>
+</section>
+
+<!-- 09 ─────────────────────────────────────── Step 4 · Deliverable -->
+<section class="slide" data-screen-label="09 Deliverable">
+  <div class="pad">
+    <div class="eyebrow">Step 4 · Build the deliverable</div>
+    <h2 style="margin:16px 0 22px">A 3D structure + confidence viewer, and a report</h2>
+    <div class="cards c2" style="max-width:1500px">
+      <div class="card" data-anim="rise"><div class="t">The viewer app (Core)</div><div class="d">FastAPI + Tailwind: the headline answer, a 3D model coloured by pLDDT, the confidence panel that matches the claim, a sequence/assembly check line, and the one caveat.</div></div>
+      <div class="card" data-anim="rise" data-delay="1"><div class="t">The report</div><div class="d">Lead with the answer; state the right confidence next to the claim; name the trap and the honest truth; disclose the AI use. Agent-drafted, then <strong>you fix every line</strong>.</div></div>
+    </div>
+    <p class="body" style="margin-top:30px;max-width:1400px">The viewer is an <strong>interrogation instrument</strong> — build it so a sceptic (you first, the owner on Friday) can <em>see</em> whether the model supports the claim.</p>
+    <div class="foot">Core first · reach for the Strong tier only once Core runs</div>
+  </div>
+</section>
+
+<!-- 10 ─────────────────────────────────────────── Live 3D viewer -->
+<section class="slide" data-screen-label="10 Live viewer" data-viewer>
+  <div class="pad">
+    <div class="eyebrow">This is what an embedded, rotating viewer looks like</div>
+    <div id="viewwrap" style="margin-top:10px">
+      <div id="viewer3d"><span class="tag">demo: crambin (1CRN) — an unrelated example protein</span></div>
+      <div>
+        <h2 style="margin:0 0 18px">Your seminar deck must <span class="hi">embed one too</span></h2>
+        <ul class="points">
+          <li data-anim="rise">A <strong>live, spinning</strong> 3D model reads far better than a static screenshot</li>
+          <li data-anim="rise" data-delay="1">Colour it by <strong>pLDDT</strong>; highlight the residues the owner cares about</li>
+          <li data-anim="rise" data-delay="2">One self-contained <span class="term">slides.html</span> — <strong>3Dmol.js</strong> from a CDN, the PDB embedded inline</li>
+          <li data-anim="rise" data-delay="3">Direct Pi: <em>"embed a 3Dmol viewer, colour by B-factor, and call <span style="font-family:var(--mono)">viewer.spin()</span>"</em></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">Same idea in your lab viewer app · in the seminar it's the centrepiece of your talk</div>
+  </div>
+</section>
+
+<!-- 11 ─────────────────────────────────────── Git + GitHub (required) -->
+<section class="slide" data-screen-label="11 GitHub">
+  <div class="pad">
+    <div class="eyebrow">Version control — new, and required this week</div>
+    <h2 style="margin:14px 0 20px">Commit as you go · publish to <span class="hi">GitHub</span> · submit the repo URL</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;max-width:1560px">
+      <ul class="points" style="margin:0">
+        <li data-anim="rise">Tell Pi to <strong>init git</strong> and add a <em>commit-before-big-changes</em> rule to AGENTS.md — your undo button</li>
+        <li data-anim="rise" data-delay="1"><strong>No GitHub account? Make a free one now</strong> — Pi can set up the SSH key and push for you</li>
+        <li data-anim="rise" data-delay="2">Put the <strong>repo URL in the "note to teachers"</strong> box on the Hand-in form</li>
+      </ul>
+      <div class="mock" data-anim="rise" data-delay="1">
+        <div class="bar"><i></i><i></i><i></i><span class="url">.gitignore</span></div>
+        <div class="body">
+          <div class="codebox">.env
+.venv/
+__pycache__/
+*.pyc</div>
+          <div style="margin-top:16px;font:500 23px/1.4 var(--sans)"><span class="warn">⚠ Never commit your key.</span>
+            <span style="color:var(--ink-2)"> A public repo is public — check <span style="font-family:var(--mono)">.env</span> is <span class="ok">not</span> in any commit.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot">git is what makes bold direction safe — you can only let the agent try things freely if you can undo them</div>
+  </div>
+</section>
+
+<!-- 12 ─────────────────────────────────────────────── Hand in -->
+<section class="slide" data-screen-label="12 Hand in">
+  <div class="pad">
+    <div class="eyebrow">What to hand in · deadline Friday 10:00, before the seminar</div>
+    <h2 style="margin:16px 0 24px">Your transcripts, your analysis, your deliverable</h2>
+    <ul class="points" style="max-width:1500px">
+      <li data-anim="rise"><strong>Interview transcript</strong> (Agent A) + <strong>analysis transcript(s)</strong> (Pi) + the code Pi wrote</li>
+      <li data-anim="rise" data-delay="1"><strong>Your app</strong>, zipped to <span class="term">app.zip</span>, and the <strong>report</strong> (<span class="term">report.md</span>)</li>
+      <li data-anim="rise" data-delay="2"><span class="term">AGENTS.md</span> + <span class="term">spec.md</span></li>
+      <li data-anim="rise" data-delay="3"><strong>Your GitHub repo URL</strong> — in the note-to-teachers box</li>
+    </ul>
+    <p class="body" style="margin-top:28px;max-width:1400px">Everything through the portal <strong>Hand in</strong> button. Re-submit any time — we grade your latest.
+      Submit even if you can't attend. A modest, honest result with a transcript that shows real checking is exactly what we're after.</p>
+    <div class="foot">Graded pass/fail · we read the transcript · fill the short feedback panel too</div>
+  </div>
+</section>
+
+<!-- 13 ─────────────────────────────────────────── Final project -->
+<section class="slide" data-screen-label="13 Final project">
+  <div class="pad">
+    <div class="eyebrow">Starting now · your final-project data owner</div>
+    <h2 style="margin:14px 0 20px">Find a <span class="hi">real</span> owner, dataset and question — this week</h2>
+    <div style="display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center;max-width:1560px">
+      <ul class="points" style="margin:0">
+        <li data-anim="rise">Your dashboard has a <strong>personal invite link</strong> — share it in your network (labs, friends, anyone with data + a question)</li>
+        <li data-anim="rise" data-delay="1">They open it, describe their problem, and <strong>submit a project</strong>; a link through <em>your</em> invite gives you <strong>first claim</strong></li>
+        <li data-anim="rise" data-delay="2">We <strong>approve each project</strong> before you start — don't leave it to the last minute</li>
+        <li data-anim="rise" data-delay="3">Scope: <strong>not too easy, not too ambitious</strong> — one clear question, answerable in ~a week with the data they have</li>
+      </ul>
+      <div class="mock" data-anim="rise" data-delay="1">
+        <div class="bar"><i></i><i></i><i></i><span class="url">ddls-portal…/dashboard</span></div>
+        <div class="body">
+          <div style="font:500 21px/1 var(--mono);color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px">Your invite link</div>
+          <div class="codebox" style="font-size:19px">…/signup-projects?ref=<span style="color:var(--blue)">your-code</span></div>
+          <div style="margin-top:16px"><span class="btn ghost">⧉ Copy invite</span> &nbsp; <span class="btn ghost">Share</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot">Full guidance: ddls.aicell.io/course/ddls-2026/final-project/</div>
+  </div>
+</section>
+
+<!-- 14 ─────────────────────────────────────────────── Go -->
+<section class="slide art deep" data-screen-label="14 Go">
+  <div class="pad between">
+    <div class="eyebrow" data-anim="fade">Let's go</div>
+    <div>
+      <h1 data-anim="rise" style="font-size:70px">A confident structure is<br>not the same as an answer</h1>
+      <p class="lead" data-anim="rise" data-delay="1" style="margin-top:28px;max-width:34ch">
+        Read the confidence that matches the claim, check the model is really their protein,
+        and hand back the honest truth.</p>
+    </div>
+    <div>
+      <div class="rule" style="margin-bottom:22px"></div>
+      <div class="cite">Start with the Part 2 setup, then interview · lab page: ddls.aicell.io/course/ddls-2026/module-4/lab/ · good luck</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div id="pnote-wrap" hidden><div class="hd">Speaker notes · <span id="pnote-n"></span> · press N to hide</div><div id="pnote"></div></div>
+<div id="pnote-hint">press <b>N</b> for speaker notes</div>
+
+<script id="speaker-notes" type="application/json">[
+"Welcome. Today is the protein-structure lab. It's the same forward-deployed-scientist job as every week — you take someone's problem, interview them, and come back with a checked answer that an agent did the work for. I'll walk the whole workflow in a few minutes, then you start. Advance with the right arrow; press N any time to hide these notes.",
+"The one thing that changes this week is the data: a protein sequence and a 3D structure that comes with a confidence score. The trap is subtle — the model often looks great but is confident about the wrong thing for the owner's question. By the end you'll produce three things: a small viewer app, a report, and a public GitHub repo. We grade pass/fail and we read your transcript.",
+"Here's the shape of the afternoon. Set up Pi first at 13:15 so it installs while you interview. Interview at 13:30. From 14:00 you brief and direct Pi. 15:45 is a hard switch — stop analysing and build the viewer whatever state you're in. Wrap and hand in by 16:45–17:00. The agent work is cheap and fast; spend the clock on your own thinking and checking.",
+"The workflow in one line: interview the data owner, turn that into a brief and direct Pi, check what comes back, build the deliverable, then publish and hand in. The key rule — nothing passes between the two agents except what you write down. You are the channel, and that channel is exactly what we examine. Everyone gets one owner at random; you work theirs, never your own protein.",
+"Step one, the interview. Your goal is to find what part of the model they intend to trust, and for what decision — that's where the trap lives. Pin down the molecule, the files, the exact claim, and how sure they are right there. Their confidence is your best clue. Use the playbook and the coach helpers in the portal, ask one sharp question at a time, and play the answer back before you leave.",
+"Step two, brief and direct Pi. You write two files: AGENTS.md — how the agent operates here — and spec.md — the protein, the exact claim, the confidence that matches it, and the check that could break it. Review both by hand against the transcript; that manual review is what separates a pass from a fail. Then direct with a confidence check and a structure check, gating the agent round by round.",
+"This is the new resource this week: our GPU folding service, for the owner's actual construct or complex that isn't in the AlphaFold database. It's all one URL. On your week page open the 'Fold a structure on our GPU' panel, press Copy — that's a ready instruction with your key embedded — and paste it into your AGENTS.md when you build it. After that you just tell Pi to fold and read the confidence. It's free, fast, and the code is open source.",
+"Step three, check the results, and this is the heart of the lab: read the confidence that matches the claim. For 'is this region a real fold' read per-residue pLDDT, not the global score. For 'do these two chains bind' read the interface PAE — two chains folding well on their own is not evidence they bind. And confirm the model is even their protein and the right assembly. Look at the model; a finding that deflates their plan is a win.",
+"Step four, the deliverable. A small FastAPI plus Tailwind viewer app: the headline answer, a 3D model coloured by pLDDT, the confidence panel that matches the claim, a sequence-check line, and the one caveat. Plus a report — agent-drafted, but you fix every line. Build the viewer so a sceptic can see whether the model supports the claim, not just read that it does. Core first, strong tier only if Core runs.",
+"And here's a live one — this is crambin, an unrelated demo protein, folding right in the slide and spinning on its own. This is exactly what your seminar deck must embed on Friday: a live, rotating 3D viewer coloured by confidence, in one self-contained slides.html using 3Dmol.js from a CDN. A spinning model lands far better than a screenshot. You'll direct Pi to build it — colour by B-factor, call viewer.spin.",
+"Version control is new and required this week. Have Pi initialise git and add a rule to AGENTS.md to commit before any big change — that's your undo button when the agent breaks something. If you don't have a GitHub account, make a free one now; Pi can set up the SSH key and push for you. Publish the repo and put its URL in the note-to-teachers box. And never commit your key — .env stays gitignored; a public repo is public.",
+"Hand-in, by Friday 10:00 before the seminar. Your interview transcript, your Pi analysis transcripts and code, your app zipped to app.zip, the report, AGENTS.md and spec.md, and your GitHub repo URL in the note box. All through the portal Hand-in button; resubmit any time, we grade the latest. Submit even if you can't attend. A modest honest result with real checking beats a polished one that trusted the wrong number.",
+"Last thing, and it's important: start finding your final-project data owner this week. Your dashboard has a personal invite link — share it around your network; a project that comes through your link gives you first claim. We approve each project before you can start, so don't wait. Keep the scope sensible: one clear question, answerable in about a week with the data they actually have. Full guidance is on the final-project page.",
+"That's the whole loop. The hard line for the week: a confident structure is not the same as an answer to your question. Read the right confidence, check it's really their protein, and hand back the honest truth. Start with the Part 2 setup, then open your interview. Have fun — this is the job."
+]</script>
+
+<script>
+  window.DECK_CONFIG = { storageKey: 'ddls2026:module4-v1', width: 1920, height: 1080 };
+</script>
+<script>
+  /* Slide numbers + the SciLifeLab mark, derived from DOM order. */
+  (function () {
+    var slides = document.querySelectorAll('#deck > .slide');
+    for (var i = 0; i < slides.length; i++) {
+      var s = slides[i];
+      var mark = document.createElement('img');
+      mark.className = 'slidemark'; mark.alt = '';
+      mark.src = './img/logos/scilifelab-symbol-' + (s.classList.contains('deep') ? 'neg' : 'pos') + '.png';
+      s.appendChild(mark);
+      if (i === 0) continue;
+      var n = document.createElement('div');
+      n.className = 'slideno'; n.textContent = (i + 1) + ' / ' + slides.length;
+      s.appendChild(n);
+    }
+  })();
+</script>
+<script src="./deck_stage.js"></script>
+<script>
+  /* Presenter notes overlay + the spinning 3D viewer, driven off deck_stage's
+     self-postMessage heartbeat (works standalone: window.parent === window). */
+  (function () {
+    var notes = [];
+    try { notes = JSON.parse(document.getElementById('speaker-notes').textContent); } catch (e) {}
+    var wrap = document.getElementById('pnote-wrap'), body = document.getElementById('pnote'),
+        nlab = document.getElementById('pnote-n'), hint = document.getElementById('pnote-hint');
+    function setNote(i) { if (body) body.textContent = notes[i] || ''; if (nlab) nlab.textContent = (i + 1) + ' / ' + notes.length; }
+    setNote(0);
+
+    // 3D viewer — lazy init when its slide first becomes active (hidden slides have zero size).
+    var v3d = null, viewerIdx = -1;
+    function viewerIndex() {
+      if (viewerIdx < 0) {
+        var arr = [].slice.call(document.querySelectorAll('#deck > .slide'));
+        viewerIdx = arr.findIndex(function (s) { return s.hasAttribute('data-viewer'); });
+      }
+      return viewerIdx;
+    }
+    function initViewer() {
+      if (!window.$3Dmol) { setTimeout(initViewer, 200); return; }
+      var el = document.getElementById('viewer3d'); if (!el) return;
+      if (v3d) { v3d.resize(); v3d.render(); return; }
+      v3d = $3Dmol.createViewer(el, { backgroundColor: '0xf7f6f3' });
+      fetch('./1crn.pdb').then(function (r) { return r.text(); }).then(function (pdb) {
+        v3d.addModel(pdb, 'pdb');
+        v3d.setStyle({}, { cartoon: { color: 'spectrum' } });
+        v3d.zoomTo();
+        v3d.spin('y', 1);
+        v3d.render();
+      }).catch(function () {});
+    }
+
+    window.addEventListener('message', function (e) {
+      var d = e.data || {};
+      if (typeof d.slideIndexChanged === 'number') {
+        setNote(d.slideIndexChanged);
+        if (d.slideIndexChanged === viewerIndex()) setTimeout(initViewer, 80);
+      }
+    });
+    // If the deck resumes straight onto the viewer slide, init anyway.
+    setTimeout(function () {
+      var active = document.querySelector('#deck > .slide.is-active');
+      var arr = [].slice.call(document.querySelectorAll('#deck > .slide'));
+      if (active && active.hasAttribute('data-viewer')) initViewer();
+    }, 400);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'n' || e.key === 'N') {
+        wrap.hidden = !wrap.hidden;
+        if (hint) hint.style.display = wrap.hidden ? '' : 'none';
+      }
+    });
+  })();
+</script>
+</body>
+</html>

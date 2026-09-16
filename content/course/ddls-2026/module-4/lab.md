@@ -32,6 +32,10 @@ skill being examined.
 > already know the base Pi setup from weeks 1–3. If you joined this week, the full Pi install and
 > gateway config is repeated in **Part 2** below so you can follow it standalone.
 
+> **Opening walkthrough slides.** We open the lab with a short slide walkthrough of the whole workflow —
+> you can re-open it any time as a recap: **[Lab 4 walkthrough deck](/presentation/ddls-2026-module-4/)**
+> (advance with the ← / → arrow keys).
+
 {{< toc >}}
 
 ## Suggested time budget

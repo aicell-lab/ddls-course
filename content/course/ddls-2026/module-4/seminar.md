@@ -175,6 +175,10 @@ loads *your* deck on the shared screen — so it has to stand on its own. Two ru
 > pairing** (e.g. a serif headline with a mono caption), and **one layout habit** (big figure left /
 > text right, a running footer with your headline finding). A deck that looks like *yours* is part of
 > owning the work.
+>
+> **See a deck or figure whose look you love?** Give the agent the file (or a screenshot) and say *"use
+> this as a style reference"* — a concrete example steers the look far better than adjectives. The goal
+> is to **raise the quality and make it distinctly yours**, not just fill six slides.
 
 Your agent can build this from your `report.md` — **but hand it your style**, not the default. Fill in
 the `STYLE:` line, then paste into **Pi** (adjust file names):

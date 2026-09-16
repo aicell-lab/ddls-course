@@ -41,9 +41,9 @@ your own pace, but **do not run past 17:00**, and treat the 15:45 switch to buil
 
 | Time | Duration | What you're doing |
 |---|---|---|
-| 13:15–13:30 | 15 min | Set up **Pi**, point it at the gateway, open the portal, generate your API key, and **`git init`** your working folder |
+| 13:15–13:30 | 15 min | Set up **Pi**, point it at the gateway, open the portal, generate your API key, and make your working folder |
 | 13:30–14:00 | 30 min | **Interview** the data owner (Agent A) — the molecule, the files, the question, and *what they're sure of* |
-| 14:00–14:30 | 30 min | **Translate**: have Pi draft `AGENTS.md` / `spec.md`, **review them by hand**, then have **Pi set up the Python environment** |
+| 14:00–14:30 | 30 min | **Translate**: have Pi **put the folder under git** and draft `AGENTS.md` / `spec.md`, **review them by hand**, then have **Pi set up the Python environment** |
 | 14:30–15:45 | 75 min | **Direct** the analyst: fetch from AlphaFold DB **and** fold the construct on our service, read the **right** confidence, run the **structure check** — and **commit a snapshot** each time something works |
 | 15:45–16:45 | 60 min | **Build your deliverable** — the 3D structure + confidence viewer; open it and check every number |
 | 16:45–17:00 | 15 min | Write the short summary and **gather your submission** folder |
@@ -444,9 +444,10 @@ your dashboard). **The portal shows the key only once**, so save it immediately.
 DDLS_API_KEY=paste-your-portal-key-here
 ```
 
-> **Key hygiene.** Treat this key like a password: never commit it or share it. You already added
-> `.env` to `.gitignore` above. On Windows, create the file with
-> `Set-Content .env "DDLS_API_KEY=paste-your-portal-key-here"` (File Explorer refuses dot-files).
+> **Key hygiene.** Treat this key like a password: never commit it or share it. The git setup you hand
+> Pi in Part 3 puts `.env` in `.gitignore`, so it stays out of every commit — but check. On Windows,
+> create the file with `Set-Content .env "DDLS_API_KEY=paste-your-portal-key-here"` (File Explorer
+> refuses dot-files).
 
 **5. Load the key before every Pi run** — each time you open a new terminal:
 
@@ -487,7 +488,8 @@ built-in web search**. Keep an eye on the usage meter on your dashboard.
 > - **[`pi-subagent`](https://pi.dev/packages/@arcanemachine/pi-subagent)** — lets Pi **spawn
 >   sub-agents** to run **parallel subtasks** (e.g. fold a batch while it reads the PAE).
 >
-> Think of these as **power-ups for fast finishers** — skip them and you can still ace the lab.
+> Think of these as **power-ups for fast finishers** — skip them and you can still ace the lab. **We'll
+> dig into customizing Pi properly next week**; today, just skim the page and bookmark what looks useful.
 
 ### Getting a structure — two required sources, plus optional extras
 
@@ -511,25 +513,17 @@ matches the claim on each and compare. Neither needs a GPU on *your* laptop.
   holds the **canonical, full-length** protein. Most owners hand you a sequence that **isn't there in
   the form you need** — a **designed construct**, a **mutant or truncation**, or a **two-chain
   complex**. You must fold **that exact sequence** on our service and read *its* confidence, then compare
-  it against the database model. The course hosts a small **key-gated ESMFold** service on our own GPUs;
-  there are **two ways** to use it.
+  it against the database model. The course hosts a small **key-gated ESMFold** service on our own GPUs,
+  and **everything you need is a single URL**.
 
-  - **Easiest (recommended): the skill doc.** On your week page in the portal, open the **"Fold a
-    structure on our GPU"** card and click **Copy skill** — it copies a single `/skill.md?token=…` URL
-    that already carries your key. Paste it to your analyst (Pi): *"read this and use it to fold
-    sequences that aren't in the AlphaFold DB."* Pi fetches it and learns the whole API — endpoint,
-    body, limits — **by itself**. You never hand-write the request.
-  - **By hand.** Copy the **endpoint** and **fold key** from the same card and POST directly:
-
-    ```bash
-    curl -s -X POST <fold endpoint from the portal card> \
-      -H "Authorization: Bearer <fold key from the portal card>" -H "Content-Type: application/json" \
-      -d '{"sequences": ["<chain A sequence>", "<chain B sequence>"]}'
-    ```
-
-    (Use `{"sequence": "<one sequence>"}` for a single chain.) It returns `{pdb, plddt, mean_plddt, pae,
-    ptm, chain_lengths, interface_pae_mean, ...}` — everything you need to read per-residue confidence
-    and, for a complex, the interface error.
+  - **Reveal it, then let your agent remember it.** On your week page in the portal, open the collapsed
+    **"Fold a structure on our GPU"** panel (click to reveal) and press **Copy skill** — it copies one
+    `/skill.md?token=…` URL that already carries your key *and* the whole API (endpoint, body, limits).
+    **Grab it when you build your `AGENTS.md` (Part 3, Step 2)** and paste it in there — `AGENTS.md` is
+    your agent's memory, so this is exactly the kind of thing to record once so Pi knows how to fold for
+    the rest of the lab. After that, whenever a sequence isn't in the AlphaFold DB, just tell Pi *"fold
+    this on the course service and read the pLDDT/PAE"* — it reads the URL and does the rest. You never
+    hand-write a request.
   - **Limits & reliability.** **≤ 400 residues total, ≤ 2 chains, one fold at a time, 40 folds/hour**,
     and a fold takes **~1–5 seconds**. **Folds are FREE** — they don't touch your portal budget. If a
     call comes back **HTTP 429 or 503 with a `Retry-After` header**, the service is **up** but busy or
@@ -605,10 +599,12 @@ what the transcript and the files actually show, write two files, then stop — 
 1. AGENTS.md — how you operate here: the environment (use uv — create it with `uv venv` and run all
    Python with `uv run`, which works the same on every OS), where the data lives and how to load a
    structure (pLDDT is in the B-factor column of the mmCIF; PAE is in the JSON), where to write
-   outputs (results/), a **Version control** rule (this folder is a git repo — commit the current state
-   *before* any big change, and commit again whenever something starts working, with short clear
-   messages), and the rule that you never report an answer about a structure without first reporting the
-   confidence that matches the claim AND confirming the model is actually this protein.
+   outputs (results/), the fold-service skill URL <PASTE the "Copy skill" URL from the portal's "Fold a
+   structure on our GPU" panel here> so you know how to fold sequences that aren't in the AlphaFold DB,
+   a **Version control** rule (this folder is a git repo — commit the current state *before* any big
+   change, and commit again whenever something starts working, with short clear messages), and the rule
+   that you never report an answer about a structure without first reporting the confidence that matches
+   the claim AND confirming the model is actually this protein.
 2. spec.md — the problem: the exact decision the owner needs, the protein (how many chains/residues,
    predicted or experimental, monomer or assembly), the files and what each is, the EXACT claim the
    owner is making and which residues/parts it concerns, the confidence that matches that claim
@@ -618,8 +614,10 @@ what the transcript and the files actually show, write two files, then stop — 
 Then give me a 3-line summary of what you wrote.
 ```
 
-- **`AGENTS.md`** is the brief loaded every turn: the **GOAL** in a sentence or two, **where the data
-  lives and how to load a structure**, the **MUST-NOTs** ("never report a fold as solid without the
+- **`AGENTS.md`** is the brief loaded every turn — and your agent's **memory** for anything it should
+  know all lab: the **GOAL** in a sentence or two, **where the data lives and how to load a structure**,
+  **the fold-service skill URL** you copied from the portal (so Pi always knows how to fold), the
+  **MUST-NOTs** ("never report a fold as solid without the
   per-residue confidence there", "never read a binding interface off a model without the interface
   error", "confirm the model's sequence matches the owner's construct first"), the **Version control
   rule** (commit *before* any big change and again whenever something works), and a pointer to
@@ -681,30 +679,19 @@ While it installs, re-read your `spec.md`.
 
 ### Step 5 — Direct with the escalated prompt recipe
 
-Now direct the analysis. Use the **same four-part recipe** as weeks 1–3 — this term and beyond — now
-with **two new clauses** (CONFIDENCE CHECK and STRUCTURE CHECK) that carry this week's whole lesson:
+Now direct the analysis with the **same four-part recipe** as weeks 1–3 — **GOAL**, **METHOD** (a
+direction, not an order, with a humble fallback and an optional **HINT**), and a **STOPPING
+CRITERION** — plus the **two new clauses this week** that carry the whole lesson:
 
-> **GOAL** — one line. Point at the spec: *"answer the question in `spec.md`."*
-> **METHOD (a direction, not an order) + humble fallback + optional HINT** — suggest an approach, then
-> license the agent to overrule you: *"I suggest X; if that's a poor fit, say so and propose something
-> better **before** you write code."* Add a **HINT** only where you know something it can't guess (e.g.
-> *"pLDDT is the B-factor column of the mmCIF; the PAE is in the JSON"*).
-> **CONFIDENCE CHECK** — *"Report the confidence that matches the claim, not the whole-protein average.
-> For a claim about a fold or a specific region, print the **per-residue pLDDT** for exactly those
-> residues and give me the min and mean there. For a claim about how two chains or domains sit together
-> — binding, an interface, a domain arrangement — read the **PAE / interface error** between those
-> parts. High per-residue confidence is **not** evidence the parts are placed correctly. Say clearly
-> where the model is uncertain."*
-> **STRUCTURE CHECK** — *"Before you answer, confirm the model actually represents the owner's protein:
-> extract the sequence from the model and align it to the FASTA I was given (same length? any differing
-> residues at positions that matter?), and state the assembly (is the functional unit a monomer, or
-> something the model doesn't include?). If the structure doesn't match their construct or their
-> assembly, that mismatch **is** the answer."*
-> **STOPPING CRITERION** — *"plan before you code; stop and show me the confidence readout, the
-> structure/sequence check, and the honest answer to the owner's question. Don't dress up an uncertain
-> region as a solid one."*
+- **CONFIDENCE CHECK** — report the confidence that *matches the claim*, not the whole-protein average:
+  per-residue **pLDDT** for a fold/region claim; **PAE / interface error** for a claim about how two
+  chains or domains sit together. High per-chain confidence is **not** evidence the parts are placed
+  correctly.
+- **STRUCTURE CHECK** — before answering, confirm the model actually **is** the owner's protein (align
+  its sequence to the FASTA) and the right **assembly** (monomer vs the functional complex). A mismatch
+  *is* the finding.
 
-**A paste-ready example** (adapt the method, hint and claim to **your** protein and question):
+Here's a paste-ready version — adapt the method, hint and claim to **your** protein and question:
 
 ```text
 GOAL: Answer the question in spec.md — say whether the structure actually supports the owner's claim,
@@ -788,16 +775,28 @@ changes first if needed) and confirm the app runs again. Don't delete results/ t
 That is the real lesson: **an agent is fastest when you can let it try things — and you can only let it
 try things freely if you can undo them.** git is what makes bold direction safe.
 
-> **Optional — put it on GitHub (a real handover).** So far git lives only on your laptop. To *share* a
-> repo — with a teammate, a client, or us — you push it to **GitHub**, and again you can have Pi do the
-> mechanical parts. **EXPLORE IF YOU HAVE TIME — not required today**, but you'll want this for your
-> **final-project** handover, so it's worth trying once now:
-> 1. Create a free account at <https://github.com> and make a **new empty repository** (no README) —
->    that part is a web form, so do it yourself.
-> 2. Then tell Pi: *"Add this GitHub repo as the remote `origin` — here's the URL — first double-check
->    `.env` is gitignored and not in any commit, then push my `main` branch."* If it needs
->    authentication it will walk you through a personal-access-token or the `gh` CLI.
-> 3. Open the repo in your browser and confirm your **key is not there** — a public repo is public.
+<details>
+<summary><b>Optional — share your work on GitHub</b> (encouraged; open if you have time)</summary>
+
+So far git lives only on your laptop. **We encourage you to put your work on
+[GitHub](https://github.com)** — it's how you share a repo with a teammate, a client, or us, and it's
+exactly what your **final-project** handover will need, so it's worth doing once now. Still **optional
+today** — not required to pass.
+
+You direct **Pi** through the mechanical parts, **including connecting your machine to your account** —
+which usually means an **SSH key**, and Pi can set that up for you:
+
+1. Create a free account at <https://github.com> and a **new empty repository** (no README) — that part
+   is a web form, so do it yourself.
+2. Have Pi make the connection and push. Tell it, e.g.: *"Help me connect this machine to my GitHub
+   account: generate an SSH key if I don't have one, show me the public key to add at
+   github.com/settings/keys, and test the connection with `ssh -T git@github.com`. Then add my new repo
+   as the remote `origin` (I'll paste the URL) — first double-check `.env` is gitignored and in no
+   commit — and push `main`."* (Prefer HTTPS? Ask it to use a personal-access-token or the `gh` CLI
+   instead — it will walk you through either.)
+3. Open the repo in your browser and confirm your **key file is not there** — a public repo is public.
+
+</details>
 
 > **And when something breaks that git can't fix — paste the *whole* error back to Pi.** The other
 > meta-skill this week: when a script errors or the viewer won't start, don't paraphrase ("it didn't
@@ -999,6 +998,11 @@ transcript, then **you** fix every line) with this structure:
   app agree.
 - **No fake precision, no invented citations.** Round honestly; if you name a structure, an assembly or
   a paper, it must be real (a plausible PDB ID or DOI is not a real one — the course AI policy).
+- **Make it yours — push past the default draft.** The agent hands you a competent but *generic* first
+  version; the professional report has **your** judgement and voice in it, and reads like you'd stand
+  behind it. Raise the quality deliberately. And if you have a report or figure whose style you admire,
+  **give Pi the file and say "use this as a reference for the structure and tone"** — a concrete example
+  steers it far better than adjectives.
 
 The two course non-negotiables still apply: **own every number** (if it's wrong, it's wrong under your
 name) and **disclose the AI use**.

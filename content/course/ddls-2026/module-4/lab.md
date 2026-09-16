@@ -780,28 +780,26 @@ changes first if needed) and confirm the app runs again. Don't delete results/ t
 That is the real lesson: **an agent is fastest when you can let it try things — and you can only let it
 try things freely if you can undo them.** git is what makes bold direction safe.
 
-<details>
-<summary><b>Optional — share your work on GitHub</b> (encouraged; open if you have time)</summary>
+#### Publish your repo to GitHub — required this week
 
-So far git lives only on your laptop. **We encourage you to put your work on
-[GitHub](https://github.com)** — it's how you share a repo with a teammate, a client, or us, and it's
-exactly what your **final-project** handover will need, so it's worth doing once now. Still **optional
-today** — not required to pass.
+git so far lives only on your laptop. This week you also **push it to [GitHub](https://github.com)** —
+it's how you share a repo with a teammate, a client, or us, and it's exactly what your **final-project**
+handover will need. **This is part of the hand-in: you submit your repo URL** (see
+[What to hand in](#what-to-hand-in--and-what-we-look-at)).
+
+**No GitHub account yet? Create a free one at <https://github.com> now** — it's a two-minute web form.
+Then make a **new empty repository** (no README).
 
 You direct **Pi** through the mechanical parts, **including connecting your machine to your account** —
 which usually means an **SSH key**, and Pi can set that up for you:
 
-1. Create a free account at <https://github.com> and a **new empty repository** (no README) — that part
-   is a web form, so do it yourself.
-2. Have Pi make the connection and push. Tell it, e.g.: *"Help me connect this machine to my GitHub
-   account: generate an SSH key if I don't have one, show me the public key to add at
-   github.com/settings/keys, and test the connection with `ssh -T git@github.com`. Then add my new repo
-   as the remote `origin` (I'll paste the URL) — first double-check `.env` is gitignored and in no
-   commit — and push `main`."* (Prefer HTTPS? Ask it to use a personal-access-token or the `gh` CLI
-   instead — it will walk you through either.)
-3. Open the repo in your browser and confirm your **key file is not there** — a public repo is public.
-
-</details>
+1. Tell Pi, e.g.: *"Help me connect this machine to my GitHub account: generate an SSH key if I don't
+   have one, show me the public key to add at github.com/settings/keys, and test the connection with
+   `ssh -T git@github.com`. Then add my new repo as the remote `origin` (I'll paste the URL) — first
+   double-check `.env` is gitignored and in no commit — and push `main`."* (Prefer HTTPS? Ask it to use
+   a personal-access-token or the `gh` CLI instead — it will walk you through either.)
+2. Open the repo in your browser, confirm your **`.env`/key is not there** (a public repo is public),
+   and **copy the repo URL — you'll submit it with your hand-in.**
 
 > **And when something breaks that git can't fix — paste the *whole* error back to Pi.** The other
 > meta-skill this week: when a script errors or the viewer won't start, don't paraphrase ("it didn't
@@ -1032,12 +1030,16 @@ Your submission is your **transcript(s) plus your analysis and your deliverable*
   right confidence, the structure check, the trap and the honest truth, the answer, caveats, and AI-use
   disclosure.
 - **`AGENTS.md`** and **`spec.md`** — the brief and the spec you wrote.
+- **Your GitHub repository URL** (required this week) — the public repo you pushed in Part 3. **Paste the
+  URL into the "note to the teachers" box** on the Hand-in form. Your `app.zip` is still the graded code;
+  the repo shows you can hand work over the way a client would receive it.
 
 **How to submit — all in the portal.** Open your week in the
 [course portal](https://ddls-portal-6228434e.svc.hypha.aicell.io/) and click **Hand in** (also on each
 week card and at the top of the week page). The **Computer-lab** card has **one upload button per
 file**, so each lands under the right name on our server. Put your **name** in the field at the top, and
-a short **note to the teachers** if you like. Re-submit any time — we always grade your most recent
+**paste your GitHub repo URL in the "note to the teachers" box** (required this week; add any other note
+too). Re-submit any time — we always grade your most recent
 upload. Please also fill the short **feedback panel** (a few 1–5 sliders plus boxes for ideas to improve
 the course and the portal) — it genuinely shapes what we do next.
 

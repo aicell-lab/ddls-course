@@ -516,14 +516,12 @@ matches the claim on each and compare. Neither needs a GPU on *your* laptop.
   it against the database model. The course hosts a small **key-gated ESMFold** service on our own GPUs,
   and **everything you need is a single URL**.
 
-  - **Reveal it, then let your agent remember it.** On your week page in the portal, open the collapsed
-    **"Fold a structure on our GPU"** panel (click to reveal) and press **Copy** — it copies a ready-made
-    **instruction with your key embedded** (a sentence like *"To fold a sequence that isn't in the
-    AlphaFold DB, read the fold-service instructions at …/skill.md?token=… and follow them"*), not a bare
-    URL. **Paste that into your `AGENTS.md` when you build it (Part 3, Step 2)** — `AGENTS.md` is your
-    agent's memory, so recording it once means Pi knows how to fold for the rest of the lab — or simply
-    give it to Pi when you first set it up. After that, whenever a sequence isn't in the AlphaFold DB,
-    just tell Pi *"fold this on the course service and read the pLDDT/PAE"* and it does the rest.
+  - **How you use it: one instruction, kept in your `AGENTS.md`.** The portal's **"Fold a structure on
+    our GPU"** panel gives you a ready instruction (with your key embedded) via **Copy** — not a bare
+    URL. You drop it into your `AGENTS.md` when you build that in
+    **[Part 3, Step 2](#step-2--draft-agentsmd-and-specmd-with-pi)** — your agent's memory, so Pi knows
+    how to fold all lab. After that, just tell Pi *"fold this on the course service and read the
+    pLDDT/PAE"* whenever a sequence isn't in the AlphaFold DB.
   - **Limits & reliability.** **≤ 400 residues total, ≤ 2 chains, one fold at a time, 40 folds/hour**,
     and a fold takes **~1–5 seconds**. **Folds are FREE** — they don't touch your portal budget. If a
     call comes back **HTTP 429 or 503 with a `Retry-After` header**, the service is **up** but busy or
@@ -536,7 +534,7 @@ matches the claim on each and compare. Neither needs a GPU on *your* laptop.
   > a shared key. Your request queues for the next free GPU and comes back in seconds; folds are free
   > because it's *our* hardware, not a paid API. This is exactly the pattern the whole course is about:
   > **wrap a model behind an API your agent can call** — you just get to use ours instead of building it
-  > today.
+  > today. **The full source is open:** [github.com/aicell-lab/ddls-structure-api](https://github.com/aicell-lab/ddls-structure-api).
 
 - **Google Colab CLI — EXPLORE IF YOU HAVE TIME (optional).** Run ESMFold / ColabFold yourself on a
   free Colab **T4** GPU. This teaches the general "offload to a cloud GPU" skill, but it is **fragile
@@ -553,8 +551,10 @@ that takes a sequence and returns the PDB + pLDDT + PAE — the same shape our s
 whole service, and it's the same "wrap a model behind an API" pattern you're using today.
 
 **You need a CUDA GPU with ~16 GB of VRAM.** ESMFold will **not** run on a laptop CPU in any reasonable
-time, so treat this as a "try it if you have a GPU" pointer, not a step in today's lab. Model card and
-usage: **<https://huggingface.co/facebook/esmfold_v1>**.
+time, so treat this as a "try it if you have a GPU" pointer, not a step in today's lab. The course's own
+service is exactly this, open source — **clone it as a working starting point:**
+[github.com/aicell-lab/ddls-structure-api](https://github.com/aicell-lab/ddls-structure-api). Model
+card and usage: **<https://huggingface.co/facebook/esmfold_v1>**.
 
 </details>
 
@@ -585,6 +585,11 @@ bundle** (downloaded in Part 2), sitting together in your `ddls-week4` folder, w
 them. Nothing else.
 
 ### Step 2 — Draft `AGENTS.md` and `spec.md` *with* Pi
+
+> **First, grab your fold-service access.** Open the **"Fold a structure on our GPU"** panel on your
+> week page in the portal (click to reveal) and press **Copy** — it copies a ready instruction with your
+> key embedded. You'll drop it into the `<PASTE the instruction…>` slot in the prompt below, so it lands
+> in your `AGENTS.md` (your agent's memory) and Pi knows how to fold for the rest of the lab.
 
 Launch Pi and have it read the transcript and the files and draft both, so you start from a real draft,
 not a blank page:

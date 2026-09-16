@@ -440,17 +440,21 @@ On Windows PowerShell: `Get-Content "$env:USERPROFILE\.pi\agent\models.json"`.
 
 </details>
 
-**4. Save your portal API key to a `.env` file.** Generate a key in the portal (**Generate API key** on
-your dashboard). **The portal shows the key only once**, so save it immediately. Inside your
-`ddls-week4` folder, create a file called `.env` with a single line:
+**4. Save your keys to a `.env` file.** Generate a key in the portal (**Generate API key** on your
+dashboard). **The portal shows the key only once**, so save it immediately. Inside your `ddls-week4`
+folder, create a file called `.env` with two lines — your **portal API key** (for Pi) and the
+**fold key** (for the GPU fold service; copy it from the "Fold a structure on our GPU" panel on your
+week page):
 
 ```
 DDLS_API_KEY=paste-your-portal-key-here
+DDLS_FOLD_KEY=paste-the-fold-key-here
 ```
 
-> **Key hygiene.** Treat this key like a password: never commit it or share it. The git setup you hand
-> Pi in Part 3 puts `.env` in `.gitignore`, so it stays out of every commit — but check. On Windows,
-> create the file with `Set-Content .env "DDLS_API_KEY=paste-your-portal-key-here"` (File Explorer
+> **Key hygiene.** Treat both keys like passwords: never commit or share them, and **never paste a key
+> into `AGENTS.md`** (that file is committed and pushed). Keys live only in `.env` — the git setup you
+> hand Pi in Part 3 puts `.env` in `.gitignore`, so it stays out of every commit; check anyway. On
+> Windows, create the file with `Set-Content .env "DDLS_API_KEY=…`nDDLS_FOLD_KEY=…"` (File Explorer
 > refuses dot-files).
 
 **5. Load the key before every Pi run** — each time you open a new terminal:
@@ -517,12 +521,13 @@ matches the claim on each and compare. Neither needs a GPU on *your* laptop.
   holds the **canonical, full-length** protein. Most owners hand you a sequence that **isn't there in
   the form you need** — a **designed construct**, a **mutant or truncation**, or a **two-chain
   complex**. You must fold **that exact sequence** on our service and read *its* confidence, then compare
-  it against the database model. The course hosts a small **key-gated ESMFold** service on our own GPUs,
-  and **everything you need is a single URL**.
+  it against the database model. The course hosts a small **key-gated ESMFold** service on our own GPUs.
 
-  - **How you use it: one instruction, kept in your `AGENTS.md`.** The portal's **"Fold a structure on
-    our GPU"** panel gives you a ready instruction (with your key embedded) via **Copy** — not a bare
-    URL. You drop it into your `AGENTS.md` when you build that in
+  - **How you use it — key in `.env`, instruction in `AGENTS.md`.** The portal's **"Fold a structure on
+    our GPU"** panel gives you two things to copy: the **`DDLS_FOLD_KEY=…`** line for your **`.env`**
+    (gitignored — the key never touches a committed file), and a **tokenless instruction** for your
+    **`AGENTS.md`** that points Pi at `…/skill.md` and tells it to read the key from `$DDLS_FOLD_KEY`.
+    You drop the instruction into `AGENTS.md` when you build it in
     **[Part 3, Step 2](#step-2--draft-agentsmd-and-specmd-with-pi)** — your agent's memory, so Pi knows
     how to fold all lab. After that, just tell Pi *"fold this on the course service and read the
     pLDDT/PAE"* whenever a sequence isn't in the AlphaFold DB.
@@ -591,9 +596,10 @@ them. Nothing else.
 ### Step 2 — Draft `AGENTS.md` and `spec.md` *with* Pi
 
 > **First, grab your fold-service access.** Open the **"Fold a structure on our GPU"** panel on your
-> week page in the portal (click to reveal) and press **Copy** — it copies a ready instruction with your
-> key embedded. You'll drop it into the `<PASTE the instruction…>` slot in the prompt below, so it lands
-> in your `AGENTS.md` (your agent's memory) and Pi knows how to fold for the rest of the lab.
+> week page in the portal (click to reveal). It gives you two copies: the **`DDLS_FOLD_KEY=…`** line
+> goes in your **`.env`** (you added it in Part 2 — the key never enters a committed file), and the
+> **tokenless instruction** goes in the `<PASTE the instruction…>` slot in the prompt below, so it lands
+> in your `AGENTS.md`. Pi then reads the key from `$DDLS_FOLD_KEY` and knows how to fold all lab.
 
 Launch Pi and have it read the transcript and the files and draft both, so you start from a real draft,
 not a blank page:

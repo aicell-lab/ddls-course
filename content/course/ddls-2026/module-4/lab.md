@@ -299,17 +299,22 @@ it's the whole assembly — has to come from your interview and from opening the
 This week you add **one** new habit, and it will save you at least once today: **git**. Not as a
 ceremony — as an **undo button for your agent**. Pi is fast and mostly right, but occasionally it will
 "fix" something and break three others, or overwrite a file that was working. A committed snapshot lets
-you jump back to the last good state in one command instead of re-doing an hour of work.
+you jump back to the last good state instead of re-doing an hour of work.
 
-Initialise it once, now, and make sure your secret never gets committed:
+**You don't run git by hand — you *tell Pi* to set it up**, the same way you direct everything else.
+When you launch Pi in [Step 2](#step-2--draft-agentsmd-and-specmd-with-pi), include this in your first
+instruction:
 
-```bash
-git init
-printf ".env\n.venv/\n__pycache__/\n*.pyc\n" > .gitignore
-```
+> *"Initialise this folder as a git repository. Create a `.gitignore` that excludes `.env`, `.venv/`,
+> `__pycache__/` and `*.pyc` so my key is never committed, and make one initial commit. Then add a
+> **Version control** rule to `AGENTS.md`: **before any big change** — installing packages, rewriting a
+> working file, a large refactor — **commit the current state first**, and **commit again whenever
+> something starts working**, with short, clear messages, so we always have history to roll back to."*
 
-You'll take snapshots as you go in Part 3 — mostly by **asking Pi to do it for you**. That's the point:
-you *direct* the agent to protect your work, the same way you direct it to do the analysis.
+That last part is the trick: the rule lives in **`AGENTS.md`**, so Pi follows it **every turn without
+you re-asking**. You *direct* the agent to protect your work once, and then it keeps doing it on its
+own. You'll still nudge it to commit at the obvious milestones (below) — but the safety net is now a
+standing rule, not something you have to remember.
 
 ### Set up Pi (the analyst agent)
 
@@ -592,14 +597,18 @@ not a blank page:
 
 ```text
 Read my interview transcript (the .md file in this folder) and look at the data file(s) — there is a
-protein sequence (FASTA) and/or a structure (.cif/.pdb) with confidence files. From ONLY what the
-transcript and the files actually show, write two files, then stop — do not analyse anything yet:
+protein sequence (FASTA) and/or a structure (.cif/.pdb) with confidence files. First set up version
+control: initialise this folder as a git repository, add a .gitignore that excludes .env, .venv/,
+__pycache__/ and *.pyc (so my key is never committed), and make one initial commit. Then, from ONLY
+what the transcript and the files actually show, write two files, then stop — do not analyse anything yet:
 
 1. AGENTS.md — how you operate here: the environment (use uv — create it with `uv venv` and run all
    Python with `uv run`, which works the same on every OS), where the data lives and how to load a
    structure (pLDDT is in the B-factor column of the mmCIF; PAE is in the JSON), where to write
-   outputs (results/), and the rule that you never report an answer about a structure without first
-   reporting the confidence that matches the claim AND confirming the model is actually this protein.
+   outputs (results/), a **Version control** rule (this folder is a git repo — commit the current state
+   *before* any big change, and commit again whenever something starts working, with short clear
+   messages), and the rule that you never report an answer about a structure without first reporting the
+   confidence that matches the claim AND confirming the model is actually this protein.
 2. spec.md — the problem: the exact decision the owner needs, the protein (how many chains/residues,
    predicted or experimental, monomer or assembly), the files and what each is, the EXACT claim the
    owner is making and which residues/parts it concerns, the confidence that matches that claim
@@ -612,8 +621,10 @@ Then give me a 3-line summary of what you wrote.
 - **`AGENTS.md`** is the brief loaded every turn: the **GOAL** in a sentence or two, **where the data
   lives and how to load a structure**, the **MUST-NOTs** ("never report a fold as solid without the
   per-residue confidence there", "never read a binding interface off a model without the interface
-  error", "confirm the model's sequence matches the owner's construct first"), and a pointer to
-  `spec.md`.
+  error", "confirm the model's sequence matches the owner's construct first"), the **Version control
+  rule** (commit *before* any big change and again whenever something works), and a pointer to
+  `spec.md`. Because the rule lives here, Pi keeps taking snapshots on its own — you don't have to
+  remember.
 - **`spec.md`** is every detail: the protein, the files, the exact claim and the residues it touches,
   the **right confidence for that claim**, the **structure/sequence/assembly check**, and what "done"
   looks like. It **is the data dictionary the download didn't come with** — you rebuild it from the
@@ -751,8 +762,10 @@ codes**, and **report the right confidence before it answers the owner's questio
 ### git as your undo button — snapshot as you go, recover when Pi breaks something
 
 New this week, and worth the two minutes it takes to build the habit: **commit a snapshot each time
-something works**, so a later mistake can't cost you the good state. You don't manage git by hand —
-you **direct Pi** to do it, just like the analysis:
+something works**, so a later mistake can't cost you the good state. If you added the **Version control
+rule** to `AGENTS.md` (Part 2), Pi is *already* committing before big changes on its own — the nudges
+below are just the manual reminders at the milestones, plus how to recover when something breaks. You
+don't manage git by hand — you **direct Pi** to do it, just like the analysis:
 
 ```text
 Commit the current state with git. Use a short, clear message describing what works now (e.g.
@@ -774,6 +787,17 @@ changes first if needed) and confirm the app runs again. Don't delete results/ t
 
 That is the real lesson: **an agent is fastest when you can let it try things — and you can only let it
 try things freely if you can undo them.** git is what makes bold direction safe.
+
+> **Optional — put it on GitHub (a real handover).** So far git lives only on your laptop. To *share* a
+> repo — with a teammate, a client, or us — you push it to **GitHub**, and again you can have Pi do the
+> mechanical parts. **EXPLORE IF YOU HAVE TIME — not required today**, but you'll want this for your
+> **final-project** handover, so it's worth trying once now:
+> 1. Create a free account at <https://github.com> and make a **new empty repository** (no README) —
+>    that part is a web form, so do it yourself.
+> 2. Then tell Pi: *"Add this GitHub repo as the remote `origin` — here's the URL — first double-check
+>    `.env` is gitignored and not in any commit, then push my `main` branch."* If it needs
+>    authentication it will walk you through a personal-access-token or the `gh` CLI.
+> 3. Open the repo in your browser and confirm your **key is not there** — a public repo is public.
 
 > **And when something breaks that git can't fix — paste the *whole* error back to Pi.** The other
 > meta-skill this week: when a script errors or the viewer won't start, don't paraphrase ("it didn't
@@ -827,6 +851,9 @@ show-its-work, controls), see
 
 > **⏱ 15:45–16:45 · start building at 15:45 no matter what; have the viewer running by 16:45.** Build
 > the **Core** app first; reach for **Strong** only if it's running and time is left.
+>
+> **Commit the moment the viewer first renders** — tell Pi *"commit this, the viewer works"* before you
+> ask for any change to it. That's your restore point if a later tweak breaks the layout.
 
 Pi is a command-line agent — it returns numbers in a chat. But a forward-deployed scientist ships a
 **thing the problem-owner can open and read**, where the structure sits right next to the confidence

@@ -15,7 +15,7 @@ weight: 8
   [Final Project](../final-project/) page
 - **Deadline for researchers to sign up a project:** Friday 25 September 2026 —
   [the public call](/call-for-projects-2026/)
-- **Oral presentations (Master's students):** *to be announced*
+- **Oral presentations (Master's students):** **Tuesday 27 October 2026, 10:00–12:00** (online on the same Zoom)
 
 All live sessions are held online on the **same Zoom meeting** all term: <https://kth-se.zoom.us/j/66475726850>
 
@@ -68,6 +68,6 @@ The lab and seminar times below are fixed. Recorded lectures are released at the
 | 6 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Automated Scientific Discovery and AI Agents | Wei Ouyang, Gabriel Reder |
 | 6 | Wed 30 Sep, 13:00–17:00 | 💻 Computer Lab | Automated Scientific Discovery and AI Agents | Course team |
 | 6 | Fri 2 Oct, 10:00–12:00 | 💬 Seminar | Automated Scientific Discovery and AI Agents | Course team |
-| — | TBA | 📝 Examination | Final project — oral presentations (Master's only) | Course team |
+| — | Tue 27 Oct, 10:00–12:00 | 📝 Examination | Final project — oral presentations (Master's only) | Course team |
 
 If you anticipate that you won't be able to attend any of the sessions, please [contact](/contact/) us as soon as possible.

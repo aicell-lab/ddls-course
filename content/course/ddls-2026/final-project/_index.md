@@ -31,7 +31,7 @@ they can run without you.
 | **Late Sep – early Oct** | Matching + [teaching-team approval](#proposal-and-approval); you meet your client. |
 | **Early–mid Oct** | Meeting 1 (interview + data hand-over) → build (2–3 days) → Meeting 2 (show it, hear what's wrong). |
 | **By 23 Oct** | **Hand-over** — a written report + a runnable app/code. Course period ends. |
-| TBA | Oral presentations (Master's: mandatory, sets your grade). |
+| **Tue 27 Oct, 10:00–12:00** | Oral presentations (Master's: mandatory, sets your grade). |
 
 **The three steps that matter most, in order:** ① **find someone else's problem** (not your own) and register it through your invite link → ② **get it approved** by the teaching team before you build → ③ **run the two 1-hour meetings** and hand back something that runs on their machine. Everything below expands on these. Full detail is in [Dates](#dates) at the end.
 
@@ -244,7 +244,7 @@ Credit breakdown: **labs 2.0 hp · project 3.0 hp · oral exam 2.5 hp** (7.5 hp 
 | Late September / early October | Matching and approval; you meet your client |
 | Early–mid October | Meeting 1, build, meeting 2 |
 | **By 23 October** | Hand-over — the course period ends |
-| To be announced | Oral presentations |
+| **Tuesday 27 October 2026, 10:00–12:00** | Oral presentations (Master's — mandatory) |
 
 Start looking for a client **now**. The single best predictor of a good final project is having
 found the person early.

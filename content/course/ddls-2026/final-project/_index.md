@@ -21,6 +21,22 @@ they can run without you.
 
 ---
 
+## Key dates — at a glance
+
+| When | What |
+|---|---|
+| **Now** | **Find a client and register the project** (use your [personal invite link](#your-personal-invite-link)). Do this first — finding someone early is the single best predictor of a good project. |
+| **Fri 25 Sep** | Deadline for researchers to sign up projects through the [public call](/call-for-projects-2026/). If you haven't found anyone, tell us now and we'll match you from the pool. |
+| **Tue 29 Sep, 10:00–11:00** | Live final-project briefing (Module 6) on Zoom. |
+| **Late Sep – early Oct** | Matching + [teaching-team approval](#proposal-and-approval); you meet your client. |
+| **Early–mid Oct** | Meeting 1 (interview + data hand-over) → build (2–3 days) → Meeting 2 (show it, hear what's wrong). |
+| **By 23 Oct** | **Hand-over** — a written report + a runnable app/code. Course period ends. |
+| TBA | Oral presentations (Master's: mandatory, sets your grade). |
+
+**The three steps that matter most, in order:** ① **find someone else's problem** (not your own) and register it through your invite link → ② **get it approved** by the teaching team before you build → ③ **run the two 1-hour meetings** and hand back something that runs on their machine. Everything below expands on these. Full detail is in [Dates](#dates) at the end.
+
+---
+
 ## The rule you cannot bend
 
 > **It must be someone else's problem, and it must be different from what you already work on.**

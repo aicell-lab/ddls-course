@@ -40,8 +40,9 @@ supply the data or the question.
    - **Stretch (optional, only if you have time):** more controls — filters, a two-cluster
      comparison, a mini-report, even a small model. Don't start here; get the core working first.
    - **Two ways to build it** (pick one early — deciding late costs time): a **self-contained HTML**
-     with a *curated* set of genes baked in (you can't ship all ~14k genes to a browser), or a
-     **tiny Python backend** (scanpy) with a Run endpoint the page calls. Either counts.
+     with a *curated* set of genes baked in (you can't ship all ~14k genes to a browser — a good set
+     is the **union of every cluster's top ~8 marker genes**, which scanpy gives you in one call), or
+     a **tiny Python backend** (scanpy) with a Run endpoint the page calls. Either counts.
 2. **A GitHub repo** with the app in it and a **clear, well-structured `README.md`** — what the
    navigator does, how to run it, and your one-paragraph answer to the owner's question. The repo +
    README *is* the deliverable; make it something you'd be happy to send a collaborator.
@@ -99,10 +100,13 @@ you should be able to click something in your own tool and confirm (or break) it
 
 **Three ways a cluster fools you (don't get caught):**
 - **Low gene count ≠ junk.** Some real cell types are genuinely RNA-sparse. Before you bin a
-  low-count cluster, check its **% mito** (dying cells run *high* mito) and its **marker genes** — a
-  real type has a clean signature; debris doesn't.
+  low-count cluster, check its **% mito** and its **marker genes**. As a rough scale for these cells,
+  healthy sits around **1–3% mito** and dying cells run **high (≳10–15%)** — so a *low*-mito cluster
+  is evidence *against* "dead cells", not for it. A real type has a clean marker signature; debris doesn't.
 - **Unusually high counts/genes can be a doublet** — two cells captured together — masquerading as a
-  new type. Coexpression of two lineages' markers is the tell.
+  new type. Two tells: its "markers" are **housekeeping / ribosomal / cell-cycle** genes rather than a
+  clean lineage, and it **co-expresses two lineages' markers** (check that on the raw `counts` layer,
+  not the normalised values, which are noisy near zero).
 - **"Sits apart on the map" ≠ novel.** A well-known cell type can form its own distinct cluster.
   Distinctness is not discovery; only the markers decide.
 
@@ -114,9 +118,11 @@ you should be able to click something in your own tool and confirm (or break) it
   and paste the *whole* error back to Pi — not a paraphrase. If the page loads data with `fetch()`,
   it must be **served** (`python -m http.server`) — it won't work from a double-clicked file. Simplest
   fix: have Pi inline the (curated) data into one HTML file so it opens anywhere.
-- **Stuck on the biology or a tool?** Using ChatGPT/Claude or googling a marker gene to *understand*
-  what you're looking at is not cheating — it's exactly what a forward-deployed scientist does.
-  Disclose it and move on.
+- **Don't know what the genes mean?** That's expected — you're not a single-cell biologist. Paste a
+  cluster's **top 5 marker genes** into ChatGPT/Claude and ask *"what cell type is this in PBMC?"* —
+  that's how you turn a gene list into a name. Using another AI or googling to *understand* what
+  you're looking at is not cheating; it's exactly what a forward-deployed scientist does. Disclose it
+  and move on.
 
 {{< spoiler text="Reference — Pi setup + tools (same as every week)" >}}
 Generate a portal API key, then point your local Pi at `<portal>/v1` with that key (the

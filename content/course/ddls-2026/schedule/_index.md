@@ -45,7 +45,7 @@ Each module runs over one week. The computer lab and seminar are held live over 
 
 ### Session Schedule
 
-The lab and seminar times below are fixed. Recorded lectures are released at the start of each module week. The guest lecturers for Modules 4 and 5 are still being confirmed.
+The lab and seminar times below are fixed. Recorded lectures are released at the start of each module week.
 
 | Module | Date & Time | Type | Topic | Teachers |
 |--------|-------------|------|-------|----------|
@@ -58,10 +58,10 @@ The lab and seminar times below are fixed. Recorded lectures are released at the
 | 3 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Precision Medicine and Systems Biology | Avlant Nilsson, Golnaz Taheri |
 | 3 | Wed 9 Sep, 13:00–17:00 | 💻 Computer Lab | Precision Medicine and Systems Biology | Course team |
 | 3 | Fri 11 Sep, 10:00–12:00 | 💬 Seminar | Precision Medicine and Systems Biology | Course team |
-| 4 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Protein Structure and Molecular Biology | To be confirmed |
+| 4 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Protein Structure and Molecular Biology | Patrick Bryant |
 | 4 | Wed 16 Sep, 13:00–17:00 | 💻 Computer Lab | Protein Structure and Molecular Biology | Course team |
 | 4 | Fri 18 Sep, 10:00–12:00 | 💬 Seminar | Protein Structure and Molecular Biology | Course team |
-| 5 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Single-cell Transcriptomics and Genomics | To be confirmed |
+| 5 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Single-cell Transcriptomics and Genomics | Recorded — MIT MLCB (M. Kellis) |
 | 5 | Wed 23 Sep, 13:00–17:00 | 💻 Computer Lab | Single-cell Transcriptomics and Genomics | Course team |
 | 5 | Fri 25 Sep, 10:00–12:00 | 💬 Seminar | Single-cell Transcriptomics and Genomics | Course team |
 | 6 | Tue 29 Sep, 10:00–11:00 | 🧑🏻‍🏫 Lecture (live) | Final-project briefing | Wei Ouyang |

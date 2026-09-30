@@ -102,10 +102,9 @@ separate write-ups: the loop generates the files as it runs, and your job is to 
    separate report to write: this file *is* your notebook.
 4. **Your seminar talk** (Friday) — see the [seminar page](../seminar/).
 
-**In one line:** the **dashboard** is the *live view* you watch while the loop runs; **`RALPH_PROGRESS.md`**
-is the *durable record* you read back, verify, and hand in. Submit your loop files, your dashboard link, and
-your notebook in the **course portal**, together with your Agent-A brainstorm and Pi transcripts. Keep it
-proportionate — this is a self-directed capstone, not a paper.
+In short: the **dashboard** is the *live view*; **`RALPH_PROGRESS.md`** is the *durable record*. Submit your
+loop files, dashboard link, and notebook in the **course portal**, with your Agent-A brainstorm and Pi
+transcripts. Keep it proportionate — a self-directed capstone, not a paper.
 
 ## Wednesday = set up + validate the loop (4 h, 13:00–17:00)
 
@@ -153,16 +152,13 @@ so hard you throw away the discovery. Leave the brainstorm knowing:
 
 **Example brainstorm prompts** (adapt in your own words — scientist to scientist):
 
-> *"I've got agent-driven time on a microscope with this pond sample and I want to find something
-> genuinely interesting, not just re-count the obvious. If you were at the scope, what would you look for
-> first — and what would actually surprise you?"*
+> *"I've got agent-driven microscope time on this pond sample and want to find something genuinely
+> interesting, not re-count the obvious. If you were at the scope, what would you look for first — and what
+> would actually surprise you?"*
 
-> *"Can we sharpen that into something a loop can test in a couple of days? Give me one concrete,
-> checkable version — a specific morphology, behaviour, or difference between the two plates I could
-> quantify from images."*
-
-> *"What would make a finding here *novel* rather than textbook? And what's the classic way people fool
-> themselves with samples like this, so I can build a check against it?"*
+> *"Sharpen that into one concrete thing a loop can test in a couple of days — a specific morphology,
+> behaviour, or plate-vs-plate difference I could quantify from images. And what's the classic way people
+> fool themselves with samples like this, so I can build a check against it?"*
 
 When you have a direction, a sense of what's interesting, and a loop-shaped plan — stop and go get your
 microscope.
@@ -204,59 +200,40 @@ The box below is *not* an API manual you operate — it's the **six things Pi ge
 otherwise**. Put them into your `snap.py` / `RALPH.md`, and check your agent actually did them.
 
 > ### Six things to make sure your agent gets right
-> These come from live testing on the real scope — the mistakes the agent makes unless directed. You don't
-> run these commands; you make sure your agent does, and you spot-check the result.
+> From live testing — the mistakes the agent makes unless you direct it. Put them in `snap.py`/`RALPH.md`
+> and spot-check the result.
 >
-> 1. **For imaging, snap with `dx`/`dy` — it's atomic. Don't move-then-snap in the loop.** To sweep a
->    well, pass **`dx`/`dy` directly to `/v1/snap`**: one call that **moves *and* exposes** together.
->    `SKILL.md` also documents a separate **`/v1/move`** — that's only for a **manual peek** by hand;
->    **never** move-then-snap for loop imaging (it invites logging a frame from the wrong place).
-> 2. **Call `GET /v1/status` FIRST — it's the only source of scale — and read the NESTED field.** It's a
->    GET that needs only `plate`. The scale is **`result.scale.pixel_size_um`** (and the field of
->    view is **`result.scale.fov_um`**) — **not** a top-level key. **No status call → no microns.** Every size,
->    area, or speed must be computed from that `pixel_size_um` (it's ~0.376 µm/px, but **read it, never
->    hard-code it**). A measurement in "pixels" is not a result.
-> 3. **Autofocus BEFORE your first real snap in any field — don't trust the stored z.** The saved focus
->    can come back badly soft, so a "snap-then-focus" order logs a blurry first frame. Run `focus` first,
->    then image — and still **eyeball sharpness** yourself. Note: `focus` returns an
->    **`af_reference_unvalidated`** warning that is **expected and non-blocking** — don't panic at it.
-> 4. **Fluorescence: start at `exposure_ms: 30`, `intensity: 20`.** These are the gateway's own defaults
->    now, and the **measured-good** values — live pond water is bright. If a frame comes back blank WHITE
->    it is **over-exposed** — turn `exposure_ms`/`intensity` **DOWN**, never up. Also: the **first** FL
->    snap **can take up to ~18 s if the 488 nm laser is cold** (often ~2 s once warm) — **set a ~30 s
->    timeout** so it doesn't look hung.
-> 5. **DOWNSCALE before you show the agent — never feed the full 2084×2084 PNG to Pi's vision.** Raw
->    frames are large; full-res images balloon token cost and latency and can **blow your budget fast**
->    across a long loop. Decode `image_png_b64`, resize to **≈768 px on the long side** (e.g.
->    `img.thumbnail((768, 768))` in Pillow), and hand the agent the **thumbnail** — it's plenty to
->    count organisms and judge morphology. Keep the full-res frame on disk for figures and measurement.
-> 6. **The thumbnail trap — this bit real agents twice in our testing.** Because the agent *looks* at the
->    768 px thumbnail, it will happily measure a cell as "180 px across" **on the thumbnail** and then
->    multiply by the full-res `0.376 µm/px` — under-reporting every size by the resize factor (~2.7×). So
->    either **measure on the full-resolution frame**, or **multiply the thumbnail's pixel size by the
->    resize factor** (`0.376 × 2084/768 ≈ 1.02 µm per thumbnail-px`). Resize for *looking*; scale from the
->    *true* pixel size. Put this rule in your loop, and **spot-check one size by hand** — it is the single
->    most common silent error in the whole lab.
+> 1. **Snap atomically with `dx`/`dy`** — pass `dx`/`dy` straight to `/v1/snap` (one call moves *and*
+>    exposes). Never `move` then `snap` in the loop, or you'll log a frame from the wrong place. (`/v1/move`
+>    is for manual peeking only.)
+> 2. **`GET /v1/status` FIRST for scale — it's nested.** The pixel size is `result.scale.pixel_size_um`
+>    (~0.376 µm/px — **read it, don't hard-code**), not a top-level key. Every size/speed converts from it;
+>    a measurement "in pixels" is not a result.
+> 3. **Autofocus before the first snap in any field** — stored `z` can be soft, so snap-then-focus logs a
+>    blur. `focus` first, then image; still eyeball sharpness. (Its `af_reference_unvalidated` warning is
+>    expected — ignore it.)
+> 4. **Fluorescence: start at `exposure_ms: 30`, `intensity: 20`** (the good defaults — pond water is
+>    bright). Blank-WHITE = over-exposed → turn **down**. The first FL snap can take ~18 s cold (~2 s warm)
+>    — use a ~30 s timeout.
+> 5. **Downscale before the agent looks** — resize each frame to ~768 px (`img.thumbnail((768,768))`) and
+>    show the *thumbnail*; the full 2084×2084 PNG balloons cost/latency. Keep the full-res on disk.
+> 6. **The thumbnail trap (bit real agents twice):** if the agent measures on the 768 px thumbnail but
+>    scales with the full-res `0.376 µm/px`, every size comes out ~2.7× too small. Fix: measure on full-res,
+>    **or** use the thumbnail's own scale (`0.376 × 2084/768 ≈ 1.02 µm/thumb-px`). Spot-check one size by
+>    hand — this is the most common silent error in the lab.
 
 ### Set up your analyst agent (Pi + the discovery loop)
 
-**You already have Pi.** You configured it on the DDLS gateway back in Week 1 and used it every week
-since; Week 2's image lab already turned on **vision** (the `ddls` provider's `models.json` lists
-`"image"` as an input). So there is **nothing to re-configure this week** — and the golden rule holds:
-**you never hand-edit config or run install steps yourself. Pi is a coding agent — you tell it what you
-want, it does it, and you check its work.**
+**You already have Pi** from Weeks 1–5 (with **vision** on since Week 2), so there's nothing to
+re-configure — and the golden rule holds: **you never hand-edit config or run installs yourself; you tell
+Pi what you want and check its work.** Two paste-in prompts and you're ready (log into the portal first).
 
-Two paste-in prompts and you're ready. Log into the portal first (Part 2/3 need it).
-
-**1. Quick check + self-heal** — make sure Pi can still reach the gateway and can *see* images. Paste
-into Pi:
+**1. Quick check + self-heal** — paste into Pi:
 
 > *"Check that `~/.pi/agent/models.json` has the `ddls` provider with **vision enabled** (its input list
 > includes `image`) and `reasoning_effort: none`. If `image` is missing, add it and confirm."*
 
-Pi edits its own config — **you don't open the JSON.** (If you're curious what it's checking, that block
-is the same DDLS provider you set up in Weeks 4–5: `baseUrl` = the portal `/v1`, model `gpt-5.6-luna`,
-input includes `image`, `reasoning_effort: none`. It's a self-heal reference, not a step to type.)
+Pi edits its own config — you don't open the JSON.
 
 **2. Install the loop + build your microscope helper** — one prompt does both. **Paste your `SKILL.md`
 URL** (from the **"Your microscope"** panel) below; the prompt fills in your URL automatically — then
@@ -265,25 +242,16 @@ prompt** button does the same with your URL already filled in.)*
 
 {{< pi-prompt-filler >}}
 
-That one prompt tells Pi to install the pinned Ralph loop (`pi install npm:@lnilluv/pi-ralph-loop@0.2.1`),
-read your microscope doc, and write a `snap.py` helper that snaps atomically, saves full-res + a ≤768 px
-thumbnail, reads the scale once, and backs off on 429/503.
+That one prompt has Pi install the pinned Ralph loop and write a `snap.py` helper that snaps atomically,
+saves full-res + a ≤768 px thumbnail, reads the scale once, and backs off on 429/503. **You don't hand-edit
+anything** — check its work on the test thumbnail, and from here **drive the scope only through `snap.py`**
+(the one place the downscale-and-save rule lives).
 
-Pi installs the (pinned) extension and writes `snap.py`. **You don't hand-edit anything** — you check its
-work by looking at the test thumbnail. From here on, **drive the scope only through `snap.py`** — it's the
-one place the downscale-and-save rule lives, so every frame is handled the same way.
-
-> **We are NOT writing the Ralph loop yet.** You write the loop in **Part 4**, *after* you've explored by
-> hand and know which steps are worth automating. Pi has the helper and the API doc now; that's all you
-> need for the hands-on exploration in Part 3.
-
-> **Pi + `/ralph` note (tested):** the loop runs **only in Pi's interactive terminal** — launch
-> `pi --provider ddls --model gpt-5.6-luna`, then type `/ralph .`. It does **not** run in one-shot
-> `pi -p "…"` mode (it starts a fresh session each iteration, which the one-shot mode can't survive). The
-> only two loop commands are `/ralph <dir>` (start) and `/ralph-stop` (graceful stop).
-> **Heads-up:** on some Pi versions `/ralph` errors out (`ctx is stale…`); if yours does, there's a tiny
-> **no-extension fallback** (`run-loop.sh`) in Part 4 that does the identical loop — the discovery is the
-> same either way, so don't lose time fighting it.
+> **Notes for later:** you don't write the actual loop until **Part 4** (after exploring by hand) — Pi just
+> has the helper + API doc for now. When you *do* run it, the loop lives **only in Pi's interactive
+> terminal** (`pi --provider ddls --model gpt-5.6-luna`, then `/ralph .`), not `pi -p`. On some Pi versions
+> `/ralph` errors with `ctx is stale…`; if yours does, use the tiny **no-extension fallback** (`run-loop.sh`)
+> in Part 4 — same loop, don't lose time fighting it.
 
 **Validate before you automate (step 4).** Prove the instrument works *by hand* first, in this order:
 **(1)** call `GET /v1/status` and confirm `result.scale.pixel_size_um` comes back; **(2)**
@@ -294,16 +262,10 @@ one place the downscale-and-save rule lives, so every frame is handled the same 
 your own well. If that works, build the loop; if not, fix it now — don't let an autonomous loop discover
 your token is wrong (or that it's been over-exposing every FL frame) on iteration 20.
 
-**Safe limits protect a physical instrument and everyone's samples:**
-
-- **Your wells only.** Your token can't reach anyone else's. Stay in yours.
-- **Exposure caps and a safe z-range.** Don't exceed them; bake the caps into your loop's rules (Part 4).
-- **A shared queue — don't over-image.** Two scopes, ~26 students. Every `snap_image` is a real physical
-  action that makes everyone wait. Survey coarsely, zoom only where worth it, cap iterations and
-  images-per-iteration, add a delay between iterations, and **never leave a loop hammering the queue
-  unwatched.**
-- **A hard time window.** Live **Wed 30 Sep → hard-off Fri 2 Oct 13:00**; the token stops after. Image inside
-  the window — write up afterwards from saved frames.
+**It's a shared, real instrument.** Your token reaches **only your wells**; exposure and z are capped
+(exceed them and you get a `400`, not damage). Two scopes serve ~26 students, so **every snap makes someone
+wait** — survey coarsely, cap images per iteration, pace the loop, and never leave it hammering the queue
+unwatched. Live **Wed 30 Sep → Fri 2 Oct 13:00**; write up afterwards from saved frames.
 
 {{< spoiler text="Primer — chlorophyll autofluorescence, and why BF-vs-FL is a truth test" >}}
 Shine the right light on **chlorophyll** and it **glows back on its own** — no stain. That's
@@ -317,14 +279,11 @@ channel on the same field:
   clean way to sort "plant-like" from "animal-like/grazer."
 - **Empty shell / dead cell / debris** — can look like a cell in BF but goes **dark** in FL.
 
-So BF-vs-FL separates *chlorophyll-bearing from not* — one of the most honest, hardest-to-fake signals you
-have. **But be careful what you claim from it.** A chlorophyll-positive signal is **strong evidence of
-chlorophyll, not proof of a living, healthy, actively-photosynthesising cell** — recently-dead cells and
-even loose chloroplasts can still fluoresce, and a single frame can't show viability. Treat FL-positive as
-a **candidate photosynthesiser** to confirm (does its BF structure look intact? does it persist or move
-over a time-lapse?), and treat a bright FL frame as ruling *in* chlorophyll, not ruling *in* life. The
-useful, defensible version: an **FL-dark, ornate silica frustule is very likely an empty husk**, and
-counting diatoms in BF alone would miscount those husks as cells — the FL channel is how you avoid that.
+So BF-vs-FL separates *chlorophyll-bearing from not* — one of the hardest signals to fake. **But it's
+evidence, not proof of life:** recently-dead cells and even loose chloroplasts still fluoresce, and one
+frame can't show viability — so treat FL-positive as a **candidate** to confirm (intact BF structure? does
+it persist over a time-lapse?). Its most defensible use: an **FL-dark, ornate frustule is very likely an
+empty husk**, so counting diatoms in BF alone miscounts husks as live cells.
 {{< /spoiler >}}
 
 {{< figure src="../discovery-pair_diatomB.png" alt="Live diatom: chlorophyll fluorescence in a band inside the frustule" >}}
@@ -413,25 +372,18 @@ saw.
 > station** (a fixed well + `dx`/`dy`) each pass so "before vs after" is a fair comparison. Leaving it to
 > run overnight and coming back to *change* is exactly the kind of result this lab is after.
 
-{{< spoiler text="Primer — what the Ralph loop actually is (and its real, tested behaviour)" >}}
-We use **[pi-ralph-loop](https://github.com/lnilluv/pi-ralph-loop)** (pinned to `@0.2.1`, the version we
-tested). Honestly: a **supervised loop that re-runs your Pi agent with fresh context each cycle** (so it
-doesn't drown in one stale conversation). Each iteration it (1) runs the shell **`commands`** you
-configured and injects their output into the prompt through `{{ commands.<name> }}`
-placeholders; (2) starts a fresh Pi session and lets it act (call `snap.py`, measure, save frames); (3) it
-also keeps a short internal memory of past iterations. It **stops** on `max_iterations`, on a
-`completion_promise` (the agent emits the literal tag `<promise>DONE</promise>`), or on `/ralph-stop`.
-**Guardrails** can block bash commands (regex) and protect files (globs).
+{{< spoiler text="Primer — what the Ralph loop actually is (30 seconds)" >}}
+A **supervised loop that re-runs your Pi agent with fresh context each cycle** (so it doesn't drown in one
+stale conversation). Each iteration it runs the shell `commands` you configured, injects their output into
+the prompt via `{{ commands.<name> }}` placeholders, then starts a fresh Pi session that acts (calls
+`snap.py`, measures, saves frames). It **stops** on `max_iterations`, on the agent emitting
+`<promise>DONE</promise>`, or on `/ralph-stop`; **guardrails** block bad bash and protect files.
 
-**What it does NOT do — tested, so don't believe otherwise:** there is **no** `inter_iteration_delay`,
-`reflect_every`, `required_outputs`, `stop_on_error`, or `completion_gate` frontmatter (those are silently
-ignored), **no** `.ralph-runner/` folder or `iterations.jsonl`, and the only two commands are `/ralph
-<dir>` and `/ralph-stop` (no `-status`, `-resume`, `-logs`). It runs **only in Pi's interactive terminal**,
-not `pi -p`. And it **always stops on the first per-iteration timeout or agent error** — a transient scope
-`503` mid-iteration can end the campaign; you just re-run `/ralph .` to continue. It's a disciplined retry
-loop with memory, not a physics engine. **The judgement — and the durable record — stay yours:** because
-its internal memory doesn't survive a restart, your on-disk `RALPH_PROGRESS.md` (fed back via the
-`progress` command) is what actually carries the science across sessions. That file is load-bearing.
+Only these frontmatter keys are real (`commands`, `max_iterations`, `timeout`, `completion_promise`,
+`guardrails`) — the template below uses exactly those. It runs **only in Pi's interactive terminal** (not
+`pi -p`), and **halts on the first error or timeout** (a transient scope `503` can end a run — just re-run
+`/ralph .`). Its own memory doesn't survive a restart, so your on-disk **`RALPH_PROGRESS.md`** (fed back via
+the `progress` command) is what carries the science across sessions — that file is load-bearing.
 {{< /spoiler >}}
 
 **You don't hand-write the loop from scratch — Pi drafts it, you check it.** Hand Pi the corrected template
@@ -561,11 +513,9 @@ this order:
 
 ## Part 5 — Real-time analysis, hypotheses & the honesty rule
 
-**What "real-time analysis + hypothesis generation" means here:** each iteration doesn't just collect
-pictures — it **measures** the frames it just took (counting, classifying, tracking), **compares** them
-to earlier iterations, and **proposes the next thing to look at**. The investigation steers itself from
-evidence — which is exactly why persisting `RALPH_PROGRESS.md` and `OPEN_QUESTIONS.md` matters: without
-memory it's a thousand disconnected snapshots; with it, it's an argument that develops.
+**"Real-time analysis" means** each iteration doesn't just collect pictures — it **measures** what it just
+took, **compares** to earlier iterations, and **proposes the next thing to look at**. That's why the memory
+files matter: without them it's a thousand disconnected snapshots; with them, an argument that develops.
 
 **Exploration prompts you can drop into the loop's direction** (pick one to start, then branch as findings
 come in — these span the whole community, not one group):
@@ -580,14 +530,10 @@ come in — these span the whole community, not one group):
   channel and estimate the fraction of objects that are chlorophyll-positive (candidate photosynthesisers)
   vs FL-dark. Report it as a candidate fraction, not a proven live count. Does the balance differ between
   the two plates?"*
-- **Predator–prey.** *"Watch dense fields for interactions — a ciliate or rotifer grazing on algae,
-  something being engulfed. Capture and describe any feeding event."*
-- **Spatial structure & hotspots.** *"Map where life concentrates within and across wells — uniform or
-  clustered? Do photosynthesisers and grazers occupy different regions?"*
+- **Predator–prey or division events.** *"Watch dense fields over a time-lapse for interactions (grazing,
+  engulfing) or cells caught dividing. Capture and describe any event."*
 - **Population change over the campaign.** *"Re-image the same fields across Wed and Thu — does anything
   bloom, crash, or divide as the drop ages?"*
-- **Division-event hunting.** *"Watch over a time-lapse for cells caught dividing. Capture and
-  characterise any division event."*
 
 *(A diatom **frustule-morphology zoo** — pennate vs centric, solitary vs chain, gliding raphids — is a
 fine direction too, if that's what your wells are full of. One option among these, not the assignment.)*
@@ -605,20 +551,17 @@ fine direction too, if that's what your wells are full of. One option among thes
 - **Reproducible ≠ one-off.** A real find is re-findable — move away, come back, image again. A thing that
   appears once and never again is a candidate artifact.
 
-**The honesty rule (the whole capstone rides on this): the agent proposes hypotheses; YOU verify them —
-against the actual frames AND against real literature.** The loop will happily announce "well 4 is
-dominated by a fast-swimming ciliate at 400 µm/s" or, worse, "this appears to be an undescribed species."
-Those are *claims*, not findings, until **you** (1) open the exact frames it cited and agree the thing is
-real, alive, and correctly measured, and (2) check the identity/behaviour against real sources — an
-identification key, a paper, a trusted database. A novel claim needs *more* evidence, not less. A
-plausible story the agent wrote is not a discovery; relaying it as one is the worst thing you can do this
-week. Record which leads you confirmed, which you couldn't, and which you rejected.
+**The honesty rule (the whole capstone rides on this): the agent proposes; YOU verify — against the actual
+frames AND real literature.** The loop will happily announce "well 4 is dominated by a ciliate at 400 µm/s"
+or "this appears to be an undescribed species." Those are *claims* until **you** open the exact frames it
+cited and agree the thing is real and correctly measured, **and** check the identity against a real source
+(a key, a paper, a database). A novel claim needs *more* evidence, not less — relaying the agent's story as
+a discovery is the worst thing you can do this week. Record which leads you confirmed, couldn't, or rejected.
 
-**Honest limits — don't out-run your sampling.** A handful of fields is not a plate. Wells on the **same**
-plate can vary many-fold in density and composition, so a "plate A vs plate B" difference seen in a few
-fields is almost certainly **sampling noise, not biology** — say "I sampled N fields per plate; this is a
-hint, not a result" rather than announcing a plate-level effect. The same discipline applies to any
-count, rate, or "this well is different" claim: state how much you actually looked at.
+**Don't out-run your sampling.** A handful of fields is not a plate — wells on the same plate vary
+many-fold, so a "plate A vs B" difference from a few fields is almost certainly **sampling noise**. State
+how much you actually looked at ("I sampled N fields per plate; a hint, not a result") for any count, rate,
+or "this well is different" claim.
 
 ## Part 6 — Run the campaign: launch Wednesday, chase it Thursday
 
@@ -677,9 +620,7 @@ not watching, and remember the window closes **Fri 2 Oct 13:00** for everyone.
 - **The agent claims something you can't see.** Trust your eyes. Open the exact frame it cited; if it's
   not there, reject the claim and tell the loop it was wrong. Same for a literature claim — a plausible
   citation isn't a real one until you've checked it.
-- **FL frame is blank WHITE?** It's **over**-exposed — turn `exposure_ms`/`intensity` **down** (start at
-  30 / 20). Live pond water is bright; the ceilings are for genuinely dim samples.
-- **Images soft or BF is black.** Stop the loop and debug by hand: check `GET /v1/status` returns,
+- **Images soft, blank-white (FL), or BF is black.** Stop the loop and debug by hand: check `GET /v1/status` returns,
   **autofocus first** (the `af_reference_unvalidated` warning is normal), *then* take one manual snap
   with `dx`/`dy`, and read the actual error against the `SKILL.md` limits. Don't let a loop churn on a
   broken scope.
@@ -688,21 +629,6 @@ not watching, and remember the window closes **Fri 2 Oct 13:00** for everyone.
 - **Don't know what you're looking at?** Expected — you're not a microbiologist. Paste a frame into
   ChatGPT/Claude and ask "what freshwater microorganism looks like this?" to turn a shape into a name —
   then **verify against real literature and the chlorophyll signal** before you believe it.
-
-{{< spoiler text="Reference — Pi setup + the microscope skill" >}}
-Full walk-through is in **Part 2 → "Set up your analyst agent."** You already have Pi configured on the
-DDLS gateway from Weeks 1–5 (vision on since Week 2), so there's nothing to re-configure — **you drive
-everything with paste-in prompts and never hand-edit config.** Prompt 1 has Pi self-check its
-`models.json` (`ddls` provider, `image` input, `reasoning_effort: none`). Prompt 2 has Pi install the
-pinned `pi-ralph-loop@0.2.1`, read your microscope `SKILL.md` URL from the **"Your microscope"** panel
-(on your [Week-6 portal page](https://ddls-portal-6228434e.svc.hypha.aicell.io/week/6)), and write your `snap.py` helper. You write the
-loop itself in **Part 4**, after exploring by hand. Make sure the API rules from the box above land in
-`snap.py` and your `RALPH.md` (status-first for the NESTED `result.scale.pixel_size_um`; autofocus before
-the first snap; snap with `dx`/`dy`, `/v1/move` is manual-peek only; FL at `exposure_ms 30`/`intensity 20`,
-turn down if white; downscale to ~768 px before viewing but **measure from full-res**). Keep the token out
-of the repo (a `.env` the guardrails protect), and save every full-res frame to disk so you (and your
-dashboard, and your figures) can always go back to the source image.
-{{< /spoiler >}}
 
 ## Access the portal
 

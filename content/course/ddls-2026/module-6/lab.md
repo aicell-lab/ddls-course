@@ -26,12 +26,6 @@ week you point all of it at a live instrument and self-direct.
 > **New here?** Do [Computer Lab 1](../../module-1/lab/) first — it explains the two agents, the
 > interview, and the portal. This page assumes that setup.
 
-> **Not much of a programmer? Good — this lab is about *directing*, not coding.** Every code block you'll
-> see below (the `RALPH.md`, the `snap.py` helper, the dashboard) is something **Pi writes for you** — you
-> read it to *check* it, you don't type it out. Your real job is judgement: decide what's worth looking at,
-> and verify what comes back against the actual images. If a section looks technical, that's the *agent's*
-> work to do; skim it for what you're steering, and lean on the plain-English prompts we give you.
-
 > **The real sample.** Two plates of a **freshwater pond sample** are loaded on the scope:
 > `PD260929CTA` (on carrier *squid+3*) and `PD260929CTB` (on *squid+4*), **200 µL seeded in every
 > well**. It's a **live drop** from a small pool at **Sjukhusparken, Solna**

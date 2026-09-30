@@ -35,13 +35,22 @@ week you point all of it at a live instrument and self-direct.
 > is not knowing. **The microscope is only live Wed 30 Sep → hard-off Fri 2 Oct 13:00** — it goes dark after
 > that, so all imaging happens inside that window.
 
-**This is real — collected by hand, loaded yesterday, live under the scope right now:**
+**This is real — hand-collected pond water on live instruments:**
 
-{{< figure src="../sample-on-microscopes.jpg" alt="Two microscopes on an optical table, each holding a 96-well plate" caption="Your two instruments: **squid+3** and **squid+4**, each with a 96-well plate — 200 µL of the same pond water in every well." >}}
-
-{{< figure src="../sample-site-sjukhusparken.jpg" alt="A small water channel in a green park" caption="Where it came from: a pond channel in **Sjukhusparken, Solna** ([map](https://maps.app.goo.gl/cNExEqmgsDYpnhbb8)) — a real, un-curated field sample." >}}
-
-{{< figure src="../sample-brightfield-frame.jpg" alt="Brightfield micrograph showing an organism among debris and specks" caption="A real brightfield frame from this sample: an organism amid debris and grit. This messy, living view is what you'll direct your agent through." >}}
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0">
+  <figure style="flex:1 1 200px;margin:0;min-width:0">
+    <img src="../sample-on-microscopes.jpg" alt="Two microscopes on an optical table, each holding a 96-well plate" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:8px;display:block">
+    <figcaption style="font-size:.72rem;color:#66707d;margin-top:3px;line-height:1.3">The two live scopes — <b>squid+3</b> &amp; <b>squid+4</b>, a 96-well plate each (200&nbsp;µL/well).</figcaption>
+  </figure>
+  <figure style="flex:1 1 200px;margin:0;min-width:0">
+    <img src="../sample-site-sjukhusparken.jpg" alt="A small water channel in a green park" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:8px;display:block">
+    <figcaption style="font-size:.72rem;color:#66707d;margin-top:3px;line-height:1.3">Collected from a pond in <a href="https://maps.app.goo.gl/cNExEqmgsDYpnhbb8">Sjukhusparken, Solna</a>.</figcaption>
+  </figure>
+  <figure style="flex:1 1 200px;margin:0;min-width:0">
+    <img src="../sample-brightfield-frame.jpg" alt="Brightfield micrograph showing an organism among debris" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:8px;display:block">
+    <figcaption style="font-size:.72rem;color:#66707d;margin-top:3px;line-height:1.3">A real brightfield frame — an organism amid debris; the view you'll direct your agent through.</figcaption>
+  </figure>
+</div>
 
 ## Your mission this week
 

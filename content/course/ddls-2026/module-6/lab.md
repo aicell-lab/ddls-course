@@ -285,29 +285,32 @@ your token is wrong (or that it's been over-exposing every FL frame) on iteratio
 
 {{< spoiler text="Primer — chlorophyll autofluorescence, and why BF-vs-FL is a truth test" >}}
 Shine the right light on **chlorophyll** and it **glows back on its own** — no stain. That's
-**autofluorescence**. Only *photosynthetic* organisms with intact chlorophyll (algae, diatoms,
-cyanobacteria) light up, so the FL channel is a near-direct readout of **"is this a live
-photosynthesiser?"** Compare BF against the chlorophyll channel on the same field:
+**autofluorescence**. Chlorophyll (in algae, diatoms, cyanobacteria) does this; most debris does not — so
+the FL channel is a strong readout of **"is chlorophyll present here?"** Compare BF against the chlorophyll
+channel on the same field:
 
-- **Live photosynthetic cell** (green alga, live diatom, cyanobacterial filament) — shows in BF **and**
+- **Chlorophyll-bearing cell** (green alga, diatom, cyanobacterial filament) — shows in BF **and**
   lights up in FL.
-- **Non-photosynthetic organism** (ciliate, amoeba, rotifer) — clearly alive in BF but **dark** in FL: a
+- **Non-photosynthetic organism** (ciliate, amoeba, rotifer) — clearly a body in BF but **dark** in FL: a
   clean way to sort "plant-like" from "animal-like/grazer."
-- **Empty shell / dead cell / debris** — can look like a live cell in BF but goes **dark** in FL.
+- **Empty shell / dead cell / debris** — can look like a cell in BF but goes **dark** in FL.
 
-So BF-vs-FL separates *photosynthetic from not*, and *alive from just-structure* — one of the most
-honest, hardest-to-fake signals you have. Concretely: a **chlorophyll-positive diatom is alive; an empty
-silica frustule is a dead husk that looks identical in brightfield**. Count diatoms in BF alone and
-you'll happily miscount dead shells as live cells — the FL channel is how you get "how many are actually
-alive" right.
+So BF-vs-FL separates *chlorophyll-bearing from not* — one of the most honest, hardest-to-fake signals you
+have. **But be careful what you claim from it.** A chlorophyll-positive signal is **strong evidence of
+chlorophyll, not proof of a living, healthy, actively-photosynthesising cell** — recently-dead cells and
+even loose chloroplasts can still fluoresce, and a single frame can't show viability. Treat FL-positive as
+a **candidate photosynthesiser** to confirm (does its BF structure look intact? does it persist or move
+over a time-lapse?), and treat a bright FL frame as ruling *in* chlorophyll, not ruling *in* life. The
+useful, defensible version: an **FL-dark, ornate silica frustule is very likely an empty husk**, and
+counting diatoms in BF alone would miscount those husks as cells — the FL channel is how you avoid that.
 {{< /spoiler >}}
 
 {{< figure src="../discovery-pair_diatomB.png" alt="Live diatom: chlorophyll fluorescence in a band inside the frustule" >}}
 {{< figure src="../discovery-pair_diatomA.png" alt="Empty frustule: no fluorescence while neighbours glow" >}}
 
 *A real result from **this** microscope (a test agent got it in about four commands): two pennate diatoms
-in the same field and focal plane — the first glows on the fluorescence channel (chlorophyll in a live
-chloroplast band **inside** the frustule); the second is a ~65 µm empty silica shell, dark, while
+in the same field and focal plane — the first glows on the fluorescence channel (a chlorophyll band **inside** the
+frustule — a candidate live cell); the second is a ~65 µm empty silica shell, dark, while
 neighbours in the same crop glow. In brightfield they look identical. This one pair is the whole "why two
 channels" argument — the kind of small, verifiable discovery you're after.*
 
@@ -568,9 +571,10 @@ fine direction too, if that's what your wells are full of. One option among thes
   body, an ordered frustule, a rotifer's crown; detritus, grit, and out-of-focus artifacts don't.
 - **Self-powered ≠ drift.** Living things move under their own power and change direction; debris and dead
   cells drift with the fluid, all one way. A time-lapse settles it faster than a frame.
-- **Photosynthetic vs not, alive vs empty.** Cross-check BF against the chlorophyll channel: FL-positive =
-  live photosynthesiser; FL-dark-but-clearly-moving = grazer/animal; ordered-in-BF-but-FL-dark shell may
-  be a dead cell, not a live one.
+- **Chlorophyll vs not (and don't over-read it).** Cross-check BF against the chlorophyll channel:
+  FL-positive = a **candidate** chlorophyll-bearing cell (not proof it's alive or healthy — confirm with
+  intact BF structure / persistence over time); FL-dark-but-clearly-moving = grazer/animal; an ornate,
+  FL-dark shell is very likely an empty husk.
 - **Reproducible ≠ one-off.** A real find is re-findable — move away, come back, image again. A thing that
   appears once and never again is a candidate artifact.
 

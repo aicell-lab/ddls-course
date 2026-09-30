@@ -16,6 +16,13 @@ something genuinely interesting, and check every claim against the real frames *
 No new tool this week. You already know how to interview, translate, configure, direct and verify — this
 week you point all of it at a live instrument and self-direct.
 
+> **Don't worry if this page looks technical — you will not write any code.** Every script, config file
+> and small app below is written *by your AI agent (Pi)* from a plain-English prompt you paste in — most of
+> them are printed on this page ready to copy. **Your job is the science, not the syntax:** decide what's
+> worth looking at, and check that what the agent did is actually right. If any term or command here looks
+> unfamiliar, that's fine — paste it to Pi and ask "what is this, and can you do it for me?" That *is* the
+> skill this course teaches.
+
 > **New here?** Do [Computer Lab 1](../../module-1/lab/) first — it explains the two agents, the
 > interview, and the portal. This page assumes that setup.
 

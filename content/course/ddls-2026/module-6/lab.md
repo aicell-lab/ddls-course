@@ -173,14 +173,20 @@ the **"Your microscope"** panel in the portal to copy your link and its **`SKILL
 
 {{< cta cta_text="Get your microscope API + SKILL.md" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/week/6" >}}
 
-`SKILL.md` documents the operations and is the **source of truth** for exact signatures, units, defaults,
-and limits — read it. Two channels are available: **brightfield** (BF) and **one fluorescence channel =
-chlorophyll autofluorescence** (see primer). But **read the box below first** — three API details trip up
-every agent, and you must put them in your `AGENTS.md`/`RALPH.md` or the loop will waste images on the
-shared scope.
+**What your microscope can do.** You have scoped access to a real microscope holding your pond-water wells.
+It does five simple things: **take a picture** (in two channels — **brightfield**, ordinary light, and **one
+fluorescence channel** that makes **chlorophyll glow** so photosynthetic life lights up; see primer),
+**move** within a well, **autofocus**, **nudge focus**, and **report status**. **You never type these
+commands yourself** — your `snap.py` helper and the discovery loop do, reading the exact signatures from
+`SKILL.md` (the source of truth for units, defaults and limits). **Your job is to make sure your agent uses
+the instrument well.**
 
-> ### Working with the microscope API — read this first
-> These three come from live testing on the real gateway. Bake them into your agent's instructions.
+The box below is *not* an API manual you operate — it's the **six things Pi gets wrong unless you tell it
+otherwise**. Put them into your `snap.py` / `RALPH.md`, and check your agent actually did them.
+
+> ### Six things to make sure your agent gets right
+> These come from live testing on the real scope — the mistakes the agent makes unless directed. You don't
+> run these commands; you make sure your agent does, and you spot-check the result.
 >
 > 1. **For imaging, snap with `dx`/`dy` — it's atomic. Don't move-then-snap in the loop.** To sweep a
 >    well, pass **`dx`/`dy` directly to `/v1/snap`**: one call that **moves *and* exposes** together.

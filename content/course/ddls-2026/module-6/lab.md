@@ -352,7 +352,7 @@ the life is and **which steps actually work** — then those become the loop. Tw
 hand to calibrate, then let the agent's eyes drive the search.**
 
 **1. Manual scout (get a feel by hand).** On this Week-6 page, open the **"Try it live"** microscope
-panel (the collapsible manual control: snap / move / autofocus / nudge-z / status). Snap around your well
+panel (the collapsible manual control: snap / autofocus / nudge-z / status / reset). Snap around your well
 by hand: sweep a few `dx`/`dy` positions, settle your **focus and exposure**, and see **what's in your
 sample and where it clusters**. Five minutes here tells you the scale of thing you're hunting and roughly
 where it lives — so you configure the loop from knowledge, not guesswork. *(Advanced: ask your agent to

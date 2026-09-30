@@ -550,9 +550,10 @@ come in — these span the whole community, not one group):
 - **Motility & behaviour fingerprinting.** *"Find things that move under their own power; characterise
   HOW they move — swimming ciliates, gliding diatoms, crawling amoebae, jerky crustacea. Time-lapse and
   quantify speed and motion style; do groups move distinctively?"*
-- **Photosynthetic vs not (BF ↔ chlorophyll).** *"For each field, compare BF to the chlorophyll channel
-  and estimate the fraction of organisms that are photosynthetic (FL-positive) vs grazers/animals
-  (FL-dark). Does the balance differ between the two plates?"*
+- **Chlorophyll-bearing vs not (BF ↔ chlorophyll).** *"For each field, compare BF to the chlorophyll
+  channel and estimate the fraction of objects that are chlorophyll-positive (candidate photosynthesisers)
+  vs FL-dark. Report it as a candidate fraction, not a proven live count. Does the balance differ between
+  the two plates?"*
 - **Predator–prey.** *"Watch dense fields for interactions — a ciliate or rotifer grazing on algae,
   something being engulfed. Capture and describe any feeding event."*
 - **Spatial structure & hotspots.** *"Map where life concentrates within and across wells — uniform or

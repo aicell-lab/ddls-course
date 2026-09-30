@@ -153,6 +153,70 @@ usually not shown it properly.
 
 ---
 
+## Record the interview
+
+Meeting 1 is where the real context comes out, and you cannot write it all down while also asking
+good questions. **Record it, then work from the transcript** — and, as in the labs, the transcript
+is part of what you hand in.
+
+- **Ask first, always.** Sweden is a *one-party-consent* country, so you are legally allowed to
+  record a conversation you are part of. But asking is basic courtesy and keeps your client
+  comfortable — say plainly *"Is it OK if I record this so I can focus on listening and work from an
+  accurate transcript afterwards? It's only for my coursework."* If they say no, take notes instead.
+- **How to record.** The simplest options: **Zoom** → *Record* (local recording saves an audio/video
+  file when the call ends); or your **phone** (voice-memo app next to the speaker); or your
+  **computer** (QuickTime / Voice Recorder / OBS). Any of these is fine — you only need clear audio.
+- **Turn it into text.** Use the course's free **DDLS transcription app** (Whisper on our GPU — drop
+  in the audio, get a transcript back to copy or download):
+  {{< cta cta_text="Open the DDLS transcription app →" cta_link="https://static-ddls-transcribe-358cecdf344c39c0020477.svc.hypha.aicell.io/" >}}
+  Prefer to run it yourself? Any Whisper-based tool works too — `whisper.cpp`, `faster-whisper`,
+  **WhisperX**, or the free tier of MacWhisper.
+- **Upload it.** Put the transcript on your project page in the portal (there's an upload slot on the
+  project). *(A transcription service built into the portal is coming — for now use the app above.)*
+
+{{< spoiler text="A line you can use to ask for consent" >}}
+Before we start — is it OK if I record this meeting? It's just so I can concentrate on our
+conversation instead of scribbling notes, and then work from an accurate transcript afterwards. It's
+only used for my coursework and I can delete it whenever you like. Totally fine to say no.
+{{< /spoiler >}}
+
+---
+
+## Handling the data
+
+Your client's data is theirs, and some of it is sensitive. **By default we give every project a
+protected environment**, so a nervous data owner can say yes without their data ever leaving a
+server they trust. **You** are the one who explains this to them — so understand how it works.
+
+**How the protected environment works.** We run a small, locked workspace on a course server (KTH
+SciLifeLab Kubernetes). Your client uploads their data into it. You get a link that lets **your AI
+agent run analysis *inside* that workspace** and see the results — but **you cannot download or copy
+the data out**. Every command and every output is checked, so the data stays put while you still get
+your answer. When the project ends, the workspace is torn down.
+
+**The owner picks the sensitivity level:**
+
+| Level | What it means |
+|---|---|
+| **Low** | Ordinary/public data — you may view and download it directly and work locally. |
+| **Standard** *(default)* | Protected environment: your agent runs on the data, results come out, the raw data does not. |
+| **High** | Fully locked — course-managed, you never see the raw data, only aggregate results. |
+
+**Or the owner runs it on their own machine.** If they would rather not upload anything at all, that
+is completely fine — they can run the analysis you design on their own workstation or server. Some
+owners will prefer this, and it is a perfectly good answer.
+
+**What you must do:** raise this in Meeting 1, explain the options in plain words (there's a script
+on your project page), and **respect what your client decides**. Never upload or move data you do not
+have explicit permission to move.
+
+{{< cta cta_text="Data-protection service (Safe-Colab)" cta_link="https://safe-colab.aicell.io/" >}}
+
+Questions about protecting a specific dataset, or setting up the environment: email
+<joanna.hard@scilifelab.se> (and your project page shows the current status once we prepare it).
+
+---
+
 ## Proposal and approval
 
 **Every project has to be approved by the teaching team before you start building.** This is

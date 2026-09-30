@@ -153,6 +153,55 @@ usually not shown it properly.
 
 ---
 
+## Before Meeting 1 — prepare, then book it
+
+Meeting 1 is the whole project in one hour: it is where the real question comes out and where the
+data changes hands. Walk in prepared. **Book it as soon as you are matched** — do not leave it to the
+last week.
+
+**Booking.** Once you are matched, your project page shows your client and their stated availability.
+The teaching team arranges the slot and a Zoom room from that — **the time and link appear on your
+project page** (and theirs). If a week passes with no slot, email <ddls-course@scilifelab.se> and we
+will chase it. Aim to meet in the **first half of the project window** so you have time to build and
+iterate.
+
+**Your preparation checklist** — tick every box *before* the call:
+
+- [ ] **Read everything the owner already told us** on your project page — the question, the data, what
+      they have tried, their constraints.
+- [ ] **Rehearse against your preparation agent.** Every matched project has a private practice
+      interviewer — a stand-in for *your* data owner — on your project page. Interview it until your
+      questions feel sharp; it answers a good question well and a vague one poorly, on purpose.
+- [ ] **Write your interview script** — the 5–8 must-ask questions that make the problem precise
+      (see the example below). You will improvise too, but never walk in without a plan.
+- [ ] **Prepare a recorder and TEST it first.** Zoom's built-in *local recording*, a phone on the desk
+      (**turn the speaker on** so it captures both sides), or your laptop. Do a 20-second test recording
+      and play it back **before** the meeting — a silent recording you discover afterwards is a lost
+      interview.
+- [ ] **Confirm consent to record** at the top of the call (see [Record the interview](#record-the-interview)).
+- [ ] **Plan the data hand-over.** Decide what to ask: can they give you a **copy**? Can you
+      **download it, or upload it to your project page** in the portal (our recommended route — it keeps
+      everything in one place)? Or is it sensitive enough that you should analyse it **without a copy**
+      via Safe-Colab (see [Handling the data](#handling-the-data))? Know the three options before you ask.
+- [ ] **Plan to walk them through their project page** (see [How your data owner follows along](#how-your-data-owner-follows-along)).
+
+{{< spoiler text="An example interview script to adapt" >}}
+1. In one sentence, what decision or next step would a good answer let you make?
+2. What exactly is in the data — format, size, how many samples/rows, what each column or file is?
+3. How was it collected, and what could be wrong with it (batches, missing values, known artefacts)?
+4. What have you already tried, and why didn't it settle the question?
+5. What would a *convincing* answer look like to you — a number, a figure, a ranked list, an app?
+6. What must I **not** conclude — what would be an over-claim from this data?
+7. How will I get the data: a copy, an upload to my project page, or analysis without a copy?
+8. Who else should see the result, and by when do you need it?
+{{< /spoiler >}}
+
+**After the interview:** upload your **recording and the transcript** to your project page in the
+portal (there is a slot for each). The transcript is part of what you hand in, and it is how the
+teaching team follows your reasoning.
+
+---
+
 ## Record the interview
 
 Meeting 1 is where the real context comes out, and you cannot write it all down while also asking
@@ -214,6 +263,26 @@ have explicit permission to move.
 
 Questions about protecting a specific dataset, or setting up the environment: email
 <joanna.hard@scilifelab.se> (and your project page shows the current status once we prepare it).
+
+---
+
+## How your data owner follows along
+
+Your client has their **own private project page** — a link we send them, no account or password. It
+is the single place the whole engagement lives, so nothing gets lost in scattered email. On it they
+can:
+
+- **upload their data and a sample file** — this is the tidiest way to receive the data (it lands
+  straight on the project, and you can pull it with your analysis agent);
+- **see the stage stepper** move — matched → meeting 1 → building → meeting 2 → delivered;
+- **read your progress updates and reports** — intermediate ones as you build, and the final report;
+- **raise a question or an issue** in a thread the teaching team and you can answer;
+- **get the occasional email nudge** on the big moments (matched, final report) — which they can turn
+  off.
+
+**During Meeting 1, take two minutes to show them their page:** where to upload the data, where the
+progress and reports will appear, and how to message you. An owner who knows how to follow along stays
+engaged — and it is you, not the portal, who sets that expectation.
 
 ---
 

@@ -507,9 +507,12 @@ this order:
 1. **`max_iterations: 2`.** Launch Pi interactively (`pi --provider ddls --model gpt-5.6-luna`), then
    `/ralph .`. Watch both iterations to the end.
 
-> **If `/ralph .` errors with `ctx is stale after newSession/fork` (seen on some newer Pi builds):** the
-> `/ralph` extension can't run on your Pi — but the loop itself is trivial to run without it, and
-> everything else on this page is unchanged. Paste into Pi:
+> **`/ralph` is finicky about your Pi version — if it doesn't run, use the fallback below (recommended).**
+> We tested the pinned `pi-ralph-loop@0.2.1` on two Pi versions and it failed on both: on **older Pi
+> (≤ 0.84.x)** the extension is too old to load; on **newer Pi (0.99.x)** it throws `ctx is stale after
+> newSession/fork` and runs **zero iterations**. It may work on some in-between version — try `/ralph .`
+> once — but **the reliable path for everyone is the tiny fallback loop**, which needs no extension and
+> leaves everything else on this page unchanged. Paste into Pi:
 >
 > > *"Write me a `run-loop.sh` that calls `pi -p` in a loop N times. Each pass, in order: (1) read
 > > `RALPH_PROGRESS.md` for context, (2) run ONE short iteration of my direction — autofocus, one atomic

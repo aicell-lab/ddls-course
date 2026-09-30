@@ -102,14 +102,14 @@ loop. You never automate a procedure you haven't watched work. Do these seven st
 | # | Step | ~time |
 |---|---|---|
 | 1 | **Brainstorm a direction** with your collaborator until it's concrete and testable (Part 1) | 40 min |
-| 2 | **Grab your microscope** — open the **"Your microscope"** panel in the portal, copy your API link, read its `SKILL.md` (Part 2) | 10 min |
-| 3 | **Ready your analyst agent** — two paste-in prompts: Pi self-checks its config, then installs the loop (pinned version) and writes your `snap.py` helper (Part 2) | 15 min |
-| 4 | **Validate the instrument by hand** — status → autofocus → BF snap → FL snap → `dx`/`dy` snap; confirm real, in-focus frames of *your* well (Part 2) | 15 min |
+| 2 | **Grab your microscope** — open the **"Your microscope"** panel in the portal, copy your API link, read its `SKILL.md` (Part 2) | 15 min |
+| 3 | **Ready your analyst agent** — two paste-in prompts: Pi self-checks its config, then installs the loop (pinned version) and writes your `snap.py` helper (Part 2) | 25 min |
+| 4 | **Validate the instrument by hand** — status → autofocus → BF snap → FL snap → `dx`/`dy` snap; confirm real, in-focus frames of *your* well (Part 2) | 20 min |
 | 5 | **Build your live dashboard, then explore through it** — scout your well by eye and decide the exact steps worth automating (Part 3) | 45 min |
 | 6 | **Write the Ralph loop** around those validated steps, with **auto-validation baked in** (Part 4) | 30 min |
 | 7 | **Test it on 2 iterations** (watch it image + log), then **launch it to run slowly over Thursday** (Part 4, Part 6) | 45 min |
 
-That leaves buffer. Don't force a discovery today — a validated, watchable loop *is* Wednesday's win.
+**This is a full block — don't expect spare time.** Setup (steps 2–4) genuinely takes ~60 min, and the scope is slow (a cold fluorescence snap alone is ~19 s). Don't force a *discovery* today — the win is a **validated, watchable loop that you've started**; the discovery accumulates on Thursday. If you run over, prioritise getting the loop running over polishing the dashboard.
 **Thursday:** let it run, check your dashboard, steer, and curate toward the finding.
 
 ---

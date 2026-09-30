@@ -59,23 +59,27 @@ curiosity — not your own water, not your own pet question); and **novelty with
 
 ## What you hand in (four things)
 
-1. **Your running Ralph discovery loop** — the configured `RALPH.md`, your `snap.py` helper, and its
-   ranked hypotheses file (`OPEN_QUESTIONS.md`). *(Its running findings log, `RALPH_PROGRESS.md`, is
-   hand-in #3.)*
-2. **A live discovery dashboard** — a small web app **you build right after the interview** (Part 3) and
-   use as your **exploration cockpit**: it shows the latest snap, current findings, the running
-   hypotheses/observations table, simple counts/stats, auto-refreshing. You explore *through* it to design
-   your steps, then it becomes how you **watch the loop** unfold in real time.
-3. **A lab-notebook log** — a **timestamped, honest record** of what you tried, saw, and concluded
-   (`RALPH_PROGRESS.md` plus a structured findings log), noting which claims you **verified** against
-   frames + literature and which you **couldn't**.
-4. **Your seminar presentation** (Friday) — see the [seminar page](../seminar/).
+You produce **three files and a talk**. They're not separate write-ups — the loop generates the files as
+it runs, and your job is to steer and check them.
 
-**Why a portal *and* a notebook?** An autonomous loop runs for hours — maybe overnight — and you can't
-sit and watch Pi's console. The **live portal is how you supervise it at a glance** and how anyone (your
-collaborator, the seminar room) can **watch the discovery unfold and trust it**; the **notebook is the
-durable, honest record** of what actually happened. Submit links/files in the portal with your Agent-A
-brainstorm and Pi transcripts. Keep it proportionate — this is a self-directed capstone, not a paper.
+1. **Your discovery loop** — the configured `RALPH.md` and your `snap.py` helper (how the loop images and
+   what it does each iteration), plus `OPEN_QUESTIONS.md`, the **ranked list of open hypotheses** the loop
+   keeps.
+2. **Your live dashboard** — a small web app **you build right after the interview** (Part 3). It reads the
+   loop's folder and shows, at a glance, the latest snap, the current findings and hypotheses, and simple
+   counts — auto-refreshing. You explore *through* it by hand to design your steps, then it becomes how you
+   **watch the loop run** in real time (and how your collaborator or the seminar room can too).
+3. **Your lab notebook — the file `RALPH_PROGRESS.md`.** This is the one honest, timestamped record of the
+   investigation. The loop **appends a dated entry every iteration** (what it looked at, what it measured,
+   what it now believes, what to try next); **you read it back and annotate it** — marking which claims you
+   **verified** against the actual frames and the literature, and which you **couldn't**. There is no
+   separate report to write: this file *is* your notebook.
+4. **Your seminar talk** (Friday) — see the [seminar page](../seminar/).
+
+**In one line:** the **dashboard** is the *live view* you watch while the loop runs; **`RALPH_PROGRESS.md`**
+is the *durable record* you read back, verify, and hand in. Submit your loop files, your dashboard link, and
+your notebook in the **course portal**, together with your Agent-A brainstorm and Pi transcripts. Keep it
+proportionate — this is a self-directed capstone, not a paper.
 
 ## Wednesday = set up + validate the loop (4 h, 13:00–17:00)
 
@@ -569,8 +573,8 @@ real run** and let it work. The loop lives in Pi's **interactive terminal** — 
   `-status`/`-logs`; your dashboard *is* the status view.)
 - **Pause:** `/ralph-stop` finishes the current iteration then stops cleanly. Use it whenever you step
   away — **don't leave a loop imaging unattended on a shared scope.**
-- **Hand-in material:** your `RALPH.md`, `snap.py`, `RALPH_PROGRESS.md`, `OPEN_QUESTIONS.md`, and your
-  saved frames *are* the backbone of your lab notebook — keep them.
+- **Hand-in material:** your `RALPH.md`, `snap.py`, `OPEN_QUESTIONS.md`, `RALPH_PROGRESS.md` (your
+  notebook) and your saved frames — keep them all; that's what you submit (see [What you hand in](#what-you-hand-in-four-things)).
 
 **The two-day rhythm — a live sample rewards patience.** **Wednesday**, get 2 clean validated iterations
 and your dashboard live, then start the real run (raise `max_iterations`, set the `pace` `sleep` to

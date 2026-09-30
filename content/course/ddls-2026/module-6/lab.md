@@ -416,8 +416,7 @@ guardrails:
     - 'rm\s+-rf'            # never let a loop nuke your frames or logs
   protected_files:
     - 'SKILL.md'            # the ops doc is read-only to the loop
-    - '.env*'               # your token lives here — never edit or print it
-    - 'snap.py'             # the helper is fixed; the loop uses it, doesn't rewrite it
+    - 'snap.py'             # the helper (with your microscope token baked in) is fixed — the loop uses it, doesn't rewrite it
 ---
 
 You are running a continuous, autonomous microscopy discovery loop on a REAL, live, CHANGING freshwater

@@ -58,7 +58,8 @@ By Friday you will have:
 
 1. **Directed an AI agent to do open-ended scientific exploration on a REAL instrument** — a live
    freshwater microscope — with **you** supplying the judgement and verification.
-2. **Built a continuous discovery loop** (Ralph) that runs
+2. **Built a continuous discovery loop** — a supervised agent loop (we use one called **Ralph**,
+   explained in Part 4) that runs
    **plan → image → observe → analyse → hypothesise → decide → iterate**, remembering what it found
    across iterations.
 3. **Done real-time analysis and hypothesis generation — honestly.** The agent *proposes*; **you** check
@@ -83,10 +84,11 @@ curiosity — not your own water, not your own pet question); and **novelty with
 
 ## What you hand in (four things)
 
-You produce **three files and a talk**. They're not separate write-ups — the loop generates the files as
-it runs, and your job is to steer and check them.
+You hand in **four things** — a few loop files, a dashboard, your notebook, and a talk. They're not
+separate write-ups: the loop generates the files as it runs, and your job is to steer and check them.
 
-1. **Your discovery loop** — the configured `RALPH.md` and your `snap.py` helper (how the loop images and
+1. **Your discovery loop** — the configured `RALPH.md` (or your `run-loop.sh`, if you used the fallback in
+   Part 4) and your `snap.py` helper (how the loop images and
    what it does each iteration), plus `OPEN_QUESTIONS.md`, the **ranked list of open hypotheses** the loop
    keeps.
 2. **Your live dashboard** — a small web app **you build right after the interview** (Part 3). It reads the
@@ -279,6 +281,9 @@ one place the downscale-and-save rule lives, so every frame is handled the same 
 > `pi --provider ddls --model gpt-5.6-luna`, then type `/ralph .`. It does **not** run in one-shot
 > `pi -p "…"` mode (it starts a fresh session each iteration, which the one-shot mode can't survive). The
 > only two loop commands are `/ralph <dir>` (start) and `/ralph-stop` (graceful stop).
+> **Heads-up:** on some Pi versions `/ralph` errors out (`ctx is stale…`); if yours does, there's a tiny
+> **no-extension fallback** (`run-loop.sh`) in Part 4 that does the identical loop — the discovery is the
+> same either way, so don't lose time fighting it.
 
 **Validate before you automate (step 4).** Prove the instrument works *by hand* first, in this order:
 **(1)** call `GET /v1/status` and confirm `result.scale.pixel_size_um` comes back; **(2)**
@@ -370,8 +375,9 @@ on empty fields and concludes "nothing here." Before you automate, you **explore
 the life is and **which steps actually work** — then those become the loop. Two ways — use both: **scout by
 hand to calibrate, then let the agent's eyes drive the search.**
 
-**1. Manual scout (get a feel by hand).** On this Week-6 page, open the **"Try it live"** microscope
-panel (the collapsible manual control: snap / autofocus / nudge-z / status / reset). Snap around your well
+**1. Manual scout (get a feel by hand).** In the **portal**, open your **"Your microscope"** panel (the
+same one with your API link) and expand **"Try it live"** — a collapsible manual control (snap / autofocus
+/ nudge-z / status / reset). Snap around your well
 by hand: sweep a few `dx`/`dy` positions, settle your **focus and exposure**, and see **what's in your
 sample and where it clusters**. Five minutes here tells you the scale of thing you're hunting and roughly
 where it lives — so you configure the loop from knowledge, not guesswork. *(Advanced: ask your agent to
@@ -627,8 +633,9 @@ real run** and let it work. The loop lives in Pi's **interactive terminal** — 
   `-status`/`-logs`; your dashboard *is* the status view.)
 - **Pause:** `/ralph-stop` finishes the current iteration then stops cleanly. Use it whenever you step
   away — **don't leave a loop imaging unattended on a shared scope.**
-- **Hand-in material:** your `RALPH.md`, `snap.py`, `OPEN_QUESTIONS.md`, `RALPH_PROGRESS.md` (your
-  notebook) and your saved frames — keep them all; that's what you submit (see [What you hand in](#what-you-hand-in-four-things)).
+- **Hand-in material:** your `RALPH.md` (or `run-loop.sh`), `snap.py`, `OPEN_QUESTIONS.md`,
+  `RALPH_PROGRESS.md` (your notebook) and your saved frames — keep them all; that's what you submit
+  (see [What you hand in](#what-you-hand-in-four-things)).
 
 **The two-day rhythm — a live sample rewards patience.** **Wednesday**, get 2 clean validated iterations
 and your dashboard live, then start the real run (raise `max_iterations`, set the `pace` `sleep` to
@@ -688,7 +695,7 @@ DDLS gateway from Weeks 1–5 (vision on since Week 2), so there's nothing to re
 everything with paste-in prompts and never hand-edit config.** Prompt 1 has Pi self-check its
 `models.json` (`ddls` provider, `image` input, `reasoning_effort: none`). Prompt 2 has Pi install the
 pinned `pi-ralph-loop@0.2.1`, read your microscope `SKILL.md` URL from the **"Your microscope"** panel
-(https://ddls-portal-6228434e.svc.hypha.aicell.io/week/6), and write your `snap.py` helper. You write the
+(on your [Week-6 portal page](https://ddls-portal-6228434e.svc.hypha.aicell.io/week/6)), and write your `snap.py` helper. You write the
 loop itself in **Part 4**, after exploring by hand. Make sure the API rules from the box above land in
 `snap.py` and your `RALPH.md` (status-first for the NESTED `result.scale.pixel_size_um`; autofocus before
 the first snap; snap with `dx`/`dy`, `/v1/move` is manual-peek only; FL at `exposure_ms 30`/`intensity 20`,

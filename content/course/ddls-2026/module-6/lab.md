@@ -60,7 +60,8 @@ curiosity — not your own water, not your own pet question); and **novelty with
 ## What you hand in (four things)
 
 1. **Your running Ralph discovery loop** — the configured `RALPH.md`, your `snap.py` helper, and its
-   running memory (`RALPH_PROGRESS.md`, `OPEN_QUESTIONS.md`).
+   ranked hypotheses file (`OPEN_QUESTIONS.md`). *(Its running findings log, `RALPH_PROGRESS.md`, is
+   hand-in #3.)*
 2. **A live discovery dashboard** — a small web app **you build right after the interview** (Part 3) and
    use as your **exploration cockpit**: it shows the latest snap, current findings, the running
    hypotheses/observations table, simple counts/stats, auto-refreshing. You explore *through* it to design

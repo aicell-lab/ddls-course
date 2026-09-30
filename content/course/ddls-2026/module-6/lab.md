@@ -238,6 +238,12 @@ URL** from the **"Your microscope"** panel, then paste into Pi:
 > / 503** (the scope is shared). Keep my token out of the code — read it from an environment variable. Then
 > take one test brightfield snap of one of my wells and show me the thumbnail."*
 
+**Don't hand-edit that `<SKILL.md URL …>` placeholder** — paste your URL below (or use the one-click
+**Copy Pi setup prompt** button in your portal *"Your microscope"* panel, which fills it in for you) and
+copy the ready-to-paste prompt:
+
+{{< pi-prompt-filler >}}
+
 Pi installs the (pinned) extension and writes `snap.py`. **You don't hand-edit anything** — you check its
 work by looking at the test thumbnail. From here on, **drive the scope only through `snap.py`** — it's the
 one place the downscale-and-save rule lives, so every frame is handled the same way.
@@ -290,8 +296,8 @@ you'll happily miscount dead shells as live cells — the FL channel is how you 
 alive" right.
 {{< /spoiler >}}
 
-{{< figure src="discovery-pair_diatomB.png" alt="Live diatom: chlorophyll fluorescence in a band inside the frustule" >}}
-{{< figure src="discovery-pair_diatomA.png" alt="Empty frustule: no fluorescence while neighbours glow" >}}
+{{< figure src="../discovery-pair_diatomB.png" alt="Live diatom: chlorophyll fluorescence in a band inside the frustule" >}}
+{{< figure src="../discovery-pair_diatomA.png" alt="Empty frustule: no fluorescence while neighbours glow" >}}
 
 *A real result from **this** microscope (a test agent got it in about four commands): two pennate diatoms
 in the same field and focal plane — the first glows on the fluorescence channel (chlorophyll in a live

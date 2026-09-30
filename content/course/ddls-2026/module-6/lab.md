@@ -312,8 +312,9 @@ your frames folder and shows what's happening at a glance. You build it **now**,
 by hand, and use it to **decide exactly which steps are worth automating**. The same dashboard then becomes
 how you **watch the Ralph loop** run on Thursday. (This is deliverable #2 — build it once, use it twice.)
 
-Reuse the FastAPI + Tailwind app skills from **Labs 4–5** — this is a small app, not a new discipline.
-Light spec (make it yours):
+This is a **small web page**, the same kind of little app you had Pi build in **Labs 4–5** — not a new
+skill to learn. **Not a programmer? You don't need to be:** describe what you want in plain words, let Pi
+write it, and just open the link it gives you. Here's what it should show (make it yours):
 
 - **Reads your frames folder** — the full-res images and thumbnails `snap.py` saves, plus
   `RALPH_PROGRESS.md` and `OPEN_QUESTIONS.md` once they exist.
@@ -321,8 +322,8 @@ Light spec (make it yours):
 - **Findings + hypotheses** — render `OPEN_QUESTIONS.md` (ranked) and the latest `RALPH_PROGRESS.md`
   entries, timestamped.
 - **Simple stats** — frames taken, counts per morphotype / FL-positive fraction, elapsed time.
-- **Auto-refresh** — poll every few seconds (or a `<meta refresh>`), so it updates itself as you — and
-  later the loop — image.
+- **Auto-refresh** — the page updates itself every few seconds (no clicking reload), so you see new snaps
+  appear as you — and later the loop — image.
 
 A prompt that gets a skeleton in one shot:
 
@@ -331,8 +332,10 @@ A prompt that gets a skeleton in one shot:
 > hypotheses and the latest progress entries, and frame/iteration counts. Auto-refresh every 5 s. Run on
 > port 8001."*
 
-**Share it:** a **Cloudflare quick tunnel** gives a live public link (as in Lab 5) so your collaborator and
-the seminar room can watch in real time. Keep your **token and any raw data out of anything public.**
+**You don't need to share it publicly.** Just run it **on your own computer** (open `http://localhost:8001`
+in your browser) — that's all you need to watch the loop, and it's how you'll show it at Friday's seminar
+(you present from your own screen). If you *want* a link to send your collaborator, ask Pi to expose it, but
+that's optional — and never put your token or raw data on a public link.
 
 ### Now explore through it — scout your well by eye, and design your steps
 

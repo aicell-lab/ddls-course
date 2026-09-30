@@ -239,23 +239,16 @@ Pi edits its own config — **you don't open the JSON.** (If you're curious what
 is the same DDLS provider you set up in Weeks 4–5: `baseUrl` = the portal `/v1`, model `gpt-5.6-luna`,
 input includes `image`, `reasoning_effort: none`. It's a self-heal reference, not a step to type.)
 
-**2. Install the loop + build your microscope helper** — one prompt does both. Grab your **`SKILL.md`
-URL** from the **"Your microscope"** panel, then paste into Pi:
-
-> *"Install the Ralph loop for yourself, pinned to the version we tested:
-> `pi install npm:@lnilluv/pi-ralph-loop@0.2.1`. Then read my microscope API doc at `<SKILL.md URL from
-> my 'Your microscope' panel>` and write me a small `snap.py` helper I can call from the shell and you can
-> call as a tool. It should: take a picture (`snap` with atomic `dx`/`dy` — never move-then-snap),
-> autofocus, and read status; **save every frame full-resolution AND save a ≤768 px thumbnail next to it**;
-> read the scale once from `/v1/status` at `result.scale.pixel_size_um`; and **back off and retry on 429
-> / 503** (the scope is shared). Keep my token out of the code — read it from an environment variable. Then
-> take one test brightfield snap of one of my wells and show me the thumbnail."*
-
-**Don't hand-edit that `<SKILL.md URL …>` placeholder** — paste your URL below (or use the one-click
-**Copy Pi setup prompt** button in your portal *"Your microscope"* panel, which fills it in for you) and
-copy the ready-to-paste prompt:
+**2. Install the loop + build your microscope helper** — one prompt does both. **Paste your `SKILL.md`
+URL** (from the **"Your microscope"** panel) below; the prompt fills in your URL automatically — then
+**Copy** it and paste it into Pi. No hand-editing. *(Even easier: the panel's one-click **Copy Pi setup
+prompt** button does the same with your URL already filled in.)*
 
 {{< pi-prompt-filler >}}
+
+That one prompt tells Pi to install the pinned Ralph loop (`pi install npm:@lnilluv/pi-ralph-loop@0.2.1`),
+read your microscope doc, and write a `snap.py` helper that snaps atomically, saves full-res + a ≤768 px
+thumbnail, reads the scale once, and backs off on 429/503.
 
 Pi installs the (pinned) extension and writes `snap.py`. **You don't hand-edit anything** — you check its
 work by looking at the test thumbnail. From here on, **drive the scope only through `snap.py`** — it's the

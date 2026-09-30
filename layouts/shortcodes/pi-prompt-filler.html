@@ -1,28 +1,33 @@
 <div style="border:1px solid #d9dee5;border-radius:10px;padding:14px;margin:14px 0;background:#f7f9fc">
-  <label for="ppf-url" style="font-size:.8rem;font-weight:600;display:block;margin-bottom:4px">Paste your <b>SKILL.md URL</b> (copy it from your portal &ldquo;Your microscope&rdquo; panel):</label>
+  <label for="ppf-url" style="font-size:.8rem;font-weight:600;display:block;margin-bottom:4px">1. Paste your <b>SKILL.md URL</b> (copy it from your portal &ldquo;Your microscope&rdquo; panel):</label>
   <input type="text" id="ppf-url" autocomplete="off" spellcheck="false"
          placeholder="https://ddls-gateway-....svc.hypha.aicell.io/v1/skill.md?token=..."
          style="width:100%;font-family:monospace;font-size:.8rem;padding:6px 8px;border:1px solid #cbd3dd;border-radius:6px;box-sizing:border-box">
-  <div style="margin-top:8px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:12px 0 4px">
+    <span style="font-size:.8rem;font-weight:600">2. Your ready-to-paste Pi prompt <span style="font-weight:400;color:#66707d">(your URL is filled in below):</span></span>
     <button type="button" id="ppf-btn"
-            style="font-size:.85rem;background:#0b62b4;color:#fff;border:none;border-radius:6px;padding:7px 12px;cursor:pointer">Copy Pi setup prompt (with your URL)</button>
-    <span id="ppf-msg" style="font-size:.8rem;margin-left:8px"></span>
+            style="font-size:.8rem;background:#0b62b4;color:#fff;border:none;border-radius:6px;padding:5px 12px;cursor:pointer;white-space:nowrap">Copy</button>
   </div>
-  <p style="font-size:.75rem;color:#66707d;margin:8px 0 0">Even easier: the portal&rsquo;s <b>&ldquo;Your microscope&rdquo;</b> panel has a one-click <b>Copy Pi setup prompt</b> button with your URL already filled in &mdash; no pasting needed.</p>
+  <pre id="ppf-out" style="white-space:pre-wrap;word-break:break-word;font-family:'IBM Plex Mono',monospace;font-size:.78rem;line-height:1.45;background:#0b1220;color:#e6edf3;border-radius:8px;padding:12px;margin:0;overflow-x:auto"></pre>
+  <div id="ppf-msg" style="font-size:.8rem;margin-top:6px;min-height:1em"></div>
+  <p style="font-size:.75rem;color:#66707d;margin:8px 0 0">Even easier: the portal&rsquo;s <b>&ldquo;Your microscope&rdquo;</b> panel has a one-click <b>Copy Pi setup prompt</b> button that fills in your URL for you &mdash; no pasting needed.</p>
 </div>
 <script>
 (function(){
-  var btn=document.getElementById('ppf-btn'); if(!btn) return;
+  var url=document.getElementById('ppf-url'), out=document.getElementById('ppf-out'),
+      btn=document.getElementById('ppf-btn'), msg=document.getElementById('ppf-msg');
+  if(!url||!out||!btn) return;
   var TMPL="Install the Ralph loop for yourself, pinned to the version we tested: pi install npm:@lnilluv/pi-ralph-loop@0.2.1 . Then read my microscope API doc at __URL__ and write me a small snap.py helper I can call from the shell and you can call as a tool. It should: take a picture (snap with atomic dx/dy — never move-then-snap), autofocus, and read status; save every frame full-resolution AND a thumbnail (<=768 px on the long side) next to it; read the scale once from /v1/status at result.scale.pixel_size_um; and back off and retry on 429/503 (the scope is shared). Keep my token out of the code — read it from an environment variable. Then take one test brightfield snap of one of my wells and show me the thumbnail.";
+  function current(){ var u=(url.value||'').trim(); return TMPL.replace('__URL__', u || '‹paste your SKILL.md URL above›'); }
+  function render(){ out.textContent = current(); }
+  url.addEventListener('input', render); render();
   btn.onclick=function(){
-    var msg=document.getElementById('ppf-msg');
-    var u=(document.getElementById('ppf-url').value||'').trim();
-    if(!u){ msg.textContent='Paste your SKILL.md URL first.'; msg.style.color='#b8760c'; return; }
-    var text=TMPL.replace('__URL__', u);
-    navigator.clipboard.writeText(text).then(function(){
+    var u=(url.value||'').trim();
+    if(!u){ msg.textContent='Paste your SKILL.md URL above first.'; msg.style.color='#b8760c'; url.focus(); return; }
+    navigator.clipboard.writeText(current()).then(function(){
       msg.textContent='Copied — paste it straight into Pi.'; msg.style.color='#0f7d78';
     }, function(){
-      msg.textContent='Copy failed — select the box and copy manually.'; msg.style.color='#b8760c';
+      msg.textContent='Copy failed — select the prompt text and copy manually.'; msg.style.color='#b8760c';
     });
   };
 })();

@@ -510,6 +510,20 @@ this order:
 
 1. **`max_iterations: 2`.** Launch Pi interactively (`pi --provider ddls --model gpt-5.6-luna`), then
    `/ralph .`. Watch both iterations to the end.
+
+> **If `/ralph .` errors with `ctx is stale after newSession/fork` (seen on some newer Pi builds):** the
+> `/ralph` extension can't run on your Pi — but the loop itself is trivial to run without it, and
+> everything else on this page is unchanged. Paste into Pi:
+>
+> > *"Write me a `run-loop.sh` that calls `pi -p` in a loop N times. Each pass, in order: (1) read
+> > `RALPH_PROGRESS.md` for context, (2) run ONE short iteration of my direction — autofocus, one atomic
+> > `snap.py` snap, look at the thumbnail, measure one thing in µm, append one dated line to
+> > `RALPH_PROGRESS.md` and one idea to `OPEN_QUESTIONS.md` — then `sleep 45`. Keep each iteration's
+> > instruction **short and flat** (a few exact commands, no if/else)."*
+>
+> Then `bash run-loop.sh`. It's the same fresh-session-with-memory loop, by hand. **Either way, keep the
+> per-iteration instruction short and imperative** — a long, branchy prompt makes the model *spin without
+> imaging* (it burns budget and writes nothing). Short flat steps snap and log every time.
 2. **Check the four things that go wrong silently:** (a) every frame is of *your* well at the intended
    `dx`/`dy` (the auto-validate step); (b) no frame it "analysed" was actually blank/overexposed; (c) every
    size is scaled correctly (spot-check one by hand against the full-res frame — this is the ~2.7× trap);

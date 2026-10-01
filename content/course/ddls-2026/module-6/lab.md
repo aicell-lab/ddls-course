@@ -87,8 +87,8 @@ curiosity — not your own water, not your own pet question); and **novelty with
 You hand in **four things** — a few loop files, a dashboard, your notebook, and a talk. They're not
 separate write-ups: the loop generates the files as it runs, and your job is to steer and check them.
 
-1. **Your discovery loop** — the configured `RALPH.md` (or your `run-loop.sh`, if you used the fallback in
-   Part 4) and your `snap.py` helper (how the loop images and
+1. **Your discovery loop** — your loop prompt `pond.md` (and the auto-saved `.ralph/` logs)
+   plus your `snap.py` helper (how the loop images and
    what it does each iteration), plus `OPEN_QUESTIONS.md`, the **ranked list of open hypotheses** the loop
    keeps.
 2. **Your live dashboard** — a small web app **you build right after the interview** (Part 3). It reads the
@@ -197,10 +197,10 @@ commands yourself** — your `snap.py` helper and the discovery loop do, reading
 the instrument well.**
 
 The box below is *not* an API manual you operate — it's the **six things Pi gets wrong unless you tell it
-otherwise**. Put them into your `snap.py` / `RALPH.md`, and check your agent actually did them.
+otherwise**. Put them into your `snap.py` / `pond.md`, and check your agent actually did them.
 
 > ### Six things to make sure your agent gets right
-> From live testing — the mistakes the agent makes unless you direct it. Put them in `snap.py`/`RALPH.md`
+> From live testing — the mistakes the agent makes unless you direct it. Put them in `snap.py`/`pond.md`
 > and spot-check the result.
 >
 > 1. **Snap atomically with `dx`/`dy`** — pass `dx`/`dy` straight to `/v1/snap` (one call moves *and*
@@ -249,9 +249,9 @@ anything** — check its work on the test thumbnail, and from here **drive the s
 
 > **Notes for later:** you don't write the actual loop until **Part 4** (after exploring by hand) — Pi just
 > has the helper + API doc for now. When you *do* run it, the loop lives **only in Pi's interactive
-> terminal** (`pi --provider ddls --model gpt-5.6-luna`, then `/ralph .`), not `pi -p`. On some Pi versions
-> `/ralph` errors with `ctx is stale…`; if yours does, use the tiny **no-extension fallback** (`run-loop.sh`)
-> in Part 4 — same loop, don't lose time fighting it.
+> terminal** (`pi --provider ddls --model gpt-5.6-luna`, then `/ralph <N> pond.md`), not `pi -p`. Make sure
+> you installed the loop extension `@rahulmutt/pi-ralph` (and removed any older `pi-ralph-loop`) — the
+> one-paste setup does this for you.
 
 **Validate before you automate (step 4).** Prove the instrument works *by hand* first, in this order:
 **(1)** call `GET /v1/status` and confirm `result.scale.pixel_size_um` comes back; **(2)**
@@ -374,61 +374,42 @@ saw.
 
 {{< spoiler text="Primer — what the Ralph loop actually is (30 seconds)" >}}
 A **supervised loop that re-runs your Pi agent with fresh context each cycle** (so it doesn't drown in one
-stale conversation). Each iteration it runs the shell `commands` you configured, injects their output into
-the prompt via `{{ commands.<name> }}` placeholders, then starts a fresh Pi session that acts (calls
-`snap.py`, measures, saves frames). It **stops** on `max_iterations`, on the agent emitting
-`<promise>DONE</promise>`, or on `/ralph-stop`; **guardrails** block bad bash and protect files.
+stale conversation). You give it **one markdown prompt file**; each iteration the loop branches a fresh Pi
+session, sends that prompt, waits for the agent to act (call `snap.py`, measure, save frames), then starts
+the next. You run it as `/ralph <iterations> <prompt-file>` (iterations default to 3), and `/ralph stop` ends
+it gracefully after the current iteration finishes. It runs **only in Pi's interactive terminal** (not
+`pi -p`).
 
-Only these frontmatter keys are real (`commands`, `max_iterations`, `timeout`, `completion_promise`,
-`guardrails`) — the template below uses exactly those. It runs **only in Pi's interactive terminal** (not
-`pi -p`), and **halts on the first error or timeout** (a transient scope `503` can end a run — just re-run
-`/ralph .`). Its own memory doesn't survive a restart, so your on-disk **`RALPH_PROGRESS.md`** (fed back via
-the `progress` command) is what carries the science across sessions — that file is load-bearing.
+Because each session starts with **cleared context**, your on-disk **`RALPH_PROGRESS.md`** notebook — which
+the prompt tells the agent to re-read at the start and append to at the end of every iteration — is what
+carries the science across sessions; that file is load-bearing. The loop also auto-saves its own
+per-iteration transcripts and a running summary under **`.ralph/`** (keep those — they're half your
+deliverable).
 {{< /spoiler >}}
 
-**You don't hand-write the loop from scratch — Pi drafts it, you check it.** Hand Pi the corrected template
-below and your validated steps; have it write your `RALPH.md`, then read it against this template and fix
-anything off before you run `/ralph .`. Note the design: the pre-iteration `commands` gather *cheap*
-evidence only (progress, image inventory, and a `sleep` to pace the shared scope) — the real imaging
-happens *inside* the iteration via `snap.py`, so you don't fire the scope on every loop tick just to collect
-"evidence."
+**You don't hand-write the loop from scratch — Pi drafts it, you check it.** The loop just re-runs **one
+markdown prompt file** in a fresh session each iteration. Hand Pi your validated steps and have it write that
+prompt file (call it `pond.md`); read it against the template below and fix anything off before you run it.
+There is no config, no frontmatter — it is a plain prompt. Because context is cleared each iteration, the
+prompt itself must tell the agent to re-read its notebook and list what it already captured; the real imaging
+happens inside the iteration via `snap.py`.
 
-```yaml
----
-# --- Only these keys are real. Anything else is silently ignored. ---
-max_iterations: 2           # START AT 2 to validate. Raise it (e.g. 40) ONLY after 2 clean iterations.
-timeout: 900                # seconds per iteration — imaging is slow. NOTE: an overrun stops the WHOLE loop.
-completion_promise: "CAMPAIGN_DONE"   # loop ends early only when the agent emits <promise>CAMPAIGN_DONE</promise>
+Save this as `pond.md`:
 
-commands:
-  - name: progress          # your DURABLE memory across sessions — this is what carries the science
-    run: cat RALPH_PROGRESS.md 2>/dev/null || echo "no findings yet"
-    timeout: 15
-  - name: gallery           # frames captured so far (don't re-shoot what we already have)
-    run: ls -1 thumbs/ 2>/dev/null | tail -40
-    timeout: 15
-  - name: pace              # THE inter-iteration delay: a real sleep. timeout MUST be > the sleep.
-    run: sleep 45           # gentle on the shared scope; raise to sleep 600+ for an hours-long campaign
-    timeout: 60
-
-guardrails:
-  block_commands:
-    - 'rm\s+-rf'            # never let a loop nuke your frames or logs
-  protected_files:
-    - 'SKILL.md'            # the ops doc is read-only to the loop
-    - 'snap.py'             # the helper (with your microscope token baked in) is fixed — the loop uses it, doesn't rewrite it
----
-
-You are running a continuous, autonomous microscopy discovery loop on a REAL, live, CHANGING freshwater
-sample in MY wells only. Drive the scope ONLY via ./snap.py (it handles atomic snaps, autofocus, status,
-full-res + thumbnail saving, and 429/503 backoff). The API, safe limits, and my token are in SKILL.md and
-snap.py — read them, NEVER exceed the limits, NEVER touch wells that aren't mine.
+```markdown
+You are running ONE iteration of a continuous microscopy discovery loop on a REAL, live, CHANGING
+freshwater sample in MY wells only. Drive the scope ONLY via ./snap.py (it handles atomic snaps, autofocus,
+status, full-res + thumbnail saving, and 429/503 backoff). The API, safe limits, and the token are in
+SKILL.md and snap.py — read them, NEVER exceed the limits, NEVER touch wells that aren't mine, and NEVER
+run `rm -rf` or rewrite snap.py / SKILL.md.
 
 DIRECTION (agreed with the collaborator):
   >>> PASTE YOUR ONE-LINE DIRECTION HERE <<<
 
-What we already know (do NOT repeat work): {{ commands.progress }}
-Frames already captured:                    {{ commands.gallery }}
+START THE ITERATION by reading your own memory so you don't repeat work:
+- run `cat RALPH_PROGRESS.md 2>/dev/null || echo "no findings yet"` — what you already know + the station
+  to revisit.
+- run `ls -1 thumbs/ 2>/dev/null | tail -40` — frames already captured; don't re-shoot them.
 
 RULES (do not deviate):
 - SCALE: read pixel size once from status at result.scale.pixel_size_um (~0.376 um/px, NESTED). Every
@@ -442,6 +423,9 @@ RULES (do not deviate):
   don't snap blindly.
 - FLUORESCENCE: start exposure_ms 30 / intensity 20 (the good defaults). Blank-WHITE frame = OVER-exposed,
   turn DOWN. First FL snap can take ~18 s cold (~2 s warm) — snap.py already allows for it.
+- PACE THE SHARED SCOPE: only a few images this iteration, and `sleep 45` before you finish (raise to
+  `sleep 600`+ for an hours-long change-over-time run) — the loop starts the next iteration immediately
+  otherwise.
 
 AUTO-VALIDATE EVERY FRAME (no human is watching this iteration — so YOU check your own work):
   a. After a snap, confirm status/position shows the RIGHT well + plate + dx/dy. If not, discard and retry.
@@ -450,7 +434,7 @@ AUTO-VALIDATE EVERY FRAME (no human is watching this iteration — so YOU check 
   c. Before writing ANY number, re-read the frame you cite and confirm the thing is actually there. Report
      claims as "candidate - needs verification", never as established fact.
 
-This is iteration {{ ralph.iteration }}. Do ONE focused cycle:
+DO ONE FOCUSED CYCLE:
 1. NAVIGATE BY EYE — autofocus, snap a coarse dx/dy grid (BF) via snap.py, LOOK at each thumbnail, score
    it for live/interesting content, pick the best field; skip empties. Don't re-survey covered ground.
    (FOR TIME-LAPSE / CHANGE-OVER-TIME campaigns: instead, RE-VISIT the fixed station recorded in
@@ -463,52 +447,36 @@ This is iteration {{ ralph.iteration }}. Do ONE focused cycle:
 5. RECORD — append a dated entry to RALPH_PROGRESS.md: the station (well+dx/dy), what you saw, what you
    measured, what you now believe, and what the NEXT iteration should test. This file is your memory.
 
-Budget discipline: a few images per iteration. This is a shared instrument.
-When the direction is answered and cross-checked, emit <promise>CAMPAIGN_DONE</promise>.
+Budget discipline: a few images per iteration. This is a shared instrument. If the direction is fully
+answered and cross-checked, say so plainly and stop imaging.
 ```
 
-**Make it yours:** paste your real direction into the body; keep `SKILL.md`/`snap.py` as the one place the
-ops live (don't duplicate signatures); set the `pace` `sleep` to match how long you want the campaign to
-run (short for testing, `sleep 600`+ for an overnight change-over-time run). You don't *have* to use Ralph —
-but it gives you persistence, memory and guardrails for free, and those logs *are* half your deliverable.
+**Run it** in Pi's interactive terminal (not `pi -p`): `/ralph 2 pond.md` to validate (2 iterations), then
+`/ralph 50 pond.md` for the real campaign; `/ralph stop` stops gracefully after the current iteration. Each
+iteration runs in a fresh session, re-reads your `RALPH_PROGRESS.md`, and the loop auto-saves its transcripts
++ a running summary under `.ralph/`. **Make it yours:** paste your real direction into the body, keep
+`SKILL.md`/`snap.py` as the one place the ops live, and set the in-prompt `sleep` to match how long you want
+the campaign to run. Those logs *are* half your deliverable.
 
 ### Validate the loop before you let it run long
 
-**Ralph runs unattended — so the validation has to be built in, and you have to prove it works on a few
-iterations before you trust it for hours.** This is the single most important habit this week. Do it in
-this order:
+**The loop runs unattended — so prove it works on a couple of iterations before you trust it for hours.**
+This is the single most important habit this week. In order:
 
-1. **`max_iterations: 2`.** Launch Pi interactively (`pi --provider ddls --model gpt-5.6-luna`), then
-   `/ralph .`. Watch both iterations to the end.
-
-> **`/ralph` is finicky about your Pi version — if it doesn't run, use the fallback below (recommended).**
-> We tested the pinned `pi-ralph-loop@0.2.1` on two Pi versions and it failed on both: on **older Pi
-> (≤ 0.84.x)** the extension is too old to load; on **newer Pi (0.99.x)** it throws `ctx is stale after
-> newSession/fork` and runs **zero iterations**. It may work on some in-between version — try `/ralph .`
-> once — but **the reliable path for everyone is the tiny fallback loop**, which needs no extension and
-> leaves everything else on this page unchanged. Paste into Pi:
->
-> > *"Write me a `run-loop.sh` that calls `pi -p` in a loop N times. Each pass, in order: (1) read
-> > `RALPH_PROGRESS.md` for context, (2) run ONE short iteration of my direction — autofocus, one atomic
-> > `snap.py` snap, look at the thumbnail, measure one thing in µm, append one dated line to
-> > `RALPH_PROGRESS.md` and one idea to `OPEN_QUESTIONS.md` — then `sleep 45`. Keep each iteration's
-> > instruction **short and flat** (a few exact commands, no if/else)."*
->
-> Then `bash run-loop.sh`. It's the same fresh-session-with-memory loop, by hand. **Either way, keep the
-> per-iteration instruction short and imperative** — a long, branchy prompt makes the model *spin without
-> imaging* (it burns budget and writes nothing). Short flat steps snap and log every time.
+1. **Validate on two.** Launch Pi interactively (`pi --provider ddls --model gpt-5.6-luna`), then
+   `/ralph 2 pond.md`. Watch both iterations to the end. Keep `pond.md` short and imperative — a long,
+   branchy prompt makes the model *spin without imaging*; short flat steps snap and log every time.
 2. **Check the four things that go wrong silently:** (a) every frame is of *your* well at the intended
    `dx`/`dy` (the auto-validate step); (b) no frame it "analysed" was actually blank/overexposed; (c) every
    size is scaled correctly (spot-check one by hand against the full-res frame — this is the ~2.7× trap);
    (d) `RALPH_PROGRESS.md` and `OPEN_QUESTIONS.md` are actually being written with sensible, honest entries.
-3. **Only if all four pass, raise `max_iterations`** (and the `pace` `sleep`) and run `/ralph .` again to
-   start the real campaign. If something's off, fix the `RALPH.md` and re-test at 2 — never "let it run and
-   hope." A loop that images the wrong well or mis-scales every measurement for 40 iterations wasted the
-   shared scope *and* your budget, and you won't know until you read 40 wrong entries.
+3. **Only if all four pass, run the real campaign:** `/ralph 30 pond.md` (raise the count; set the in-prompt
+   `sleep` to minutes for an hours-long run). If something's off, fix `pond.md` and re-test at 2 — never "let
+   it run and hope." A loop that images the wrong well or mis-scales every measurement for 30 iterations
+   wasted the shared scope *and* your budget, and you won't know until you read 30 wrong entries.
 
-**Because the loop always halts on the first error or timeout**, treat a stop as normal: read the last
-`RALPH_PROGRESS.md` entry, fix if needed, and just `/ralph .` again to continue (there is no `-resume`; the
-`progress` command re-loads your memory on the next launch).
+If an iteration stops on a transient scope error, that's normal: read the last `RALPH_PROGRESS.md` entry and
+just run `/ralph <N> pond.md` again — each run re-reads your notebook and picks up where the science left off.
 
 ## Part 5 — Real-time analysis, hypotheses & the honesty rule
 
@@ -567,27 +535,27 @@ or "this well is different" claim.
 Once the loop passes its 2-iteration validation (Part 4) and your dashboard is up (Part 3), **launch the
 real run** and let it work. The loop lives in Pi's **interactive terminal** — keep that terminal open:
 
-- **Start / continue:** `/ralph .` (with your `RALPH.md` in the current folder). There is no separate
-  "resume" — if it stopped (finished, `/ralph-stop`, or an error), you just **run `/ralph .` again**; the
+- **Start / continue:** `/ralph pond.md` (with your `pond.md` in the current folder). There is no separate
+  "resume" — if it stopped (finished, `/ralph stop`, or an error), you just **run `/ralph pond.md` again**; the
   `progress` command reloads your `RALPH_PROGRESS.md` so it picks up where the science left off.
 - **Check in:** **watch your dashboard** (Part 3), and read `RALPH_PROGRESS.md` / `OPEN_QUESTIONS.md` —
-  that's where the story is. (The only two loop commands are `/ralph` and `/ralph-stop` — there's no
+  that's where the story is. (The only two loop commands are `/ralph` and `/ralph stop` — there's no
   `-status`/`-logs`; your dashboard *is* the status view.)
-- **Pause:** `/ralph-stop` finishes the current iteration then stops cleanly. Use it whenever you step
+- **Pause:** `/ralph stop` finishes the current iteration then stops cleanly. Use it whenever you step
   away — **don't leave a loop imaging unattended on a shared scope.**
-- **Hand-in material:** your `RALPH.md` (or `run-loop.sh`), `snap.py`, `OPEN_QUESTIONS.md`,
+- **Hand-in material:** your `pond.md`, `snap.py`, `OPEN_QUESTIONS.md`,
   `RALPH_PROGRESS.md` (your notebook) and your saved frames — keep them all; that's what you submit
   (see [What you hand in](#what-you-hand-in-four-things)).
 
 **The two-day rhythm — a live sample rewards patience.** **Wednesday**, get 2 clean validated iterations
-and your dashboard live, then start the real run (raise `max_iterations`, set the `pace` `sleep` to
-minutes so it runs for hours) and `/ralph-stop` before you leave. **Thursday**, `/ralph .` again and let
+and your dashboard live, then start the real run (raise the iteration count, set the in-prompt `sleep` to
+minutes so it runs for hours) and `/ralph stop` before you leave. **Thursday**, `/ralph pond.md` again and let
 observations accumulate — because the sample is **alive and changing**, a station you imaged Wednesday
 will look different now; that *change* is often the finding. Check in periodically (not constantly), and
 **steer**: when `OPEN_QUESTIONS.md` surfaces something juicy, refocus toward it and verify as you go.
 
-**Good citizen on the shared queue (2 scopes, whole class):** keep the `pace` `sleep` and
-images-per-iteration sane, don't run tight-loop marathons that starve everyone, `/ralph-stop` when you're
+**Good citizen on the shared queue (2 scopes, whole class):** keep the in-prompt `sleep` and
+images-per-iteration sane, don't run tight-loop marathons that starve everyone, `/ralph stop` when you're
 not watching, and remember the window closes **Fri 2 Oct 13:00** for everyone.
 
 ## The DDLS reminders (same as every week)
@@ -605,17 +573,17 @@ not watching, and remember the window closes **Fri 2 Oct 13:00** for everyone.
 
 - **The loop re-images the same field forever.** No new hypothesis, or it isn't reading its own memory.
   Check `RALPH_PROGRESS.md` / `OPEN_QUESTIONS.md` are actually being written and fed back (the `progress`
-  command); tighten the direction; cap images-per-iteration. `/ralph-stop`, fix the `RALPH.md`, `/ralph .`.
+  command); tighten the direction; cap images-per-iteration. `/ralph stop`, fix `pond.md`, `/ralph pond.md`.
 - **The loop keeps snapping empty water and finding "nothing."** It's navigating blind. Make sure it's
   actually LOOKING at each thumbnail and scoring it (the grid-survey step), and hand-scout the "Try it
   live" panel first to point it at the busy part of your well. Blind rasters find water.
 - **Sizes look wrong / suspiciously small.** The thumbnail trap — it measured on the 768 px thumbnail but
-  scaled with the full-res pixel size (~2.7× too small). Fix the rule in `RALPH.md` and re-check one size
+  scaled with the full-res pixel size (~2.7× too small). Fix the rule in `pond.md` and re-check one size
   by hand. (See Part 2, box #6.)
 - **The scope is slow or queued.** That's the shared instrument, not a bug. Don't retry-spam — survey
-  coarsely, image deliberately, raise the `pace` `sleep`.
+  coarsely, image deliberately, raise the in-prompt `sleep`.
 - **The loop stopped after one error.** Normal — Ralph halts on the first per-iteration error or timeout
-  (a transient scope `503` will do it). Read the last `RALPH_PROGRESS.md` entry and just `/ralph .` again.
+  (a transient scope `503` will do it). Read the last `RALPH_PROGRESS.md` entry and just `/ralph pond.md` again.
 - **The agent claims something you can't see.** Trust your eyes. Open the exact frame it cited; if it's
   not there, reject the claim and tell the loop it was wrong. Same for a literature claim — a plausible
   citation isn't a real one until you've checked it.

@@ -161,7 +161,10 @@ so hard you throw away the discovery. Leave the brainstorm knowing:
 > fool themselves with samples like this, so I can build a check against it?"*
 
 When you have a direction, a sense of what's interesting, and a loop-shaped plan — stop and go get your
-microscope.
+microscope. **First, download your brainstorm:** on the portal **Week 6** page, click **Transcript** to save
+your conversation as `interview-transcript.md` into your Lab 6 folder. You'll read it back in **Part 4** when
+you write your discovery loop by hand — your direction, what counts as interesting, and the traps to guard
+against all come from *this* conversation, not from us.
 
 {{< spoiler text="Primer — what lives in a pond drop (30 seconds, no biology needed)" >}}
 A single drop of pond water is a whole ecosystem. Rough cast of characters:
@@ -387,12 +390,15 @@ per-iteration transcripts and a running summary under **`.ralph/`** (keep those 
 deliverable).
 {{< /spoiler >}}
 
-**You don't hand-write the loop from scratch — Pi drafts it, you check it.** The loop just re-runs **one
-markdown prompt file** in a fresh session each iteration. Hand Pi your validated steps and have it write that
-prompt file (call it `pond.md`); read it against the template below and fix anything off before you run it.
-There is no config, no frontmatter — it is a plain prompt. Because context is cleared each iteration, the
-prompt itself must tell the agent to re-read its notebook and list what it already captured; the real imaging
-happens inside the iteration via `snap.py`.
+**You build the loop yourself, step by step — Pi drafts the words, you own the science.** The loop just
+re-runs **one markdown prompt file** in a fresh session each iteration. Open your downloaded
+`interview-transcript.md` (from Part 1) and pull out the three things that make this loop *yours*: your
+**direction**, what **counts as interesting**, and the **traps** your collaborator warned about. Hand Pi those
+plus the validated steps you just proved by hand, and have it draft the prompt file (call it `pond.md`); then
+**read it against the template below and fix anything off before you run it** — this file is your experiment
+design, so don't just accept the first draft. There is no config, no frontmatter — it is a plain prompt.
+Because context is cleared each iteration, the prompt itself must tell the agent to re-read its notebook and
+list what it already captured; the real imaging happens inside the iteration via `snap.py`.
 
 Save this as `pond.md`:
 
@@ -536,11 +542,12 @@ Once the loop passes its 2-iteration validation (Part 4) and your dashboard is u
 real run** and let it work. The loop lives in Pi's **interactive terminal** — keep that terminal open:
 
 - **Start / continue:** `/ralph pond.md` (with your `pond.md` in the current folder). There is no separate
-  "resume" — if it stopped (finished, `/ralph stop`, or an error), you just **run `/ralph pond.md` again**; the
-  `progress` command reloads your `RALPH_PROGRESS.md` so it picks up where the science left off.
+  "resume" — if it stopped (finished, `/ralph stop`, or an error), you just **run `/ralph pond.md` again**; each
+  fresh iteration re-reads your `RALPH_PROGRESS.md` (because `pond.md` tells it to `cat` that file first), so it
+  picks up where the science left off.
 - **Check in:** **watch your dashboard** (Part 3), and read `RALPH_PROGRESS.md` / `OPEN_QUESTIONS.md` —
   that's where the story is. (The only two loop commands are `/ralph` and `/ralph stop` — there's no
-  `-status`/`-logs`; your dashboard *is* the status view.)
+  status/logs command; your dashboard *is* the status view, and the raw per-iteration logs land in `.ralph/`.)
 - **Pause:** `/ralph stop` finishes the current iteration then stops cleanly. Use it whenever you step
   away — **don't leave a loop imaging unattended on a shared scope.**
 - **Hand-in material:** your `pond.md`, `snap.py`, `OPEN_QUESTIONS.md`,
@@ -572,8 +579,9 @@ not watching, and remember the window closes **Fri 2 Oct 13:00** for everyone.
 ## Getting unstuck (read before you panic)
 
 - **The loop re-images the same field forever.** No new hypothesis, or it isn't reading its own memory.
-  Check `RALPH_PROGRESS.md` / `OPEN_QUESTIONS.md` are actually being written and fed back (the `progress`
-  command); tighten the direction; cap images-per-iteration. `/ralph stop`, fix `pond.md`, `/ralph pond.md`.
+  Check `RALPH_PROGRESS.md` / `OPEN_QUESTIONS.md` are actually being written each iteration, and that
+  `pond.md` tells the agent to `cat RALPH_PROGRESS.md` at the start of every pass; tighten the direction; cap
+  images-per-iteration. `/ralph stop`, fix `pond.md`, `/ralph pond.md`.
 - **The loop keeps snapping empty water and finding "nothing."** It's navigating blind. Make sure it's
   actually LOOKING at each thumbnail and scoring it (the grid-survey step), and hand-scout the "Try it
   live" panel first to point it at the busy part of your well. Blind rasters find water.

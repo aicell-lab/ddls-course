@@ -102,9 +102,19 @@ separate write-ups: the loop generates the files as it runs, and your job is to 
    separate report to write: this file *is* your notebook.
 4. **Your seminar talk** (Friday) — see the [seminar page](../seminar/).
 
-In short: the **dashboard** is the *live view*; **`RALPH_PROGRESS.md`** is the *durable record*. Submit your
-loop files, dashboard link, and notebook in the **course portal**, with your Agent-A brainstorm and Pi
-transcripts. Keep it proportionate — a self-directed capstone, not a paper.
+In short: the **dashboard** is the *live view*; **`RALPH_PROGRESS.md`** is the *durable record*. Keep it
+proportionate — a self-directed capstone, not a paper.
+
+**What the portal Week 6 page asks you to attach** (so the form and this page agree):
+
+- **Required:** your **microscope frames** (a few of your best — even one or two is fine); a **short
+  write-up** (a few honest lines + your AI-use disclosure); your **brainstorm transcript** (Agent A); and
+  your **analyst / Pi transcript** (Agent B).
+- **Optional (include what you have):** `RALPH_PROGRESS.md` (your notebook), `pond.md` (your loop),
+  `OPEN_QUESTIONS.md`, `snap.py`, your **dashboard** as a `.zip`, and your `.ralph/` logs.
+
+**Partial is welcome** — if the loop fought you, hand in your frames, a short note, and your transcripts;
+that is a real submission.
 
 ## Wednesday = set up + validate the loop (4 h, 13:00–17:00)
 

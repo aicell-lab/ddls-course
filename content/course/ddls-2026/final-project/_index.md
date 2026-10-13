@@ -355,6 +355,25 @@ As in every lab, **we read the transcript**, not only the result: the interview 
 analysis log. We are looking for where you found the question behind the question, where you
 refused what the agent gave you, and what you checked versus what you took on faith.
 
+### How, where, and when you hand in
+
+You hand in **to the teaching team, through the course portal** — not to your client directly.
+(We share the finished results back with your client afterwards.)
+
+1. **Open the portal and sign in.** On your **Dashboard** you will see a **"Your final project"**
+   card — click **"Open your project page to hand in."**
+2. **On your project page, upload three things:** your **written report**, your **runnable app or
+   code** (zip the folder), and your **interview + analysis transcripts** (your AI-use disclosure).
+   You can upload as you go and re-upload to replace a file.
+3. **Prefer to let your agent do it?** Pi can deliver straight to the project with the course API —
+   the *"Give your agent the project API"* card on your project page has the one-line setup.
+
+**Deadline: hand in by 23 October.** Master's students also give the **oral presentation on Tuesday
+27 October, 10:00–12:00** (mandatory — this is where the A–F grade comes from). If you have agreed an
+individual extension with us, your dates are the ones in that email.
+
+{{< cta cta_text="Open your project page in the portal →" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/dashboard" >}}
+
 ---
 
 ## Assessment

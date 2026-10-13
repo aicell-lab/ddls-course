@@ -151,6 +151,25 @@ Being told you are wrong in meeting 2 is **the expected outcome, not a failure**
 the round is for. A student whose prototype survives contact with the client unchanged has
 usually not shown it properly.
 
+### How much work this is — for *you*
+
+The two hours above are **the client's** commitment. **Your** side is the real work of the course,
+and it is meant to be substantial: the final project is the capstone, worth **3.0 of the course's
+7.5 credits**. In practice that is on the order of **70–90 hours of your own work across the
+three-week window** — plan for it like a serious piece of coursework, not a weekend.
+
+"The agent does the labour, you supply the judgement" does **not** mean there is little to do — the
+judgement *is* the work, and it is not quick. Your time goes into:
+
+- **Preparing and running the interview**, then turning it into a clear brief and spec.
+- **Directing the agent across many iterations** — most first answers are wrong or shallow, and steering it is hands-on.
+- **Verifying every result** against the data and the literature. This is the slowest part, and the part that is actually graded.
+- **Building the deliverable** — a runnable app or code the client can use.
+- **Writing the report**, and (Master's) **preparing the oral**.
+
+"A finished small thing beats an unfinished large one" is still the rule — but a *checked, honest*
+small thing takes real, sustained effort. Scope it accordingly, and **start early**.
+
 ---
 
 ## Before Meeting 1 — prepare, then book it

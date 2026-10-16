@@ -13,6 +13,7 @@ weight: 8
 - **Teaching period (6 modules):** 25 August – 2 October 2026
 - **Final project period:** late September – **23 October 2026** — find a client now, see the
   [Final Project](../final-project/) page
+- **Final-project drop-in (optional):** **Tuesday 20 October 2026, 13:00–16:00** — online on the same Zoom; drop by any time in the window with any unanswered question about the final project, whether organisational, about working with the Pi agent, or specific to your own project
 - **Deadline for researchers to sign up a project:** Friday 25 September 2026 —
   [the public call](/call-for-projects-2026/)
 - **Oral presentations (Master's students):** **Tuesday 27 October 2026, 10:00–12:00** (online on the same Zoom)
@@ -68,6 +69,7 @@ The lab and seminar times below are fixed. Recorded lectures are released at the
 | 6 | Released at start of week | 🧑🏻‍🏫 Lecture (recorded) | Automated Scientific Discovery and AI Agents | Wei Ouyang, Gabriel Reder |
 | 6 | Wed 30 Sep, 13:00–17:00 | 💻 Computer Lab | Automated Scientific Discovery and AI Agents | Course team |
 | 6 | Fri 2 Oct, 10:00–12:00 | 💬 Seminar | Automated Scientific Discovery and AI Agents | Course team |
+| — | Tue 20 Oct, 13:00–16:00 | 🙋 Drop-in (optional) | Final-project drop-in — any unanswered question: organisational, Pi agent, or project-specific | Course team |
 | — | Tue 27 Oct, 10:00–12:00 | 📝 Examination | Final project — oral presentations (Master's only) | Course team |
 
 If you anticipate that you won't be able to attend any of the sessions, please [contact](/contact/) us as soon as possible.

@@ -32,6 +32,7 @@ register it through your invite link → ② **get it approved** by the teaching
 | **Now / as early as possible** | **Find a client and register the project** with your [personal invite link](#your-personal-invite-link). Finding someone early is the single best predictor of a good project. |
 | **Late Sep – early Oct** | Matching + [teaching-team approval](#proposal-and-approval); you meet your client. |
 | **Early–mid Oct** | Meeting 1 (interview + data hand-over) → build (2–3 days) → Meeting 2 (show it, hear what's wrong). |
+| **Tue 20 Oct, 13:00–16:00** | **Optional drop-in** (online, same Zoom) — bring any unanswered question, whether organisational, about the Pi agent, or specific to your project. |
 | **By 23 Oct** | **Hand-over** — a written report + a runnable app/code. Course period ends. |
 | **Tue 27 Oct, 10:00–12:00** | Oral presentations (Master's: mandatory, sets your grade). |
 

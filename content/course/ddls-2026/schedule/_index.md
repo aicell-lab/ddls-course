@@ -16,7 +16,8 @@ weight: 8
 - **Final-project drop-in (optional):** **Tuesday 20 October 2026, 13:00–16:00** — online on the same Zoom; drop by any time in the window with any unanswered question about the final project, whether organisational, about working with the Pi agent, or specific to your own project
 - **Deadline for researchers to sign up a project:** Friday 25 September 2026 —
   [the public call](/call-for-projects-2026/)
-- **Oral presentations (Master's students):** **Tuesday 27 October 2026, 10:00–12:00** (online on the same Zoom)
+- **Oral presentations (Master's students):** **Friday 6 November 2026, 10:00–12:00** (10 min talk + 5 min Q&A, online on the same Zoom)
+- **Final-project help session (in person):** **Tuesday 27 October 2026, 10:00–12:00** at SciLifeLab, Tomtebodavägen 23, Solna
 
 All live sessions are held online on the **same Zoom meeting** all term: <https://kth-se.zoom.us/j/66475726850>
 
@@ -70,6 +71,7 @@ The lab and seminar times below are fixed. Recorded lectures are released at the
 | 6 | Wed 30 Sep, 13:00–17:00 | 💻 Computer Lab | Automated Scientific Discovery and AI Agents | Course team |
 | 6 | Fri 2 Oct, 10:00–12:00 | 💬 Seminar | Automated Scientific Discovery and AI Agents | Course team |
 | — | Tue 20 Oct, 13:00–16:00 | 🙋 Drop-in (optional) | Final-project drop-in — any unanswered question: organisational, Pi agent, or project-specific | Course team |
-| — | Tue 27 Oct, 10:00–12:00 | 📝 Examination | Final project — oral presentations (Master's only) | Course team |
+| — | Tue 27 Oct, 10:00–12:00 | 🙋 Help session (in person) | Final-project help session at SciLifeLab, Solna | Course team |
+| — | Fri 6 Nov, 10:00–12:00 | 📝 Examination | Final project — oral presentations · 10 min talk + 5 min Q&A (Master's) | Course team |
 
 If you anticipate that you won't be able to attend any of the sessions, please [contact](/contact/) us as soon as possible.

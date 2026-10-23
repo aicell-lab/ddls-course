@@ -41,7 +41,7 @@ on your private project page, and when you get your results.
 | **Late Sep – early Oct** | Students and researchers are matched; the teaching team approves each project. |
 | **Early–mid Oct** | **Meeting 1** (interview + data hand-over) → the student builds for 2–3 days → **Meeting 2** (show it, hear what is wrong). |
 | **By 23 Oct** | **Hand-over** — a written report + a runnable app/code. The course period ends. |
-| **Tue 27 Oct, 10:00–12:00** | Oral presentations (Master's students: mandatory, sets the grade). |
+| **Fri 6 Nov, 10:00–12:00** | Oral presentations — 10 min talk + 5 min Q&A (Master's: mandatory, sets the grade). |
 
 Individual extensions, where agreed with us by email, override these dates.
 

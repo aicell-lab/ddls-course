@@ -34,7 +34,7 @@ register it through your invite link → ② **get it approved** by the teaching
 | **Early–mid Oct** | Meeting 1 (interview + data hand-over) → build (2–3 days) → Meeting 2 (show it, hear what's wrong). |
 | **Tue 20 Oct, 13:00–16:00** | **Optional drop-in** (online, same Zoom) — bring any unanswered question, whether organisational, about the Pi agent, or specific to your project. |
 | **By 23 Oct** | **Hand-over** — a written report + a runnable app/code. Course period ends. |
-| **Tue 27 Oct, 10:00–12:00** | Oral presentations (Master's: mandatory, sets your grade). |
+| **Fri 6 Nov, 10:00–12:00** | Oral presentations — **10 min talk + 5 min Q&A** (Master's: mandatory, sets your grade; everyone welcome to present or listen). |
 
 If you have agreed an individual extension with us, your dates are the ones in that email.
 
@@ -392,9 +392,11 @@ You hand in **to the teaching team, through the course portal** — not to your 
 3. **Prefer to let your agent do it?** Pi can deliver straight to the project with the course API —
    the *"Give your agent the project API"* card on your project page has the one-line setup.
 
-**Deadline: hand in by 23 October.** Master's students also give the **oral presentation on Tuesday
-27 October, 10:00–12:00** (mandatory — this is where the A–F grade comes from). If you have agreed an
-individual extension with us, your dates are the ones in that email.
+**Deadline: hand in by 23 October.** Master's students also give the **oral presentation on Friday
+6 November, 10:00–12:00**: **10 minutes to present, then a 5-minute Q&A** (you may add an optional
+3–5 minute live or recorded demo). It is mandatory for Master's and is where the A–F grade comes
+from; every course participant is welcome to present their own project or simply come and listen.
+If you have agreed an individual extension with us, your dates are the ones in that email.
 
 {{< cta cta_text="Open your project page in the portal →" cta_link="https://ddls-portal-6228434e.svc.hypha.aicell.io/dashboard" >}}
 
